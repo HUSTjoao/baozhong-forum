@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
-import { User, Clock, MessageCircle, Heart, Send, Trash2, Shield } from 'lucide-react'
+import { Clock, MessageCircle, Heart, Send, Trash2, Shield } from 'lucide-react'
 import {
   getQuestionById,
   toggleQuestionLike,
@@ -263,10 +263,11 @@ export default function QuestionDetailPage({
   }
 
   const university = universities.find((u) => u.id === question.universityId)
-  const isQuestionLiked =
+  const isQuestionLiked = !!(
     session?.user?.id && question.likedBy?.includes(session.user.id)
+  )
   const isReplyLiked = (reply: Reply) =>
-    session?.user?.id && reply.likedBy?.includes(session.user.id)
+    !!(session?.user?.id && reply.likedBy?.includes(session.user.id))
 
   const questionUserDetail =
     !question.isAnonymous && question.askerId
@@ -954,6 +955,7 @@ function ReplyItem({
               session={session}
               isReplyLiked={isReplyLiked}
               onReplyLike={onReplyLike}
+              onReplyDelete={onReplyDelete}
               onReplyToReply={onReplyToReply}
               replyingTo={replyingTo}
               setReplyingTo={setReplyingTo}

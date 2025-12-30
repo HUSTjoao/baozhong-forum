@@ -88,6 +88,14 @@ export default function UserProfilePage() {
         bio: (session.user as any).bio,
         createdAt: new Date().toISOString(),
       } as UserType
+
+      // 如果这是第一次在本设备登录该用户，将其同步到本地用户列表，
+      // 以便后续头像/资料修改都能正确保存
+      const allUsers = getUsers()
+      if (!allUsers.find((u) => u.id === foundUser!.id)) {
+        allUsers.push(foundUser)
+        saveUsers(allUsers)
+      }
     }
 
     if (!foundUser) {

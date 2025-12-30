@@ -24,6 +24,7 @@ import {
   toggleAlumniMessageLike,
   getAllAlumniMessages,
   getUserById,
+  saveUsers,
 } from '@/data/users'
 import { getAllUniversities } from '@/data/universities'
 import type { User, AlumniMessage } from '@/data/users'
@@ -56,6 +57,43 @@ export default function MessagesPage() {
       ? getUserById(session.user.id)
       : undefined
   const isMutedUser = !!currentUser?.isMuted
+
+  // 确保当前登录用户在本地用户列表中存在一份记录
+  // 这样即使是在新设备上第一次登录，也可以正常发布寄语和更新头像
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!session?.user?.id) return
+
+    const existing = getUserById(session.user.id)
+    if (existing) return
+
+    const allUsers = getUsers()
+
+    const newUser: User = {
+      id: session.user.id,
+      email: session.user.email || '',
+      name:
+        session.user.name ||
+        (session.user as any).username ||
+        session.user.email ||
+        '未命名用户',
+      username: (session.user as any).username,
+      // 本地这份 user 记录不会参与登录校验，所以可以留空密码
+      password: '',
+      role: (session.user as any).role,
+      universityId: (session.user as any).universityId,
+      graduationYear: (session.user as any).graduationYear,
+      major: (session.user as any).major,
+      gender: (session.user as any).gender,
+      avatarUrl: (session.user as any).avatarUrl,
+      nickname: (session.user as any).nickname,
+      bio: (session.user as any).bio,
+      createdAt: new Date().toISOString(),
+    }
+
+    allUsers.push(newUser)
+    saveUsers(allUsers)
+  }, [session?.user])
 
   useEffect(() => {
     loadMessages()

@@ -93,23 +93,24 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id as string
-        session.user.email = token.email as string
-        session.user.name = token.name as string
-        session.user.username = token.username as string
-        session.user.role = token.role as string
-        session.user.universityId = token.universityId as string
-        session.user.graduationYear = token.graduationYear as number | string
-        session.user.major = token.major as string
-        session.user.gender = token.gender as
+        const u = session.user as any
+        u.id = token.id as string
+        u.email = token.email as string
+        u.name = token.name as string
+        u.username = token.username as string
+        u.role = token.role as string
+        u.universityId = token.universityId as string
+        u.graduationYear = token.graduationYear as number | string
+        u.major = token.major as string
+        u.gender = token.gender as
           | 'male'
           | 'female'
           | 'prefer-not-to-say'
           | undefined
-        session.user.avatarUrl = token.avatarUrl as string | undefined
-        session.user.nickname = token.nickname as string
-        session.user.bio = token.bio as string
-        session.user.alumniMessage = token.alumniMessage as string
+        u.avatarUrl = token.avatarUrl as string | undefined
+        u.nickname = token.nickname as string
+        u.bio = token.bio as string
+        u.alumniMessage = token.alumniMessage as string
       }
       return session
     },

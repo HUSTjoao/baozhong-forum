@@ -40,12 +40,13 @@ import {
   updateUserMajor,
   type Major,
 } from '@/data/majors'
-import { 
-  getQuestions, 
-  deleteQuestion, 
+import {
+  getQuestions,
+  deleteQuestion,
   deleteReply,
   getReports,
   updateReportStatus,
+  formatRelativeTime,
   type Question,
   type Report,
 } from '@/data/questions'

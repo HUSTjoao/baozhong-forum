@@ -56,7 +56,7 @@ export default function Home() {
     const loadPreviewMessage = () => {
       try {
         const allMessages = getAllAlumniMessages()
-
+        
         if (allMessages.length > 0) {
           // 按照实际寄语数据整理出轮播列表
           const formatted = allMessages.map((msg) => {

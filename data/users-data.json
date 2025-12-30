@@ -103,5 +103,16 @@
     "bio": "111111111111",
     "id": "user-1767112250579-vyx5rb5ko",
     "createdAt": "2025-12-30T16:30:50.579Z"
+  },
+  {
+    "email": "admin@temp.local",
+    "username": "admin",
+    "password": "qiaoerhaoniubi",
+    "name": "系统管理员",
+    "role": "admin",
+    "nickname": "管理员",
+    "bio": "宝中高校论坛系统管理员",
+    "id": "user-admin-0001",
+    "createdAt": "2025-12-31T00:00:00.000Z"
   }
 ]

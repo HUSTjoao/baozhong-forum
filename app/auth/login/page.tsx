@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { LogIn, Lock, User, Eye, EyeOff, Shield } from 'lucide-react'
@@ -11,7 +11,7 @@ import { getAllUniversities, type University } from '@/data/universities'
 export default function LoginPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const ADMIN_PASSWORD = 'qiaoerhaoniubi'
+  const { data: session } = useSession()
 
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [callbackUrl, setCallbackUrl] = useState<string | null>(null)
@@ -35,7 +35,6 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [showAdminEntry, setShowAdminEntry] = useState(false)
-  const [adminPassword, setAdminPassword] = useState('')
   const [adminError, setAdminError] = useState('')
 
   useEffect(() => {
@@ -61,22 +60,15 @@ export default function LoginPage() {
     setUniversities(getAllUniversities())
   }, [])
 
-  const handleAdminEnter = (e: React.FormEvent) => {
+  const handleAdminGo = (e: React.FormEvent) => {
     e.preventDefault()
     setAdminError('')
-    if (!adminPassword.trim()) {
-      setAdminError('请输入管理员密码')
-      return
-    }
-    if (adminPassword !== ADMIN_PASSWORD) {
-      setAdminError('管理员密码不正确')
-      return
-    }
 
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem('bz_forum_admin', 'true')
+    if (session?.user?.role === 'admin') {
+      router.push('/admin')
+    } else {
+      setAdminError('请先使用管理员账号在上方登录，然后再进入后台。')
     }
-    router.push('/admin')
   }
 
   // 将头像图片压缩到 200KB 以内（优先缩放分辨率，其次降低 JPEG 质量）
@@ -353,7 +345,7 @@ export default function LoginPage() {
           </div>
         )}
 
-        {/* 管理员密码输入区域 */}
+        {/* 管理员入口说明区域 */}
         {showAdminEntry && (
           <div className="mb-5 rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-3 text-xs text-amber-800">
             <div className="flex items-center gap-2 mb-2">
@@ -361,25 +353,18 @@ export default function LoginPage() {
               <span className="font-semibold">管理员快速入口</span>
             </div>
             <p className="mb-2 text-[11px] text-amber-700">
-              输入管理员专用密码后，可进入后台审核和管理内容。本入口仅对可信管理员开放。
+              使用提前配置好的管理员账号在上方完成登录后，可以通过此入口进入后台进行审核和管理操作。
             </p>
-            <form onSubmit={handleAdminEnter} className="flex items-center gap-2">
-              <div className="relative flex-1">
-                <Lock className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-amber-400" />
-                <input
-                  type="password"
-                  value={adminPassword}
-                  onChange={(e) => setAdminPassword(e.target.value)}
-                  className="w-full rounded-md border border-amber-200 bg-white px-6 py-1.5 text-xs outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-200"
-                  placeholder="输入管理员密码"
-                />
-              </div>
+            <form onSubmit={handleAdminGo} className="flex items-center gap-2">
               <button
                 type="submit"
                 className="rounded-md bg-amber-500 px-3 py-1.5 text-xs font-semibold text-white hover:bg-amber-600 transition-colors"
               >
                 进入后台
               </button>
+              {session?.user?.role === 'admin' && (
+                <span className="text-[11px] text-emerald-700">当前已使用管理员账号登录</span>
+              )}
             </form>
             {adminError && (
               <p className="mt-1 text-[11px] text-red-600">

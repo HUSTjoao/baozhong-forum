@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { useState } from 'react'
-import { GraduationCap, User, LogOut, Home, Building2, BookOpen, MessageCircle, Heart } from 'lucide-react'
+import { GraduationCap, User, LogOut, Home, Building2, BookOpen, MessageCircle, Heart, Shield } from 'lucide-react'
 import { getUserById } from '@/data/users'
 
 export default function Navbar() {
@@ -101,6 +101,21 @@ export default function Navbar() {
                 </Link>
               )
             })}
+            
+            {/* 仅管理员可见：后台入口 */}
+            {session?.user?.role === 'admin' && (
+              <Link
+                href="/admin"
+                className={`relative flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-full border ${
+                  pathname?.startsWith('/admin')
+                    ? 'bg-primary-600 text-white border-primary-600'
+                    : 'bg-white text-primary-600 border-primary-200 hover:bg-primary-50'
+                } transition-all duration-300 ml-2`}
+              >
+                <Shield className="w-4 h-4" strokeWidth={1.7} />
+                <span>管理员</span>
+              </Link>
+            )}
             
             {status === 'loading' ? (
               <div className="text-gray-500 text-sm font-normal">加载中...</div>

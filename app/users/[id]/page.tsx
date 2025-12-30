@@ -61,12 +61,14 @@ export default function UserProfilePage() {
   const [myMajorApplications, setMyMajorApplications] = useState<Major[]>([])
   const isOwnProfile = session?.user?.id === userId
 
+  // 根据当前登录用户角色判断是否为管理员
+  useEffect(() => {
+    setIsAdmin(session?.user?.role === 'admin')
+  }, [session?.user?.role])
+
   useEffect(() => {
     if (typeof window === 'undefined') return
     
-    const flag = window.localStorage.getItem('bz_forum_admin')
-    setIsAdmin(flag === 'true')
-
     // 优先从本地用户列表获取资料
     let foundUser = getUserById(userId)
 

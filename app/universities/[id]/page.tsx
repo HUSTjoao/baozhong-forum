@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { MapPin, Users, Book, MessageCircle, Shield } from 'lucide-react'
 import { getAllUniversities, type University } from '@/data/universities'
@@ -12,17 +13,19 @@ export default function UniversityDetailPage({
 }: {
   params: { id: string }
 }) {
+  const { data: session } = useSession()
   const [university, setUniversity] = useState<University | undefined>(undefined)
   const [loading, setLoading] = useState(true)
   const [logoError, setLogoError] = useState(false)
   const [forumUserCount, setForumUserCount] = useState(0)
   const [isAdmin, setIsAdmin] = useState(false)
 
+  // 根据当前登录用户角色判断是否为管理员
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const flag = window.localStorage.getItem('bz_forum_admin')
-      setIsAdmin(flag === 'true')
-    }
+    setIsAdmin(session?.user?.role === 'admin')
+  }, [session?.user?.role])
+
+  useEffect(() => {
     const allUnis = getAllUniversities()
     const found = allUnis.find((u) => u.id === params.id)
     setUniversity(found)

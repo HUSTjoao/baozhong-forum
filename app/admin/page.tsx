@@ -86,14 +86,13 @@ export default function AdminPage() {
     null
   )
 
-  // 检查管理员权限
+  // 检查管理员权限（仅依赖登录态中的 role）
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const localFlag = window.localStorage.getItem('bz_forum_admin') === 'true'
     const hasRoleAdmin = session?.user?.role === 'admin'
 
-    if (!localFlag && !hasRoleAdmin) {
+    if (!hasRoleAdmin) {
       // 未通过管理员验证，跳回登录页
       setIsAdmin(false)
       setCheckedAdmin(true)

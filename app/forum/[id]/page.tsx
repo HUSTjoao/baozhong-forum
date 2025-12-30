@@ -98,12 +98,10 @@ export default function QuestionDetailPage({
     setLoading(false)
   }, [params.id, router])
 
-  // 本机管理员标记（基于 localStorage）
+  // 管理员标记：基于当前登录用户的角色
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    const flag = window.localStorage.getItem('bz_forum_admin')
-    setIsAdmin(flag === 'true')
-  }, [])
+    setIsAdmin(session?.user?.role === 'admin')
+  }, [session?.user?.role])
 
   const handleQuestionLike = () => {
     if (!session?.user?.id) {

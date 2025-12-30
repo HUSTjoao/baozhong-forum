@@ -1,0 +1,59 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { addQuestion } from '@/data/questions'
+
+export async function POST(req: NextRequest) {
+  const session = await getServerSession(authOptions)
+
+  if (!session?.user?.id) {
+    return NextResponse.json({ error: '请先登录后再发布内容。' }, { status: 401 })
+  }
+
+  const body = await req.json().catch(() => null)
+  if (!body) {
+    return NextResponse.json({ error: '请求数据格式错误。' }, { status: 400 })
+  }
+
+  const title = (body.title ?? '').toString().trim()
+  const content = (body.content ?? '').toString().trim()
+  const isAnonymous = !!body.isAnonymous
+  const universityId = (body.universityId ?? '').toString()
+  const majorId = body.majorId ? body.majorId.toString() : undefined
+  const category = body.category ? body.category.toString() : undefined
+
+  if (!title || !content) {
+    return NextResponse.json({ error: '请填写完整的标题和内容。' }, { status: 400 })
+  }
+
+  const askerName = isAnonymous
+    ? '匿名用户'
+    : (session.user.nickname as string) ||
+      (session.user.name as string) ||
+      (session.user.email as string) ||
+      '匿名用户'
+
+  const created = addQuestion({
+    title,
+    content,
+    asker: askerName,
+    askerId: isAnonymous ? undefined : (session.user.id as string),
+    date: new Date().toISOString(),
+    universityId,
+    majorId,
+    category,
+    isAnonymous,
+  })
+
+  if (!created) {
+    // data/questions 中返回 null 代表被禁言
+    return NextResponse.json(
+      { error: '你已被管理员禁言，暂时无法发布内容。' },
+      { status: 403 }
+    )
+  }
+
+  return NextResponse.json({ question: created }, { status: 201 })
+}
+
+

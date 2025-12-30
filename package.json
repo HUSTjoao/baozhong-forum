@@ -11,10 +11,12 @@
     "check-logos": "node scripts/check-logos.js"
   },
   "dependencies": {
+    "@prisma/client": "^7.2.0",
     "bcryptjs": "^2.4.3",
     "lucide-react": "^0.294.0",
     "next": "^14.2.0",
     "next-auth": "^4.24.5",
+    "prisma": "^7.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

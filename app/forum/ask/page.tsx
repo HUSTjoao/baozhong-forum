@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -22,7 +22,7 @@ const CATEGORY_OPTIONS = [
   { value: '其他', label: '其他' },
 ]
 
-export default function AskQuestionPage() {
+function AskQuestionPageInner() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { data: session } = useSession()
@@ -292,5 +292,14 @@ export default function AskQuestionPage() {
         </div>
       </RequireAuth>
     </>
+  )
+}
+
+// 包一层 Suspense，满足 Next.js 对 useSearchParams 的要求
+export default function AskQuestionPageWrapper() {
+  return (
+    <Suspense>
+      <AskQuestionPageInner />
+    </Suspense>
   )
 }

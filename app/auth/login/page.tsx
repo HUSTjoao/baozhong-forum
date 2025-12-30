@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import { LogIn, Lock, User, Eye, EyeOff, Shield } from 'lucide-react'
 import { getUsers, saveUsers } from '@/data/users'
 import { getAllUniversities, type University } from '@/data/universities'
 
-export default function LoginPage() {
+function LoginPageInner() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { data: session } = useSession()
@@ -700,6 +700,15 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+// 包一层 Suspense，满足 Next.js 对 useSearchParams 的要求
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginPageInner />
+    </Suspense>
   )
 }
 

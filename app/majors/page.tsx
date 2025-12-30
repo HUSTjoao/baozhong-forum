@@ -264,7 +264,7 @@ export default function MajorsPage() {
   }
 
   const getStrongUniversitiesDisplay = (ids: string[]) => {
-    if (!ids.length) return { displayed: [], hasMore: false }
+    if (!ids.length) return { displayed: [], hasMore: false, total: 0 }
     const names = ids
       .map((id) => universities.find((u) => u.id === id)?.name)
       .filter(Boolean) as string[]

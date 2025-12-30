@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* 用户主页专用样式 */
+  .border-b-3 {
+    border-bottom-width: 3px;
+  }
+}
+
+/* 3D教育场景动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0) rotateY(-15deg) rotateX(5deg);
+  }
+  50% {
+    transform: translateY(-20px) translateX(5px) rotateY(-10deg) rotateX(8deg);
+  }
+}
+
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-bubble-1 {
+  animation: bubble 5s ease-in-out infinite;
+}
+
+.animate-bubble-2 {
+  animation: bubble 6s ease-in-out infinite 1s;
+}
+
+.animate-bubble-3 {
+  animation: bubble 7s ease-in-out infinite 0.5s;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-heart-pop {
+  animation: heart-pop 0.6s ease-out;
+}
+
+/* 首页底部标语触发的星星雨效果 */
+@keyframes star-rain {
+  0% {
+    transform: translate3d(0, -140%, 0) scale(0.7);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  20% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  80% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translate3d(0, 120vh, 0) scale(1.05);
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+.star-rain-item {
+  position: absolute;
+  top: -10%;
+  animation: star-rain 4.5s cubic-bezier(0.17, 0.67, 0.2, 0.99) forwards;
+  will-change: transform, opacity, filter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

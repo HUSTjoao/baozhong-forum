@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
 import bcrypt from 'bcryptjs'
 
 // 确保这个路由是动态的，不在构建时执行
@@ -11,6 +10,9 @@ export async function POST(request: NextRequest) {
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })
   }
+
+  // 动态导入 Prisma，避免在构建时初始化
+  const { prisma } = await import('@/lib/prisma')
 
   try {
     const body = await request.json()

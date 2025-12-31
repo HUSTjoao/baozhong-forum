@@ -88,6 +88,7 @@ export const authOptions: NextAuthOptions = {
         token.nickname = (user as any).nickname
         token.bio = (user as any).bio
         token.alumniMessage = (user as any).alumniMessage
+        token.isMuted = (user as any).isMuted || false
       }
       return token
     },
@@ -111,6 +112,7 @@ export const authOptions: NextAuthOptions = {
         u.nickname = token.nickname as string
         u.bio = token.bio as string
         u.alumniMessage = token.alumniMessage as string
+        u.isMuted = (token.isMuted as boolean) || false
       }
       return session
     },

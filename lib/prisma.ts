@@ -6,6 +6,8 @@ const globalForPrisma = global as unknown as { prisma?: PrismaClient }
 const createPrismaClient = () => {
   return new PrismaClient({
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+    // 明确指定使用默认的 binary engine（不是 client engine）
+    // 这样可以避免需要 adapter 或 accelerateUrl
   })
 }
 

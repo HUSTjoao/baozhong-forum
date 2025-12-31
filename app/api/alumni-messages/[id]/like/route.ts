@@ -3,6 +3,10 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 import { prisma } from '@/lib/prisma'
 
+// 确保这个路由是动态的，不在构建时执行
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 // 点赞/取消点赞寄语
 export async function POST(
   _req: NextRequest,

@@ -76,7 +76,7 @@ export default function QuestionDetailPage({
   const [reportReason, setReportReason] = useState('')
 
   // 当前登录用户是否被禁言（从 session 中读取）
-  const isMutedUser = !!session?.user?.isMuted
+  const isMutedUser = !!(session?.user as any)?.isMuted
 
   useEffect(() => {
     loadQuestion()

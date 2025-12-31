@@ -41,7 +41,7 @@ export default function MessagesPage() {
   const itemsPerPage = 10
 
   // 当前用户是否被禁言
-  const isMutedUser = !!session?.user?.isMuted
+  const isMutedUser = !!(session?.user as any)?.isMuted
 
   useEffect(() => {
     loadMessages()

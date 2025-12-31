@@ -12,7 +12,7 @@ export async function GET() {
           select: {
             id: true,
             nickname: true,
-            name: true,
+            username: true,
             email: true,
             role: true,
             avatarUrl: true,

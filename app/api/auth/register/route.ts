@@ -130,15 +130,29 @@ export async function POST(request: NextRequest) {
     })
   } catch (error: any) {
     console.error('[register] error:', error)
+    console.error('[register] error details:', {
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+      stack: error.stack,
+    })
     // 处理 Prisma 唯一约束错误
     if (error.code === 'P2002') {
+      const field = error.meta?.target?.[0] || '字段'
       return NextResponse.json(
-        { error: '该账号或邮箱已被注册' },
+        { error: `该${field === 'username' ? '账号' : field === 'email' ? '邮箱' : field}已被注册` },
         { status: 400 }
       )
     }
+    // 处理数据库连接错误
+    if (error.code === 'P1001' || error.message?.includes('connect')) {
+      return NextResponse.json(
+        { error: '数据库连接失败，请稍后重试' },
+        { status: 503 }
+      )
+    }
     return NextResponse.json(
-      { error: error.message || '注册失败' },
+      { error: error.message || '注册失败，请检查服务器日志' },
       { status: 500 }
     )
   }

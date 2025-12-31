@@ -1,6 +1,5 @@
 import type { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { prisma } from '@/lib/prisma'
 import bcrypt from 'bcryptjs'
 
 // 统一的 NextAuth 配置，供 API 路由和 getServerSession 复用
@@ -18,7 +17,15 @@ export const authOptions: NextAuthOptions = {
           return null
         }
 
+        // 在构建时跳过执行
+        if (process.env.NEXT_PHASE === 'phase-production-build') {
+          return null
+        }
+
         try {
+          // 动态导入 Prisma，避免在构建时初始化
+          const { prisma } = await import('@/lib/prisma')
+          
           // 从数据库查找用户（通过 username 或 email）
           const identifier = credentials.username.trim()
           const user = await prisma.user.findFirst({

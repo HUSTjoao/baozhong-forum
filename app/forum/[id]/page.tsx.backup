@@ -4,20 +4,25 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
-import { Clock, MessageCircle, Heart, Send, Trash2 } from 'lucide-react'
+import { Clock, MessageCircle, Heart, Send, Trash2, Shield } from 'lucide-react'
 import {
-  questionsApi,
-  repliesApi,
-  reportsApi,
+  getQuestionById,
+  toggleQuestionLike,
+  toggleReplyLike,
+  deleteQuestion,
+  deleteReply,
+  addReply,
+  addReport,
   formatRelativeTime,
   type Question,
   type Reply,
-} from '@/lib/api-client'
+} from '@/data/questions'
 import { getAllUniversities } from '@/data/universities'
+import { getUserById, type User } from '@/data/users'
 import { BackButton } from '@/components/BackButton'
 
-// 根据用户信息生成"高一/高二/高三/20xx届"等学籍标签
-function getUserAcademicLabel(user?: any): string | null {
+// 根据用户信息生成“高一/高二/高三/20xx届”等学籍标签
+function getUserAcademicLabel(user?: User): string | null {
   if (!user) return null
 
   const gy = user.graduationYear
@@ -75,32 +80,30 @@ export default function QuestionDetailPage({
   } | null>(null)
   const [reportReason, setReportReason] = useState('')
 
-  // 当前登录用户是否被禁言（从 session 中读取）
-  const isMutedUser = !!session?.user?.isMuted
+  // 当前登录用户（用于判断是否被禁言）
+  const currentUser =
+    typeof window !== 'undefined' && session?.user?.id
+      ? getUserById(session.user.id)
+      : undefined
+  const isMutedUser = !!currentUser?.isMuted
 
   useEffect(() => {
-    loadQuestion()
+    const found = getQuestionById(params.id)
+    if (!found) {
+      router.push('/forum')
+      return
+    }
+    setQuestion(found)
     setUniversities(getAllUniversities())
-  }, [params.id])
+    setLoading(false)
+  }, [params.id, router])
 
-  // 管理员标记
+  // 管理员标记：基于当前登录用户的角色
   useEffect(() => {
     setIsAdmin(session?.user?.role === 'admin')
   }, [session?.user?.role])
 
-  const loadQuestion = async () => {
-    try {
-      const data = await questionsApi.get(params.id)
-      setQuestion(data)
-    } catch (error) {
-      console.error('加载问题失败:', error)
-      router.push('/forum')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const handleQuestionLike = async () => {
+  const handleQuestionLike = () => {
     if (!session?.user?.id) {
       setMessagePanel({
         title: '需要登录',
@@ -116,15 +119,10 @@ export default function QuestionDetailPage({
       return
     }
     if (!question) return
-
-    try {
-      const updated = await questionsApi.toggleLike(question.id)
+    
+    const updated = toggleQuestionLike(question.id, session.user.id)
+    if (updated) {
       setQuestion(updated)
-    } catch (error: any) {
-      setMessagePanel({
-        title: '操作失败',
-        message: error.message || '点赞失败，请稍后重试',
-      })
     }
   }
 
@@ -133,7 +131,7 @@ export default function QuestionDetailPage({
     setDeleteConfirm({ type: 'question' })
   }
 
-  const handleReplyLike = async (replyId: string) => {
+  const handleReplyLike = (replyId: string) => {
     if (!session?.user?.id) {
       setMessagePanel({
         title: '需要登录',
@@ -149,16 +147,14 @@ export default function QuestionDetailPage({
       return
     }
     if (!question) return
-
-    try {
-      await repliesApi.toggleLike(question.id, replyId)
-      // 重新加载问题以更新点赞状态
-      await loadQuestion()
-    } catch (error: any) {
-      setMessagePanel({
-        title: '操作失败',
-        message: error.message || '点赞失败，请稍后重试',
-      })
+    
+    const updated = toggleReplyLike(question.id, replyId, session.user.id)
+    if (updated) {
+      // 重新加载问题数据以确保嵌套回复的更新正确反映
+      const reloaded = getQuestionById(question.id)
+      if (reloaded) {
+        setQuestion(reloaded)
+      }
     }
   }
 
@@ -186,23 +182,27 @@ export default function QuestionDetailPage({
     if (!question || !replyContent.trim()) return
 
     setIsSubmitting(true)
+    
+    const newReply = addReply(question.id, {
+      replier: isReplyAnonymous ? '匿名用户' : (session.user.nickname || session.user.name || session.user.email || '匿名用户'),
+      replierId: isReplyAnonymous ? undefined : session.user.id,
+      date: new Date().toISOString(),
+      content: replyContent.trim(),
+      isAlumni: session.user.role === 'alumni',
+      isAnonymous: isReplyAnonymous,
+    })
 
-    try {
-      const updated = await repliesApi.create(question.id, {
-        content: replyContent.trim(),
-        isAnonymous: isReplyAnonymous,
-      })
-      setQuestion(updated)
+    if (newReply) {
+      // 重新加载问题数据
+      const updated = getQuestionById(question.id)
+      if (updated) {
+        setQuestion(updated)
+      }
       setReplyContent('')
       setIsReplyAnonymous(false)
-    } catch (error: any) {
-      setMessagePanel({
-        title: '发表失败',
-        message: error.message || '发表回复失败，请稍后重试',
-      })
-    } finally {
-      setIsSubmitting(false)
     }
+    
+    setIsSubmitting(false)
   }
 
   const handleSubmitReplyToReply = async (parentReplyId: string, parentReplier: string) => {
@@ -223,25 +223,29 @@ export default function QuestionDetailPage({
     if (!question || !replyingContent.trim()) return
 
     setIsSubmitting(true)
+    
+    const newReply = addReply(question.id, {
+      replier: replyingAnonymous ? '匿名用户' : (session.user.nickname || session.user.name || session.user.email || '匿名用户'),
+      replierId: replyingAnonymous ? undefined : session.user.id,
+      date: new Date().toISOString(),
+      content: `回复${parentReplier}:${replyingContent.trim()}`,
+      isAlumni: session.user.role === 'alumni',
+      isAnonymous: replyingAnonymous,
+      parentReplyId: parentReplyId,
+    })
 
-    try {
-      const updated = await repliesApi.create(question.id, {
-        content: `回复${parentReplier}:${replyingContent.trim()}`,
-        isAnonymous: replyingAnonymous,
-        parentReplyId: parentReplyId,
-      })
-      setQuestion(updated)
+    if (newReply) {
+      // 重新加载问题数据
+      const updated = getQuestionById(question.id)
+      if (updated) {
+        setQuestion(updated)
+      }
       setReplyingContent('')
       setReplyingAnonymous(false)
       setReplyingTo(null)
-    } catch (error: any) {
-      setMessagePanel({
-        title: '回复失败',
-        message: error.message || '回复失败，请稍后重试',
-      })
-    } finally {
-      setIsSubmitting(false)
     }
+    
+    setIsSubmitting(false)
   }
 
   if (loading) {
@@ -259,21 +263,22 @@ export default function QuestionDetailPage({
   }
 
   const university = universities.find((u) => u.id === question.universityId)
-  
-  // 检查当前用户是否点赞了问题
   const isQuestionLiked = !!(
-    session?.user?.id && 
-    question.likesRel?.some(like => like.userId === session.user.id)
+    session?.user?.id && question.likedBy?.includes(session.user.id)
   )
-  
-  // 检查当前用户是否点赞了回复
   const isReplyLiked = (reply: Reply) =>
-    !!(session?.user?.id && reply.likesRel?.some(like => like.userId === session.user.id))
+    !!(session?.user?.id && reply.likedBy?.includes(session.user.id))
 
-  const questionUserDetail = question.asker
+  const questionUserDetail =
+    !question.isAnonymous && question.askerId
+      ? getUserById(question.askerId)
+      : undefined
   const questionAcademicLabel = getUserAcademicLabel(questionUserDetail)
 
-  // 返回链接逻辑
+  // 返回链接逻辑：
+  // - 如果有 majorId：优先回到对应专业论坛
+  // - 否则如果有 universityId：回到该大学的讨论区
+  // - 否则：回到总问答论坛
   let backHref = '/forum'
   let backLabel = '返回问答论坛'
 
@@ -285,15 +290,19 @@ export default function QuestionDetailPage({
     backLabel = university ? `返回${university.name}讨论区` : '返回学校讨论区'
   }
 
-  const handleConfirmDelete = async () => {
+  const handleConfirmDelete = () => {
     if (!deleteConfirm || !question || !session?.user?.id) {
       setDeleteConfirm(null)
       return
     }
 
-    try {
-      if (deleteConfirm.type === 'question') {
-        await questionsApi.delete(question.id)
+    if (deleteConfirm.type === 'question') {
+      const success = deleteQuestion(
+        question.id,
+        isAdmin ? 'admin' : session.user.id,
+        { isAdmin }
+      )
+      if (success) {
         let backHref = '/forum'
         if (question.majorId) {
           backHref = `/majors/${question.majorId}/forum`
@@ -301,62 +310,59 @@ export default function QuestionDetailPage({
           backHref = `/universities/${question.universityId}/forum`
         }
         router.push(backHref)
-      } else if (deleteConfirm.type === 'reply' && deleteConfirm.replyId) {
-        await repliesApi.delete(question.id, deleteConfirm.replyId)
-        await loadQuestion()
+      } else {
+        setMessagePanel({
+          title: '删除失败',
+          message: '只能删除自己发布的内容。',
+        })
       }
-    } catch (error: any) {
-      setMessagePanel({
-        title: '删除失败',
-        message: error.message || '删除失败，请稍后重试',
-      })
+    } else if (deleteConfirm.type === 'reply' && deleteConfirm.replyId) {
+      const deleted = deleteReply(
+        question.id,
+        deleteConfirm.replyId,
+        isAdmin ? 'admin' : session.user.id,
+        { isAdmin }
+      )
+      if (deleted) {
+        const updated = getQuestionById(question.id)
+        if (updated) {
+          setQuestion(updated)
+        }
+      } else {
+        setMessagePanel({
+          title: '删除失败',
+          message: '只能删除自己发布的回复。',
+        })
+      }
     }
 
     setDeleteConfirm(null)
   }
 
-  const handleReportSubmit = async (e: React.FormEvent) => {
+  const handleReportSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!session?.user || !reportingTarget) return
 
-    try {
-      await reportsApi.create({
-        type: reportingTarget.type,
-        targetId: reportingTarget.id,
-        targetTitle: reportingTarget.title,
-        targetContent: reportingTarget.content,
-        reason: reportReason,
-        questionId: question.id,
-      })
+    const report = addReport({
+      type: reportingTarget.type,
+      targetId: reportingTarget.id,
+      targetTitle: reportingTarget.title,
+      targetContent: reportingTarget.content,
+      reason: reportReason,
+      reporterId: session.user.id,
+      reporterName: session.user.nickname || session.user.name || session.user.email || '匿名用户',
+      questionId: question.id,
+    })
 
+    if (report) {
       setMessagePanel({
         title: '举报已提交',
         message: '感谢您的反馈，管理员将尽快处理违规内容。',
       })
       setReportingTarget(null)
       setReportReason('')
-    } catch (error: any) {
-      setMessagePanel({
-        title: '举报失败',
-        message: error.message || '提交举报失败，请稍后重试',
-      })
     }
   }
-
-  // 将回复列表转换为嵌套结构
-  const buildReplyTree = (replies: Reply[]): Reply[] => {
-    const topLevelReplies = replies.filter(r => !r.parentReplyId)
-    const addChildren = (reply: Reply): Reply => {
-      const children = replies.filter(r => r.parentReplyId === reply.id)
-      return {
-        ...reply,
-        children: children.map(addChildren),
-      }
-    }
-    return topLevelReplies.map(addChildren)
-  }
-
-  const replyTree = question.replies ? buildReplyTree(question.replies) : []
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f5f7ff] via-[#eef2ff] to-[#e0f7ff] py-12 px-4 relative overflow-hidden">
@@ -377,7 +383,6 @@ export default function QuestionDetailPage({
           }}
         />
       </div>
-      
       {/* 顶部提示面板 */}
       {messagePanel && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -400,7 +405,6 @@ export default function QuestionDetailPage({
           </div>
         </div>
       )}
-      
       {/* 删除确认面板 */}
       {deleteConfirm && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -432,7 +436,6 @@ export default function QuestionDetailPage({
           </div>
         </div>
       )}
-      
       {/* 举报弹窗 */}
       {reportingTarget && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -487,7 +490,7 @@ export default function QuestionDetailPage({
               </span>
               <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-medium text-slate-400">
                 <MessageCircle className="w-3 h-3" />
-                {question.repliesCount || 0} 条回复
+                {question.replies} 条回复
               </span>
             </div>
             <h1 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 leading-snug">
@@ -511,7 +514,7 @@ export default function QuestionDetailPage({
                       alt={
                         questionUserDetail.nickname ||
                         questionUserDetail.name ||
-                        question.askerName
+                        question.asker
                       }
                       className="h-8 w-8 rounded-full object-cover border border-primary-100 shadow-sm"
                     />
@@ -525,7 +528,7 @@ export default function QuestionDetailPage({
                       {(
                         questionUserDetail.nickname ||
                         questionUserDetail.name ||
-                        question.askerName ||
+                        question.asker ||
                         'U'
                       ).charAt(0)}
                     </div>
@@ -539,14 +542,14 @@ export default function QuestionDetailPage({
                 <div className="flex items-center gap-2 flex-wrap">
                   {question.isAnonymous || !question.askerId ? (
                     <span className="font-medium">
-                      {question.isAnonymous ? '匿名用户' : question.askerName}
+                      {question.isAnonymous ? '匿名用户' : question.asker}
                     </span>
                   ) : (
                     <Link
                       href={`/users/${question.askerId}`}
                       className="font-medium text-slate-900 hover:text-primary-600 transition-colors"
                     >
-                      {question.askerName}
+                      {question.asker}
                     </Link>
                   )}
                   {questionAcademicLabel && (
@@ -637,16 +640,16 @@ export default function QuestionDetailPage({
           <div className="flex items-baseline justify-between mb-4">
             <h2 className="text-xl md:text-2xl font-semibold text-slate-900 flex items-center">
               <MessageCircle className="w-6 h-6 mr-2 text-primary-600" />
-              回复 ({question.repliesCount || 0})
+              回复 ({question.replies})
             </h2>
             <span className="hidden md:inline text-xs text-slate-500">
               与学长学姐或同学交流想法，让更多人看到你的观点
             </span>
           </div>
 
-          {replyTree.length > 0 ? (
+          {question.replies > 0 ? (
             <div className="space-y-5">
-              {replyTree.map((reply) => (
+              {question.replyList?.filter((r) => !r.parentReplyId).map((reply) => (
                 <ReplyItem
                   key={reply.id}
                   reply={reply}
@@ -772,7 +775,10 @@ function ReplyItem({
 }) {
   const liked = isReplyLiked(reply)
   const isReplying = replyingTo?.replyId === reply.id
-  const userDetail = reply.replier
+  const userDetail =
+    !reply.isAnonymous && reply.replierId
+      ? getUserById(reply.replierId)
+      : undefined
   const academicLabel = getUserAcademicLabel(userDetail)
 
   return (
@@ -803,7 +809,7 @@ function ReplyItem({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={userDetail.avatarUrl}
-                  alt={userDetail.nickname || userDetail.name || reply.replierName || ''}
+                  alt={userDetail.nickname || userDetail.name || reply.replier}
                   className="w-8 h-8 rounded-full object-cover border border-primary-100"
                 />
               </Link>
@@ -816,7 +822,7 @@ function ReplyItem({
                   {(
                     userDetail?.nickname ||
                     userDetail?.name ||
-                    reply.replierName ||
+                    reply.replier ||
                     'U'
                   ).charAt(0)}
                 </div>
@@ -826,14 +832,14 @@ function ReplyItem({
             <div className="flex items-center space-x-2 flex-wrap">
               {reply.isAnonymous || !reply.replierId ? (
                 <span className="font-semibold text-gray-800">
-                  {reply.isAnonymous ? '匿名用户' : reply.replierName}
+                  {reply.isAnonymous ? '匿名用户' : reply.replier}
                 </span>
               ) : (
                 <Link
                   href={`/users/${reply.replierId}`}
                   className="font-semibold text-gray-800 hover:text-primary-600 transition-colors"
                 >
-                  {reply.replierName || userDetail?.nickname || userDetail?.name}
+                  {reply.replier}
                 </Link>
               )}
               {academicLabel && (
@@ -844,7 +850,7 @@ function ReplyItem({
               <span className="text-sm text-gray-500">
                 · {formatRelativeTime(reply.date)}
               </span>
-              {!reply.isAnonymous && userDetail?.role === 'alumni' && (
+              {!reply.isAnonymous && reply.isAlumni && (
                 <span className="bg-primary-100 text-primary-700 text-xs px-2 py-1 rounded">
                   学长/学姐
                 </span>
@@ -873,7 +879,7 @@ function ReplyItem({
                 </button>
                 <button
                   onClick={() =>
-                    setReplyingTo(isReplying ? null : { replyId: reply.id, replier: reply.replierName || '' })
+                    setReplyingTo(isReplying ? null : { replyId: reply.id, replier: reply.replier })
                   }
                   className="text-sm text-primary-600 hover:text-primary-700 px-2 py-1 rounded hover:bg-primary-50 transition-colors"
                 >
@@ -893,12 +899,12 @@ function ReplyItem({
           </div>
         </div>
         <p className="text-gray-700 leading-relaxed mb-3 text-sm md:text-base">{reply.content}</p>
-
+        
         {/* 回复输入框 */}
         {isReplying && (
           <div className="mt-3 mb-4 p-4 bg-gray-50 rounded-lg">
             <textarea
-              placeholder={`回复${reply.replierName || ''}...`}
+              placeholder={`回复${reply.replier}...`}
               value={replyingContent}
               onChange={(e) => setReplyingContent(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent mb-3"
@@ -926,7 +932,7 @@ function ReplyItem({
                   取消
                 </button>
                 <button
-                  onClick={() => onReplyToReply(reply.id, reply.replierName || '')}
+                  onClick={() => onReplyToReply(reply.id, reply.replier)}
                   disabled={isSubmitting || !replyingContent.trim()}
                   className="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
@@ -937,11 +943,11 @@ function ReplyItem({
           </div>
         )}
       </div>
-
+      
       {/* 递归显示子回复 */}
-      {reply.children && reply.children.length > 0 && (
+      {reply.subReplies && reply.subReplies.length > 0 && (
         <div className="mt-4">
-          {reply.children.map((subReply) => (
+          {reply.subReplies.map((subReply) => (
             <ReplyItem
               key={subReply.id}
               reply={subReply}
@@ -968,4 +974,5 @@ function ReplyItem({
     </div>
   )
 }
+
 

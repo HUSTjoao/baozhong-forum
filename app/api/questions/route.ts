@@ -1,29 +1,51 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
-import { addQuestion } from '@/data/questions'
+import { prisma } from '@/lib/prisma'
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions)
 
   if (!session?.user?.id) {
-    return NextResponse.json({ error: '请先登录后再发布内容。' }, { status: 401 })
+    return NextResponse.json(
+      { error: '请先登录后再发布内容。' },
+      { status: 401 },
+    )
   }
 
   const body = await req.json().catch(() => null)
   if (!body) {
-    return NextResponse.json({ error: '请求数据格式错误。' }, { status: 400 })
+    return NextResponse.json(
+      { error: '请求数据格式错误。' },
+      { status: 400 },
+    )
   }
 
   const title = (body.title ?? '').toString().trim()
   const content = (body.content ?? '').toString().trim()
   const isAnonymous = !!body.isAnonymous
-  const universityId = (body.universityId ?? '').toString()
-  const majorId = body.majorId ? body.majorId.toString() : undefined
-  const category = body.category ? body.category.toString() : undefined
+  const universityId = (body.universityId ?? '').toString() || null
+  const majorId = body.majorId ? body.majorId.toString() : null
+  const category = body.category ? body.category.toString() : null
 
   if (!title || !content) {
-    return NextResponse.json({ error: '请填写完整的标题和内容。' }, { status: 400 })
+    return NextResponse.json(
+      { error: '请填写完整的标题和内容。' },
+      { status: 400 },
+    )
+  }
+
+  // 检查是否被禁言
+  const dbUser = await prisma.user.findUnique({
+    where: { id: session.user.id as string },
+    select: { isMuted: true },
+  })
+
+  if (dbUser?.isMuted) {
+    return NextResponse.json(
+      { error: '你已被管理员禁言，暂时无法发布内容。' },
+      { status: 403 },
+    )
   }
 
   const askerName = isAnonymous
@@ -33,27 +55,28 @@ export async function POST(req: NextRequest) {
       (session.user.email as string) ||
       '匿名用户'
 
-  const created = addQuestion({
-    title,
-    content,
-    asker: askerName,
-    askerId: isAnonymous ? undefined : (session.user.id as string),
-    date: new Date().toISOString(),
-    universityId,
-    majorId,
-    category,
-    isAnonymous,
-  })
+  try {
+    const created = await prisma.question.create({
+      data: {
+        id: `q_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,
+        title,
+        content,
+        askerName,
+        isAnonymous,
+        universityId: universityId || null,
+        majorId,
+        category,
+        askerId: isAnonymous ? null : (session.user.id as string),
+      },
+    })
 
-  if (!created) {
-    // data/questions 中返回 null 代表被禁言
+    return NextResponse.json({ question: created }, { status: 201 })
+  } catch (error) {
+    console.error('[questions.create] error:', error)
     return NextResponse.json(
-      { error: '你已被管理员禁言，暂时无法发布内容。' },
-      { status: 403 }
+      { error: '发布问题失败，请稍后重试。' },
+      { status: 500 },
     )
   }
-
-  return NextResponse.json({ question: created }, { status: 201 })
 }
-
 

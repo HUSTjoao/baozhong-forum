@@ -17,13 +17,25 @@ import {
   Trash2,
   Plus,
 } from 'lucide-react'
-import { alumniMessagesApi, type AlumniMessage } from '@/lib/api-client'
+import {
+  getUsers,
+  addAlumniMessage,
+  deleteAlumniMessage,
+  toggleAlumniMessageLike,
+  getAllAlumniMessages,
+  getUserById,
+  saveUsers,
+} from '@/data/users'
 import { getAllUniversities } from '@/data/universities'
+import type { User, AlumniMessage } from '@/data/users'
 import { AlertDialog, ConfirmDialog } from '@/components/Dialog'
+
+// 寄语项类型（包含用户信息）
+type MessageItem = AlumniMessage & { user: User }
 
 export default function MessagesPage() {
   const { data: session } = useSession()
-  const [messages, setMessages] = useState<AlumniMessage[]>([])
+  const [messages, setMessages] = useState<MessageItem[]>([])
   const [universities, setUniversities] = useState<any[]>([])
   const [isWriting, setIsWriting] = useState(false)
   const [messageText, setMessageText] = useState('')
@@ -36,30 +48,68 @@ export default function MessagesPage() {
   const [alertMessage, setAlertMessage] = useState<string | undefined>('')
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null)
-  
   // 寄语分页：每页最多显示 10 条
   const itemsPerPage = 10
 
   // 当前用户是否被禁言
-  const isMutedUser = !!session?.user?.isMuted
+  const currentUser =
+    typeof window !== 'undefined' && session?.user?.id
+      ? getUserById(session.user.id)
+      : undefined
+  const isMutedUser = !!currentUser?.isMuted
+
+  // 确保当前登录用户在本地用户列表中存在一份记录
+  // 这样即使是在新设备上第一次登录，也可以正常发布寄语和更新头像
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!session?.user?.id) return
+
+    const existing = getUserById(session.user.id)
+    if (existing) return
+
+    const allUsers = getUsers()
+
+    const newUser: User = {
+      id: session.user.id,
+      email: session.user.email || '',
+      name:
+        session.user.name ||
+        (session.user as any).username ||
+        session.user.email ||
+        '未命名用户',
+      username: (session.user as any).username,
+      // 本地这份 user 记录不会参与登录校验，所以可以留空密码
+      password: '',
+      role: (session.user as any).role,
+      universityId: (session.user as any).universityId,
+      graduationYear: (session.user as any).graduationYear,
+      major: (session.user as any).major,
+      gender: (session.user as any).gender,
+      avatarUrl: (session.user as any).avatarUrl,
+      nickname: (session.user as any).nickname,
+      bio: (session.user as any).bio,
+      createdAt: new Date().toISOString(),
+    }
+
+    allUsers.push(newUser)
+    saveUsers(allUsers)
+  }, [session?.user])
 
   useEffect(() => {
     loadMessages()
     setUniversities(getAllUniversities())
-  }, [])
-
-  // 更新已点赞的寄语集合
-  useEffect(() => {
-    if (session?.user?.id && messages.length > 0) {
+    // 初始化已点赞的寄语
+    if (session?.user?.id) {
+      const allMessages = getAllAlumniMessages()
       const likedSet = new Set<string>()
-      messages.forEach(msg => {
-        if (msg.likesRel?.some(like => like.userId === session.user.id)) {
+      allMessages.forEach(msg => {
+        if (msg.likedBy?.includes(session.user.id)) {
           likedSet.add(msg.id)
         }
       })
       setLikedMessages(likedSet)
     }
-  }, [session?.user?.id, messages])
+  }, [session?.user?.id])
 
   const showAlert = (title: string, message?: string) => {
     setAlertTitle(title)
@@ -67,7 +117,7 @@ export default function MessagesPage() {
     setAlertOpen(true)
   }
 
-  // 统一判断：当前登录用户是否可视为"学长/学姐"
+  // 统一判断：当前登录用户是否可视为“学长/学姐”
   const isSessionUserAlumni = () => {
     if (!session?.user) return false
 
@@ -91,14 +141,9 @@ export default function MessagesPage() {
     return false
   }
 
-  const loadMessages = async () => {
-    try {
-      const data = await alumniMessagesApi.list()
-      setMessages(data)
-    } catch (error: any) {
-      console.error('加载寄语失败:', error)
-      showAlert('加载失败', error.message || '加载寄语列表失败')
-    }
+  const loadMessages = () => {
+    const allMessages = getAllAlumniMessages()
+    setMessages(allMessages)
   }
 
   // 分页计算
@@ -137,13 +182,20 @@ export default function MessagesPage() {
     setIsSubmitting(true)
 
     try {
-      await alumniMessagesApi.create(messageText.trim())
-      await loadMessages()
+      const newMessage = addAlumniMessage(session.user.id, messageText.trim())
+
+      if (!newMessage) {
+        showAlert('保存失败', '用户信息不存在，请重新登录后再试')
+        return
+      }
+
+      // 触发页面刷新以更新显示
+      loadMessages()
       setIsWriting(false)
       setMessageText('')
       showAlert('寄语发布成功', '你的寄语已经展示在下方列表中啦～')
-    } catch (error: any) {
-      showAlert('保存失败', error.message || '请稍后重试')
+    } catch (error) {
+      showAlert('保存失败', '请稍后重试')
     } finally {
       setIsSubmitting(false)
     }
@@ -160,23 +212,24 @@ export default function MessagesPage() {
     setConfirmOpen(true)
   }
 
-  const handleConfirmDelete = async () => {
+  const handleConfirmDelete = () => {
     if (!pendingDeleteId || !session?.user?.id) {
       setConfirmOpen(false)
       setPendingDeleteId(null)
       return
     }
 
-    try {
-      await alumniMessagesApi.delete(pendingDeleteId)
-      await loadMessages()
+    const success = deleteAlumniMessage(pendingDeleteId, session.user.id)
+
+    if (success) {
+      loadMessages()
       // 更新点赞状态
       const newLikedSet = new Set(likedMessages)
       newLikedSet.delete(pendingDeleteId)
       setLikedMessages(newLikedSet)
       showAlert('寄语已删除', '这条寄语已经从列表中移除。')
-    } catch (error: any) {
-      showAlert('删除失败', error.message || '删除失败，请稍后重试')
+    } else {
+      showAlert('删除失败', '只能删除自己的寄语')
     }
 
     setConfirmOpen(false)
@@ -210,7 +263,7 @@ export default function MessagesPage() {
   }
 
   // 处理点赞
-  const handleLike = async (messageId: string) => {
+  const handleLike = (messageId: string) => {
     if (!session?.user?.id) {
       showAlert('提示', '请先登录后再点赞')
       return
@@ -221,12 +274,11 @@ export default function MessagesPage() {
       return
     }
 
-    try {
-      const updated = await alumniMessagesApi.toggleLike(messageId)
-      
+    const updated = toggleAlumniMessageLike(messageId, session.user.id)
+    if (updated) {
       // 更新本地状态
       const newLikedSet = new Set(likedMessages)
-      if (updated.likesRel?.some(like => like.userId === session.user.id)) {
+      if (updated.likedBy?.includes(session.user.id)) {
         newLikedSet.add(messageId)
       } else {
         newLikedSet.delete(messageId)
@@ -234,9 +286,9 @@ export default function MessagesPage() {
       setLikedMessages(newLikedSet)
 
       // 更新消息列表中的点赞数
-      setMessages(prev => prev.map(msg =>
-        msg.id === messageId
-          ? { ...msg, likes: updated.likes, likesRel: updated.likesRel }
+      setMessages(prev => prev.map(msg => 
+        msg.id === messageId 
+          ? { ...msg, likes: updated.likes, likedBy: updated.likedBy }
           : msg
       ))
 
@@ -249,8 +301,6 @@ export default function MessagesPage() {
           return newSet
         })
       }, 600)
-    } catch (error: any) {
-      showAlert('点赞失败', error.message || '请稍后重试')
     }
   }
 
@@ -260,7 +310,8 @@ export default function MessagesPage() {
     return likedMessages.has(messageId)
   }
 
-  // 气泡颜色数组
+
+  // 气泡颜色数组 - 积极向上的颜色（扩展更多颜色）
   const bubbleColors = [
     { bg: 'bg-gradient-to-br from-yellow-400 to-orange-500', shadow: 'shadow-yellow-200' },
     { bg: 'bg-gradient-to-br from-pink-400 to-rose-500', shadow: 'shadow-pink-200' },
@@ -280,6 +331,7 @@ export default function MessagesPage() {
     { bg: 'bg-gradient-to-br from-sky-400 to-blue-500', shadow: 'shadow-sky-200' },
   ]
 
+  // 获取气泡颜色（基于寄语索引，确保每条寄语都有不同的颜色）
   const getBubbleColor = (index: number) => {
     return bubbleColors[index % bubbleColors.length]
   }
@@ -300,8 +352,9 @@ export default function MessagesPage() {
         onCancel={handleCancelDelete}
       />
 
-      {/* 背景装饰元素 */}
+      {/* 背景装饰元素 - 积极向上的元素 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* 星星装饰 */}
         <div className="absolute top-20 left-10 text-yellow-300/30 animate-twinkle">
           <Star className="w-8 h-8" />
         </div>
@@ -311,12 +364,18 @@ export default function MessagesPage() {
         <div className="absolute bottom-32 left-1/4 text-amber-300/30 animate-twinkle" style={{ animationDelay: '2s' }}>
           <Star className="w-7 h-7" />
         </div>
+        
+        {/* 太阳装饰 */}
         <div className="absolute top-60 right-1/4 text-orange-300/20 animate-pulse-slow">
           <Sun className="w-12 h-12" />
         </div>
+        
+        {/* 闪光装饰 */}
         <div className="absolute bottom-20 right-16 text-blue-300/30 animate-pulse-slow" style={{ animationDelay: '1.5s' }}>
           <Sparkles className="w-10 h-10" />
         </div>
+        
+        {/* 闪电装饰 */}
         <div className="absolute top-1/3 left-1/3 text-purple-300/25 animate-pulse-slow" style={{ animationDelay: '2.5s' }}>
           <Zap className="w-9 h-9" />
         </div>
@@ -352,7 +411,7 @@ export default function MessagesPage() {
             ) : (
               <div className="inline-flex items-center bg-gradient-to-r from-gray-400 to-gray-500 text-white px-8 py-4 rounded-full font-bold text-lg cursor-not-allowed opacity-75">
                 <Pencil className="w-5 h-5 mr-2" />
-                仅学长/学姐可留言（请在注册/资料中选择"学长/学姐"或正确填写毕业年份）
+                仅学长/学姐可留言（请在注册/资料中选择“学长/学姐”或正确填写毕业年份）
               </div>
             )
           ) : (
@@ -366,7 +425,7 @@ export default function MessagesPage() {
           )}
         </div>
 
-        {/* 写寄语表单 */}
+        {/* 写寄语表单 - 仅学长学姐可见 */}
         {isSessionUserAlumni() && isWriting && (
           <div className="bg-white rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.05)] p-7 mb-8">
             <h3 className="text-xl font-bold text-gray-800 mb-4">写下你想对学弟学妹说的话</h3>
@@ -418,7 +477,7 @@ export default function MessagesPage() {
           </div>
         )}
 
-        {/* 寄语列表 */}
+        {/* 寄语列表 - 气泡形式 */}
         {messages.length === 0 ? (
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-12 text-center">
             <MessageCircle className="w-20 h-20 text-gray-300 mx-auto mb-4" />
@@ -431,130 +490,133 @@ export default function MessagesPage() {
           <>
             <div className="space-y-6 pb-8">
               {paginatedMessages.map((messageItem, index) => {
-                const globalIndex = startIndex + index
-                const bubbleColor = getBubbleColor(globalIndex)
-                const isCurrentUser = session?.user?.id === messageItem.userId
+              // 使用全局索引（考虑分页）来确保每条寄语都有不同的颜色
+              const globalIndex = startIndex + index
+              const bubbleColor = getBubbleColor(globalIndex)
+              const isCurrentUser = session?.user?.id === messageItem.userId
+              
+              return (
+                <div
+                  key={messageItem.id}
+                  className="flex items-start gap-4 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* 头像 */}
+                  <Link href={`/users/${messageItem.user.id}`} className="flex-shrink-0 hover:opacity-80 transition-opacity">
+                    {messageItem.user.avatarUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={messageItem.user.avatarUrl}
+                        alt={messageItem.user.nickname || messageItem.user.name}
+                        className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg cursor-pointer"
+                      />
+                    ) : (
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white font-bold shadow-lg cursor-pointer`}>
+                        {(messageItem.user.nickname || messageItem.user.name || 'A').charAt(0)}
+                      </div>
+                    )}
+                  </Link>
 
-                return (
-                  <div
-                    key={messageItem.id}
-                    className="flex items-start gap-4 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {/* 头像 */}
-                    <Link href={`/users/${messageItem.user.id}`} className="flex-shrink-0 hover:opacity-80 transition-opacity">
-                      {messageItem.user.avatarUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={messageItem.user.avatarUrl}
-                          alt={messageItem.user.nickname || messageItem.user.name}
-                          className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg cursor-pointer"
-                        />
-                      ) : (
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white font-bold shadow-lg cursor-pointer`}>
-                          {(messageItem.user.nickname || messageItem.user.name || 'A').charAt(0)}
-                        </div>
-                      )}
-                    </Link>
-
-                    {/* 气泡 */}
-                    <div className="flex-1 min-w-0">
-                      <div className={`${bubbleColor.bg} ${bubbleColor.shadow} rounded-3xl rounded-tl-none px-6 py-5 shadow-xl relative group`}>
-                        {/* 气泡小尾巴 */}
-                        <div className={`absolute -left-3 top-0 ${bubbleColor.bg} w-6 h-6`} style={{
-                          clipPath: 'polygon(0 0, 100% 0, 0 100%)'
-                        }}></div>
-
-                        {/* 用户信息和删除按钮 */}
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center gap-2">
-                            <span className="font-bold text-white text-lg">
-                              {messageItem.user.nickname || messageItem.user.name}
-                            </span>
-                            {isCurrentUser && (
-                              <span className="bg-white/30 text-white text-xs px-2 py-0.5 rounded-full font-medium">
-                                {formatGraduationYear(messageItem.user.graduationYear) || '我的'}
-                              </span>
-                            )}
-                            {getUniversityName(messageItem.user.universityId) !== '未指定' && (
-                              <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <GraduationCap className="w-3 h-3" />
-                                {getUniversityName(messageItem.user.universityId)}
-                              </span>
-                            )}
-                          </div>
+                  {/* 气泡 */}
+                  <div className="flex-1 min-w-0">
+                    <div className={`${bubbleColor.bg} ${bubbleColor.shadow} rounded-3xl rounded-tl-none px-6 py-5 shadow-xl relative group`}>
+                      {/* 气泡小尾巴 */}
+                      <div className={`absolute -left-3 top-0 ${bubbleColor.bg} w-6 h-6`} style={{
+                        clipPath: 'polygon(0 0, 100% 0, 0 100%)'
+                      }}></div>
+                      
+                      {/* 用户信息和删除按钮 */}
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-white text-lg">
+                            {messageItem.user.nickname || messageItem.user.name}
+                          </span>
                           {isCurrentUser && (
-                            <button
-                              onClick={(e) => {
-                                e.preventDefault()
-                                e.stopPropagation()
-                                requestDeleteMessage(messageItem.id)
-                              }}
-                              className="text-white/70 hover:text-white hover:bg-white/20 rounded-full p-1.5 transition-all duration-200"
-                              title="删除这条寄语"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </button>
+                            <span className="bg-white/30 text-white text-xs px-2 py-0.5 rounded-full font-medium">
+                              {formatGraduationYear(messageItem.user.graduationYear) || '我的'}
+                            </span>
+                          )}
+                          {getUniversityName(messageItem.user.universityId) !== '未指定' && (
+                            <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <GraduationCap className="w-3 h-3" />
+                              {getUniversityName(messageItem.user.universityId)}
+                            </span>
                           )}
                         </div>
-
-                        {/* 寄语内容 */}
-                        <p className="text-white leading-relaxed whitespace-pre-wrap text-base font-medium">
-                          {messageItem.content}
-                        </p>
-
-                        {/* 底部信息 */}
-                        <div className="mt-4 pt-3 border-t border-white/20 flex items-center justify-between">
-                          <div className="flex items-center gap-3 text-white/80 text-xs">
-                            {messageItem.user.graduationYear && (
-                              <span className="flex items-center gap-1">
-                                <Star className="w-3 h-3" />
-                                {formatGraduationYear(messageItem.user.graduationYear)}
-                              </span>
-                            )}
-                            {messageItem.user.major && (
-                              <span>{messageItem.user.major}</span>
-                            )}
-                            <span className="text-white/60">
-                              {new Date(messageItem.createdAt).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })}
+                        {/* 删除按钮 - 仅自己可见 */}
+                        {isCurrentUser && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  requestDeleteMessage(messageItem.id)
+                }}
+                className="text-white/70 hover:text-white hover:bg-white/20 rounded-full p-1.5 transition-all duration-200"
+                title="删除这条寄语"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+                        )}
+                      </div>
+                      
+                      {/* 寄语内容 */}
+                      <p className="text-white leading-relaxed whitespace-pre-wrap text-base font-medium">
+                        {messageItem.content}
+                      </p>
+                      
+                      {/* 底部信息 */}
+                      <div className="mt-4 pt-3 border-t border-white/20 flex items-center justify-between">
+                        <div className="flex items-center gap-3 text-white/80 text-xs">
+                          {messageItem.user.graduationYear && (
+                            <span className="flex items-center gap-1">
+                              <Star className="w-3 h-3" />
+                              {formatGraduationYear(messageItem.user.graduationYear)}
                             </span>
-                          </div>
-
-                          {/* 点赞按钮 */}
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault()
-                              e.stopPropagation()
-                              handleLike(messageItem.id)
-                            }}
-                            className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 relative ${
-                              isLiked(messageItem.id)
-                                ? 'bg-white/30 text-white hover:bg-white/40'
-                                : 'bg-white/20 text-white/80 hover:bg-white/30'
-                            } ${animatingLikes.has(messageItem.id) ? 'animate-bounce scale-110' : ''}`}
-                          >
-                            <Heart
-                              className={`w-4 h-4 transition-all duration-300 ${
-                                isLiked(messageItem.id)
-                                  ? 'fill-current text-red-300 scale-110'
-                                  : ''
-                              } ${animatingLikes.has(messageItem.id) ? 'scale-150' : ''}`}
-                            />
-                            <span className="text-sm font-medium">
-                              {messageItem.likes || 0}
-                            </span>
-                            {animatingLikes.has(messageItem.id) && (
-                              <span className="absolute -top-2 -right-2 text-red-400 text-xl animate-ping">❤️</span>
-                            )}
-                          </button>
+                          )}
+                          {messageItem.user.major && (
+                            <span>{messageItem.user.major}</span>
+                          )}
+                          <span className="text-white/60">
+                            {new Date(messageItem.createdAt).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })}
+                          </span>
                         </div>
+                        
+                        {/* 点赞按钮 */}
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            handleLike(messageItem.id)
+                          }}
+                          className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 relative ${
+                            isLiked(messageItem.id)
+                              ? 'bg-white/30 text-white hover:bg-white/40'
+                              : 'bg-white/20 text-white/80 hover:bg-white/30'
+                          } ${animatingLikes.has(messageItem.id) ? 'animate-bounce scale-110' : ''}`}
+                        >
+                          <Heart 
+                            className={`w-4 h-4 transition-all duration-300 ${
+                              isLiked(messageItem.id) 
+                                ? 'fill-current text-red-300 scale-110' 
+                                : ''
+                            } ${animatingLikes.has(messageItem.id) ? 'scale-150' : ''}`}
+                          />
+                          <span className="text-sm font-medium">
+                            {messageItem.likes || 0}
+                          </span>
+                          {/* 点赞特效 - 爱心飘出 */}
+                          {animatingLikes.has(messageItem.id) && (
+                            <span className="absolute -top-2 -right-2 text-red-400 text-xl animate-ping">❤️</span>
+                          )}
+                        </button>
                       </div>
                     </div>
                   </div>
-                )
+                </div>
+              )
               })}
             </div>
-
+            
             {/* 分页控件 */}
             {totalPages > 1 && (
               <div className="mt-12 mb-8 flex flex-col items-center gap-4">
@@ -571,12 +633,12 @@ export default function MessagesPage() {
                     <ChevronLeft className="w-4 h-4" />
                     上一页
                   </button>
-
+                  
                   <div className="flex items-center gap-1">
                     {(() => {
                       const pages: (number | string)[] = []
                       const maxVisiblePages = 10
-
+                      
                       if (totalPages <= maxVisiblePages) {
                         for (let i = 1; i <= totalPages; i++) {
                           pages.push(i)
@@ -604,7 +666,7 @@ export default function MessagesPage() {
                           pages.push(totalPages)
                         }
                       }
-
+                      
                       return pages.map((page, idx) => {
                         if (page === '...') {
                           return (
@@ -629,7 +691,7 @@ export default function MessagesPage() {
                       })
                     })()}
                   </div>
-
+                  
                   <button
                     onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                     disabled={currentPage === totalPages}
@@ -643,7 +705,7 @@ export default function MessagesPage() {
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
-
+                
                 {/* 直接跳转到指定页 */}
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <span>跳转到</span>
@@ -669,7 +731,7 @@ export default function MessagesPage() {
           </>
         )}
 
-        {/* 底部提示 */}
+        {/* 底部提示 - 仅对非学长学姐用户显示 */}
         {session?.user?.role !== 'alumni' && (
           <div className="mt-8 bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 rounded-2xl p-6 border-2 border-white/50 shadow-lg backdrop-blur-sm">
             <div className="flex items-start gap-4">
@@ -689,4 +751,3 @@ export default function MessagesPage() {
     </div>
   )
 }
-

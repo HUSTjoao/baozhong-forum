@@ -29,11 +29,12 @@ model User {
   isMuted        Boolean  @default(false)
   createdAt      DateTime @default(now())
 
-  questions      Question[]        @relation("UserQuestions")
-  replies        Reply[]           @relation("UserReplies")
-  alumniMessages AlumniMessage[]
-  questionLikes  QuestionLike[]
-  replyLikes     ReplyLike[]
+  questions            Question[]           @relation("UserQuestions")
+  replies              Reply[]              @relation("UserReplies")
+  alumniMessages       AlumniMessage[]
+  questionLikes        QuestionLike[]
+  replyLikes           ReplyLike[]
+  alumniMessageLikes   AlumniMessageLike[]
 }
 
 model University {
@@ -146,7 +147,20 @@ model AlumniMessage {
   createdAt  DateTime @default(now())
   isApproved Boolean? @default(true)
 
-  user       User @relation(fields: [userId], references: [id])
+  user       User                 @relation(fields: [userId], references: [id])
+  likesRel   AlumniMessageLike[]
+}
+
+model AlumniMessageLike {
+  id        Int      @id @default(autoincrement())
+  messageId String
+  userId    String
+  createdAt DateTime @default(now())
+
+  message   AlumniMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  user      User          @relation(fields: [userId], references: [id])
+
+  @@unique([messageId, userId])
 }
 
 model Report {

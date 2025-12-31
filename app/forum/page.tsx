@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { MessageCircle, User, Clock, Search, Filter, Heart, Pencil, Flame, ChevronLeft, ChevronRight, Trash2 } from 'lucide-react'
-import { getQuestions, toggleQuestionLike, deleteQuestion, formatRelativeTime, type Question } from '@/data/questions'
+import { formatRelativeTime, type Question } from '@/data/questions'
 import { getAllUniversities } from '@/data/universities'
 
 export default function ForumPage() {
@@ -17,8 +17,35 @@ export default function ForumPage() {
   const itemsPerPage = 12
 
   useEffect(() => {
-    setQuestions(getQuestions())
-    setUniversities(getAllUniversities())
+    const load = async () => {
+      try {
+        const res = await fetch('/api/questions/list')
+        const data = await res.json()
+        if (res.ok && Array.isArray(data.questions)) {
+          setQuestions(
+            data.questions.map((q: any) => ({
+              id: q.id,
+              title: q.title,
+              content: q.content,
+              asker: q.askerName,
+              askerId: q.askerId || undefined,
+              date: q.date,
+              universityId: q.universityId || '',
+              replies: q.repliesCount ?? 0,
+              likes: q.likes ?? 0,
+              likedBy: (q.likesRel || []).map((l: any) => l.userId),
+              majorId: q.majorId || undefined,
+              category: q.category || undefined,
+              isAnonymous: q.isAnonymous,
+            })),
+          )
+        }
+        setUniversities(getAllUniversities())
+      } catch (error) {
+        console.error('加载问题列表失败', error)
+      }
+    }
+    load()
   }, [])
 
   const handleLike = (questionId: string) => {
@@ -26,13 +53,32 @@ export default function ForumPage() {
       alert('请先登录')
       return
     }
-    
-    const updated = toggleQuestionLike(questionId, session.user.id)
-    if (updated) {
-      setQuestions((prev) =>
-        prev.map((q) => (q.id === questionId ? updated : q))
-      )
-    }
+
+    fetch(`/api/questions/${questionId}/like`, {
+      method: 'POST',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.question) {
+          const updated = data.question
+          setQuestions((prev) =>
+            prev.map((q) =>
+              q.id === questionId
+                ? {
+                    ...q,
+                    likes: updated.likes ?? 0,
+                    likedBy: (updated.likesRel || []).map(
+                      (l: any) => l.userId,
+                    ),
+                  }
+                : q,
+            ),
+          )
+        }
+      })
+      .catch((err) => {
+        console.error('点赞失败', err)
+      })
   }
 
   const handleDelete = (questionId: string, e: React.MouseEvent) => {
@@ -48,14 +94,22 @@ export default function ForumPage() {
       return
     }
     
-    const success = deleteQuestion(questionId, session.user.id)
-    if (success) {
-      // 从列表中移除该问题
-      setQuestions((prev) => prev.filter((q) => q.id !== questionId))
-      alert('问题已删除')
-    } else {
-      alert('删除失败，只能删除自己发布的问题')
-    }
+    fetch(`/api/questions/${questionId}/delete`, {
+      method: 'POST',
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const data = await res.json().catch(() => null)
+          alert(data?.error || '删除失败')
+          return
+        }
+        setQuestions((prev) => prev.filter((q) => q.id !== questionId))
+        alert('问题已删除')
+      })
+      .catch((err) => {
+        console.error('删除失败', err)
+        alert('删除失败，请稍后重试')
+      })
   }
 
   const filteredQuestions = questions.filter((q) => {

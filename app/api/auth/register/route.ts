@@ -6,15 +6,18 @@ export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
-  // 在构建时跳过执行
+  // 在构建时立即返回，不执行任何代码
   if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })
+    return new NextResponse(JSON.stringify({ error: 'Service unavailable during build' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' },
+    })
   }
 
-  // 动态导入 Prisma，避免在构建时初始化
-  const { prisma } = await import('@/lib/prisma')
-
   try {
+    // 动态导入 Prisma，避免在构建时初始化
+    const { prisma } = await import('@/lib/prisma')
+    
     const body = await request.json()
     const {
       email,

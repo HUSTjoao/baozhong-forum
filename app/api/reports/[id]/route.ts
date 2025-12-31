@@ -1,12 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
-import { prisma } from '@/lib/prisma'
+
+// 确保这个路由是动态的，不在构建时执行
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function PATCH(
   req: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  // 在构建时跳过执行
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })
+  }
+
+  // 动态导入 Prisma，避免在构建时初始化
+  const { prisma } = await import('@/lib/prisma')
+  
   const session = await getServerSession(authOptions)
   if (session?.user?.role !== 'admin') {
     return NextResponse.json(

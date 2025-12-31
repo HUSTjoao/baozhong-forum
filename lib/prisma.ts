@@ -4,10 +4,10 @@ import { PrismaClient } from '@prisma/client'
 const globalForPrisma = global as unknown as { prisma?: PrismaClient }
 
 const createPrismaClient = () => {
+  // Prisma 7.x 默认使用 binary engine，不需要额外配置
+  // 如果遇到 engine type "client" 错误，可能是生成的客户端有问题
   return new PrismaClient({
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
-    // 明确指定使用默认的 binary engine（不是 client engine）
-    // 这样可以避免需要 adapter 或 accelerateUrl
   })
 }
 

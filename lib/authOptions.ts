@@ -1,10 +1,7 @@
 import type { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import {
-  getUserByUsernameOrEmail,
-  verifyPassword,
-  type User,
-} from '@/data/users'
+import { prisma } from '@/lib/prisma'
+import bcrypt from 'bcryptjs'
 
 // 统一的 NextAuth 配置，供 API 路由和 getServerSession 复用
 export const authOptions: NextAuthOptions = {
@@ -22,16 +19,26 @@ export const authOptions: NextAuthOptions = {
         }
 
         try {
-          const user = getUserByUsernameOrEmail(credentials.username.trim())
+          // 从数据库查找用户（通过 username 或 email）
+          const identifier = credentials.username.trim()
+          const user = await prisma.user.findFirst({
+            where: {
+              OR: [
+                { username: identifier },
+                { email: identifier },
+              ],
+            },
+          })
 
           if (!user) {
-            console.log('[NextAuth] User not found:', credentials.username)
+            console.log('[NextAuth] User not found:', identifier)
             return null
           }
 
-          // 验证密码
-          if (!verifyPassword(user, credentials.password)) {
-            console.log('[NextAuth] Password mismatch for user:', credentials.username)
+          // 验证密码（使用 bcrypt）
+          const passwordMatch = await bcrypt.compare(credentials.password, user.password)
+          if (!passwordMatch) {
+            console.log('[NextAuth] Password mismatch for user:', identifier)
             return null
           }
 
@@ -39,7 +46,7 @@ export const authOptions: NextAuthOptions = {
           return {
             id: user.id,
             email: user.email,
-            name: user.name,
+            name: user.nickname || user.username || user.email,
             username: user.username,
             role: user.role,
             universityId: user.universityId,
@@ -49,7 +56,7 @@ export const authOptions: NextAuthOptions = {
             avatarUrl: user.avatarUrl,
             nickname: user.nickname,
             bio: user.bio,
-            alumniMessage: user.alumniMessage,
+            isMuted: user.isMuted,
           } as any
         } catch (error) {
           console.error('[NextAuth] Error in authorize:', error)

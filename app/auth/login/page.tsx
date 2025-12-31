@@ -5,7 +5,7 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { LogIn, Lock, User, Eye, EyeOff, Shield } from 'lucide-react'
-import { getUsers, saveUsers } from '@/data/users'
+// 用户数据已迁移到数据库，不再需要 localStorage
 import { getAllUniversities, type University } from '@/data/universities'
 
 function LoginPageInner() {
@@ -231,39 +231,7 @@ function LoginPageInner() {
         return
       }
 
-      // 同步到本地 users，保持和原来逻辑一致
-      try {
-        const allUsers = getUsers()
-        const newUser = {
-          id: data.id,
-          email: data.email,
-          username: data.username,
-          name: data.name,
-          password,
-          role: data.role,
-          universityId: data.universityId,
-          graduationYear: data.graduationYear,
-          major: data.major,
-          gender: data.gender,
-          avatarUrl: data.avatarUrl,
-          nickname: data.nickname,
-          bio: data.bio,
-          alumniMessage: data.alumniMessage,
-          createdAt: new Date().toISOString(),
-        }
-        const existingIndex = allUsers.findIndex(
-          (u: any) => u.id === newUser.id || u.username === newUser.username
-        )
-        if (existingIndex >= 0) {
-          allUsers[existingIndex] = newUser
-        } else {
-          allUsers.push(newUser)
-        }
-        saveUsers(allUsers)
-      } catch (err) {
-        console.error('Error syncing user data to client:', err)
-      }
-
+      // 数据已存储在数据库中，不需要同步到 localStorage
       await new Promise<void>((resolve) => {
         setTimeout(resolve, 100)
       })

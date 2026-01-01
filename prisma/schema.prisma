@@ -8,7 +8,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // 注意：在 Prisma 7 中，必须删除 url 这一行
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -49,6 +49,7 @@ model University {
   reviewStatus String?
   creatorId    String?
   createdAt    DateTime @default(now())
+
   questions    Question[]
 }
 
@@ -64,6 +65,7 @@ model Major {
   creatorId          String?
   strongUniversities String[] @default([])
   createdAt          DateTime @default(now())
+
   questions          Question[]
 }
 
@@ -111,8 +113,10 @@ model QuestionLike {
   questionId String
   userId     String
   createdAt  DateTime @default(now())
+
   question   Question @relation(fields: [questionId], references: [id])
   user       User     @relation(fields: [userId], references: [id])
+
   @@unique([questionId, userId])
 }
 
@@ -121,8 +125,10 @@ model ReplyLike {
   replyId   String
   userId    String
   createdAt DateTime @default(now())
+
   reply     Reply    @relation(fields: [replyId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
+
   @@unique([replyId, userId])
 }
 
@@ -133,6 +139,7 @@ model AlumniMessage {
   likes      Int      @default(0)
   createdAt  DateTime @default(now())
   isApproved Boolean? @default(true)
+
   user       User     @relation(fields: [userId], references: [id])
   likesRel   AlumniMessageLike[]
 }
@@ -142,8 +149,10 @@ model AlumniMessageLike {
   messageId String
   userId    String
   createdAt DateTime @default(now())
+
   message   AlumniMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
-  user      User      @relation(fields: [userId], references: [id])
+  user      User          @relation(fields: [userId], references: [id])
+
   @@unique([messageId, userId])
 }
 

@@ -2,120 +2,47 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 
-// 确保这个路由是动态的，不在构建时执行
 export const dynamic = 'force-dynamic'
-export const runtime = 'nodejs'
 
-// 点赞/取消点赞寄语
 export async function POST(
   _req: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: { id: string } }
 ) {
-  // 在构建时跳过执行
   if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })
-  }
-
-  // 动态导入 Prisma，避免在构建时初始化
-  const { prisma } = await import('@/lib/prisma')
-  
-  const session = await getServerSession(authOptions)
-  if (!session?.user?.id) {
-    return NextResponse.json(
-      { error: '请先登录后再点赞。' },
-      { status: 401 },
-    )
-  }
-
-  const messageId = params.id
-  const userId = session.user.id as string
-
-  // 检查是否被禁言
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: { isMuted: true },
-  })
-
-  if (user?.isMuted) {
-    return NextResponse.json(
-      { error: '你已被管理员禁言，暂时无法点赞。' },
-      { status: 403 },
-    )
+    return NextResponse.json({ message: 'Bypass' }, { status: 200 });
   }
 
   try {
-    const existing = await prisma.alumniMessageLike.findUnique({
-      where: {
-        messageId_userId: { messageId, userId },
-      },
-    })
-
-    if (existing) {
-      // 取消点赞
-      await prisma.$transaction([
-        prisma.alumniMessageLike.delete({
-          where: { id: existing.id },
-        }),
-        prisma.alumniMessage.update({
-          where: { id: messageId },
-          data: {
-            likes: {
-              decrement: 1,
-            },
-          },
-        }),
-      ])
-    } else {
-      // 点赞
-      await prisma.$transaction([
-        prisma.alumniMessageLike.create({
-          data: {
-            messageId,
-            userId,
-          },
-        }),
-        prisma.alumniMessage.update({
-          where: { id: messageId },
-          data: {
-            likes: {
-              increment: 1,
-            },
-          },
-        }),
-      ])
+    const { prisma } = await import('@/lib/prisma')
+    const session = await getServerSession(authOptions)
+    
+    if (!session?.user?.id) {
+      return NextResponse.json({ error: '请登录' }, { status: 401 })
     }
 
-    const updated = await prisma.alumniMessage.findUnique({
-      where: { id: messageId },
-      include: {
-        user: {
-          select: {
-            id: true,
-            nickname: true,
-            username: true,
-            email: true,
-            role: true,
-            avatarUrl: true,
-            universityId: true,
-            graduationYear: true,
-            major: true,
-          },
-        },
-        likesRel: {
-          select: {
-            userId: true,
-          },
-        },
-      },
+    const messageId = params.id
+    const userId = session.user.id
+
+    // 切换点赞状态逻辑
+    const existingLike = await prisma.like.findUnique({
+      where: {
+        userId_messageId: { userId, messageId }
+      }
     })
 
-    return NextResponse.json({ message: updated })
+    if (existingLike) {
+      await prisma.like.delete({
+        where: { userId_messageId: { userId, messageId } }
+      })
+      return NextResponse.json({ liked: false })
+    } else {
+      await prisma.like.create({
+        data: { userId, messageId }
+      })
+      return NextResponse.json({ liked: true })
+    }
   } catch (error) {
-    console.error('[alumni-messages.like] error:', error)
-    return NextResponse.json(
-      { error: '点赞失败，请稍后重试。' },
-      { status: 500 },
-    )
+    console.error('[LIKE_API_ERROR]:', error)
+    return NextResponse.json({ error: '操作失败' }, { status: 500 })
   }
 }
-

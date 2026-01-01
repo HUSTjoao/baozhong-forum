@@ -1,5 +1,3 @@
-// prisma/schema.prisma
-
 generator client {
   provider      = "prisma-client-js"
   engineType    = "library"
@@ -8,7 +6,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -27,12 +24,12 @@ model User {
   isMuted        Boolean  @default(false)
   createdAt      DateTime @default(now())
 
-  questions           Question[]           @relation("UserQuestions")
-  replies             Reply[]              @relation("UserReplies")
-  alumniMessages      AlumniMessage[]
-  questionLikes       QuestionLike[]
-  replyLikes          ReplyLike[]
-  alumniMessageLikes  AlumniMessageLike[]
+  questions          Question[]          @relation("UserQuestions")
+  replies            Reply[]             @relation("UserReplies")
+  alumniMessages     AlumniMessage[]
+  questionLikes      QuestionLike[]
+  replyLikes         ReplyLike[]
+  alumniMessageLikes AlumniMessageLike[]
 }
 
 model University {
@@ -83,9 +80,9 @@ model Question {
   majorId      String?
   askerId      String?
 
-  university   University? @relation(fields: [universityId], references: [id])
-  major        Major?      @relation(fields: [majorId], references: [id])
-  asker        User?       @relation("UserQuestions", fields: [askerId], references: [id])
+  university   University?  @relation(fields: [universityId], references: [id])
+  major        Major?       @relation(fields: [majorId], references: [id])
+  asker        User?        @relation("UserQuestions", fields: [askerId], references: [id])
   replies      Reply[]
   likesRel     QuestionLike[]
 }
@@ -101,11 +98,11 @@ model Reply {
   replierId     String?
   parentReplyId String?
 
-  question      Question @relation(fields: [questionId], references: [id])
-  replier       User?    @relation("UserReplies", fields: [replierId], references: [id])
-  parent        Reply?   @relation("ReplyToReply", fields: [parentReplyId], references: [id])
-  children      Reply[]  @relation("ReplyToReply")
-  likesRel      ReplyLike[]
+  question Question @relation(fields: [questionId], references: [id])
+  replier  User?    @relation("UserReplies", fields: [replierId], references: [id])
+  parent   Reply?  @relation("ReplyToReply", fields: [parentReplyId], references: [id])
+  children Reply[] @relation("ReplyToReply")
+  likesRel ReplyLike[]
 }
 
 model QuestionLike {
@@ -114,8 +111,8 @@ model QuestionLike {
   userId     String
   createdAt  DateTime @default(now())
 
-  question   Question @relation(fields: [questionId], references: [id])
-  user       User     @relation(fields: [userId], references: [id])
+  question Question @relation(fields: [questionId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
 
   @@unique([questionId, userId])
 }
@@ -126,8 +123,8 @@ model ReplyLike {
   userId    String
   createdAt DateTime @default(now())
 
-  reply     Reply    @relation(fields: [replyId], references: [id])
-  user      User     @relation(fields: [userId], references: [id])
+  reply Reply @relation(fields: [replyId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
 
   @@unique([replyId, userId])
 }
@@ -140,8 +137,8 @@ model AlumniMessage {
   createdAt  DateTime @default(now())
   isApproved Boolean? @default(true)
 
-  user       User     @relation(fields: [userId], references: [id])
-  likesRel   AlumniMessageLike[]
+  user     User @relation(fields: [userId], references: [id])
+  likesRel AlumniMessageLike[]
 }
 
 model AlumniMessageLike {
@@ -150,8 +147,8 @@ model AlumniMessageLike {
   userId    String
   createdAt DateTime @default(now())
 
-  message   AlumniMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
-  user      User          @relation(fields: [userId], references: [id])
+  message AlumniMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  user    User          @relation(fields: [userId], references: [id])
 
   @@unique([messageId, userId])
 }

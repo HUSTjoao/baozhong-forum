@@ -8,9 +8,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // Prisma 7 强制要求 schema 文件保持静态，
-  // 这里的连接 URL 仅用于代码生成时的占位，真正的连接串将在 lib/prisma.ts 中传入
-  url      = "postgresql://localhost:5432/placeholder" 
+  // 注意：在 Prisma 7 中，必须删除 url 这一行
 }
 
 model User {

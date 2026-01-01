@@ -6,7 +6,7 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient }
 export const prisma =
   globalForPrisma.prisma ||
   new PrismaClient({
-    // 关键点：手动从环境变量读取连接串，解决 Prisma 7 不允许在 schema 中定义 env 的限制
+    // 适配 Prisma 7 规范：直接从服务器环境变量读取数据库连接串
     datasourceUrl: process.env.DATABASE_URL, 
     log: ['query', 'error', 'warn'],
   })

@@ -8,6 +8,7 @@ export async function POST(
   _req: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  // 1. 构建阶段防护
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ message: 'Bypass' }, { status: 200 });
   }
@@ -23,21 +24,22 @@ export async function POST(
     const messageId = params.id
     const userId = session.user.id
 
-    // 切换点赞状态逻辑
-    const existingLike = await prisma.like.findUnique({
+    // 2. 关键修改：使用正确的模型名 alumniMessageLike
+    // 3. 关键修改：使用 schema 定义的复合唯一键名 messageId_userId
+    const existingLike = await prisma.alumniMessageLike.findUnique({
       where: {
-        userId_messageId: { userId, messageId }
+        messageId_userId: { messageId, userId }
       }
     })
 
     if (existingLike) {
-      await prisma.like.delete({
-        where: { userId_messageId: { userId, messageId } }
+      await prisma.alumniMessageLike.delete({
+        where: { messageId_userId: { messageId, userId } }
       })
       return NextResponse.json({ liked: false })
     } else {
-      await prisma.like.create({
-        data: { userId, messageId }
+      await prisma.alumniMessageLike.create({
+        data: { messageId, userId }
       })
       return NextResponse.json({ liked: true })
     }

@@ -1,77 +1,46 @@
 import { NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/authOptions'
 
-// 确保这个路由是动态的，不在构建时执行
-export const dynamic = 'force-dynamic'
-export const runtime = 'nodejs'
-
-export async function GET() {
-  // 在构建时跳过执行
-  if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ questions: [] })
-  }
-
-  // 动态导入 Prisma，避免在构建时初始化
-  const { prisma } = await import('@/lib/prisma')
-  
+export async function POST(req: Request) {
   try {
-    const questions = await prisma.question.findMany({
-      orderBy: { date: 'desc' },
-      include: {
-        university: true,
-        major: true,
-        asker: {
-          select: {
-            id: true,
-            nickname: true,
-            username: true,
-            email: true,
-            role: true,
-            avatarUrl: true,
-            graduationYear: true,
-            major: true,
-            universityId: true,
-          },
-        },
-        replies: {
-          include: {
-            replier: {
-              select: {
-                id: true,
-                nickname: true,
-                username: true,
-                email: true,
-                role: true,
-                avatarUrl: true,
-              },
-            },
-            children: {
-              include: {
-                replier: {
-                  select: {
-                    id: true,
-                    nickname: true,
-                    username: true,
-                    email: true,
-                    role: true,
-                    avatarUrl: true,
-                  },
-                },
-              },
-            },
-          },
-        },
-        likesRel: true,
-      },
+    const session = await getServerSession(authOptions)
+    if (!session?.user) return NextResponse.json({ error: '未登录' }, { status: 401 })
+
+    const data = await req.json()
+    
+    // 用 (prisma.question as any) 强制绕过本地类型不同步的问题
+    const question = await (prisma.question as any).create({
+      data: {
+        title: data.title,
+        content: data.content,
+        universityId: data.universityId,
+        askerName: session.user.name || '校友',
+        isAnonymous: Boolean(data.isAnonymous),
+        likes: 0
+      }
     })
 
-    return NextResponse.json({ questions })
+    return NextResponse.json(question)
   } catch (error) {
-    console.error('[questions.list] error:', error)
-    return NextResponse.json(
-      { error: '加载问题列表失败' },
-      { status: 500 },
-    )
+    console.error('Post Error:', error)
+    return NextResponse.json({ error: '发布失败' }, { status: 500 })
   }
 }
 
-
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url)
+    const universityId = searchParams.get('universityId')
+    
+    const questions = await prisma.question.findMany({
+      where: universityId ? { universityId } : {},
+      orderBy: { date: 'desc' }
+    })
+    
+    return NextResponse.json({ questions })
+  } catch (error) {
+    return NextResponse.json({ questions: [] }, { status: 500 })
+  }
+}

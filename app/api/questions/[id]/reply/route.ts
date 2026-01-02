@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 
-// 确保这个路由是动态的，不在构建时执行
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
@@ -10,66 +9,42 @@ export async function POST(
   req: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  // 在构建时跳过执行
   if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })
+    return NextResponse.json({ error: 'Building' }, { status: 503 })
   }
 
-  // 动态导入 Prisma，避免在构建时初始化
   const { prisma } = await import('@/lib/prisma')
-  
   const session = await getServerSession(authOptions)
+  
   if (!session?.user?.id) {
-    return NextResponse.json(
-      { error: '请先登录后再发表评论。' },
-      { status: 401 },
-    )
+    return NextResponse.json({ error: '请先登录后再发表评论。' }, { status: 401 })
   }
 
   const body = await req.json().catch(() => null)
-  if (!body) {
-    return NextResponse.json(
-      { error: '请求数据格式错误。' },
-      { status: 400 },
-    )
-  }
-
-  const content = (body.content ?? '').toString().trim()
-  const isAnonymous = !!body.isAnonymous
-  const parentReplyId = body.parentReplyId
-    ? body.parentReplyId.toString()
-    : null
+  const content = (body?.content ?? '').toString().trim()
+  const isAnonymous = !!body?.isAnonymous
+  const parentReplyId = body?.parentReplyId?.toString() || null
 
   if (!content) {
-    return NextResponse.json(
-      { error: '回复内容不能为空' },
-      { status: 400 },
-    )
+    return NextResponse.json({ error: '回复内容不能为空' }, { status: 400 })
   }
-
-  // 检查是否被禁言
-  const dbUser = await prisma.user.findUnique({
-    where: { id: session.user.id as string },
-    select: { isMuted: true },
-  })
-
-  if (dbUser?.isMuted) {
-    return NextResponse.json(
-      { error: '你已被管理员禁言，暂时无法发表评论。' },
-      { status: 403 },
-    )
-  }
-
-  const replierName = isAnonymous
-    ? '匿名用户'
-    : (session.user.nickname as string) ||
-      (session.user.name as string) ||
-      (session.user.email as string) ||
-      '匿名用户'
 
   const questionId = params.id
 
   try {
+    // 1. 检查用户状态
+    const dbUser = await prisma.user.findUnique({
+      where: { id: session.user.id as string },
+      select: { isMuted: true, nickname: true, avatarUrl: true },
+    })
+
+    if (dbUser?.isMuted) {
+      return NextResponse.json({ error: '你已被管理员禁言。' }, { status: 403 })
+    }
+
+    const replierName = isAnonymous ? '匿名用户' : (dbUser?.nickname || '校友')
+
+    // 2. 创建回复
     await prisma.reply.create({
       data: {
         id: `r_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,
@@ -82,23 +57,27 @@ export async function POST(
       },
     })
 
-    // 重新统计回复数量
-    const repliesCount = await prisma.reply.count({
-      where: { questionId },
-    })
+    // 3. 更新问题的回复统计
+    const currentRepliesCount = await prisma.reply.count({ where: { questionId } })
     await prisma.question.update({
       where: { id: questionId },
-      data: { repliesCount },
+      data: { repliesCount: currentRepliesCount },
     })
 
-    const question = await prisma.question.findUnique({
+    // 4. 返回最新的“树状”回复结构，供前端刷新
+    const updatedQuestion = await prisma.question.findUnique({
       where: { id: questionId },
       include: {
         replies: {
+          where: { parentReplyId: null }, // 重点：只取顶级，子项在 children 里
           orderBy: { date: 'asc' },
           include: {
+            replier: { select: { id: true, nickname: true, avatarUrl: true } },
             children: {
               orderBy: { date: 'asc' },
+              include: {
+                replier: { select: { id: true, nickname: true, avatarUrl: true } }
+              },
             },
           },
         },
@@ -106,14 +85,9 @@ export async function POST(
       },
     })
 
-    return NextResponse.json({ question })
+    return NextResponse.json({ question: updatedQuestion })
   } catch (error) {
     console.error('[questions.reply] error:', error)
-    return NextResponse.json(
-      { error: '发表评论失败，请稍后重试。' },
-      { status: 500 },
-    )
+    return NextResponse.json({ error: '回复失败' }, { status: 500 })
   }
 }
-
-

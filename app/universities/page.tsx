@@ -1,29 +1,10 @@
 import { prisma } from '@/lib/prisma'
-import Link from 'next/link'
-
+import UniversityExplorer from '@/components/universities/UniversityExplorer'
+export const dynamic = 'force-dynamic'
 export default async function UniversitiesPage() {
-  const universities = await prisma.university.findMany({
-    include: {
-      _count: {
-        select: { 
-          questions: true // 修正点：这里只统计 questions，不要写 users
-        }
-      }
-    },
-    orderBy: { name: 'asc' }
-  })
-
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6 text-slate-900">大学列表</h1>
-      <div className="grid gap-4">
-        {universities.map((uni) => (
-          <Link key={uni.id} href={`/universities/${uni.id}/forum`} className="p-4 border rounded-xl hover:bg-gray-50">
-            <h2 className="font-bold text-slate-800">{uni.name}</h2>
-            <p className="text-sm text-gray-500">已有 {uni._count.questions} 条帖子</p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
+  const profiles = await prisma.universityProfile.findMany({ include: { university: true }, orderBy: { createdAt: 'asc' } })
+  const region = (value?: string | null) => (value || '').replace(/(省|市)$/,'').replace('壮族自治区','').replace('回族自治区','').replace('维吾尔自治区','').replace('自治区','')
+  return <UniversityExplorer universities={profiles.map(p => ({ id: p.id, name: p.university.name, englishName: p.englishName, motto: p.motto, province: region(p.university.province), city: region(p.university.city), logoUrl: p.university.logoUrl, accent: p.accent, level: p.university.level }))} />
 }
+
+

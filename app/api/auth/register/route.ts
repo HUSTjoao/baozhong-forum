@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
         email: userEmail,
         username: username.trim(),
         password: hashedPassword,
-        role: role || 'student',
+        role: role === 'alumni' ? 'alumni' : 'student',
         universityId: universityId || null,
         graduationYear: graduationYear ? String(graduationYear) : null,
         major: major || null,

@@ -18,6 +18,27 @@
 
 ## 快速开始
 
+### 本地开发环境（已恢复）
+
+需要 Node.js 22。首次运行将 `.env.example` 复制为 `.env`，并为
+`NEXTAUTH_SECRET` 填写随机密钥（可用 `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"` 生成）。
+
+```bash
+npm ci
+npm run db:setup
+npm run dev -- --hostname 127.0.0.1
+```
+
+打开 http://localhost:3000 。本地使用 SQLite 数据库 `prisma/dev.db`，无需安装数据库服务。
+`db:setup` 生成客户端、创建表并导入预置大学和专业；重复运行不会清空用户数据。
+数据库和 `.env` 已加入 Git 忽略规则。SQLite 使用 `prisma/schema.local.prisma`，
+原 PostgreSQL 模型保留在 `prisma/schema.prisma`。本地库不包含之前云端或浏览器里的用户内容。
+
+验证命令：`npm run typecheck`、`npm run build`。
+
+当前仅恢复启动基础，旧版发帖页、个人主页、专业讨论和管理后台仍有浏览器本地存储逻辑，
+尚未完成数据库统一；不要将本地运行成功视为这些功能已修复。后续重构需要统一数据访问和权限校验。
+
 ### 安装依赖
 
 ```bash

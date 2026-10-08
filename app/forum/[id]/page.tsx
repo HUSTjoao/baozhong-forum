@@ -32,7 +32,7 @@ function getUserAcademicLabel(user?: any): string | null {
   }
 
   if (user.role === 'alumni') {
-    if (gy === 'non-baozhong') return '非宝中毕业生'
+    if (gy === 'non-baozhong') return '非宝鸡中学毕业生'
     if (typeof gy === 'number' || (typeof gy === 'string' && gy.trim() !== '')) {
       return `${gy}届`
     }

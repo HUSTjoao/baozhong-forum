@@ -523,7 +523,7 @@ export default function AdminPage() {
                             )}
                             {uni.students !== undefined && uni.students > 0 && (
                               <p className="text-[11px] text-slate-500 mb-1">
-                                已收录该校宝中学子：{uni.students} 人
+                                已收录该校宝鸡中学学子：{uni.students} 人
                               </p>
                             )}
                           </div>

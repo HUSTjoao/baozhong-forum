@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "prisma generate",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx scripts/seed-university-profiles.ts",
+    "db:seed:catalog": "tsx scripts/seed-campus-catalog.ts",
+    "db:setup": "npm run db:generate && npm run db:push && npm run db:seed",
+    "typecheck": "tsc --noEmit",
     "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0",
@@ -11,11 +18,15 @@
     "check-logos": "node scripts/check-logos.js"
   },
   "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.2.0",
+    "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^18.0.6",
     "lucide-react": "^0.294.0",
     "next": "^14.2.0",
     "next-auth": "^4.24.5",
+    "pg": "^8.23.1",
     "prisma": "^7.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -23,11 +34,14 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.10.6",
+    "@types/pg": "^8.23.1",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.3.3"
   }
 }
+

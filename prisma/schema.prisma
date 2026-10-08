@@ -1,6 +1,6 @@
 generator client {
   provider      = "prisma-client-js"
-  engineType    = "library"
+  engineType    = "client"
   binaryTargets = ["native"]
 }
 
@@ -48,6 +48,20 @@ model University {
   createdAt    DateTime @default(now())
 
   questions    Question[]
+  profile      UniversityProfile?
+}
+
+model UniversityProfile {
+  id           String @id
+  englishName  String
+  motto        String
+  introduction String
+  website      String
+  sourceUrl    String
+  accent       String @default("cyan")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  university   University @relation(fields: [id], references: [id])
 }
 
 model Major {

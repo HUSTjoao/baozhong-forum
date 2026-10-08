@@ -1062,10 +1062,10 @@ function EditForm({
           ) : (
             <select
               value={formData.graduationYear as string || ''}
-              onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value === '非宝中毕业生' ? '' : e.target.value })}
+              onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value === '非宝鸡中学毕业生' ? '' : e.target.value })}
               className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
-              <option value="">非宝中毕业生</option>
+              <option value="">非宝鸡中学毕业生</option>
               {Array.from({ length: new Date().getFullYear() - 2000 + 2 }, (_, i) => {
                 const year = 2001 + i
                 return (

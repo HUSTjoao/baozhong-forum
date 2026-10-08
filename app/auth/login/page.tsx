@@ -581,7 +581,7 @@ function LoginPageInner() {
                     className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                   >
                     <option value="">请选择</option>
-                    <option value="non-baozhong">非宝中毕业生</option>
+                    <option value="non-baozhong">非宝鸡中学毕业生</option>
                     {Array.from(
                       { length: new Date().getFullYear() - 1994 },
                       (_, idx) => 1995 + idx

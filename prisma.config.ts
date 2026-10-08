@@ -2,16 +2,18 @@
 import "dotenv/config"
 import { defineConfig } from "prisma/config"
 
+const isLocal = process.env.DATABASE_PROVIDER !== "postgresql"
+
 export default defineConfig({
-  schema: "prisma/schema.prisma",
+  schema: isLocal ? "prisma/schema.local.prisma" : "prisma/schema.prisma",
 
   migrations: {
     path: "prisma/migrations",
   },
 
   datasource: {
-    db: {
-      url: process.env.DATABASE_URL!,
-    },
+    url: isLocal
+      ? "file:./prisma/dev.db"
+      : process.env.DATABASE_URL,
   },
 })

@@ -33,24 +33,11 @@ export interface User {
   isMuted?: boolean
 }
 
-// 从localStorage获取所有用户（客户端）或从文件获取（服务端）
+// 旧版浏览器存储兼容层；服务端用户读写使用 Prisma。
 export function getUsers(): User[] {
   if (typeof window === 'undefined') {
-    // 服务端：从文件读取
-    try {
-      const fs = require('fs')
-      const path = require('path')
-      const usersFilePath = path.join(process.cwd(), 'data', 'users-data.json')
-      
-      if (fs.existsSync(usersFilePath)) {
-        const data = fs.readFileSync(usersFilePath, 'utf-8')
-        return JSON.parse(data)
-      }
-      return []
-    } catch (error) {
-      console.error('Error loading users from file:', error)
-      return []
-    }
+    // Legacy helpers are browser-only. Server authentication uses Prisma.
+    return []
   }
   
   // 客户端：从localStorage读取
@@ -63,22 +50,11 @@ export function getUsers(): User[] {
   }
 }
 
-// 保存用户（同时保存到文件和服务端localStorage）
+// 保存旧版浏览器数据；不在服务端读写用户 JSON 文件。
 export function saveUsers(users: User[]): void {
   try {
     if (typeof window === 'undefined') {
-      // 服务端：保存到文件
-      const fs = require('fs')
-      const path = require('path')
-      const usersFilePath = path.join(process.cwd(), 'data', 'users-data.json')
-      
-      // 确保目录存在
-      const dir = path.dirname(usersFilePath)
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true })
-      }
-      
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8')
+      return
     } else {
       // 客户端：保存到localStorage
       localStorage.setItem('forum_users', JSON.stringify(users))

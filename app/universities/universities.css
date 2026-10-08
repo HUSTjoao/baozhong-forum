@@ -1,0 +1,546 @@
+
+.uni-world{--u-accent:#8fe5df;--u-muted:#a6b7cd;color:#edf5ff;background:radial-gradient(ellipse at 80% 8%,#17314566,transparent 50%),linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px),#0b1523;background-size:auto,68px 68px,68px 68px,auto;overflow:hidden}
+.uni-shell{max-width:1280px;margin:auto;padding:65px 48px 80px}.uni-eyebrow{font:11px/1.7 ui-monospace,monospace;letter-spacing:.18em;color:var(--u-accent);margin:0 0 24px}.uni-intro{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center;padding:10px 0 70px}.uni-intro h1{font-size:clamp(40px,5.5vw,72px);font-weight:450;line-height:1.3;letter-spacing:-.03em;margin:0 0 24px}.uni-intro h1 span{color:var(--u-accent)}.uni-lead{color:var(--u-muted);font-size:17px;line-height:1.95}
+.uni-orbit{width:340px;height:340px;position:relative;display:grid;place-items:center;justify-self:center}.uni-orbit i{position:absolute;inset:12px;border:1px solid #8fe5df55;border-radius:50%;transform:rotate(-30deg) scaleY(.57);animation:uni-orbit 24s linear infinite}.uni-orbit i:nth-child(2){transform:rotate(35deg) scaleY(.67);animation-direction:reverse;animation-duration:29s}.uni-orbit i:nth-child(3){inset:45px;transform:rotate(90deg) scaleY(.75);animation-duration:37s}.uni-orbit span{text-align:center;font:14px/1.7 ui-monospace,monospace;letter-spacing:.3em;color:var(--u-muted)}.uni-orbit b{font-size:56px;letter-spacing:-.05em;font-weight:300;color:#edf5ff}.uni-orbit em{position:absolute;right:25px;top:80px;width:7px;height:7px;border-radius:50%;background:var(--u-accent);box-shadow:0 0 25px var(--u-accent)}
+.uni-tools{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid #ffffff20;padding-top:32px}.uni-search{display:flex;align-items:center;gap:14px;width:min(100%,550px);padding:14px 0;color:var(--u-muted);border-bottom:1px solid #ffffff35}.uni-search input{width:100%;background:transparent;color:#edf5ff;outline:none;font-size:16px}.uni-search:focus-within{border-color:var(--u-accent)}.uni-total{white-space:nowrap;font:13px ui-monospace,monospace;color:var(--u-muted)}.uni-filters{display:flex;gap:12px;margin:24px 0 32px;flex-wrap:wrap}.uni-filters button{font-size:13px;padding:7px 18px;border-radius:30px;color:var(--u-muted);border:1px solid #ffffff25}.uni-filters button[aria-pressed=true]{color:var(--u-accent);background:#8fe5df12;border-color:#8fe5df55}
+.uni-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.uni-campus{display:block;position:relative;overflow:hidden;background:linear-gradient(140deg,#142637cc,#0d1927ee);border:1px solid #ffffff22;padding:30px 32px;transition:transform .3s,border-color .3s;animation:uni-enter .65s both}.uni-campus:before{content:'';position:absolute;width:230px;height:230px;border:1px solid #ffffff09;border-radius:50%;top:40px;right:-90px;pointer-events:none}.uni-campus:hover{transform:translateY(-5px);border-color:var(--u-accent)}.uni-accent-violet{--u-accent:#c5b3f3}.uni-card-top{display:flex;justify-content:space-between;color:var(--u-accent);font:11px ui-monospace,monospace;letter-spacing:.15em}.uni-logo{margin:25px 0 22px;width:96px;height:96px;display:grid;place-items:center}.uni-logo img,.uni-profile-emblem img{object-fit:contain}.uni-campus-en{color:var(--u-muted);font:12px/1.7 ui-monospace,monospace;letter-spacing:.025em;max-width:380px}.uni-campus h2{font-family:var(--font-navigation);font-size:32px;margin:8px 0 13px;font-weight:400;color:#edf5ff}.uni-motto{font-family:var(--font-title);font-size:18px;letter-spacing:.13em;color:var(--u-accent);margin:0 0 30px}.uni-card-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-top:1px solid #ffffff1c;padding-top:19px;color:var(--u-muted);font-size:12px}.uni-card-bottom span,.uni-card-bottom strong{display:flex;gap:6px;align-items:center}.uni-card-bottom strong{margin-left:auto;color:var(--u-accent);font-weight:400}.uni-editor-note{font-size:12px;line-height:1.9;color:#94a7be;margin:24px 0 0}.uni-empty{padding:60px 0;color:var(--u-muted)}
+.uni-detail{padding-top:35px}.uni-back{display:inline-flex;align-items:center;gap:9px;color:var(--u-muted);font-size:13px}.uni-profile-hero{display:grid;grid-template-columns:1fr 240px;align-items:center;gap:36px;padding:60px 0 40px}.uni-profile-hero h1{font-family:var(--font-navigation);font-weight:400;font-size:clamp(36px,5vw,64px);margin:8px 0 18px}.uni-location{display:flex;align-items:center;gap:8px;color:var(--u-muted);font-size:14px}.uni-profile-emblem{width:220px;height:220px;border:1px solid #ffffff25;border-radius:50%;display:grid;place-items:center}.uni-profile-emblem img{width:156px;height:156px}.uni-profile-nav{display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;font-size:13px}.uni-profile-nav a{display:flex;align-items:center;gap:7px}.uni-profile-nav a:hover,.uni-back:hover{color:var(--u-accent)}.uni-profile-nav span{font:11px ui-monospace,monospace;color:var(--u-accent)}.uni-profile-motto{border-block:1px solid #ffffff25;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 0}.uni-profile-motto span{font-size:10px;letter-spacing:.18em;color:var(--u-muted)}.uni-profile-motto p{font-family:var(--font-title);font-size:clamp(23px,3vw,38px);color:var(--u-accent);letter-spacing:.13em;margin:0}
+.uni-overview{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;padding:75px 0;scroll-margin-top:120px}.uni-overview h2{font-family:var(--font-navigation);font-weight:400;font-size:30px;line-height:1.6;margin:0}.uni-description{font-size:17px;color:#bdcbdc;line-height:2.2;margin:0 0 22px}.uni-source{display:inline-flex;align-items:center;gap:8px;color:var(--u-accent);font-size:13px}
+.uni-discussion{border-top:1px solid #ffffff25;padding-top:55px;scroll-margin-top:120px}.uni-discussion-heading{display:flex;justify-content:space-between;gap:30px;align-items:center}.uni-discussion-heading h2{font-family:var(--font-navigation);font-size:30px;font-weight:400;line-height:1.55;margin:0 0 12px}.uni-discussion-heading h2 span{color:var(--u-accent)}.uni-discussion-heading p:not(.uni-eyebrow){color:var(--u-muted);font-size:14px}.uni-discussion-count{font:46px ui-monospace,monospace;color:var(--u-accent);text-align:right}.uni-discussion-count small{display:block;font:11px var(--font-sans);color:var(--u-muted);margin-top:5px}.uni-discussion-body{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;margin-top:35px}.uni-discussion-empty{min-height:280px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:35px;border-block:1px solid #ffffff20;color:var(--u-muted)}.uni-discussion-empty svg{color:var(--u-accent);margin-bottom:20px}.uni-discussion-empty h3{color:#edf5ff;font-size:21px;font-weight:400;margin:0 0 12px}.uni-discussion-empty p{font-size:14px;line-height:2;margin:0}.uni-compose{padding:28px;background:#ffffff04;border:1px solid #ffffff20}.uni-compose h3{font-family:var(--font-navigation);font-size:24px;font-weight:400;margin:0 0 25px}.uni-compose>p:not(.uni-eyebrow){font-size:14px;color:var(--u-muted);line-height:1.9}.uni-compose label{display:block;font-size:12px;color:var(--u-muted);margin-bottom:20px}.uni-compose input:not([type=checkbox]),.uni-compose textarea{display:block;width:100%;margin-top:9px;padding:12px;background:#07101b;color:#edf5ff;border:1px solid #ffffff25;border-radius:0;font-size:14px;resize:vertical}.uni-compose input:focus,.uni-compose textarea:focus{outline:1px solid var(--u-accent)}.uni-compose .uni-anonymous{display:flex;align-items:center;gap:8px}.uni-submit{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 16px;width:100%;border:1px solid #8fe5df55;color:var(--u-accent);font-size:13px;background:#8fe5df0a}.uni-submit:hover{background:#8fe5df20}.uni-submit:disabled{opacity:.5}.uni-topic{display:block;border-top:1px solid #ffffff25;padding:24px 0}.uni-topic>div{display:flex;justify-content:space-between;font-size:11px;color:var(--u-muted)}.uni-topic h3{font-size:19px;font-weight:400;display:flex;justify-content:space-between;gap:12px;margin:12px 0;color:#edf5ff}.uni-topic>p{font-size:14px;line-height:1.8;color:var(--u-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.uni-topic small{display:flex;align-items:center;gap:7px;color:var(--u-accent);font-size:11px}.uni-world a:focus-visible,.uni-world button:focus-visible{outline:2px solid var(--u-accent);outline-offset:5px}
+@keyframes uni-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes uni-orbit{to{rotate:360deg}}
+@media(max-width:800px){.uni-shell{padding:40px 24px 60px}.uni-intro{gap:15px;padding-bottom:45px}.uni-orbit{width:230px;height:230px}.uni-orbit b{font-size:40px}.uni-intro h1{font-size:42px}.uni-grid{gap:16px}.uni-campus{padding:24px}.uni-card-bottom strong{margin-left:0;width:100%}.uni-profile-hero{grid-template-columns:1fr 160px}.uni-profile-emblem{width:160px;height:160px}.uni-profile-emblem img{width:120px;height:120px}.uni-overview{gap:30px}.uni-discussion-body{grid-template-columns:1fr;gap:25px}}
+@media(max-width:560px){.uni-shell{padding:36px 20px 50px}.uni-intro{grid-template-columns:1fr;position:relative}.uni-intro h1{font-size:39px}.uni-orbit{width:170px;height:170px;position:absolute;right:-60px;top:10px;opacity:.24;pointer-events:none}.uni-orbit span{display:none}.uni-intro>div:first-child{position:relative;z-index:1}.uni-lead{font-size:14px}.uni-tools{gap:12px}.uni-search input{font-size:13px}.uni-total{font-size:11px}.uni-grid{grid-template-columns:1fr}.uni-campus h2{font-size:30px}.uni-profile-hero{grid-template-columns:1fr;position:relative;padding-top:35px}.uni-profile-emblem{position:absolute;right:-25px;top:35px;width:110px;height:110px;opacity:.24;pointer-events:none}.uni-profile-emblem img{width:80px;height:80px}.uni-profile-hero>div:first-child{position:relative;z-index:1}.uni-profile-hero .uni-campus-en{max-width:240px}.uni-profile-hero h1{font-size:36px}.uni-profile-nav{gap:20px;font-size:12px}.uni-profile-motto{display:block}.uni-profile-motto p{margin-top:14px;font-size:25px}.uni-overview{grid-template-columns:1fr;gap:25px;padding:45px 0}.uni-overview h2,.uni-discussion-heading h2{font-size:25px}.uni-description{font-size:15px}.uni-discussion-heading{align-items:flex-start;gap:12px}.uni-discussion-heading h2 span{display:block}.uni-discussion-count{font-size:32px}.uni-discussion-heading p:not(.uni-eyebrow){font-size:13px}.uni-discussion-empty{padding:25px 0}.uni-compose{padding:23px}}
+@media(prefers-reduced-motion:reduce){.uni-orbit i,.uni-campus{animation:none}.uni-campus{transition:none}.uni-campus:hover{transform:none}}
+
+.uni-logo{background:#eef3f7;border-radius:50%;padding:9px}.uni-logo img{width:100%;height:100%}.uni-profile-emblem img{background:#eef3f7;border-radius:50%;padding:15px}
+
+/* A lighter campus palette, retaining the orbital identity. */
+.uni-world{--u-accent:#337f80;--u-muted:#687983;color:#243a43;background:linear-gradient(180deg,#ffffff 0%,#f4f9f3 18%,#e6f0e2 45%,#d5e6d0 73%,#c3dbbf 100%);background-size:100% 100%}
+.uni-accent-violet{--u-accent:#81719c}
+.uni-eyebrow{color:var(--u-accent)}
+.uni-intro h1{font-weight:400;color:#253a43;font-family:var(--font-navigation);font-size:clamp(38px,5.1vw,66px);letter-spacing:.015em}
+.uni-orbit i{border-color:#6c92964d}.uni-orbit span{color:#7c8e92}.uni-orbit b{color:#385b63}.uni-orbit em{box-shadow:0 0 20px #69a5a680;background:#6faaa7}
+.uni-tools{border-color:#83969230}.uni-search{border-color:#83969260}.uni-search input{color:#283f47}.uni-search input::placeholder{color:#7a8b92}
+.uni-filters button{border-color:#83969240}.uni-filters button[aria-pressed=true]{background:#dcebe5;border-color:#90b1a5;color:#396d64}
+.uni-campus{background:linear-gradient(140deg,#ffffffdc,#f0f4efb0);border-color:#8c9e9435;box-shadow:0 8px 30px #3d5f5210;border-radius:4px}
+.uni-campus:before{border-color:#88a39717}.uni-campus h2{color:#29444b}.uni-logo{background:#fff;border:1px solid #82948b15}
+.uni-card-bottom{border-color:#83969235}.uni-campus:hover{box-shadow:0 14px 36px #3d5f5216}.uni-editor-note{color:#73828b}
+.uni-profile-hero h1{color:#29444b}.uni-profile-emblem{border-color:#83969235}.uni-profile-emblem img{background:#fff}
+.uni-profile-motto,.uni-discussion,.uni-topic{border-color:#83969240}.uni-description{color:#596d75}.uni-overview h2,.uni-discussion-heading h2{color:#29444b}
+.uni-discussion-empty{border-color:#83969235}.uni-discussion-empty h3,.uni-topic h3{color:#29444b}
+.uni-compose{background:#ffffff90;border-color:#83969235;border-radius:4px}.uni-compose h3{color:#29444b}
+.uni-compose input:not([type=checkbox]),.uni-compose textarea{background:#fafbf8;color:#29444b;border-color:#83969250}
+.uni-submit{background:#dcebe550;border-color:#90b1a580}.uni-submit:hover{background:#dcebe5}
+@media(max-width:560px){.uni-intro h1{font-size:37px}.uni-orbit{opacity:.35}}
+
+
+
+/* University explorer: introduction and map on the left, a wider school browser on the right. */
+.uni-map-explorer{max-width:1580px;padding:54px 50px 70px}
+.uni-explorer-columns{display:grid;grid-template-columns:minmax(0, .82fr) minmax(0, 1.18fr);gap:56px;align-items:start}
+.uni-explorer-left{min-width:0}.uni-explorer-right{min-width:0;border-left:1px solid #96aca328;padding-left:40px}
+.uni-map-explorer .uni-intro{display:block;padding:0 0 24px}
+.uni-map-explorer .uni-intro h1{font-size:clamp(33px,3.25vw,50px);line-height:1.4;margin-bottom:20px}
+.uni-map-explorer .uni-lead{font-size:14px;line-height:2}
+.uni-browser-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:112px;margin-bottom:15px}
+.uni-browser-heading h2{font-family:var(--font-navigation);font-size:30px;font-weight:400;color:#29444b;margin:0 0 12px}
+.uni-browser-heading .uni-eyebrow{margin-bottom:16px}
+.uni-browser-heading p:not(.uni-eyebrow){font-size:13px;color:var(--u-muted);line-height:1.9;margin:0}
+.uni-browser-heading .uni-orbit{width:125px;height:125px;flex-shrink:0;position:relative;right:auto;top:auto;opacity:1}
+.uni-browser-heading .uni-orbit b{font-size:32px}.uni-browser-heading .uni-orbit span{font-size:8px}
+.uni-map-explorer .uni-tools{padding-top:12px;gap:16px}.uni-map-explorer .uni-search{max-width:none;flex:1}.uni-map-explorer .uni-search input{font-size:14px}
+.uni-map-explorer .uni-filters{margin:22px 0 27px}
+.uni-map-explorer .uni-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:100%;margin:0;padding:0}
+.uni-map-explorer .uni-campus{padding:23px 22px;background:#ffffffe0;box-shadow:0 9px 30px #41635209}
+.uni-map-explorer .uni-logo{width:88px;height:88px;margin:22px 0 18px}
+.uni-map-explorer .uni-campus h2{font-size:26px;line-height:1.5}
+.uni-map-explorer .uni-campus-en{font-size:11px;min-height:38px;line-height:1.7}
+.uni-map-explorer .uni-motto{font-size:15px;letter-spacing:.07em;margin-bottom:23px}
+.uni-map-explorer .uni-card-bottom{gap:12px;font-size:11px}.uni-map-explorer .uni-card-bottom strong{width:100%;margin-left:0;margin-top:5px}
+.uni-map-explorer .uni-campus[data-map-active=true]{border-color:var(--u-accent);box-shadow:0 12px 30px #547c7115}
+.uni-map-panel{position:relative;top:auto;padding:15px 0 0;min-width:0}
+.uni-map-caption>span{font-family:var(--font-navigation);font-size:17px;color:#385b63}
+.uni-map-caption small{display:block;margin-top:7px;font:9px ui-monospace,monospace;letter-spacing:.1em;color:#809294}
+.uni-china-map{display:block;width:100%;height:auto;max-height:465px;overflow:visible;margin-top:12px}
+.uni-map-provinces path{fill:#bed5c5;stroke:#739a86;stroke-width:1;stroke-linejoin:round}
+.uni-map-provinces .uni-map-home{fill:#91b89f;stroke:#527e67}
+.uni-origin-halo{fill:none;stroke:#6d9e9375;stroke-width:1;animation:uni-map-pulse 3s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.uni-map-origin{fill:#337d6c;stroke:#f8faf6;stroke-width:2}
+.uni-map-origin-label{fill:#3a7267;font-size:17px;font-family:var(--font-navigation)}
+.uni-map-route-shadow{fill:none;stroke:#f8faf3;stroke-width:5}
+.uni-map-route{fill:none;stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;animation:uni-route-draw .85s ease-out forwards}
+.uni-map-arrival{fill:var(--u-accent);stroke:#fff;stroke-width:2}
+.uni-map-arrival-halo{fill:none;stroke:var(--u-accent);stroke-width:1;opacity:.5;animation:uni-map-pulse 2.7s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.uni-map-target-label{fill:var(--u-accent);font-family:var(--font-navigation);font-size:19px;paint-order:stroke;stroke:#f6f7f3;stroke-width:5;stroke-linejoin:round}
+.uni-map-city-label{fill:#536f66;font-size:13px;paint-order:stroke;stroke:#f6f7f3;stroke-width:4}
+.uni-map-status{display:flex;align-items:center;gap:20px;padding:17px 0;border-top:1px solid #94aba933}
+.uni-map-status div{flex:1;min-width:0}.uni-map-status small{display:block;font-size:9px;letter-spacing:.1em;color:#829392}
+.uni-map-status strong{display:block;font-family:var(--font-navigation);font-size:18px;color:#3a6267;font-weight:400;margin-top:7px}
+.uni-map-status>span{color:#92b4ae}.uni-map-credit{font-size:9px;color:#8b9998;margin:8px 0 0}.uni-map-mobile-select{display:none}
+@keyframes uni-route-draw{to{stroke-dashoffset:0}}@keyframes uni-map-pulse{0%{scale:.6;opacity:.8}80%,100%{scale:1.5;opacity:0}}
+@media(max-width:1200px){.uni-map-explorer{padding-inline:32px}.uni-explorer-columns{gap:32px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.uni-explorer-right{padding-left:25px}.uni-map-explorer .uni-grid{grid-template-columns:1fr}.uni-map-explorer .uni-campus{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:20px}.uni-map-explorer .uni-card-top{grid-column:1/-1}.uni-map-explorer .uni-logo{grid-column:1;grid-row:2/5;margin:20px 0;align-self:center}.uni-map-explorer .uni-campus-en,.uni-map-explorer .uni-campus h2,.uni-map-explorer .uni-motto{grid-column:2}.uni-map-explorer .uni-campus-en{margin-top:20px;min-height:0}.uni-map-explorer .uni-card-bottom{grid-column:1/-1}.uni-browser-heading h2{font-size:25px}.uni-browser-heading .uni-orbit{width:120px;height:120px}.uni-browser-heading .uni-orbit b{font-size:25px}.uni-map-explorer .uni-intro h1{font-size:39px}}
+@media(max-width:760px){.uni-map-explorer{padding:35px 22px 55px}.uni-explorer-columns{grid-template-columns:1fr;gap:38px}.uni-explorer-right{border-left:0;padding-left:0;border-top:1px solid #96aca330;padding-top:25px}.uni-map-explorer .uni-intro h1{font-size:38px}.uni-china-map{max-height:380px}.uni-map-caption{margin-top:5px}.uni-map-mobile-select{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}.uni-map-mobile-select button{font-size:12px;padding:7px 12px;border:1px solid #92aaa860;color:#5b7779;border-radius:20px}.uni-map-mobile-select button[aria-pressed=true]{background:#dcebe5;border-color:#70a79c}.uni-browser-heading{min-height:125px;margin-bottom:20px}.uni-map-explorer .uni-tools{padding-top:18px}.uni-map-explorer .uni-card-bottom strong{width:auto;margin-left:auto}.uni-map-explorer .uni-campus{padding:22px}.uni-map-explorer .uni-campus h2{font-size:25px}}
+@media(max-width:380px){.uni-map-explorer .uni-campus{grid-template-columns:70px minmax(0,1fr);gap:0 15px}.uni-map-explorer .uni-logo{width:70px;height:70px}.uni-map-explorer .uni-campus h2{font-size:23px}.uni-map-explorer .uni-motto{font-size:13px}.uni-browser-heading .uni-orbit{width:95px;height:95px}.uni-browser-heading h2{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.uni-map-route{animation:none;stroke-dashoffset:0}.uni-origin-halo,.uni-map-arrival-halo{animation:none}.uni-china-map animateMotion{display:none}}
+
+@font-face{font-family:'Campus Source Serif';src:url('/fonts/campus-source-serif.woff2?v=4') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Campus Cormorant';src:url('/fonts/campus-cormorant.woff2?v=1') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+.uni-map-explorer .uni-campus{--campus-rotate-x:0deg;--campus-rotate-y:0deg;--campus-lift:0px;--campus-scale:1;display:flex;flex-direction:column;padding:27px 25px 24px;border-radius:22px;border:1px solid #a1b4aa3b;background:linear-gradient(150deg,#fffffff5,#f7faf6f2);box-shadow:0 12px 28px #546e600b,0 2px 5px #546e6007;font-family:'Campus Source Serif','Songti SC',serif;transform:perspective(1100px) translateY(var(--campus-lift)) rotateX(var(--campus-rotate-x)) rotateY(var(--campus-rotate-y)) scale(var(--campus-scale));transition:transform .3s cubic-bezier(.2,.7,.25,1),box-shadow .3s,border-color .3s;animation:campus-card-appear .65s both;animation-delay:calc(var(--campus-order,0)*100ms);touch-action:pan-y;will-change:transform}
+.uni-map-explorer .uni-campus::before{display:none}.uni-map-explorer .uni-campus::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--campus-light-x,50%) var(--campus-light-y,20%),#ffffffd0,transparent 65%);opacity:0;pointer-events:none;transition:opacity .3s}
+.uni-map-explorer .uni-campus>*{position:relative;z-index:1}
+.uni-map-explorer .uni-campus[data-map-active=true]{border-color:#8bb5a96b;box-shadow:0 12px 28px #546e600b,0 2px 5px #546e6007}
+.uni-map-explorer .uni-card-top{align-items:center;font-family:'Campus Cormorant',Georgia,serif;font-size:15px;letter-spacing:.14em}
+.uni-card-top>span:first-child{display:flex;align-items:center;gap:11px}.uni-card-top i{display:block;width:18px;height:1px;background:currentColor;opacity:.45}
+.uni-enter-campus{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #87a99c55;background:linear-gradient(145deg,#ffffffb0,#dcebe525);box-shadow:inset 0 1px 0 #fff;transition:background .3s,border-color .3s,box-shadow .3s}
+.uni-enter-campus svg{width:24px;height:24px;transition:transform .3s}.uni-enter-tail{opacity:.35;transition:opacity .3s}
+.uni-card-identity{flex:1}.uni-map-explorer .uni-logo{width:98px;height:98px;padding:11px;border:1px solid #8da99b26;background:#fff;margin:24px 0 23px;box-shadow:0 5px 17px #5578660a}
+.uni-map-explorer .uni-campus h2{font-family:'Campus Source Serif','Songti SC',serif;font-size:30px;font-weight:400;line-height:1.5;letter-spacing:.035em;margin:0 0 9px;color:#2f464b}
+.uni-map-explorer .uni-campus-en{font-family:'Campus Cormorant',Georgia,serif;font-size:21px;font-weight:500;font-style:normal;line-height:1.22;letter-spacing:.005em;color:#6c7e82;min-height:52px;margin:0 0 21px;max-width:none}
+.uni-map-explorer .uni-motto{font-family:'Campus Source Serif','Songti SC',serif;font-size:16px;font-weight:400;letter-spacing:.055em;line-height:1.7;margin:0 0 26px}
+.uni-map-explorer .uni-card-bottom{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding-top:20px;border-top:1px solid #8ca89b30;font-family:'Campus Source Serif','Songti SC',serif}
+.uni-campus-meta{display:flex;align-items:center;gap:9px;min-width:0}.uni-campus-meta>svg{width:29px;height:29px;flex-shrink:0;color:var(--u-accent);opacity:.85}
+.uni-map-explorer .uni-campus-meta span{display:block;font-size:12px;line-height:1.6;color:#84938c;letter-spacing:.06em}
+.uni-map-explorer .uni-campus-meta strong{display:block;width:auto;margin:4px 0 0;font-size:15px;font-weight:400;line-height:1.5;color:#4c6864;white-space:nowrap}
+.uni-campus-meta b{font-family:'Campus Cormorant',Georgia,serif;font-size:21px;font-weight:500;line-height:1}
+@keyframes campus-card-appear{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@media(hover:hover) and (pointer:fine){.uni-map-explorer .uni-campus:hover{--campus-lift:-10px;--campus-scale:1.015;border-color:#86aba699;box-shadow:0 30px 50px #42665520,0 10px 18px #4266550d}.uni-map-explorer .uni-campus:hover::after{opacity:.45}.uni-campus:hover .uni-enter-campus{background:#e7f2eb;border-color:#8ab1a1;box-shadow:0 4px 12px #5e8a7513}.uni-campus:hover .uni-enter-campus svg{transform:translate(2px,-2px)}.uni-campus:hover .uni-enter-tail{opacity:.75}}
+.uni-map-explorer .uni-campus:focus-visible{--campus-lift:-6px}
+@media(max-width:1200px){.uni-map-explorer .uni-campus{padding:25px;display:flex}.uni-map-explorer .uni-card-identity{display:grid;grid-template-columns:96px minmax(0,1fr);gap:0 24px;padding-top:24px}.uni-map-explorer .uni-logo{grid-column:1;grid-row:1/4;width:96px;height:96px;margin:0;align-self:center}.uni-map-explorer .uni-campus h2{grid-column:2;font-size:29px;margin:0 0 6px}.uni-map-explorer .uni-campus-en{grid-column:2;min-height:0;font-size:21px;margin:0 0 12px}.uni-map-explorer .uni-motto{grid-column:2;margin:0 0 24px;font-size:16px}.uni-map-explorer .uni-card-bottom{margin-top:4px}}
+@media(max-width:760px){.uni-map-explorer .uni-campus{border-radius:20px;padding:23px}.uni-map-explorer .uni-card-identity{grid-template-columns:85px minmax(0,1fr);gap:0 18px;padding-top:24px}.uni-map-explorer .uni-logo{width:85px;height:85px}.uni-map-explorer .uni-campus h2{font-size:26px}.uni-map-explorer .uni-campus-en{font-size:20px}.uni-map-explorer .uni-motto{font-size:14px;margin-bottom:20px}.uni-enter-campus{width:40px;height:40px}.uni-map-explorer .uni-campus-meta strong{font-size:15px}.uni-map-explorer .uni-campus-meta span{font-size:12px}}
+@media(max-width:380px){.uni-map-explorer .uni-card-identity{grid-template-columns:70px minmax(0,1fr);gap:0 14px}.uni-map-explorer .uni-logo{width:70px;height:70px;padding:8px}.uni-map-explorer .uni-campus h2{font-size:24px}.uni-map-explorer .uni-campus-en{font-size:18px}.uni-map-explorer .uni-motto{font-size:13px}.uni-campus-meta>svg{width:25px;height:25px}.uni-map-explorer .uni-card-bottom{gap:12px}.uni-map-explorer .uni-campus-meta strong{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.uni-map-explorer .uni-campus,.uni-map-explorer .uni-campus:hover,.uni-map-explorer .uni-campus:focus-visible{transform:none;animation:none;transition:none;will-change:auto}.uni-enter-campus svg{transition:none}.uni-campus:hover .uni-enter-campus svg{transform:none}}
+
+.uni-browser-heading .uni-orbit span{display:block}
+/* Compact campus identity and credentials. */
+.uni-map-explorer .uni-campus{padding:25px 20px 19px}
+.uni-map-explorer .uni-campus>.uni-enter-campus{position:absolute;top:13px;right:13px;width:30px;height:30px;z-index:2}
+.uni-enter-campus svg{width:18px;height:18px}
+.uni-map-explorer .uni-card-identity{display:grid;grid-template-columns:76px minmax(0,1fr);gap:17px;align-items:center;padding:12px 0 19px}
+.uni-map-explorer .uni-logo{grid-column:auto;grid-row:auto;width:76px;height:76px;padding:8px;margin:0;align-self:center}
+.uni-card-names{min-width:0}
+.uni-map-explorer .uni-campus h2{font-size:25px;line-height:1.35;letter-spacing:.01em;margin:0 0 7px}
+.uni-map-explorer .uni-campus-en{font-size:19px;line-height:1.12;min-height:0;margin:0 0 12px}
+.uni-map-explorer .uni-motto{font-size:13px;line-height:1.6;letter-spacing:.025em;margin:0}
+.uni-map-explorer .uni-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;margin-top:0}
+.uni-campus-meta{gap:7px}
+.uni-campus-meta>svg{width:24px;height:24px}
+.uni-map-explorer .uni-campus-meta span{font-size:10px;letter-spacing:.025em}
+.uni-map-explorer .uni-campus-meta strong{font-size:13px;margin-top:1px}
+.uni-campus-levels{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:5px}
+.uni-map-explorer .uni-campus-levels span{font-size:12px;line-height:1.5;padding:3px 6px;border:1px solid #8da79c35;border-radius:6px;color:var(--u-accent);background:#e8efea40;white-space:nowrap}
+@media(min-width:1201px) and (max-width:1450px){.uni-map-explorer .uni-card-identity{grid-template-columns:65px minmax(0,1fr);gap:12px}.uni-map-explorer .uni-logo{width:65px;height:65px}.uni-map-explorer .uni-campus h2{font-size:22px}.uni-map-explorer .uni-campus-en{font-size:18px}}
+@media(max-width:760px){.uni-map-explorer .uni-campus{padding:24px 19px 18px}.uni-map-explorer .uni-card-identity{grid-template-columns:76px minmax(0,1fr);gap:16px}.uni-map-explorer .uni-campus h2{font-size:25px}}
+@media(max-width:380px){.uni-map-explorer .uni-card-identity{grid-template-columns:65px minmax(0,1fr);gap:12px}.uni-map-explorer .uni-logo{width:65px;height:65px}.uni-map-explorer .uni-campus h2{font-size:22px}.uni-map-explorer .uni-campus-en{font-size:18px}.uni-campus-levels{gap:4px}.uni-map-explorer .uni-campus-levels span{font-size:11px;padding:3px 5px}}
+/* A quiet, editorial route from school to campus. */
+.uni-map-panel{padding-top:0}
+.uni-map-status{display:grid;grid-template-columns:minmax(0,.85fr) minmax(40px,.45fr) minmax(0,1.1fr);gap:22px;padding:25px 0 13px;border-top:1px solid #94aba933;align-items:center}
+.uni-map-status small{display:flex;align-items:center;gap:8px;font-family:'Campus Source Serif','Songti SC',serif;font-size:12px;letter-spacing:.16em;color:#7e9490}
+.uni-map-status small i{width:5px;height:5px;border-radius:50%;background:#7c9e92}
+.uni-route-destination small i{background:transparent;border:1px solid var(--u-accent);width:6px;height:6px}
+.uni-map-status strong{font-family:'Campus Source Serif','Songti SC',serif;font-size:25px;font-weight:400;line-height:1.45;letter-spacing:.045em;margin-top:10px;color:#365d58}
+.uni-route-destination strong{color:var(--u-accent);animation:uni-route-name-in .3s ease-out}
+.uni-route-connector{display:block;width:100%;height:24px;color:#92afa4}
+@keyframes uni-route-name-in{from{opacity:.3;translate:0 4px}to{opacity:1;translate:0 0}}
+@media(max-width:1200px){.uni-map-status{gap:14px}.uni-map-status strong{font-size:21px}}
+@media(max-width:760px){.uni-map-status{padding-top:23px;gap:15px}.uni-map-status strong{font-size:22px}.uni-map-status small{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.uni-route-destination strong{animation:none}}
+
+
+/* The right column is dedicated to searching and browsing campuses. */
+.uni-map-explorer .uni-tools{border-top:0;padding-top:0}
+.uni-explorer-right{padding-top:0}
+@media(max-width:760px){.uni-explorer-right{padding-top:18px}.uni-map-explorer .uni-tools{padding-top:0}}
+/* More legible, softly layered university credentials. */
+.uni-campus-levels{gap:7px}
+.uni-map-explorer .uni-campus-levels span{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:4px 10px;border-radius:9px;font-size:14px;line-height:1.4;letter-spacing:.025em;border:1px solid #85a99a55;background:linear-gradient(145deg,#fffefa,#e4eee5);color:#4e796b;box-shadow:inset 0 1px 0 #ffffffdc,0 2px 5px #42624d0a;transition:background .25s,border-color .25s,box-shadow .25s}
+.uni-map-explorer .uni-campus-levels span:nth-child(2){color:#648293;border-color:#91aabc50;background:linear-gradient(145deg,#fdfefe,#e5edf1)}
+.uni-map-explorer .uni-campus-levels span:nth-child(3){color:#948058;border-color:#b9a88055;background:linear-gradient(145deg,#fffdf8,#f0e9d8)}
+.uni-campus:hover .uni-campus-levels span{box-shadow:inset 0 1px 0 #fff,0 3px 8px #42624d12}
+@media(max-width:760px){.uni-campus-levels{gap:5px}.uni-map-explorer .uni-campus-levels span{padding:4px 8px;font-size:13px;min-height:29px}}
+@media(max-width:380px){.uni-map-explorer .uni-card-bottom{gap:8px}.uni-campus-levels{gap:4px}.uni-map-explorer .uni-campus-levels span{padding:4px 6px;font-size:13px}}
+
+/* Compact the cards, while preserving the original page spacing. */
+.uni-map-explorer .uni-card-identity{grid-template-columns:96px minmax(0,1fr);gap:16px;padding:10px 0 16px}
+.uni-map-explorer .uni-logo{width:96px;height:96px;padding:5px}
+.uni-map-explorer .uni-campus{padding:24px 19px 17px}
+.uni-map-explorer .uni-campus-en{margin-bottom:9px}
+.uni-map-explorer .uni-card-bottom{padding-top:12px}
+@media(min-width:1201px) and (max-width:1450px){.uni-map-explorer .uni-card-identity{grid-template-columns:85px minmax(0,1fr);gap:13px}.uni-map-explorer .uni-logo{width:85px;height:85px}.uni-map-explorer .uni-card-bottom{gap:7px}.uni-campus-levels{gap:4px}.uni-map-explorer .uni-campus-levels span{padding:4px 7px;font-size:13px}}
+@media(max-width:760px){.uni-explorer-right{padding-top:25px}.uni-map-explorer .uni-card-identity{grid-template-columns:88px minmax(0,1fr);gap:14px}.uni-map-explorer .uni-logo{width:88px;height:88px}}
+@media(max-width:380px){.uni-map-explorer .uni-card-identity{grid-template-columns:80px minmax(0,1fr);gap:12px}.uni-map-explorer .uni-logo{width:80px;height:80px}.uni-map-explorer .uni-campus{padding-inline:17px}}
+/* Keep map lettering consistent with the campus cards. */
+.uni-map-origin-label,.uni-map-target-label,.uni-map-city-label{font-family:'Campus Source Serif','Songti SC',serif;font-weight:400;font-style:normal;letter-spacing:.025em}
+.uni-map-origin-label{font-size:29px}
+.uni-map-target-label{font-size:32px;stroke-width:3}
+.uni-map-city-label{font-size:23px;stroke-width:2.5}
+
+.uni-route-connector{height:36px;color:#749b8a;overflow:visible}
+.uni-route-connector-track{opacity:.55}
+.uni-route-traveller{filter:drop-shadow(0 0 3px #75a58c90)}
+@media(prefers-reduced-motion:reduce){.uni-route-traveller{display:none}}
+/* Blue edition of the campus explorer, retaining its existing layout. */
+.uni-world:has(.uni-map-explorer),.uni-world:has(.uni-detail){--u-accent:#477ca8;--u-muted:#6b8094;background:linear-gradient(180deg,#ffffff 0%,#f2f7fc 18%,#e3edf7 45%,#d0e2f2 73%,#b9d3e9 100%)}
+.uni-map-explorer .uni-intro h1,.uni-map-explorer .uni-campus h2{color:#304c64}
+.uni-map-explorer .uni-intro h1 span{color:#477ca8}
+.uni-map-provinces path{fill:#b8cede;stroke:#7396b0}
+.uni-map-provinces .uni-map-home{fill:#89aecb;stroke:#4e789b}
+.uni-map-origin{fill:#477ca8;stroke:#f5f9fd}
+.uni-origin-halo{stroke:#6898bd80}
+.uni-map-origin-label{fill:#3d7099}
+.uni-map-city-label{fill:#5d7e99;stroke:#edf4fa}
+.uni-map-target-label{stroke:#edf4fa}
+.uni-map-explorer .uni-filters button{border-color:#839db640}
+.uni-map-explorer .uni-filters button[aria-pressed=true]{background:#d9e8f5;border-color:#88abc8;color:#3c7099}
+.uni-explorer-right,.uni-map-status,.uni-map-explorer .uni-card-bottom{border-color:#8fa9be33}
+.uni-map-explorer .uni-campus{background:linear-gradient(150deg,#fffffff5,#f3f7fcf2);border-color:#94afc53b;box-shadow:0 12px 28px #456d8a0b,0 2px 5px #456d8a07}
+.uni-map-explorer .uni-campus[data-map-active=true]{border-color:#84a9c56b;box-shadow:0 12px 28px #456d8a0b,0 2px 5px #456d8a07}
+.uni-map-explorer .uni-logo{border-color:#8da9bf26;box-shadow:0 5px 17px #557a980a}
+.uni-map-explorer .uni-campus-en{color:#6b8094}
+.uni-map-explorer .uni-campus-meta strong{color:#4f6c87}
+.uni-map-explorer .uni-campus-meta span{color:#8093a4}
+.uni-map-status small{color:#7a93a8}.uni-map-status small i{background:#7f9fb8}
+.uni-route-destination small i{background:transparent}
+.uni-map-status strong{color:#365f7e}.uni-route-destination strong{color:var(--u-accent)}
+.uni-route-connector{color:#789ebd}.uni-route-traveller{filter:drop-shadow(0 0 3px #75a0c390)}
+.uni-enter-campus{border-color:#87a9c055;background:linear-gradient(145deg,#ffffffb0,#dce9f325)}
+.uni-map-explorer .uni-campus-levels span:first-child{color:#4f789b;border-color:#85a5bf55;background:linear-gradient(145deg,#fff,#e1ecf6)}
+.uni-map-mobile-select button{border-color:#92acc460;color:#5b7794}
+.uni-map-mobile-select button[aria-pressed=true]{background:#dceaf6;border-color:#78a1c2}
+@media(hover:hover) and (pointer:fine){.uni-map-explorer .uni-campus:hover{border-color:#86abc699;box-shadow:0 30px 50px #42688520,0 10px 18px #4268850d}.uni-campus:hover .uni-enter-campus{background:#e4eef8;border-color:#88abc7;box-shadow:0 4px 12px #5e7f9a13}}
+/* Clearly separated, high-contrast origin and destination. */
+.uni-map-origin-label{fill:#864b45;paint-order:stroke;stroke:#f5f8fc;stroke-width:3px;stroke-linejoin:round}
+.uni-map-origin{fill:#a56359;stroke:#fff}
+.uni-origin-halo{stroke:#a5635980}
+.uni-map-status{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:30px;padding:26px 0 16px;border-top:1px solid #6c8ba657;align-items:start}
+.uni-map-status>div{padding-left:16px;border-left:2px solid #7795ae}
+.uni-map-status .uni-route-origin{border-left-color:#a56359}
+.uni-map-status .uni-route-destination{border-left-color:#4d7296}
+.uni-map-status small{font-size:16px;line-height:1.5;letter-spacing:.13em;color:#405d77;font-weight:400}
+.uni-map-status small i{display:none}
+.uni-map-status strong{font-size:30px;line-height:1.45;letter-spacing:.03em;margin-top:9px;color:#294b68}
+.uni-map-status .uni-route-origin strong{color:#794740}
+.uni-map-status .uni-route-destination strong{color:#2d5375}
+@media(max-width:1200px){.uni-map-status{gap:22px}.uni-map-status small{font-size:15px}.uni-map-status strong{font-size:26px}}
+@media(max-width:760px){.uni-map-status{gap:20px;padding-top:23px}.uni-map-status>div{padding-left:12px}.uni-map-status small{font-size:15px}.uni-map-status strong{font-size:26px}}
+/* A restrained, polished search surface. */
+.uni-map-explorer .uni-tools{gap:17px;align-items:center}
+.uni-map-explorer .uni-search{position:relative;gap:13px;width:auto;min-width:0;padding:16px 20px;border:1px solid #9db7ce61;border-radius:18px;background:linear-gradient(135deg,#ffffffd9,#f3f8fcb3);box-shadow:inset 0 1px 0 #fff,0 5px 18px #45678008;color:#607f9a;transition:box-shadow .25s,border-color .25s,background .25s}
+.uni-map-explorer .uni-search>svg{width:21px;height:21px;flex-shrink:0;stroke-width:1.5}
+.uni-map-explorer .uni-search input{font-family:'Campus Source Serif','Songti SC',serif;font-size:16px;line-height:1.6;letter-spacing:.025em;color:#34546e;min-width:0}
+.uni-map-explorer .uni-search input::placeholder{color:#8299ab;opacity:1}
+.uni-map-explorer .uni-search:focus-within{border-color:#6f9bbb;background:linear-gradient(135deg,#fff,#f4f9fd);box-shadow:inset 0 1px 0 #fff,0 0 0 3px #88b1d017,0 7px 22px #426c8a0c;color:#3e749e}
+.uni-map-explorer .uni-total{font-family:'Campus Cormorant','Campus Source Serif',serif;font-size:15px;letter-spacing:.05em;color:#607d94}
+@media(max-width:760px){.uni-map-explorer .uni-tools{gap:11px}.uni-map-explorer .uni-search{padding:14px 15px;gap:10px;border-radius:16px}.uni-map-explorer .uni-search input{font-size:14px;letter-spacing:0}.uni-map-explorer .uni-total{font-size:13px}}
+/* An airy typographic route, without rigid dividers. */
+.uni-map-status{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:35px;padding:25px 0 12px;border-top:1px solid #6c8ba62e}
+.uni-map-status>div,.uni-map-status .uni-route-origin,.uni-map-status .uni-route-destination{border-left:0;padding-left:0}
+.uni-map-status small{font-family:'Campus Source Serif','Songti SC',serif;font-size:13px;letter-spacing:.22em;line-height:1.7;color:#647e96}
+.uni-map-status strong{font-family:'Campus Source Serif','Songti SC',serif;font-size:31px;line-height:1.5;font-weight:400;letter-spacing:.07em;margin-top:8px}
+.uni-map-status .uni-route-origin strong{color:#77554f}
+.uni-map-status .uni-route-destination{padding-top:12px}
+.uni-map-status .uni-route-destination strong{color:#345b7b}
+.uni-map-status .uni-route-destination small{color:#5c7790}
+@media(max-width:1200px){.uni-map-status{gap:24px}.uni-map-status strong{font-size:27px;letter-spacing:.04em}}
+@media(max-width:760px){.uni-map-status{gap:20px;padding:22px 0 10px}.uni-map-status small{font-size:12px}.uni-map-status strong{font-size:26px;letter-spacing:.025em}.uni-map-status .uni-route-destination{padding-top:9px}}
+/* Place the route vertically in the map's lower-left open space. */
+.uni-map-status{position:absolute;left:0;bottom:16px;display:flex;flex-direction:column;align-items:flex-start;gap:19px;width:min(44%,220px);padding:0;border:0;z-index:2;pointer-events:none}
+.uni-map-status>div{width:100%;flex:none}
+.uni-map-status .uni-route-destination{padding-top:0}
+.uni-map-status small{font-size:12px}
+.uni-map-status strong{font-size:26px;line-height:1.45;letter-spacing:.035em;margin-top:5px}
+@media(max-width:1200px){.uni-map-status{bottom:12px;gap:17px;width:45%}.uni-map-status strong{font-size:23px}}
+@media(max-width:760px){.uni-map-status{bottom:66px;gap:15px;width:44%}.uni-map-status small{font-size:11px}.uni-map-status strong{font-size:21px}}
+@media(max-width:380px){.uni-map-status strong{font-size:19px}}
+/* A deliberate typographic count beside the search field. */
+.uni-map-explorer .uni-total{display:flex;align-items:center;gap:11px;padding-left:17px;border-left:1px solid #8ba8c04d;color:#416683;flex-shrink:0}
+.uni-total>b{font-family:'Campus Cormorant',Georgia,serif;font-size:42px;font-weight:500;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+.uni-total>span{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-family:'Campus Source Serif','Songti SC',serif;font-size:12px;line-height:1.4;letter-spacing:.1em}
+.uni-total i{display:block;width:25px;height:2px;border-radius:2px;background:linear-gradient(90deg,#537f9f,#9cb7cb40)}
+@media(max-width:760px){.uni-map-explorer .uni-total{padding-left:10px;gap:7px}.uni-total>b{font-size:33px}.uni-total>span{font-size:11px;letter-spacing:.02em;gap:4px}.uni-total i{width:19px}}
+.uni-total>span{font-size:16px;letter-spacing:.05em}
+@media(max-width:760px){.uni-total>span{font-size:14px;letter-spacing:.02em}}
+/* Align the display numerals with the Chinese count label. */
+.uni-map-explorer .uni-total{align-items:baseline}
+.uni-total>span{display:block;line-height:1.4}
+/* Slow sky light and a quiet grain keep the blue background alive. */
+.uni-map-explorer{position:relative;isolation:isolate}
+.uni-explorer-columns{position:relative;z-index:1}
+.uni-ambient{position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;pointer-events:none;z-index:0;overflow:hidden}
+.uni-ambient-light{position:absolute;display:block;border-radius:50%;will-change:transform}
+.uni-ambient-light-one{width:85vw;height:700px;top:-190px;left:-18vw;background:radial-gradient(ellipse,#ffffffd9 0%,#dbeaff65 40%,transparent 70%);animation:uni-sky-drift-one 24s ease-in-out infinite alternate}
+.uni-ambient-light-two{width:75vw;height:650px;right:-20vw;bottom:-120px;background:radial-gradient(ellipse,#83b1db42 0%,#f2f9ff78 35%,transparent 70%);animation:uni-sky-drift-two 30s ease-in-out infinite alternate}
+.uni-ambient-grain{position:absolute;inset:0;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%237b8ea0' filter='url(%23g)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");background-size:180px 180px;mix-blend-mode:multiply}
+.uni-map-city-glow{transform-box:fill-box;transform-origin:center;animation:uni-city-breathe 4.8s ease-in-out infinite;pointer-events:none}
+.uni-map-destination-layer{animation:uni-city-arrive .7s ease-out both}
+.uni-map-route{filter:drop-shadow(0 0 3px #6796bc55)}
+@keyframes uni-sky-drift-one{from{transform:translate3d(-3%,0,0) scale(1)}to{transform:translate3d(15%,10%,0) scale(1.12)}}
+@keyframes uni-sky-drift-two{from{transform:translate3d(2%,8%,0) scale(1)}to{transform:translate3d(-17%,-12%,0) scale(1.15)}}
+@keyframes uni-city-arrive{from{opacity:0}to{opacity:1}}
+@keyframes uni-city-breathe{0%,100%{opacity:.65;transform:scale(.88)}50%{opacity:1;transform:scale(1.12)}}
+@media(max-width:760px){.uni-ambient-light-one{width:140vw;height:650px;left:-45vw}.uni-ambient-light-two{width:150vw;height:950px;right:-55vw;bottom:0}.uni-ambient-grain{opacity:.035}}
+@media(prefers-reduced-motion:reduce){.uni-ambient-light,.uni-map-city-glow,.uni-map-destination-layer{animation:none;will-change:auto}}
+@font-face{font-family:'Campus Intro Brush';src:url('/fonts/campus-heading-brush.woff2?v=4') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Campus Intro WenKai';src:url('/fonts/campus-intro-wenkai.woff2?v=4') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+/* A freer, staggered introductory composition. */
+.uni-map-explorer .uni-intro h1.uni-art-heading{font-family:'Campus Intro Brush','KaiTi',cursive;font-weight:400;font-synthesis:none;font-size:clamp(42px,3.8vw,58px);line-height:1.18;letter-spacing:.045em;margin:0 0 23px;display:flex;flex-direction:column;align-items:flex-start}
+.uni-map-explorer .uni-art-heading .uni-art-line-one{color:#345675}
+.uni-map-explorer .uni-art-heading .uni-art-line-two{color:#426786;margin-left:38px;margin-top:8px;font-size:.84em}
+.uni-map-explorer .uni-art-heading .uni-art-line-three{align-self:flex-end;margin:1px 30px 0 0;color:#477ca8;font-size:1.32em;letter-spacing:.09em}
+.uni-map-explorer .uni-lead{display:flex;flex-direction:column;align-items:flex-start;gap:11px;font-family:'Campus Intro WenKai','KaiTi',serif;font-size:18px;font-weight:400;line-height:1.7;letter-spacing:.04em;color:#55748e;margin:0}
+.uni-map-explorer .uni-lead>span:last-child{margin-left:42px}
+@media(max-width:1200px){.uni-map-explorer .uni-intro h1.uni-art-heading{font-size:44px}.uni-map-explorer .uni-art-heading .uni-art-line-two{margin-left:24px}.uni-map-explorer .uni-art-heading .uni-art-line-three{margin-right:8px}.uni-map-explorer .uni-lead{font-size:16px}.uni-map-explorer .uni-lead>span:last-child{margin-left:24px}}
+@media(max-width:760px){.uni-map-explorer .uni-intro h1.uni-art-heading{font-size:46px;max-width:440px;margin-bottom:19px}.uni-map-explorer .uni-art-heading .uni-art-line-two{margin-left:29px}.uni-map-explorer .uni-art-heading .uni-art-line-three{margin-right:18px}.uni-map-explorer .uni-lead{font-size:17px;gap:10px}.uni-map-explorer .uni-lead>span:last-child{margin-left:30px}}
+@media(max-width:380px){.uni-map-explorer .uni-intro h1.uni-art-heading{font-size:42px}.uni-map-explorer .uni-lead{font-size:16px}}
+/* University detail: school information above, an open conversation below. */
+
+.uni-detail{max-width:1150px;padding:35px 45px 70px}
+.uni-detail .uni-back{color:#69839a;font-size:14px}
+.uni-school-summary{display:grid;grid-template-columns:210px minmax(0,1fr);gap:52px;align-items:start;padding:38px 0 45px}
+.uni-school-emblem{padding-top:18px}.uni-school-emblem img{width:210px;height:210px;object-fit:contain}
+.uni-school-information h1{font-family:'Campus Source Serif','Songti SC',serif;font-size:42px;line-height:1.45;font-weight:400;color:#2e4c65;letter-spacing:.04em;margin:0 0 3px}
+.uni-school-english{font-family:'Campus Cormorant',Georgia,serif;font-size:25px;color:#708ba1;line-height:1.2;margin:0 0 20px}
+.uni-school-facts{display:flex;align-items:center;flex-wrap:wrap;gap:18px;color:#607c93;font-size:14px}
+.uni-school-facts>span{display:flex;gap:6px;align-items:center}
+.uni-school-facts .uni-campus-levels span{padding:3px 9px;font-size:13px;border:1px solid #96b2c650;border-radius:7px;background:#ffffff85;color:#547b9b}
+.uni-school-motto{font-family:'Campus Source Serif','Songti SC',serif;font-size:20px;font-weight:400;line-height:1.6;letter-spacing:.065em;color:var(--u-accent);margin:22px 0 16px}
+.uni-school-description{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:18px;line-height:1.9;color:#4f697e;max-width:750px;margin:0}
+.uni-school-links{display:flex;gap:25px;margin-top:19px}
+.uni-school-links a{display:flex;align-items:center;gap:4px;font-size:13px;color:#6b859c}
+.uni-school-links a:hover{color:#345f82}
+.uni-comment-section{border-top:1px solid #8ca7bf40;padding-top:30px;scroll-margin-top:115px}
+.uni-comment-heading{display:flex;align-items:baseline;gap:15px;margin-bottom:20px}
+.uni-comment-heading h2{font-family:'Campus Source Serif','Songti SC',serif;font-size:28px;font-weight:400;color:#34536e;margin:0}
+.uni-comment-heading>span{font-size:13px;color:#7b91a5}
+.uni-comment-compose,.uni-inline-reply{border:1px solid #9db6ca50;border-radius:16px;background:#ffffffb5;padding:17px 19px}
+.uni-comment-compose textarea,.uni-inline-reply textarea{display:block;width:100%;background:transparent;outline:none;resize:vertical;min-height:76px;color:#34526b;font-size:16px;line-height:1.8}
+.uni-comment-compose textarea::placeholder,.uni-inline-reply textarea::placeholder{color:#8b9fac}
+.uni-comment-compose:focus-within,.uni-inline-reply:focus-within{border-color:#7199b7;box-shadow:0 0 0 3px #88b1d014}
+.uni-comment-compose-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:10px;font-size:13px;color:#7b91a5}
+.uni-comment-compose-bottom label{display:flex;align-items:center;gap:6px}
+.uni-comment-compose-bottom input{accent-color:#527e9e}
+.uni-comment-compose-bottom button,.uni-comment-compose-bottom a{display:flex;align-items:center;justify-content:center;gap:9px;padding:8px 16px;border-radius:9px;background:#e0edf7;color:#476f8d;font-size:14px}
+.uni-comment-compose-bottom button:disabled{opacity:.5}
+.uni-comment-list{margin-top:16px}
+.uni-comment{display:flex;gap:15px;padding:24px 0;border-bottom:1px solid #91abc12b}
+.uni-comment-avatar{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;background:#d9e7f3;color:#62839e;font-size:16px}
+.uni-comment-main{min-width:0;flex:1}
+.uni-comment-meta{display:flex;align-items:baseline;flex-wrap:wrap;gap:13px}
+.uni-comment-meta strong{font-size:15px;font-weight:500;color:#45657e}
+.uni-comment-meta time{font-size:12px;color:#8a9faf}
+.uni-comment-main p{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.8;color:#486277;margin:9px 0 10px}
+.uni-comment-reply-toggle{display:flex;align-items:center;gap:5px;color:#6e8ba2;font-size:13px;padding:3px 0}
+.uni-comment-replies{margin-top:13px;padding:0 0 0 17px;border-left:2px solid #a5bfd345}
+.uni-comment-response{padding:9px 0}.uni-comment-response+.uni-comment-response{border-top:1px solid #91abc11a}
+.uni-comment-response p{font-size:15px;margin-bottom:0}
+.uni-inline-reply{margin-top:15px;padding:12px 15px}.uni-inline-reply .uni-comment-compose-bottom{justify-content:flex-end}
+.uni-comments-empty{text-align:center;font-size:15px;color:#8196a7;padding:33px 0}
+.uni-comments-more{display:block;margin:24px auto 0;color:#62839e;font-size:14px}
+.uni-feedback{color:#a16c58;font-size:14px;padding-top:12px}
+@media(max-width:760px){.uni-detail{padding:24px 22px 45px}.uni-school-summary{grid-template-columns:95px minmax(0,1fr);gap:19px;padding:28px 0 30px}.uni-school-emblem{padding-top:8px}.uni-school-emblem img{width:95px;height:95px}.uni-school-information h1{font-size:29px;letter-spacing:.015em}.uni-school-english{font-size:21px;margin-bottom:15px}.uni-school-facts{gap:10px;font-size:13px}.uni-school-motto{font-size:16px;margin:17px 0 12px;letter-spacing:.02em}.uni-school-description{font-size:16px;line-height:1.85}.uni-comment-heading h2{font-size:25px}.uni-comment-compose{padding:14px}.uni-comment{gap:11px}.uni-comment-avatar{width:32px;height:32px}.uni-comment-main p{font-size:15px}}
+@media(max-width:480px){.uni-school-summary{grid-template-columns:78px minmax(0,1fr);gap:15px}.uni-school-emblem img{width:78px;height:78px}.uni-school-information{display:contents}.uni-school-information h1,.uni-school-english,.uni-school-facts{grid-column:2}.uni-school-emblem{grid-column:1;grid-row:1/4}.uni-school-english{margin:0}.uni-school-information h1{font-size:27px;margin:0}.uni-school-motto,.uni-school-description,.uni-school-links{grid-column:1/-1}.uni-school-motto{margin:4px 0 0}.uni-school-links{margin-top:1px}.uni-school-facts{gap:10px}.uni-school-links a{font-size:12px}}
+
+/* Keep the complete second phrase together, with quieter staggered copy. */
+.uni-map-explorer .uni-art-heading .uni-art-line-two{align-self:flex-end;margin:15px 0 0 24px;font-size:.78em;white-space:nowrap;color:#426786}
+.uni-map-explorer .uni-art-heading .uni-art-coordinate{font-size:1em;letter-spacing:inherit;color:#477ca8}
+.uni-map-explorer .uni-lead{gap:18px;margin-top:5px}
+.uni-map-explorer .uni-lead>span:first-child{margin-left:12px}
+.uni-map-explorer .uni-lead>span:last-child{align-self:flex-end;margin:0 12px 0 48px}
+@media(max-width:1200px){.uni-map-explorer .uni-art-heading .uni-art-line-two{font-size:.76em;margin-left:12px}.uni-map-explorer .uni-lead>span:last-child{margin-right:0;margin-left:35px}}
+@media(max-width:760px){.uni-map-explorer .uni-art-heading .uni-art-line-two{font-size:.8em;margin-top:13px;margin-left:15px}.uni-map-explorer .uni-lead{gap:17px}.uni-map-explorer .uni-lead>span:first-child{margin-left:4px}.uni-map-explorer .uni-lead>span:last-child{margin-left:35px;margin-right:5px}}
+@media(max-width:380px){.uni-map-explorer .uni-art-heading .uni-art-line-two{font-size:.76em;margin-left:8px}}
+.uni-school-emblem{display:flex;flex-direction:column;align-items:center;gap:22px}
+.uni-emblem-website{display:inline-flex;align-items:center;gap:5px;font-family:'Campus Source Serif','Songti SC',serif;font-size:14px;letter-spacing:.06em;color:#6b859c;padding:3px 0;transition:color .2s}
+.uni-emblem-website svg{stroke-width:1.3;transition:transform .2s}
+.uni-emblem-website:hover{color:#365f80}.uni-emblem-website:hover svg{transform:translate(1px,-1px)}
+@media(max-width:760px){.uni-school-emblem{gap:13px}.uni-emblem-website{font-size:12px;gap:3px;letter-spacing:.015em}.uni-emblem-website svg{width:12px;height:12px}}
+/* A wider school detail, with understated links below the emblem. */
+.uni-detail{max-width:1580px;padding-inline:40px}
+.uni-school-summary{grid-template-columns:230px minmax(0,1fr);gap:58px}
+.uni-school-emblem img{width:220px;height:220px}
+.uni-school-description{max-width:1000px}
+.uni-emblem-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 20px}
+.uni-emblem-links .uni-emblem-website{font-size:13px;letter-spacing:.035em;color:#728ba0}
+.uni-emblem-links .uni-emblem-website:hover{color:#365f80}
+@media(min-width:1800px){.uni-detail{max-width:1740px;padding-inline:50px}}
+@media(max-width:760px){.uni-detail{padding-inline:22px}.uni-school-summary{grid-template-columns:95px minmax(0,1fr);gap:19px}.uni-school-emblem img{width:95px;height:95px}.uni-emblem-links{flex-direction:column;gap:7px}.uni-emblem-links .uni-emblem-website{font-size:12px}}
+@media(max-width:480px){.uni-school-summary{grid-template-columns:78px minmax(0,1fr);gap:15px}.uni-school-emblem img{width:78px;height:78px}}
+/* A restrained glass frame for the school introduction. */
+.uni-detail{max-width:1380px;padding-inline:40px}
+.uni-school-summary{position:relative;isolation:isolate;grid-template-columns:210px minmax(0,1fr);gap:44px;padding:34px 36px 36px;margin:25px 0 34px;border-radius:28px;border:1px solid #ffffffb8;background:linear-gradient(135deg,#ffffffa8,#edf6ff73 55%,#ffffff66);-webkit-backdrop-filter:blur(20px) saturate(135%);backdrop-filter:blur(20px) saturate(135%);box-shadow:inset 0 1px 0 #fff,inset 1px 0 0 #ffffffb0,inset 0 -1px 0 #95b7d02b,0 15px 42px #476b880d,0 3px 10px #476b8806}
+.uni-school-summary::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at 10% 0,#ffffffbd,transparent 55%),linear-gradient(120deg,transparent 30%,#ffffff22 48%,transparent 65%);pointer-events:none;z-index:-1}
+.uni-school-emblem img{width:200px;height:200px}
+.uni-school-emblem{gap:22px}
+.uni-emblem-links{flex-direction:column;gap:11px;align-items:center}
+.uni-emblem-links .uni-emblem-website{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:15px;letter-spacing:.055em;padding:3px 7px;color:#6a859c}
+.uni-emblem-links .uni-emblem-website svg{opacity:.6}
+.uni-school-description{max-width:900px}
+.uni-comment-section{border-top:0;padding-top:0}
+@media(min-width:1800px){.uni-detail{max-width:1460px;padding-inline:45px}}
+@media(max-width:760px){.uni-detail{padding-inline:22px}.uni-school-summary{grid-template-columns:95px minmax(0,1fr);gap:19px;padding:25px 22px;border-radius:23px;margin:22px 0 29px}.uni-school-emblem img{width:95px;height:95px}.uni-school-emblem{gap:15px}.uni-emblem-links{gap:7px}.uni-emblem-links .uni-emblem-website{font-size:12px;padding:2px 0}}
+@media(max-width:480px){.uni-detail{padding-inline:16px}.uni-school-summary{grid-template-columns:78px minmax(0,1fr);gap:15px;padding:22px 18px}.uni-school-emblem img{width:78px;height:78px}.uni-school-information h1{font-size:25px}.uni-school-english{font-size:20px}.uni-school-description{font-size:16px}}
+/* A small writing desk alongside an open conversation stream. */
+.uni-comment-heading{justify-content:space-between;align-items:center;margin:0 0 26px;padding:0 0 18px;border-bottom:1px solid #8ca7bf35}
+.uni-comment-heading h2{font-size:33px;letter-spacing:.06em}
+.uni-comment-heading .uni-conversation-count{display:flex;align-items:baseline;gap:10px;font-size:12px;letter-spacing:.06em;color:#7891a7}
+.uni-conversation-count b{font-family:'Campus Cormorant',Georgia,serif;font-size:35px;font-weight:500;line-height:1;color:#527796;font-variant-numeric:lining-nums tabular-nums}
+.uni-conversation-workspace{display:grid;grid-template-columns:minmax(260px,.75fr) minmax(0,1.65fr);gap:42px;align-items:start}
+.uni-message-desk{position:sticky;top:116px;padding-top:10px}
+.uni-message-desk .uni-comment-compose{position:relative;border-radius:22px 22px 22px 7px;border:1px solid #ffffffb8;background:linear-gradient(150deg,#ffffffcf,#f0f6fbe0);padding:23px;box-shadow:inset 0 1px 0 #fff,0 12px 30px #4267850b;transition:box-shadow .3s,border-color .3s}
+.uni-message-desk .uni-comment-compose:focus-within{border-color:#83a7c080;box-shadow:inset 0 1px 0 #fff,0 13px 35px #42678515,0 0 0 3px #88b1d00d}
+.uni-message-desk-heading{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.uni-desk-avatar{display:grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #86aac04a;border-radius:50%;color:#6487a1;font-family:'Campus Intro WenKai','KaiTi',serif;font-size:15px}
+.uni-message-desk-heading h3{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:22px;font-weight:400;color:#426683;margin:0}
+.uni-draft-count{margin-left:auto;font-family:'Campus Cormorant',Georgia,serif;font-size:14px;color:#8ba1b1;white-space:nowrap}
+.uni-message-desk textarea{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:17px;line-height:1.85;min-height:145px}
+.uni-message-desk .uni-comment-compose-bottom{padding-top:18px;border-top:1px solid #8ca7bf22}
+.uni-message-desk .uni-comment-compose-bottom button,.uni-message-desk .uni-comment-compose-bottom a{border-radius:18px;padding:8px 16px;background:#deebf5}
+.uni-conversation-stream{position:relative;min-height:285px}
+.uni-conversation-stream .uni-comment-list{margin-top:0}
+.uni-conversation-stream .uni-comment{position:relative;gap:17px;padding:22px 16px 25px 0;border-bottom:1px solid #91abc12b}
+.uni-conversation-stream .uni-comment:first-child{padding-top:10px}
+.uni-conversation-stream .uni-comment-avatar{width:41px;height:41px;border:3px solid #f2f7fc;background:#d7e6f3;box-shadow:0 0 0 1px #90abc038;color:#577e9e;font-family:'Campus Intro WenKai','KaiTi',serif;font-size:17px}
+.uni-comment-main{padding-top:3px}
+.uni-comment-meta strong{font-size:16px;overflow-wrap:anywhere}
+.uni-comment-meta time{margin-left:auto}
+.uni-comment-main>p{font-size:17px;line-height:1.85;margin-top:12px;margin-bottom:12px;color:#45617a}
+.uni-comment-reply-toggle{padding:4px 9px 4px 0;transition:color .2s}
+.uni-comment-reply-toggle:hover{color:#355e7f}
+.uni-comment-replies{padding:4px 15px 7px 17px;border-left:2px solid #a5bfd355;background:linear-gradient(90deg,#ffffff38,transparent);border-radius:0 13px 13px 0}
+.uni-comment-response+.uni-comment-response{border-top:1px solid #91abc12b}
+.uni-conversation-stream .uni-comments-empty{display:flex;min-height:280px;flex-direction:column;justify-content:center;align-items:center;margin:0;padding:25px 20px;color:#7892a7}
+.uni-comments-empty p{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:19px;margin-top:22px}
+.uni-empty-conversation{position:relative;display:grid;place-items:center;width:105px;height:82px;color:#7197b5}
+.uni-empty-conversation>svg{stroke-width:.85;transform:rotate(-8deg)}
+.uni-empty-conversation i{position:absolute;width:6px;height:6px;border-radius:50%;background:#89abc655;top:10px;right:10px}
+.uni-empty-conversation i:last-child{width:4px;height:4px;right:0;top:40px}
+@media(max-width:1000px){.uni-conversation-workspace{grid-template-columns:minmax(235px,.85fr) minmax(0,1.4fr);gap:27px}.uni-message-desk .uni-comment-compose{padding:19px}}
+@media(max-width:760px){.uni-comment-heading{margin-bottom:18px;padding-bottom:14px}.uni-comment-heading h2{font-size:27px}.uni-conversation-count b{font-size:30px}.uni-conversation-workspace{grid-template-columns:1fr;gap:22px}.uni-message-desk{position:static;padding-top:0}.uni-message-desk textarea{min-height:100px;max-height:220px;font-size:16px}.uni-message-desk-heading{margin-bottom:13px}.uni-message-desk .uni-comment-compose{padding:19px}.uni-conversation-stream{min-height:180px}.uni-conversation-stream .uni-comments-empty{min-height:200px}.uni-conversation-stream .uni-comment{gap:12px;padding-right:0}.uni-conversation-stream .uni-comment-avatar{width:36px;height:36px}.uni-comment-main>p{font-size:16px}.uni-comment-meta time{margin-left:0}.uni-comment-meta strong{font-size:15px}}
+
+/* Shared card travel: flip while the browser interpolates position and size. */
+.uni-school-summary{view-transition-name:campus-card}
+.uni-return-card{display:inline-flex;align-items:center;gap:8px}
+.uni-return-card svg{transition:transform .25s}
+.uni-return-card:hover svg{transform:scale(.9)}
+::view-transition-group(campus-card){width:var(--campus-travel-width);height:var(--campus-travel-height);transform-origin:0 0;animation:uni-card-travel 950ms cubic-bezier(.4,0,.2,1) both;z-index:5;will-change:transform}
+::view-transition-image-pair(campus-card){isolation:auto;transform-style:preserve-3d;transform-origin:50% 50%;animation:uni-card-open-flip 950ms cubic-bezier(.35,.1,.65,.9) both}
+html[data-campus-travel=close]::view-transition-image-pair(campus-card){animation-name:uni-card-close-flip}
+::view-transition-old(campus-card){animation:none;backface-visibility:hidden;mix-blend-mode:normal;border-radius:24px;overflow:hidden}
+::view-transition-new(campus-card){animation:none;transform:rotateY(180deg);backface-visibility:hidden;mix-blend-mode:normal;border-radius:24px;overflow:hidden}
+::view-transition-old(root){animation:uni-travel-page-out 350ms ease both}
+::view-transition-new(root){animation:uni-travel-page-in 350ms ease both}
+@keyframes uni-card-open-flip{from{transform:perspective(2400px) rotateY(0deg)}to{transform:perspective(2400px) rotateY(180deg)}}
+@keyframes uni-card-close-flip{from{transform:perspective(2400px) rotateY(0deg)}to{transform:perspective(2400px) rotateY(-180deg)}}
+
+
+@keyframes uni-travel-page-out{to{opacity:0}}
+@keyframes uni-travel-page-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){::view-transition-group(campus-card),::view-transition-image-pair(campus-card),::view-transition-old(campus-card),::view-transition-new(campus-card){animation:none}}
+
+/* Keep the university sky continuous when a campus card opens. */
+.uni-world{position:relative;isolation:isolate}
+.uni-world>.uni-ambient{left:0;width:100%;height:100%}
+.uni-world>.uni-shell{position:relative;z-index:1}
+
+/* Layered conversation glass, with a quiet three-dot rhythm. */
+.uni-empty-conversation{width:180px;height:138px}
+.uni-conversation-art{overflow:visible}
+.uni-conversation-art-front{animation:uni-conversation-float 6s ease-in-out infinite;transform-origin:center}
+.uni-conversation-art-back{animation:uni-conversation-float 7s ease-in-out infinite reverse;transform-origin:center}
+.uni-conversation-dot{animation:uni-conversation-dot 2.8s ease-in-out infinite}
+.uni-conversation-dot:nth-child(2){animation-delay:.22s}
+.uni-conversation-dot:nth-child(3){animation-delay:.44s}
+.uni-comments-empty p{margin-top:14px}
+.uni-comment-reply-toggle svg{flex:none;transition:transform .25s}
+.uni-comment-reply-toggle:hover svg{transform:translateY(-2px)}
+@keyframes uni-conversation-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes uni-conversation-dot{0%,65%,100%{opacity:.55}25%,40%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.uni-conversation-art-front,.uni-conversation-art-back,.uni-conversation-dot{animation:none}}
+
+@keyframes uni-card-travel{from{transform:var(--campus-travel-from)}to{transform:var(--campus-travel-to)}}
+::view-transition-old(campus-card),::view-transition-new(campus-card){width:100%;height:100%;object-fit:fill}
+html[data-campus-travel=close] .uni-campus{animation:none;translate:none;transition:none}
+html[data-campus-travel=close] .uni-campus{--campus-lift:0px!important;--campus-scale:1!important;--campus-rotate-x:0deg!important;--campus-rotate-y:0deg!important}
+
+
+
+
+/* A restored list is already visible; do not restart its entrance after the flip. */
+.uni-map-explorer[data-campus-returned] .uni-campus{animation:none;translate:none}
+.uni-map-explorer .uni-campus[data-campus-settled]{--campus-lift:0px!important;--campus-scale:1!important;--campus-rotate-x:0deg!important;--campus-rotate-y:0deg!important}
+
+/* Numbered browsing and a shared palette of softly tinted campus paper. */
+.uni-pagination{display:flex;align-items:center;justify-content:center;gap:16px;margin:36px 0 23px;color:#5e7d97}
+.uni-page-numbers,.uni-page-numbers>span{display:flex;align-items:center;gap:8px}
+.uni-page-numbers button,.uni-page-direction{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid transparent;transition:background .2s,box-shadow .2s,color .2s}
+.uni-page-numbers button{font-family:'Campus Cormorant',Georgia,serif;font-size:21px;font-variant-numeric:lining-nums}
+.uni-page-numbers button[aria-current=page]{background:#ffffffc9;border-color:#93aec34d;color:#365f80;box-shadow:inset 0 1px 0 white,0 5px 12px #456d8a0b}
+.uni-pagination button:hover:not(:disabled){background:#ffffff8a;color:#355f81}
+.uni-pagination button:disabled{opacity:.3;cursor:default}
+.uni-page-numbers i{font-style:normal;color:#8ca3b7}
+.uni-map-explorer .uni-campus{background:linear-gradient(150deg,#fffffff5,var(--campus-card-wash,#f3f7fc));border-color:color-mix(in srgb,var(--u-accent) 24%,transparent)}
+.uni-campus .uni-enter-campus{color:var(--u-accent)}
+.uni-world:has(.uni-detail){background:linear-gradient(180deg,#fff 0%,#f2f7fc 18%,var(--campus-page-wash,#b9d3e9) 100%)}
+.uni-world:has(.uni-detail.uni-accent-cyan){--campus-page-wash:#b9d3e9}
+.uni-world:has(.uni-detail.uni-accent-violet){--campus-page-wash:#d6cce8}
+.uni-world:has(.uni-detail.uni-accent-sage){--campus-page-wash:#c7ded6}
+.uni-world:has(.uni-detail.uni-accent-sand){--campus-page-wash:#e5d7be}
+.uni-world:has(.uni-detail.uni-accent-rose){--campus-page-wash:#e7cfd6}
+.uni-world:has(.uni-detail.uni-accent-slate){--campus-page-wash:#cad7e1}
+.uni-school-summary{background:linear-gradient(135deg,#ffffffb8,var(--campus-card-wash,#edf5fc) 55%,#ffffff85)}
+@media(min-width:1100px){.uni-explorer-left{position:sticky;top:120px;align-self:start}}
+@media(max-width:480px){.uni-pagination{gap:8px}.uni-page-numbers,.uni-page-numbers>span{gap:3px}.uni-page-numbers button,.uni-page-direction{width:34px;height:34px}}
+.uni-catalog-pending{font-size:13px;letter-spacing:.06em;color:#7d91a2;margin:12px 0 0}
+.uni-map-explorer .uni-filters{max-height:110px;overflow:auto;align-content:flex-start;padding:3px 2px 7px;scrollbar-width:thin;scrollbar-color:#92aec34d transparent}
+.uni-map-explorer .uni-campus h2{overflow-wrap:anywhere}
+
+
+/* Keep the campus directory inside the viewport, with an independent reading pane. */
+@media(min-width:761px){
+ .uni-map-explorer{height:calc(100dvh - 88px);padding:34px 36px 24px;max-width:1800px}
+ .uni-explorer-columns{height:100%;min-height:0;grid-template-columns:minmax(280px,.8fr) minmax(0,1.8fr);gap:28px}
+ .uni-explorer-left{position:relative;top:auto;height:100%;min-height:0;display:flex;flex-direction:column;align-self:stretch}
+ .uni-map-explorer .uni-intro{flex:none;padding-bottom:12px}
+ .uni-map-explorer .uni-intro h1.uni-art-heading{font-size:clamp(34px,3vw,46px);margin-bottom:15px}
+ .uni-map-explorer .uni-lead{font-size:16px;gap:7px;line-height:1.7}
+ .uni-map-panel{flex:1;min-height:0;display:flex;align-items:center;padding-top:0}
+ .uni-china-map{height:100%;max-height:100%;width:100%;object-fit:contain}
+ .uni-explorer-right{height:100%;min-height:0;display:flex;flex-direction:column;padding-left:28px}
+ .uni-map-explorer .uni-tools{flex:none;padding-top:0}
+ .uni-map-explorer .uni-filters{flex:none;max-height:90px;margin:16px 0 12px}
+ .uni-map-explorer .uni-grid{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;align-content:start;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:13px 8px 20px;scrollbar-width:thin;scrollbar-color:#91acc34d transparent;overscroll-behavior-y:contain;outline-offset:-2px}
+ .uni-map-explorer .uni-campus{min-height:220px;height:auto;padding:22px 17px 16px;display:flex}
+ .uni-map-explorer .uni-card-identity{gap:12px}
+ .uni-map-explorer .uni-logo{width:68px;height:68px;flex:none}
+ .uni-map-explorer .uni-campus h2{font-size:21px;line-height:1.4}
+ .uni-map-explorer .uni-campus-en{font-size:17px;line-height:1.2}
+ .uni-map-explorer .uni-motto{font-size:12px;line-height:1.6}
+ .uni-map-explorer .uni-card-bottom{gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:13px}
+ .uni-map-explorer .uni-campus-levels{gap:4px}
+ .uni-map-explorer .uni-campus-levels span{font-size:11px;padding:4px 6px;border-radius:6px}
+ .uni-map-explorer .uni-campus-meta{gap:7px}
+ .uni-map-explorer .uni-campus-meta svg{width:23px;height:23px}
+ .uni-map-explorer .uni-pagination{flex:none;margin:12px 0 6px}
+ .uni-map-explorer .uni-editor-note{flex:none;font-size:11px;margin:5px 0 0;text-align:center}
+}
+@media(min-width:761px) and (max-width:1099px){
+ .uni-map-explorer{padding-inline:22px}
+ .uni-explorer-columns{grid-template-columns:minmax(230px,.8fr) minmax(0,1.2fr);gap:20px}
+ .uni-explorer-right{padding-left:18px}
+ .uni-map-explorer .uni-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-inline:5px}
+ .uni-map-explorer .uni-card-identity{gap:9px}
+ .uni-map-explorer .uni-logo{width:54px;height:54px}
+ .uni-map-explorer .uni-campus h2{font-size:19px}
+ .uni-map-explorer .uni-intro h1.uni-art-heading{font-size:32px}
+ .uni-map-explorer .uni-lead{font-size:14px}
+}
+@media(max-width:760px){
+ .uni-map-explorer .uni-grid{height:560px;max-height:72dvh;overflow-y:auto;overflow-x:hidden;align-content:start;grid-template-columns:1fr;padding:12px 5px 18px;scrollbar-width:thin;scrollbar-color:#91acc34d transparent;overscroll-behavior-y:contain}
+ .uni-map-mobile-select{display:none}
+ .uni-map-explorer .uni-pagination{margin:18px 0 12px}
+}
+/* Rows retain their content height inside the scroll pane. */
+.uni-map-explorer .uni-grid{grid-auto-rows:max-content}
+.uni-map-explorer .uni-campus{height:auto;min-height:220px;display:flex;flex-direction:column}
+.uni-map-explorer .uni-card-identity,.uni-map-explorer .uni-card-bottom{flex-shrink:0}
+.uni-map-explorer .uni-card-bottom{margin-top:18px}
+@media(max-width:760px){.uni-map-explorer .uni-campus{padding:24px 22px;min-height:220px}.uni-map-explorer .uni-logo{grid-row:auto;grid-column:auto;margin:0}.uni-map-explorer .uni-card-identity{gap:15px}.uni-map-explorer .uni-campus h2{font-size:24px}.uni-map-explorer .uni-campus-en{font-size:19px}.uni-map-explorer .uni-card-bottom{margin-top:auto;padding-top:16px}}

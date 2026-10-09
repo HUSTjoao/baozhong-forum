@@ -21,11 +21,11 @@ async function main() {
     const theme = campusTheme(entry.id, info?.accent)
     const profile = info ? { englishName: info.englishName, motto: info.motto, introduction: info.introduction, website: info.website, sourceUrl: info.sourceUrl, accent: theme.key } : { englishName: '', motto: '', introduction: '', website: '', sourceUrl: '', accent: theme.key }
     await prisma.$transaction(async tx => {
-      await tx.university.upsert({ where: { id: entry.id }, create: { id: entry.id, name: entry.name, province: region(entry.province), city: region(entry.city), logoUrl: entry.logoUrl && existsSync('public' + entry.logoUrl) ? entry.logoUrl : null, level: info ? '985/211/双一流' : null }, update: {} })
+      await tx.university.upsert({ where: { id: entry.id }, create: { id: entry.id, name: entry.name, province: region(entry.province), city: region(entry.city), logoUrl: entry.logoUrl && existsSync('public' + entry.logoUrl) ? entry.logoUrl : null, level: info?.level ?? null }, update: {} })
       const existing = await tx.universityProfile.findUnique({ where: { id: entry.id } })
       if (!existing) { await tx.universityProfile.create({ data: { id: entry.id, ...profile } }); added++ }
-      else if (info && !existing.introduction) await tx.universityProfile.update({ where: { id: entry.id }, data: profile })
-      if (info) await tx.university.update({ where: { id: entry.id }, data: { level: '985/211/双一流' } })
+      else if (info) await tx.universityProfile.update({ where: { id: entry.id }, data: profile })
+      if (info) await tx.university.update({ where: { id: entry.id }, data: { level: info.level } })
     })
   }
   const logoIds = require('node:fs').readdirSync('public/logos').filter((name: string) => name.endsWith('.png')).map((name: string) => name.slice(0,-4))

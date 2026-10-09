@@ -1,0 +1,743 @@
+@font-face{font-family:Major Cormorant;src:url('/fonts/campus-cormorant.woff2') format('woff2');font-display:swap}
+@font-face{font-family:Major WenKai;src:url('/fonts/admission-wenkai.woff2') format('woff2');font-display:swap}
+.major-lens{position:relative;isolation:isolate;height:calc(100svh - 88px);min-height:690px;overflow:hidden;background:#f1f5f7;font-family:'Major WenKai','KaiTi',serif;color:#354e61}
+.lens-blades{position:absolute;inset:0}
+.lens-blade{position:absolute;inset:0;overflow:hidden;text-align:left;isolation:isolate;transition:filter .45s;cursor:pointer}
+.lens-blade::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,#ffffff8a,transparent 70%);pointer-events:none}
+.lens-blade::after{content:'';position:absolute;inset:0;opacity:0;background:linear-gradient(130deg,transparent 20%,#ffffffa1 50%,transparent 75%);transition:opacity .5s;pointer-events:none}
+.lens-blade:hover::after,.lens-blade:focus-visible::after{opacity:.4}
+.lens-blade:hover,.lens-blade:focus-visible{filter:saturate(1.15) brightness(1.025)}
+.lens-blade:focus-visible{outline:none;box-shadow:inset 0 0 0 4px #536c8480}
+.lens-blade-arts{clip-path:polygon(50% 50%,50% 0,100% 0,100% 30%);background:linear-gradient(145deg,#f9f3e9,#e7d5c0);color:#795b46}
+.lens-blade-science{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%);background:linear-gradient(140deg,#e9f4fc,#cdd7eb);color:#4b6384}
+.lens-blade-engineering{clip-path:polygon(50% 50%,90% 100%,10% 100%);background:linear-gradient(160deg,#f0f5f9,#becfdb);color:#405e74}
+.lens-blade-medicine{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%);background:linear-gradient(130deg,#e9f7f3,#bcdcd6);color:#386d65}
+.lens-blade-other{clip-path:polygon(50% 50%,0 30%,0 0,50% 0);background:linear-gradient(150deg,#f7edf0,#e4ccd5);color:#865e6e}
+.lens-field-copy{position:absolute;display:flex;flex-direction:column;width:320px;transform:translate(-50%,-50%);z-index:2}
+.lens-blade-arts .lens-field-copy{left:76%;top:19%}.lens-blade-science .lens-field-copy{left:83%;top:65%}.lens-blade-engineering .lens-field-copy{left:50%;top:81%;width:260px;text-align:center;align-items:center}.lens-blade-medicine .lens-field-copy{left:18%;top:65%}.lens-blade-other .lens-field-copy{left:24%;top:19%}
+.lens-field-number{font:12px/1.5 'Major Cormorant',Georgia,serif;letter-spacing:.22em;opacity:.62;margin-bottom:14px}
+.lens-field-heading{display:flex;align-items:center;gap:26px;font-size:clamp(38px,4vw,60px);line-height:1.12;letter-spacing:.14em}
+.lens-field-heading svg{opacity:.5;transition:translate .4s,opacity .4s;flex:none}
+.lens-blade:hover .lens-field-heading svg{translate:4px -4px;opacity:1}
+.lens-field-english{font:italic 29px/1.25 'Major Cormorant',Georgia,serif;margin-top:9px;opacity:.85}
+.lens-field-line{font-size:16px;line-height:1.7;margin-top:18px}
+.lens-field-examples{font-size:12px;line-height:1.7;margin-top:7px;opacity:.65;letter-spacing:.12em}
+.lens-center{position:absolute;left:50%;top:50%;translate:-50% -50%;display:flex;flex-direction:column;align-items:center;justify-content:center;width:235px;height:235px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ffffffed,#f4f7fab8);border:1px solid #ffffffed;box-shadow:inset 0 0 0 7px #ffffff45,inset 0 0 0 8px #7f96a321,0 15px 45px #4760781a;backdrop-filter:blur(14px);pointer-events:none;color:#40596d}
+.lens-center-ring{position:absolute;inset:-13px;border:1px solid #ffffff7d;border-radius:50%}
+.lens-center>svg{opacity:.65;margin-bottom:12px}.lens-center p{font:10px/1.5 'Major Cormorant',Georgia,serif;letter-spacing:.18em;margin:0 0 8px}.lens-center h1{font-size:33px;font-weight:400;letter-spacing:.12em;margin:0 0 11px}.lens-center>span:last-child{font-size:12px;letter-spacing:.14em;opacity:.7}
+.lens-corner-note,.lens-interaction-note{position:absolute;bottom:22px;font-size:13px;letter-spacing:.07em;pointer-events:none;color:#43627699}.lens-corner-note{left:30px}.lens-interaction-note{right:30px;display:flex;align-items:center;gap:9px}
+.lens-art{position:absolute;inset:0;pointer-events:none;z-index:0;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.lens-blade:hover .lens-art{transform:scale(1.035)}
+.lens-art-arts{background:repeating-linear-gradient(0deg,transparent 0 28px,#99735710 28px 29px);mask-image:linear-gradient(90deg,transparent 40%,#000)}
+.lens-art-arts i{position:absolute;left:78%;top:12%;width:230px;height:260px;border:1px solid #936e5730;border-radius:4px;rotate:-12deg}.lens-art-arts i:nth-child(2){translate:14px 8px;rotate:-7deg}.lens-art-arts i:nth-child(3){translate:28px 16px;rotate:-2deg}.lens-art-arts span{position:absolute;left:90%;top:1%;font-size:200px;opacity:.035}
+.lens-art-science i{position:absolute;left:67%;top:40%;width:440px;height:440px;border:1px solid #5a75932c;border-radius:50%;rotate:-20deg;scale:1 .5;animation:lens-orbit 24s linear infinite}.lens-art-science i:nth-child(2){rotate:40deg;scale:1 .7;animation-direction:reverse}.lens-art-science i:nth-child(3){rotate:100deg;scale:1 .8;animation-duration:35s}.lens-art-science b{position:absolute;left:94%;top:52%;width:6px;height:6px;border-radius:50%;background:#6e88a84f;box-shadow:0 0 0 6px #ffffff29}.lens-art-science b:nth-last-child(2){left:70%;top:73%}.lens-art-science b:last-child{left:89%;top:87%}
+.lens-art-engineering{background:linear-gradient(#55738a13 1px,transparent 1px),linear-gradient(90deg,#55738a13 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(transparent 50%,#000)}
+.lens-art-engineering i{position:absolute;left:43%;top:72%;width:180px;height:180px;border:1px solid #536f8836;rotate:45deg}.lens-art-engineering i:nth-child(2){translate:14px 14px}.lens-art-engineering i:nth-child(3){translate:28px 28px}.lens-art-engineering span{position:absolute;left:49%;top:59%;font:80px Georgia;opacity:.08}
+.lens-art-medicine i{position:absolute;left:5%;top:49%;width:220px;height:220px;border:1px solid #497e7124;border-radius:47% 53% 65% 35%;animation:lens-cell 14s ease-in-out infinite alternate}.lens-art-medicine i:nth-child(2){left:20%;top:70%;width:140px;height:140px;animation-delay:-6s}.lens-art-medicine i:nth-child(3){left:-5%;top:80%;width:180px;height:180px;animation-delay:-3s}.lens-art-medicine svg{position:absolute;width:38%;height:130px;left:0;top:65%;stroke:#518b7d;stroke-width:1.2;opacity:.16;stroke-dasharray:650;animation:lens-pulse 8s ease-in-out infinite}
+.lens-art-other i{position:absolute;left:8%;top:-8%;width:370px;height:370px;border-radius:50%;background:radial-gradient(ellipse,#e4afbb55,transparent 70%);animation:lens-color 14s ease-in-out infinite alternate}.lens-art-other i:nth-child(2){left:28%;top:2%;width:280px;height:280px;background:radial-gradient(ellipse,#cfb4df61,transparent 70%);animation-delay:-7s}.lens-art-other i:nth-child(3){left:-7%;top:5%;background:radial-gradient(ellipse,#f1d3b773,transparent 70%);animation-delay:-4s}
+.major-lens[data-entering=true] .lens-blade{animation:lens-blade-enter 1.45s calc(var(--blade-index)*.1s) cubic-bezier(.22,1,.36,1) both}
+.major-lens[data-entering=true] .lens-field-copy{animation:lens-copy-enter 1s calc(.5s + var(--blade-index)*.12s) both}
+.major-lens[data-entering=true] .lens-center{animation:lens-focus-enter 1.4s .35s cubic-bezier(.22,1,.36,1) both}
+@keyframes lens-blade-enter{from{opacity:0;scale:1.13;rotate:7deg}to{opacity:1;scale:1;rotate:0deg}}@keyframes lens-copy-enter{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}@keyframes lens-focus-enter{from{opacity:0;scale:.8;filter:blur(8px)}to{opacity:1;scale:1;filter:blur(0)}}@keyframes lens-orbit{to{transform:rotate(360deg)}}@keyframes lens-cell{to{transform:translate(10px,-8px) rotate(25deg);border-radius:60% 40% 35% 65%}}@keyframes lens-color{to{transform:translate(35px,25px) scale(1.15)}}@keyframes lens-pulse{0%,100%{stroke-dashoffset:0;opacity:.13}50%{stroke-dashoffset:60;opacity:.25}}
+.lens-catalog{width:min(1100px,calc(100vw - 64px));height:min(780px,calc(100dvh - 90px));padding:34px 38px;border:1px solid #ffffffc9;border-radius:30px;background:linear-gradient(140deg,#fbfdfff7,#e7f0f9f2);box-shadow:0 30px 100px #24436033;color:#3e5a71;overflow:hidden;font-family:'Major WenKai',serif}
+.lens-catalog::backdrop{background:#31455c35;backdrop-filter:blur(12px)}.lens-catalog[open]{display:flex;flex-direction:column;animation:lens-dialog-enter .4s cubic-bezier(.22,1,.36,1)}
+.lens-catalog-arts{background:linear-gradient(135deg,#fffdf8f7,#f1e8dcf5);color:#795b46}.lens-catalog-medicine{background:linear-gradient(135deg,#fbfffdf7,#deefebf5);color:#386d65}.lens-catalog-other{background:linear-gradient(135deg,#fffafcf7,#eee1e9f5);color:#865e6e}
+.lens-catalog-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.lens-catalog-heading p{font:italic 25px 'Major Cormorant',serif;margin:0 0 7px;opacity:.7}.lens-catalog-heading h2{font-size:38px;font-weight:400;margin:0}.lens-catalog-heading h2 span{font-size:16px;margin-left:20px;opacity:.6}.lens-close{display:grid;place-items:center;width:42px;height:42px;border:1px solid #7895a636;background:#ffffff80;border-radius:50%}
+.lens-catalog-search{display:flex;align-items:center;gap:12px;border-bottom:1px solid #7895a633;padding:22px 0 14px;margin-bottom:22px;font-size:15px}.lens-catalog-search input{flex:1;min-width:0;outline:none;background:none;color:inherit}.lens-catalog-search>span{font-size:12px;opacity:.6}
+.lens-catalog-list{overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-content:start;min-height:0;padding:2px 7px 12px 2px;scrollbar-width:thin}.lens-catalog-list article{border:1px solid #ffffffb5;border-radius:20px;background:#ffffff80;padding:22px}.lens-catalog-list h3{font-size:22px;font-weight:400;margin:0 0 13px}.lens-catalog-list p{font-size:15px;line-height:1.85;opacity:.85;margin:0}.lens-catalog-list a{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:13px;margin-top:20px}.lens-catalog a:focus-visible,.lens-catalog button:focus-visible{outline:2px solid currentColor;outline-offset:3px}.lens-catalog-empty{grid-column:1/-1;padding:35px;text-align:center}
+@keyframes lens-dialog-enter{from{opacity:0;transform:scale(.95) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@media(max-width:1100px){.lens-field-copy{width:235px}.lens-field-heading{font-size:46px}.lens-field-line{font-size:14px}.lens-field-english{font-size:25px}.lens-center{width:205px;height:205px}.lens-center h1{font-size:29px}}
+@media(max-width:760px){.major-lens{height:calc(100svh - 105px);min-height:650px}.lens-center{width:137px;height:137px}.lens-center-ring{inset:-7px}.lens-center>svg{width:19px;height:19px;margin-bottom:6px}.lens-center p{font-size:7px;letter-spacing:.05em;margin-bottom:5px}.lens-center h1{font-size:21px;margin-bottom:6px;letter-spacing:.04em}.lens-center>span:last-child{font-size:10px;letter-spacing:.02em}.lens-field-copy{width:140px}.lens-field-number{font-size:9px;letter-spacing:.08em;margin-bottom:9px}.lens-field-heading{font-size:36px;gap:10px;letter-spacing:.06em}.lens-field-heading svg{width:20px;height:20px}.lens-field-english{font-size:20px;margin-top:7px}.lens-field-line{font-size:12px;line-height:1.7;margin-top:12px;max-width:130px}.lens-field-examples{display:none}.lens-blade-other .lens-field-copy{left:24%;top:19%}.lens-blade-arts .lens-field-copy{left:76%;top:19%}.lens-blade-science .lens-field-copy{left:82%;top:70%;width:118px}.lens-blade-medicine .lens-field-copy{left:19%;top:70%;width:118px}.lens-blade-engineering .lens-field-copy{width:110px;top:83%}.lens-blade-engineering .lens-field-heading{font-size:32px;gap:8px}.lens-blade-engineering .lens-field-heading svg{width:16px;height:16px}.lens-blade-engineering .lens-field-english{font-size:18px}.lens-blade-engineering .lens-field-line{display:none}.lens-corner-note{left:17px;font-size:10px;bottom:15px}.lens-interaction-note{right:17px;bottom:15px;font-size:10px}.lens-interaction-note svg{width:12px}.lens-art-science i{width:210px;height:210px;left:54%;top:56%}.lens-art-arts i{width:130px;height:190px;left:65%;top:7%}.lens-art-arts span{font-size:100px;left:80%}.lens-art-medicine i{width:140px;height:140px;top:59%}.lens-art-engineering i{width:100px;height:100px;left:37%;top:80%}.lens-catalog{width:calc(100vw - 24px);height:calc(100dvh - 50px);padding:23px 19px;border-radius:24px}.lens-catalog-heading h2{font-size:30px}.lens-catalog-heading h2 span{font-size:13px;margin-left:12px}.lens-catalog-heading p{font-size:22px}.lens-catalog-list{grid-template-columns:1fr}.lens-catalog-list article{padding:18px}.lens-catalog-list h3{font-size:20px}.lens-catalog-search{font-size:14px;padding-top:17px}.lens-catalog-search>span{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.major-lens *, .major-lens[data-entering=true] *, .lens-catalog[open]{animation:none!important;transition:none!important}.lens-art-medicine svg{stroke-dasharray:none}}
+/* Equal-area aperture blades, with a distinct visual language for each field. */
+@font-face{font-family:Major Editorial;src:url('/fonts/campus-source-serif.woff2') format('woff2');font-display:swap}
+@font-face{font-family:Major Brush;src:url('/fonts/campus-heading-brush.woff2') format('woff2');font-display:swap}
+@font-face{font-family:Major Sans;src:url('/fonts/admission-sans.ttf') format('truetype');font-display:swap}
+.lens-blade-arts{background:linear-gradient(120deg,#faf5ea,#e9d9bc);color:#705337}
+.lens-blade-arts .lens-field-heading{font-family:'Major Editorial',serif;font-size:clamp(38px,3.7vw,56px);letter-spacing:.17em}
+.lens-blade-arts .lens-field-copy{top:21%;left:75%;border-left:1px solid #98744545;padding-left:24px}
+.lens-blade-arts .lens-field-number{letter-spacing:.3em}.lens-blade-arts .lens-field-line{font-family:'Major Editorial',serif}
+.lens-art-arts{background:repeating-linear-gradient(0deg,transparent 0 31px,#92724d0c 31px 32px)}
+.lens-manuscript{position:absolute;right:5%;top:4%;writing-mode:vertical-rl;font:14px 'Major Editorial',serif;letter-spacing:.45em;opacity:.3}
+.lens-blade-science{background:radial-gradient(ellipse at 90% 70%,#c5cfe9,transparent 65%),linear-gradient(135deg,#f0f7ff,#d5e3f5);color:#3f567b}
+.lens-blade-science .lens-field-heading{font-family:'Major Sans',sans-serif;font-weight:300;letter-spacing:.06em}
+.lens-blade-science .lens-field-number{font-family:monospace;letter-spacing:.16em}.lens-blade-science .lens-field-line{font-family:'Major Sans',sans-serif;font-size:15px;font-weight:300}
+.lens-equation{position:absolute;right:4%;top:37%;font:italic 64px 'Major Cormorant',serif;opacity:.15;rotate:-8deg}.lens-science-coordinate{position:absolute;right:4%;bottom:9%;font:10px monospace;letter-spacing:.2em;opacity:.35}
+.lens-blade-engineering{background:linear-gradient(145deg,#edf0f3,#c7d4df);color:#344e63}
+.lens-blade-engineering .lens-field-copy{top:81%;width:380px}.lens-blade-engineering .lens-field-heading{font-family:'Major Sans',sans-serif;font-weight:500;letter-spacing:.1em}
+.lens-blade-engineering .lens-field-english{font:22px/1.3 'Courier New',monospace;letter-spacing:.03em}.lens-blade-engineering .lens-field-number{font:11px monospace;letter-spacing:.15em}
+.lens-blade-engineering .lens-field-line{font-family:'Major Sans',sans-serif;font-size:15px}.lens-blade-engineering .lens-field-examples{letter-spacing:.2em}
+.lens-art-engineering{background-size:24px 24px;mask-image:linear-gradient(transparent 48%,#000)}.lens-art-engineering i{opacity:.35;left:23%;top:79%}
+.lens-blueprint{position:absolute;width:540px;height:162px;left:50%;top:76%;translate:-50% 0;stroke:#405e7460;stroke-width:1}.lens-art-engineering .lens-engineering-measure{position:absolute;left:50%;top:auto;bottom:4%;translate:-50% 0;font:10px monospace;letter-spacing:.25em;opacity:.4;white-space:nowrap}
+.lens-blade-medicine{background:radial-gradient(ellipse at 5% 80%,#b3d6ca,transparent 75%),linear-gradient(125deg,#f2f9f4,#d7e9db);color:#315f51}
+.lens-blade-medicine .lens-field-heading{font-family:'Major Editorial',serif;font-weight:500;letter-spacing:.1em}.lens-blade-medicine .lens-field-english{letter-spacing:.03em}.lens-blade-medicine .lens-field-number{letter-spacing:.3em}
+.lens-art-medicine i{border-width:2px;background:radial-gradient(ellipse,#fbfff92e,transparent);box-shadow:inset 0 0 50px #ffffff30}.lens-art-medicine svg{opacity:.22;top:78%;width:30%}
+.lens-blade-other{background:radial-gradient(ellipse at 12% 12%,#f4d8ca,transparent 70%),linear-gradient(140deg,#f8eef3,#d8c4df);color:#795168}
+.lens-blade-other .lens-field-heading{font-family:'Major Brush','Major WenKai',serif;font-size:clamp(46px,4.5vw,68px);rotate:-3deg;letter-spacing:.04em}.lens-blade-other .lens-field-english{font-size:32px;rotate:-3deg}.lens-blade-other .lens-field-copy{top:21%;left:24%}.lens-blade-other .lens-field-line{margin-top:22px}
+.lens-other-letter{position:absolute;left:3%;top:0%;font:italic 280px 'Major Cormorant',serif;color:#986982;opacity:.1;rotate:-18deg}.lens-other-disciplines{position:absolute;left:4%;top:36%;font:13px 'Major WenKai',serif;letter-spacing:.2em;opacity:.4;rotate:8deg}
+@media(max-width:1100px){.lens-blade-engineering .lens-field-copy{width:310px}.lens-blade-science .lens-field-line,.lens-blade-engineering .lens-field-line{font-size:14px}}
+@media(max-width:760px){.lens-blade-arts .lens-field-copy{top:21%;left:76%;padding-left:12px;width:138px}.lens-blade-arts .lens-field-heading{font-size:32px}.lens-blade-other .lens-field-copy{top:21%;left:24%}.lens-blade-other .lens-field-heading{font-size:43px}.lens-blade-other .lens-field-english{font-size:21px}.lens-blade-other .lens-field-line{margin-top:14px}.lens-blade-science .lens-field-heading,.lens-blade-engineering .lens-field-heading{font-size:32px}.lens-blade-science .lens-field-line{font-size:12px}.lens-blade-engineering .lens-field-copy{width:210px;top:83%}.lens-blade-engineering .lens-field-english{font-size:17px}.lens-blade-engineering .lens-field-number{font-size:9px}.lens-blade-engineering .lens-field-line{display:block;font-size:11px;max-width:210px;margin-top:9px}.lens-manuscript{font-size:9px;right:3%;top:3%}.lens-equation{font-size:35px;top:48%}.lens-science-coordinate{display:none}.lens-blueprint{width:290px;height:87px;top:84%;opacity:.5}.lens-engineering-measure{display:none}.lens-other-letter{font-size:160px;left:0;top:3%}.lens-other-disciplines{font-size:9px;top:35%;left:3%}}
+@media(max-width:760px){.lens-blade-science .lens-field-copy,.lens-blade-medicine .lens-field-copy{top:65%}.lens-blade-science .lens-field-line,.lens-blade-medicine .lens-field-line{max-width:95px}.lens-blade-science .lens-field-line{align-self:flex-end}}
+/* Engineering: a dark workshop, photographic depth and illuminated schematics. */
+.lens-blade-engineering{background:#0b1720;color:#e6f1f5}.lens-blade-engineering::before{background:radial-gradient(ellipse at 50% 88%,#08131f70,#050b16a6 75%);z-index:1}.lens-blade-engineering::after{background:linear-gradient(120deg,transparent 35%,#96d9ed24 50%,transparent 65%);z-index:1}
+.lens-blade-engineering .lens-field-heading{font-family:'Major Sans','Microsoft YaHei',sans-serif;font-weight:700;letter-spacing:.08em;line-height:1.2;color:#f1f8fa;text-shadow:0 2px 18px #0009}.lens-blade-engineering .lens-field-number{color:#94c9d6;opacity:1}.lens-blade-engineering .lens-field-english{color:#bdd6df}.lens-blade-engineering .lens-field-line{color:#d4e3e9}.lens-blade-engineering .lens-field-examples{color:#a5bdc9;opacity:1}.lens-blade-engineering .lens-field-heading svg{color:#99dded;opacity:.85}
+.lens-art-engineering{background:none;mask-image:none}.engineering-photo{position:absolute;top:56%;height:44%;width:52%;background-size:cover;background-repeat:no-repeat;filter:saturate(.45) brightness(.55);opacity:.75}.engineering-photo-workshop{left:6%;background-image:url('https://images.pexels.com/photos/9242833/pexels-photo-9242833.jpeg?auto=compress&cs=tinysrgb&w=1000');background-position:center 38%;mask-image:linear-gradient(90deg,transparent,#000 22%,#000 65%,transparent)}.engineering-photo-code{right:4%;background-image:url('https://images.unsplash.com/photo-1719400471588-575b23e27bd7?auto=format&fit=crop&w=1000&q=80');background-position:center 45%;mask-image:linear-gradient(90deg,transparent,#000 25%,#000 80%,transparent)}
+.engineering-photo-shade{position:absolute;inset:50% 0 0;background:linear-gradient(180deg,#0b1720,transparent 35%,#09152270),radial-gradient(ellipse at 50% 65%,#06111dcc,transparent 60%)}
+.engineering-circuits{position:absolute;left:8%;bottom:-2%;width:84%;height:37%;stroke:#67c6e2;stroke-width:1.1;opacity:.37}.engineering-circuit-nodes{stroke:#8ce6ff;filter:drop-shadow(0 0 4px #49c6e8);animation:engineering-current 4s ease-in-out infinite alternate}
+.engineering-gear{position:absolute;left:26%;top:79%;width:155px;height:155px;stroke:#9bc1cc;stroke-width:1.2;opacity:.43;animation:engineering-gear-spin 55s linear infinite}
+.engineering-robot{position:absolute;right:24%;top:76%;width:125px;height:153px;stroke:#91cedb;stroke-width:1.4;opacity:.52;filter:drop-shadow(0 0 7px #55a2bb44)}
+.lens-art-engineering .lens-engineering-measure{color:#92b9c9;opacity:.5;font-size:9px;bottom:3%}.lens-blade-engineering .lens-art{transition:transform 1.2s}.lens-blade-engineering:hover .lens-art{transform:scale(1.025)}
+@keyframes engineering-gear-spin{to{rotate:360deg}}@keyframes engineering-current{from{opacity:.45}to{opacity:1}}
+@media(max-width:1100px){.engineering-gear{left:20%;width:130px;height:130px}.engineering-robot{right:20%;width:105px;height:128px}}
+@media(max-width:760px){.engineering-photo{width:70%;top:58%;height:42%;opacity:.62}.engineering-photo-workshop{left:-8%}.engineering-photo-code{right:-8%}.engineering-gear{left:13%;top:84%;width:78px;height:78px;opacity:.32}.engineering-robot{right:13%;top:83%;width:58px;height:71px;opacity:.4}.engineering-circuits{left:0;width:100%;bottom:-5%;height:32%;opacity:.25}.lens-blade-engineering .lens-field-heading{font-size:32px}.lens-blade-engineering .lens-field-line{font-size:11px}.lens-blade-engineering .lens-engineering-measure{display:none}}
+@media(prefers-reduced-motion:reduce){.engineering-gear,.engineering-circuit-nodes{animation:none}}
+/* Let the real work scenes carry the engineering entrance. */
+.lens-blade-engineering::before{background:radial-gradient(ellipse at 50% 84%,#06101c80 0%,#06101c35 32%,transparent 68%)}
+.engineering-photo{filter:saturate(.8) brightness(.88);opacity:1}
+.engineering-photo-workshop{mask-image:linear-gradient(90deg,transparent,#000 12%,#000 72%,transparent)}
+.engineering-photo-code{mask-image:linear-gradient(90deg,transparent,#000 20%,#000 90%,transparent)}
+.engineering-photo-shade{background:linear-gradient(180deg,#0b1720c9,transparent 25%,#09152235),radial-gradient(ellipse at 50% 64%,#06111d9e,transparent 42%)}
+.lens-blade-engineering .lens-field-copy{text-shadow:0 2px 10px #000,0 0 24px #0009}
+@media(max-width:760px){.engineering-photo{opacity:1;filter:saturate(.75) brightness(.8)}}
+.lens-blade-engineering .lens-field-heading{font-family:'DengXian','Microsoft JhengHei','Microsoft YaHei',sans-serif;font-weight:700;letter-spacing:.16em;transform:skewX(-7deg);font-stretch:condensed;text-shadow:0 2px 14px #0008,1px 0 0 #b6e5f2;line-height:1.15}
+@font-face{font-family:Engineering Display;src:url('/fonts/engineering-title.woff2') format('woff2');font-display:swap;font-weight:400}
+.lens-blade-engineering .lens-field-heading{font-family:'Engineering Display','Major Sans',sans-serif;font-weight:400;font-size:clamp(48px,4.5vw,68px);letter-spacing:.15em;transform:none;text-shadow:0 3px 20px #000a;line-height:1.05}
+.lens-blade-engineering .lens-field-line{font-family:'Major Sans',sans-serif;font-weight:300;letter-spacing:.08em}.lens-blade-engineering .lens-field-examples{display:none}
+.engineering-slogans,.engineering-disciplines{position:absolute;inset:0;z-index:2;pointer-events:none}.engineering-slogans span{position:absolute;top:86%;width:185px;text-align:center;transform:translate(-50%,-50%);color:#c3d5df;font:300 14px/1.7 'Major Sans',sans-serif;letter-spacing:.13em;text-shadow:0 2px 10px #000}.engineering-slogans span:first-child{left:30%;top:88%}.engineering-slogans span:last-child{left:70%;top:85%}
+.engineering-disciplines span{position:absolute;transform:translate(-50%,calc(-50% + 12px));font:400 15px/1.4 'Major Sans',sans-serif;letter-spacing:.12em;color:#e0f2f7;text-shadow:0 2px 10px #000,0 0 18px #64b9d255;opacity:0;filter:blur(7px);transition:opacity .8s,filter 1s,transform 1s;transition-delay:0s;white-space:nowrap}
+.engineering-disciplines span:nth-child(1){left:44%;top:70%}.engineering-disciplines span:nth-child(2){left:62%;top:74%}.engineering-disciplines span:nth-child(3){left:27%;top:95%}.engineering-disciplines span:nth-child(4){left:50%;top:95%}.engineering-disciplines span:nth-child(5){left:74%;top:93%}
+.lens-blade-engineering:hover .engineering-disciplines span,.lens-blade-engineering:focus-visible .engineering-disciplines span{opacity:1;filter:blur(0);transform:translate(-50%,-50%);transition-delay:calc(var(--discipline-index)*.11s)}
+@media(max-width:1100px){.engineering-slogans span{width:150px;font-size:12px}.engineering-disciplines span{font-size:13px}}
+@media(max-width:760px){.lens-blade-engineering .lens-field-heading{font-size:40px}.engineering-slogans span{display:none}.engineering-disciplines span{font-size:10px;letter-spacing:.03em}.engineering-disciplines span:nth-child(1){left:45%;top:70%}.engineering-disciplines span:nth-child(2){left:61%;top:74%}.engineering-disciplines span:nth-child(3){left:29%;top:94%}.engineering-disciplines span:nth-child(4){left:54%;top:96%}.engineering-disciplines span:nth-child(5){left:76%;top:93%}}
+@media(hover:none){.engineering-disciplines span{opacity:.85;filter:none;transform:translate(-50%,-50%)}}
+@media(prefers-reduced-motion:reduce){.engineering-disciplines span{transition:none}}
+.engineering-slogans span{opacity:1;color:#b8d0da}.engineering-slogans span:first-child{left:31%;top:87%}.engineering-slogans span:last-child{left:69%;top:85%}
+/* Medicine: clinical care and pharmaceutical research, with a quiet hospital palette. */
+.lens-blade-medicine{background:linear-gradient(135deg,#e5f3f4,#d2e6e4);color:#204f59}.lens-art-medicine{background:none}.lens-blade-medicine::before{background:radial-gradient(ellipse at 18% 64%,#edf7f8c9,transparent 47%);z-index:1}.lens-blade-medicine::after{background:linear-gradient(125deg,transparent,#effffb65,transparent);z-index:1}
+.medicine-photo{position:absolute;background-size:cover;background-repeat:no-repeat;filter:saturate(.65);opacity:.85}.medicine-photo-doctor{left:0;top:31%;width:37%;height:69%;background-image:url('https://images.pexels.com/photos/8376317/pexels-photo-8376317.jpeg?auto=compress&cs=tinysrgb&w=1100');background-position:45% 35%;mask-image:linear-gradient(90deg,#000 40%,transparent 100%)}
+.medicine-photo-laboratory{left:15%;top:52%;width:33%;height:48%;background-image:url('https://images.pexels.com/photos/8533099/pexels-photo-8533099.jpeg?auto=compress&cs=tinysrgb&w=1100');background-position:45% center;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 75%,transparent)}
+.medicine-photo-wash{position:absolute;inset:28% 0 0;background:linear-gradient(180deg,#e5f3f4aa,transparent 25%,#d5eae43d),linear-gradient(90deg,#eaf4f638,#d8ece640 35%,transparent 52%)}
+.lens-art-medicine .medicine-hospital{position:absolute;left:1%;top:79%;width:165px;height:148px;stroke:#376d78;stroke-width:1.25;stroke-dasharray:none;opacity:.4;animation:none;filter:drop-shadow(0 0 6px #fff8)}
+.lens-art-medicine .medicine-care{position:absolute;left:29%;top:56%;width:180px;height:106px;stroke:#316979;stroke-width:1.3;stroke-dasharray:none;opacity:.3;animation:none}
+.lens-blade-medicine .lens-field-heading{font-family:'Major Editorial',serif;color:#194c59}.lens-blade-medicine .lens-field-copy{text-shadow:0 1px 14px #fffffff2}.lens-blade-medicine .lens-field-line{font-family:'Major Sans',sans-serif;font-size:15px;font-weight:400;color:#234e58}.lens-blade-medicine .lens-field-number{color:#31636d;opacity:.85}.lens-blade-medicine .lens-field-examples{color:#285762;opacity:.85}.lens-blade-medicine .lens-field-english{color:#2b5d68}
+@media(max-width:760px){.medicine-photo-doctor{width:48%;background-position:48% 38%;opacity:.8}.medicine-photo-laboratory{left:10%;width:45%;top:53%;height:47%;background-position:50% center;opacity:.75}.lens-art-medicine .medicine-hospital{left:0;top:81%;width:80px;height:72px;opacity:.32}.lens-art-medicine .medicine-care{left:23%;top:54%;width:95px;height:56px;opacity:.25}.lens-blade-medicine .lens-field-line{font-size:12px}}
+.medicine-photo-laboratory{mask-image:radial-gradient(ellipse at 50% 52%,#000 30%,transparent 73%);background-position:65% center}
+/* Science: changing measurements, orbiting planets and molecular motion. */
+.lens-blade-science{background:radial-gradient(ellipse at 90% 46%,#b9caed,transparent 55%),linear-gradient(145deg,#edf5ff,#bfcde5);color:#324d73}
+.science-digits{position:absolute;left:67%;top:42%;width:230px;display:grid;grid-template-columns:repeat(6,1fr);gap:9px 8px;transform:rotate(-8deg);mask-image:radial-gradient(ellipse,#000 40%,transparent 80%)}.science-digits span{font:11px/1.2 'Courier New',monospace;color:#3c6797;opacity:.5;font-variant-numeric:tabular-nums}
+.science-solar{position:absolute;left:87%;top:46%;width:245px;height:245px;translate:-50% -50%;perspective:600px}.science-sun{position:absolute;left:50%;top:50%;width:38px;height:38px;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff9d9,#e9c170 55%,#ad8d47);box-shadow:0 0 28px #fff1b6a8,0 0 70px #fff3ba55;animation:science-sun-glow 5s ease-in-out infinite alternate}
+.science-orbit{position:absolute;border:1px solid #476f9c35;border-radius:50%;left:50%;top:50%;translate:-50% -50%;animation:science-planet-orbit 12s linear infinite;width:100px;height:100px}.science-orbit-1{width:166px;height:166px;animation-duration:21s;animation-delay:-9s}.science-orbit-2{width:230px;height:230px;animation-duration:33s;animation-delay:-18s}
+.science-planet{position:absolute;left:50%;top:0;translate:-50% -50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 28% 24%,#bce4fb,#4b80ab 60%,#254b77);box-shadow:0 2px 7px #294e7740}.science-orbit-1 .science-planet{width:18px;height:18px;background:radial-gradient(circle at 28% 24%,#ecd7cc,#b67f76 60%,#6d525c)}.science-orbit-2 .science-planet{width:23px;height:23px;background:radial-gradient(circle at 28% 24%,#e7e2da,#aa9fb4 60%,#67647d)}.science-orbit-2 .science-planet::after{content:'';position:absolute;inset:7px -9px;border:2px solid #948ba28c;border-radius:50%;rotate:-25deg}
+.science-solar-caption{position:absolute;left:50%;top:105%;translate:-50% 0;white-space:nowrap;font:9px 'Courier New',monospace;letter-spacing:.18em;color:#42618b;opacity:.5}
+.science-chemistry{position:absolute;right:1%;top:77%;width:245px;height:175px}.science-chemistry svg{width:100%;height:100%;stroke:#486b9a;stroke-width:1.3;opacity:.5;overflow:visible}.science-molecule{transform-origin:140px 100px;animation:science-molecule-float 9s ease-in-out infinite alternate}.science-particles{fill:#7298be;stroke:none;animation:science-particle-drift 6s ease-in-out infinite alternate}.science-chemistry-caption{position:absolute;left:30%;bottom:0;font:9px 'Courier New',monospace;letter-spacing:.15em;color:#42618b;opacity:.5;white-space:nowrap}
+.lens-blade-science .lens-field-copy{text-shadow:0 1px 16px #edf4ffb8}
+@keyframes science-planet-orbit{to{rotate:360deg}}@keyframes science-sun-glow{to{box-shadow:0 0 38px #fff1b6cc,0 0 85px #fff3ba66;scale:1.08}}@keyframes science-molecule-float{to{transform:translate(-6px,5px) rotate(-7deg)}}@keyframes science-particle-drift{to{transform:translate(8px,-13px);opacity:.35}}
+@media(max-width:1100px){.science-solar{width:190px;height:190px}.science-orbit-2{width:185px;height:185px}.science-orbit-1{width:135px;height:135px}.science-orbit-0{width:80px;height:80px}.science-chemistry{width:190px;height:135px}.science-digits{left:65%;width:190px;gap:7px 5px}.science-digits span{font-size:9px}}
+@media(max-width:760px){.science-solar{left:87%;top:46%;width:100px;height:100px}.science-sun{width:19px;height:19px}.science-orbit-0{width:43px;height:43px}.science-orbit-1{width:70px;height:70px}.science-orbit-2{width:100px;height:100px}.science-planet{width:6px;height:6px}.science-orbit-1 .science-planet{width:8px;height:8px}.science-orbit-2 .science-planet{width:11px;height:11px}.science-orbit-2 .science-planet::after{inset:3px -4px;border-width:1px}.science-solar-caption{display:none}.science-digits{left:65%;top:43%;width:100px;grid-template-columns:repeat(4,1fr);gap:5px 3px}.science-digits span{font-size:7px}.science-digits span:nth-child(n+25){display:none}.science-chemistry{right:-5%;top:77%;width:125px;height:95px}.science-chemistry-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.science-orbit,.science-sun,.science-molecule,.science-particles{animation:none}}
+/* Humanities: literati ink painting meets contemporary law and public affairs. */
+.lens-blade-arts{background:linear-gradient(135deg,#f4ecdc,#e9dfc9);color:#594833}.lens-art-arts{background:repeating-linear-gradient(0deg,transparent 0 3px,#73604404 3px 4px);mask-image:none}.lens-blade-arts::before{background:radial-gradient(ellipse at 75% 22%,#f9f3e7ed,transparent 49%);z-index:1}.lens-blade-arts::after{z-index:1}
+.humanities-photo{position:absolute;background-repeat:no-repeat;background-size:cover;filter:saturate(.3) sepia(.24);opacity:.68}.humanities-photo-scholar{left:50%;top:0;width:26%;height:60%;background-image:url('https://images.metmuseum.org/CRDImages/as/web-large/13_220_28_d1.jpg');background-position:50% 78%;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,#000 35%,transparent 100%)}
+.humanities-photo-lawyer{right:0;top:0;width:23%;height:36%;background-image:url('https://images.pexels.com/photos/5668775/pexels-photo-5668775.jpeg?auto=compress&cs=tinysrgb&w=1000');background-position:65% 35%;mask-image:linear-gradient(90deg,transparent,#000 48%),linear-gradient(180deg,#000 55%,transparent);mask-composite:intersect}
+.humanities-photo-public-service{right:2%;top:20%;width:19%;height:31%;background-image:url('https://images.pexels.com/photos/7644061/pexels-photo-7644061.jpeg?auto=compress&cs=tinysrgb&w=850');background-position:50% 30%;mask-image:radial-gradient(ellipse,#000 25%,transparent 74%)}
+.humanities-paper-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%,#f4ecdc99,transparent 38%),linear-gradient(180deg,#f3ecd526,transparent 35%,#f3ecd566 60%)}
+.lens-blade-arts .lens-field-copy{border-left:none;padding-left:0;text-shadow:0 1px 15px #faf4e4}.lens-blade-arts .lens-field-heading{font-family:'Major Editorial',serif;font-weight:400;letter-spacing:.2em;color:#4f4030}.lens-blade-arts .lens-field-number{color:#806d50;opacity:.8}.lens-blade-arts .lens-field-english{color:#786049}.lens-blade-arts .lens-field-line{color:#655039;font-size:16px;letter-spacing:.08em}.lens-blade-arts .lens-field-examples{color:#786a55;opacity:.85}
+.humanities-poems{position:absolute;left:54%;top:7%;display:flex;gap:28px;color:#5d503a}.humanities-poems>span{writing-mode:vertical-rl;font:17px/1.8 'Major Editorial',serif;letter-spacing:.22em;opacity:.65}.humanities-poems>span:nth-child(2){padding-top:55px}.humanities-poems small{font:9px/1.8 'Major WenKai',serif;letter-spacing:.15em;display:block;margin-right:9px;color:#8c7c62}
+.lens-art-arts .humanities-seal{position:absolute;left:62%;top:9%;border:1px solid #9b494052;padding:5px 4px;color:#984b3f;font:13px/1.2 'Major Editorial',serif;opacity:.8;rotate:-3deg}
+.lens-art-arts .humanities-era{position:absolute;font:12px/1.8 'Major Editorial',serif;letter-spacing:.15em;color:#79684e;opacity:.75}.lens-art-arts .humanities-era-classic{left:59%;top:38%}.lens-art-arts .humanities-era-modern{right:3%;top:27%;writing-mode:vertical-rl}
+@media(max-width:1100px){.humanities-poems{gap:16px;left:53%}.humanities-poems>span{font-size:14px}.humanities-poems small{font-size:8px}.lens-art-arts .humanities-seal{left:61%;font-size:11px}.lens-art-arts .humanities-era-classic{font-size:10px;top:39%}}
+@media(max-width:760px){.humanities-photo-scholar{left:50%;width:34%;height:58%;opacity:.45}.humanities-photo-lawyer{width:30%;height:35%;opacity:.65}.humanities-photo-public-service{right:0;width:30%;top:22%;height:26%;opacity:.55}.humanities-poems{left:52%;top:4%;gap:8px}.humanities-poems>span{font-size:10px;letter-spacing:.1em;opacity:.4}.humanities-poems>span:nth-child(2){padding-top:35px}.humanities-poems small{display:none}.lens-art-arts .humanities-seal{left:65%;top:4%;font-size:9px;padding:3px}.lens-art-arts .humanities-era{display:none}.lens-blade-arts .lens-field-copy{padding-left:0;width:125px}.lens-blade-arts .lens-field-line{font-size:12px;letter-spacing:0}}
+
+.lens-art-arts .humanities-poems>span{position:static;left:auto;top:auto}
+/* A larger title pair, and one consistent type treatment per text layer. */
+.lens-blade-engineering .lens-field-copy{top:77%;width:410px}.lens-blade-engineering .lens-field-heading{font-size:clamp(60px,5.7vw,84px);letter-spacing:.14em}.lens-blade-engineering .lens-field-english{font:500 39px/1.15 'Major Cormorant',Georgia,serif;letter-spacing:.035em;margin-top:11px;color:#d0e1e8}
+.lens-blade-engineering .lens-field-line,.engineering-slogans span{font-family:'Major Sans',sans-serif;font-weight:300;letter-spacing:.08em}.lens-blade-engineering .lens-field-line{font-size:15px}.engineering-slogans span{font-size:15px;line-height:1.7;width:190px}.engineering-slogans span:first-child{left:35%;top:90%}.engineering-slogans span:last-child{left:68%;top:90%}
+.engineering-disciplines span{font-family:'Major Sans',sans-serif;font-weight:500;font-size:15px;letter-spacing:.08em}.engineering-disciplines span:nth-child(1){left:39%;top:72%}.engineering-disciplines span:nth-child(2){left:65%;top:78%}.engineering-disciplines span:nth-child(3){left:24%;top:95%}.engineering-disciplines span:nth-child(4){left:43%;top:95%}.engineering-disciplines span:nth-child(5){left:61%;top:95%}.engineering-disciplines span:nth-child(6){left:77%;top:95%}.engineering-disciplines span:nth-child(7){left:31%;top:82%}.engineering-disciplines span:nth-child(8){left:72%;top:87%}
+@media(max-width:1100px){.lens-blade-engineering .lens-field-copy{width:330px}.lens-blade-engineering .lens-field-heading{font-size:65px}.lens-blade-engineering .lens-field-english{font-size:33px}.engineering-slogans span{font-size:12px;width:145px}.engineering-disciplines span{font-size:12px}}
+@media(max-width:760px){.lens-blade-engineering .lens-field-copy{top:78%;width:225px}.lens-blade-engineering .lens-field-heading{font-size:51px}.lens-blade-engineering .lens-field-english{font-size:27px;margin-top:7px}.lens-blade-engineering .lens-field-line{font-size:11px;margin-top:10px}.engineering-slogans span{display:none}.engineering-disciplines span{font-size:10px;letter-spacing:0}.engineering-disciplines span:nth-child(1){left:41%;top:69%}.engineering-disciplines span:nth-child(2){left:65%;top:76%}.engineering-disciplines span:nth-child(3){left:24%;top:95%}.engineering-disciplines span:nth-child(4){left:43%;top:96%}.engineering-disciplines span:nth-child(5){left:62%;top:96%}.engineering-disciplines span:nth-child(6){left:80%;top:95%}.engineering-disciplines span:nth-child(7){left:28%;top:85%}.engineering-disciplines span:nth-child(8){left:73%;top:89%}}
+/* Three editorial slogans per field: one lead line and two quieter echoes. */
+.major-lens .lens-blade .lens-field-line,.major-lens .engineering-slogans span,.major-lens .lens-slogans span{font-family:'Major Editorial','Songti SC','SimSun',serif;font-weight:400;font-size:21px;line-height:1.75;letter-spacing:.08em}
+.major-lens .lens-blade .lens-field-line{margin-top:20px}.major-lens .engineering-slogans span{font-size:20px;width:230px}.lens-slogans{position:absolute;inset:0;z-index:2;pointer-events:none}.lens-slogans span{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;color:inherit;opacity:.8;text-shadow:0 1px 18px #ffffffbd}
+.lens-blade-arts .lens-slogans span:first-child{left:64%;top:39%}.lens-blade-arts .lens-slogans span:last-child{left:90%;top:33%}.lens-blade-arts .lens-slogans span{color:#69543a}
+.lens-blade-science .lens-slogans span:first-child{left:75%;top:46%}.lens-blade-science .lens-slogans span:last-child{left:89%;top:81%}.lens-blade-science .lens-slogans span{color:#395578}
+.lens-blade-medicine .lens-slogans span:first-child{left:10%;top:83%}.lens-blade-medicine .lens-slogans span:last-child{left:29%;top:56%}.lens-blade-medicine .lens-slogans span{color:#28555b;text-shadow:0 1px 18px #fff}
+.lens-blade-other .lens-slogans span:first-child{left:12%;top:5%}.lens-blade-other .lens-slogans span:last-child{left:35%;top:36%}.lens-blade-other .lens-slogans span{color:#79516a}
+@media(max-width:1100px){.major-lens .lens-blade .lens-field-line,.major-lens .engineering-slogans span,.major-lens .lens-slogans span{font-size:17px}.major-lens .engineering-slogans span{width:185px}}
+@media(max-width:760px){.major-lens .lens-blade .lens-field-line{font-size:13px;line-height:1.8;letter-spacing:.03em;margin-top:12px}.major-lens .engineering-slogans span,.major-lens .lens-slogans span{font-size:10px;letter-spacing:.02em}.major-lens .engineering-slogans span{display:block;width:115px}.engineering-slogans span:first-child{left:31%;top:90%}.engineering-slogans span:last-child{left:72%;top:90%}.major-lens .lens-blade-engineering .lens-field-line{font-size:12px;max-width:220px}.lens-blade-arts .lens-slogans span:first-child{left:67%;top:37%}.lens-blade-arts .lens-slogans span:last-child{left:84%;top:5%}.lens-blade-science .lens-slogans span:first-child{left:75%;top:37%}.lens-blade-science .lens-slogans span:last-child{left:88%;top:80%}.lens-blade-medicine .lens-slogans span:first-child{left:13%;top:83%}.lens-blade-medicine .lens-slogans span:last-child{left:30%;top:56%}.lens-blade-other .lens-slogans span:first-child{left:21%;top:5%}.lens-blade-other .lens-slogans span:last-child{left:28%;top:37%}}
+.lens-blade-arts .lens-slogans span:last-child{top:28%}@media(max-width:760px){.lens-blade-arts .lens-slogans span:last-child{top:5%}}
+/* Shared discipline typography and staggered emergence across all five fields. */
+.major-lens .lens-field-examples{display:none}.lens-disciplines{position:absolute;inset:0;z-index:3;pointer-events:none}.major-lens .lens-disciplines span{position:absolute;white-space:nowrap;font:400 17px/1.5 'Major Editorial','Songti SC','SimSun',serif;letter-spacing:.09em;color:inherit;opacity:0;filter:blur(7px);transform:translate(-50%,calc(-50% + 12px));transition:opacity .8s,filter 1s,transform 1s;transition-delay:0s;text-shadow:0 1px 12px #ffffffb0}.major-lens .engineering-disciplines span{color:#dcecf3;text-shadow:0 2px 12px #000}
+.major-lens .lens-blade:hover .lens-disciplines span,.major-lens .lens-blade:focus-visible .lens-disciplines span{opacity:1;filter:blur(0);transform:translate(-50%,-50%);transition-delay:calc(var(--discipline-index)*.12s)}
+.lens-blade-arts .lens-disciplines span:nth-child(1){left:57%;top:5%}.lens-blade-arts .lens-disciplines span:nth-child(2){left:69%;top:7%}.lens-blade-arts .lens-disciplines span:nth-child(3){left:89%;top:8%}.lens-blade-arts .lens-disciplines span:nth-child(4){left:93%;top:22%}.lens-blade-arts .lens-disciplines span:nth-child(5){left:75%;top:37%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:60%;top:32%}
+.lens-blade-other .lens-disciplines span:nth-child(1){left:8%;top:18%}.lens-blade-other .lens-disciplines span:nth-child(2){left:42%;top:8%}.lens-blade-other .lens-disciplines span:nth-child(3){left:43%;top:23%}.lens-blade-other .lens-disciplines span:nth-child(4){left:9%;top:29%}.lens-blade-other .lens-disciplines span:nth-child(5){left:45%;top:40%}.lens-blade-other .lens-disciplines span:nth-child(6){left:19%;top:36%}
+.lens-blade-medicine .lens-disciplines span:nth-child(1){left:7%;top:47%}.lens-blade-medicine .lens-disciplines span:nth-child(2){left:34%;top:47%}.lens-blade-medicine .lens-disciplines span:nth-child(3){left:8%;top:92%}.lens-blade-medicine .lens-disciplines span:nth-child(4){left:28%;top:73%}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:3%;top:60%}.lens-blade-medicine .lens-disciplines span:nth-child(6){left:18%;top:87%}
+.lens-blade-science .lens-disciplines span:nth-child(1){left:72%;top:38%}.lens-blade-science .lens-disciplines span:nth-child(2){left:96%;top:52%}.lens-blade-science .lens-disciplines span:nth-child(3){left:96%;top:69%}.lens-blade-science .lens-disciplines span:nth-child(4){left:68%;top:57%}.lens-blade-science .lens-disciplines span:nth-child(5){left:90%;top:89%}.lens-blade-science .lens-disciplines span:nth-child(6){left:83%;top:74%}
+.lens-catalog-list h3{font-family:'Major Editorial','Songti SC','SimSun',serif;letter-spacing:.03em}
+@media(max-width:1100px){.major-lens .lens-disciplines span{font-size:14px}}
+@media(max-width:760px){.major-lens .lens-disciplines span{font-size:10px;letter-spacing:.02em}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:8%;top:55%}.lens-blade-arts .lens-disciplines span:nth-child(1){left:61%;top:9%}.lens-blade-arts .lens-disciplines span:nth-child(2){left:74%;top:12%}.lens-blade-arts .lens-disciplines span:nth-child(3){left:93%;top:12%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:62%;top:32%}.lens-blade-science .lens-disciplines span:nth-child(2){left:92%;top:52%}.lens-blade-science .lens-disciplines span:nth-child(3){left:94%;top:73%}.lens-blade-science .lens-disciplines span:nth-child(6){left:85%;top:85%}.lens-blade-other .lens-disciplines span:nth-child(5){left:43%;top:40%}}
+@media(hover:none){.major-lens .lens-disciplines span{opacity:.85;filter:none;transform:translate(-50%,-50%)}}
+@media(prefers-reduced-motion:reduce){.major-lens .lens-disciplines span{transition:none}}
+/* Keep each field's title, three slogans and emerging disciplines on separate planes. */
+.major-lens .lens-blade:not(.lens-blade-engineering) .lens-field-copy{text-align:center;align-items:center}.major-lens .lens-slogans span{font-size:20px;line-height:1.7;letter-spacing:.08em;opacity:.9}.major-lens .lens-disciplines span{font-size:17px;line-height:1.5;letter-spacing:.08em}
+.lens-blade-other .lens-slogans span:first-child{left:14%;top:32%}.lens-blade-other .lens-slogans span:last-child{left:37%;top:39%}.lens-blade-arts .lens-slogans span:first-child{left:65%;top:39%}.lens-blade-arts .lens-slogans span:last-child{left:90%;top:30%}.lens-blade-science .lens-slogans span:first-child{left:71%;top:51%}.lens-blade-science .lens-slogans span:last-child{left:89%;top:86%}
+.lens-blade-other .lens-disciplines span:nth-child(1){left:8%;top:11%}.lens-blade-other .lens-disciplines span:nth-child(2){left:43%;top:7%}.lens-blade-other .lens-disciplines span:nth-child(3){left:43%;top:22%}.lens-blade-other .lens-disciplines span:nth-child(4){left:8%;top:23%}.lens-blade-other .lens-disciplines span:nth-child(5){left:45%;top:43%}.lens-blade-other .lens-disciplines span:nth-child(6){left:23%;top:35%}
+.lens-blade-arts .lens-disciplines span:nth-child(1){left:57%;top:34%}.lens-blade-arts .lens-disciplines span:nth-child(2){left:68%;top:6%}.lens-blade-arts .lens-disciplines span:nth-child(3){left:88%;top:8%}.lens-blade-arts .lens-disciplines span:nth-child(4){left:96%;top:21%}.lens-blade-arts .lens-disciplines span:nth-child(5){left:77%;top:36%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:93%;top:14%}
+.lens-blade-science .lens-disciplines span:nth-child(1){left:74%;top:39%}.lens-blade-science .lens-disciplines span:nth-child(2){left:96%;top:54%}.lens-blade-science .lens-disciplines span:nth-child(3){left:96%;top:72%}.lens-blade-science .lens-disciplines span:nth-child(4){left:70%;top:61%}.lens-blade-science .lens-disciplines span:nth-child(5){left:94%;top:94%}.lens-blade-science .lens-disciplines span:nth-child(6){left:81%;top:79%}
+/* Medicine's photographs share one cool grading and broad, feathered boundaries. */
+.lens-blade-medicine{background:#d6e7e9;color:#244d59}.lens-blade-medicine::before{background:radial-gradient(ellipse at 18% 68%,#eaf3f3bd,transparent 45%)}
+.medicine-photo-doctor{left:-2%;top:30%;width:49%;height:70%;background-image:url('https://images.pexels.com/photos/8376271/pexels-photo-8376271.jpeg?auto=compress&cs=tinysrgb&w=1200');background-position:30% 40%;filter:saturate(.45);opacity:.9;mask-image:linear-gradient(90deg,#000 18%,#000b3 52%,transparent 98%)}
+.medicine-photo-laboratory{left:18%;top:35%;width:33%;height:50%;background-position:67% 38%;filter:saturate(.4);opacity:.68;mask-image:radial-gradient(ellipse at 52% 45%,#000 15%,#0008c 48%,transparent 78%)}
+.medicine-photo-wash{inset:28% 0 0;background:linear-gradient(180deg,#d6e7e955,transparent 28%,#d6e7e973),radial-gradient(ellipse at 17% 56%,#ecf5f67a,transparent 47%)}
+.lens-blade-medicine .lens-field-copy{left:18%;top:68%;width:350px;text-shadow:0 1px 18px #eff7f7}.lens-blade-medicine .lens-field-heading{font-size:58px;letter-spacing:.12em}.lens-blade-medicine .lens-field-english{font:500 33px/1.2 'Major Cormorant',Georgia,serif;margin-top:10px}.lens-blade-medicine .lens-field-line{max-width:350px}
+.lens-blade-medicine .lens-slogans span:first-child{left:11%;top:85%}.lens-blade-medicine .lens-slogans span:last-child{left:28%;top:53%}
+.lens-blade-medicine .lens-disciplines span:nth-child(1){left:7%;top:47%}.lens-blade-medicine .lens-disciplines span:nth-child(2){left:34%;top:44%}.lens-blade-medicine .lens-disciplines span:nth-child(3){left:7%;top:93%}.lens-blade-medicine .lens-disciplines span:nth-child(4){left:28%;top:76%}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:4%;top:58%}.lens-blade-medicine .lens-disciplines span:nth-child(6){left:20%;top:87%}
+@media(max-width:1100px){.major-lens .lens-slogans span{font-size:17px}.major-lens .lens-disciplines span{font-size:14px}.lens-blade-medicine .lens-field-copy{width:250px}.lens-blade-medicine .lens-field-heading{font-size:46px}.lens-blade-medicine .lens-field-english{font-size:28px}}
+@media(max-width:760px){.major-lens .lens-slogans span{font-size:10px;letter-spacing:.02em}.major-lens .lens-disciplines span{font-size:9px;letter-spacing:.02em}.major-lens .lens-blade:not(.lens-blade-engineering) .lens-field-line{max-width:105px;font-size:12px}.medicine-photo-doctor{left:-7%;width:66%;top:30%;height:70%;background-position:39% center;opacity:.8}.medicine-photo-laboratory{left:15%;top:36%;width:47%;height:40%;background-position:66% center;opacity:.6}.medicine-photo-wash{background:linear-gradient(180deg,#d6e7e933,transparent 30%,#d6e7e95e),radial-gradient(ellipse at 17% 58%,#edf6f79c,transparent 55%)}.lens-blade-medicine .lens-field-copy{left:19%;top:67%;width:130px}.lens-blade-medicine .lens-field-heading{font-size:36px}.lens-blade-medicine .lens-field-english{font-size:24px}.lens-blade-medicine .lens-slogans span:first-child{left:13%;top:84%}.lens-blade-medicine .lens-slogans span:last-child{left:30%;top:54%}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:8%;top:58%}.lens-blade-medicine .lens-disciplines span:nth-child(4){left:28%;top:76%}.lens-blade-arts .lens-slogans span:last-child{left:86%;top:6%}.lens-blade-arts .lens-disciplines span:nth-child(4){left:94%;top:32%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:91%;top:14%}.lens-blade-arts .lens-disciplines span:nth-child(1){left:61%;top:33%}.lens-blade-science .lens-slogans span:first-child{left:74%;top:36%}.lens-blade-science .lens-slogans span:last-child{left:87%;top:80%}.lens-blade-science .lens-disciplines span:nth-child(2){left:92%;top:53%}.lens-blade-science .lens-disciplines span:nth-child(3){left:93%;top:74%}.lens-blade-science .lens-disciplines span:nth-child(4){left:67%;top:59%}.lens-blade-science .lens-disciplines span:nth-child(6){left:87%;top:90%}.lens-blade-other .lens-slogans span:first-child{left:22%;top:5%}.lens-blade-other .lens-slogans span:last-child{left:31%;top:36%}.lens-blade-other .lens-disciplines span:nth-child(1){left:8%;top:11%}.lens-blade-other .lens-disciplines span:nth-child(6){left:15%;top:31%}}
+.lens-blade-medicine .lens-disciplines span:nth-child(4){left:35%;top:63%}
+.lens-blade-medicine .lens-disciplines span:nth-child(2){top:48%}.lens-blade-medicine .lens-disciplines span:nth-child(6){left:15%;top:89%}.lens-blade-other .lens-disciplines span:nth-child(5){left:44%;top:33%}@media(max-width:760px){.lens-blade-medicine .lens-disciplines span:nth-child(2){left:34%;top:48%}.lens-blade-medicine .lens-disciplines span:nth-child(6){left:15%;top:89%}.lens-blade-other .lens-disciplines span:nth-child(5){left:44%;top:33%}}
+.lens-blade-science .lens-disciplines span:nth-child(1){left:74%;top:44%}
+/* Depth-driven astronomy and a real chemical research workspace. */
+.lens-blade-science{background:radial-gradient(ellipse at 94% 44%,#758bae88,transparent 40%),linear-gradient(145deg,#e5effb,#b7c9dd)}
+.science-solar{left:88%;top:46%;width:320px;height:250px;perspective:650px;isolation:isolate}
+.science-space-glow{position:absolute;inset:-30%;background:radial-gradient(ellipse at 60% 50%,#24365bba,transparent 66%);filter:blur(12px)}
+.science-space-stars{position:absolute;inset:-10%;transform:translateZ(-30px)}.science-space-stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#edf6ff;box-shadow:0 0 7px #ecf6ff;animation:science-star-shimmer 4s ease-in-out var(--star-delay) infinite alternate}
+.science-space-stage{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--space-y,0deg)) rotateY(var(--space-x,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.science-orbit-plane{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(58deg) rotateY(-15deg) rotateZ(-22deg)}.science-orbit-plane-1{transform:rotateX(67deg) rotateY(18deg) rotateZ(24deg)}.science-orbit-plane-2{transform:rotateX(52deg) rotateY(-24deg) rotateZ(-35deg)}
+.science-orbit{transform-style:preserve-3d;border-color:#c3d7f15c;box-shadow:0 0 8px #b1cef31a}.science-planet{width:18px;height:18px;box-shadow:inset -4px -3px 5px #10223dcc,0 0 12px #8db8dc55;transform:rotateX(-58deg)}.science-orbit-1 .science-planet{width:26px;height:26px}.science-orbit-2 .science-planet{width:33px;height:33px}.science-sun{width:45px;height:45px;transform:translateZ(24px);box-shadow:0 0 30px #ffe7b9aa,0 0 85px #f4d8a55c}
+.science-chemistry-photo{position:absolute;left:70%;top:66%;width:34%;height:36%;background:url('https://images.pexels.com/photos/8532836/pexels-photo-8532836.jpeg?auto=compress&cs=tinysrgb&w=1200') 52% 38%/cover no-repeat;filter:saturate(.55);opacity:.82;mask-image:radial-gradient(ellipse at 64% 65%,#000 24%,#000c4 47%,transparent 78%)}
+.science-chemistry-wash{position:absolute;left:61%;top:58%;right:0;bottom:0;background:linear-gradient(180deg,#c1d1e37a,transparent 44%,#b7c9dd2e),radial-gradient(ellipse at 80% 75%,#edf4fb45,transparent 70%)}
+.lens-blade-science .lens-field-copy,.lens-blade-science .lens-slogans{text-shadow:0 1px 12px #eef5ff,0 1px 3px #eef5ff}.science-digits{opacity:.65}
+@keyframes science-star-shimmer{to{opacity:.3;scale:.65}}
+@media(max-width:1100px){.science-solar{width:240px;height:210px}}
+@media(max-width:760px){.science-solar{left:88%;top:46%;width:135px;height:130px}.science-sun{width:22px;height:22px}.science-planet{width:7px;height:7px}.science-orbit-1 .science-planet{width:11px;height:11px}.science-orbit-2 .science-planet{width:15px;height:15px}.science-chemistry-photo{left:63%;top:67%;width:42%;height:33%;background-position:57% 35%;opacity:.7}.science-space-glow{inset:-15%}.science-space-stars i{width:1px;height:1px}}
+@media(prefers-reduced-motion:reduce){.science-space-stage{transition:none}.science-space-stars i{animation:none}}
+.science-chemistry-photo{top:61%;height:41%;background-position:52% 22%;mask-image:linear-gradient(180deg,transparent,#000 26%,#000 80%,transparent),linear-gradient(90deg,transparent,#000 28%,#000 88%,transparent);mask-composite:intersect}
+.science-chemistry-wash{background:radial-gradient(ellipse at 80% 75%,#edf4fb45,transparent 70%)}
+@media(max-width:760px){.science-chemistry-photo{top:64%;height:36%;background-position:57% 25%}}
+/* A complete two-person legal scene, with more space around the portraits. */
+.lens-blade-arts{background:linear-gradient(135deg,#e9ddc8,#d3c3a8);color:#4d3b29}.lens-blade-arts::before{background:radial-gradient(ellipse at 69% 24%,#eee2ced1,transparent 47%)}
+.humanities-photo-lawyer{left:78%;right:auto;top:1%;width:22%;height:34%;background-image:url('https://images.pexels.com/photos/5668800/pexels-photo-5668800.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:contain;background-position:right top;filter:saturate(.55) sepia(.16);opacity:.86;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 96%,transparent),linear-gradient(180deg,#000 68%,transparent 100%);mask-composite:intersect}
+.humanities-photo-public-service{display:none}.humanities-paper-wash{background:linear-gradient(90deg,#e9ddc81f,transparent 65%),radial-gradient(ellipse at 69% 23%,#e9ddc866,transparent 34%)}
+.lens-blade-arts .lens-field-copy{left:69%;top:23%;width:320px;text-shadow:0 1px 12px #eee1c9}.lens-blade-arts .lens-field-heading{color:#453322}.lens-blade-arts .lens-field-english{color:#6c5037}.lens-blade-arts .lens-field-line{color:#513b26}
+.humanities-photo-scholar{opacity:.72}.humanities-poems{left:53%;top:7%;color:#625039}.lens-blade-arts .lens-slogans span:last-child{left:89%;top:32%}
+@media(max-width:1100px){.lens-blade-arts .lens-field-copy{width:250px;left:69%}}
+@media(max-width:760px){.humanities-photo-lawyer{left:74%;top:1%;width:26%;height:27%;background-size:contain;background-position:right top;opacity:.84}.lens-blade-arts .lens-field-copy{left:73%;top:23%;width:125px}.humanities-poems{left:52%;top:4%}.lens-blade-arts .lens-slogans span:last-child{left:83%;top:35%}.lens-blade-arts .lens-disciplines span:nth-child(3){left:96%;top:23%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:66%;top:9%}}
+@media(min-width:761px){.lens-blade-arts .lens-disciplines span:nth-child(3){left:75%;top:7%}.lens-blade-arts .lens-disciplines span:nth-child(4){left:96%;top:27%}.lens-blade-arts .lens-disciplines span:nth-child(6){left:82%;top:28%}}
+/* Keep the doctor's whole face inside the medical aperture, rather than beneath its diagonal edge. */
+.medicine-photo-doctor{left:0;top:40%;width:27%;height:54%;background-image:url('https://images.pexels.com/photos/14438788/pexels-photo-14438788.jpeg?auto=compress&cs=tinysrgb&w=1100');background-size:contain;background-position:center top;filter:saturate(.45);opacity:.86;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 84%,transparent),linear-gradient(180deg,#000 55%,#000a6 73%,transparent 100%);mask-composite:intersect}
+.medicine-photo-laboratory{left:26%;top:46%;width:20%;height:28%;opacity:.46;mask-image:radial-gradient(ellipse,#000 20%,transparent 72%)}
+.medicine-photo-wash{background:radial-gradient(ellipse at 18% 72%,#eaf3f381,transparent 40%)}
+.lens-blade-medicine .lens-field-copy{top:70%;text-shadow:0 1px 14px #eff7f7,0 1px 3px #eff7f7}
+@media(max-width:760px){.medicine-photo-doctor{left:0;top:42%;width:30%;height:43%;background-size:contain;background-position:center top;opacity:.86}.medicine-photo-laboratory{left:27%;top:48%;width:21%;height:24%;opacity:.4}.medicine-photo-wash{background:radial-gradient(ellipse at 18% 72%,#eaf3f391,transparent 45%)}.lens-blade-medicine .lens-field-copy{top:70%}}
+/* Three separate medical perspectives: consultation, clinical care and pharmaceutical research. */
+.medicine-photo-doctor{left:0;top:40%;width:21%;height:32%;background-image:url('https://images.pexels.com/photos/8376271/pexels-photo-8376271.jpeg?auto=compress&cs=tinysrgb&w=1100');background-size:contain;background-position:center top;opacity:.83;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 88%,transparent),linear-gradient(180deg,#000 65%,transparent 100%);mask-composite:intersect}
+.medicine-photo-doctor-male{left:20%;top:47%;width:20%;height:29%;background-image:url('https://images.pexels.com/photos/14438788/pexels-photo-14438788.jpeg?auto=compress&cs=tinysrgb&w=1000');background-size:contain;background-position:center top;filter:saturate(.45);opacity:.82;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent),linear-gradient(180deg,#000 62%,transparent 100%);mask-composite:intersect}
+.medicine-photo-laboratory{left:0;top:72%;width:19%;height:28%;background-size:contain;background-position:center top;filter:saturate(.4);opacity:.8;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 85%,transparent),linear-gradient(180deg,#000 70%,transparent);mask-composite:intersect}
+.lens-blade-medicine .lens-field-copy{left:19%;top:70%;width:320px}.lens-blade-medicine .lens-slogans span:first-child{left:25%;top:81%}.lens-blade-medicine .lens-slogans span:last-child{left:30%;top:44%}.lens-blade-medicine .lens-disciplines span:nth-child(1){left:7%;top:38%}.lens-blade-medicine .lens-disciplines span:nth-child(2){left:39%;top:56%}.lens-blade-medicine .lens-disciplines span:nth-child(4){left:29%;top:63%}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:5%;top:69%}
+@media(max-width:760px){.medicine-photo-doctor{left:0;top:42%;width:24%;height:24%;background-size:contain;opacity:.83}.medicine-photo-doctor-male{left:25%;top:48%;width:17%;height:19%;background-size:contain;opacity:.82}.medicine-photo-laboratory{left:0;top:76%;width:22%;height:24%;background-size:contain;opacity:.8}.lens-blade-medicine .lens-field-copy{left:20%;top:70%;width:130px}.lens-blade-medicine .lens-slogans span:first-child{left:26%;top:81%}.lens-blade-medicine .lens-slogans span:last-child{left:30%;top:44%}.lens-blade-medicine .lens-disciplines span:nth-child(1){left:9%;top:39%}.lens-blade-medicine .lens-disciplines span:nth-child(2){left:39%;top:56%}.lens-blade-medicine .lens-disciplines span:nth-child(5){left:7%;top:67%}}
+.medicine-photo-doctor,.medicine-photo-doctor-male{mask-image:linear-gradient(180deg,#000 55%,transparent 100%),linear-gradient(90deg,transparent,#000 7%,#000 95%,transparent);mask-composite:intersect}
+.medicine-photo-laboratory{top:77%;height:23%;mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-composite:add;background-position:center top}
+.lens-blade-medicine .lens-field-copy{top:69%;left:15%;width:250px}.lens-blade-medicine .lens-field-line{max-width:240px;font-size:17px}.lens-blade-medicine .lens-slogans span:first-child{left:14%;top:62%;font-size:18px}.lens-blade-medicine .lens-disciplines span:nth-child(4){left:38%;top:60%}
+@media(max-width:760px){.medicine-photo-laboratory{top:77%;height:23%}.lens-blade-medicine .lens-field-copy{left:17%;top:70%;width:125px}.lens-blade-medicine .lens-field-line{font-size:11px;max-width:115px}.lens-blade-medicine .lens-slogans span:first-child{left:15%;top:61%;font-size:10px}}
+/* Reagent still life and readable rolling measurements. */
+.science-chemistry-photo{background-image:url('https://images.pexels.com/photos/8325715/pexels-photo-8325715.jpeg?auto=compress&cs=tinysrgb&w=1200');background-position:50% 50%;filter:saturate(.75);opacity:.8;top:65%;height:37%}
+.science-digits{left:65%;top:41%;width:270px;gap:9px 10px;opacity:.9;transform:rotate(-5deg);mask-image:radial-gradient(ellipse,#000 58%,transparent 90%)}.science-digits span{display:block;height:20px;overflow:hidden;font:14px/20px 'Courier New',monospace;font-variant-numeric:tabular-nums;color:#254e7b;opacity:.85;text-shadow:0 1px 5px #e8f4ffb3}.science-digits b{display:block;font-weight:600;will-change:transform}
+@media(max-width:1100px){.science-digits{width:225px}.science-digits span{font-size:12px}}
+@media(max-width:760px){.science-digits{left:63%;top:42%;width:115px;gap:5px 3px;opacity:.9}.science-digits span{font-size:8px;height:14px;line-height:14px}.science-chemistry-photo{top:67%;height:33%;background-position:50% center}}
+@media(prefers-reduced-motion:reduce){.science-digits b{will-change:auto}}
+.science-digits{grid-template-columns:repeat(4,1fr)}
+.lens-art-science .science-digits b{position:static;left:auto;top:auto;width:auto;height:auto;border-radius:0;background:none;box-shadow:none;display:block;font-weight:600}
+.lens-art-science .science-space-stars i{width:2px;height:2px;border:0;rotate:0deg;scale:1;border-radius:50%;background:#edf6ff;animation:science-star-shimmer 4s ease-in-out var(--star-delay) infinite alternate}
+@media(max-width:760px){.lens-art-science .science-space-stars i{width:1px;height:1px}}
+@media(prefers-reduced-motion:reduce){.lens-art-science .science-space-stars i{animation:none}}
+/* Blend the legal scene into the paper, without fading either face. */
+.humanities-photo-lawyer{left:77%;top:0;width:23%;height:35%;background-size:contain;background-position:right top;filter:saturate(.38) sepia(.24) contrast(.9);opacity:.8;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 87%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 8%,#000 57%,transparent 82%);mask-composite:intersect}
+.humanities-paper-wash{background:radial-gradient(ellipse at 97% 7%,#e9ddc824,transparent 33%),radial-gradient(ellipse at 79% 29%,#e4d5be80,transparent 27%),linear-gradient(90deg,#e9ddc81f,transparent 65%)}
+@media(max-width:760px){.humanities-photo-lawyer{left:73%;top:0;width:27%;height:27%;background-size:contain;background-position:right top;opacity:.8;mask-image:linear-gradient(90deg,transparent,#000 18%,#000 87%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 46%,transparent 77%);mask-composite:intersect}}
+.humanities-photo-lawyer{top:2%;height:26%;mask-image:linear-gradient(90deg,transparent,#000 22%,#000 87%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 52%,transparent 100%);mask-composite:intersect}
+@media(max-width:760px){.humanities-photo-lawyer{top:1%;height:16%;mask-image:linear-gradient(90deg,transparent,#000 18%,#000 87%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 52%,transparent 100%);mask-composite:intersect}}
+/* Stronger slogan hierarchy, with smaller discipline accents in contrasting hues. */
+.major-lens .lens-blade .lens-field-line{font-size:24px;line-height:1.65;letter-spacing:.055em}
+.major-lens .lens-slogans span,.major-lens .engineering-slogans span{font-size:23px;line-height:1.65;width:280px;letter-spacing:.06em}
+.major-lens .lens-disciplines span{font-size:14px;letter-spacing:.07em;font-weight:500}
+.major-lens .lens-blade-arts .lens-disciplines span{color:#913c46;text-shadow:0 1px 7px #f7e7d3b3}
+.major-lens .lens-blade-science .lens-disciplines span{color:#086b67;text-shadow:0 1px 7px #eaf9f7bf}
+.major-lens .lens-blade-medicine .lens-disciplines span{color:#865025;text-shadow:0 1px 7px #fff4dfb3}
+.major-lens .lens-blade-other .lens-disciplines span{color:#46539b;text-shadow:0 1px 7px #f2edffb3}
+.major-lens .lens-blade-engineering .lens-disciplines span{color:#f1c47f;text-shadow:0 2px 8px #071019}
+.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:13%;top:57%;width:250px}.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:24%;top:45%;width:250px}
+.major-lens .lens-blade-medicine .lens-field-line{max-width:290px;font-size:22px}.major-lens .lens-blade-medicine .lens-field-copy{width:290px;top:70%}
+@media(max-width:1100px){.major-lens .lens-blade .lens-field-line{font-size:20px}.major-lens .lens-slogans span,.major-lens .engineering-slogans span{font-size:19px;width:230px}.major-lens .lens-disciplines span{font-size:12px}}
+@media(max-width:760px){.major-lens .lens-blade .lens-field-line{font-size:13px;line-height:1.65;max-width:125px}.major-lens .lens-slogans span,.major-lens .engineering-slogans span{font-size:12px;line-height:1.6;width:145px}.major-lens .lens-disciplines span{font-size:8px;letter-spacing:.02em}.major-lens .lens-blade-engineering .lens-field-line{max-width:225px}.major-lens .lens-blade-medicine .lens-field-copy{width:130px;top:71%}.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:16%;top:59%;width:130px}.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:24%;top:44%;width:135px}}
+.major-lens .lens-blade .lens-field-line{text-wrap:balance}.major-lens .lens-blade-other .lens-slogans span:first-child{left:20%;top:6%}
+@media(max-width:760px){.major-lens .lens-blade-other .lens-slogans span:first-child{left:22%;top:5%}}
+@media(max-width:760px){.major-lens .engineering-disciplines span:nth-child(6){left:76%;top:95%}.major-lens .engineering-disciplines span:nth-child(7){left:31%;top:85%}}
+/* One continuous hospital atmosphere beneath the three working scenes. */
+.medicine-hospital-photo{position:absolute;left:0;top:28%;width:50%;height:72%;background:url('https://images.pexels.com/photos/11660581/pexels-photo-11660581.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;filter:saturate(.25);opacity:.42;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 90%),linear-gradient(90deg,#000 70%,transparent);mask-composite:intersect}
+.medicine-photo-doctor{left:-1%;top:39%;width:25%;height:33%;background-size:contain;mask-image:radial-gradient(ellipse at 45% 35%,#000 23%,#000b3 48%,transparent 76%);mask-composite:add;mix-blend-mode:multiply;filter:saturate(.3);opacity:.9}
+.medicine-photo-doctor-male{left:22%;top:47%;width:25%;height:30%;background-image:url('https://images.pexels.com/photos/8413204/pexels-photo-8413204.jpeg?auto=compress&cs=tinysrgb&w=1100');background-size:contain;background-position:center top;mask-image:radial-gradient(ellipse at 50% 34%,#000 25%,#000a6 48%,transparent 78%);mask-composite:add;mix-blend-mode:multiply;filter:saturate(.3);opacity:.85}
+.medicine-photo-laboratory{left:-2%;top:75%;width:24%;height:27%;background-size:contain;mask-image:radial-gradient(ellipse at 51% 40%,#000 28%,#000a6 53%,transparent 80%);mask-composite:add;mix-blend-mode:multiply;filter:saturate(.3);opacity:.86}
+.medicine-photo-wash{inset:28% 0 0;background:radial-gradient(ellipse at 15% 68%,#e7f2f28c,transparent 35%),linear-gradient(90deg,#d6e7e922,transparent 40%)}
+@media(max-width:760px){.medicine-hospital-photo{width:52%;opacity:.4}.medicine-photo-doctor{left:-2%;top:41%;width:28%;height:25%}.medicine-photo-doctor-male{left:24%;top:48%;width:25%;height:22%}.medicine-photo-laboratory{left:-2%;top:77%;width:26%;height:23%}}
+.medicine-hospital-photo{opacity:.24;filter:saturate(.2) contrast(.8)}
+.medicine-photo-doctor,.medicine-photo-doctor-male,.medicine-photo-laboratory{mix-blend-mode:normal;filter:saturate(.35) contrast(.92)}
+.medicine-photo-doctor{opacity:.92;mask-image:radial-gradient(ellipse at 45% 36%,#000 18%,#000cf 36%,transparent 72%)}
+.medicine-photo-doctor-male{opacity:.94;mask-image:radial-gradient(ellipse at 50% 34%,#000 18%,#000cf 35%,transparent 72%)}
+.medicine-photo-laboratory{opacity:.9;mask-image:radial-gradient(ellipse at 51% 40%,#000 23%,#000cf 43%,transparent 77%)}
+/* Reagent glassware shares the blue atmosphere instead of a white photo rectangle. */
+.science-chemistry-photo{left:70%;top:66%;width:34%;height:36%;background-position:50% 50%;filter:saturate(.6) sepia(.08) contrast(.88);opacity:.83;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent 0%,#000 26%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 32%,#000 75%,transparent 100%);mask-composite:intersect}
+.science-chemistry-wash{left:62%;top:62%;background:radial-gradient(ellipse at 91% 84%,#b7c9dd24,transparent 62%),radial-gradient(ellipse at 73% 68%,#c5d4e455,transparent 65%)}
+@media(max-width:760px){.science-chemistry-photo{left:63%;top:67%;width:42%;height:33%;background-position:50% center;opacity:.78}}
+/* Each discipline has its own display face; slogans and labels keep their shared hierarchy. */
+@font-face{font-family:'Humanities Display';src:url('/fonts/major-arts-title.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Sciences Display';src:url('/fonts/major-science-title.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Medicine Display';src:url('/fonts/major-medicine-title.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Possibilities Display';src:url('/fonts/major-other-title.woff2') format('woff2');font-weight:400;font-display:swap}
+.major-lens .lens-blade-arts .lens-field-heading{font-family:'Humanities Display','KaiTi',serif;font-weight:400;font-size:68px;letter-spacing:.14em;rotate:-2deg;line-height:1.12}
+.major-lens .lens-blade-science .lens-field-heading{font-family:'Sciences Display','Microsoft YaHei',sans-serif;font-weight:500;font-size:58px;letter-spacing:.2em;line-height:1.16}
+.major-lens .lens-blade-medicine .lens-field-heading{font-family:'Medicine Display','Songti SC',serif;font-weight:600;font-size:58px;letter-spacing:.13em;line-height:1.16}
+.major-lens .lens-blade-other .lens-field-heading{font-family:'Possibilities Display','KaiTi',serif;font-weight:400;font-size:66px;letter-spacing:.12em;rotate:0deg;line-height:1.12}
+.major-lens .lens-blade-science .lens-field-english{font-family:Georgia,serif;font-style:normal;font-size:27px;letter-spacing:.035em}.major-lens .lens-blade-other .lens-field-english{font-style:italic;rotate:0deg}
+@media(max-width:1100px){.major-lens .lens-blade-arts .lens-field-heading{font-size:55px}.major-lens .lens-blade-science .lens-field-heading,.major-lens .lens-blade-medicine .lens-field-heading{font-size:48px}.major-lens .lens-blade-other .lens-field-heading{font-size:55px}}
+@media(max-width:760px){.major-lens .lens-blade-arts .lens-field-heading{font-size:39px}.major-lens .lens-blade-science .lens-field-heading{font-size:33px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:35px}.major-lens .lens-blade-other .lens-field-heading{font-size:40px}.major-lens .lens-blade-science .lens-field-english{font-size:19px}}
+/* Law and public affairs, as two complementary working scenes. */
+.humanities-photo-lawyer{left:82%;right:auto;top:1%;width:18%;height:25%;background-image:url('https://images.pexels.com/photos/8111889/pexels-photo-8111889.jpeg?auto=compress&cs=tinysrgb&w=1100');background-size:contain;background-position:center top;filter:saturate(.32) sepia(.23) contrast(.88);opacity:.86;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 58%,transparent);mask-composite:intersect}
+.humanities-photo-public-service{display:block;left:78%;right:auto;top:17%;width:18%;height:27%;background-image:url('https://images.pexels.com/photos/7644077/pexels-photo-7644077.jpeg?auto=compress&cs=tinysrgb&w=1000');background-size:contain;background-position:center top;filter:saturate(.32) sepia(.23) contrast(.88);opacity:.82;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 53%,transparent);mask-composite:intersect}
+.humanities-paper-wash{background:radial-gradient(ellipse at 82% 24%,#e4d5be55,transparent 24%),linear-gradient(90deg,#e9ddc81f,transparent 65%)}
+.major-lens .lens-blade-arts .lens-slogans span:last-child{left:88%;top:36%}
+@media(max-width:760px){.humanities-photo-lawyer{left:80%;top:1%;width:20%;height:18%}.humanities-photo-public-service{left:79%;top:13%;width:20%;height:19%}.major-lens .lens-blade-arts .lens-slogans span:last-child{left:83%;top:35%}}
+.humanities-photo-lawyer{top:2%;mask-image:radial-gradient(ellipse at 51% 34%,#000 18%,#000c 40%,transparent 72%);mask-composite:add}
+.humanities-photo-public-service{top:15%;mask-image:radial-gradient(ellipse at 50% 35%,#000 18%,#000c 40%,transparent 72%);mask-composite:add}
+.major-lens .lens-blade-arts .lens-slogans span:last-child{left:88%;top:31%}
+@media(max-width:760px){.humanities-photo-lawyer{top:1%}.humanities-photo-public-service{top:13%}.major-lens .lens-blade-arts .lens-slogans span:last-child{left:83%;top:31%}}
+/* Medical reconstruction: a continuous interior with softly layered work scenes. */
+.major-lens .lens-blade-medicine{background:linear-gradient(135deg,#d8e9e7,#b8d3d0);color:#214d50}
+.major-lens .lens-blade-medicine::before{background:radial-gradient(ellipse at 14% 69%,#eaf3edb0,transparent 40%)}
+.major-lens .lens-blade-medicine::after{background:linear-gradient(120deg,transparent,#e4f5ef38,transparent)}
+.lens-art-medicine .medicine-hospital-photo{left:0;top:28%;width:52%;height:72%;background-size:cover;background-position:42% center;opacity:.28;filter:saturate(.2) contrast(.75) blur(.5px);mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);mask-composite:add}
+.lens-art-medicine .medicine-photo{background-repeat:no-repeat;background-size:cover;mix-blend-mode:normal;filter:saturate(.32) contrast(.88);opacity:.93;mask-composite:add}
+.lens-art-medicine .medicine-photo-doctor{left:-3%;top:36%;width:30%;height:36%;background-position:38% 35%;mask-image:radial-gradient(ellipse at 46% 48%,#000 12%,rgba(0,0,0,.85) 32%,rgba(0,0,0,.4) 52%,transparent 73%)}
+.lens-art-medicine .medicine-photo-doctor-male{left:20%;top:44%;width:30%;height:35%;background-position:46% 40%;mask-image:radial-gradient(ellipse at 48% 42%,#000 12%,rgba(0,0,0,.85) 34%,rgba(0,0,0,.35) 53%,transparent 74%)}
+.lens-art-medicine .medicine-photo-laboratory{left:-2%;top:73%;width:25%;height:28%;background-position:80% center;mask-image:radial-gradient(ellipse at 47% 47%,#000 17%,rgba(0,0,0,.8) 37%,rgba(0,0,0,.3) 56%,transparent 77%)}
+.lens-art-medicine .medicine-photo-wash{inset:28% 48% 0 0;background:radial-gradient(ellipse at 28% 58%,#dcece87a,transparent 37%),linear-gradient(180deg,transparent 42%,#c3dcd122 80%)}
+.major-lens .lens-blade-medicine .lens-field-copy{left:14%;top:70%;width:250px;text-shadow:0 1px 14px #e7f3ed,0 1px 3px #e7f3ed}
+.major-lens .lens-blade-medicine .lens-field-heading{font-size:54px;color:#204a4c;letter-spacing:.1em}
+.major-lens .lens-blade-medicine .lens-field-english{color:#416f6b;font-size:31px}
+.major-lens .lens-blade-medicine .lens-field-line{font-size:21px;max-width:240px;color:#285552}
+.major-lens .lens-blade-medicine .lens-slogans span{color:#285a54;text-shadow:0 1px 10px #e7f3ed;max-width:250px}
+.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:13%;top:57%}.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:24%;top:44%}
+@media(max-width:1100px){.major-lens .lens-blade-medicine .lens-field-heading{font-size:46px}.major-lens .lens-blade-medicine .lens-field-line{font-size:18px;max-width:210px}.major-lens .lens-blade-medicine .lens-field-copy{width:220px}}
+@media(max-width:760px){.lens-art-medicine .medicine-photo-doctor{left:-4%;top:39%;width:34%;height:27%;background-position:38% 36%}.lens-art-medicine .medicine-photo-doctor-male{left:24%;top:46%;width:27%;height:25%;background-position:45% center}.lens-art-medicine .medicine-photo-laboratory{left:-3%;top:75%;width:29%;height:25%;background-position:80% center}.major-lens .lens-blade-medicine .lens-field-copy{left:18%;top:72%;width:125px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:35px}.major-lens .lens-blade-medicine .lens-field-english{font-size:23px}.major-lens .lens-blade-medicine .lens-field-line{font-size:12px;max-width:120px}.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:15%;top:59%;max-width:130px}.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:24%;top:44%;max-width:135px}}
+.lens-art-medicine .medicine-photo-doctor-male{left:17%;top:45%;width:31%;height:34%;opacity:1;background-position:42% 38%;mask-image:radial-gradient(ellipse at 26% 34%,#000 18%,rgba(0,0,0,.95) 39%,rgba(0,0,0,.45) 62%,transparent 84%)}
+.lens-art-medicine .medicine-photo-wash{background:radial-gradient(ellipse at 28% 73%,#dcece870,transparent 30%)}
+@media(max-width:760px){.lens-art-medicine .medicine-photo-doctor-male{left:25%;top:49%;width:27%;height:24%;background-position:36% center}}
+@font-face{font-family:'Scientific Geometry';src:url('/fonts/major-science-title-v2.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Medical Humanist';src:url('/fonts/major-medicine-title-v2.woff2') format('woff2');font-weight:400;font-display:swap}
+.major-lens .lens-blade-science .lens-field-heading{font-family:'Scientific Geometry',sans-serif;font-weight:400;font-size:68px;letter-spacing:.11em;line-height:1.1;color:#29486d;text-shadow:0 1px 12px #edf4ff80}
+.major-lens .lens-blade-science .lens-field-english{font-family:'Major Cormorant',Georgia,serif;font-style:normal;font-weight:500;font-size:34px;letter-spacing:.07em}
+.major-lens .lens-blade-medicine .lens-field-heading{font-family:'Medical Humanist','Songti SC',serif;font-weight:400;font-size:65px;letter-spacing:.07em;line-height:1.1;color:#1b4b4c}
+.major-lens .lens-blade-medicine .lens-field-english{font-family:'Major Cormorant',Georgia,serif;font-weight:500;font-style:italic;font-size:34px;letter-spacing:.035em}
+@media(max-width:1100px){.major-lens .lens-blade-science .lens-field-heading{font-size:56px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:54px}}
+@media(max-width:760px){.major-lens .lens-blade-science .lens-field-heading{font-size:40px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:39px}.major-lens .lens-blade-science .lens-field-english,.major-lens .lens-blade-medicine .lens-field-english{font-size:24px}}
+/* One legal working scene, with room to breathe beside the classical painting. */
+.lens-art-arts .humanities-photo-lawyer{left:76%;top:-2%;width:28%;height:41%;background-size:cover;background-position:45% 30%;opacity:.82;filter:saturate(.28) sepia(.2) contrast(.86);mix-blend-mode:multiply;mask-image:radial-gradient(ellipse at 57% 42%,#000 12%,rgba(0,0,0,.85) 32%,rgba(0,0,0,.35) 54%,transparent 78%);mask-composite:add}
+.humanities-paper-wash{background:radial-gradient(ellipse at 78% 28%,#e4d5be55,transparent 30%),linear-gradient(90deg,#e9ddc81f,transparent 65%)}
+@media(max-width:760px){.lens-art-arts .humanities-photo-lawyer{left:74%;top:-1%;width:30%;height:30%;background-position:45% 30%}}
+/* Refined titles and clear text zones. */
+.major-lens .lens-blade-science .lens-field-heading{font-family:'Major Editorial','Songti SC',serif;font-size:60px;font-weight:500;letter-spacing:.12em;line-height:1.2}
+.major-lens .lens-blade-medicine .lens-field-heading{font-family:'Major WenKai','KaiTi',serif;font-size:62px;font-weight:400;letter-spacing:.1em;line-height:1.2}
+.major-lens .lens-blade-other .lens-field-heading{font-family:'Major Brush','KaiTi',serif;font-size:64px;font-weight:400;letter-spacing:.1em;line-height:1.2;rotate:-2deg}
+.major-lens .lens-blade-science .lens-field-copy{left:84%;top:67%;width:275px}
+.major-lens .lens-blade-science .lens-slogans span:first-child{left:73%;top:49%;width:250px}
+.major-lens .lens-blade-science .lens-slogans span:last-child{left:86%;top:91%;width:250px}
+.major-lens .lens-blade-science .lens-disciplines span:nth-child(4){left:70%;top:63%}
+.major-lens .lens-blade-science .lens-disciplines span:nth-child(6){left:94%;top:83%}
+.major-lens .lens-blade-science .lens-disciplines span:nth-child(5){left:96%;top:97%}
+.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:14%;top:55%;width:240px}
+.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(5){left:5%;top:83%}
+.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(6){left:19%;top:92%}
+.major-lens .lens-blade-other .lens-disciplines span:nth-child(6){left:13%;top:35%}
+@media(max-width:1100px){.major-lens .lens-blade-science .lens-field-heading{font-size:49px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:51px}.major-lens .lens-blade-other .lens-field-heading{font-size:53px}.major-lens .lens-blade-science .lens-field-copy{width:230px}}
+@media(max-width:760px){.major-lens .lens-blade-science .lens-field-heading{font-size:35px}.major-lens .lens-blade-medicine .lens-field-heading{font-size:37px}.major-lens .lens-blade-other .lens-field-heading{font-size:39px}.major-lens .lens-blade-science .lens-field-copy{left:82%;top:70%;width:118px}.major-lens .lens-blade-science .lens-slogans span:first-child{left:77%;top:39%;width:140px}.major-lens .lens-blade-science .lens-slogans span:last-child{left:83%;top:91%;width:130px}.major-lens .lens-blade-science .lens-disciplines span:nth-child(4){left:66%;top:62%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(6){left:95%;top:85%}.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:15%;top:58%;width:125px}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(5){left:6%;top:83%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(6){left:12%;top:33%}}
+.major-lens .lens-blade-science .lens-slogans span:last-child{left:91%;top:91%;width:170px;text-wrap:balance}
+.major-lens .lens-blade-science .lens-disciplines span:nth-child(5){left:96%;top:88%}
+@media(max-width:760px){.major-lens .lens-blade-science .lens-slogans span:last-child{left:92%;top:92%;width:65px;font-size:11px}.major-lens .lens-blade-science .lens-disciplines span:nth-child(5){left:95%;top:97%}}
+@media(max-width:760px){.major-lens .lens-blade-medicine .lens-field-copy{left:14%;top:69%;width:110px}.major-lens .lens-blade-medicine .lens-field-line{font-size:11px;max-width:90px}.major-lens .lens-blade-science .lens-slogans span:first-child{left:86%;top:55%;width:95px}.major-lens .lens-blade-arts .lens-slogans span:last-child{left:91%;top:12%;width:65px;font-size:11px}}
+/* A deeper observatory blue for sciences. */
+.major-lens .lens-blade-science{background:radial-gradient(ellipse at 91% 44%,#31496f99,transparent 42%),linear-gradient(145deg,#b5ccde 20%,#789bbd 54%,#4b7099 78%,#334e73);color:#edf5ff}
+.major-lens .lens-blade-science .lens-field-heading{color:#f0f6ff;text-shadow:0 2px 16px #18375740}
+.major-lens .lens-blade-science .lens-field-english{color:#d6e7fa}
+.major-lens .lens-blade-science .lens-field-line,.major-lens .lens-blade-science .lens-slogans span{color:#edf5ff;text-shadow:0 1px 8px #1c3d6559}
+.major-lens .lens-blade-science .lens-field-copy,.major-lens .lens-blade-science .lens-slogans{text-shadow:0 1px 8px #1c3d6559}
+.major-lens .lens-blade-science .lens-disciplines span{color:#c1f0e5;text-shadow:0 1px 6px #163e5f80}
+.lens-art-science .science-digits span{color:#d0e4fa;text-shadow:0 1px 5px #28497160}
+.lens-art-science .science-chemistry-photo{mix-blend-mode:soft-light;opacity:.9}
+.lens-art-science .science-chemistry-wash{background:radial-gradient(ellipse at 91% 84%,#35577f38,transparent 62%),radial-gradient(ellipse at 73% 68%,#6189ad33,transparent 65%)}
+/* Three continuously moving windows onto different careers. */
+.major-lens .lens-blade-other{background:linear-gradient(135deg,#ede2dc,#d8c9d0);color:#613b54}
+.lens-art-other .other-career-wall{position:absolute;left:0;top:-3%;width:50%;height:56%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 14px;overflow:hidden;mask-image:linear-gradient(180deg,transparent,#000 8%,#000 85%,transparent)}
+.other-career-column{min-width:0;overflow:hidden}
+.other-career-track{animation:other-career-scroll 38s linear infinite;will-change:transform}
+.other-career-column:nth-child(2) .other-career-track{animation-duration:46s;animation-direction:reverse}
+.other-career-column:nth-child(3) .other-career-track{animation-duration:34s;animation-delay:-12s}
+.other-career-group{display:flex;flex-direction:column;gap:14px;padding-bottom:14px}
+.other-career-photo{height:160px;border-radius:18px;background-size:cover;background-position:center;filter:saturate(.65) contrast(.9);box-shadow:0 6px 18px #593f4a18;background-color:#bfb4b0}
+.lens-art-other .other-career-veil{position:absolute;left:0;top:0;width:50%;height:53%;background:radial-gradient(ellipse at 48% 39%,#f3e9e5ed 0%,#eee2dfcf 26%,#e9dcdf80 53%,#eadfe72b 85%),linear-gradient(180deg,#e6dadb26,#e0ced873);pointer-events:none}
+.major-lens .lens-blade-other .lens-field-copy{color:#633c56;text-shadow:0 1px 14px #fff4ef}
+.major-lens .lens-blade-other .lens-field-line,.major-lens .lens-blade-other .lens-slogans span{color:#67435b;text-shadow:0 1px 8px #fff4ef}
+.major-lens .lens-blade-other .lens-disciplines span{color:#3e4d87;text-shadow:0 1px 6px #fff4ef}
+@keyframes other-career-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-50%,0)}}
+@media(max-width:1100px){.other-career-photo{height:145px}.lens-art-other .other-career-wall{gap:10px;padding:0 10px}.other-career-group{gap:10px;padding-bottom:10px}}
+@media(max-width:760px){.lens-art-other .other-career-wall{gap:6px;padding:0 5px;height:54%}.other-career-group{gap:6px;padding-bottom:6px}.other-career-photo{height:100px;border-radius:9px}.other-career-track{animation-duration:42s}.lens-art-other .other-career-veil{background:radial-gradient(ellipse at 48% 39%,#f3e9e5f2,#eee2dfd6 32%,#e9dcdf80 62%,#eadfe72b)}}
+@media(prefers-reduced-motion:reduce){.other-career-track{animation:none;will-change:auto}}
+/* Additional hover disciplines occupy the quieter edges of each aperture. */
+.major-lens .lens-blade-arts .lens-disciplines span:nth-child(7){left:58%;top:17%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(8){left:88%;top:17%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(9){left:58%;top:27%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(10){left:87%;top:5%}
+.major-lens .lens-blade-science .lens-disciplines span:nth-child(7){left:96%;top:63%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(8){left:73%;top:72%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(9){left:87%;top:38%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(10){left:82%;top:85%}
+.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(7){left:27%;top:76%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(8){left:7%;top:73%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(9){left:28%;top:51%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(10){left:30%;top:65%}
+.major-lens .lens-blade-other .lens-disciplines span:nth-child(7){left:36%;top:11%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(8){left:7%;top:6%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(9){left:43%;top:30%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(10){left:6%;top:30%}
+@media(max-width:760px){.major-lens .lens-blade-arts .lens-disciplines span:nth-child(7){left:61%;top:16%;font-size:7px}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(8){left:93%;top:23%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(9){left:57%;top:28%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(10){left:86%;top:4%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(7){left:95%;top:62%;font-size:7px}.major-lens .lens-blade-science .lens-disciplines span:nth-child(8){left:65%;top:68%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(9){left:95%;top:39%}.major-lens .lens-blade-science .lens-disciplines span:nth-child(10){left:84%;top:86%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(7){left:28%;top:75%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(8){left:8%;top:77%;font-size:7px}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(9){left:25%;top:47%;font-size:7px}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(10){left:33%;top:63%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(7){left:38%;top:13%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(8){left:8%;top:5%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(9){left:43%;top:30%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(10){left:8%;top:28%}}
+.major-lens .lens-blade-other .lens-disciplines span:nth-child(6){left:12%;top:19%}
+.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(6){left:12%;top:90%}
+@media(max-width:760px){.major-lens .lens-blade-other .lens-disciplines span:nth-child(6){left:12%;top:19%}.major-lens .lens-blade-medicine .lens-disciplines span:nth-child(6){left:12%;top:90%}}
+/* A richer plum palette around the moving career gallery. */
+.major-lens .lens-blade-other{background:linear-gradient(135deg,#b5a0ab,#887181 65%,#665263);color:#fff1e9}
+.lens-art-other .other-career-veil{background:radial-gradient(ellipse at 48% 39%,#695362eb 0%,#775e70cb 27%,#8d758380 55%,#60475638 85%),linear-gradient(180deg,#6a526240,#5d435a80)}
+.major-lens .lens-blade-other .lens-field-heading{font-family:'Major Editorial','Songti SC',serif;font-size:62px;font-weight:500;letter-spacing:.12em;line-height:1.2;rotate:0deg;color:#fff3eb}
+.major-lens .lens-blade-other .lens-field-copy{color:#fff1e9;text-shadow:0 2px 12px #39233355}
+.major-lens .lens-blade-other .lens-field-english{color:#eaddd3;rotate:0deg}
+.major-lens .lens-blade-other .lens-field-line,.major-lens .lens-blade-other .lens-slogans span{color:#fff0e6;text-shadow:0 1px 8px #37243166}
+.major-lens .lens-blade-other .lens-disciplines span{color:#d4e5ff;text-shadow:0 1px 6px #32263f80}
+@media(max-width:1100px){.major-lens .lens-blade-other .lens-field-heading{font-size:51px}}
+@media(max-width:760px){.major-lens .lens-blade-other .lens-field-heading{font-size:37px}.lens-art-other .other-career-veil{background:radial-gradient(ellipse at 48% 39%,#695362ed,#775e70d6 32%,#8d758380 62%,#60475638)}}
+/* Expressive slogan lettering, arranged around each field's focal point. */
+.major-lens .lens-field-line,.major-lens .lens-slogans span,.major-lens .engineering-slogans span{font-family:'Major WenKai','KaiTi',serif;font-weight:400;letter-spacing:.035em;text-wrap:balance}
+.major-lens .lens-blade:not(.lens-blade-engineering) .lens-field-line{font-size:24px;line-height:1.65;margin-top:22px}
+.major-lens .lens-slogans span{font-size:23px;line-height:1.65;width:240px;max-width:none;rotate:0deg}
+.major-lens .lens-blade-arts .lens-slogans span:first-child{left:60%;top:37%;width:220px;rotate:-3deg}
+.major-lens .lens-blade-arts .lens-slogans span:last-child{left:89%;top:21%;width:220px;rotate:2deg}
+.major-lens .lens-blade-other .lens-slogans span:first-child{left:27%;top:7%;width:290px;rotate:-2deg}
+.major-lens .lens-blade-other .lens-slogans span:last-child{left:36%;top:36%;width:280px;rotate:2deg}
+.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:13%;top:54%;width:235px;rotate:-2deg}
+.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:26%;top:47%;width:230px;rotate:2deg}
+.major-lens .lens-blade-science .lens-slogans span:first-child{left:72%;top:54%;width:225px;rotate:-2deg}
+.major-lens .lens-blade-science .lens-slogans span:last-child{left:90%;top:91%;width:190px;rotate:2deg}
+.major-lens .lens-blade-arts .lens-disciplines span:nth-child(1){left:58%;top:32%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(6){left:88%;top:29%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(2){left:43%;top:5%}.major-lens .lens-blade-other .lens-disciplines span:nth-child(7){left:39%;top:13%}
+@media(max-width:1100px){.major-lens .lens-blade:not(.lens-blade-engineering) .lens-field-line{font-size:20px}.major-lens .lens-slogans span{font-size:19px}}
+@media(max-width:760px){.major-lens .lens-blade:not(.lens-blade-engineering) .lens-field-line{font-size:12px;line-height:1.65;margin-top:12px}.major-lens .lens-slogans span{font-size:11px;line-height:1.65}.major-lens .lens-blade-arts .lens-slogans span:first-child{left:65%;top:38%;width:100px}.major-lens .lens-blade-arts .lens-slogans span:last-child{left:91%;top:16%;width:65px}.major-lens .lens-blade-other .lens-slogans span:first-child{left:27%;top:6%;width:135px}.major-lens .lens-blade-other .lens-slogans span:last-child{left:34%;top:36%;width:130px}.major-lens .lens-blade-medicine .lens-slogans span:first-child{left:15%;top:57%;width:110px}.major-lens .lens-blade-medicine .lens-slogans span:last-child{left:25%;top:45%;width:120px}.major-lens .lens-blade-science .lens-slogans span:first-child{left:85%;top:55%;width:90px}.major-lens .lens-blade-science .lens-slogans span:last-child{left:92%;top:92%;width:65px}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(1){left:59%;top:32%}.major-lens .lens-blade-arts .lens-disciplines span:nth-child(6){left:67%;top:8%}}
+@media(min-width:761px){.major-lens .lens-blade-arts .lens-slogans span:first-child,.major-lens .lens-blade-arts .lens-slogans span:last-child{width:260px;font-size:21px;white-space:nowrap}}
+/* The focal medallion is a non-navigating surface above the five entrances. */
+.major-lens .lens-center{z-index:6;pointer-events:auto;cursor:default;isolation:isolate;width:242px;height:242px;background:radial-gradient(ellipse at 30% 16%,#fffffff5,transparent 56%),linear-gradient(145deg,#f8fafce8,#dce6eee8 62%,#c9d6e2e8);border:1px solid #ffffffed;box-shadow:inset 0 2px 2px #fff,inset 0 -3px 10px #647c9430,0 12px 32px #263e6133,0 2px 5px #17354b1f;backdrop-filter:blur(18px);color:#304c64}
+.major-lens .lens-center::before{content:'';position:absolute;inset:10px;border-radius:50%;border:1px solid #66819835;box-shadow:inset 0 1px 2px #fff,0 1px 1px #ffffffc9;pointer-events:none}
+.major-lens .lens-center::after{content:'';position:absolute;inset:19px;border-radius:50%;border:1px solid #ffffff7a;pointer-events:none}
+.major-lens .lens-center-ring{inset:-10px;border:1px solid #ecf3f9a6;background:conic-gradient(from 25deg,#ffffffb0,#758ba64d,#fff8,#c9d8e250,#fff9);box-shadow:0 1px 5px #29496024;mask-image:radial-gradient(circle,transparent 65%,#000 66%);pointer-events:none}
+.major-lens .lens-center>svg{width:31px;height:31px;stroke-width:1.15;opacity:.8;margin-bottom:14px;color:#466783}
+.major-lens .lens-center p{font-size:10px;letter-spacing:.22em;color:#6e8296;margin-bottom:10px}
+.major-lens .lens-center h1{font-family:'Major Editorial','Songti SC',serif;font-size:34px;letter-spacing:.13em;margin-bottom:13px;text-shadow:0 1px 0 #fff}
+.major-lens .lens-center>span:last-child{font-family:'Major WenKai','KaiTi',serif;font-size:13px;letter-spacing:.12em;opacity:.8}
+@media(max-width:1100px){.major-lens .lens-center{width:214px;height:214px}.major-lens .lens-center h1{font-size:30px}}
+@media(max-width:760px){.major-lens .lens-center{width:144px;height:144px}.major-lens .lens-center::before{inset:7px}.major-lens .lens-center::after{inset:12px}.major-lens .lens-center-ring{inset:-7px}.major-lens .lens-center>svg{width:21px;height:21px;margin-bottom:7px}.major-lens .lens-center p{font-size:6px;letter-spacing:.12em;margin-bottom:7px}.major-lens .lens-center h1{font-size:21px;letter-spacing:.08em;margin-bottom:7px}.major-lens .lens-center>span:last-child{font-size:10px}}
+/* Restore scattered hover labels; science now retains one supporting slogan. */
+.major-lens .lens-blade-science .lens-slogans span:first-child{left:72%;top:54%;width:225px;rotate:0deg}
+.lens-seams{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
+.lens-seam-shadow path{fill:none;stroke:#172d46;stroke-opacity:.15;stroke-width:7;vector-effect:non-scaling-stroke}
+.lens-seam-light path{fill:none;stroke:url(#lens-seam-light);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.major-lens .lens-blade{transition:filter .5s ease,box-shadow .5s ease}
+.major-lens .lens-blade::after{z-index:1;background:radial-gradient(circle 210px at var(--pointer-x,50%) var(--pointer-y,50%),#ffffff45,transparent 75%);transition:opacity .45s ease;opacity:0}
+.major-lens .lens-blade:hover::after,.major-lens .lens-blade:focus-visible::after{opacity:.75}
+.major-lens .lens-blade:hover,.major-lens .lens-blade:focus-visible{filter:saturate(1.08) brightness(1.045);box-shadow:inset 0 0 100px #ffffff14}
+.major-lens .lens-blade .lens-art{transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.major-lens .lens-blade:hover .lens-art{transform:translate3d(var(--art-x,0px),var(--art-y,0px),0) scale(1.025)}
+.major-lens .lens-field-heading{transition:translate .55s cubic-bezier(.22,1,.36,1)}
+.major-lens .lens-blade:hover .lens-field-heading{translate:0 -3px}
+.major-lens .lens-blade:active .lens-field-heading{translate:0 0;transition-duration:.15s}
+@media(max-width:760px){.major-lens .lens-blade-science .lens-slogans span:first-child{left:85%;top:55%;width:90px}.lens-seam-shadow path{stroke-width:4}.lens-seam-light path{stroke-width:.8}}
+@media(hover:none){.major-lens .lens-blade:hover .lens-art{transform:none}.major-lens .lens-blade:hover .lens-field-heading{translate:none}.major-lens .lens-blade::after{display:none}}
+@media(prefers-reduced-motion:reduce){.major-lens .lens-blade .lens-art,.major-lens .lens-field-heading{transition:none}.major-lens .lens-blade:hover .lens-art{transform:none}.major-lens .lens-blade:hover .lens-field-heading{translate:none}}
+/* Optical focus: calibrated rings and a restrained travelling edge highlight. */
+.major-lens .lens-center{width:238px;height:238px;background:radial-gradient(ellipse at 30% 15%,#3a4f60,#1d303f 55%,#132330);border:1px solid #9aadb2;box-shadow:inset 0 1px 2px #ffffff40,inset 0 -4px 12px #04131c80,0 14px 35px #12273545,0 0 0 5px #c7d1d226,0 0 0 6px #ffffff50;backdrop-filter:none;color:#eef2ef;overflow:visible}
+.major-lens .lens-center::before{inset:28px;border:1px solid #a8bbbc30;box-shadow:inset 0 1px 1px #ffffff10;background:radial-gradient(ellipse at 40% 25%,#7a919215,transparent 65%)}
+.major-lens .lens-center::after{inset:35px;border:1px solid #a9c0c414;box-shadow:none}
+.focus-dial{position:absolute;inset:0;pointer-events:none;transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+.focus-dial svg{width:100%;height:100%;overflow:visible}
+.focus-track{fill:none;stroke:#a8bac9;stroke-width:.5;opacity:.3}
+.focus-tick{fill:none;stroke:#b5c7cf;stroke-width:.8;opacity:.3}
+.focus-tick-major{stroke:#e0e9e7;stroke-width:1;opacity:.85}
+.focus-sector{stroke-width:1.5;opacity:.75}
+.focus-light{position:absolute;inset:4px;border-radius:50%;background:conic-gradient(from 0deg,transparent 75%,#b9d3d900 85%,#effbfcc9 98%,transparent);mask-image:radial-gradient(circle,transparent 69%,#000 70%,#000 71%,transparent 72%);animation:focus-light-orbit 24s linear infinite;pointer-events:none}
+.focus-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.major-lens .focus-content .focus-symbol{width:25px;height:25px;color:#bfd1d4;opacity:.8;margin-bottom:12px;transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+.major-lens .focus-content p{font-family:'Major Cormorant',Georgia,serif;font-size:10px;letter-spacing:.22em;color:#a1b8c1;margin:0 0 11px}
+.major-lens .focus-content h1{font-size:30px;letter-spacing:.1em;color:#f6f3e9;text-shadow:0 2px 8px #08182240;margin:0 0 12px;padding-left:.1em}
+.major-lens .focus-caption{font-family:'Major WenKai','KaiTi',serif;font-size:12px;letter-spacing:.07em;color:#b9cccf}
+.focus-detail{display:block;width:22px;height:1px;background:linear-gradient(90deg,transparent,#bdc6b9,transparent);margin-top:15px}
+.major-lens .lens-center:hover .focus-dial{transform:rotate(12deg)}
+.major-lens .lens-center:hover .focus-symbol{transform:rotate(-18deg)}
+@keyframes focus-light-orbit{to{transform:rotate(360deg)}}
+@media(max-width:1100px){.major-lens .lens-center{width:212px;height:212px}.major-lens .focus-content h1{font-size:27px}.major-lens .focus-content p{font-size:9px}.focus-detail{margin-top:10px}}
+@media(max-width:760px){.major-lens .lens-center{width:142px;height:142px;box-shadow:inset 0 1px 2px #ffffff40,0 8px 18px #12273540,0 0 0 3px #c7d1d226,0 0 0 4px #ffffff50}.major-lens .lens-center::before{inset:18px}.major-lens .lens-center::after{inset:23px}.major-lens .focus-content .focus-symbol{width:17px;height:17px;margin-bottom:7px}.major-lens .focus-content p{font-size:6px;letter-spacing:.16em;margin-bottom:7px}.major-lens .focus-content h1{font-size:19px;margin-bottom:7px}.major-lens .focus-caption{font-size:9px;letter-spacing:0}.focus-detail{margin-top:8px;width:16px}}
+@media(prefers-reduced-motion:reduce){.focus-light{animation:none}.focus-dial,.major-lens .focus-content .focus-symbol{transition:none}.major-lens .lens-center:hover .focus-dial,.major-lens .lens-center:hover .focus-symbol{transform:none}}
+/* Keep hover feedback focused on the titles. */
+.major-lens .lens-blade::after{display:none}
+.major-lens .lens-blade:hover,.major-lens .lens-blade:focus-visible{filter:none;box-shadow:none}
+.major-lens .lens-blade:hover .lens-art{transform:none}
+.major-lens .lens-center{box-shadow:none}
+.major-lens .lens-center::before{background:none;box-shadow:none}
+.major-lens .lens-center:hover .focus-dial,.major-lens .lens-center:hover .focus-symbol{transform:none}
+.major-lens .focus-content h1{transition:translate .55s cubic-bezier(.22,1,.36,1);text-shadow:none}
+.major-lens .lens-center:hover .focus-content h1{translate:0 -3px}
+@media(hover:none),(prefers-reduced-motion:reduce){.major-lens .lens-center:hover .focus-content h1{translate:none}}
+/* A clear, five-part aperture that responds to touch without leaving the page. */
+.major-lens .interactive-focus{background:linear-gradient(135deg,#f5f3ebed,#e9eef0e8);border:1px solid #ffffffb0;box-shadow:none;backdrop-filter:blur(12px);cursor:pointer;outline-offset:7px;transform:perspective(700px) rotateX(var(--focus-tilt-x,0deg)) rotateY(var(--focus-tilt-y,0deg));transition:transform .3s ease;touch-action:manipulation}
+.major-lens .interactive-focus::before{inset:29px;border:1px solid #607d8826;background:none;box-shadow:none}
+.major-lens .interactive-focus::after{display:none}
+.major-lens .interactive-focus>.focus-iris{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:1;pointer-events:none}
+.focus-iris path{fill:#76919b0b;stroke:#6c87967d;stroke-width:1;stroke-linecap:round}
+.focus-iris path:nth-child(2){stroke:#6b95ac9c}.focus-iris path:nth-child(3){stroke:#78919da3}.focus-iris path:nth-child(4){stroke:#7fa49a9c}.focus-iris path:nth-child(5){stroke:#a88b9b9c}
+.major-lens .interactive-focus .focus-symbol{color:#4e737f;transition:transform .5s ease}
+.major-lens .interactive-focus .focus-content p{color:#72818a}
+.major-lens .interactive-focus .focus-content h1{color:#304b57;text-shadow:none}
+.major-lens .interactive-focus .focus-caption{color:#617b81}
+.focus-hint{font-family:'Major WenKai','KaiTi',serif;font-size:10px;letter-spacing:.1em;color:#758992;margin-top:15px;opacity:.7;transition:opacity .3s}
+.major-lens .interactive-focus:hover .focus-hint{opacity:1}
+.major-lens .interactive-focus:hover .focus-symbol{transform:rotate(15deg)}
+.major-lens .interactive-focus:focus-visible{outline:2px solid #486979}
+@media(max-width:760px){.major-lens .interactive-focus::before{inset:19px}.focus-hint{font-size:7px;margin-top:8px}}
+@media(prefers-reduced-motion:reduce){.major-lens .interactive-focus{transform:none;transition:none}.major-lens .interactive-focus:hover .focus-symbol{transform:none}}
+
+/* Give the engineering heading more space below the central lens. */
+.major-lens .lens-blade-engineering .lens-field-copy{top:80%}
+@media(max-width:760px){.major-lens .lens-blade-engineering .lens-field-copy{top:81%}}
+/* The chosen aperture unfolds into the full page beneath the shared navigation. */
+.major-lens .lens-blade{transition:clip-path .75s cubic-bezier(.22,1,.36,1),opacity .4s ease;}
+.major-lens[data-expanded] .lens-blade{opacity:0;pointer-events:none}
+.major-lens[data-expanded] .lens-blade.is-expanded{opacity:1;z-index:5;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 100%)}
+.major-lens[data-expanded] .lens-blade-arts.is-expanded{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.major-lens[data-expanded] .lens-blade .lens-field-copy,.major-lens[data-expanded] .lens-disciplines,.major-lens[data-expanded] .lens-slogans,.major-lens[data-expanded] .engineering-slogans,.major-lens[data-expanded] .lens-engineering-measure{display:none}
+.major-lens[data-expanded] .lens-seams,.major-lens[data-expanded] .lens-center{display:none}
+.major-lens[data-expanded] .is-expanded .lens-art{mask-image:none;opacity:.42}
+.major-lens[data-expanded] .is-expanded .lens-art-engineering{opacity:.6}
+.major-lens[data-expanded] .is-expanded .engineering-photo-workshop{left:0;top:0;width:65%;height:100%}
+.major-lens[data-expanded] .is-expanded .engineering-photo-code{left:50%;top:0;width:50%;height:100%}
+.major-lens[data-expanded] .is-expanded .engineering-photo-shade{background:linear-gradient(90deg,#07182470,#071824a0)}
+.lens-expanded{--panel-ink:#533d2c;--panel-wash:#fffaf0d9;position:absolute;inset:0;z-index:7;display:flex;flex-direction:column;color:var(--panel-ink);outline:none;animation:lens-page-content .7s .25s both}
+.lens-expanded-science{--panel-ink:#eef7ff;--panel-wash:#243f61ce}
+.lens-expanded-engineering{--panel-ink:#eef5f6;--panel-wash:#0d2230da}
+.lens-expanded-medicine{--panel-ink:#24564e;--panel-wash:#f1fcf6da}
+.lens-expanded-other{--panel-ink:#fff4ed;--panel-wash:#65475dce}
+.lens-field-nav{display:flex;align-items:center;gap:35px;padding:15px clamp(20px,4vw,64px);border-bottom:1px solid #ffffff40;background:var(--panel-wash);flex:none}
+.lens-return{display:flex;align-items:center;gap:9px;font-size:13px;white-space:nowrap;opacity:.8;padding:10px 0;transition:opacity .2s}
+.lens-return:hover{opacity:1}
+.lens-field-tabs{display:flex;gap:10px;flex:1;justify-content:center}
+.lens-field-tabs button{padding:8px 22px;border-radius:12px;display:flex;flex-direction:column;gap:3px;align-items:center;border:1px solid transparent;transition:background .25s,border-color .25s}
+.lens-field-tabs button>span{font-size:19px;letter-spacing:.08em}
+.lens-field-tabs small{font:italic 14px 'Major Cormorant',Georgia,serif;opacity:.65}
+.lens-field-tabs button:hover{background:#ffffff10}
+.lens-field-tabs button[aria-pressed=true]{background:#ffffff18;border-color:currentColor}
+.lens-expanded-body{overflow:auto;min-height:0;flex:1;padding:38px clamp(24px,6vw,100px) 45px;scrollbar-width:thin}
+.lens-expanded .lens-catalog-heading h2{font-size:52px}
+.lens-expanded .lens-catalog-heading .lens-expanded-line{font:19px/1.6 'Major WenKai','KaiTi',serif;margin:12px 0 0;opacity:.85}
+.lens-expanded-engineering .lens-catalog-heading h2{font-family:'Engineering Display',sans-serif}
+.lens-expanded-arts .lens-catalog-heading h2{font-family:'Humanities Display',serif}
+.lens-expanded .lens-catalog-search{border-color:currentColor;max-width:760px;margin:12px 0 26px}
+.lens-expanded .lens-catalog-list{overflow:visible;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:0}
+.lens-expanded .lens-catalog-list article{background:var(--panel-wash);border:1px solid #ffffff35;border-radius:17px;padding:24px;transition:translate .25s,border-color .25s}
+.lens-expanded .lens-catalog-list article:hover{translate:0 -3px;border-color:currentColor}
+.lens-expanded .lens-catalog-list h3{font-size:23px}
+.lens-expanded button:focus-visible,.lens-expanded a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@keyframes lens-page-content{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@media(max-width:1100px){.lens-field-nav{gap:15px}.lens-field-tabs button{padding:8px 12px}.lens-expanded .lens-catalog-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.lens-field-nav{padding:12px 14px;flex-wrap:wrap;gap:9px}.lens-return{font-size:12px;padding:0}.lens-field-tabs{width:100%;flex:auto;gap:3px;justify-content:space-between}.lens-field-tabs button{padding:7px 8px;flex:1;min-width:0}.lens-field-tabs button>span{font-size:16px}.lens-field-tabs small{display:none}.lens-expanded-body{padding:24px 18px 32px}.lens-expanded .lens-catalog-heading h2{font-size:38px}.lens-expanded .lens-catalog-heading .lens-expanded-line{font-size:15px}.lens-expanded .lens-catalog-search{font-size:14px;gap:8px}.lens-expanded .lens-catalog-list{grid-template-columns:1fr}.lens-expanded .lens-catalog-list article{padding:20px}}
+@media(prefers-reduced-motion:reduce){.major-lens .lens-blade{transition:none}.lens-expanded{animation:none}.lens-expanded .lens-catalog-list article{transition:none}}
+
+/* Solid ivory layers keep the focal title clear without a glass surface. */
+.major-lens .interactive-focus{background:linear-gradient(145deg,#faf8f1,#e5e9e5);border:1px solid #fffdf6;backdrop-filter:none;box-shadow:inset 0 2px 1px #ffffff,inset 0 -2px 2px #bac9c033,0 3px 0 #aebdb447;}
+.major-lens .interactive-focus::before{inset:27px;border:1px solid #a6b5b252;background:linear-gradient(145deg,#fdfbf6,#edf0e9);box-shadow:inset 0 1px 1px #ffffff,0 1px 0 #ffffffb3}
+.major-lens .interactive-focus::after{display:block;inset:32px;border:1px solid #ffffffa6;background:none;box-shadow:none;pointer-events:none}
+.major-lens .interactive-focus .focus-content h1{font-size:37px;letter-spacing:.08em;margin-bottom:15px;color:#2d4651}
+.major-lens .interactive-focus .focus-content p{margin-bottom:13px}
+.major-lens .interactive-focus .focus-symbol{margin-bottom:13px}
+.major-lens .interactive-focus .focus-caption{font-size:12px}
+@media(max-width:1100px){.major-lens .interactive-focus .focus-content h1{font-size:33px;letter-spacing:.06em}}
+@media(max-width:760px){.major-lens .interactive-focus::before{inset:18px}.major-lens .interactive-focus::after{inset:22px}.major-lens .interactive-focus .focus-content h1{font-size:23px;letter-spacing:.03em;margin-bottom:9px}.major-lens .interactive-focus .focus-content p{margin-bottom:8px}.major-lens .interactive-focus .focus-symbol{margin-bottom:8px}.major-lens .interactive-focus .focus-caption{font-size:9px}}
+/* Stage the expansion first, then reveal a new scene in the same visual family. */
+.major-lens[data-expanded] .lens-blade.is-expanded{animation:field-unfold-five 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-expanded=arts] .lens-blade.is-expanded{animation-name:field-unfold-arts}
+.major-lens[data-expanded=science] .lens-blade.is-expanded{animation-name:field-unfold-science}
+.major-lens[data-expanded=engineering] .lens-blade.is-expanded{animation-name:field-unfold-engineering}
+.major-lens[data-expanded=medicine] .lens-blade.is-expanded{animation-name:field-unfold-medicine}
+.major-lens[data-expanded=other] .lens-blade.is-expanded{animation-name:field-unfold-other}
+@keyframes field-unfold-arts{from{clip-path:polygon(50% 50%,50% 0,100% 0,100% 30%)}to{clip-path:polygon(0 100%,0 0,100% 0,100% 100%)}}
+@keyframes field-unfold-science{from{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%)}to{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}}
+@keyframes field-unfold-engineering{from{clip-path:polygon(50% 50%,90% 100%,10% 100%)}to{clip-path:polygon(50% -100%,200% 100%,-100% 100%)}}
+@keyframes field-unfold-medicine{from{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%)}to{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}}
+@keyframes field-unfold-other{from{clip-path:polygon(50% 50%,0 30%,0 0,50% 0)}to{clip-path:polygon(100% 100%,0 100%,0 0,100% 0)}}
+.major-lens .lens-expanded{animation:none}
+.lens-expanded>.lens-field-nav{position:relative;z-index:1;animation:lens-page-content .55s 1s both}
+.lens-expanded>.lens-expanded-body{position:relative;z-index:1;animation:lens-page-content .65s 1.15s both}
+.lens-page-scenery{position:absolute;inset:0;overflow:hidden;pointer-events:none;animation:scene-arrives .6s .75s both;background:linear-gradient(125deg,#faf4e8,#e9dac3)}
+.lens-page-scenery i{position:absolute;display:block;pointer-events:none}
+.lens-expanded-arts .lens-page-scenery{background:repeating-linear-gradient(90deg,transparent 0 95px,#87674609 95px 96px),linear-gradient(125deg,#faf4e8,#e9dac3)}
+.lens-expanded-arts .lens-page-scenery i:first-child{width:50%;height:120%;right:-10%;top:-15%;border:1px solid #9e7b5638;rotate:15deg;background:linear-gradient(110deg,#fff5,transparent)}
+.lens-expanded-arts .lens-page-scenery i:nth-child(2){right:6%;top:22%;width:150px;height:150px;border:1px solid #96634935;rotate:8deg;box-shadow:inset 0 0 0 8px #faf1e6}
+.lens-expanded-science .lens-page-scenery{background:radial-gradient(ellipse at 85% 10%,#729db552,transparent 55%),radial-gradient(circle,#d7e9ff45 1px,transparent 1.5px) 0 0/51px 51px,linear-gradient(135deg,#243d60,#385477)}
+.lens-expanded-science .lens-page-scenery i{width:520px;height:520px;border:1px solid #b4d0ec30;border-radius:50%;right:-100px;top:-60px;scale:1 .65;rotate:-25deg}
+.lens-expanded-science .lens-page-scenery i:nth-child(2){rotate:25deg;scale:1 .8}.lens-expanded-science .lens-page-scenery i:nth-child(3){width:28px;height:28px;right:20%;top:20%;scale:1; background:#bcc8a7;border:none}
+.lens-expanded-engineering .lens-page-scenery{background:linear-gradient(90deg,#8eb4c20b 1px,transparent 1px) 0 0/45px 45px,linear-gradient(#8eb4c20b 1px,transparent 1px) 0 0/45px 45px,linear-gradient(135deg,#0f2430,#172f3c 65%,#243f48)}
+.lens-expanded-engineering .lens-page-scenery i{width:400px;height:400px;right:-80px;top:170px;border:1px solid #a9cad22a;rotate:30deg}.lens-expanded-engineering .lens-page-scenery i:nth-child(2){right:-35px;top:215px}.lens-expanded-engineering .lens-page-scenery i:nth-child(3){right:10px;top:260px}
+.lens-expanded-medicine .lens-page-scenery{background:radial-gradient(ellipse at 90% 5%,#ffffffc2,transparent 60%),linear-gradient(140deg,#e9f5ef,#c9e0dc)}
+.lens-expanded-medicine .lens-page-scenery i{right:-120px;top:100px;width:500px;height:500px;border:1px solid #548f7a26;border-radius:45% 55% 65% 35%;rotate:20deg}.lens-expanded-medicine .lens-page-scenery i:nth-child(2){right:-160px;top:130px;rotate:45deg}.lens-expanded-medicine .lens-page-scenery svg{position:absolute;left:0;top:35%;width:100%;height:170px;fill:none;stroke:#659d8b22;stroke-width:1.5}
+.lens-expanded-other .lens-page-scenery{background:linear-gradient(130deg,#71586d,#947880)}
+.lens-expanded-other .lens-page-scenery i{width:320px;height:420px;border:1px solid #fff2e526;background:linear-gradient(145deg,#dabdb21a,#a4bfc012);right:2%;top:14%;border-radius:150px 150px 18px 18px;rotate:12deg}.lens-expanded-other .lens-page-scenery i:nth-child(2){right:13%;top:28%;rotate:-9deg}.lens-expanded-other .lens-page-scenery i:nth-child(3){right:26%;top:38%;rotate:7deg}
+@keyframes scene-arrives{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.major-lens[data-expanded] .lens-blade.is-expanded,.lens-page-scenery,.lens-expanded>.lens-field-nav,.lens-expanded>.lens-expanded-body{animation:none}}
+/* A clean contemporary Chinese title paired with restrained English lettering. */
+.major-lens .interactive-focus .focus-content h1{font-family:'Major Sans','Microsoft YaHei',sans-serif;font-weight:400;font-size:36px;letter-spacing:.13em;line-height:1.3;margin:0;padding-left:.13em}
+.major-lens .interactive-focus .focus-content p{font-family:'Trebuchet MS',Arial,sans-serif;font-weight:400;font-size:9px;line-height:1.5;letter-spacing:.21em;margin-bottom:16px;color:#667b86}
+.major-lens .interactive-focus .focus-symbol{margin-bottom:17px}
+@media(max-width:1100px){.major-lens .interactive-focus .focus-content h1{font-size:32px;letter-spacing:.1em}}
+@media(max-width:760px){.major-lens .interactive-focus .focus-content h1{font-size:22px;letter-spacing:.06em}.major-lens .interactive-focus .focus-content p{font-size:6px;letter-spacing:.15em;margin-bottom:11px}.major-lens .interactive-focus .focus-symbol{margin-bottom:10px}}
+/* Five familiar title faces, with a compact glass return control. */
+.lens-field-tabs button{padding:12px 26px;min-width:94px;justify-content:center}
+.lens-field-tabs button>span{font-size:26px;line-height:1.3;font-weight:400;letter-spacing:.08em}
+.lens-field-tabs .lens-tab-arts>span{font-family:'Humanities Display','KaiTi',serif}
+.lens-field-tabs .lens-tab-science>span,.lens-field-tabs .lens-tab-other>span{font-family:'Major Editorial','Songti SC',serif;font-weight:500}
+.lens-field-tabs .lens-tab-engineering>span{font-family:'Engineering Display',sans-serif;font-size:28px}
+.lens-field-tabs .lens-tab-medicine>span{font-family:'Major WenKai','KaiTi',serif}
+.lens-field-nav .lens-return{position:relative;gap:8px;padding:11px 17px;font-size:14px;opacity:1;border-radius:24px;border:1px solid #ffffff75;background:linear-gradient(140deg,#ffffff52,#ffffff13);box-shadow:inset 0 1px 1px #ffffff70,inset 0 -1px 1px #ffffff18,0 4px 14px #152c3b0b;backdrop-filter:blur(16px) saturate(1.3);transition:background .25s,translate .25s,border-color .25s;}
+.lens-field-nav .lens-return svg{width:17px;height:17px;stroke-width:1.5;transition:translate .25s}
+.lens-field-nav .lens-return:hover{background:linear-gradient(140deg,#ffffff6b,#ffffff24);border-color:#ffffffb0;translate:0 -1px}
+.lens-field-nav .lens-return:hover svg{translate:-2px 0}
+.lens-field-nav .lens-return:active{translate:0 0}
+@media(max-width:760px){.lens-field-tabs button{padding:8px 6px;min-width:0}.lens-field-tabs button>span{font-size:22px}.lens-field-tabs .lens-tab-engineering>span{font-size:24px}.lens-field-nav .lens-return{padding:7px 12px;font-size:12px;gap:6px}.lens-field-nav .lens-return svg{width:15px;height:15px}}
+@media(prefers-reduced-motion:reduce){.lens-field-nav .lens-return,.lens-field-nav .lens-return svg{transition:none}}
+/* Photographic scenes enter from both sides with the page's own scroll progress. */
+.field-photo-scenery{position:absolute;inset:0;overflow:hidden;pointer-events:none;background:#eadbc7;animation:scene-arrives .7s .75s both}
+.field-scene-photo{position:absolute;top:0;width:64%;height:100%;transition:opacity .35s linear,transform .6s ease;will-change:transform,opacity}
+.field-scene-left{left:0;mask-image:linear-gradient(90deg,#000 55%,transparent)}
+.field-scene-right{right:0;mask-image:linear-gradient(270deg,#000 55%,transparent)}
+.field-scene-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.55)}
+.field-photo-tint{position:absolute;inset:0;background:linear-gradient(90deg,#efdfc56b,#f6eddbb8 50%,#efdfc565)}
+.lens-expanded-science .field-photo-scenery{background:#233c59}.lens-expanded-science .field-photo-tint{background:linear-gradient(90deg,#19385885,#213f67c9 50%,#233e6885)}
+.lens-expanded-engineering .field-photo-scenery{background:#10232f}.lens-expanded-engineering .field-photo-tint{background:linear-gradient(90deg,#0b1d329c,#102633c9 50%,#142f3d91)}
+.lens-expanded-medicine .field-photo-scenery{background:#d3e7e1}.lens-expanded-medicine .field-photo-tint{background:linear-gradient(90deg,#d6efdf70,#e8f5ebbe 50%,#d3ede178)}
+.lens-expanded-other .field-photo-scenery{background:#72546b}.lens-expanded-other .field-photo-tint{background:linear-gradient(90deg,#51364985,#785567c4 50%,#59405a82)}
+.lens-expanded-arts{--panel-wash:#fff9ede8}.lens-expanded-medicine{--panel-wash:#eff9f3eb}.lens-expanded-engineering{--panel-wash:#102634e8}.lens-expanded-science{--panel-wash:#243f61e8}.lens-expanded-other{--panel-wash:#65475de8}
+@media(max-width:760px){.field-scene-photo{width:90%}.field-scene-photo img{object-position:45% center}.field-photo-tint{opacity:.95}}
+@media(prefers-reduced-motion:reduce){.field-photo-scenery{animation:none}.field-scene-photo{transition:none;will-change:auto}}
+/* Keep the other apertures visible beneath the chosen expanding layer. */
+.major-lens[data-expanded] .lens-blade{opacity:1;pointer-events:none}
+.major-lens[data-expanded] .lens-blade:not(.is-expanded) .lens-field-copy{display:flex}
+.major-lens[data-expanded] .lens-blade:not(.is-expanded) .lens-disciplines,.major-lens[data-expanded] .lens-blade:not(.is-expanded) .lens-slogans,.major-lens[data-expanded] .lens-blade:not(.is-expanded) .engineering-slogans,.major-lens[data-expanded] .lens-blade:not(.is-expanded) .lens-engineering-measure{display:block}
+.major-lens[data-expanded] .lens-blade:not(.is-expanded) .lens-art{opacity:1}
+
+/* Crossfade the outgoing photographs throughout the aperture expansion. */
+.major-lens[data-expanded] .is-expanded .lens-art{animation:field-original-fade 1.05s linear both}
+.lens-expanded .field-photo-scenery{animation:scene-arrives 1.05s linear both}
+@keyframes field-original-fade{from{opacity:1}to{opacity:0}}
+@media(prefers-reduced-motion:reduce){.major-lens[data-expanded] .is-expanded .lens-art{animation:none;opacity:0}.lens-expanded .field-photo-scenery{animation:none}}
+.lens-expanded-arts .field-photo-scenery{animation:scene-arrives 1.05s linear both,field-unfold-arts 1.05s cubic-bezier(.65,0,.22,1) both}
+.lens-expanded-science .field-photo-scenery{animation:scene-arrives 1.05s linear both,field-unfold-science 1.05s cubic-bezier(.65,0,.22,1) both}
+.lens-expanded-engineering .field-photo-scenery{animation:scene-arrives 1.05s linear both,field-unfold-engineering 1.05s cubic-bezier(.65,0,.22,1) both}
+.lens-expanded-medicine .field-photo-scenery{animation:scene-arrives 1.05s linear both,field-unfold-medicine 1.05s cubic-bezier(.65,0,.22,1) both}
+.lens-expanded-other .field-photo-scenery{animation:scene-arrives 1.05s linear both,field-unfold-other 1.05s cubic-bezier(.65,0,.22,1) both}
+@media(prefers-reduced-motion:reduce){.lens-expanded .field-photo-scenery{animation:none}}
+/* Full pages slide sideways; only entry from the aperture view unfolds. */
+.major-lens[data-switching=true] .lens-blade.is-expanded{animation:none;clip-path:inset(0)}
+.major-lens .lens-expanded[data-slide]{animation:field-page-slide .52s cubic-bezier(.22,1,.36,1) both}
+.lens-expanded[data-slide]>.lens-field-nav,.lens-expanded[data-slide]>.lens-expanded-body,.lens-expanded[data-slide] .field-photo-scenery{animation:none;clip-path:none}
+.lens-outgoing{z-index:8;pointer-events:none;animation:none!important}
+.lens-outgoing>.lens-field-nav,.lens-outgoing>.lens-expanded-body,.lens-outgoing .field-photo-scenery{animation:none!important;clip-path:none!important}
+@keyframes field-page-slide{from{transform:translateX(var(--slide-start))}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.major-lens .lens-expanded[data-slide]{animation:none}}
+/* Small photographs live in the scrolling document, entering once at their own positions. */
+.lens-expanded .lens-expanded-body{padding:38px 0 45px}
+.lens-scroll-content{position:relative;isolation:isolate;min-height:100%;padding:0 clamp(130px,16vw,230px)}
+.lens-scroll-content>.lens-catalog-heading,.lens-scroll-content>.lens-catalog-search,.lens-scroll-content>.lens-catalog-list{position:relative;z-index:1}
+.field-scattered-photos{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.field-scattered-photos .field-scene-photo{width:clamp(125px,15vw,205px);height:clamp(115px,13vw,185px);top:130px;opacity:0;mask-image:none;border-radius:13px;border:3px solid #ffffff70;box-shadow:0 8px 24px #15283815;transform:translateX(-80px) rotate(var(--photo-angle));transition:transform 1.1s cubic-bezier(.22,1,.36,1),opacity .9s ease;will-change:auto}
+.field-scattered-photos .field-scene-left{left:15px}
+.field-scattered-photos .field-scene-right{right:15px;transform:translateX(80px) rotate(var(--photo-angle))}
+.field-scattered-photos .field-scene-photo.is-revealed{opacity:.86;transform:translateX(0) rotate(var(--photo-angle))}
+.field-scattered-photos .field-scene-photo img{filter:saturate(.75);object-fit:cover}
+.lens-expanded-engineering .field-photo-scenery{background:linear-gradient(135deg,#102634,#26434e)}
+.lens-expanded-science .field-photo-scenery{background:linear-gradient(135deg,#253d5c,#496b8c)}
+.lens-expanded-medicine .field-photo-scenery{background:linear-gradient(135deg,#eef9f2,#c8e1d9)}
+.lens-expanded-other .field-photo-scenery{background:linear-gradient(135deg,#73596f,#aa858b)}
+.lens-expanded-arts .field-photo-scenery{background:linear-gradient(135deg,#fcf5e8,#e7d8c1)}
+.lens-expanded .lens-catalog-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:1100px){.lens-scroll-content{padding:0 135px}.field-scattered-photos .field-scene-photo{width:125px;height:125px}.field-scattered-photos .field-scene-left{left:7px}.field-scattered-photos .field-scene-right{right:7px}}
+@media(max-width:760px){.lens-expanded .lens-expanded-body{padding:24px 0 32px}.lens-scroll-content{padding:0 35px}.field-scattered-photos .field-scene-photo{width:88px;height:105px;border-width:2px;opacity:0}.field-scattered-photos .field-scene-left{left:-15px}.field-scattered-photos .field-scene-right{right:-15px}.field-scattered-photos .field-scene-photo.is-revealed{opacity:.65}.lens-expanded .lens-catalog-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.field-scattered-photos .field-scene-photo{transition:none;transform:rotate(var(--photo-angle));opacity:.86}}
+/* Photographs blend into the page rather than appearing as framed cards. */
+.field-scattered-photos .field-scene-photo{border:0;border-radius:0;box-shadow:none;mask-image:radial-gradient(ellipse at center,#000 32%,#000c 52%,transparent 76%);transform:translateX(-75px);transition:transform 1.25s cubic-bezier(.22,1,.36,1),opacity 1.1s ease}
+.field-scattered-photos .field-scene-right{transform:translateX(75px)}
+.field-scattered-photos .field-scene-photo.is-revealed{transform:translateX(0);opacity:.72}
+.field-scattered-photos .field-scene-photo img{filter:saturate(.5) contrast(.92)}
+.lens-expanded-arts .field-scattered-photos{mix-blend-mode:multiply}
+.lens-expanded-medicine .field-scattered-photos{mix-blend-mode:multiply}
+.lens-expanded-engineering .field-scattered-photos .field-scene-photo.is-revealed,.lens-expanded-science .field-scattered-photos .field-scene-photo.is-revealed{opacity:.58}
+@media(max-width:760px){.field-scattered-photos .field-scene-photo.is-revealed{opacity:.6}}
+@media(prefers-reduced-motion:reduce){.field-scattered-photos .field-scene-photo{transition:none;transform:none}}
+/* The field navigation stays in place while only the scene and catalog slide. */
+.major-lens .lens-expanded[data-slide]{animation:none;transform:none}
+.lens-expanded[data-slide]>.lens-expanded-body,.lens-expanded[data-slide]>.field-photo-scenery{animation:field-page-slide .9s cubic-bezier(.45,0,.2,1) both;clip-path:none}
+.lens-expanded[data-slide]>.lens-field-nav{animation:none;transform:none}
+.lens-outgoing>.lens-field-nav{visibility:hidden}
+.lens-field-nav{transition:background .6s ease,color .6s ease}
+@media(prefers-reduced-motion:reduce){.lens-expanded[data-slide]>.lens-expanded-body,.lens-expanded[data-slide]>.field-photo-scenery{animation:none}}
+/* Return retraces the aperture expansion and the background crossfade. */
+.major-lens[data-closing=true] .lens-blade.is-expanded{animation-direction:reverse}
+.major-lens[data-closing=true] .is-expanded .lens-art{animation:field-original-fade 1.05s linear reverse both}
+.major-lens[data-closing=true] .is-expanded .lens-field-copy{display:flex;animation:lens-page-content .35s .7s both}
+.major-lens[data-closing=true] .field-photo-scenery{animation-direction:reverse,reverse}
+.major-lens[data-closing=true] .lens-expanded>.lens-field-nav,.major-lens[data-closing=true] .lens-expanded>.lens-expanded-body{animation:return-content-out .22s ease both;pointer-events:none}
+.major-lens[data-closing=true] .lens-expanded{pointer-events:none}
+.major-lens[data-closing=true] .lens-center{display:flex;animation:lens-focus-enter .35s .7s both}
+.major-lens[data-closing=true] .lens-seams{display:block}
+@keyframes return-content-out{from{opacity:1;translate:0 0}to{opacity:0;translate:0 10px}}
+@keyframes field-refold-arts{from{clip-path:polygon(0 100%,0 0,100% 0,100% 100%)}to{clip-path:polygon(50% 50%,50% 0,100% 0,100% 30%)}}
+.major-lens[data-closing=true][data-expanded=arts] .lens-blade.is-expanded{animation:field-refold-arts 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-closing=true] .lens-expanded-arts .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-arts 1.05s cubic-bezier(.65,0,.22,1) both}
+@keyframes field-refold-science{from{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}to{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%)}}
+.major-lens[data-closing=true][data-expanded=science] .lens-blade.is-expanded{animation:field-refold-science 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-closing=true] .lens-expanded-science .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-science 1.05s cubic-bezier(.65,0,.22,1) both}
+@keyframes field-refold-engineering{from{clip-path:polygon(50% -100%,200% 100%,-100% 100%)}to{clip-path:polygon(50% 50%,90% 100%,10% 100%)}}
+.major-lens[data-closing=true][data-expanded=engineering] .lens-blade.is-expanded{animation:field-refold-engineering 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-closing=true] .lens-expanded-engineering .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-engineering 1.05s cubic-bezier(.65,0,.22,1) both}
+@keyframes field-refold-medicine{from{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}to{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%)}}
+.major-lens[data-closing=true][data-expanded=medicine] .lens-blade.is-expanded{animation:field-refold-medicine 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-closing=true] .lens-expanded-medicine .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-medicine 1.05s cubic-bezier(.65,0,.22,1) both}
+@keyframes field-refold-other{from{clip-path:polygon(100% 100%,0 100%,0 0,100% 0)}to{clip-path:polygon(50% 50%,0 30%,0 0,50% 0)}}
+.major-lens[data-closing=true][data-expanded=other] .lens-blade.is-expanded{animation:field-refold-other 1.05s cubic-bezier(.65,0,.22,1) both}
+.major-lens[data-closing=true] .lens-expanded-other .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-other 1.05s cubic-bezier(.65,0,.22,1) both}
+@keyframes scene-departs{from{opacity:1}to{opacity:0}}
+@keyframes field-original-return{from{opacity:0}to{opacity:1}}
+.major-lens[data-closing=true] .is-expanded .lens-art{animation:field-original-return 1.05s linear both}
+/* Complete photographs blend across the scrolling page, without small side cutouts. */
+.lens-scroll-content{padding-left:clamp(24px,6vw,100px);padding-right:clamp(24px,6vw,100px)}
+.field-scattered-photos .field-scene-photo{width:72%;height:420px;max-height:none;border:0;border-radius:0;box-shadow:none;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 72%,transparent),linear-gradient(90deg,#000 55%,transparent);mask-composite:intersect;transform:translateX(-110px)}
+.field-scattered-photos .field-scene-left{left:0}
+.field-scattered-photos .field-scene-right{right:0;transform:translateX(110px);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 72%,transparent),linear-gradient(270deg,#000 55%,transparent)}
+.field-scattered-photos .field-scene-photo img{object-fit:cover;object-position:center;filter:saturate(.55) contrast(.9)}
+.field-scattered-photos .field-scene-photo.is-revealed{opacity:.66;transform:translateX(0)}
+.lens-expanded-engineering .field-scattered-photos .field-scene-photo.is-revealed,.lens-expanded-science .field-scattered-photos .field-scene-photo.is-revealed{opacity:.5}
+.lens-expanded .lens-catalog-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1100px){.lens-expanded .lens-catalog-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.lens-scroll-content{padding-left:18px;padding-right:18px}.field-scattered-photos .field-scene-photo{width:95%;height:320px}.field-scattered-photos .field-scene-left{left:0}.field-scattered-photos .field-scene-right{right:0}.lens-expanded .lens-catalog-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.field-scattered-photos .field-scene-photo{transform:none}}
+/* Harmonize complete photographs with each field's background palette. */
+.lens-expanded-arts{--scene-photo-tone:#dccbb0}
+.lens-expanded-science{--scene-photo-tone:#345676}
+.lens-expanded-engineering{--scene-photo-tone:#183747}
+.lens-expanded-medicine{--scene-photo-tone:#c9e4da}
+.lens-expanded-other{--scene-photo-tone:#8b6c83}
+.field-scattered-photos .field-scene-photo{isolation:isolate;mask-image:linear-gradient(180deg,transparent,#0009 15%,#000 35%,#000b 65%,transparent),linear-gradient(90deg,#000 30%,#000b 55%,transparent);mask-composite:intersect}
+.field-scattered-photos .field-scene-right{mask-image:linear-gradient(180deg,transparent,#0009 15%,#000 35%,#000b 65%,transparent),linear-gradient(270deg,#000 30%,#000b 55%,transparent)}
+.field-scattered-photos .field-scene-photo::after{content:'';position:absolute;inset:0;pointer-events:none;background:var(--scene-photo-tone);mix-blend-mode:color;opacity:.8}
+.field-scattered-photos .field-scene-photo img{filter:saturate(.25) contrast(.82) brightness(.98)}
+.lens-expanded-science .field-scattered-photos,.lens-expanded-engineering .field-scattered-photos,.lens-expanded-other .field-scattered-photos{mix-blend-mode:luminosity}
+.lens-expanded-science .field-scattered-photos .field-scene-photo img,.lens-expanded-engineering .field-scattered-photos .field-scene-photo img{filter:saturate(.2) contrast(.78) brightness(.8)}
+/* A narrower, two-column catalog leaves the photographic backdrop breathing room. */
+.lens-scroll-content{max-width:1240px;margin-left:auto;margin-right:auto;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px)}
+.lens-expanded .lens-catalog-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.lens-scroll-content{padding-left:18px;padding-right:18px}.lens-expanded .lens-catalog-list{grid-template-columns:1fr}}

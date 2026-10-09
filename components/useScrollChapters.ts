@@ -199,6 +199,15 @@ export default function useScrollChapters(rootRef: RefObject<HTMLElement>, stage
       touchTriggered = event.defaultPrevented
     }
     const visibility = () => { if (document.hidden) cancel() }
+    if (root.closest<HTMLElement>('.home-animated')?.dataset.homeReturn === 'true') {
+      finished = true
+      returnedUp = true
+      nextChapterStarted = true
+      root.dataset.animationCompleted = 'true'
+      root.dataset.animationSkipped = 'true'
+      setCompleted(true)
+      setProgress(reducedProgress)
+    }
     syncProgress()
     window.addEventListener('scroll', syncProgress, { passive: true })
     window.addEventListener('wheel', wheel, { passive: false })

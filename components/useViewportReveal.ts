@@ -110,7 +110,7 @@ export default function useViewportReveal(rootRef: RefObject<HTMLElement>, selec
     })
     layers.forEach(layer => { layer.dataset.reveal = 'false'; observer.observe(layer) })
     rootObserver.observe(root)
-    if (motion.matches) finish()
+    if (motion.matches || root.closest<HTMLElement>('.home-animated')?.dataset.homeReturn === 'true') finish()
     const revealFocusedLayer = (event: FocusEvent) => {
       const layer = (event.target as HTMLElement).closest<HTMLElement>(selector)
       if (layer && root.contains(layer)) finish()

@@ -109,7 +109,7 @@ export default function AdmissionLetter() {
               {entries.map(({ href, title, english, headline, description, topics }, index) => {
                 const reveal = phase(.52 + index * .11, .615 + index * .11, letterProgress)
                 const ready = reveal > .9
-                return <Link key={href} href={href} className={`admission-entry admission-entry-${index}`} tabIndex={ready ? 0 : -1} aria-hidden={!ready} data-reveal={reveal.toFixed(3)} style={{ opacity: reveal, transform: reveal === 1 ? 'none' : `translateY(${(1 - reveal) * 12}px)` }}>
+                return <Link key={href} href={href} className={`admission-entry admission-entry-${index}`} onPointerMove={event => { if (event.pointerType !== 'mouse') return; const bounds = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty('--entry-x', `${event.clientX - bounds.left}px`); event.currentTarget.style.setProperty('--entry-y', `${event.clientY - bounds.top}px`) }} tabIndex={ready ? 0 : -1} aria-hidden={!ready} data-reveal={reveal.toFixed(3)} style={{ opacity: reveal, transform: reveal === 1 ? 'none' : `translateY(${(1 - reveal) * 12}px)` }}>
                   <span className="admission-directory-number" aria-hidden="true">0{index + 1}</span>
                   <AdmissionSketch index={index} drawn={ready} />
                   <div className="admission-entry-top"><h3>{title}</h3><span className="admission-entry-english" lang="en">{english}</span></div>

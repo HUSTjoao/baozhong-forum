@@ -83,9 +83,9 @@
 @media(max-width:380px){.uni-map-explorer .uni-campus{grid-template-columns:70px minmax(0,1fr);gap:0 15px}.uni-map-explorer .uni-logo{width:70px;height:70px}.uni-map-explorer .uni-campus h2{font-size:23px}.uni-map-explorer .uni-motto{font-size:13px}.uni-browser-heading .uni-orbit{width:95px;height:95px}.uni-browser-heading h2{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.uni-map-route{animation:none;stroke-dashoffset:0}.uni-origin-halo,.uni-map-arrival-halo{animation:none}.uni-china-map animateMotion{display:none}}
 
-@font-face{font-family:'Campus Source Serif';src:url('/fonts/campus-source-serif.woff2?v=4') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Campus Source Serif';src:url('/fonts/campus-source-serif.woff2?v=7') format('woff2');font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:'Campus Cormorant';src:url('/fonts/campus-cormorant.woff2?v=1') format('woff2');font-style:normal;font-weight:500;font-display:swap}
-.uni-map-explorer .uni-campus{--campus-rotate-x:0deg;--campus-rotate-y:0deg;--campus-lift:0px;--campus-scale:1;display:flex;flex-direction:column;padding:27px 25px 24px;border-radius:22px;border:1px solid #a1b4aa3b;background:linear-gradient(150deg,#fffffff5,#f7faf6f2);box-shadow:0 12px 28px #546e600b,0 2px 5px #546e6007;font-family:'Campus Source Serif','Songti SC',serif;transform:perspective(1100px) translateY(var(--campus-lift)) rotateX(var(--campus-rotate-x)) rotateY(var(--campus-rotate-y)) scale(var(--campus-scale));transition:transform .3s cubic-bezier(.2,.7,.25,1),box-shadow .3s,border-color .3s;animation:campus-card-appear .65s both;animation-delay:calc(var(--campus-order,0)*100ms);touch-action:pan-y;will-change:transform}
+.uni-map-explorer .uni-campus{--campus-rotate-x:0deg;--campus-rotate-y:0deg;--campus-lift:0px;--campus-scale:1;display:flex;flex-direction:column;padding:27px 25px 24px;border-radius:22px;border:1px solid #a1b4aa3b;background:linear-gradient(150deg,#fffffff5,#f7faf6f2);box-shadow:0 12px 28px #546e600b,0 2px 5px #546e6007;font-family:'Campus Source Serif','Songti SC',serif;transform:perspective(1100px) translateY(var(--campus-lift)) rotateX(var(--campus-rotate-x)) rotateY(var(--campus-rotate-y)) scale(var(--campus-scale));transition:transform .18s cubic-bezier(.2,.7,.25,1),box-shadow .25s,border-color .25s;animation:campus-card-appear .65s both;animation-delay:calc(var(--campus-order,0)*100ms);touch-action:pan-y;will-change:transform}
 .uni-map-explorer .uni-campus::before{display:none}.uni-map-explorer .uni-campus::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--campus-light-x,50%) var(--campus-light-y,20%),#ffffffd0,transparent 65%);opacity:0;pointer-events:none;transition:opacity .3s}
 .uni-map-explorer .uni-campus>*{position:relative;z-index:1}
 .uni-map-explorer .uni-campus[data-map-active=true]{border-color:#8bb5a96b;box-shadow:0 12px 28px #546e600b,0 2px 5px #546e6007}
@@ -421,13 +421,13 @@
 .uni-return-card{display:inline-flex;align-items:center;gap:8px}
 .uni-return-card svg{transition:transform .25s}
 .uni-return-card:hover svg{transform:scale(.9)}
-::view-transition-group(campus-card){width:var(--campus-travel-width);height:var(--campus-travel-height);transform-origin:0 0;animation:uni-card-travel 950ms cubic-bezier(.4,0,.2,1) both;z-index:5;will-change:transform}
-::view-transition-image-pair(campus-card){isolation:auto;transform-style:preserve-3d;transform-origin:50% 50%;animation:uni-card-open-flip 950ms cubic-bezier(.35,.1,.65,.9) both}
+::view-transition-group(campus-card){width:var(--campus-travel-width);height:var(--campus-travel-height);transform-origin:0 0;animation:uni-card-travel 650ms cubic-bezier(.22,.65,.3,1) both;z-index:5;will-change:transform}
+::view-transition-image-pair(campus-card){isolation:auto;transform-style:preserve-3d;will-change:transform;transform-origin:50% 50%;animation:uni-card-open-flip 650ms cubic-bezier(.3,.12,.55,1) both}
 html[data-campus-travel=close]::view-transition-image-pair(campus-card){animation-name:uni-card-close-flip}
 ::view-transition-old(campus-card){animation:none;backface-visibility:hidden;mix-blend-mode:normal;border-radius:24px;overflow:hidden}
 ::view-transition-new(campus-card){animation:none;transform:rotateY(180deg);backface-visibility:hidden;mix-blend-mode:normal;border-radius:24px;overflow:hidden}
-::view-transition-old(root){animation:uni-travel-page-out 350ms ease both}
-::view-transition-new(root){animation:uni-travel-page-in 350ms ease both}
+::view-transition-old(root){animation:uni-travel-page-out 240ms ease both}
+::view-transition-new(root){animation:uni-travel-page-in 240ms ease both}
 @keyframes uni-card-open-flip{from{transform:perspective(2400px) rotateY(0deg)}to{transform:perspective(2400px) rotateY(180deg)}}
 @keyframes uni-card-close-flip{from{transform:perspective(2400px) rotateY(0deg)}to{transform:perspective(2400px) rotateY(-180deg)}}
 
@@ -544,3 +544,184 @@ html[data-campus-travel=close] .uni-campus{--campus-lift:0px!important;--campus-
 .uni-map-explorer .uni-card-identity,.uni-map-explorer .uni-card-bottom{flex-shrink:0}
 .uni-map-explorer .uni-card-bottom{margin-top:18px}
 @media(max-width:760px){.uni-map-explorer .uni-campus{padding:24px 22px;min-height:220px}.uni-map-explorer .uni-logo{grid-row:auto;grid-column:auto;margin:0}.uni-map-explorer .uni-card-identity{gap:15px}.uni-map-explorer .uni-campus h2{font-size:24px}.uni-map-explorer .uni-campus-en{font-size:19px}.uni-map-explorer .uni-card-bottom{margin-top:auto;padding-top:16px}}
+
+/* Quiet glass controls with stronger ink contrast. */
+.uni-map-explorer .uni-select-filters{gap:12px;margin:15px 0 7px}
+.uni-map-explorer .uni-filter-select{gap:10px;border-radius:16px;border:1px solid #ffffffd6;background:linear-gradient(135deg,#ffffffc9,#edf5fd80);box-shadow:inset 0 1px 0 #fff,0 5px 16px #4168870b;backdrop-filter:blur(18px);padding:10px 14px;transition:box-shadow .25s,border-color .25s,background .25s}
+.uni-map-explorer .uni-filter-select:hover{border-color:#9bb8cf90;box-shadow:inset 0 1px 0 #fff,0 6px 19px #41688716}
+.uni-map-explorer .uni-filter-select>span{color:#526c83;font-size:12px;letter-spacing:.06em}
+.uni-map-explorer .uni-filter-select select{font-family:'Campus Source Serif',serif;color:#254964;font-size:14px;padding-left:11px;border-left:1px solid #7896b02b;min-width:105px}
+.uni-map-explorer .uni-filter-select .uni-filter-mark{position:static;flex:none;color:#4b7596;pointer-events:none}
+.uni-map-explorer .uni-filter-select:focus-within{border-color:#739bbb;box-shadow:0 0 0 3px #6993b314,inset 0 1px 0 #fff}
+.uni-map-explorer .uni-art-heading .uni-art-line-one{color:#244764}
+.uni-map-explorer .uni-art-heading .uni-art-line-two{color:#2c5373}
+.uni-map-explorer .uni-art-heading .uni-art-coordinate{color:#315f82}
+.uni-map-explorer .uni-lead{color:#3b5972}
+.uni-page-jump{display:flex;align-items:center;gap:9px;margin-left:10px;padding-left:18px;border-left:1px solid #6c8fa62b;font-size:12px;color:#4f6f89}
+.uni-page-jump label{display:flex;align-items:center;gap:7px}
+.uni-page-jump input{width:43px;height:32px;text-align:center;border-radius:9px;border:1px solid #9bb5cb60;background:#ffffff9c;color:#294f6f;font-family:'Campus Cormorant',Georgia,serif;font-size:20px;outline:none;appearance:textfield}
+.uni-page-jump input::-webkit-inner-spin-button,.uni-page-jump input::-webkit-outer-spin-button{appearance:none;margin:0}
+.uni-page-jump input:focus{border-color:#739bbb;box-shadow:0 0 0 3px #6993b314}
+.uni-page-jump button{display:grid;place-items:center;width:30px;height:30px;border:1px solid #9bb5cb4d;border-radius:50%;background:#ffffff75;color:#3a6586}
+.uni-page-total{white-space:nowrap;margin-right:3px}
+@media(max-width:1099px){.uni-pagination{flex-wrap:wrap;row-gap:8px}.uni-page-jump{margin-left:0;padding-left:12px}}
+@media(max-width:760px){.uni-map-explorer .uni-select-filters{gap:8px}.uni-map-explorer .uni-filter-select{gap:7px;padding:9px 10px;border-radius:13px}.uni-map-explorer .uni-filter-select select{min-width:87px;padding-left:8px}.uni-page-jump{flex-basis:100%;justify-content:center;border-left:0;padding-left:0;margin-top:3px}}
+
+/* A first-visit entrance: varied directions, restrained overlap, no repeated filter delay. */
+.uni-map-explorer .uni-campus{animation:none;translate:none}
+.uni-map-explorer[data-entering=true] .uni-art-line-one{animation:uni-heading-arrive 1.1s cubic-bezier(.16,1,.3,1) both}
+.uni-map-explorer[data-entering=true] .uni-art-line-two{animation:uni-heading-arrive 1.25s .16s cubic-bezier(.16,1,.3,1) both;--uni-entry-x:35px}
+.uni-map-explorer[data-entering=true] .uni-lead>span{animation:uni-copy-arrive 1.2s .3s cubic-bezier(.16,1,.3,1) both}
+.uni-map-explorer[data-entering=true] .uni-lead>span:last-child{animation-delay:.48s}
+.uni-map-explorer[data-entering=true] .uni-map-panel{animation:uni-map-arrive 2.1s .2s cubic-bezier(.16,1,.3,1) both}
+.uni-map-explorer[data-entering=true] .uni-tools{animation:uni-copy-arrive 1s .12s cubic-bezier(.16,1,.3,1) both}
+.uni-map-explorer[data-entering=true] .uni-select-filters{animation:uni-copy-arrive 1.1s .28s cubic-bezier(.16,1,.3,1) both}
+.uni-map-explorer[data-entering=true] .uni-campus{--entry-x:34px;--entry-y:65px;--entry-angle:3deg;animation:uni-campus-arrive 1.65s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(.32s + var(--campus-entry-delay, 0s))}
+.uni-map-explorer[data-entering=true] .uni-campus:nth-child(3n+1){--entry-x:-28px;--entry-y:48px;--entry-angle:-3deg}
+.uni-map-explorer[data-entering=true] .uni-campus:nth-child(3n+2){--entry-x:10px;--entry-y:-45px;--entry-angle:2deg;animation-delay:calc(.48s + var(--campus-entry-delay, 0s))}
+.uni-map-explorer[data-entering=true] .uni-pagination{animation:uni-copy-arrive 1s .75s cubic-bezier(.16,1,.3,1) both}
+@keyframes uni-heading-arrive{from{opacity:0;translate:var(--uni-entry-x,-42px) 24px;rotate:-2deg}to{opacity:1;translate:0 0;rotate:0deg}}
+@keyframes uni-copy-arrive{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@keyframes uni-map-arrive{from{opacity:0;translate:-55px 48px;rotate:-5deg;scale:.93}to{opacity:1;translate:0 0;rotate:0deg;scale:1}}
+@keyframes uni-campus-arrive{from{opacity:0;translate:var(--entry-x) var(--entry-y);rotate:var(--entry-angle);scale:.95}to{opacity:1;translate:0 0;rotate:0deg;scale:1}}
+@media(max-width:760px){.uni-map-explorer[data-entering=true] .uni-campus{--entry-x:18px;--entry-y:30px;--entry-angle:1.5deg}.uni-map-explorer[data-entering=true] .uni-map-panel{animation-duration:1.3s}}
+@media(prefers-reduced-motion:reduce){.uni-map-explorer[data-entering=true] .uni-art-line-one,.uni-map-explorer[data-entering=true] .uni-art-line-two,.uni-map-explorer[data-entering=true] .uni-lead>span,.uni-map-explorer[data-entering=true] .uni-map-panel,.uni-map-explorer[data-entering=true] .uni-tools,.uni-map-explorer[data-entering=true] .uni-select-filters,.uni-map-explorer[data-entering=true] .uni-campus,.uni-map-explorer[data-entering=true] .uni-pagination{animation:none}}
+
+/* Cards enter only when they reach the reading pane; hover transforms remain independent. */
+.uni-map-explorer .uni-campus[data-reveal]{animation:none!important;translate:none;rotate:none;scale:none}
+.uni-map-explorer .uni-campus[data-reveal=waiting]{opacity:0}
+.uni-map-explorer .uni-grid{transition:opacity 190ms ease,translate 190ms cubic-bezier(.4,0,.6,1)}
+.uni-map-explorer .uni-grid[data-page-leaving=true]{opacity:0;translate:var(--page-drift,-14px) -5px;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.uni-map-explorer .uni-grid{transition:none}.uni-map-explorer .uni-campus[data-reveal=waiting]{opacity:1}}
+
+/* An airy atlas: relief, contour light and a responsive destination. */
+.uni-map-atlas{isolation:isolate;--map-shift-x:0px;--map-shift-y:0px}
+.uni-map-atmosphere{position:absolute;inset:-12% -6% -3%;z-index:-1;pointer-events:none;overflow:hidden;border-radius:40%;mask-image:radial-gradient(ellipse,#000 40%,transparent 73%)}
+.uni-map-light-field{position:absolute;inset:0;background:radial-gradient(ellipse at var(--map-light-x,50%) var(--map-light-y,50%),#f9fdfff0 0%,#9bc4e953 38%,#76a7d21c 56%,transparent 72%);animation:uni-atlas-light 18s ease-in-out infinite alternate}
+.uni-map-dot-field{position:absolute;inset:0;background-image:radial-gradient(#426e9a55 .8px,transparent 1px);background-size:19px 19px;opacity:.28;translate:calc(var(--map-shift-x)*-2) calc(var(--map-shift-y)*-2);transition:translate .7s ease}
+.uni-map-light-sweep{position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,#ffffff7d 47%,transparent 64%);animation:uni-atlas-sweep 16s ease-in-out infinite alternate;opacity:.55}
+.uni-map-atlas .uni-china-map{position:relative;translate:var(--map-shift-x) var(--map-shift-y);transition:translate .65s cubic-bezier(.22,1,.36,1)}
+.uni-map-contours{fill:none;stroke:#6e9fbe;stroke-width:1.15;opacity:.17;stroke-dasharray:3 9;pointer-events:none}
+.uni-map-relief{translate:0 9px;fill:#6e96b4;stroke:#6e96b4;stroke-width:1;opacity:.34;filter:drop-shadow(0 12px 13px #406a8b38);pointer-events:none}
+.uni-map-atlas .uni-map-provinces path{stroke:#759bb8;stroke-width:1.05;transition:fill .7s;paint-order:stroke;filter:none}
+.uni-map-atlas .uni-map-provinces .uni-map-home{stroke:#467c9f;stroke-width:2}
+.uni-map-selected-province{animation:uni-province-light .9s ease-out both;pointer-events:none}
+.uni-map-selected-province path{stroke:var(--map-destination-ink);stroke-width:1.7;stroke-linejoin:round}
+.uni-map-city-constellation{fill:#547f9f;opacity:.7;pointer-events:none}
+.uni-map-city-constellation .uni-map-campus-aura{fill:#ffffff;opacity:.5}
+.uni-map-origin-ring{fill:none;stroke:#3b7197;stroke-width:1.3;opacity:.85}
+.uni-map-atlas .uni-map-origin{fill:#315d86;stroke-width:2.5;filter:drop-shadow(0 0 5px #ffffff)}
+.uni-map-atlas .uni-map-origin-label{fill:#294f73;paint-order:stroke;stroke:#edf7ff;stroke-width:4}
+.uni-map-atlas .uni-map-route-shadow{stroke:#f5fbff;stroke-width:6;opacity:.7}
+.uni-map-atlas .uni-map-route{stroke-width:2.6;animation-duration:1.2s;filter:drop-shadow(0 2px 2px #3d6b9633)}
+.uni-map-atlas .uni-map-arrival,.uni-map-atlas .uni-map-arrival-halo{fill:var(--map-destination-ink)}
+.uni-map-atlas .uni-map-arrival-halo{fill:none;stroke:var(--map-destination-ink);animation-delay:1s}
+.uni-map-atlas .uni-map-target-label{fill:var(--map-destination-ink);stroke:#f5fbff;stroke-width:5;animation:uni-atlas-label .7s .3s both}
+.uni-map-atlas .uni-map-city-label{fill:#41627e;stroke:#f5fbff;animation:uni-atlas-label .7s .4s both}
+.uni-map-traveler{filter:drop-shadow(0 0 4px #fff)}
+.uni-map-atlas .uni-map-status{width:min(57%,248px);padding:18px 20px;gap:15px;border:1px solid #ffffffc9;border-radius:25px;background:linear-gradient(135deg,#ffffff80,#ecf6ff2b 52%,#ffffff63);backdrop-filter:blur(20px) saturate(155%);-webkit-backdrop-filter:blur(20px) saturate(155%);box-shadow:inset 0 1px 1px #ffffffed,inset 1px 0 0 #ffffff91,inset 0 -1px 1px #7398b332,0 12px 32px #355d8018,0 2px 7px #355d8009;overflow:hidden}
+.uni-map-atlas .uni-map-status::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at 8% 0%,#ffffffa6,transparent 60%);pointer-events:none}
+.uni-map-atlas .uni-map-status::after{content:'';position:absolute;inset:5px;border-radius:20px;border:1px solid #ffffff42;pointer-events:none;mask-image:linear-gradient(135deg,#000,transparent 65%)}
+.uni-map-atlas .uni-map-status>div{position:relative;z-index:1}
+.uni-map-atlas .uni-map-status .uni-route-destination{border-top:1px solid #6c92af26;padding-top:13px}
+.uni-map-atlas .uni-map-status small{font-size:11px;letter-spacing:.18em;color:#4e6b83}
+.uni-map-atlas .uni-map-status strong{font-size:22px;line-height:1.45;letter-spacing:.02em;overflow-wrap:anywhere}
+@media(max-width:760px){.uni-map-atlas .uni-map-status{width:min(55%,220px);padding:15px 17px;gap:12px;border-radius:22px}.uni-map-atlas .uni-map-status strong{font-size:20px}.uni-map-atlas .uni-map-status .uni-route-destination{padding-top:11px}}
+.uni-map-atlas .uni-route-origin small i{background:#315d86;box-shadow:0 0 0 4px #315d8614}
+.uni-map-atlas .uni-route-destination small i{background:var(--map-destination-ink);box-shadow:0 0 0 4px #709bb31c}
+.uni-map-explorer[data-entering=true] .uni-map-provinces path{animation:uni-atlas-land 1.6s calc(.35s + var(--province-delay)) both,uni-atlas-outline 1.2s .2s both}
+.uni-map-explorer[data-entering=true] .uni-map-relief{animation:uni-atlas-relief 1.8s .4s both}
+.uni-map-explorer[data-entering=true] .uni-map-origin-ring,.uni-map-explorer[data-entering=true] .uni-map-origin,.uni-map-explorer[data-entering=true] .uni-map-origin-label,.uni-map-explorer[data-entering=true] .uni-map-status{animation:uni-atlas-label 1s 1.05s both}
+@keyframes uni-atlas-light{from{transform:translate(-3%,-3%) scale(.98)}to{transform:translate(5%,4%) scale(1.09)}}
+@keyframes uni-atlas-sweep{from{transform:translateX(-25%) rotate(-8deg)}to{transform:translateX(25%) rotate(8deg)}}
+@keyframes uni-atlas-label{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+@keyframes uni-province-light{from{opacity:0}to{opacity:1}}
+@keyframes uni-atlas-land{from{fill-opacity:0}to{fill-opacity:1}}
+@keyframes uni-atlas-outline{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes uni-atlas-relief{from{opacity:0;translate:0 0}to{opacity:.34;translate:0 9px}}
+@media(max-width:760px){.uni-map-atlas{min-height:340px}.uni-map-atmosphere{inset:-10% -10% 0}.uni-map-atlas .uni-map-status{bottom:20px}.uni-map-relief{filter:drop-shadow(0 7px 8px #406a8b30)}}
+@media(prefers-reduced-motion:reduce){.uni-map-atlas *,.uni-map-explorer[data-entering=true] .uni-map-atlas *{animation:none!important;transition:none!important}.uni-map-atlas .uni-china-map,.uni-map-dot-field{translate:none}.uni-map-atlas .uni-map-route{stroke-dashoffset:0}}
+
+/* Keep the route glass compact and stable for every campus name. */
+.uni-map-atlas .uni-map-status{width:186px;height:152px;max-width:48%;padding:14px 16px;gap:10px;border-radius:22px;bottom:10px;box-sizing:border-box}
+.uni-map-atlas .uni-map-status::after{border-radius:17px}
+.uni-map-atlas .uni-map-status .uni-route-destination{padding-top:9px}
+.uni-map-atlas .uni-map-status small{font-size:10px;line-height:1.6}
+.uni-map-atlas .uni-map-status strong{font-size:20px;line-height:1.45;margin-top:4px;letter-spacing:0;white-space:nowrap;overflow-wrap:normal}
+.uni-map-atlas .uni-map-status strong.uni-route-name-long{font-size:16px}
+.uni-map-atlas .uni-map-status strong.uni-route-name-extra-long{font-size:12px}
+@media(max-width:1099px) and (min-width:761px){.uni-map-atlas .uni-map-status{width:166px;max-width:65%;padding-inline:13px}.uni-map-atlas .uni-map-status strong.uni-route-name-long{font-size:14px}.uni-map-atlas .uni-map-status strong.uni-route-name-extra-long{font-size:11px}}
+@media(max-width:760px){.uni-map-atlas .uni-map-status{width:170px;height:145px;max-width:51%;padding:12px 14px;bottom:5px}.uni-map-atlas .uni-map-status strong{font-size:19px}.uni-map-atlas .uni-map-status strong.uni-route-name-long{font-size:14px}.uni-map-atlas .uni-map-status strong.uni-route-name-extra-long{font-size:11px}}
+
+.uni-map-atlas .uni-map-status{container-type:inline-size}
+.uni-map-atlas .uni-route-destination strong[class]{font-size:min(20px,calc((100cqi - 3px)/var(--route-name-length,4)))}
+
+/* Campus lounge: a folding invitation followed by spacious conversations. */
+.uni-campus-lounge{padding-top:8px}
+.uni-campus-lounge .uni-comment-heading{justify-content:flex-start;gap:22px;border-bottom:0;margin-bottom:24px;padding:0;align-items:center}
+.uni-campus-lounge .uni-comment-heading h2{font-family:'Campus Intro WenKai','KaiTi',serif;font-size:38px;letter-spacing:.06em;color:#2f536f}
+.uni-campus-lounge .uni-conversation-count{gap:7px;padding:4px 13px;border-left:1px solid #688ba636;font-size:11px}
+.uni-campus-lounge .uni-conversation-count b{font-size:29px;line-height:1}
+.uni-campus-lounge .uni-conversation-workspace{display:flex;flex-direction:column;gap:30px}
+.uni-campus-lounge .uni-message-desk{position:relative;top:auto;padding:0;width:100%;border:1px solid #ffffffc9;border-radius:26px;background:linear-gradient(135deg,#ffffff94,#edf6ff50);box-shadow:inset 0 1px 0 #fff,0 9px 28px #446c8c0c;backdrop-filter:blur(16px) saturate(140%);overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.uni-campus-lounge .uni-message-desk:focus-within{border-color:#8bb1cd88;box-shadow:inset 0 1px 0 #fff,0 12px 30px #446c8c14}
+.uni-compose-invitation{display:flex;width:100%;align-items:center;gap:15px;padding:18px 23px;text-align:left;color:#476d89;font-family:'Campus Intro WenKai','KaiTi',serif;font-size:21px}
+.uni-compose-invitation .uni-desk-avatar{width:36px;height:36px;background:#ffffff8c;box-shadow:inset 0 1px 0 white;border-color:#8faec547}
+.uni-compose-invitation-icon{display:grid;place-items:center;margin-left:auto;flex:none;width:32px;height:32px;border-radius:50%;border:1px solid #91b1c752;background:#ffffff61}
+.uni-compose-expand{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .38s cubic-bezier(.22,1,.36,1),opacity .25s,visibility .38s}
+.uni-compose-expand>div{min-height:0;overflow:hidden}
+.uni-message-desk[data-expanded=true] .uni-compose-expand{grid-template-rows:1fr;opacity:1;visibility:visible}
+.uni-campus-lounge .uni-message-desk .uni-comment-compose{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0 24px 22px}
+.uni-campus-lounge .uni-message-desk-heading{border-top:1px solid #8ca7bf22;padding-top:17px;margin-bottom:10px;gap:12px}
+.uni-campus-lounge .uni-message-desk-heading h3{font-size:16px;color:#6a879d}
+.uni-campus-lounge .uni-draft-count{font-size:13px}
+.uni-campus-lounge .uni-message-desk textarea{min-height:105px;max-height:350px;font-family:'Campus Source Serif',serif;font-size:17px;line-height:1.9}
+.uni-campus-lounge .uni-message-desk .uni-comment-compose-bottom{padding-top:13px}
+.uni-campus-lounge .uni-feedback{padding:0 24px 16px}
+.uni-campus-lounge .uni-conversation-stream{width:100%;min-height:180px}
+.uni-campus-lounge .uni-comment-list{display:flex;flex-direction:column;gap:24px;padding-left:17px}
+.uni-campus-lounge .uni-conversation-stream .uni-comment{width:calc(100% - 40px);position:relative;margin-left:0;padding:24px 26px 22px 36px;gap:0;border:1px solid #ffffffb8;border-radius:24px;background:linear-gradient(135deg,#ffffffa1,#f0f7ff61);box-shadow:inset 0 1px 0 #ffffffd9,0 9px 25px #4267850b;backdrop-filter:blur(12px);transition:border-color .25s,box-shadow .25s}
+.uni-campus-lounge .uni-conversation-stream .uni-comment:nth-child(even){margin-left:40px;background:linear-gradient(135deg,#f4f9ff8c,#ffffff87)}
+.uni-campus-lounge .uni-conversation-stream .uni-comment:hover{border-color:#8caac467;box-shadow:inset 0 1px 0 white,0 12px 30px #42678514}
+.uni-campus-lounge .uni-conversation-stream .uni-comment-avatar{position:absolute;left:-18px;top:23px;width:40px;height:40px;border:3px solid #eff7fc;box-shadow:0 3px 10px #41688714;background:linear-gradient(135deg,#fff,#d1e5f4);font-family:'Campus Source Serif',serif}
+.uni-campus-lounge .uni-comment-meta{gap:12px}
+.uni-campus-lounge .uni-comment-meta strong{font-family:'Campus Source Serif',serif;font-size:16px;color:#3a5d78}
+.uni-campus-lounge .uni-comment-meta time{font-size:11px;color:#7c96aa}
+.uni-campus-lounge .uni-comment-main>p{font-family:'Campus Source Serif',serif;font-size:17px;line-height:1.95;margin:14px 0 16px;color:#3b5b74}
+.uni-campus-lounge .uni-comment-reply-toggle{gap:7px;border-radius:20px;padding:5px 10px 5px 0;font-size:12px}
+.uni-reply-count{font-family:'Campus Cormorant',Georgia,serif;font-size:16px;padding-left:3px}
+.uni-campus-lounge .uni-comment-replies{margin-top:17px;padding:0 0 0 25px;border-left:1px solid #86a6bf62;background:none;border-radius:0}
+.uni-campus-lounge .uni-comment-response{position:relative;padding:12px 0 13px 7px}
+.uni-response-avatar{position:absolute;left:-40px;top:10px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#e5f0f8;border:2px solid #f5faff;color:#6a8aa1;font-size:12px}
+.uni-campus-lounge .uni-comment-response p{font-size:15px;line-height:1.9;margin-top:8px}
+.uni-campus-lounge .uni-inline-reply{background:#ffffff70;border-color:#93b2c53b;border-radius:16px;padding:15px 17px;animation:uni-lounge-reply .35s cubic-bezier(.22,1,.36,1) both}
+.uni-campus-lounge .uni-conversation-stream .uni-comments-empty{min-height:235px;width:100%;padding:20px;margin-left:-8px;background:radial-gradient(ellipse,#ffffff5c,transparent 70%)}
+.uni-campus-lounge .uni-comments-empty p{font-size:18px;color:#5e7d94}
+.uni-campus-lounge .uni-comments-more{border:1px solid #ffffffb8;border-radius:20px;background:#ffffff66;padding:9px 21px}
+.uni-campus-lounge .uni-comment[data-fresh=true]{animation:uni-lounge-highlight 2.2s ease-out}
+@keyframes uni-lounge-reply{from{opacity:0;translate:0 -8px}to{opacity:1;translate:0 0}}
+@keyframes uni-lounge-highlight{0%,30%{box-shadow:0 0 0 3px #86b4d32b,0 12px 28px #42678518;border-color:#77a7c8}100%{box-shadow:inset 0 1px 0 #ffffffd9,0 9px 25px #4267850b}}
+@media(max-width:760px){.uni-campus-lounge .uni-comment-heading{gap:14px;margin-bottom:20px}.uni-campus-lounge .uni-comment-heading h2{font-size:30px}.uni-campus-lounge .uni-conversation-count{padding-inline:10px}.uni-campus-lounge .uni-conversation-count b{font-size:25px}.uni-compose-invitation{padding:15px 17px;font-size:18px;gap:11px}.uni-campus-lounge .uni-message-desk{border-radius:22px}.uni-campus-lounge .uni-message-desk .uni-comment-compose{padding:0 17px 18px}.uni-campus-lounge .uni-message-desk-heading h3{font-size:14px}.uni-campus-lounge .uni-message-desk textarea{font-size:16px}.uni-campus-lounge .uni-conversation-workspace{gap:24px}.uni-campus-lounge .uni-comment-list{padding-left:13px;gap:18px}.uni-campus-lounge .uni-conversation-stream .uni-comment,.uni-campus-lounge .uni-conversation-stream .uni-comment:nth-child(even){width:100%;margin-left:0;padding:20px 17px 18px 29px;border-radius:20px}.uni-campus-lounge .uni-conversation-stream .uni-comment-avatar{left:-14px;width:34px;height:34px;top:19px}.uni-campus-lounge .uni-comment-main>p{font-size:16px;line-height:1.85}.uni-campus-lounge .uni-comment-meta{gap:7px}.uni-campus-lounge .uni-comment-meta time{margin-left:0}.uni-campus-lounge .uni-comment-replies{padding-left:18px}.uni-response-avatar{left:-33px}.uni-campus-lounge .uni-message-desk-heading{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.uni-campus-lounge *, .uni-compose-expand{animation:none!important;transition:none!important}}
+
+/* Let the school lead; keep the folding control in its own side gutter. */
+.uni-detail{padding-top:26px;padding-inline:84px}
+.uni-detail .uni-school-summary{margin-top:0}
+.uni-detail .uni-return-card{position:fixed;left:max(14px,calc((100vw - 1380px)/2 + 16px));top:145px;z-index:20;display:flex;flex-direction:column;gap:9px;text-align:center;color:#4c7392;font-size:11px;letter-spacing:.06em}
+.uni-return-glass{position:relative;display:grid;place-items:center;width:54px;height:54px;border-radius:18px;border:1px solid #ffffffde;background:linear-gradient(135deg,#ffffffb8,#e8f3fd61);backdrop-filter:blur(16px) saturate(150%);box-shadow:inset 0 1px 0 white,inset 0 -1px 0 #7399b325,0 7px 19px #456b8810;transition:background .2s,box-shadow .2s,transform .2s}
+.uni-return-glass::after{content:'';position:absolute;inset:4px;border:1px solid #ffffff58;border-radius:14px;pointer-events:none}
+.uni-detail .uni-return-card svg{width:36px;height:36px;transition:transform .2s cubic-bezier(.2,.7,.25,1)}
+.uni-detail .uni-return-card:hover svg{transform:scale(.9)}
+.uni-detail .uni-return-card:hover .uni-return-glass{transform:translateY(-2px);background:linear-gradient(135deg,#ffffffdc,#e2effb91);box-shadow:inset 0 1px 0 white,0 10px 23px #456b881c}
+.uni-return-caption{font-family:'Campus Source Serif',serif}
+@media(min-width:1800px){.uni-detail{padding-inline:84px}.uni-detail .uni-return-card{left:calc((100vw - 1460px)/2 + 16px)}}
+@media(max-width:760px){.uni-detail{padding-top:22px;padding-inline:22px}.uni-detail .uni-return-card{left:auto;right:15px;top:auto;bottom:24px;gap:0}.uni-return-glass{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#ffffffe0,#e1eefbb5);box-shadow:inset 0 1px 0 white,0 6px 22px #355a7e25}.uni-return-caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.uni-detail .uni-return-card svg{width:34px;height:34px}}
+@media(max-width:480px){.uni-detail{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.uni-detail .uni-return-card svg,.uni-return-glass{transition:none}}
+
+/* Two readable passages, with restrained emphasis on reviewed facts. */
+.uni-school-reading{grid-column:1/-1;min-width:0;margin-top:18px}
+.uni-school-reading .uni-school-description{margin:0;font-size:17px;line-height:1.95;letter-spacing:.015em;color:#49667d;text-wrap:pretty}
+.uni-school-reading .uni-school-description+.uni-school-description{margin-top:14px}
+.uni-school-reading strong{font-weight:600;color:color-mix(in srgb,var(--u-accent) 70%,#254764);font-synthesis:none}
+@media(max-width:760px){.uni-school-reading{margin-top:12px}.uni-school-reading .uni-school-description{font-size:16px;line-height:1.9}.uni-school-reading .uni-school-description+.uni-school-description{margin-top:12px}}

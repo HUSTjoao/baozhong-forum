@@ -50,3 +50,17 @@ Campus card English: Cormorant Garamond upright Medium (500), local Latin WOFF2,
 Campus introductory heading: Ma Shan Zheng Regular, locally subsetted from https://github.com/google/fonts/tree/main/ofl/mashanzheng. License: OFL-MaShanZheng.txt.
 Campus introductory description: LXGW WenKai Regular, locally subsetted from https://github.com/lxgw/LxgwWenKai. License: OFL-LXGWWenKai.txt.
 Both introductory subsets cover the Chinese characters in UniversityExplorer.tsx; regenerate when editing its copy.
+
+Engineering title: ZCOOL QingKe HuangYou Regular, locally subsetted to 工科. Source: https://github.com/google/fonts/tree/main/ofl/zcoolqingkehuangyou. License: OFL-ZCOOLQingKeHuangYou.txt.
+
+Major entrance display fonts (local two-character subsets from Google Fonts):
+- major-arts-title.woff2: Ma Shan Zheng, 文科. OFL-MaShanZheng.txt.
+- major-science-title.woff2: Noto Sans SC Medium (500), 理科. OFL-NotoSansSC.txt.
+- major-medicine-title.woff2: Noto Serif SC Semibold (600), 医科. OFL-NotoSerifSC.txt.
+- major-other-title.woff2: ZCOOL XiaoWei, 其他. OFL-ZCOOLXiaoWei.txt.
+Source: https://fonts.googleapis.com/css2 (family and text subset requests). Engineering retains ZCOOL QingKe HuangYou.
+
+Revised science and medicine display titles:
+- major-science-title-v2.woff2: ZCOOL QingKe HuangYou, 理科. OFL-ZCOOLQingKeHuangYou.txt.
+- major-medicine-title-v2.woff2: ZCOOL XiaoWei, 医科. OFL-ZCOOLXiaoWei.txt.
+Both are local two-character subsets obtained from Google Fonts CSS2.

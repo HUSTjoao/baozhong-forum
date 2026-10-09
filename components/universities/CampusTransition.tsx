@@ -92,7 +92,7 @@ export default function CampusTransitionProvider({ children }: { children: React
 
 export function CampusReturnLink({ universityId }: { universityId: string }) {
   const transition = useCampusTransition()
-  return <Link className="uni-back uni-return-card" href="/universities" onClick={event => transition?.close(event, universityId)}><svg viewBox="0 0 28 28" width="23" height="23" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><path d="m5 5 7 7m0-6v6H6m17 11-7-7m0 6v-6h6" /><path d="M4.5 16.5v7h7m12-12v-7h-7" opacity=".4" /></svg>收回卡片</Link>
+  return <Link className="uni-back uni-return-card" href="/universities" aria-label="收回卡片，返回大学列表" title="收回卡片" onClick={event => transition?.close(event, universityId)}><span className="uni-return-glass"><svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round"><path className="uni-return-outline" d="M12 5H8a3 3 0 0 0-3 3v4m19-7h4a3 3 0 0 1 3 3v4M5 24v4a3 3 0 0 0 3 3h4m12 0h4a3 3 0 0 0 3-3v-4" opacity=".45" /><path d="m8 8 8 8m0-6v6h-6m18 12-8-8m0 6v-6h6" /><path d="M23 12h1v1M12 23v1h1" opacity=".35" /></svg></span><span className="uni-return-caption">收回卡片</span></Link>
 }
 
 

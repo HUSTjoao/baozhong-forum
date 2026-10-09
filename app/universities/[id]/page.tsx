@@ -1,3 +1,5 @@
+import CampusIntroduction from '@/components/universities/CampusIntroduction'
+import { campusCulture } from '@/lib/campus-culture'
 import { campusTheme } from '@/lib/campus-themes'
 import type { CSSProperties } from 'react'
 import { CampusReturnLink } from '@/components/universities/CampusTransition'
@@ -12,6 +14,7 @@ export default async function UniversityDetailPage({ params }: { params: { id: s
   if (!profile) notFound()
   const theme = campusTheme(profile.id, profile.accent)
   const university = profile.university
+  const culture = campusCulture(profile.id, profile.motto)
   const { comments, count } = await getCampusComments(params.id)
   const levels = ['985', '211', '双一流'].filter(level => university.level?.split(/[／/、,，·\s]+/).includes(level))
   return <article className={'uni-shell uni-detail uni-accent-' + theme.key} style={{ '--u-accent': theme.ink, '--campus-page-wash': theme.wash, '--campus-card-wash': theme.card } as CSSProperties}>
@@ -22,8 +25,8 @@ export default async function UniversityDetailPage({ params }: { params: { id: s
         <h1>{university.name}</h1>
         {profile.englishName && <p className="uni-school-english" lang="en">{profile.englishName}</p>}
         <div className="uni-school-facts"><span><MapPin size={16} />{university.province === university.city ? university.city : university.province + ' · ' + university.city}</span><div className="uni-campus-levels">{levels.map(level => <span key={level}>{level}</span>)}</div></div>
-        {profile.motto && <p className="uni-school-motto">{profile.motto}</p>}
-        <p className="uni-school-description">{profile.introduction || '这所大学的校园资料正在整理，欢迎先在下面分享你的校园见闻。'}</p>
+        {culture && <p className="uni-school-motto">{culture}</p>}
+        <CampusIntroduction text={profile.introduction || '这所大学的校园资料正在整理，欢迎先在下面分享你的校园见闻。'} />
         
       </div>
     </section>

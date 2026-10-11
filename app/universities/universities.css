@@ -725,3 +725,12 @@ html[data-campus-travel=close] .uni-campus{--campus-lift:0px!important;--campus-
 .uni-school-reading .uni-school-description+.uni-school-description{margin-top:14px}
 .uni-school-reading strong{font-weight:600;color:color-mix(in srgb,var(--u-accent) 70%,#254764);font-synthesis:none}
 @media(max-width:760px){.uni-school-reading{margin-top:12px}.uni-school-reading .uni-school-description{font-size:16px;line-height:1.9}.uni-school-reading .uni-school-description+.uni-school-description{margin-top:12px}}
+/* Bring the university identity and location row closer together. */
+.uni-map-explorer .uni-campus{min-height:200px;padding-top:20px;padding-bottom:15px}
+.uni-map-explorer .uni-card-identity{padding-top:5px;padding-bottom:10px}
+.uni-map-explorer .uni-campus h2{font-size:25px;line-height:1.35;margin-bottom:6px}
+.uni-map-explorer .uni-campus-en{font-size:20px;line-height:1.2;margin-bottom:8px}
+.uni-map-explorer .uni-motto{font-size:14px;line-height:1.55}
+.uni-map-explorer .uni-card-bottom{margin-top:6px;padding-top:10px}
+@media(min-width:761px) and (max-width:1099px){.uni-map-explorer .uni-campus h2{font-size:23px}.uni-map-explorer .uni-campus-en{font-size:19px}}
+@media(max-width:760px){.uni-map-explorer .uni-campus{min-height:200px;padding:20px 22px 16px}.uni-map-explorer .uni-campus h2{font-size:28px}.uni-map-explorer .uni-campus-en{font-size:21px}.uni-map-explorer .uni-card-bottom{margin-top:6px;padding-top:10px}}

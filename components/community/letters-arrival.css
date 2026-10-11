@@ -1,0 +1,38 @@
+.letters-arrival{position:fixed;inset:0;z-index:20000;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 35%,#24424b,#112832 65%,#0c202a);color:#eee1c8;font-family:'Community Hand',serif;transition:opacity 1.2s cubic-bezier(.25,.1,.25,1)}
+.arrival-globe{position:absolute;inset:0;width:100%;height:100%;transition:opacity 1.2s;pointer-events:none}
+.arrival-stars{position:absolute;inset:0;opacity:.35;background:radial-gradient(circle at 13% 22%,#f4deb4 0 1px,transparent 2px),radial-gradient(circle at 74% 16%,#f4deb4 0 1px,transparent 2px),radial-gradient(circle at 24% 78%,#f4deb4 0 1px,transparent 2px),radial-gradient(circle at 85% 65%,#f4deb4 0 1px,transparent 2px);background-size:317px 307px,499px 413px,641px 557px,739px 631px;transition:opacity 1s}
+.arrival-copy{position:absolute;left:7%;bottom:10%;z-index:3;pointer-events:none;animation:arrival-copy-in 1.3s .2s both;transition:opacity .65s,transform .8s}.arrival-copy>span{font-size:16px;letter-spacing:.15em;color:#c9b493}.arrival-copy h2{font:clamp(26px,3vw,44px)/1.65 'Community Hand';margin:15px 0;color:#f5e5c9;letter-spacing:.03em}.arrival-copy p{font:15px 'Community Sans';color:#a3b7b5;margin-top:15px}
+.arrival-skip{position:absolute;right:35px;top:27px;z-index:10;display:flex;align-items:center;gap:16px;padding:12px 19px;border:1px solid #dbc7a547;border-radius:25px;font:14px 'Community Sans';color:#e2ceb0;background:#ffffff08;transition:background .25s,color .8s,border-color .8s}.arrival-skip:hover{background:#ffffff16}.arrival-skip:focus-visible{outline:2px solid #d9b77e;outline-offset:5px}.arrival-skip>span{font-size:19px}.arrival-progress{position:absolute;left:0;bottom:0;width:100%;height:2px;background:#e8d0a719;z-index:10}.arrival-progress i{display:block;height:100%;background:#d8bb89;transform-origin:left;animation:arrival-progress 11.3s linear both}
+.arrival-flight-plane{position:absolute;left:50%;top:50%;z-index:5;width:min(46vw,640px);aspect-ratio:360/220;opacity:0;filter:drop-shadow(0 18px 24px #04151e35);pointer-events:none;will-change:transform}.arrival-plane-model{display:block;width:100%;height:100%;overflow:visible}.arrival-plane-crease{transition:opacity .8s .8s}
+.letters-arrival:not([data-stage=globe]) .arrival-copy{opacity:0;transform:translateY(20px);animation:none}
+.arrival-warm-wash{position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse at 0% 8%,#f4d8c390,transparent 42%),radial-gradient(ellipse at 100% 40%,#dde5d480,transparent 40%),linear-gradient(160deg,#faf5ed,#f4eee2 60%,#f8f4eb);opacity:0;transition:opacity 1.25s;pointer-events:none}
+.arrival-home-caption{position:absolute;left:0;right:0;bottom:12%;z-index:3;text-align:center;font:clamp(20px,2vw,28px) 'Community Hand';letter-spacing:.22em;color:#f7e1b9;opacity:0;pointer-events:none;text-shadow:0 2px 16px #071e28;transition:opacity 1s,transform 1.2s}.letters-arrival[data-stage=flight] .arrival-home-caption{animation:arrival-location-in 1.3s 1.4s both}
+@keyframes arrival-copy-in{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@keyframes arrival-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes arrival-home{0%,55%{opacity:0;transform:translateY(10px)}80%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.letters-arrival{display:none}}
+
+
+.letters-arrival[data-stage=approach] .arrival-globe{opacity:.55}
+
+.arrival-paper-pose{position:absolute;inset:0;transform:perspective(1000px) rotateX(0deg) rotateY(0deg);transform-origin:61% 41%;transition:transform 1s cubic-bezier(.32,0,.18,1);will-change:transform}
+
+.letters-arrival[data-stage=reveal] .arrival-paper-pose{transform:perspective(1000px) rotateX(0deg) rotateY(0deg)}
+.letters-arrival[data-stage=zoom] .arrival-paper-pose{animation:arrival-body-push 1.9s cubic-bezier(.32,0,.25,1) forwards}
+.letters-arrival[data-stage=reveal] .arrival-paper-pose{transform:scale(48);transition:none}
+.letters-arrival[data-stage=zoom] .arrival-warm-wash,.letters-arrival[data-stage=reveal] .arrival-warm-wash{opacity:1;transition:opacity .8s .9s}
+.letters-arrival[data-stage=zoom] .arrival-globe,.letters-arrival[data-stage=reveal] .arrival-globe{opacity:0;transition:opacity 1.4s .4s}
+.letters-arrival[data-stage=reveal]{opacity:0;pointer-events:none}
+.letters-arrival[data-stage=approach] .arrival-home-caption{opacity:1;animation:none}
+.letters-arrival[data-stage=zoom] .arrival-home-caption{opacity:0;transform:translateY(6px)}
+.arrival-home-caption:before,.arrival-home-caption:after{content:'';display:inline-block;width:clamp(24px,4vw,58px);height:1px;vertical-align:middle;margin:0 22px;background:linear-gradient(90deg,transparent,#ead5ad80)}
+.arrival-home-caption:after{transform:rotate(180deg)}
+@keyframes arrival-body-push{from{transform:scale(1)}to{transform:scale(48)}}
+@keyframes arrival-location-in{from{opacity:0;transform:translateY(10px);letter-spacing:.32em}to{opacity:1;transform:translateY(0);letter-spacing:.22em}}
+@media(max-width:760px){.arrival-copy{left:8%;right:8%;bottom:10%}.arrival-copy h2{font-size:28px}.arrival-copy p{font-size:13px}.arrival-skip{top:20px;right:20px;padding:10px 15px;font-size:12px}.arrival-flight-plane{width:88vw}.arrival-home-caption{font-size:20px;bottom:14%}.arrival-home-caption:before,.arrival-home-caption:after{margin:0 12px;width:24px}}
+
+/* Let the close-up paper dissolve into the same palette as the letters page. */
+.letters-arrival[data-stage=zoom] .arrival-flight-plane,.letters-arrival[data-stage=reveal] .arrival-flight-plane{opacity:0!important;transition:opacity 1.05s .85s}
+.letters-arrival[data-stage=zoom] .arrival-warm-wash,.letters-arrival[data-stage=reveal] .arrival-warm-wash{transition:opacity 1.05s .65s}
+.letters-arrival[data-stage=zoom] .arrival-stars,.letters-arrival[data-stage=reveal] .arrival-stars{opacity:0}
+.letters-arrival[data-stage=zoom] .arrival-skip{color:#977553;border-color:#b2905a66;background:#fff8}

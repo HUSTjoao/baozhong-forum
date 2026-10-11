@@ -1,428 +1,152 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
-import { BookOpen, Clock, Heart, MessageCircle, Search, Building2 } from 'lucide-react'
-import { getMajorById, type Major } from '@/data/majors'
-import {
-  getQuestions,
-  toggleQuestionLike,
-  addQuestion,
-  formatRelativeTime,
-  type Question,
-} from '@/data/questions'
-import { getAllUniversities } from '@/data/universities'
-import { getUserById, type User } from '@/data/users'
+import MajorDiscussion from '@/components/majors/MajorDiscussion'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { getMajorById, majorAliases, type Major, type MajorCategory } from '@/data/majors'
+import { majorEnglishNames } from '@/data/major-english-names'
+import { getMajorApplications, getMajorExploration } from '@/data/major-exploration'
+import { getQuestions, type Question } from '@/data/questions'
+
 import { AlertDialog } from '@/components/Dialog'
-import { BackButton } from '@/components/BackButton'
+import MajorCardArtwork from '@/components/majors/MajorCardArtwork'
+import MajorFitArtwork from '@/components/majors/MajorFitArtwork'
+import useMajorNavigation from '@/components/majors/useMajorNavigation'
+import '../../majors.css'
+import './major-detail.css'
 
-export default function MajorForumPage(props: { params: { id: string } }) {
-  const { params } = props
-  const { data: session } = useSession()
+const fieldNames: Record<MajorCategory, string> = { arts: '文科', science: '理科', engineering: '工科', medicine: '医科', other: '其他' }
+const fitLabels = ['你的好奇心', '你的学习方式', '你愿意投入的事']
 
-  const [major, setMajor] = useState<Major | undefined>(undefined)
+export default function MajorForumPage({ params }: { params: { id: string } }) {
+  const navigateMajor = useMajorNavigation()
+
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [camera, setCamera] = useState(0)
+  const [major, setMajor] = useState<Major>()
   const [questions, setQuestions] = useState<Question[]>([])
-  const [universities, setUniversities] = useState<any[]>([])
-  const [searchQuery, setSearchQuery] = useState('')
   const [loading, setLoading] = useState(true)
-  const [newQuestion, setNewQuestion] = useState({
-    title: '',
-    content: '',
-    isAnonymous: false,
-  })
-  const [alertConfig, setAlertConfig] = useState<{ title: string; message?: string } | null>(null)
+
+
+
+
+
+  const [alert, setAlert] = useState<{ title: string; message?: string } | null>(null)
+  const [returnField, setReturnField] = useState<MajorCategory>()
 
   useEffect(() => {
     const found = getMajorById(params.id)
     setMajor(found)
-    setUniversities(getAllUniversities())
-
-    const all = getQuestions()
-    const list = all.filter((q) => q.majorId === params.id)
-    setQuestions(list)
-    setLoading(false)
+    try {
+      const previous = JSON.parse(sessionStorage.getItem('major-catalog-return') || 'null')
+      setReturnField(previous?.majorId === found?.id && previous.field in fieldNames ? previous.field : found?.category)
+    } catch { setReturnField(found?.category) }
+    setQuestions(found ? getQuestions().filter(question => question.majorId && (majorAliases[question.majorId] ?? question.majorId) === found.id) : [])
+    setCamera(0); setLoading(false)
   }, [params.id])
 
-  const handleLike = (questionId: string) => {
-    if (!session?.user?.id) {
-      setAlertConfig({
-        title: '需要登录',
-        message: '请先登录后再为讨论点赞。',
-      })
-      return
-    }
+  useEffect(() => {
+    if (!major || !pageRef.current) return
+    const root = pageRef.current
+    const header = document.querySelector('.site-header')
+    const updateHeader = () => root.style.setProperty('--detail-header-height', `${header?.getBoundingClientRect().height ?? 84}px`)
+    updateHeader()
+    const resize = new ResizeObserver(updateHeader)
+    if (header) resize.observe(header)
+    return () => resize.disconnect()
+  }, [major])
 
-    const updated = toggleQuestionLike(questionId, session.user.id)
-    if (updated) {
-      setQuestions((prev) => prev.map((q) => (q.id === questionId ? updated : q)))
-    }
+  function goTo(id: string) {
+    const index = ['overview', 'future', 'fit'].indexOf(id)
+    if (index >= 0) setCamera(index)
+    document.getElementById(index >= 0 ? 'major-camera' : id)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
   }
 
-  const handleSubmitQuestion = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!session?.user) {
-      setAlertConfig({
-        title: '需要登录',
-        message: '请先登录后再发布内容。',
-      })
-      return
+  useEffect(() => {
+    const stage = pageRef.current?.querySelector<HTMLElement>('.md-camera-stage')
+    if (!stage) return
+    const panels = Array.from(stage.querySelectorAll<HTMLElement>('.md-camera-panel'))
+    const update = () => {
+      const overviewHeight = panels[0]?.scrollHeight || 0
+      const fitTop = Math.ceil(overviewHeight * .67 + 100)
+      stage.style.setProperty('--scene-fit-top', `${fitTop}px`)
+      const bottom = Math.max(...panels.map((panel, index) => {
+        const focused = panel.classList.contains('is-focused')
+        const scale = camera < 0 ? .67 : focused ? 1 : .67
+        const top = index === 2 && !focused ? fitTop : focused ? 75 : 42
+        return top + panel.scrollHeight * scale
+      }))
+      stage.style.setProperty('--scene-content-height', `${Math.ceil(Math.max(900, bottom + 120))}px`)
     }
-    if (!major) return
+    const observer = new ResizeObserver(update)
+    panels.forEach(panel => observer.observe(panel))
+    update()
+    return () => observer.disconnect()
+  }, [major, camera])
 
-    if (!newQuestion.title.trim() || !newQuestion.content.trim()) {
-      setAlertConfig({
-        title: '内容不完整',
-        message: '请填写完整的标题和内容后再发布。',
-      })
-      return
-    }
-
-    const created = addQuestion({
-      title: newQuestion.title.trim(),
-      content: newQuestion.content.trim(),
-      asker: newQuestion.isAnonymous
-        ? '匿名用户'
-        : session.user.nickname || session.user.name || session.user.email || '匿名用户',
-      askerId: newQuestion.isAnonymous ? undefined : session.user.id,
-      date: new Date().toISOString(),
-      universityId: '',
-      majorId: major.id,
-      category: '其他',
-      isAnonymous: newQuestion.isAnonymous || false,
-    })
-
-    if (!created) {
-      setAlertConfig({
-        title: '已被禁言',
-        message: '你已被管理员禁言，暂时无法发布讨论或点赞。',
-      })
-      return
-    }
-
-    setQuestions((prev) => [created, ...prev])
-    setNewQuestion({
-      title: '',
-      content: '',
-      isAnonymous: false,
-    })
-    setAlertConfig({
-      title: '发布成功',
-      message: '你的讨论已发布到本专业论坛。',
-    })
+  function trackCamera(index: number, pointerType: string) {
+    cancelCameraHover()
+    if (pointerType !== 'mouse' || camera === index) return
+    hoverTimer.current = setTimeout(() => {
+      hoverTimer.current = null
+      setCamera(index)
+    }, 120)
   }
 
-  const filtered = questions.filter((q) => {
-    const qstr = searchQuery.toLowerCase()
-    return (
-      q.title.toLowerCase().includes(qstr) || q.content.toLowerCase().includes(qstr)
-    )
-  })
-
-  const isLiked = (question: Question) => {
-    if (!session?.user?.id) return false
-    return question.likedBy?.includes(session.user.id) || false
+  function cancelCameraHover() {
+    if (hoverTimer.current !== null) clearTimeout(hoverTimer.current)
+    hoverTimer.current = null
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4 flex items-center justify-center">
-        <div className="text-gray-600">加载中...</div>
-      </div>
-    )
-  }
+  useEffect(() => () => cancelCameraHover(), [])
 
-  if (!major) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">未找到该专业</h1>
-          <BackButton href="/majors" label="返回专业列表" className="justify-center mb-0 mt-4" />
-        </div>
-      </div>
-    )
-  }
+  if (loading) return <div className="md-state" role="status">正在打开专业档案…</div>
+  if (!major) return <div className="md-state"><h1>暂未找到这个专业</h1><Link href="/majors">返回专业认知</Link></div>
 
-  return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <AlertDialog
-        open={!!alertConfig}
-        title={alertConfig?.title || ''}
-        message={alertConfig?.message}
-        onClose={() => setAlertConfig(null)}
-      />
-        <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <BackButton href="/majors" label="返回专业列表" />
-        </div>
+  const profile = getMajorExploration(major)
+  const intro = (major.description.match(/[^。！？]+[。！？]?/g) ?? [major.description]).filter(sentence => !/毕业|就业|所学知识可用于/.test(sentence))
+  const returnHref = '/majors?field=' + (returnField || major.category) + '&resume=1'
 
-          <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">{major.name} 论坛</h1>
-            <p className="text-gray-600 mb-4">
-              围绕 <span className="font-semibold">{major.name}</span> 的课程、院校选择、发展方向等话题进行交流
-            </p>
-          </div>
+  return <div ref={pageRef} className={'major-detail md-field-' + major.category}>
+    <AlertDialog open={!!alert} title={alert?.title || ''} message={alert?.message} onClose={() => setAlert(null)} />
+    <div className="md-atmosphere" aria-hidden="true"><i /><i /><i /></div>
+    <div className="md-wrap">
+      <header className="md-hero">
+        <div className="md-hero-top"><Link href={returnHref} className="md-back" aria-label="返回专业列表" onClick={event => navigateMajor(event, 'back')}><span className="md-back-orbit" aria-hidden="true"><ArrowLeft size={23} /></span><span className="md-back-label">返回</span></Link></div>
+        <div className="md-hero-copy"><span className="md-hero-english" lang="en">{majorEnglishNames[major.name] || 'Explore your possibilities'}</span><h1 className={major.name.length > 10 ? 'md-long-name' : undefined}>{major.name}</h1></div>
+        <div className="md-hero-art" aria-hidden="true"><MajorCardArtwork field={major.category} /></div>
 
-          {/* 专业介绍和强势学校 */}
-        <div className="bg白 rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.05)] p-7 mb-8">
-            <div className="mb-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-3 flex items-center">
-                <BookOpen className="w-5 h-5 mr-2 text-primary-600" />
-                专业介绍
-              </h2>
-            <p className="text-gray-700 leading-relaxed text-base">{major.description}</p>
-            </div>
+      </header>
 
-            {major.strongUniversities && major.strongUniversities.length > 0 && (
-              <div className="border-t border-gray-200 pt-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                  <Building2 className="w-5 h-5 mr-2 text-primary-600" />
-                  强势院校
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {(() => {
-                    const validUniversities = major.strongUniversities
-                    .map((id) => {
-                      const uni = universities.find((u) => u.id === id)
-                        return uni ? { id, name: uni.name } : null
-                      })
-                    .filter(Boolean) as { id: string; name: string }[]
-                    
-                    const displayed = validUniversities.slice(0, 5)
-                    const hasMore = validUniversities.length > 5
-                    
-                    return (
-                      <>
-                        {displayed.map((uni) => (
-                          <Link
-                            key={uni.id}
-                            href={`/universities/${uni.id}`}
-                            className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-primary-100 hover:text-primary-800 transition-colors border border-primary-200"
-                          >
-                            <Building2 className="w-3.5 h-3.5" />
-                            {uni.name}
-                          </Link>
-                        ))}
-                        {hasMore && (
-                          <span className="inline-flex items-center bg-gray-50 text-gray-600 px-3 py-1.5 rounded-full text-sm font-medium border border-gray-200">
-                            +{validUniversities.length - 5} 所
-                          </span>
-                        )}
-                      </>
-                    )
-                  })()}
-                </div>
-              </div>
-            )}
-          </div>
+      <div className="md-detail-layout">
+      <div className="md-detail-content">
+      <div id="major-camera" className="md-profile-composition md-camera-stage" data-camera={camera} aria-label="专业资料，聚焦查看三个部分">
+      <div className="md-camera-controls"><button className="md-camera-reset" type="button" aria-label="恢复三个部分总览" aria-pressed={camera < 0} onClick={() => setCamera(-1)}><svg className="md-overview-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden="true"><rect className="md-overview-tile md-overview-tile-main" x="4" y="5" width="11" height="14" rx="2.5" fill="currentColor" fillOpacity=".12" /><rect className="md-overview-tile md-overview-tile-right" x="19" y="8" width="9" height="11" rx="2.5" /><rect className="md-overview-tile md-overview-tile-bottom" x="7" y="23" width="12" height="5" rx="2" /><path d="M1 10V4a3 3 0 0 1 3-3h6m12 30h6a3 3 0 0 0 3-3v-6" strokeOpacity=".35" /></svg><span>总览</span></button></div>
+      <div className="md-camera-track">
 
-          {/* 搜索与发布提问 */}
-        <div className="relative mb-8 overflow-hidden rounded-2xl border border-slate-100 bg-white/90 shadow-[0_18px_40px_rgba(15,23,42,0.06)]">
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-sky-400 to-emerald-400" />
-          <div className="relative p-6 md:p-8 space-y-6">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h2 className="text-lg font-semibold text-slate-900">在本专业发起讨论</h2>
-                <p className="mt-1 text-xs md:text-sm text-slate-500">
-                  一边搜索历史问题，一边把自己的困惑交给学长学姐。
-                </p>
-              </div>
-            </div>
+      <section id="overview" tabIndex={0} aria-label="专业介绍" className={'md-section md-overview md-camera-panel' + (camera === 0 ? ' is-focused' : '')} onPointerMove={event => trackCamera(0, event.pointerType)} onPointerLeave={cancelCameraHover} onFocusCapture={() => setCamera(0)} onClick={() => { if (camera !== 0) setCamera(0) }}>
+        <div className="md-section-heading"><h2>专业介绍</h2></div>
+        <div className="md-overview-grid"><div className="md-introduction">{intro.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div><aside className="md-study-note"><span className="md-note-mark" aria-hidden="true">“</span><h3>它不只是一门课，<br />也是一种看待问题的方式。</h3><p>{profile.interests[0]}，可以成为了解这个专业的起点。</p><button type="button" onClick={() => goTo('fit')}>看看它与你的联系<ArrowUpRight size={17} /></button></aside></div>
+      </section>
 
-            <div className="grid gap-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.25fr)]">
-              <div className="flex flex-col gap-3 rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-4">
-                <span className="text-xs font-medium uppercase tracking-wide text-slate-600">
-                  搜索已有讨论
-                </span>
-                <div className="relative">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                <input
-                  type="text"
-                    placeholder="在本专业论坛中搜索问题、关键词..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 bg-white px-9 py-2 text-sm text-slate-900 outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                />
-                </div>
-                <p className="text-[11px] text-slate-400">
-                  例如：课程难度、转专业、保研就业、竞赛实践…
-                </p>
-              </div>
+      <section id="future" tabIndex={0} aria-label="未来前景" className={'md-section md-future md-camera-panel' + (camera === 1 ? ' is-focused' : '')} onPointerMove={event => trackCamera(1, event.pointerType)} onPointerLeave={cancelCameraHover} onFocusCapture={() => setCamera(1)} onClick={() => setCamera(1)}>
+        <div className="md-section-heading"><h2>未来前景</h2></div>
+        <p className="md-section-lead">{profile.direction}</p>
+        <div className="md-path-grid"><article className="md-path-card md-career"><span className="md-path-kicker">从学习，到实践</span><h3>可以走向哪些领域</h3><p>{getMajorApplications(major)}</p><div className="md-direction-tags">{profile.paths.map(path => <span key={path}>{path}</span>)}</div></article><article className="md-path-card md-further"><span className="md-path-kicker">把一个问题，继续研究下去</span><h3>进一步学习的方向</h3><p>{profile.furtherStudy}</p><div className="md-growth-line" aria-hidden="true"><span>基础</span><i /><span>实践</span><i /><span>深入</span></div></article></div>
+      </section>
 
-              <form
-                onSubmit={handleSubmitQuestion}
-                className="flex flex-col gap-3 rounded-xl bg-gradient-to-br from-primary-600 via-primary-500 to-sky-500 px-4 py-4 text-white shadow-[0_18px_40px_rgba(30,64,175,0.45)]"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <MessageCircle className="h-5 w-5" />
-                    <span className="text-sm font-semibold">发起新讨论</span>
-                  </div>
-                  <span className="rounded-full bg-white/15 px-3 py-1 text-[11px]">
-                    面向所有对 {major.name} 感兴趣的同学
-                  </span>
-            </div>
+      <section id="fit" tabIndex={0} aria-label="适合谁学" className={'md-section md-fit md-camera-panel' + (camera === 2 ? ' is-focused' : '')} onPointerMove={event => trackCamera(2, event.pointerType)} onPointerLeave={cancelCameraHover} onFocusCapture={() => setCamera(2)} onClick={() => setCamera(2)}>
+        <div className="md-section-heading"><h2>适合什么样的人学</h2></div><p className="md-section-lead">不必一开始就擅长所有事情。看看这些学习状态，哪些让你觉得“我愿意试试”。</p>
+        <div className="md-fit-grid">{profile.interests.map((interest, index) => <article key={interest} className="md-fit-card"><span className={'md-fit-symbol md-fit-symbol-' + index} aria-hidden="true"><MajorFitArtwork index={index} /></span><span className="md-fit-label">{fitLabels[index]}</span><h3>{interest}</h3></article>)}</div>
+      </section>
 
-              <input
-                type="text"
-                  placeholder="一句话概括你的问题，例如：这个专业需要哪些高中基础？"
-                value={newQuestion.title}
-                onChange={(e) =>
-                  setNewQuestion((prev) => ({ ...prev, title: e.target.value }))
-                }
-                  className="w-full rounded-lg border border-white/40 bg-white/95 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-primary-400 focus:ring-2 focus:ring-primary-200"
-              />
-              <textarea
-                  placeholder="详细描述你的现状、困惑，以及已经了解的信息，这样更容易获得有针对性的回答～"
-                rows={3}
-                value={newQuestion.content}
-                onChange={(e) =>
-                  setNewQuestion((prev) => ({ ...prev, content: e.target.value }))
-                }
-                  className="w-full resize-none rounded-lg border border白/40 bg-white/95 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-primary-400 focus:ring-2 focus:ring-primary-200"
-              />
-                <div className="mt-1 flex items-center justify-between gap-3">
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="isAnonymousMajor"
-                    checked={newQuestion.isAnonymous}
-                    onChange={(e) =>
-                        setNewQuestion((prev) => ({
-                          ...prev,
-                          isAnonymous: e.target.checked,
-                        }))
-                    }
-                      className="h-4 w-4 rounded border-primary-100 bg-white/90 text-primary-600 focus:ring-white/70"
-                  />
-                    <label
-                      htmlFor="isAnonymousMajor"
-                      className="ml-2 text-xs md:text-sm text-white/90"
-                    >
-                    匿名发表
-                      <span className="ml-1 text-[11px] text-white/70">（只显示“匿名用户”）</span>
-                  </label>
-                </div>
-                <button
-                  type="submit"
-                    className="inline-flex items-center rounded-lg bg白 px-4 py-2 text-sm font-semibold text-primary-600 shadow-sm transition-all hover:bg-amber-50 hover:text-primary-700 hover:shadow-md"
-                >
-                    <MessageCircle className="mr-1 h-4 w-4" />
-                  发布到本专业论坛
-                </button>
-              </div>
-            </form>
-            </div>
-          </div>
-
-          {/* 问题列表 */}
-          <div className="space-y-4">
-            {filtered.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-md p-10 text-center">
-                <BookOpen className="w-14 h-14 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-600 mb-2">本专业还没有问题，快来第一个发帖吧！</p>
-              </div>
-            ) : (
-              filtered.map((question) => {
-                const liked = isLiked(question)
-                const askerUser: User | undefined =
-                  !question.isAnonymous && question.askerId
-                    ? getUserById(question.askerId)
-                    : undefined
-                const displayName = question.isAnonymous
-                  ? '匿名用户'
-                  : askerUser?.nickname || askerUser?.name || question.asker || '匿名用户'
-
-                return (
-                  <div
-                    key={question.id}
-                    className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6"
-                  >
-                    <Link href={`/forum/${question.id}`}>
-                      <h2 className="text-lg font-semibold text-gray-800 mb-2 hover:text-primary-600 transition-colors">
-                        {question.title}
-                      </h2>
-                      <p className="text-gray-700 text-sm line-clamp-3 mb-3">{question.content}</p>
-                    </Link>
-
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex items-center gap-2">
-                          {question.isAnonymous || !askerUser ? (
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-[10px] text-gray-600">
-                              匿
-                            </div>
-                          ) : askerUser.avatarUrl ? (
-                            <Link
-                              href={`/users/${askerUser.id}`}
-                              className="shrink-0 hover:opacity-80 transition-opacity"
-                            >
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={askerUser.avatarUrl}
-                                alt={displayName}
-                                className="h-6 w-6 rounded-full object-cover border border-gray-200"
-                              />
-                            </Link>
-                          ) : (
-                            <Link
-                              href={`/users/${askerUser.id}`}
-                              className="shrink-0 hover:opacity-80 transition-opacity"
-                            >
-                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 text-[10px] font-semibold text-primary-700 border border-primary-100">
-                                {displayName.charAt(0)}
-                              </div>
-                            </Link>
-                          )}
-                          <span className="text-gray-700">{displayName}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          <span>{formatRelativeTime(question.date)}</span>
-                        </div>
-                        <div className="flex items-center text-primary-600">
-                          <MessageCircle className="w-4 h-4 mr-1" />
-                          <span>{question.replies} 条回复</span>
-                        </div>
-                      </div>
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault()
-                          handleLike(question.id)
-                        }}
-                        className={`flex items-center space-x-1 px-3 py-1 rounded-lg transition-colors ${
-                          liked
-                            ? 'bg-red-50 text-red-600 hover:bg-red-100'
-                            : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} />
-                        <span>{question.likes || 0}</span>
-                      </button>
-                    </div>
-                  </div>
-                )
-              })
-            )}
-          </div>
-        </div>
-      </div>
+      </div></div>
+      <MajorDiscussion major={major} questions={questions} onChange={setQuestions} onNotice={setAlert} />
+      <footer className="md-page-end"><span>选择可以慢慢来，好奇心可以先出发。</span><Link href={returnHref} onClick={event => navigateMajor(event, 'back')}>再认识一个专业<ArrowUpRight size={16} /></Link></footer>
+      </div></div>
     </div>
-  )
+  </div>
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

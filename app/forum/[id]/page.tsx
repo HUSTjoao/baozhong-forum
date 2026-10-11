@@ -15,6 +15,9 @@ import {
 } from '@/lib/api-client'
 import { getAllUniversities } from '@/data/universities'
 import { BackButton } from '@/components/BackButton'
+import '@/components/community/community.css'
+import '../forum.css'
+import './thread.css'
 
 // 根据用户信息生成"高一/高二/高三/20xx届"等学籍标签
 function getUserAcademicLabel(user?: any): string | null {
@@ -259,13 +262,13 @@ export default function QuestionDetailPage({
   }
 
   const university = universities.find((u) => u.id === question.universityId)
-  
+
   // 检查当前用户是否点赞了问题
   const isQuestionLiked = !!(
-    session?.user?.id && 
+    session?.user?.id &&
     question.likesRel?.some(like => like.userId === session.user.id)
   )
-  
+
   // 检查当前用户是否点赞了回复
   const isReplyLiked = (reply: Reply) =>
     !!(session?.user?.id && reply.likesRel?.some(like => like.userId === session.user.id))
@@ -359,7 +362,7 @@ export default function QuestionDetailPage({
   const replyTree = question.replies ? buildReplyTree(question.replies) : []
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f7ff] via-[#eef2ff] to-[#e0f7ff] py-12 px-4 relative overflow-hidden">
+    <div className="community-page forum-space forum-thread py-12 px-4 relative overflow-hidden">
       {/* 背景柔光色块 */}
       <div className="pointer-events-none absolute inset-0">
         <div
@@ -377,7 +380,7 @@ export default function QuestionDetailPage({
           }}
         />
       </div>
-      
+
       {/* 顶部提示面板 */}
       {messagePanel && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -400,7 +403,7 @@ export default function QuestionDetailPage({
           </div>
         </div>
       )}
-      
+
       {/* 删除确认面板 */}
       {deleteConfirm && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -432,7 +435,7 @@ export default function QuestionDetailPage({
           </div>
         </div>
       )}
-      
+
       {/* 举报弹窗 */}
       {reportingTarget && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -473,13 +476,13 @@ export default function QuestionDetailPage({
         </div>
       )}
 
-      <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+      <div className="forum-thread-shell relative z-10 mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <BackButton href={backHref} label={backLabel} />
         </div>
 
         {/* 问题卡片 */}
-        <div className="rounded-2xl border border-slate-100/80 bg-white/95 p-7 md:p-8 shadow-[0_24px_60px_rgba(15,23,42,0.16)] backdrop-blur-xl">
+        <div className="thread-question rounded-2xl p-7 md:p-8">
           <div className="mb-6">
             <div className="flex items-center justify-between mb-3">
               <span className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">
@@ -633,7 +636,7 @@ export default function QuestionDetailPage({
         </div>
 
         {/* 回复区域 */}
-        <div className="rounded-2xl border border-slate-100/80 bg-slate-50/95 p-7 md:p-8 shadow-[0_18px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+        <div className="thread-conversation rounded-2xl p-7 md:p-8">
           <div className="flex items-baseline justify-between mb-4">
             <h2 className="text-xl md:text-2xl font-semibold text-slate-900 flex items-center">
               <MessageCircle className="w-6 h-6 mr-2 text-primary-600" />
@@ -782,7 +785,7 @@ function ReplyItem({
       }`}
     >
       <div
-        className={`rounded-xl px-4 py-3 shadow-sm border ${
+        className={`thread-reply rounded-xl px-4 py-3 shadow-sm border ${
           depth === 0
             ? 'border-primary-100 bg-white/95'
             : 'border-slate-200 bg-slate-50/90'
@@ -968,4 +971,3 @@ function ReplyItem({
     </div>
   )
 }
-

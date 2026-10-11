@@ -102,8 +102,8 @@ export interface AlumniMessage {
 // Questions API
 export const questionsApi = {
   // 获取所有问题
-  async list(): Promise<Question[]> {
-    const res = await fetch('/api/questions/list')
+  async list(signal?: AbortSignal): Promise<Question[]> {
+    const res = await fetch('/api/questions/list', { signal })
     if (!res.ok) {
       const error: ApiError = await res.json()
       throw new Error(error.error || '加载问题列表失败')
@@ -278,8 +278,8 @@ export const reportsApi = {
 // Alumni Messages API
 export const alumniMessagesApi = {
   // 获取所有寄语
-  async list(): Promise<AlumniMessage[]> {
-    const res = await fetch('/api/alumni-messages')
+  async list(signal?: AbortSignal): Promise<AlumniMessage[]> {
+    const res = await fetch('/api/alumni-messages', { signal })
     if (!res.ok) {
       const error: ApiError = await res.json()
       throw new Error(error.error || '加载寄语列表失败')

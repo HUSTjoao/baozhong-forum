@@ -10,7 +10,7 @@
 .lens-blade:focus-visible{outline:none;box-shadow:inset 0 0 0 4px #536c8480}
 .lens-blade-arts{clip-path:polygon(50% 50%,50% 0,100% 0,100% 30%);background:linear-gradient(145deg,#f9f3e9,#e7d5c0);color:#795b46}
 .lens-blade-science{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%);background:linear-gradient(140deg,#e9f4fc,#cdd7eb);color:#4b6384}
-.lens-blade-engineering{clip-path:polygon(50% 50%,90% 100%,10% 100%);background:linear-gradient(160deg,#f0f5f9,#becfdb);color:#405e74}
+.lens-blade-engineering{clip-path:polygon(50% 50%,90% 100%,10% 100%,10% 100%);background:linear-gradient(160deg,#f0f5f9,#becfdb);color:#405e74}
 .lens-blade-medicine{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%);background:linear-gradient(130deg,#e9f7f3,#bcdcd6);color:#386d65}
 .lens-blade-other{clip-path:polygon(50% 50%,0 30%,0 0,50% 0);background:linear-gradient(150deg,#f7edf0,#e4ccd5);color:#865e6e}
 .lens-field-copy{position:absolute;display:flex;flex-direction:column;width:320px;transform:translate(-50%,-50%);z-index:2}
@@ -516,9 +516,9 @@
 .major-lens[data-expanded] .lens-seams,.major-lens[data-expanded] .lens-center{display:none}
 .major-lens[data-expanded] .is-expanded .lens-art{mask-image:none;opacity:.42}
 .major-lens[data-expanded] .is-expanded .lens-art-engineering{opacity:.6}
-.major-lens[data-expanded] .is-expanded .engineering-photo-workshop{left:0;top:0;width:65%;height:100%}
-.major-lens[data-expanded] .is-expanded .engineering-photo-code{left:50%;top:0;width:50%;height:100%}
-.major-lens[data-expanded] .is-expanded .engineering-photo-shade{background:linear-gradient(90deg,#07182470,#071824a0)}
+
+
+
 .lens-expanded{--panel-ink:#533d2c;--panel-wash:#fffaf0d9;position:absolute;inset:0;z-index:7;display:flex;flex-direction:column;color:var(--panel-ink);outline:none;animation:lens-page-content .7s .25s both}
 .lens-expanded-science{--panel-ink:#eef7ff;--panel-wash:#243f61ce}
 .lens-expanded-engineering{--panel-ink:#eef5f6;--panel-wash:#0d2230da}
@@ -568,7 +568,7 @@
 .major-lens[data-expanded=other] .lens-blade.is-expanded{animation-name:field-unfold-other}
 @keyframes field-unfold-arts{from{clip-path:polygon(50% 50%,50% 0,100% 0,100% 30%)}to{clip-path:polygon(0 100%,0 0,100% 0,100% 100%)}}
 @keyframes field-unfold-science{from{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%)}to{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}}
-@keyframes field-unfold-engineering{from{clip-path:polygon(50% 50%,90% 100%,10% 100%)}to{clip-path:polygon(50% -100%,200% 100%,-100% 100%)}}
+@keyframes field-unfold-engineering{from{clip-path:polygon(50% 50%,90% 100%,10% 100%,10% 100%)}to{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}}
 @keyframes field-unfold-medicine{from{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%)}to{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}}
 @keyframes field-unfold-other{from{clip-path:polygon(50% 50%,0 30%,0 0,50% 0)}to{clip-path:polygon(100% 100%,0 100%,0 0,100% 0)}}
 .major-lens .lens-expanded{animation:none}
@@ -701,7 +701,7 @@
 @keyframes field-refold-science{from{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}to{clip-path:polygon(50% 50%,100% 30%,100% 100%,90% 100%)}}
 .major-lens[data-closing=true][data-expanded=science] .lens-blade.is-expanded{animation:field-refold-science 1.05s cubic-bezier(.65,0,.22,1) both}
 .major-lens[data-closing=true] .lens-expanded-science .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-science 1.05s cubic-bezier(.65,0,.22,1) both}
-@keyframes field-refold-engineering{from{clip-path:polygon(50% -100%,200% 100%,-100% 100%)}to{clip-path:polygon(50% 50%,90% 100%,10% 100%)}}
+@keyframes field-refold-engineering{from{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}to{clip-path:polygon(50% 50%,90% 100%,10% 100%,10% 100%)}}
 .major-lens[data-closing=true][data-expanded=engineering] .lens-blade.is-expanded{animation:field-refold-engineering 1.05s cubic-bezier(.65,0,.22,1) both}
 .major-lens[data-closing=true] .lens-expanded-engineering .field-photo-scenery{animation:scene-departs 1.05s linear both,field-refold-engineering 1.05s cubic-bezier(.65,0,.22,1) both}
 @keyframes field-refold-medicine{from{clip-path:polygon(100% 0,100% 100%,0 100%,0 0)}to{clip-path:polygon(50% 50%,10% 100%,0 100%,0 30%)}}
@@ -741,3 +741,365 @@
 .lens-scroll-content{max-width:1240px;margin-left:auto;margin-right:auto;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px)}
 .lens-expanded .lens-catalog-list{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:760px){.lens-scroll-content{padding-left:18px;padding-right:18px}.lens-expanded .lens-catalog-list{grid-template-columns:1fr}}
+/* Full-width edge photographs retain their own colors; only their edges dissolve. */
+.lens-expanded .field-scattered-photos{left:50%;right:auto;transform:translateX(-50%);mix-blend-mode:normal}
+.lens-expanded .field-scattered-photos .field-scene-photo::after{display:none}
+.lens-expanded .field-scattered-photos .field-scene-photo img{filter:none}
+.lens-expanded .field-scattered-photos .field-scene-photo.is-revealed{opacity:1}
+.field-scattered-photos .field-scene-photo{mask-image:linear-gradient(180deg,transparent,#000 22%,#000 75%,transparent),linear-gradient(90deg,#000 35%,#000e 55%,transparent);mask-composite:intersect}
+.field-scattered-photos .field-scene-right{mask-image:linear-gradient(180deg,transparent,#000 22%,#000 75%,transparent),linear-gradient(270deg,#000 35%,#000e 55%,transparent)}
+/* An editorial title inside a finely machined, five-sector focus dial. */
+.major-lens .interactive-focus{width:254px;height:254px;background:linear-gradient(145deg,#344551,#132833);border:1px solid #9bafb3;box-shadow:inset 0 1px 2px #ffffff55,inset 0 -3px 5px #071822b3,0 8px 24px #0b202a40,0 0 0 3px #ffffff30;backdrop-filter:none}
+.major-lens .interactive-focus::before{inset:30px;border:1px solid #fffef9;background:linear-gradient(135deg,#fffdf6,#e8e9e1);box-shadow:0 3px 8px #0419254d,inset 0 1px 2px #fff;pointer-events:none}
+.major-lens .interactive-focus::after{inset:36px;border:1px solid #a6b2ac66;background:none;box-shadow:none}
+.major-lens .interactive-focus>.focus-bezel{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;transition:rotate .7s cubic-bezier(.22,1,.36,1)}
+.focus-bezel-track{fill:none;stroke:#c2d0cd66;stroke-width:.5}
+.focus-bezel-inner{fill:none;stroke:#091d2b;stroke-width:1.5}
+.focus-bezel-mark{stroke:#a6b9be;stroke-width:.7;opacity:.6}
+.focus-bezel-major{stroke:#f5efe0;stroke-width:1.3;opacity:1}
+.major-lens .interactive-focus>.focus-iris{opacity:.8}
+.focus-iris path{fill:none;stroke-width:1.5;stroke:#d9c8a2;stroke-linecap:round}
+.focus-iris path:nth-child(2){stroke:#92b9c9}.focus-iris path:nth-child(3){stroke:#b4c4ce}.focus-iris path:nth-child(4){stroke:#93bcad}.focus-iris path:nth-child(5){stroke:#c4a6b7}
+.major-lens .interactive-focus .focus-content h1{font-family:'Major Editorial','Songti SC',serif;font-weight:600;font-size:38px;letter-spacing:.04em;line-height:1.4;padding-left:.04em;color:#263e49;margin:0;text-shadow:0 1px 0 #fff;transition:translate .5s}
+.major-lens .interactive-focus .focus-content p{font-family:'Major Cormorant',Georgia,serif;font-weight:500;font-size:12px;letter-spacing:.14em;color:#6b7b7e;margin:0 0 9px}
+.focus-ornament{display:flex;align-items:center;gap:7px;margin-bottom:12px}
+.focus-ornament i{width:20px;height:1px;background:linear-gradient(90deg,transparent,#8e9e9b)}
+.focus-ornament i:last-child{rotate:180deg}
+.focus-ornament b{width:5px;height:5px;border:1px solid #708784;rotate:45deg}
+.focus-signature{display:flex;gap:7px;margin-top:17px}
+.focus-signature i{width:4px;height:4px;border-radius:50%;background:#8f8164}
+.focus-signature i:nth-child(2){background:#648aa2}.focus-signature i:nth-child(3){background:#536875}.focus-signature i:nth-child(4){background:#658c7c}.focus-signature i:nth-child(5){background:#967d8c}
+.major-lens .interactive-focus:hover>.focus-bezel{rotate:6deg}
+.major-lens .interactive-focus:hover .focus-content h1{translate:0 -2px}
+.major-lens .interactive-focus:focus-visible{outline:2px solid #f9f1d8;outline-offset:6px}
+@media(max-width:1100px){.major-lens .interactive-focus{width:226px;height:226px}.major-lens .interactive-focus::before{inset:27px}.major-lens .interactive-focus::after{inset:32px}.major-lens .interactive-focus .focus-content h1{font-size:33px}.major-lens .interactive-focus .focus-content p{font-size:11px}}
+@media(max-width:760px){.major-lens .interactive-focus{width:154px;height:154px}.major-lens .interactive-focus::before{inset:19px}.major-lens .interactive-focus::after{inset:23px}.major-lens .interactive-focus .focus-content h1{font-size:22px;letter-spacing:.03em}.major-lens .interactive-focus .focus-content p{font-size:7px;margin-bottom:5px;letter-spacing:.1em}.focus-ornament{gap:5px;margin-bottom:7px}.focus-ornament i{width:12px}.focus-ornament b{width:4px;height:4px}.focus-signature{gap:5px;margin-top:9px}.focus-signature i{width:3px;height:3px}}
+@media(prefers-reduced-motion:reduce){.major-lens .interactive-focus>.focus-bezel{transition:none}.major-lens .interactive-focus:hover>.focus-bezel{rotate:none}.major-lens .interactive-focus:hover .focus-content h1{translate:none}}
+/* Keep the engineering side notes clear of the central title and its main line. */
+.major-lens .engineering-slogans span{width:220px;white-space:nowrap}
+.major-lens .engineering-slogans span:first-child{left:27%;top:87%}
+.major-lens .engineering-slogans span:last-child{left:73%;top:89%}
+@media(max-width:1100px){.major-lens .engineering-slogans span{width:170px;font-size:17px}.major-lens .engineering-slogans span:first-child{left:26%;top:89%}.major-lens .engineering-slogans span:last-child{left:74%;top:91%}.major-lens .lens-blade-engineering .lens-field-line{max-width:280px;font-size:18px}}
+@media(max-width:760px){.major-lens .engineering-slogans span{width:115px;font-size:11px}.major-lens .engineering-slogans span:first-child{left:30%;top:96%}.major-lens .engineering-slogans span:last-child{left:70%;top:96%}.major-lens .lens-blade-engineering .lens-field-line{max-width:225px;font-size:12px}}
+/* Bento-inspired major files: layered artwork, concise reading, and a revealed footer. */
+.lens-expanded{--bento-accent:#93b8c9;--bento-art:#81aab726}
+.lens-expanded-arts{--bento-accent:#997752;--bento-art:#a4875c18}
+.lens-expanded-science{--bento-accent:#a4c6ed;--bento-art:#7aa6cf20}
+.lens-expanded-medicine{--bento-accent:#548c78;--bento-art:#659d7d20}
+.lens-expanded-other{--bento-accent:#ead0bd;--bento-art:#d9a9c222}
+.lens-expanded .lens-catalog-list{gap:24px;align-items:start}
+.lens-expanded .lens-catalog-list .major-bento-card{position:relative;isolation:isolate;overflow:hidden;min-height:360px;padding:0;border-radius:24px;border:1px solid #ffffff30;background:var(--panel-wash);box-shadow:0 8px 24px #0a1a2710;transition:translate .45s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s}
+.major-bento-art{position:absolute;right:-18px;top:-15px;width:190px;height:190px;pointer-events:none;opacity:.6;mask-image:linear-gradient(180deg,#000 50%,transparent);transition:transform .65s cubic-bezier(.22,1,.36,1),opacity .45s}
+.major-bento-art>svg{position:absolute;right:35px;top:35px;width:85px;height:85px;color:var(--bento-accent);opacity:.45;rotate:-12deg}
+.major-bento-orbit{position:absolute;width:160px;height:160px;right:0;top:0;border-radius:50%;border:1px solid var(--bento-art);background:radial-gradient(circle at 70% 20%,var(--bento-art),transparent 65%)}
+.major-bento-grid{position:absolute;inset:0;background:linear-gradient(90deg,var(--bento-art) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(var(--bento-art) 1px,transparent 1px) 0 0/26px 26px;mask-image:linear-gradient(270deg,#000,transparent)}
+.major-bento-content{position:relative;z-index:1;padding:30px 30px 22px;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.major-bento-heading{padding-right:65px}
+.major-bento-field{display:block;font-family:'Major WenKai',serif;font-size:12px;letter-spacing:.12em;color:var(--bento-accent);margin-bottom:12px}
+.lens-expanded .major-bento-card h3{font-size:26px;line-height:1.45;letter-spacing:.025em;margin:0 0 16px}
+.lens-expanded .major-bento-card .major-bento-overview{font-size:16px;line-height:1.9;opacity:.82;min-height:60px;margin:0}
+.major-bento-courses{margin-top:22px;padding-top:17px;border-top:1px solid var(--bento-art)}
+.major-bento-courses>span{display:block;font-size:11px;letter-spacing:.14em;opacity:.55;margin-bottom:10px}
+.major-bento-courses>div{display:flex;flex-wrap:wrap;gap:7px}
+.major-bento-courses>div>span{font-family:'Major Sans',sans-serif;font-size:11px;line-height:1.6;padding:5px 10px;border-radius:8px;background:var(--bento-art);color:inherit}
+.major-bento-details{margin-top:18px}
+.major-bento-details summary{display:flex;align-items:center;gap:7px;cursor:pointer;list-style:none;width:fit-content;font-size:12px;opacity:.7}
+.major-bento-details summary::-webkit-details-marker{display:none}
+.major-bento-details summary svg{transition:rotate .25s}
+.major-bento-details[open] summary svg{rotate:180deg}
+.lens-expanded .major-bento-details p{font-size:14px;line-height:1.95;margin-top:13px;padding-top:13px;border-top:1px solid var(--bento-art)}
+.major-bento-details summary:focus-visible{outline:2px solid var(--bento-accent);outline-offset:5px;border-radius:3px}
+.major-bento-footer{position:relative;z-index:1;border-top:1px solid var(--bento-art);padding:0 30px;background:var(--bento-art)}
+.lens-expanded .major-bento-footer a{display:flex;justify-content:space-between;align-items:center;min-height:54px;margin:0;font-size:14px;outline-offset:-5px}
+.major-bento-footer a>span{transition:translate .4s,opacity .4s}
+.major-bento-footer a>svg{padding:7px;width:32px;height:32px;border:1px solid var(--bento-art);border-radius:50%;transition:translate .4s,background .4s}
+.lens-expanded .lens-catalog-list .major-bento-card:hover,.lens-expanded .lens-catalog-list .major-bento-card:focus-within{translate:0 -4px;border-color:var(--bento-accent);box-shadow:0 16px 32px #0a1a2720}
+.major-bento-card:hover .major-bento-content,.major-bento-card:focus-within .major-bento-content{transform:translateY(-3px)}
+.major-bento-card:hover .major-bento-art,.major-bento-card:focus-within .major-bento-art{transform:translate(-8px,8px) rotate(5deg);opacity:.9}
+.major-bento-card:hover .major-bento-footer a>svg,.major-bento-card:focus-within .major-bento-footer a>svg{translate:2px -2px;background:var(--bento-art)}
+@media(hover:hover) and (min-width:761px){.major-bento-footer a>span{opacity:.45;translate:0 5px}.major-bento-card:hover .major-bento-footer a>span,.major-bento-card:focus-within .major-bento-footer a>span{opacity:1;translate:0 0}}
+@media(max-width:760px){.lens-expanded .lens-catalog-list .major-bento-card{min-height:0;border-radius:20px}.major-bento-content{padding:23px 23px 20px}.lens-expanded .major-bento-card h3{font-size:23px}.major-bento-heading{padding-right:40px}.major-bento-art{width:150px;height:150px}.major-bento-art>svg{width:65px;height:65px;right:25px;top:28px}.lens-expanded .major-bento-card .major-bento-overview{font-size:15px}.major-bento-footer{padding:0 23px}}
+@media(prefers-reduced-motion:reduce){.lens-expanded .lens-catalog-list .major-bento-card,.major-bento-content,.major-bento-art,.major-bento-footer a>span,.major-bento-footer a>svg,.major-bento-details summary svg{transition:none}.major-bento-card:hover .major-bento-content,.major-bento-card:focus-within .major-bento-content{transform:none}}
+
+.lens-expanded .lens-catalog-list{align-items:stretch}
+.lens-expanded .lens-catalog-list .major-bento-card{display:flex;flex-direction:column}
+.major-bento-content{flex:1}
+.major-bento-footer{margin-top:auto}
+
+/* More transparent cards over gently dimmed photographs. */
+.lens-expanded-arts{--panel-wash:#fff9edc2}
+.lens-expanded-science{--panel-wash:#243f61c2}
+.lens-expanded-engineering{--panel-wash:#102634c2}
+.lens-expanded-medicine{--panel-wash:#eff9f3c2}
+.lens-expanded-other{--panel-wash:#65475dc2}
+.lens-expanded .field-scattered-photos .field-scene-photo img{filter:brightness(.72)}
+/* Distinct light card surfaces contrast with each field's photographic page. */
+.lens-expanded-arts{--bento-card-surface:#fffffff0;--bento-card-ink:#49372b;--bento-card-accent:#8b6037;--bento-card-art:#9e78451c}
+.lens-expanded-science{--bento-card-surface:#eff6ffe8;--bento-card-ink:#223b58;--bento-card-accent:#3b6897;--bento-card-art:#447bac1c}
+.lens-expanded-engineering{--bento-card-surface:#edf3f6e8;--bento-card-ink:#233e4b;--bento-card-accent:#396a7c;--bento-card-art:#47778b20}
+.lens-expanded-medicine{--bento-card-surface:#fffffff0;--bento-card-ink:#264b45;--bento-card-accent:#3c8070;--bento-card-art:#528e7b1c}
+.lens-expanded-other{--bento-card-surface:#fff3ebe8;--bento-card-ink:#503745;--bento-card-accent:#936174;--bento-card-art:#a575821c}
+.lens-expanded .lens-catalog-list .major-bento-card{--bento-accent:var(--bento-card-accent);--bento-art:var(--bento-card-art);background:var(--bento-card-surface);color:var(--bento-card-ink);border-color:#ffffffa6;box-shadow:0 9px 26px #081c2926}
+.lens-expanded .major-bento-card .major-bento-overview{opacity:.95}
+.major-bento-courses>span{opacity:.8}
+.major-bento-details summary{opacity:.85}
+@media(hover:hover) and (min-width:761px){.major-bento-footer a>span{opacity:.75}}
+/* Contrasting translucent hues keep each card distinct from its field's backdrop. */
+.lens-expanded-arts{--bento-card-surface:#a6c9e0ad;--bento-card-ink:#173348;--bento-card-accent:#305f80;--bento-card-art:#39688724}
+.lens-expanded-science{--bento-card-surface:#e9c47cad;--bento-card-ink:#352818;--bento-card-accent:#725125;--bento-card-art:#86622f24}
+.lens-expanded-engineering{--bento-card-surface:#b8d8a3ad;--bento-card-ink:#20341c;--bento-card-accent:#46643a;--bento-card-art:#557a4024}
+.lens-expanded-medicine{--bento-card-surface:#c6b0dfad;--bento-card-ink:#352445;--bento-card-accent:#684784;--bento-card-art:#77549224}
+.lens-expanded-other{--bento-card-surface:#edbf9aad;--bento-card-ink:#3f291c;--bento-card-accent:#835434;--bento-card-art:#935f3924}
+.lens-expanded .lens-catalog-list .major-bento-card{border-color:var(--bento-card-accent);box-shadow:inset 0 1px 0 #ffffff80,0 9px 26px #081c2926}
+.lens-expanded .major-bento-card .major-bento-overview{opacity:1}
+/* Larger bilingual headings and a fuller introduction, without course tags. */
+.lens-expanded .major-bento-card h3{font-family:'Major WenKai','KaiTi',serif;font-size:32px;font-weight:500;line-height:1.4;letter-spacing:.02em;margin:0 0 7px}
+.major-bento-english{display:block;font-family:'Major Cormorant',Georgia,serif;font-size:23px;font-weight:500;line-height:1.2;letter-spacing:.015em;color:var(--bento-card-ink);opacity:.85;margin-bottom:23px}
+.major-bento-heading{padding-right:35px}
+.lens-expanded .major-bento-card .major-bento-overview{font-size:16px;line-height:1.95;min-height:0}
+.major-bento-details{margin-top:21px}
+@media(max-width:760px){.lens-expanded .major-bento-card h3{font-size:27px}.major-bento-english{font-size:21px;margin-bottom:19px}.major-bento-heading{padding-right:18px}.lens-expanded .major-bento-card .major-bento-overview{font-size:15px}}
+/* Return to the softer field palettes, with deeper scenes for clear separation. */
+.lens-expanded-arts{--bento-card-surface:#f5d6b6c2;--bento-card-ink:#3c291b;--bento-card-accent:#805024;--bento-card-art:#89542424}
+.lens-expanded-science{--bento-card-surface:#c7d2f7c2;--bento-card-ink:#202a4a;--bento-card-accent:#43568e;--bento-card-art:#52629a24}
+.lens-expanded-engineering{--bento-card-surface:#b5cbd5c2;--bento-card-ink:#203946;--bento-card-accent:#3b677b;--bento-card-art:#50778b24}
+.lens-expanded-medicine{--bento-card-surface:#b9e2d5c2;--bento-card-ink:#183e35;--bento-card-accent:#2e7561;--bento-card-art:#38796524}
+.lens-expanded-other{--bento-card-surface:#e5bed3c2;--bento-card-ink:#402638;--bento-card-accent:#7e4668;--bento-card-art:#894c7224}
+.lens-expanded-arts .field-photo-scenery{background:linear-gradient(135deg,#d3c1a9,#aa9076)}
+.lens-expanded-science .field-photo-scenery{background:linear-gradient(135deg,#172c48,#314d70)}
+.lens-expanded-engineering .field-photo-scenery{background:linear-gradient(135deg,#0d202a,#1b3440)}
+.lens-expanded-medicine .field-photo-scenery{background:linear-gradient(135deg,#b3ccc1,#779f91)}
+.lens-expanded-other .field-photo-scenery{background:linear-gradient(135deg,#503a50,#805c70)}
+.lens-expanded .lens-catalog-list .major-bento-card{border-color:#ffffff8c;box-shadow:inset 0 1px 0 #ffffff80,0 10px 28px #081c2930}
+/* Slow layered color movement sits behind the scrolling photographs and cards. */
+.lens-expanded-arts{--scene-flow-a:#b4916b;--scene-flow-b:#ead9ba;--scene-flow-c:#a89883}
+.lens-expanded-science{--scene-flow-a:#183652;--scene-flow-b:#496188;--scene-flow-c:#38416a}
+.lens-expanded-engineering{--scene-flow-a:#0f2633;--scene-flow-b:#365963;--scene-flow-c:#172f40}
+.lens-expanded-medicine{--scene-flow-a:#799f91;--scene-flow-b:#d0dfc9;--scene-flow-c:#83b0b0}
+.lens-expanded-other{--scene-flow-a:#64465f;--scene-flow-b:#a47881;--scene-flow-c:#666280}
+.lens-expanded .field-photo-scenery::before,.lens-expanded .field-photo-scenery::after{content:'';position:absolute;inset:-22%;pointer-events:none;will-change:transform}
+.lens-expanded .field-photo-scenery::before{background:linear-gradient(125deg,var(--scene-flow-a) 8%,var(--scene-flow-b) 40%,var(--scene-flow-c) 70%,var(--scene-flow-a) 100%);opacity:.82;animation:field-gradient-flow 20s ease-in-out infinite alternate}
+.lens-expanded .field-photo-scenery::after{background:linear-gradient(35deg,transparent 15%,var(--scene-flow-a) 38%,transparent 58%,var(--scene-flow-b) 85%);opacity:.36;animation:field-gradient-counterflow 27s ease-in-out infinite alternate}
+@keyframes field-gradient-flow{from{transform:translate(-6%,-4%) rotate(-5deg) scale(1.03)}to{transform:translate(6%,5%) rotate(5deg) scale(1.12)}}
+@keyframes field-gradient-counterflow{from{transform:translate(7%,5%) rotate(7deg)}to{transform:translate(-7%,-5%) rotate(-7deg)}}
+@media(prefers-reduced-motion:reduce){.lens-expanded .field-photo-scenery::before,.lens-expanded .field-photo-scenery::after{animation:none;will-change:auto}}
+/* Larger major titles with smaller, quieter introduction text. */
+.lens-expanded-arts{--bento-description-ink:#5b4637}
+.lens-expanded-science{--bento-description-ink:#3d4868}
+.lens-expanded-engineering{--bento-description-ink:#354f5c}
+.lens-expanded-medicine{--bento-description-ink:#35594f}
+.lens-expanded-other{--bento-description-ink:#5d4054}
+.lens-expanded .major-bento-card h3{font-size:38px;line-height:1.35;margin-bottom:9px}
+.major-bento-english{font-size:26px;line-height:1.25;margin-bottom:22px}
+.lens-expanded .major-bento-card .major-bento-overview,.lens-expanded .major-bento-details p{font-family:'Major Sans','Microsoft YaHei',sans-serif;font-weight:400;font-size:14px;line-height:1.95;letter-spacing:.015em;color:var(--bento-description-ink);opacity:1}
+@media(max-width:760px){.lens-expanded .major-bento-card h3{font-size:31px}.major-bento-english{font-size:23px}.lens-expanded .major-bento-card .major-bento-overview,.lens-expanded .major-bento-details p{font-size:13px;line-height:1.9}}
+/* Neutral dark reading text separates typography from the colored card surfaces. */
+.lens-expanded-arts{--bento-title-ink:#172d3e;--bento-english-ink:#305873}
+.lens-expanded-science{--bento-title-ink:#282536;--bento-english-ink:#604433}
+.lens-expanded-engineering{--bento-title-ink:#152d3b;--bento-english-ink:#2c596c}
+.lens-expanded-medicine{--bento-title-ink:#292638;--bento-english-ink:#66516f}
+.lens-expanded-other{--bento-title-ink:#1c3039;--bento-english-ink:#315c67}
+.lens-expanded .major-bento-card h3{color:var(--bento-title-ink)}
+.lens-expanded .major-bento-english{color:var(--bento-english-ink);opacity:1}
+.lens-expanded .major-bento-card .major-bento-overview{color:#26303a;opacity:1}
+.lens-expanded .major-bento-footer a{color:#172b37;font-weight:500}
+@media(hover:hover) and (min-width:761px){.major-bento-footer a>span{opacity:.9}}
+/* Give the two-column major catalog its broader reading area again. */
+.lens-expanded .lens-scroll-content{max-width:1480px;padding-left:clamp(24px,4vw,60px);padding-right:clamp(24px,4vw,60px)}
+@media(max-width:760px){.lens-expanded .lens-scroll-content{padding-left:18px;padding-right:18px}}
+/* Bespoke miniature subject scenes replace generic outline icons. */
+.major-bento-art{right:-7px;top:-6px;width:180px;height:180px;opacity:.72;mask-image:linear-gradient(180deg,#000 65%,transparent)}
+.major-bento-art>.major-topic-art{position:absolute;inset:7px 0 auto auto;width:160px;height:160px;rotate:0deg;opacity:1;color:var(--bento-accent);overflow:visible}
+.topic-guide{opacity:.2;stroke-width:.7}
+.topic-traces{opacity:.45;stroke-width:1}
+.topic-shadow{fill:currentColor;stroke:none;opacity:.13}
+.topic-face{fill:#ffffff40;stroke-width:1.5}
+.topic-cross{fill:currentColor;fill-opacity:.1;stroke-width:1.4}
+.topic-dot{fill:currentColor;stroke:#ffffff60;stroke-width:1.5}
+.topic-signal{stroke-width:2;opacity:0;stroke-dasharray:7 18;transition:opacity .35s}
+.topic-core,.topic-orbit{transform-origin:83px 78px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.major-bento-card:hover .major-bento-art,.major-bento-card:focus-within .major-bento-art{transform:translate(-5px,4px);opacity:1}
+.major-bento-card:hover .topic-core,.major-bento-card:focus-within .topic-core{transform:translateY(-5px)}
+.major-bento-card:hover .topic-signal,.major-bento-card:focus-within .topic-signal{opacity:.85;animation:topic-signal-flow 2.8s linear infinite}
+.major-bento-card:hover .major-topic-science .topic-orbit,.major-bento-card:focus-within .major-topic-science .topic-orbit{animation:topic-orbit-turn 16s linear infinite}
+.major-bento-card:hover .major-topic-medicine .topic-orbit,.major-bento-card:focus-within .major-topic-medicine .topic-orbit{animation:topic-molecule-rise 2.4s ease-in-out infinite alternate}
+@keyframes topic-signal-flow{to{stroke-dashoffset:-50}}
+@keyframes topic-orbit-turn{to{transform:rotate(360deg)}}
+@keyframes topic-molecule-rise{to{transform:translateY(-5px)}}
+@media(max-width:760px){.major-bento-art{width:140px;height:140px}.major-bento-art>.major-topic-art{width:128px;height:128px;inset:3px 0 auto auto;opacity:.8}}
+@media(prefers-reduced-motion:reduce){.topic-core,.topic-orbit,.topic-signal{transition:none}.major-bento-card:hover .topic-signal,.major-bento-card:focus-within .topic-signal,.major-bento-card:hover .topic-orbit,.major-bento-card:focus-within .topic-orbit{animation:none!important}.major-bento-card:hover .topic-core,.major-bento-card:focus-within .topic-core{transform:none}}
+/* One refined search treatment on the right of the bilingual page heading. */
+.lens-expanded .lens-catalog-heading{align-items:center;gap:32px;margin-bottom:30px}
+.lens-catalog-title{flex:1;min-width:0}
+.lens-catalog-title-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:18px}
+.lens-expanded .lens-catalog-heading .lens-catalog-title-english{font-family:'Major Cormorant',Georgia,serif;font-size:31px;line-height:1.2;font-style:italic;margin:0;opacity:.75}
+.lens-expanded .lens-catalog-heading .lens-expanded-line{margin-top:13px}
+.lens-expanded .lens-catalog-search{position:relative;isolation:isolate;flex:0 1 400px;max-width:460px;min-width:280px;gap:13px;margin:0;padding:17px 18px;border:1px solid #ffffff66;border-radius:20px;background:linear-gradient(135deg,#ffffff26,#ffffff0e);box-shadow:inset 0 1px 0 #ffffff66,0 5px 18px #0d24330d;backdrop-filter:blur(10px);color:inherit;font-family:'Major WenKai',serif;font-size:15px;transition:flex-basis .55s cubic-bezier(.22,1,.36,1),background .45s,border-color .45s,box-shadow .45s,translate .45s}
+.lens-expanded .lens-catalog-search:hover{border-color:#ffffffb3;background:linear-gradient(135deg,#ffffff32,#ffffff16)}
+.lens-expanded .lens-catalog-search:focus-within{flex-basis:440px;border-color:currentColor;background:linear-gradient(135deg,#ffffff42,#ffffff21);box-shadow:inset 0 1px 0 #ffffff99,0 7px 24px #0d24331a;translate:0 -2px}
+.lens-catalog-search input{width:100%;padding:0;border:0;font:inherit;line-height:1.5;outline:none}
+.lens-catalog-search input::placeholder{color:inherit;opacity:.65}
+.lens-search-icon{flex:none;opacity:.7;transition:transform .5s cubic-bezier(.22,1,.36,1),opacity .4s}
+.lens-catalog-search:focus-within .lens-search-icon{transform:rotate(-10deg) scale(1.12);opacity:1}
+.lens-expanded .lens-catalog-search .lens-search-count{display:flex;align-items:baseline;gap:5px;flex:none;padding-left:13px;border-left:1px solid #ffffff55;font-size:11px;opacity:.8;white-space:nowrap}
+.lens-search-count b{font-family:'Major Cormorant',Georgia,serif;font-size:20px;font-weight:500}
+.lens-search-clear{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:#ffffff1c;transition:background .25s,scale .25s;animation:search-clear-arrive .25s ease both}
+.lens-search-clear:hover{background:#ffffff40;scale:1.08}
+.lens-search-clear:focus-visible{outline:1px solid currentColor;outline-offset:2px}
+@keyframes search-clear-arrive{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@media(max-width:1100px){.lens-expanded .lens-catalog-heading{gap:22px}.lens-expanded .lens-catalog-search{min-width:260px;flex-basis:310px}.lens-expanded .lens-catalog-search:focus-within{flex-basis:340px}.lens-expanded .lens-catalog-heading .lens-catalog-title-english{font-size:27px}}
+@media(max-width:760px){.lens-expanded .lens-catalog-heading{flex-direction:column;align-items:stretch;gap:20px;margin-bottom:24px}.lens-catalog-title-row{gap:13px}.lens-expanded .lens-catalog-heading .lens-catalog-title-english{font-size:27px}.lens-expanded .lens-catalog-search,.lens-expanded .lens-catalog-search:focus-within{flex:none;min-width:0;max-width:none;padding:14px 15px;font-size:14px;border-radius:17px}}
+@media(prefers-reduced-motion:reduce){.lens-expanded .lens-catalog-search,.lens-search-icon,.lens-search-clear{transition:none}.lens-search-clear{animation:none}.lens-expanded .lens-catalog-search:focus-within{translate:none}}
+/* Layered laboratory and career miniatures, with restrained hover motion. */
+.topic-detail{opacity:.55;stroke-width:.9}
+.topic-highlight{stroke:#fff;stroke-opacity:.7;stroke-width:1.7}
+.topic-liquid{fill:currentColor;fill-opacity:.1;stroke:none}
+.topic-bubble{fill:#ffffff80;stroke-width:.8;transform-box:fill-box;transform-origin:center}
+.topic-science-ring,.topic-lab,.topic-dna,.topic-satellite{transition:transform .7s cubic-bezier(.22,1,.36,1);transform-origin:81px 79px}
+.topic-pulse{stroke-width:1.6;opacity:.55}
+.major-bento-card:hover .topic-science-ring,.major-bento-card:focus-within .topic-science-ring{transform:rotate(-8deg)}
+.major-bento-card:hover .topic-lab,.major-bento-card:focus-within .topic-lab{transform:translate(0,-3px)}
+.major-bento-card:hover .topic-bubble,.major-bento-card:focus-within .topic-bubble{animation:topic-lab-bubble 2.8s ease-in-out infinite}
+.major-bento-card:hover .topic-bubble-late,.major-bento-card:focus-within .topic-bubble-late{animation-delay:.8s}
+.major-bento-card:hover .topic-dna,.major-bento-card:focus-within .topic-dna{transform:translate(0,-4px)}
+.major-bento-card:hover .topic-pulse,.major-bento-card:focus-within .topic-pulse{opacity:1;stroke-dasharray:130;animation:topic-heartbeat 2.4s ease-in-out infinite}
+.major-bento-card:hover .topic-camera,.major-bento-card:focus-within .topic-camera{transform:translate(-3px,-4px) rotate(-3deg)}
+.major-bento-card:hover .topic-architecture,.major-bento-card:focus-within .topic-architecture{transform:translate(3px,-4px)}
+.major-bento-card:hover .topic-design,.major-bento-card:focus-within .topic-design{transform:translate(1px,3px)}
+@keyframes topic-lab-bubble{0%,100%{transform:translateY(0);opacity:.8}60%{transform:translateY(-7px);opacity:.3}}
+@keyframes topic-heartbeat{0%{stroke-dashoffset:130;opacity:.45}55%,100%{stroke-dashoffset:0;opacity:1}}
+@media(prefers-reduced-motion:reduce){.topic-science-ring,.topic-lab,.topic-dna,.topic-satellite{transition:none}.major-bento-card:hover .topic-bubble,.major-bento-card:focus-within .topic-bubble,.major-bento-card:hover .topic-pulse,.major-bento-card:focus-within .topic-pulse{animation:none}}
+.major-bento-footer:has(.major-search-field){display:flex;align-items:center;gap:18px}
+.major-search-field{flex:none;font-family:'Major WenKai',serif;font-size:13px;color:#26303a;padding:4px 10px;border:1px solid #26303a25;border-radius:8px;background:#ffffff30}
+.lens-expanded .major-bento-footer:has(.major-search-field) a{flex:1;min-width:0}
+/* A single navigational instrument keeps the broad subject group coherent. */
+.topic-compass-tick{opacity:.65;stroke-width:1}
+.topic-needle-front{fill:currentColor;fill-opacity:.15;stroke-width:1.5}
+.topic-needle-back{fill:#ffffff80;stroke:none}
+.topic-compass-needle{transform-origin:81px 79px;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.major-bento-card:hover .topic-compass-needle,.major-bento-card:focus-within .topic-compass-needle{transform:rotate(24deg)}
+@media(prefers-reduced-motion:reduce){.topic-compass-needle{transition:none}}
+/* A precision optical instrument, paired with a continuous DNA double helix. */
+.major-topic-medicine>.topic-guide{display:none}
+.major-topic-medicine{stroke-width:1.15}
+.medical-registration{stroke-width:.7;opacity:.25}
+.medical-cast-shadow{fill:currentColor;fill-opacity:.12;stroke:none}
+.medical-cast{fill:color-mix(in srgb,currentColor 9%,#fff 70%);stroke-width:1.45}
+.medical-machined-edge{stroke:#fff;stroke-width:1.35;stroke-opacity:.8}
+.medical-dark{fill:currentColor;fill-opacity:.24;stroke-width:1}
+.medical-optical-inset{fill:currentColor;fill-opacity:.11;stroke-width:.7}
+.medical-lens{stroke:#fff;stroke-width:1.8;stroke-opacity:.85}
+.medical-base-inset{fill:currentColor;fill-opacity:.1;stroke:none}
+.medical-edge{stroke-width:1.5;opacity:.65}
+.medical-stage{fill:currentColor;fill-opacity:.27;stroke-width:1.3}
+.medical-slide{fill:#ffffffa6;stroke-width:.8}
+.medical-stage-clips{stroke-width:1.6}
+.medical-specimen{fill:currentColor;stroke:none;opacity:.7}
+.medical-focus-cone{fill:currentColor;fill-opacity:.06;stroke:none;opacity:.3;transition:opacity .5s}
+.medical-lamp{fill:#fff;stroke-width:.7;opacity:.6;transition:opacity .5s}
+.medical-wheel-body{fill:color-mix(in srgb,currentColor 14%,#fff 75%);stroke-width:1.4}
+.medical-wheel-inset{fill:currentColor;fill-opacity:.12;stroke-width:.8}
+.medical-knurl{stroke-width:.8;opacity:.8}
+.medical-wheel-pin{fill:currentColor;stroke:none}
+.medical-wheel-mark{stroke-width:1;opacity:.8}
+.medical-focus-wheel{transform-origin:95px 88px;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.medical-helix{transform-origin:126px 79px;transition:transform .85s cubic-bezier(.22,1,.36,1)}
+.medical-helix-axis{stroke-width:.6;opacity:.23}
+.medical-base-a{stroke-width:1.3;opacity:.58}
+.medical-base-b{stroke:color-mix(in srgb,currentColor 40%,#fff);stroke-width:1.6;opacity:.9}
+.medical-backbone-node{fill:currentColor;stroke:#ffffff90;stroke-width:.5}
+.medical-strand-back{stroke-width:2.3;opacity:.44}
+.medical-strand-front{stroke-width:2;opacity:.9}
+.medical-helix-label{stroke-width:.8;opacity:.45}
+.major-bento-card:is(:hover,:focus-within) .medical-focus-wheel{transform:rotate(65deg)}
+.major-bento-card:is(:hover,:focus-within) .medical-focus-cone{opacity:1}
+.major-bento-card:is(:hover,:focus-within) .medical-lamp{opacity:1}
+.major-bento-card:is(:hover,:focus-within) .medical-helix{transform:translateY(-4px)}
+.major-bento-card:is(:hover,:focus-within) .medical-base-pair{animation:medical-pair-read 2.8s ease-in-out var(--pair-delay) infinite}
+@keyframes medical-pair-read{0%,55%,100%{opacity:1}25%{opacity:.28}}
+@media(prefers-reduced-motion:reduce){.medical-focus-wheel,.medical-helix,.medical-focus-cone,.medical-lamp{transition:none}.major-bento-card:is(:hover,:focus-within) .medical-base-pair{animation:none}}
+/* An airy identity panel fades into a quieter reading surface. */
+.lens-expanded .lens-catalog-list .major-bento-card{min-height:330px}
+.major-bento-card .major-bento-content{display:flex;flex-direction:column;padding:0;transform:none}
+.major-bento-card .major-bento-heading{padding:28px 142px 26px 30px;background:linear-gradient(135deg,#ffffff29,#ffffff09 65%,transparent);min-height:142px}
+.lens-expanded .lens-catalog-list .major-bento-title-link{display:block;margin:0;gap:0;font:inherit;text-decoration:none;outline:none}
+.major-bento-title-link::after{content:'';position:absolute;inset:0;z-index:3;border-radius:inherit}
+.major-bento-title-link:focus-visible::after{outline:2px solid var(--bento-accent);outline-offset:-5px;border-radius:20px}
+.major-bento-card .major-bento-english{margin:0}
+.major-bento-heading .major-search-field{display:inline-block;margin-top:12px;font-size:12px;background:#ffffff26}
+.major-bento-divider{flex:none;height:1px;margin:0 30px;background:linear-gradient(90deg,color-mix(in srgb,var(--bento-accent) 35%,transparent),color-mix(in srgb,var(--bento-accent) 13%,transparent) 70%,transparent);opacity:.7;transition:opacity .5s}
+.major-bento-reading{position:relative;flex:1;padding:25px 30px 30px;background:linear-gradient(180deg,#ffffff08,transparent 24px,#ffffff0d);border-radius:0 0 23px 23px}
+.major-bento-reading::before{content:'';position:absolute;inset:-19px 0 auto;height:38px;background:linear-gradient(180deg,transparent,#ffffff0a 50%,transparent);pointer-events:none}
+.major-bento-card:is(:hover,:focus-within) .major-bento-divider{opacity:1}
+.major-bento-card:is(:hover,:focus-within) .major-bento-content{transform:none}
+@media(max-width:760px){.lens-expanded .lens-catalog-list .major-bento-card{min-height:0}.major-bento-card .major-bento-heading{padding:24px 108px 24px 23px;min-height:130px}.major-bento-divider{margin:0 23px}.major-bento-reading{padding:22px 23px 26px}}
+@media(prefers-reduced-motion:reduce){.major-bento-divider{transition:none}}
+/* Lift the entire card while keeping each field's translucent palette. */
+.lens-expanded .lens-catalog-list .major-bento-card{transition:translate .42s cubic-bezier(.22,1,.36,1),background-color .42s ease,border-color .42s ease,box-shadow .42s ease}
+.lens-expanded .lens-catalog-list .major-bento-card:focus-within{translate:0 -7px;background:color-mix(in srgb,var(--bento-card-surface) 82%,var(--bento-card-accent) 18%);border-color:color-mix(in srgb,var(--bento-card-accent) 65%,#ffffff);box-shadow:inset 0 1px 0 #ffffff70,0 20px 38px #081c2940}
+@media(hover:hover) and (pointer:fine){.lens-expanded .lens-catalog-list .major-bento-card:hover{translate:0 -7px;background:color-mix(in srgb,var(--bento-card-surface) 82%,var(--bento-card-accent) 18%);border-color:color-mix(in srgb,var(--bento-card-accent) 65%,#ffffff);box-shadow:inset 0 1px 0 #ffffff70,0 20px 38px #081c2940}}
+@media(prefers-reduced-motion:reduce){.lens-expanded .lens-catalog-list .major-bento-card{transition:none}.lens-expanded .lens-catalog-list .major-bento-card:is(:hover,:focus-within){translate:none}}
+/* Keep the all-major search in the fixed discipline toolbar. */
+.lens-expanded .lens-field-nav{gap:20px}
+.lens-expanded .lens-field-nav .lens-field-tabs{flex:1;min-width:0;gap:5px}
+.lens-expanded .lens-field-nav .lens-field-tabs button{min-width:70px;padding:10px 16px}
+.lens-expanded .lens-field-nav .lens-catalog-search{flex:0 1 340px;min-width:240px;max-width:360px;margin:0;padding:12px 15px;border-radius:16px;font-size:14px}
+.lens-expanded .lens-field-nav .lens-catalog-search:focus-within{flex-basis:340px;translate:0 -1px}
+.lens-expanded .lens-field-nav .lens-search-count{padding-left:9px;font-size:10px}
+@media(max-width:1100px){.lens-expanded .lens-field-nav{gap:12px;padding-inline:20px}.lens-expanded .lens-field-nav .lens-field-tabs button{min-width:55px;padding:9px 10px}.lens-expanded .lens-field-nav .lens-catalog-search{flex-basis:280px;min-width:220px}.lens-expanded .lens-field-nav .lens-catalog-search:focus-within{flex-basis:280px}}
+@media(max-width:760px){.lens-expanded .lens-field-nav{gap:10px;padding:12px 14px}.lens-expanded .lens-field-nav .lens-field-tabs{order:3;flex:1 0 100%;width:100%}.lens-expanded .lens-field-nav .lens-field-tabs button{min-width:0;padding:7px 6px}.lens-expanded .lens-field-nav .lens-catalog-search,.lens-expanded .lens-field-nav .lens-catalog-search:focus-within{flex:1;min-width:0;max-width:none;padding:10px 12px;font-size:12px}.lens-expanded .lens-field-nav .lens-search-count{display:none}}
+.lens-expanded .lens-field-nav{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:18px;align-items:center}
+.lens-expanded .lens-field-nav .lens-return{justify-self:start;width:max-content}
+.lens-expanded .lens-field-nav .lens-field-tabs{justify-self:center;justify-content:center;width:auto}
+.lens-expanded .lens-field-nav .lens-catalog-search,.lens-expanded .lens-field-nav .lens-catalog-search:focus-within{justify-self:end;min-width:0;width:100%;max-width:340px;flex:none}
+@media(max-width:1100px){.lens-expanded .lens-field-nav{gap:12px}.lens-expanded .lens-field-nav .lens-catalog-search{font-size:13px;padding:11px 12px}}
+@media(max-width:760px){.lens-expanded .lens-field-nav{grid-template-columns:auto minmax(0,1fr);gap:10px}.lens-expanded .lens-field-nav .lens-field-tabs{grid-column:1/-1;grid-row:2;width:100%;justify-content:center}.lens-expanded .lens-field-nav .lens-catalog-search{grid-column:2;grid-row:1;max-width:none}}
+.major-lens[data-resuming='true'] .lens-expanded,.major-lens[data-resuming='true'] .lens-expanded>.lens-field-nav,.major-lens[data-resuming='true'] .lens-expanded>.lens-expanded-body,.major-lens[data-resuming='true'] .field-photo-scenery{animation:none!important;clip-path:none!important;opacity:1;transform:none}
+.major-lens[data-resuming='true'] .lens-blade.is-expanded{animation:none!important}
+
+/* Route snapshots keep the transition on the compositor, including the return. */
+html[data-major-transition] .site-header { view-transition-name: major-site-header; }
+html[data-major-transition]::view-transition-group(root) { animation-duration: .64s; }
+html[data-major-transition]::view-transition-old(root),
+html[data-major-transition]::view-transition-new(root) { mix-blend-mode: normal; animation-fill-mode: both; }
+html[data-major-transition='open']::view-transition-old(root) { animation: major-route-recede .5s cubic-bezier(.4,0,.2,1) both; }
+html[data-major-transition='open']::view-transition-new(root) { animation: major-route-enter .64s cubic-bezier(.22,1,.36,1) both; }
+html[data-major-transition='back']::view-transition-old(root) { animation: major-route-close .5s cubic-bezier(.4,0,.2,1) both; }
+html[data-major-transition='back']::view-transition-new(root) { animation: major-route-return .64s cubic-bezier(.22,1,.36,1) both; }
+html[data-major-transition]::view-transition-group(major-site-header),
+html[data-major-transition]::view-transition-old(major-site-header),
+html[data-major-transition]::view-transition-new(major-site-header) { animation: none; }
+html[data-major-transition] .md-hero { animation: none; }
+@keyframes major-route-recede { to { opacity: 0; transform: scale(.97); } }
+@keyframes major-route-enter { from { opacity: 0; transform: translateY(32px) scale(1.035); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes major-route-close { to { opacity: 0; transform: translateY(32px) scale(1.035); } }
+@keyframes major-route-return { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+
+/* Gentle snapshot overlap avoids a blank beat between the two pages. */
+html[data-major-transition]::view-transition-group(root){animation-duration:.72s}
+html[data-major-transition='open']::view-transition-old(root){animation:major-route-recede .66s cubic-bezier(.4,0,.2,1) both}
+html[data-major-transition='open']::view-transition-new(root){animation:major-route-enter .72s cubic-bezier(.22,1,.36,1) both}
+html[data-major-transition='back']::view-transition-old(root){animation:major-route-close .66s cubic-bezier(.4,0,.2,1) both}
+html[data-major-transition='back']::view-transition-new(root){animation:major-route-return .72s cubic-bezier(.22,1,.36,1) both}
+@keyframes major-route-recede{0%{opacity:1;transform:scale(1)}30%{opacity:.85}100%{opacity:0;transform:scale(.99)}}
+@keyframes major-route-enter{0%{opacity:0;transform:translateY(14px) scale(1.012)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes major-route-close{0%{opacity:1;transform:translateY(0) scale(1)}30%{opacity:.85}100%{opacity:0;transform:translateY(14px) scale(1.012)}}
+@keyframes major-route-return{0%{opacity:0;transform:scale(.99)}100%{opacity:1;transform:scale(1)}}
+
+/* One Chinese family throughout every major card. */
+.lens-expanded .major-bento-card h3,
+.lens-expanded .major-bento-card .major-bento-overview,
+.lens-expanded .major-bento-card .major-search-field{font-family:'Major WenKai','KaiTi','Microsoft YaHei',serif;font-synthesis:none}
+.lens-expanded .major-bento-card h3{font-weight:500}
+.lens-expanded .major-bento-card .major-bento-overview{font-weight:400}
+
+/* Keep the engineering photo geometry stable during aperture transitions. */
+.lens-art-engineering .engineering-photo{transform:translateZ(0);backface-visibility:hidden}
+.major-lens[data-expanded='engineering'] .lens-art-engineering{will-change:opacity}
+
+/* Keep the engineering artwork in its entrance composition while the aperture opens. */
+.major-lens .lens-blade-engineering .lens-art-engineering{transform:none;transition:opacity 1.05s linear}
+.major-lens .lens-blade-engineering.is-expanded .engineering-photo{top:56%;height:44%;width:52%}
+.major-lens .lens-blade-engineering.is-expanded .engineering-photo-workshop{left:6%;background-position:center 38%}
+.major-lens .lens-blade-engineering.is-expanded .engineering-photo-code{right:4%;background-position:center 45%}
+@media(max-width:760px){.major-lens .lens-blade-engineering.is-expanded .engineering-photo{top:58%;height:42%;width:70%}.major-lens .lens-blade-engineering.is-expanded .engineering-photo-workshop{left:-8%}.major-lens .lens-blade-engineering.is-expanded .engineering-photo-code{right:-8%}}

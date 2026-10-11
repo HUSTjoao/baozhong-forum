@@ -1,8 +1,12 @@
  'use client'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ArrowUpRight, ArrowLeft, Search, Aperture } from 'lucide-react'
+import { ArrowLeft, Search, X } from 'lucide-react'
 import { majors as initialMajors, getAllMajors, type Major } from '@/data/majors'
+
+import MajorCardArtwork from './MajorCardArtwork'
+import useMajorNavigation from './useMajorNavigation'
+import { majorEnglishNames } from '@/data/major-english-names'
 
 type Field = 'arts' | 'science' | 'engineering' | 'medicine' | 'other'
 const fields: { id: Field; title: string; english: string; line: string; examples: string; word: string }[] = [
@@ -10,7 +14,7 @@ const fields: { id: Field; title: string; english: string; line: string; example
   { id: 'science', title: '理科', english: 'Sciences', line: '从一个问题，走向世界的规律。', examples: '数学 · 物理 · 化学', word: 'DISCOVER' },
   { id: 'engineering', title: '工科', english: 'Engineering', line: '把想象，变成可以触碰的现实。', examples: '计算机 · 电子 · 建筑', word: 'CREATE' },
   { id: 'medicine', title: '医科', english: 'Medicine', line: '认识生命，也学会守护生命。', examples: '临床 · 口腔 · 药学', word: 'CARE' },
-  { id: 'other', title: '其他', english: 'More possibilities', line: '每一种热爱，都有自己的方向。', examples: '农学 · 教育 · 经管 · 艺体', word: 'EXPLORE' }
+  { id: 'other', title: '其他', english: 'More possibilities', line: '每一种热爱，都有自己的方向。', examples: '农学 · 艺术 · 体育', word: 'EXPLORE' }
 ]
 const fieldSlogans: Record<Exclude<Field, 'engineering'>, string[]> = {
   arts: ['以诗书，涵养心性。', '以学识，回应时代。'],
@@ -19,11 +23,11 @@ const fieldSlogans: Record<Exclude<Field, 'engineering'>, string[]> = {
   other: ['循着热爱，走自己的路。', '把可能，写成新的答案。']
 }
 const fieldDisciplines: Record<Field, string[]> = {
-  arts: ['汉语言文学', '历史学', '哲学', '法学', '新闻传播', '政治学', '外国语言文学', '社会学', '考古学', '国际关系'],
+  arts: ['汉语言文学', '历史学', '哲学', '法学', '新闻传播', '政治学', '外国语言文学', '社会学', '考古学', '国际政治', '经济学', '教育学', '工商管理'],
   science: ['数学', '物理学', '化学', '生物科学', '统计学', '天文学', '地理科学', '心理学', '地质学', '生态学'],
   engineering: ['计算机', '机械工程', '能源动力工程', '电子信息', '集成电路', '船舶与海洋工程', '航空航天', '土木工程'],
   medicine: ['临床医学', '口腔医学', '药学', '护理学', '公共卫生', '中医学', '预防医学', '医学影像学', '康复治疗学', '麻醉学'],
-  other: ['教育学', '经济管理', '农学', '艺术设计', '体育学', '金融学', '会计学', '音乐学', '园林', '旅游管理']
+  other: ['农学', '园艺', '动物医学', '艺术设计', '体育教育', '视觉传达设计', '音乐学', '园林', '水产养殖学', '播音与主持艺术']
 }
 const fieldPhotos: Record<Field, number[]> = {
   arts: [19572098, 8111889, 7876088, 8730785, 12124094, 5668775, 6549912, 19069486, 6549592, 7964203],
@@ -42,6 +46,7 @@ function PhotoScenery({ field, scrollRoot, count }: { field: Field; scrollRoot: 
     if (!scroller || !layer) return
     const photos = Array.from(layer.querySelectorAll<HTMLElement>('.field-scene-photo'))
     function position() {
+      layer!.style.width = `${scroller!.clientWidth}px`
       const catalog = layer!.parentElement?.querySelector<HTMLElement>('.lens-catalog-list')
       const firstTop = (catalog?.offsetTop ?? 300) + 35
       const photoHeight = photos[0]?.offsetHeight ?? 420
@@ -71,9 +76,8 @@ function PhotoScenery({ field, scrollRoot, count }: { field: Field; scrollRoot: 
     return <div key={index} className={'field-scene-photo field-scene-' + (index % 2 ? 'right' : 'left')} style={{ '--photo-angle': `${[-4, 3, 2, -3, -2, 4][index % 6]}deg` } as React.CSSProperties}><img src={`https://images.pexels.com/photos/${photo}/pexels-photo-${photo}.jpeg?auto=compress&cs=tinysrgb&w=1400`} alt="" loading={index < 2 ? 'eager' : 'lazy'} decoding="async" onError={event => { event.currentTarget.style.visibility = 'hidden' }} /></div>
   })}</div>
 }
-// These are exploration entrances rather than official degree classifications.
+// The catalog owns the grouping; never infer disciplines from name fragments.
 function fieldOf(major: Major): Field {
-  if (/经济|金融|财政|税收|贸易|会计|财务|审计|工商|管理|营销|物流|旅游|酒店|人力资源|行政|教育|师范|学前|体育|运动|艺术|美术|音乐|舞蹈|戏剧|表演|动画|摄影|设计|广播电视编导|播音|农学|农业|林学|森林|园林|园艺|植物|动物|水产|茶学|食品|酿酒/.test(major.name)) return 'other'
   return major.category
 }
 function ScienceArtwork() {
@@ -155,10 +159,15 @@ function InteractiveFocus() {
     event.currentTarget.style.setProperty('--focus-tilt-x', `${-(event.clientY - bounds.top - bounds.height / 2) / bounds.height * 12}deg`)
     event.currentTarget.style.setProperty('--focus-tilt-y', `${(event.clientX - bounds.left - bounds.width / 2) / bounds.width * 12}deg`)
   }} onPointerLeave={event => { event.currentTarget.style.setProperty('--focus-tilt-x', '0deg'); event.currentTarget.style.setProperty('--focus-tilt-y', '0deg') }}>
-    <svg className="focus-iris" viewBox="0 0 240 240" aria-hidden="true">
-      {Array.from({ length: 5 }, (_, index) => <path key={index} d="M120 9 A111 111 0 0 1 225.6 85.7 L209 91.1 A94 94 0 0 0 120 26" transform={`rotate(${index * 72} 120 120)`} />)}
+    <svg className="focus-bezel" viewBox="0 0 240 240" aria-hidden="true">
+      <circle className="focus-bezel-track" cx="120" cy="120" r="113" />
+      {Array.from({ length: 60 }, (_, index) => <line key={index} className={index % 12 === 0 ? 'focus-bezel-mark focus-bezel-major' : 'focus-bezel-mark'} x1="120" y1="13" x2="120" y2={index % 12 === 0 ? '24' : '18'} transform={`rotate(${index * 6} 120 120)`} />)}
+      <circle className="focus-bezel-inner" cx="120" cy="120" r="98" />
     </svg>
-    <div className="focus-content"><Aperture className="focus-symbol" size={25} strokeWidth={1} aria-hidden="true" /><p lang="en">FIND YOUR FOCUS</p><h1>专业认知</h1></div>
+    <svg className="focus-iris" viewBox="0 0 240 240" aria-hidden="true">
+      {Array.from({ length: 5 }, (_, index) => <path key={index} d="M120 29 A91 91 0 0 1 205.5 89" transform={`rotate(${index * 72} 120 120)`} />)}
+    </svg>
+    <div className="focus-content"><span className="focus-ornament" aria-hidden="true"><i /><b /><i /></span><p lang="en">FIND YOUR FOCUS</p><h1>专业认知</h1><span className="focus-signature" aria-hidden="true"><i /><i /><i /><i /><i /></span></div>
   </div>
 }
 function FieldArtwork({ field }: { field: Field }) {
@@ -184,6 +193,32 @@ function FieldArtwork({ field }: { field: Field }) {
     ].map((photos, column) => <div className="other-career-column" key={column}><div className="other-career-track">{[0, 1].map(copy => <div className="other-career-group" key={copy}>{photos.map(photo => <div className="other-career-photo" key={photo} style={{ backgroundImage: `url(https://images.pexels.com/photos/${photo}/pexels-photo-${photo}.jpeg?auto=compress&cs=tinysrgb&w=1400)` }} />)}</div>)}</div></div>)}</div><div className="other-career-veil" /></>}
   </div>
 }
+function MajorCard({ major, field, showField = false }: { major: Major; field: Field; showField?: boolean }) {
+  const navigateMajor = useMajorNavigation()
+  const sentences = major.description.match(/[^。！？]+[。！？]?/g) ?? [major.description]
+  const overview = sentences.slice(0, 3).join('')
+  const englishName = majorEnglishNames[major.name]
+  function rememberCatalog(event: React.MouseEvent<HTMLAnchorElement>) {
+    const lens = event.currentTarget.closest<HTMLElement>('.major-lens')
+    try { sessionStorage.setItem('major-catalog-return', JSON.stringify({
+      field: lens?.dataset.expanded || field,
+      query: lens?.querySelector<HTMLInputElement>('.lens-catalog-search input')?.value || '',
+      scroll: lens?.querySelector('.lens-expanded-body')?.scrollTop || 0,
+      majorId: major.id,
+    })) } catch { /* Returning to the field still works if storage is unavailable. */ }
+  }
+  return <article className="major-bento-card">
+    <div className="major-bento-art" aria-hidden="true"><MajorCardArtwork field={field} /></div>
+    <div className="major-bento-content">
+      <div className="major-bento-heading">
+        <Link className="major-bento-title-link" onClick={event => { rememberCatalog(event); navigateMajor(event, 'open') }} href={'/majors/' + major.id + '/forum'} aria-label={major.name + '专业介绍与讨论'}><h3>{major.name}</h3>{englishName && <span className="major-bento-english" lang="en">{englishName}</span>}</Link>
+        {showField && <span className="major-search-field">{fields.find(item => item.id === field)?.title}</span>}
+      </div>
+      <div className="major-bento-divider" aria-hidden="true" />
+      <div className="major-bento-reading"><p className="major-bento-overview">{overview}</p></div>
+    </div>
+  </article>
+}
 export default function MajorLens() {
   const root = useRef<HTMLElement>(null)
   const catalogPanel = useRef<HTMLDivElement>(null)
@@ -197,8 +232,27 @@ export default function MajorLens() {
   const previousNavColors = useRef<{ backgroundColor: string; color: string; borderBottomColor: string } | null>(null)
   const [catalog, setCatalog] = useState(initialMajors)
   const [selected, setSelected] = useState<Field | null>(null)
+  const [resuming, setResuming] = useState(false)
   const [query, setQuery] = useState('')
-  useEffect(() => setCatalog(getAllMajors()), [])
+  const restoreScroll = useRef<number | null>(null)
+  useLayoutEffect(() => {
+    setCatalog(getAllMajors())
+    const requested = new URLSearchParams(window.location.search).get('field')
+    if (fields.some(field => field.id === requested)) {
+      lastField.current = requested as Field
+      setSelected(requested as Field)
+      if (new URLSearchParams(window.location.search).get('resume') === '1') {
+        setResuming(true)
+        try {
+          const saved = JSON.parse(sessionStorage.getItem('major-catalog-return') || 'null')
+          if (saved?.field === requested) {
+            setQuery(typeof saved.query === 'string' ? saved.query : '')
+            restoreScroll.current = Number.isFinite(saved.scroll) ? saved.scroll : 0
+          }
+        } catch { /* A missing saved position opens the requested field normally. */ }
+      }
+    }
+  }, [])
   useLayoutEffect(() => {
     const nav = catalogPanel.current?.querySelector<HTMLElement>('.lens-field-nav')
     const previous = previousNavColors.current
@@ -210,7 +264,7 @@ export default function MajorLens() {
   }, [selected])
   useLayoutEffect(() => {
     const page = document as Document & { majorLensPlayed?: boolean }
-    if (!root.current || page.majorLensPlayed || matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!root.current || new URLSearchParams(window.location.search).get('resume') === '1' || page.majorLensPlayed || matchMedia('(prefers-reduced-motion: reduce)').matches) return
     root.current.dataset.entering = 'true'
     const timer = setTimeout(() => { page.majorLensPlayed = true; root.current?.removeAttribute('data-entering') }, 2100)
     return () => clearTimeout(timer)
@@ -220,6 +274,7 @@ export default function MajorLens() {
   function open(field: Field) {
     if (closing || closeTimer.current) return
     if (field === selected) return
+    setResuming(false)
     const nav = catalogPanel.current?.querySelector('.lens-field-nav')
     if (selected && nav) {
       const style = getComputedStyle(nav)
@@ -248,23 +303,30 @@ export default function MajorLens() {
   }
   function close() {
     if (closing || closeTimer.current) return
+    setResuming(false)
     clearOutgoing(); setSlideDirection(0)
     function finish() { setSelected(null); setClosing(false); setQuery(''); closeTimer.current = null; requestAnimationFrame(() => root.current?.querySelector<HTMLButtonElement>('.lens-blade-' + lastField.current)?.focus({ preventScroll: true })) }
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return }
     setClosing(true)
     closeTimer.current = setTimeout(finish, 1050)
   }
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!selected) return
     catalogPanel.current?.scrollTo({ top: 0 })
     catalogPanel.current?.focus({ preventScroll: true })
+    const position = restoreScroll.current
+    restoreScroll.current = null
+    if (position !== null && catalogScroll.current) catalogScroll.current.scrollTop = position
     function escape(event: KeyboardEvent) { if (event.key === 'Escape') close() }
     document.addEventListener('keydown', escape)
-    return () => document.removeEventListener('keydown', escape)
+    return () => { document.removeEventListener('keydown', escape) }
   }, [selected])
   const active = fields.find(field => field.id === selected)
-  const visible = catalog.filter(major => fieldOf(major) === selected && (major.name + major.description).includes(query.trim()))
-  return <section ref={root} className="major-lens" data-expanded={selected || undefined} data-closing={closing ? 'true' : undefined} data-switching={slideDirection ? 'true' : undefined} aria-label="专业认知，选择你的学科方向">
+  const searchTerm = query.trim().toLowerCase()
+  const visible = catalog.filter(major => searchTerm
+    ? (major.name + ' ' + (majorEnglishNames[major.name] ?? '') + ' ' + major.description).toLowerCase().includes(searchTerm)
+    : fieldOf(major) === selected)
+  return <section ref={root} className="major-lens" data-resuming={resuming ? 'true' : undefined} data-expanded={selected || undefined} data-closing={closing ? 'true' : undefined} data-switching={slideDirection ? 'true' : undefined} aria-label="专业认知，选择你的学科方向">
     <div className="lens-blades" aria-hidden={selected ? true : undefined}>{fields.map((field, index) => <button key={field.id} type="button" className={'lens-blade lens-blade-' + field.id + (selected === field.id ? ' is-expanded' : '')} tabIndex={selected ? -1 : 0} onClick={() => open(field.id)} aria-label={'探索' + field.title + '专业'} style={{ '--blade-index': index } as React.CSSProperties}>
       <FieldArtwork field={field.id} />
       <div className={'lens-disciplines' + (field.id === 'engineering' ? ' engineering-disciplines' : '')}>{fieldDisciplines[field.id].map((name, disciplineIndex) => <span key={name} style={{ '--discipline-index': disciplineIndex } as React.CSSProperties}>{name}</span>)}</div>
@@ -277,11 +339,12 @@ export default function MajorLens() {
 
     {selected && <div key={selected} ref={catalogPanel} tabIndex={-1} data-slide={slideDirection || undefined} style={{ '--slide-start': `${slideDirection * 100}%` } as React.CSSProperties} className={'lens-expanded lens-expanded-' + selected} aria-label={active?.title + '专业探索'}>
       <div className="field-photo-scenery" aria-hidden="true" />
-      <nav className="lens-field-nav" aria-label="切换学科"><button className="lens-return" type="button" onClick={close}><ArrowLeft size={18} /><span>返回</span></button><div className="lens-field-tabs">{fields.map(field => <button key={field.id} className={'lens-tab-' + field.id} type="button" aria-pressed={selected === field.id} onClick={() => open(field.id)}><span>{field.title}</span></button>)}</div></nav>
+      <nav className="lens-field-nav" aria-label="切换学科"><button className="lens-return" type="button" onClick={close}><ArrowLeft size={18} /><span>返回</span></button><div className="lens-field-tabs">{fields.map(field => <button key={field.id} className={'lens-tab-' + field.id} type="button" aria-pressed={selected === field.id} onClick={() => open(field.id)}><span>{field.title}</span></button>)}</div><div className="lens-catalog-search" role="search"><Search className="lens-search-icon" size={20} /><input aria-label="搜索全部专业" placeholder="搜索全部专业 · 中文或英文" value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" className="lens-search-clear" aria-label="清空搜索" onClick={() => setQuery('')}><X size={14} /></button>}</div></nav>
       <div ref={catalogScroll} className="lens-expanded-body"><div className="lens-scroll-content"><PhotoScenery field={selected} scrollRoot={catalogScroll} count={visible.length} />
-      <div className="lens-catalog-heading"><div><p lang="en">{active?.english}</p><h2>{active?.title}<span>专业探索</span></h2><p className="lens-expanded-line">{active?.line}</p></div></div>
-      <label className="lens-catalog-search"><Search size={18} /><input aria-label="搜索当前学科专业" placeholder="寻找感兴趣的专业" value={query} onChange={event => setQuery(event.target.value)} /><span>{visible.length} 个专业</span></label>
-      <div className="lens-catalog-list">{visible.map(major => <article key={major.id}><h3>{major.name}</h3><p>{major.description}</p><Link href={'/majors/' + major.id + '/forum'}>参与专业讨论<ArrowUpRight size={16} /></Link></article>)}{!visible.length && <p className="lens-catalog-empty">暂时没有匹配的专业，试试其他关键词。</p>}</div>
+      <div className="lens-catalog-heading">
+        <div className="lens-catalog-title"><div className="lens-catalog-title-row"><h2>{active?.title}</h2><p className="lens-catalog-title-english" lang="en">{active?.english}</p></div><p className="lens-expanded-line">{active?.line}</p></div>
+      </div>
+      <div className="lens-catalog-list">{visible.map(major => <MajorCard key={major.id} major={major} field={fieldOf(major)} showField={!!searchTerm} />)}{!visible.length && <p className="lens-catalog-empty">全部专业中没有匹配结果，试试其他关键词。</p>}</div>
       </div></div>
     </div>}
   </section>

@@ -478,6 +478,7 @@ export default function MajorsPage() {
               >
                 医科
               </button>
+              <button type="button" onClick={() => setCategory('other')} className={`px-3 py-1.5 rounded-lg font-medium transition-all duration-200 border ${category === 'other' ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}`}>其他</button>
             </div>
           </div>
         </div>
@@ -516,6 +517,7 @@ export default function MajorsPage() {
                     <option value="engineering">工科</option>
                     <option value="arts">文科</option>
                     <option value="medicine">医科</option>
+                    <option value="other">其他（农学、艺术、体育）</option>
                   </select>
                 </div>
               </div>
@@ -621,7 +623,8 @@ export default function MajorsPage() {
                 science: { bg: 'bg-purple-100', text: 'text-purple-700', border: 'border-purple-200' },
                 engineering: { bg: 'bg-orange-100', text: 'text-orange-700', border: 'border-orange-200' },
                 arts: { bg: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-200' },
-                medicine: { bg: 'bg-red-100', text: 'text-red-700', border: 'border-red-200' }
+                medicine: { bg: 'bg-red-100', text: 'text-red-700', border: 'border-red-200' },
+                other: { bg: 'bg-violet-100', text: 'text-violet-700', border: 'border-violet-200' }
               }
               const colors = categoryColors[major.category]
               const universitiesDisplay = getStrongUniversitiesDisplay(major.strongUniversities)

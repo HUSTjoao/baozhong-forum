@@ -15,7 +15,8 @@
     "start": "next start -H 0.0.0.0",
     "lint": "next lint",
     "download-logos": "node scripts/download-logos.js",
-    "check-logos": "node scripts/check-logos.js"
+    "check-logos": "node scripts/check-logos.js",
+    "check:majors": "tsx scripts/check-major-catalog.ts"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.2.0",
@@ -44,4 +45,3 @@
     "typescript": "^5.3.3"
   }
 }
-

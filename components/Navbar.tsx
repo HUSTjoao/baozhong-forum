@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect, useRef, useState } from 'react'
 import { Search, X } from 'lucide-react'
-import { getUserById } from '@/data/users'
 import SiteSearch from './SiteSearch'
 
 const navItems = [
@@ -25,9 +24,26 @@ export default function Navbar() {
   const isHome = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [confirmLogout, setConfirmLogout] = useState(false)
-  const latestUser = typeof window !== 'undefined' && session?.user?.id
-    ? getUserById(session.user.id)
-    : undefined
+  const [latestUser, setLatestUser] = useState<{ name: string; nickname?: string | null; avatarUrl?: string | null } | null>(null)
+  useEffect(() => {
+    let controller: AbortController | undefined
+    setLatestUser(null)
+    const id = session?.user?.id
+    if (!id) return
+    const refreshProfile = () => {
+      controller?.abort()
+      const request = new AbortController()
+      controller = request
+      void fetch(`/api/users/${encodeURIComponent(id)}?summary=1`, { signal: request.signal, cache: 'no-store' }).then(async response => {
+        if (!response.ok) return
+        const body = await response.json()
+        if (!request.signal.aborted) setLatestUser(body.user)
+      }).catch(() => {})
+    }
+    refreshProfile()
+    window.addEventListener('profile-updated', refreshProfile)
+    return () => { controller?.abort(); window.removeEventListener('profile-updated', refreshProfile) }
+  }, [session?.user?.id])
   const avatarUrl = latestUser?.avatarUrl || session?.user?.avatarUrl
   const displayName = latestUser?.nickname || latestUser?.name || session?.user?.nickname || session?.user?.name || '我'
   useEffect(() => {

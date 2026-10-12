@@ -1,0 +1,27 @@
+.profile-deck{position:relative;width:100%;min-width:0}
+.profile-deck-stage{height:590px;position:relative;isolation:isolate}
+.profile-deck-stage:before{content:'';position:absolute;left:15%;right:15%;bottom:44px;height:42px;background:#7667561a;border-radius:50%;filter:blur(22px);pointer-events:none}
+.profile-deck .profile-swap-tile{background:#f9f7f1}
+.profile-deck .profile-activity,.profile-deck .profile-activity:nth-child(even){height:100%;margin:0;border:0;border-radius:0;background:linear-gradient(125deg,#fcfaf4,#eee9dd);box-shadow:none;padding:32px 38px;display:flex;flex-direction:column;animation:none;transform:none;transition:none}
+.profile-deck .profile-activity-reply,.profile-deck .profile-activity-reply:nth-child(even){background:linear-gradient(125deg,#f4f8f7,#e3ecea)}
+.profile-deck .profile-activity-letter,.profile-deck .profile-activity-letter:nth-child(even){background:linear-gradient(125deg,#fff6ed,#efe1d0);border-left:5px solid #b4937d}
+.profile-deck .profile-activity-meta{padding-bottom:15px;border-bottom:1px solid #8f827126;flex:none}
+.profile-deck .profile-activity-meta strong{font-size:15px;color:#5c605b}
+.profile-deck .profile-activity-meta time,.profile-deck .profile-activity-meta>div>span{font-size:13px;color:#848981}
+.profile-deck .profile-activity-body{flex:1;min-height:0;padding:22px 0 12px;overflow:hidden}
+.profile-deck .profile-activity-topic{display:block;font-family:'Profile Editorial','Songti SC',serif;color:#9b6c59;font-size:13px;margin-bottom:11px}
+.profile-deck .profile-activity-body h3{font-family:'Profile Editorial','Songti SC',SimSun,serif;font-size:28px;font-weight:400;line-height:1.55;margin:0 0 18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.profile-deck .profile-activity-body>p{font-size:16px;line-height:1.9;color:#6c7169;-webkit-line-clamp:3}
+.profile-deck .profile-activity-letter .profile-activity-body>p{font-family:'Profile Editorial','Songti SC',serif;font-size:18px}
+.profile-deck .profile-activity footer{flex:none;border-top:1px solid #8f827126;padding-top:17px;font-size:13px;color:#777f77}
+.profile-deck .profile-activity footer>a,.profile-deck .profile-activity footer>button{font-size:14px;color:#7b5b48;position:relative;z-index:4}
+.profile-deck-controls{display:flex;justify-content:center;align-items:center;gap:35px;margin:-5px 0 24px;position:relative;z-index:5}
+.profile-deck-position{display:flex;gap:10px;align-items:baseline;min-width:74px;color:#a09c91;font-family:Georgia,serif;font-size:14px}
+.profile-deck-position strong{font-size:28px;font-weight:400;color:#625449}
+.profile-deck-controls>div{display:flex;gap:10px}
+.profile-deck-controls button{width:43px;height:43px;border:1px solid #d8d2c5;border-radius:50%;display:grid;place-items:center;background:#f9f7f2;color:#786755;transition:transform .25s,background .25s,box-shadow .25s}
+.profile-deck-controls button:hover:not(:disabled){background:#ede7dd;transform:translateY(-2px);box-shadow:0 5px 10px -7px #58433399}
+.profile-deck-controls button:disabled{opacity:.35}
+.profile-activity-deck-list .profile-load-more{margin:0 auto;display:flex}
+@media(max-width:600px){.profile-deck-stage{height:565px}.profile-deck .profile-activity,.profile-deck .profile-activity:nth-child(even){padding:23px 22px}.profile-deck .profile-activity-meta{gap:6px}.profile-deck .profile-activity-meta>div{gap:6px;flex-direction:column;align-items:flex-start}.profile-deck .profile-activity-meta strong{font-size:14px}.profile-deck .profile-activity-meta time,.profile-deck .profile-activity-meta>div>span{font-size:12px}.profile-deck .profile-activity-body h3{font-size:24px;-webkit-line-clamp:3}.profile-deck .profile-activity-body>p{font-size:16px;-webkit-line-clamp:4}.profile-deck .profile-activity footer>div{gap:10px}.profile-deck .profile-activity footer{gap:9px;font-size:12px}.profile-deck .profile-activity footer>a,.profile-deck .profile-activity footer>button{font-size:13px}.profile-deck-controls{margin-top:5px}}
+@media(prefers-reduced-motion:reduce){.profile-deck-controls button{transition:none}}

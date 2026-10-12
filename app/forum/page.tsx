@@ -1,14 +1,15 @@
 'use client'
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
-import { Heart, MessageCircle, Search, Trash2, X, Plus, PenLine, Compass, ChevronUp, ChevronDown } from 'lucide-react'
+import { Heart, MessageCircle, Search, Trash2, X, Plus, PenLine, Compass } from 'lucide-react'
 import { questionsApi, formatRelativeTime, type Question } from '@/lib/api-client'
 import { CommunityModal, PageTurner } from '@/components/community/CommunityUI'
 import { forumTopics as topics, forumTopicOf as topicOf } from '@/data/forum-topics'
 import { exampleQuestions, isExampleQuestion, type ExampleQuestion } from '@/data/example-questions'
 import './forum.css'
-const wheelStep = 80
+import GradientWaves from '@/components/community/ReactBitsGradientWaves'
+import OptionWheel from '@/components/community/ReactBitsOptionWheel'
 export default function ForumPage() {
  const { data: session } = useSession()
  const [questions, setQuestions] = useState<Question[]>([])
@@ -25,38 +26,9 @@ export default function ForumPage() {
  const [notice, setNotice] = useState('')
  const [deleting, setDeleting] = useState<string | null>(null)
  const board = useRef<HTMLElement>(null)
- const wheel = useRef<HTMLElement>(null)
- const wheelFrame = useRef(0)
- const wheelTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
  const selectedTopic = Math.max(0, topics.findIndex(topic => topic.name === category))
- useEffect(() => () => { if (wheelTimer.current) clearTimeout(wheelTimer.current); cancelAnimationFrame(wheelFrame.current) }, [])
- function shapeWheel() {
-  const position = (wheel.current?.scrollTop || 0) / wheelStep
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  wheel.current?.querySelectorAll<HTMLButtonElement>('button').forEach((button, index) => {
-   const distance = index - position
-   const angle = Math.max(-1.4, Math.min(1.4, distance * wheelStep / 205))
-   button.style.setProperty('--wheel-angle', `${reduced ? 0 : -angle * 180 / Math.PI}deg`)
-   button.style.setProperty('--wheel-y', `${reduced ? 0 : 205 * Math.sin(angle) - distance * wheelStep}px`)
-   button.style.setProperty('--wheel-z', `${reduced ? 0 : 205 * (Math.cos(angle) - 1)}px`)
-   button.style.setProperty('--wheel-opacity', `${Math.max(.07, 1 - Math.abs(distance) * .27)}`)
-  })
- }
- useLayoutEffect(() => { shapeWheel() }, [])
- function selectCategory(name: string) {
-  setCategory(name)
-  wheel.current?.scrollTo({ top: Math.max(0, topics.findIndex(topic => topic.name === name)) * wheelStep, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
- }
- function settleWheel() {
-  cancelAnimationFrame(wheelFrame.current)
-  wheelFrame.current = requestAnimationFrame(shapeWheel)
-  if (wheelTimer.current) clearTimeout(wheelTimer.current)
-  wheelTimer.current = setTimeout(() => {
-   const position = wheel.current?.scrollTop || 0
-   const index = Math.max(0, Math.min(topics.length - 1, Math.round(position / wheelStep)))
-   setCategory(topics[index].name)
-  }, 140)
- }
+ const wheelItems = useMemo(() => topics.map(topic => topic.label), [])
+ function selectCategory(name: string) { setCategory(name) }
  async function load() {
   setLoading(true); setError('')
   const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 12000)
@@ -85,15 +57,7 @@ export default function ForumPage() {
   try { await questionsApi.delete(deleting); setQuestions(items => items.filter(q => q.id !== deleting)); setDeleting(null) } catch (e) { setNotice(e instanceof Error ? e.message : '删除失败'); setDeleting(null) } finally { setPending(null) }
  }
  return <div className="community-page forum-space forum-hub">
-  <div className="hub-backdrop" aria-hidden="true">
-   <div className="hub-paper-grain"/><i className="hub-color-wash hub-wash-ochre"/><i className="hub-color-wash hub-wash-blue"/>
-   <div className="hub-paper-plane hub-paper-plane-one"/><div className="hub-paper-plane hub-paper-plane-two"/>
-   <svg className="hub-background-lines" viewBox="0 0 1600 1100" fill="none" preserveAspectRatio="xMidYMin slice">
-    <g stroke="currentColor" strokeWidth=".8"><path d="M-120 200C130 80 260 260 180 490S-50 640 110 910"/><path d="M-105 214C140 96 270 273 194 499S-34 654 124 924" opacity=".45"/><path d="M1200-50C1040 170 1460 190 1500 380S1280 760 1690 930"/><path d="M1218-40C1056 184 1476 202 1517 394S1298 774 1708 943" opacity=".45"/></g>
-    <g stroke="currentColor" strokeWidth="1.2" opacity=".8"><path d="M65 660h110a20 20 0 0 1 20 20v62a20 20 0 0 1-20 20h-48l-30 25v-25H65a20 20 0 0 1-20-20v-62a20 20 0 0 1 20-20Z"/><path d="M80 693h78M80 714h51"/><path d="M1388 77h114a16 16 0 0 1 16 16v49a16 16 0 0 1-16 16h-33l-24 20v-20h-57a16 16 0 0 1-16-16V93a16 16 0 0 1 16-16Z"/><path d="M1402 104h75M1402 124h48"/></g>
-    <g stroke="currentColor" opacity=".65"><path d="M239 180v22m-11-11h22M1320 660v22m-11-11h22"/><circle cx="146" cy="358" r="4"/><circle cx="1437" cy="475" r="5"/><circle cx="105" cy="873" r="2"/></g>
-   </svg>
-  </div>
+  <div className="hub-backdrop forum-flow-backdrop" aria-hidden="true"><GradientWaves horizonColor="#ecebe5" waveColor="#54758b" crestColor="#b6c9d7" speed={.35} amplitude={2.5} waveScale={.6} waveRatio={.9} swell={35} turbulence={20} tilt={1.11} zoom={1} height={5.5} fogDepth={30} detail="low" brightness={1.05} opacity={1} mouseInteraction={false} parallaxStrength={0} grain grainIntensity={.025} className="forum-gradient-waves" /></div>
   <div className="community-shell">
    <header className="hub-header">
     <div className="hub-masthead">
@@ -111,13 +75,7 @@ export default function ForumPage() {
     <Link href="/forum/ask" className="hub-ask"><Plus size={20} />提问</Link>
    </header>
    <div className="hub-layout">
-    <aside className="hub-topics hub-topic-picker"><h2><Compass size={20} />话题</h2><div className="hub-wheel-shell"><button className="hub-wheel-arrow" aria-label="上一个话题" disabled={selectedTopic === 0} onClick={() => selectCategory(topics[selectedTopic - 1].name)}><ChevronUp size={20}/></button><div className="hub-wheel-window"><div className="hub-wheel-selection" aria-hidden="true"/><nav ref={wheel} className="hub-topic-wheel" aria-label="话题筛选" onScroll={settleWheel} onKeyDown={event => {
-      if (!['ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return
-      event.preventDefault()
-      const index = event.key === 'Home' ? 0 : event.key === 'End' ? topics.length - 1 : Math.max(0, Math.min(topics.length - 1, selectedTopic + (event.key === 'ArrowDown' ? 1 : -1)))
-      selectCategory(topics[index].name)
-      wheel.current?.querySelectorAll<HTMLButtonElement>('button')[index]?.focus({ preventScroll: true })
-     }}>{topics.map((topic, i) => <div className="hub-wheel-option" key={topic.name}><button aria-label={topic.label} aria-pressed={category === topic.name} onClick={() => selectCategory(topic.name)} style={{ '--topic-distance': Math.min(3, Math.abs(i - selectedTopic)) } as CSSProperties}><span>{topic.label}</span><small>{topic.name === '全部' ? publicQuestions.length : publicQuestions.filter(q => topicOf(q.category) === topic.name).length}</small></button></div>)}</nav></div><button className="hub-wheel-arrow" aria-label="下一个话题" disabled={selectedTopic === topics.length - 1} onClick={() => selectCategory(topics[selectedTopic + 1].name)}><ChevronDown size={20}/></button></div></aside>
+    <aside className="hub-topics hub-option-picker"><h2><Compass size={20} />话题</h2><div className="hub-option-stage"><span className="hub-option-marker" aria-hidden="true"/><OptionWheel items={wheelItems} defaultSelected={0} selected={selectedTopic} onChange={(index: number) => selectCategory(topics[index].name)} textColor="#777b7b" activeColor="#a63835" fontSize={1.75} spacing={2.1} tilt={12} curve={1} blur={.55} fade={.2} minOpacity={.12} smoothing={210} inset={32} loop={false} draggable className="forum-option-wheel" ariaLabel="话题筛选" renderItem={(label: string, index: number) => <><span>{label}</span><small>{topics[index].name === '全部' ? publicQuestions.length : publicQuestions.filter(q => topicOf(q.category) === topics[index].name).length}</small></>} /></div><p className="hub-option-instruction">滚动或拖动，选择话题</p></aside>
     <section className="forum-board hub-feed" ref={board}>
      <div className="hub-feed-heading"><h2>{category === '全部' ? '发现讨论' : category}</h2><div className="hub-sort" aria-label="问题排序">{['最新', '热议', '等你回答'].map(item => <button key={item} onClick={() => setSort(item)} aria-pressed={sort === item}>{item}</button>)}</div></div>
      {process.env.NODE_ENV === 'development' && <div className="hub-demo-toolbar"><span>{showExamples?'示例讨论 · 每个话题 3 条，内容为演示编写':'正在查看真实讨论'}</span><button onClick={()=>{setShowExamples(!showExamples);setPage(1)}}>{showExamples?'查看真实讨论':'预览示例讨论'}</button></div>}

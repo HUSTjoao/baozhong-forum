@@ -126,3 +126,10 @@
 /* Keep the immersive space flush with the footer regardless of shared-style load order. */
 .community-page.letters-space.letters-roaming{padding:0;margin-bottom:0}
 .community-page.letters-space.letters-roaming>.community-shell{height:100%;margin-bottom:0;padding-bottom:0}
+.letters-roaming{position:relative;isolation:isolate}
+.letters-scanner-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.letters-roaming>.community-shell{position:relative;z-index:1}
+.letters-scanner-backdrop .scanner-container{height:100%;width:100%}
+.letters-roaming .voyage-atmosphere{display:none}
+.letters-roaming .letters-voyage:before{background:none;box-shadow:none}
+.letters-roaming .letters-voyage:after{background:linear-gradient(#e9edf447,transparent)}

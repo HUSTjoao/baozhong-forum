@@ -7,23 +7,14 @@ import useViewportReveal from './useViewportReveal'
 type Category = '全部' | '校园' | '日常' | '四季'
 type Frame = { id: number; title: string; category: Category; x: number; y: number; width: number; height: number; color: string; src: string | null }
 
-// Replace src with local campus photos when the collection is ready.
 const frames: Frame[] = [
-  { id: 1, title: '晨光', category: '四季', x: 220, y: 130, width: 180, height: 240, color: '#e5e3d8', src: null },
-  { id: 2, title: '教学楼', category: '校园', x: 580, y: 60, width: 260, height: 180, color: '#dde1da', src: null },
-  { id: 3, title: '窗边', category: '日常', x: 1080, y: 80, width: 180, height: 220, color: '#e6e2dc', src: null },
-  { id: 4, title: '树影', category: '四季', x: 1480, y: 190, width: 230, height: 170, color: '#dfe3d5', src: null },
-  { id: 5, title: '走廊', category: '校园', x: 70, y: 520, width: 220, height: 160, color: '#e3e3dc', src: null },
-  { id: 6, title: '课间', category: '日常', x: 490, y: 430, width: 170, height: 230, color: '#e5e0d7', src: null },
-  { id: 7, title: '操场', category: '校园', x: 900, y: 400, width: 270, height: 190, color: '#dce1d8', src: null },
-  { id: 8, title: '午后', category: '四季', x: 1370, y: 550, width: 180, height: 250, color: '#e8e3d8', src: null },
-  { id: 9, title: '放学路上', category: '日常', x: 1740, y: 460, width: 180, height: 160, color: '#e0e4de', src: null },
-  { id: 10, title: '校园一角', category: '校园', x: 290, y: 870, width: 230, height: 180, color: '#e1e2d5', src: null },
-  { id: 11, title: '秋天', category: '四季', x: 780, y: 800, width: 180, height: 250, color: '#e7dfd3', src: null },
-  { id: 12, title: '同行', category: '日常', x: 1170, y: 990, width: 260, height: 180, color: '#e3e1dd', src: null },
-  { id: 13, title: '晚自习', category: '日常', x: 1640, y: 920, width: 170, height: 220, color: '#dadfd8', src: null },
+  { id: 1, title: '树影下的课间', category: '日常', x: 210, y: 410, width: 420, height: 280, color: '#364431', src: '/campus/sunlit-path.jpg' },
+  { id: 2, title: '银杏与校训', category: '四季', x: 790, y: 190, width: 420, height: 280, color: '#746a52', src: '/campus/ginkgo-leaves.jpg' },
+  { id: 3, title: '窗外的夏天', category: '校园', x: 1390, y: 280, width: 330, height: 325, color: '#50653f', src: '/campus/window-tree.jpg' },
+  { id: 4, title: '绿叶与蓝天', category: '四季', x: 190, y: 930, width: 420, height: 270, color: '#496b7f', src: '/campus/green-sky.jpg' },
+  { id: 5, title: '樱花长廊', category: '校园', x: 770, y: 650, width: 470, height: 265, color: '#7c7180', src: '/home-campus-blossoms-clean.png' },
+  { id: 6, title: '花影里的长椅', category: '日常', x: 1330, y: 900, width: 430, height: 287, color: '#786959', src: '/home-campus-bench.jpg' },
 ]
-
 export default function CampusFrames() {
   const sectionRef = useRef<HTMLElement>(null)
   const { completed, skipAnimation, replayAnimation } = useViewportReveal(sectionRef, '.campus-frames-heading, .campus-photo, .campus-frames-instruction')
@@ -148,7 +139,7 @@ export default function CampusFrames() {
         <div ref={worldRef} className="campus-frames-world">
           <div className="campus-star-cloud" aria-hidden="true" />
           <div className="campus-starfield" aria-hidden="true">{Array.from({ length: 240 }, (_, index) => <i key={index} style={{ left: `${(index * 431 + 173) % 3600 - 800}px`, top: `${(index * 317 + 97) % 2950 - 800}px`, width: index % 17 === 0 ? 3 : index % 5 === 0 ? 2 : 1, height: index % 17 === 0 ? 3 : index % 5 === 0 ? 2 : 1, opacity: .18 + index % 7 * .09, animationDelay: `${-index % 9}s`, animationDuration: `${5 + index % 7}s` }} />)}</div>
-          {frames.map(frame => <button key={frame.id} type="button" className="campus-photo" data-placeholder={!frame.src} style={{ left: frame.x, top: frame.y, width: frame.width, height: frame.height, backgroundColor: frame.src ? frame.color : 'transparent' }} aria-label={`查看${frame.title}，照片待补`} onClick={event => { if (!suppressClick.current || event.detail === 0) setSelected(frame.id) }}>
+          {frames.map(frame => <button key={frame.id} type="button" className="campus-photo" data-placeholder={!frame.src} style={{ left: frame.x, top: frame.y, width: frame.width, height: frame.height, backgroundColor: frame.src ? frame.color : 'transparent' }} aria-label={`查看${frame.title}${frame.src ? '' : '，照片待补'}`} onClick={event => { if (!suppressClick.current || event.detail === 0) setSelected(frame.id) }}>
             {frame.src ? <img src={frame.src} alt={frame.title} draggable={false} /> : <span className="campus-photo-placeholder"><span>{String(frame.id).padStart(2, '0')}</span><strong>{frame.title}</strong><small>校园照片待补</small></span>}
             <span className="campus-photo-caption">{frame.category} / {frame.title}<span>↗</span></span>
           </button>)}

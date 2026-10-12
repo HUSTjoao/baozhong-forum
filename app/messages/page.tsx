@@ -11,6 +11,7 @@ import LettersVoyage from '@/components/community/LettersVoyage'
 import LetterLikeButton from '@/components/community/LetterLikeButton'
 import { exampleLetters, isExampleLetter } from '@/data/example-letters'
 import './messages.css'
+import Scanner from '@/components/community/ReactBitsScanner'
 const author = (m: AlumniMessage) => m.user.nickname || m.user.name || (m.user as AlumniMessage['user'] & { username?: string }).username || '一位学长学姐'
 const year = (value?: number | string) => !value ? '' : typeof value === 'number' ? `${value}届` : ({ gaoyi: '高一', gaoer: '高二', gaosan: '高三' }[value] || `${value}${/^\d{4}$/.test(value) ? '届' : ''}`)
 const date = (value: string) => new Date(value).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -77,6 +78,7 @@ export default function MessagesPage() {
   try { await alumniMessagesApi.delete(deleting); setMessages(items => items.filter(m => m.id !== deleting)); if (reading === deleting) setReading(null); setDeleting(null) } catch (e) { setDeleting(null); setNotice(e instanceof Error ? e.message : '删除失败') } finally { setPending(null) }
  }
  return <div className="community-page letters-space letters-roaming">
+  <div className="letters-scanner-backdrop" aria-hidden="true"><Scanner color1="#92aabd" color2="#ffd7bf" color3="#eef1f5" speed={.22} sweepSpeed={.18} scanDirection="diagonal" brightness={1.05} contrast={1} glow={.25} vignette={.2} opacity={.85} scanline={false} grain={false} mouseInteraction={false} /></div>
   <div className="community-shell">
    <header className="letters-hero voyage-header">
     <div className="voyage-heading"><span>来自学长学姐的信{process.env.NODE_ENV==='development'&&<button className="voyage-preview-toggle" onClick={()=>{setPreview(v=>!v);setReading(null);setQuery('');setSort('最新来信')}}>{preview?'示例预览 · 查看真实来信':'预览示例寄语'}</button>}</span><h1 tabIndex={-1}>把走过的路，寄给你。</h1></div>
@@ -97,3 +99,4 @@ export default function MessagesPage() {
   {deleting && <CommunityModal title="删除寄语" close={() => setDeleting(null)}><h2>收回这封来信？</h2><p>删除后无法恢复。</p><footer><button onClick={() => setDeleting(null)}>保留来信</button><button className="community-primary" disabled={!!pending} onClick={remove}>{pending ? '正在删除…' : '确认删除'}</button></footer></CommunityModal>}
  </div>
 }
+

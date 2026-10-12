@@ -1,0 +1,26 @@
+.student-badge{position:relative;min-width:0}
+.student-badge-stage{height:570px;position:relative;overflow:hidden;isolation:isolate;background:#f7f5f1;border-radius:18px;box-shadow:inset 0 0 0 1px #ece8e0}
+.student-badge-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity .45s}
+.student-badge-stage[data-ready=true] .student-badge-canvas{opacity:1}
+.student-badge-stage[data-dragging=true] .student-badge-canvas{cursor:grabbing}
+.student-badge-shadow{position:absolute;left:calc(50% - 95px);bottom:22px;width:190px;height:15px;filter:blur(9px);border-radius:50%;background:#64544725;transform:translateX(var(--badge-shadow-x,0px));opacity:.55;pointer-events:none}
+.student-badge-tools{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:17px}
+.student-badge-tools button{display:flex;align-items:center;gap:8px;border:1px solid #e0d8cc;border-radius:7px;background:white;color:#8c7968;font:13px 'Microsoft YaHei',sans-serif;padding:8px 12px;cursor:pointer;transition:background .2s,border-color .2s}
+.student-badge-tools button:last-child{padding:9px}
+.student-badge-tools button:hover:not(:disabled){background:#f4f0e9;border-color:#bcaa94}
+.student-badge-tools button:disabled{opacity:.4;cursor:default}
+.student-badge-tools button:focus-visible{outline:2px solid #b98b72;outline-offset:4px}
+.student-badge-hint{text-align:center;font-size:11px;color:#b3a797;margin:12px 0 0;line-height:1.5}
+.student-badge-readable{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.student-badge-fallback{position:absolute;width:230px;left:calc(50% - 115px);top:154px;border:1px solid #d9d1c5;border-radius:14px;background:#faf7f1;padding:24px;box-shadow:0 15px 25px -13px #70544244;color:#807468;text-align:center}
+.badge-fallback-emblem{width:60px;height:60px;margin:0 auto 10px}
+.student-badge-fallback>span{font-size:12px}
+.badge-fallback-avatar{width:80px;height:85px;object-fit:cover;border-radius:6px;margin:20px auto 8px}
+.student-badge-fallback h2{font-size:27px;color:#463d39;margin:13px 0}
+.student-badge-fallback p{font-size:13px;line-height:1.7;margin:0}
+@media(max-width:760px){.student-badge-stage{height:470px}.student-badge-fallback{top:125px;width:210px;left:calc(50% - 105px)}.student-badge-hint{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.student-badge-canvas,.student-badge-tools button{transition:none}}
+/* Give the swinging corners room instead of clipping them to the inset surface. */
+.student-badge-stage{overflow:visible}
+.student-badge-canvas{left:-40px;right:auto;width:calc(100% + 80px)}
+@media(max-width:760px){.student-badge-canvas{left:-20px;width:calc(100% + 40px)}}

@@ -146,3 +146,20 @@
 @media(prefers-reduced-motion:reduce){.forum-hub .forum-question:hover,.forum-hub .forum-question:focus-within{translate:none}}
 .forum-hub .forum-question,.forum-hub .forum-question:nth-child(even){gap:0}
 .forum-hub .hub-question-meta{margin-bottom:0}
+.forum-hub{background:#f4f0e8;isolation:isolate}
+.forum-flow-backdrop{position:fixed;inset:88px 0 0;pointer-events:none;z-index:-1}
+.forum-gradient-waves{height:100%;width:100%}
+.forum-hub>.community-shell{position:relative;z-index:1}
+@media(max-width:760px){.forum-flow-backdrop{inset:104px 0 0}}
+.forum-hub{background:#ecebe5}
+
+/* React Bits curved picker: unframed options turn through a shared focal point. */
+.forum-hub .hub-option-picker{padding-top:0;overflow:visible}
+.hub-option-stage{height:470px;position:relative;margin-top:12px}
+.forum-option-wheel .option-wheel__item{display:flex;align-items:center;gap:22px;font-family:'Community Serif','Microsoft YaHei',serif;font-weight:400;line-height:1.4;padding:12px 0}
+.forum-option-wheel .option-wheel__item--selected{font-weight:500;text-shadow:0 1px 0 #fff8}
+.forum-option-wheel .option-wheel__item small{font:15px/1 'Community Sans',sans-serif;opacity:.65;min-width:20px}
+.hub-option-marker{position:absolute;top:50%;left:9px;width:6px;height:6px;border-radius:50%;background:#a63835;box-shadow:0 0 0 5px #a6383510;transform:translateY(-50%);z-index:1;pointer-events:none}
+.hub-option-instruction{margin:0 0 15px 32px;color:#656f75;font:15px/1.6 'Community Sans',sans-serif}
+.forum-option-wheel:focus-visible{outline:2px solid #a6383560;outline-offset:4px;border-radius:12px}
+@media(max-width:760px){.hub-option-stage{height:300px;margin-top:0}.forum-hub .hub-option-picker{padding-bottom:20px}.hub-option-instruction{margin-bottom:0}.forum-option-wheel .option-wheel__item{gap:24px}}

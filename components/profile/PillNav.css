@@ -1,0 +1,20 @@
+.profile-stage-header .profile-tabs.profile-pill-nav{height:98px;display:flex;align-items:center;justify-content:center;gap:0;padding:15px 20px;overflow:visible}
+.profile-pill-track{display:flex;gap:5px;padding:6px;background:#2d4147;border-radius:999px;box-shadow:inset 0 1px 0 #b9d0cb26,0 10px 18px -13px #17282e99;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.profile-pill-track::-webkit-scrollbar{display:none}
+.profile-pill-nav .pill{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;height:50px;min-width:104px;padding:0 22px;border:0;border-radius:999px;overflow:hidden;background:#e8e6db;color:#50615d;font-family:'Profile Editorial','Songti SC',SimSun,serif;font-size:17px;font-weight:400;line-height:1;white-space:nowrap;letter-spacing:.04em;isolation:isolate;transition:none}
+.profile-pill-nav .pill:after{display:none}
+.profile-pill-nav .pill[aria-selected=true]{font-weight:400;color:#263e42}
+.profile-pill-nav .pill:hover{color:#263e42}
+.profile-pill-nav .hover-circle{position:absolute;left:50%;bottom:0;border-radius:50%;background:#ddbc8f;z-index:1;pointer-events:none;will-change:transform;transform:translateX(-50%) scale(0)}
+.profile-pill-nav .label-stack{position:relative;display:inline-block;z-index:2;line-height:1}
+.profile-pill-nav .pill-label,.profile-pill-nav .pill-label-hover{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;line-height:1;will-change:transform;transform:translateY(0)}
+.profile-pill-nav .pill-label-hover{position:absolute;left:0;top:0;color:#273d40;opacity:0;transform:translateY(70px)}
+.profile-pill-nav .pill-count{font-family:Georgia,serif;font-size:12px;letter-spacing:0;display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 4px;border-radius:50%;background:#55666015;color:inherit}
+.profile-pill-nav .pill:focus-visible{outline:2px solid #b7854d;outline-offset:-4px}
+@media(max-width:600px){.profile-stage-header .profile-tabs.profile-pill-nav{height:87px;padding:12px 8px}.profile-pill-track{gap:3px;padding:5px}.profile-pill-nav .pill{height:44px;min-width:64px;padding:0 12px;font-size:15px;letter-spacing:0}.profile-pill-nav .pill-label,.profile-pill-nav .pill-label-hover{gap:5px}.profile-pill-nav .pill-count{min-width:16px;height:16px;font-size:11px;padding:0 2px}}
+.profile-pill-nav .label-stack{font:inherit;color:inherit}
+@font-face{font-family:'Profile Pill WenKai';src:url('/fonts/campus-intro-wenkai.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+.profile-stage-header .profile-tabs.profile-pill-nav{height:110px}
+.profile-pill-nav .pill{font-family:'Profile Pill WenKai',KaiTi,STKaiti,serif;font-size:22px;height:57px;min-width:120px;padding:0 25px;letter-spacing:.07em}
+.profile-pill-nav .pill-count{font-size:14px;min-width:23px;height:23px}
+@media(max-width:600px){.profile-stage-header .profile-tabs.profile-pill-nav{height:94px}.profile-pill-nav .pill{font-size:18px;height:49px;min-width:64px;padding:0 11px;letter-spacing:0}.profile-pill-nav .pill-count{font-size:12px;min-width:17px;height:17px}}

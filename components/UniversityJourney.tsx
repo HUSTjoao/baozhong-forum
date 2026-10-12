@@ -1,6 +1,7 @@
 'use client'
 
 import AnimationControl from './AnimationControl'
+import HomeCampusBackground from './HomeCampusBackground'
 import { useEffect, useId, useRef, useState } from 'react'
 import CollegeStrokeFragments from './CollegeStrokeFragments'
 import useScrollChapters from './useScrollChapters'
@@ -90,6 +91,7 @@ export default function UniversityJourney() {
   return (
     <section ref={sectionRef} className="university-journey" data-playing={playing} data-reduced-motion={reducedMotion} data-progress={progress.toFixed(3)} aria-labelledby="forum-title">
       <div className="university-hero journey-stage">
+        <HomeCampusBackground />
         <div className="university-hero-shade" aria-hidden="true" />
         <p className="university-hero-eyebrow journey-eyebrow" lang="en" style={{ opacity: fade, transform: `translateY(${(1 - fade) * -16}px)` }}>Baoji Middle School · University Community</p>
         <h1 id="forum-title" className="journey-title" aria-label="宝鸡中学高校论坛">

@@ -429,6 +429,14 @@ html[data-journey-active='true'] .site-header-glass.site-header-home .site-brand
 /* Scroll distance drives the story; the browser retains native scrolling. */
 .university-journey { position: relative; height: 240svh; flex-shrink: 0; }
 .journey-stage { position: sticky; top: 0; height: 100svh; min-height: 0; display: block; }
+.journey-campus-slideshow{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.journey-campus-background{position:absolute;inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);max-width:none;object-fit:cover;object-position:center 52%;filter:brightness(.82) contrast(.92) saturate(.85) blur(var(--campus-blur,.65px));opacity:0;transform:scale(1.025);pointer-events:none;user-select:none;--campus-blur:10px;transition:opacity 1.8s cubic-bezier(.22,1,.36,1),filter 1.8s ease,transform 1.8s ease}
+.journey-campus-background[data-active=true]{opacity:1;transform:scale(1);--campus-blur:.65px}
+.journey-stage .university-hero-shade{background:radial-gradient(ellipse at 50% 46%,#10192338,transparent 65%),linear-gradient(180deg,#15202c40 0%,#17202c45 48%,#121827bb 100%)}
+.journey-stage .journey-title{text-shadow:0 3px 20px #10162480}
+.journey-stage .journey-description,.journey-stage .journey-eyebrow{text-shadow:0 2px 12px #101624b3}
+@media(max-width:760px){.journey-campus-background{object-position:50% 50%;filter:brightness(.78) contrast(.92) saturate(.85) blur(var(--campus-blur,.5px))}.journey-campus-background[data-active=true]{--campus-blur:.5px}}
+@media(prefers-reduced-motion:reduce){.journey-campus-background{transition:none}}
 .journey-stage .journey-title { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); display: flex; width: max-content; margin: 0; text-indent: 0; white-space: nowrap; z-index: 3; }
 .journey-title > span { display: block; }
 .journey-school { position: relative; z-index: 4; transform-origin: center; }

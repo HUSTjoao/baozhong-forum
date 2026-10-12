@@ -1326,8 +1326,8 @@ html[data-campus-active='true'] .site-header-glass.site-header-home .site-nav > 
 .community-footer-contact a:last-child { font-family: 'Songti SC', 'SimSun', serif; font-size: 12px; line-height: 1.8; margin-top: 4px; }
 .community-footer-bottom { border-top: 1px solid #b4c2d221; padding-top: 25px; margin-top: 4px; color: #8d9eb2; }
 .community-footer-bottom button { font-family: 'Admission WenKai', 'KaiTi', serif; font-size: 12px; color: #bac9d4; }
-.community-footer-colophon { grid-column: 1 / -1; text-align: center; font-family: 'Songti SC', 'SimSun', serif; border-top: 1px solid #b4c2d221; padding-top: 16px; }
-.community-footer-colophon p { margin: 0; font-family: 'Songti SC', 'SimSun', serif; font-weight: 400; font-size: 17px; line-height: 1.9; letter-spacing: .1em; color: #aab7c5; }
+.community-footer-colophon { grid-column: 1 / -1; text-align: center; font-family: 'Admission WenKai', 'KaiTi', serif; border-top: 1px solid #b4c2d221; padding-top: 16px; }
+.community-footer-colophon p { margin: 0; font-family: 'Admission WenKai', 'KaiTi', serif; font-weight: 400; font-size: 18px; line-height: 1.9; letter-spacing: .06em; color: #aab7c5; }
 .community-footer-colophon p + p { margin-top: 5px; color: #9cacc0; }
 @media (max-width: 1000px) { .community-footer-inner { gap: 24px 32px; } .community-footer-contact a { overflow-wrap: anywhere; } }
 @media (max-width: 760px) {
@@ -1995,7 +1995,7 @@ html[data-countdown-active='true'] .site-header-glass.site-header-home .site-nav
  .future-study-meta .study-subject-icon { width: 28px; height: 28px; }
 }
 
-@media (max-width: 760px) { .community-footer-colophon p { font-size: 15px; letter-spacing: .06em; } }
+@media (max-width: 760px) { .community-footer-colophon p { font-size: 16px; letter-spacing: .04em; } }
 
 /* Compact directory filters keep the school list in focus. */
 .uni-select-filters{display:flex;gap:12px;flex:none;margin:16px 0 8px;flex-wrap:wrap}

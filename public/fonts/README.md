@@ -64,3 +64,7 @@ Revised science and medicine display titles:
 - major-science-title-v2.woff2: ZCOOL QingKe HuangYou, 理科. OFL-ZCOOLQingKeHuangYou.txt.
 - major-medicine-title-v2.woff2: ZCOOL XiaoWei, 医科. OFL-ZCOOLXiaoWei.txt.
 Both are local two-character subsets obtained from Google Fonts CSS2.
+
+Forum WenKai: LXGW WenKai Regular, locally subsetted for the forum masthead and topic labels. Source: https://raw.githubusercontent.com/lxgw/LxgwWenKai/main/fonts/TTF/LXGWWenKai-Regular.ttf. License: OFL-LXGWWenKai.txt. Body and user-written titles use a consistent system sans-serif stack.
+
+Forum Editorial: Noto Serif SC SemiBold (600), Google Fonts subset for the forum masthead and fixed topic labels. Served as WOFF2. License: OFL-NotoSerifSC.txt. Dynamic question headings use the system Songti/SimSun stack; body text uses system sans.

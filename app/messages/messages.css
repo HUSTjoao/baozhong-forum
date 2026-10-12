@@ -31,3 +31,98 @@
 @media(prefers-reduced-motion:reduce){.voyage-world,.voyage-atmosphere{will-change:auto}}
 
 .letters-roaming{height:var(--voyage-height,calc(100dvh - 112px));min-height:0}.letters-roaming .voyage-heading h1:focus{outline:none}
+
+.voyage-preview-toggle{font:11px 'Community Sans';letter-spacing:0;color:#aa7959;margin-left:18px;border-bottom:1px dashed #ba95784d;padding-bottom:2px}.voyage-letter .letter-like[hidden],.letter-full .letter-like[hidden]{display:none}
+
+/* Late-afternoon sky: cool distance, warm paper, clouds moving behind the letters. */
+.letters-roaming{background:radial-gradient(ellipse at 15% 18%,#ffdfc6b0,transparent 47%),radial-gradient(ellipse at 90% 78%,#c8bdd46b,transparent 55%),linear-gradient(165deg,#e9edf4,#c1d0df 48%,#92aabd)}
+.letters-roaming .voyage-header{background:linear-gradient(#f7f5f1f2,#f4f3f0a3);border-bottom:1px solid #fff7;box-shadow:0 12px 28px -22px #526b8766}
+.letters-voyage:before{box-shadow:inset 0 0 110px 15px #657d9325;background:linear-gradient(180deg,#edf1f31f,transparent 15%,transparent 80%,#6b829425)}
+.voyage-atmosphere{opacity:1;background:none;inset:-20%;z-index:-1}
+.voyage-atmosphere i{border:0;border-radius:0;width:1100px;height:400px;left:-10%;top:3%;background:radial-gradient(ellipse at 25% 55%,#fff6eac9,transparent 52%),radial-gradient(ellipse at 58% 45%,#fffaf2b0,transparent 43%),radial-gradient(ellipse at 83% 65%,#f8e9de8a,transparent 48%);filter:blur(12px);animation:voyage-cloud-drift 35s ease-in-out infinite alternate}
+.voyage-atmosphere i:nth-child(2){width:1250px;height:450px;left:35%;top:38%;opacity:.8;animation-duration:43s;animation-delay:-14s;background:radial-gradient(ellipse at 25% 55%,#eff5fac2,transparent 48%),radial-gradient(ellipse at 55% 45%,#f8f7f2ba,transparent 45%),radial-gradient(ellipse at 83% 65%,#dbe7f394,transparent 48%)}
+.voyage-atmosphere i:nth-child(3){width:1000px;height:360px;left:-15%;top:76%;opacity:.65;animation-duration:38s;animation-delay:-9s}
+.voyage-atmosphere i:nth-child(4){width:750px;height:300px;left:68%;top:-8%;opacity:.6;animation-duration:49s;animation-delay:-24s}
+.voyage-float{position:absolute;width:340px;height:280px;animation:voyage-letter-drift var(--float-duration,8s) ease-in-out var(--float-delay,0s) infinite;will-change:transform}
+.voyage-float .voyage-letter{position:relative;left:auto;top:auto;box-shadow:0 38px 35px -22px #3e597454,0 5px 9px #60788e17;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,rotate .45s}
+.voyage-float:hover,.voyage-float:focus-within,.letters-voyage.is-dragging .voyage-float{animation-play-state:paused}
+.voyage-float .voyage-letter:hover,.voyage-float .voyage-letter:focus-within{transform:translateY(-12px) rotate(var(--letter-angle)) scale(1.025);rotate:0deg;box-shadow:0 48px 45px -23px #38506977,0 6px 15px #536a821f}
+.voyage-controls>span{color:#586f81;text-shadow:0 1px 6px #f6f8fc}.voyage-controls>div{background:#f9f8f0db;border-color:#fff9;box-shadow:0 8px 25px #36516f22}
+@keyframes voyage-letter-drift{0%,100%{transform:translate3d(-5px,-16px,0) rotate(-.8deg)}50%{transform:translate3d(5px,16px,0) rotate(.8deg)}}
+@keyframes voyage-cloud-drift{from{transform:translate3d(-35px,8px,0)}to{transform:translate3d(55px,-18px,0)}}
+@media(max-width:760px){.voyage-atmosphere i{width:700px;height:320px}.voyage-atmosphere i:nth-child(2){left:5%;top:45%;width:900px}.voyage-float .voyage-letter:hover{transform:rotate(var(--letter-angle))}.letters-voyage:before{box-shadow:inset 0 0 60px 6px #657d931a}}
+@media(prefers-reduced-motion:reduce){.voyage-float{animation:none;will-change:auto}.voyage-atmosphere i{animation:none}.voyage-float .voyage-letter:hover{transform:rotate(var(--letter-angle))}}
+
+.voyage-letter .letter-like{min-width:42px;min-height:34px;justify-content:center;padding:5px 8px;border-radius:18px;transition:background .25s,color .25s,transform .25s}
+.voyage-letter .letter-like:hover{background:#bb76541a;transform:scale(1.08)}
+.voyage-letter .letter-like[aria-pressed=true]{background:#ad614914;color:#a65b46}
+.voyage-letter .letter-like[aria-pressed=true] svg{fill:#b96d51;stroke:#b96d51;animation:letter-like-pop .32s cubic-bezier(.2,.8,.4,1)}
+@keyframes letter-like-pop{0%{transform:scale(.8)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+
+/* A small lacquer-like seal, a rolling serif counter, and a restrained burst. */
+.voyage-letter .letter-like-crafted,.letter-full .letter-like-crafted{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:40px;min-width:72px;padding:6px 12px;border:1px solid #b9957833;border-radius:24px;color:#97765d;background:linear-gradient(145deg,#fffdf586,#eadcc52b);box-shadow:inset 0 1px 0 #fff9,0 3px 8px #86604208;overflow:visible;transition:background .35s,border-color .35s,box-shadow .35s,transform .35s}
+.voyage-letter .letter-like-crafted:hover,.letter-full .letter-like-crafted:hover{transform:translateY(-2px);background:#fff8eb;border-color:#be917864;box-shadow:inset 0 1px 0 #fff,0 5px 12px #86604218}
+.voyage-letter .letter-like-crafted[aria-pressed=true],.letter-full .letter-like-crafted[aria-pressed=true]{color:#ad604e;background:linear-gradient(145deg,#fff5ec,#eecbbb73);border-color:#bb765e55;box-shadow:inset 0 1px 0 #fff9,0 4px 10px #b5725214}
+.letter-like-glyph{display:grid;place-items:center;position:relative;width:22px;height:24px;flex-shrink:0}
+.voyage-letter .letter-like-crafted svg,.letter-full .letter-like-crafted svg{fill:transparent;stroke:currentColor;animation:none;transition:fill .2s,stroke .2s}
+.voyage-letter .letter-like-crafted[aria-pressed=true] svg,.letter-full .letter-like-crafted[aria-pressed=true] svg{fill:#ba725c;stroke:#ba725c;animation:none;filter:drop-shadow(0 1px 1px #97513c20)}
+.letter-like-glyph[data-action=like]>svg{animation:letter-heart-bloom .65s cubic-bezier(.22,1,.36,1)!important}.letter-like-glyph[data-action=unlike]>svg{animation:letter-heart-release .4s ease-out!important}
+.letter-like-ring{position:absolute;inset:-2px;border:1px solid #c38e7180;border-radius:50%;opacity:0;pointer-events:none}.letter-like-glyph[data-action=like] .letter-like-ring{animation:letter-ring-wave .65s ease-out both}
+.letter-like-particles{position:absolute;inset:0;pointer-events:none}.letter-like-particles i{position:absolute;left:50%;top:50%;width:3px;height:3px;border-radius:50%;background:#bd785b;box-shadow:0 0 3px #d8a88255;opacity:0;animation:letter-spark-flight .7s cubic-bezier(.15,.65,.3,1) var(--spark-delay) both}.letter-like-particles i:nth-child(even){width:2px;height:5px;border-radius:2px;background:#c9a274}
+.letter-like-count{position:relative;height:25px;min-width:13px;overflow:hidden;display:block;font:500 21px/25px 'Community Serif',Georgia,serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.04em;text-shadow:0 1px 0 #fff7}
+.letter-count-current{display:block}.letter-count-old{position:absolute;inset:0;display:block;pointer-events:none}.letter-like-count[data-moving=true] .letter-count-current{animation:letter-counter-in .48s cubic-bezier(.22,1,.36,1) both}.letter-count-old{animation:letter-counter-out .48s cubic-bezier(.22,1,.36,1) both}
+.letter-like-caption{font:13px 'Community Sans';color:#a58671;margin-left:0}.voyage-letter-author{min-width:0}
+@keyframes letter-heart-bloom{0%{transform:scale(.65) rotate(-12deg)}35%{transform:scale(1.22) rotate(5deg)}65%{transform:scale(.94) rotate(-2deg)}100%{transform:scale(1) rotate(0deg)}}
+@keyframes letter-heart-release{0%{transform:scale(1)}40%{transform:scale(.82) rotate(-6deg)}100%{transform:scale(1)}}
+@keyframes letter-ring-wave{0%{opacity:.6;transform:scale(.5)}75%,100%{opacity:0;transform:scale(1.8)}}
+@keyframes letter-spark-flight{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}15%{opacity:.9}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.2)}}
+@keyframes letter-counter-in{from{opacity:0;transform:translateY(var(--count-enter));filter:blur(2px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes letter-counter-out{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(var(--count-leave))}}
+@media(prefers-reduced-motion:reduce){.letter-like-glyph[data-action]>svg{animation:none!important}.letter-like-particles,.letter-like-ring,.letter-count-old{display:none}.letter-like-count[data-moving=true] .letter-count-current{animation:none}}
+
+/* The heading and tools live in the sky, with no separate top or bottom bar. */
+.letters-roaming .voyage-header{position:absolute;top:0;left:0;right:0;padding:30px 40px;z-index:4;background:none;border:0;box-shadow:none;pointer-events:none}
+.voyage-header button,.voyage-header input,.voyage-header select,.voyage-header .voyage-search{pointer-events:auto}
+.voyage-heading>span{color:#8f7a69;text-shadow:0 1px 8px #f5f1e7}
+.letters-roaming .voyage-heading h1{color:#6c594b;text-shadow:0 2px 14px #f6f0e7b0}
+.voyage-toolbar{align-self:flex-start;padding-top:10px}.voyage-search{border-color:#8f796837}.voyage-search input{color:#6f6256}.voyage-toolbar select{color:#78695c}.voyage-replay{color:#8b7d70}
+.letters-roaming .letters-voyage{height:100%;flex:1}
+.letters-voyage:after{content:'';position:absolute;top:0;left:0;right:0;height:130px;z-index:2;background:linear-gradient(#e9edf47d,#e9edf400);pointer-events:none}
+@media(max-width:1000px){.letters-roaming .voyage-header{padding:23px 24px}.voyage-toolbar{padding-top:7px}}
+@media(max-width:760px){.letters-roaming .voyage-header{padding:22px 20px;gap:12px}.voyage-toolbar{padding-top:0}.letters-voyage:after{height:175px;background:linear-gradient(#ececf1c2,#ececf172 45%,#ececf100)}}
+
+.voyage-paper-space{position:absolute;inset:0;mask-image:linear-gradient(transparent,transparent 85px,#000 175px,#000)}
+@media(max-width:760px){.voyage-paper-space{mask-image:linear-gradient(transparent,transparent 155px,#000 240px,#000)}}
+
+.voyage-toolbar .voyage-replay-text{width:auto;height:auto;display:flex;align-items:center;gap:9px;padding:10px 3px;font:14px 'Community Sans';color:#806e5f;border-radius:0;white-space:nowrap;transform:none;background:none;transition:color .3s}
+.voyage-replay-text svg{transition:transform .5s cubic-bezier(.22,1,.36,1)}.voyage-toolbar .voyage-replay-text:hover{background:none;transform:none;color:#a2674e}.voyage-replay-text:hover svg{transform:rotate(-45deg)}
+@media(max-width:760px){.voyage-toolbar{justify-content:flex-end}.voyage-toolbar .voyage-replay-text{font-size:13px;gap:8px;margin-right:5px}}
+
+/* Cards roll around a virtual sphere as their centers approach the viewport edges. */
+.voyage-orbit{position:absolute;width:340px;height:280px;transform-origin:center;will-change:transform,opacity;backface-visibility:hidden}
+.voyage-orbit>.voyage-float{position:relative;left:0;top:0}
+.voyage-orbit .voyage-letter:before{background:linear-gradient(var(--orbit-light-angle,110deg),transparent 25%,rgba(64,71,86,var(--orbit-shade,0)));z-index:1;border-radius:inherit;inset:0;border:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.voyage-orbit{transform:none!important;opacity:1!important;will-change:auto}.voyage-orbit .voyage-letter:before{background:none}}
+
+.voyage-controls .voyage-fullscreen-button{width:auto;padding:0 8px;display:flex;align-items:center;gap:8px;font:13px 'Community Sans';border-radius:16px;min-height:31px}
+.letters-roaming.voyage-fullscreen,.letters-roaming:fullscreen{position:fixed;inset:0;width:100vw;height:100dvh!important;min-height:0;z-index:15000;margin:0}
+.letters-roaming:fullscreen::backdrop{background:#c1d0df}
+.voyage-fullscreen .voyage-header{padding-top:32px}.voyage-fullscreen .voyage-controls{bottom:max(24px,env(safe-area-inset-bottom))}
+@media(max-width:760px){.voyage-controls>div{gap:4px;padding:7px 8px}.voyage-controls i{margin:0 2px}.voyage-controls .voyage-fullscreen-button{font-size:12px;gap:6px;padding:0 5px}.voyage-controls{width:max-content;max-width:calc(100% - 24px)}.voyage-fullscreen .voyage-header{padding-top:max(22px,env(safe-area-inset-top))}}
+
+.community-dialog.letter-reading-dialog{animation:none;transform-origin:center;will-change:transform,opacity;box-shadow:0 32px 95px #263b5650,0 3px 12px #77563715}
+.community-dialog.letter-reading-dialog::backdrop{background:#26384e5e;backdrop-filter:blur(7px);animation:letter-reading-backdrop-in .5s ease both}
+.community-dialog.letter-reading-closing::backdrop{animation:letter-reading-backdrop-out .44s ease both}
+.letter-reading-dialog .letter-full-address{animation:letter-reading-copy .6s .12s both}
+.letter-reading-dialog .letter-full-content{animation:letter-reading-copy .65s .22s both}
+.letter-reading-dialog .letter-full-sign,.letter-reading-dialog .letter-full>footer{animation:letter-reading-copy .6s .32s both}
+.letter-reading-closing .letter-full{transition:opacity .25s;opacity:.15;pointer-events:none}
+.letter-reading-dialog .community-close{background:linear-gradient(145deg,#fffcf1,#eee0cc);border-color:#b99a7450;box-shadow:inset 0 1px 0 #fff,0 4px 10px #7452320a}
+@keyframes letter-reading-copy{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes letter-reading-backdrop-in{from{background:#26384e00;backdrop-filter:blur(0)}to{background:#26384e5e;backdrop-filter:blur(7px)}}
+@keyframes letter-reading-backdrop-out{from{background:#26384e5e;backdrop-filter:blur(7px)}to{background:#26384e00;backdrop-filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.letter-reading-dialog,.letter-reading-dialog .letter-full>*{animation:none!important;will-change:auto}.letter-reading-dialog::backdrop{animation:none!important;backdrop-filter:none}}
+
+/* Keep the immersive space flush with the footer regardless of shared-style load order. */
+.community-page.letters-space.letters-roaming{padding:0;margin-bottom:0}
+.community-page.letters-space.letters-roaming>.community-shell{height:100%;margin-bottom:0;padding-bottom:0}

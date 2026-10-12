@@ -3,10 +3,11 @@
 import { useState, useEffect, useRef, Suspense } from 'react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
 import { LogIn, Lock, User, Eye, EyeOff, Shield } from 'lucide-react'
 // 用户数据已迁移到数据库，不再需要 localStorage
 import { getAllUniversities, type University } from '@/data/universities'
+import AuthCompanions from '@/components/auth/AuthCompanions'
+import './login.css'
 
 function LoginPageInner() {
   const router = useRouter()
@@ -18,20 +19,23 @@ function LoginPageInner() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [role, setRole] = useState<'student' | 'alumni'>('student')
+  const [identity, setIdentity] = useState<'gaoyi' | 'gaoer' | 'gaosan' | 'alumni'>('gaoyi')
+  const isAlumni = identity === 'alumni'
   const [graduationYear, setGraduationYear] = useState('')
   const [major, setMajor] = useState('')
-  const [gender, setGender] = useState<'' | 'male' | 'female' | 'prefer-not-to-say'>('')
   const [nickname, setNickname] = useState('')
   const [bio, setBio] = useState('')
   const [avatarUrl, setAvatarUrl] = useState('')
   const [universities, setUniversities] = useState<University[]>([])
-  const [schoolOption, setSchoolOption] = useState('')
+  const [schoolName, setSchoolName] = useState('')
   const [agreePromise, setAgreePromise] = useState(false)
   const [showLoginPassword, setShowLoginPassword] = useState(false)
   const [showRegPassword, setShowRegPassword] = useState(false)
   const [showRegConfirmPassword, setShowRegConfirmPassword] = useState(false)
   const [error, setError] = useState('')
+  const [privateEntry,setPrivateEntry] = useState(false)
+  const [reaction,setReaction] = useState(0)
+  const complain=(message:string)=>{setError(message);setReaction(v=>v+1)}
   const [isLoading, setIsLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [showAdminEntry, setShowAdminEntry] = useState(false)
@@ -143,12 +147,12 @@ function LoginPageInner() {
     const file = e.target.files?.[0]
     if (!file) return
     if (!file.type.startsWith('image/')) {
-      setError('请选择图片文件')
+      complain('请选择图片文件')
       return
     }
     // 原始文件限制一个上限（例如 5MB），避免超大原图
     if (file.size > 5 * 1024 * 1024) {
-      setError('图片大小不能超过 5MB')
+      complain('图片大小不能超过 5MB')
       return
     }
 
@@ -157,7 +161,7 @@ function LoginPageInner() {
       setAvatarUrl(dataUrl)
     } catch (err) {
       console.error(err)
-      setError('头像压缩失败，请尝试选择分辨率更小的图片')
+      complain('头像压缩失败，请尝试选择分辨率更小的图片')
     }
   }
 
@@ -172,14 +176,14 @@ function LoginPageInner() {
         redirect: false,
       })
       if (result?.error) {
-        setError('账号或密码错误')
+        complain('账号或密码错误')
       } else {
         const redirectUrl = callbackUrl || '/'
         router.push(redirectUrl)
         router.refresh()
       }
     } catch {
-      setError('登录失败，请重试')
+      complain('登录失败，请重试')
     } finally {
       setIsLoading(false)
     }
@@ -189,15 +193,15 @@ function LoginPageInner() {
     e.preventDefault()
     setError('')
     if (!agreePromise) {
-      setError('请先勾选承诺')
+      complain('请先勾选承诺')
       return
     }
     if (password !== confirmPassword) {
-      setError('两次输入的密码不一致')
+      complain('两次输入的密码不一致')
       return
     }
     if (password.length < 6) {
-      setError('密码长度至少6位')
+      complain('密码长度至少6位')
       return
     }
 
@@ -209,25 +213,21 @@ function LoginPageInner() {
         body: JSON.stringify({
           username,
           password,
-          name: nickname || username,
-          role,
-          universityId:
-            schoolOption && schoolOption !== '__other' ? schoolOption : undefined,
-          graduationYear: graduationYear
-            ? (['gaoyi', 'gaoer', 'gaosan', 'non-baozhong'].includes(graduationYear)
-                ? graduationYear
-                : Number(graduationYear))
+          name: nickname.trim() || username,
+          role: isAlumni ? 'alumni' : 'student',
+          universityId: isAlumni && schoolName.trim()
+            ? universities.find(uni => uni.name === schoolName.trim())?.id || schoolName.trim()
             : undefined,
-          major: major || undefined,
-          gender: gender || undefined,
-          avatarUrl: avatarUrl || undefined,
-          nickname: nickname || undefined,
-          bio: bio || undefined,
+          graduationYear: isAlumni ? (graduationYear ? Number(graduationYear) : undefined) : identity,
+          major: isAlumni ? major.trim() || undefined : undefined,
+          avatarUrl: isAlumni ? avatarUrl || undefined : undefined,
+          nickname: nickname.trim() || undefined,
+          bio: isAlumni ? bio.trim() || undefined : undefined,
         }),
       })
       const data = await response.json()
       if (!response.ok) {
-        setError(data.error || '注册失败')
+        complain(data.error || '注册失败')
         return
       }
 
@@ -242,28 +242,34 @@ function LoginPageInner() {
         redirect: false,
       })
       if (result?.error) {
-        setError('注册成功，但自动登录失败，请手动登录')
+        complain('注册成功，但自动登录失败，请手动登录')
       } else {
         const redirectUrl = callbackUrl || '/'
         router.push(redirectUrl)
         router.refresh()
       }
     } catch {
-      setError('注册失败，请重试')
+      complain('注册失败，请重试')
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#f5f7fe] via-[#eef4ff] to-[#e6f7ff]">
-      <div className="max-w-md w-full bg-white/95 rounded-2xl shadow-xl px-6 py-8">
-        <h1 className="text-2xl font-bold text-slate-900 mb-1 text-center">宝鸡中学高校论坛</h1>
-        <p className="text-center text-slate-500 mb-6 text-sm">
-          {mode === 'login' ? '登录进入校园论坛' : '注册账号，加入高校学长学姐社区'}
-        </p>
+    <div className="auth-page" data-mode={mode} data-identity={identity} onFocusCapture={event=>setPrivateEntry((event.target as HTMLElement).dataset.private==='true')} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget as Node))setPrivateEntry(false)}}>
+     <div className="auth-composition">
+      <div className="auth-illustration-garden" aria-hidden="true">
+        {['dancing', 'running', 'moshing', 'coffee', 'reading-side', 'plant', 'loving', 'roller-skating', 'clumsy', 'dog-jump', 'sitting', 'unboxing', 'meditating', 'reading', 'rolling', 'selfie', 'swinging'].map((name, index) => (
+          <img key={name} className={`auth-surround-scene scene-${index}`} src={`/illustrations/login/${name}.svg`} alt="" />
+        ))}
+      </div>
+      <section className="auth-form-panel">
+       <AuthCompanions privateEntry={privateEntry||(mode==='login'?showLoginPassword:showRegPassword||showRegConfirmPassword)} failed={!!error} reaction={reaction}/>
+       <div className="auth-form-introduction">
+        <h1 className="auth-form-brand">宝鸡中学高校论坛</h1>
+        <p className="auth-form-intro">{mode==='login'?'登录，继续那些还没聊完的话。':'留下你的名字，认识更多同行的人。'}</p>
 
-        <div className="flex mb-6 rounded-full bg-slate-100 p-1">
+        <div className="auth-mode-switch flex mb-6 rounded-full bg-slate-100 p-1">
           <button
             type="button"
             onClick={() => {
@@ -293,22 +299,24 @@ function LoginPageInner() {
         </div>
 
         {/* 管理员入口开关 */}
-        <div className="mb-4 flex items-center justify-end">
+        <div className="auth-admin-switch mb-4 flex items-center justify-end">
           <button
             type="button"
             onClick={() => {
               setShowAdminEntry((prev) => !prev)
               setAdminError('')
             }}
+            aria-label="管理员入口" title="管理员入口"
             className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-primary-600 transition-colors"
           >
             <Shield className="w-3.5 h-3.5" />
-            <span>管理员入口</span>
           </button>
         </div>
 
+       </div>
+       <div className="auth-form-content">
         {error && (
-          <div className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
+          <div role="alert" className="auth-form-error mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
             {error}
           </div>
         )}
@@ -345,12 +353,12 @@ function LoginPageInner() {
         {mode === 'login' ? (
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-slate-600 mb-1">账号</label>
+              <label htmlFor="auth-username" className="block text-xs font-medium text-slate-600 mb-1">账号</label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   type="text"
-                  value={username}
+                  autoComplete="username" id="auth-username" value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 pl-9 pr-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                   placeholder="请输入账号"
@@ -363,7 +371,7 @@ function LoginPageInner() {
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
-                  type={showLoginPassword ? 'text' : 'password'}
+                  data-private="true" autoComplete="current-password" type={showLoginPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 pl-9 pr-9 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
@@ -372,9 +380,8 @@ function LoginPageInner() {
                 />
                 <button
                   type="button"
-                  onClick={() => setShowLoginPassword(!showLoginPassword)}
+                  aria-label={showLoginPassword?'隐藏密码':'显示密码'} aria-pressed={showLoginPassword} onClick={() => setShowLoginPassword(!showLoginPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                  tabIndex={-1}
                 >
                   {showLoginPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -390,283 +397,87 @@ function LoginPageInner() {
           </form>
         ) : (
           <form onSubmit={handleRegister} className="space-y-4">
-            {/* 头像放在最上方：点击圆形直接上传 */}
-            <div className="flex flex-col items-center gap-2 pb-1">
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="relative h-20 w-20 rounded-full border-2 border-primary-100 bg-slate-100 overflow-hidden flex items-center justify-center shadow-sm cursor-pointer hover:border-primary-300 hover:shadow-md transition-all"
-              >
-                {avatarUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={avatarUrl} alt="预览头像" className="h-full w-full object-cover" />
-                ) : nickname ? (
-                  <span className="text-2xl font-semibold text-primary-500">
-                    {nickname.trim().charAt(0)}
-                  </span>
-                ) : (
-                  <span className="text-xs text-slate-400">上传头像</span>
-                )}
-              </button>
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                onChange={handleAvatarChange}
-                className="hidden"
-              />
-            </div>
-
-            {/* 账号与密码 */}
-            <div className="space-y-3">
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">账号</label>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 pl-9 pr-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                    placeholder="用于登录的账号"
-                    required
-                  />
-                </div>
+            <div className="auth-register-fields">
+              <div className="auth-field-wide auth-register-account">
+                <label htmlFor="register-username">账号</label>
+                <input id="register-username" autoComplete="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="用于登录的账号" required />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">密码</label>
+                <label htmlFor="register-password">密码</label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  <input
-                    type={showRegPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 pl-9 pr-9 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                    placeholder="至少 6 位"
-                    minLength={6}
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowRegPassword(!showRegPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                    tabIndex={-1}
-                  >
+                  <input id="register-password" data-private="true" autoComplete="new-password" type={showRegPassword ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)} placeholder="至少 6 位" minLength={6} required className="pr-10" />
+                  <button type="button" aria-label={showRegPassword ? '隐藏密码' : '显示密码'} aria-pressed={showRegPassword} onClick={() => setShowRegPassword(!showRegPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                     {showRegPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">确认密码</label>
+                <label htmlFor="register-confirm">确认密码</label>
                 <div className="relative">
-                  <input
-                    type={showRegConfirmPassword ? 'text' : 'password'}
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 pr-9 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                    placeholder="再次输入密码"
-                    minLength={6}
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowRegConfirmPassword(!showRegConfirmPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                    tabIndex={-1}
-                  >
-                    {showRegConfirmPassword ? (
-                      <EyeOff className="h-4 w-4" />
-                    ) : (
-                      <Eye className="h-4 w-4" />
-                    )}
+                  <input id="register-confirm" data-private="true" autoComplete="new-password" type={showRegConfirmPassword ? 'text' : 'password'} value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="再次输入密码" minLength={6} required className="pr-10" />
+                  <button type="button" aria-label={showRegConfirmPassword ? '隐藏确认密码' : '显示确认密码'} aria-pressed={showRegConfirmPassword} onClick={() => setShowRegConfirmPassword(!showRegConfirmPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                    {showRegConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
               </div>
-            </div>
-
-            {/* 学校（选填，包含其他，仅学长/学姐显示） */}
-            {role === 'alumni' && (
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">学校（选填）</label>
-                <select
-                  value={schoolOption}
-                  onChange={(e) => setSchoolOption(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                >
-                  <option value="">不选择学校</option>
-                  {universities.map((uni) => (
-                    <option key={uni.id} value={uni.id}>
-                      {uni.name}
-                    </option>
-                  ))}
-                  <option value="__other">其他（不在列表）</option>
-                </select>
+              <div className="auth-register-nickname">
+                <label htmlFor="register-nickname">昵称（选填）</label>
+                <input id="register-nickname" value={nickname} onChange={e => setNickname(e.target.value)} placeholder="留空使用账号" />
               </div>
-            )}
-
-            {/* 基本信息 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">昵称</label>
-                <input
-                  type="text"
-                  value={nickname}
-                  onChange={(e) => setNickname(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                  placeholder="在论坛中展示的名字，可留空使用账号"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">身份</label>
-                <select
-                  value={role}
-                  onChange={(e) => {
-                    const nextRole = e.target.value as 'student' | 'alumni'
-                    setRole(nextRole)
-                    setGraduationYear('')
-                    if (nextRole === 'student') {
-                      setSchoolOption('')
-                      setMajor('')
-                    }
-                  }}
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                >
-                  <option value="student">学生</option>
-                  <option value="alumni">
-                    {gender === 'female' ? '学姐' : gender === 'male' ? '学长' : '学长/学姐'}
-                  </option>
+              <div className="auth-register-identity">
+                <label htmlFor="register-role">身份</label>
+                <select id="register-role" value={identity} onChange={e => setIdentity(e.target.value as typeof identity)}>
+                  <option value="gaoyi">高一</option>
+                  <option value="gaoer">高二</option>
+                  <option value="gaosan">高三</option>
+                  <option value="alumni">毕业生</option>
                 </select>
               </div>
             </div>
-
-            {/* 年级 / 毕业年份 + 专业 + 性别 */}
-            {role === 'student' ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {isAlumni && <details className="auth-optional-profile">
+              <summary>补充个人资料 <span>全部选填</span></summary>
+              <div className="auth-register-fields">
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">年级</label>
-                  <select
-                    value={graduationYear}
-                    onChange={(e) => setGraduationYear(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                  >
-                    <option value="">请选择</option>
-                    <option value="gaoyi">高一</option>
-                    <option value="gaoer">高二</option>
-                    <option value="gaosan">高三</option>
+                  <label htmlFor="register-year">毕业年份（选填）</label>
+                  <select id="register-year" value={graduationYear} onChange={e => setGraduationYear(e.target.value)}>
+                    <option value="">暂不填写</option>
+                    {Array.from({ length: new Date().getFullYear() - 1994 }, (_, i) => new Date().getFullYear() - i).map(year => <option key={year} value={year}>{year} 年</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">性别（选填）</label>
-                  <select
-                    value={gender}
-                    onChange={(e) =>
-                      setGender(e.target.value as '' | 'male' | 'female' | 'prefer-not-to-say')
-                    }
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                  >
-                    <option value="">不选择</option>
-                    <option value="male">男</option>
-                    <option value="female">女</option>
-                    <option value="prefer-not-to-say">不愿透露</option>
-                  </select>
+                  <label htmlFor="register-school">学校（选填）</label>
+                  <input id="register-school" autoComplete="organization" value={schoolName} onChange={e => setSchoolName(e.target.value)} maxLength={100} placeholder="输入你的学校名称" />
+                </div>
+                <div className="auth-field-wide">
+                  <label htmlFor="register-major">专业（选填）</label>
+                  <input id="register-major" value={major} onChange={e => setMajor(e.target.value)} placeholder="例如：计算机科学与技术" />
+                </div>
+                <div className="auth-field-wide auth-profile-avatar">
+                  <button type="button" onClick={() => fileInputRef.current?.click()} aria-label="上传头像" className="auth-avatar-upload">
+                    {avatarUrl ? <img src={avatarUrl} alt="预览头像" /> : <User size={24} />}
+                  </button>
+                  <div>头像（选填）<small>点击上传，也可以稍后再添加。</small></div>
+                  <input ref={fileInputRef} type="file" accept="image/*" onChange={handleAvatarChange} className="hidden" />
+                </div>
+                <div className="auth-field-wide">
+                  <label htmlFor="register-bio">自我介绍（选填）</label>
+                  <textarea id="register-bio" value={bio} onChange={e => setBio(e.target.value)} rows={2} maxLength={200} placeholder="说说你的兴趣或学习方向" />
                 </div>
               </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">毕业年份</label>
-                  <select
-                    value={graduationYear}
-                    onChange={(e) => setGraduationYear(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                  >
-                    <option value="">请选择</option>
-                    <option value="non-baozhong">非宝鸡中学毕业生</option>
-                    {Array.from(
-                      { length: new Date().getFullYear() - 1994 },
-                      (_, idx) => 1995 + idx
-                    )
-                      .reverse()
-                      .map((year) => (
-                        <option key={year} value={year}>
-                          {year}届
-                        </option>
-                      ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">
-                    专业<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={major}
-                    onChange={(e) => setMajor(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                    placeholder="例如：计算机科学与技术"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">性别（选填）</label>
-                  <select
-                    value={gender}
-                    onChange={(e) =>
-                      setGender(e.target.value as '' | 'male' | 'female' | 'prefer-not-to-say')
-                    }
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
-                  >
-                    <option value="">不选择</option>
-                    <option value="male">男</option>
-                    <option value="female">女</option>
-                    <option value="prefer-not-to-say">不愿透露</option>
-                  </select>
-                </div>
-              </div>
-            )}
-
-            {/* 自我介绍 */}
-            <div>
-              <label className="block text-xs font-medium text-slate-600 mb-1">自我介绍（选填）</label>
-              <textarea
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
-                rows={3}
-                maxLength={200}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 resize-none"
-                placeholder="可以写学科方向、兴趣爱好等，让同学更了解你"
-              />
-            </div>
-
-            {/* 承诺勾选 */}
-            <div className="flex items-start gap-2 rounded-md bg-slate-50 px-3 py-2 border border-slate-100">
-              <input
-                type="checkbox"
-                checked={agreePromise}
-                onChange={(e) => setAgreePromise(e.target.checked)}
-                className="mt-0.5 h-3.5 w-3.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
-              />
-              <p className="text-[11px] leading-relaxed text-slate-600">
-                作为宝鸡中学学生，我承诺遵守法律法规，对自己在论坛上的一切言论负责。
-              </p>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isLoading || !agreePromise}
-              className="w-full rounded-lg bg-gradient-to-r from-[#005BAC] to-[#0066CC] py-2.5 text-sm font-semibold text-white shadow-md hover:from-[#004A8C] hover:to-[#0055AA] transition disabled:bg-slate-400 disabled:cursor-not-allowed"
-            >
+            </details>}
+            <label className="auth-registration-promise">
+              <input type="checkbox" checked={agreePromise} onChange={e => setAgreePromise(e.target.checked)} />
+              <span>我承诺遵守法律法规，对自己在论坛上的言论负责。</span>
+            </label>
+            <button type="submit" disabled={isLoading || !agreePromise}>
               {isLoading ? '注册中...' : '完成注册，进入论坛'}
             </button>
           </form>
         )}
 
-        <div className="mt-4 text-center text-xs text-slate-400">
-          <Link href="/" className="hover:text-primary-600">
-            返回首页
-          </Link>
-        </div>
-      </div>
+       </div>
+      </section>
+     </div>
     </div>
   )
 }

@@ -77,3 +77,72 @@
 /* Snap the stable rows; their visual faces rotate independently. */
 .hub-wheel-option{height:80px;scroll-snap-align:center;scroll-snap-stop:always}
 .forum-hub .hub-topics .hub-topic-wheel button{scroll-snap-align:none;scroll-snap-stop:normal}
+
+/* A layered editorial backdrop: warm paper, cool ink, and quiet conversation traces. */
+.forum-hub{background:linear-gradient(145deg,#f2eae0,#f6f3ed 42%,#e5ebed 100%)}
+.hub-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;user-select:none}
+.hub-paper-grain{position:absolute;inset:0;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%239b8167' filter='url(%23g)' opacity='.3' d='M0 0h160v160H0z'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+.hub-color-wash{position:absolute;display:block;width:900px;height:700px;filter:blur(25px);border-radius:50%;opacity:.65;pointer-events:none}
+.hub-wash-ochre{top:-350px;left:-280px;background:radial-gradient(ellipse,#d8b99665,transparent 68%);animation:hub-wash-breathe 22s ease-in-out infinite alternate}
+.hub-wash-blue{right:-330px;top:360px;background:radial-gradient(ellipse,#b9ced366,transparent 70%);animation:hub-wash-breathe 28s -11s ease-in-out infinite alternate-reverse}
+.hub-paper-plane{position:absolute;pointer-events:none;background:linear-gradient(120deg,#fff9f188,#f4e8d446);border:1px solid #b99a7724;box-shadow:0 20px 65px -35px #80674633;transform:rotate(-19deg);border-radius:5px}
+.hub-paper-plane-one{width:600px;height:300px;top:-130px;right:-130px}.hub-paper-plane-two{width:430px;height:700px;left:-340px;top:550px;transform:rotate(15deg);background:linear-gradient(125deg,#dfc9b335,#fffaf252)}
+.hub-background-lines{position:absolute;top:0;left:0;width:100%;height:1100px;color:#947651;opacity:.23}
+.forum-hub .hub-header{border-bottom:1px solid #9f896423;margin-bottom:24px}
+.forum-hub .hub-topic-picker h2{color:#79644f}.forum-hub .hub-topic-wheel button{text-shadow:0 1px 0 #fff9}
+.forum-hub .forum-question{box-shadow:0 16px 28px -23px #66544347,0 1px 3px #77634d0a;border-color:#d6cabb86}
+@keyframes hub-wash-breathe{from{transform:translate3d(0,0,0) scale(1);opacity:.55}to{transform:translate3d(25px,16px,0) scale(1.07);opacity:.75}}
+@media(max-width:760px){.hub-background-lines{width:850px;left:-75px;opacity:.14}.hub-paper-plane-one{right:-310px}.hub-wash-ochre{left:-460px}.hub-wash-blue{right:-540px;top:650px}.forum-hub .hub-header{margin-bottom:19px}}
+@media(prefers-reduced-motion:reduce){.hub-color-wash{animation:none;filter:none}}
+
+
+/* A compact dialogue identity and strong editorial typography. */
+@font-face{font-family:'Forum Editorial';src:url('/fonts/forum-editorial.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+.forum-hub{font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}
+.forum-hub .hub-header{align-items:center;gap:34px;padding:31px 0 29px}
+.hub-masthead{flex-shrink:0}
+.hub-brand-line{display:flex;align-items:center;gap:16px}
+.hub-dialogue-mark{width:52px;height:52px;flex:none;filter:drop-shadow(0 3px 1px #50342b0a)}
+.forum-hub .hub-masthead h1{font:600 40px/1.3 'Forum Editorial','Songti SC','SimSun',serif;color:#303336;letter-spacing:.02em;margin:0;white-space:nowrap}
+.hub-masthead p{font:400 15px/1.7 'PingFang SC','Microsoft YaHei',sans-serif;color:#7b7168;margin-top:13px;letter-spacing:.04em;padding-left:68px}
+.forum-hub .hub-search input{font:400 17px/1.5 'PingFang SC','Microsoft YaHei',sans-serif}
+.forum-hub .hub-ask{font:500 17px/1.5 'PingFang SC','Microsoft YaHei',sans-serif;padding:13px 24px;letter-spacing:.03em}
+.forum-hub .hub-topic-picker h2,.forum-hub .hub-feed-heading h2{font:600 23px/1.5 'Forum Editorial','Songti SC','SimSun',serif;color:#393c3b;letter-spacing:.02em}
+.forum-hub .hub-topics .hub-topic-wheel button{font:600 25px/1.4 'Forum Editorial','Songti SC','SimSun',serif;letter-spacing:.02em;text-shadow:none}
+.forum-hub .hub-topic-wheel small{font:400 15px/1.3 Georgia,serif;font-variant-numeric:tabular-nums}
+.forum-hub .question-main h3{font:600 26px/1.6 'Songti SC','SimSun','Noto Serif CJK SC',serif;color:#292e31;letter-spacing:.01em}
+.forum-hub .question-main p{font:400 17px/1.95 'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;color:#716d67;letter-spacing:.005em;margin-top:16px}
+.forum-hub .question-author,.forum-hub .question-author a,.forum-hub .question-top{font:400 15px/1.5 'PingFang SC','Microsoft YaHei',sans-serif;color:#645e58}
+.forum-hub .question-author time{font:400 14px/1.5 'PingFang SC','Microsoft YaHei',sans-serif;color:#968c81}
+.forum-hub .hub-sort button,.forum-hub .question-actions button,.forum-hub .question-actions a,.forum-hub .hub-question-end a{font:400 15px/1.5 'PingFang SC','Microsoft YaHei',sans-serif}
+.forum-hub .hub-category{font:400 14px/1.5 'PingFang SC','Microsoft YaHei',sans-serif}
+.forum-hub .community-empty h3{font:600 27px/1.5 'Songti SC','SimSun',serif}
+.forum-hub .community-empty p{font:400 17px/1.8 'PingFang SC','Microsoft YaHei',sans-serif}
+@media(max-width:1100px){.hub-brand-line{gap:12px}.hub-dialogue-mark{width:46px;height:46px}.forum-hub .hub-masthead h1{font-size:35px}.hub-masthead p{padding-left:58px;font-size:14px}.forum-hub .hub-topics .hub-topic-wheel button{font-size:23px}}
+@media(max-width:760px){
+.forum-hub .hub-header{gap:19px;padding:24px 0 26px}.hub-brand-line{gap:10px}.hub-dialogue-mark{width:40px;height:40px}.forum-hub .hub-masthead h1{font-size:31px}.hub-masthead p{font-size:13px;margin-top:11px;padding-left:0;letter-spacing:.015em}.forum-hub .hub-ask{font-size:16px;padding:11px 18px}.forum-hub .hub-search input{font-size:16px}.forum-hub .hub-topic-picker h2,.forum-hub .hub-feed-heading h2{font-size:21px}.forum-hub .hub-topics .hub-topic-wheel button{font-size:23px}.forum-hub .question-main h3{font-size:23px;line-height:1.65}.forum-hub .question-main p{font-size:16px;line-height:1.9}.forum-hub .hub-sort button{font-size:14px}
+}
+
+/* Independent discussion cards, with shared alignment and a clear hover lift. */
+.forum-hub .forum-question-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:5px 0 15px;align-items:stretch}
+.forum-hub .forum-question,.forum-hub .forum-question:nth-child(even){display:flex;flex-direction:column;width:100%;margin:0;padding:25px 25px 22px;background:linear-gradient(135deg,#fffefa,#fbf8f3);border:1px solid #e1d8cc;border-radius:20px;box-shadow:0 3px 0 #ddd4c56b,0 15px 28px -23px #66544365;transition:translate .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}
+.forum-hub .forum-question:nth-child(even){background:linear-gradient(135deg,#fffdf9,#f4f0e9)}
+.forum-hub .forum-question:hover,.forum-hub .forum-question:focus-within{translate:0 -5px;border-color:#baa392;box-shadow:0 5px 0 #ddd4c554,0 23px 35px -23px #66544366;background:#fffdf8;padding:25px 25px 22px}
+.forum-hub .hub-question-meta{gap:12px;align-items:flex-start}
+.forum-hub .question-main{display:block;flex:1;margin-top:19px;min-width:0}
+.forum-hub .question-main h3{font-size:23px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:74px}
+.forum-hub .question-main p{font-size:16px;line-height:1.85;-webkit-line-clamp:3;margin-top:12px}
+.forum-hub .question-bottom{margin-top:25px;padding-top:17px;border-top:1px solid #bca99024;gap:10px;flex-wrap:wrap}
+.forum-hub .question-actions{gap:15px}.forum-hub .question-actions a,.forum-hub .hub-question-end a{font-size:14px}
+.hub-demo-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 2px 20px;color:#8c8175;font-size:14px;line-height:1.6}
+.hub-demo-toolbar button{color:#854b49;border-bottom:1px solid #a87a6650;white-space:nowrap;padding:2px 0}
+.hub-example-detail h2{font:600 29px/1.55 'Songti SC','SimSun',serif;margin:20px 0}
+.hub-example-detail>p,.hub-example-replies p{font:400 17px/1.9 'PingFang SC','Microsoft YaHei',sans-serif;color:#635f58}
+.hub-example-label{font-size:14px;color:#98776b}
+.hub-example-replies{margin-top:30px}.hub-example-replies h3{font-size:21px;margin-bottom:16px}
+.hub-example-replies article{padding:17px 19px;background:#f4efe7;border-radius:13px;margin:12px 0}.hub-example-replies strong{font-size:14px;font-weight:500;color:#8f7666}.hub-example-replies p{margin-top:8px}
+@media(max-width:1100px){.forum-hub .forum-question-grid{grid-template-columns:1fr}.forum-hub .question-main h3{min-height:0;font-size:25px}}
+@media(max-width:760px){.forum-hub .forum-question-grid{gap:22px}.forum-hub .forum-question,.forum-hub .forum-question:hover,.forum-hub .forum-question:focus-within{padding:23px 20px}.forum-hub .question-main h3{font-size:23px}.forum-hub .question-main p{font-size:16px}.hub-demo-toolbar{font-size:13px;align-items:flex-start;gap:12px}.hub-demo-toolbar span{max-width:210px}.hub-example-detail h2{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.forum-hub .forum-question:hover,.forum-hub .forum-question:focus-within{translate:none}}
+.forum-hub .forum-question,.forum-hub .forum-question:nth-child(even){gap:0}
+.forum-hub .hub-question-meta{margin-bottom:0}

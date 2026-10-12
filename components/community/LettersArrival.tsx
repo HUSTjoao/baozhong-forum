@@ -13,6 +13,37 @@ const destination: Coordinate = [107.2, 34.36]
 const origins: Coordinate[] = [[-74,40.7],[-122.4,37.8],[-0.12,51.5],[2.35,48.9],[151.2,-33.9],[103.8,1.35],[139.7,35.7],[116.4,39.9],[121.5,31.2],[113.3,23.1],[13.4,52.5],[55.3,25.2]]
 const rad = Math.PI / 180
 const ease = (x: number) => { const t = Math.max(0, Math.min(1,x)); return t*t*(3-2*t) }
+function Starfield({started}:{started:number}) {
+ const canvas=useRef<HTMLCanvasElement>(null)
+ useEffect(()=>{
+  const el=canvas.current,ctx=el?.getContext('2d');if(!el||!ctx)return
+  let frame=0,width=0,height=0,last=0
+  const random=(i:number)=>{const v=Math.sin(i*127.1+311.7)*43758.5453;return v-Math.floor(v)}
+  const stars=Array.from({length:420},(_,i)=>({x:random(i*7+1),y:random(i*7+2),depth:random(i*7+3),phase:random(i*7+4)*Math.PI*2,speed:.5+random(i*7+5)*.5}))
+  const resize=()=>{width=el.clientWidth;height=el.clientHeight;const dpr=Math.min(devicePixelRatio,1.5);el.width=Math.round(width*dpr);el.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+  const observer=new ResizeObserver(resize);observer.observe(el);resize()
+  const draw=(now:number)=>{
+   if(now-last<30){frame=requestAnimationFrame(draw);return}last=now
+   const t=(now-started)/1000,approach=ease((t-4.4)/2.8),count=Math.min(420,Math.max(130,Math.round(width*height/4000)))
+   ctx.clearRect(0,0,width,height)
+   // A quiet, diffuse band behind the stars, rather than a repeating dot pattern.
+   ctx.save();ctx.translate(width*.78,height*.22);ctx.rotate(-.4);ctx.scale(1,.26)
+   const haze=ctx.createRadialGradient(0,0,0,0,0,width*.58);haze.addColorStop(0,'#8097c60a');haze.addColorStop(.45,'#73899d05');haze.addColorStop(1,'#647a9900');ctx.fillStyle=haze;ctx.fillRect(-width,-height,width*2,height*2);ctx.restore()
+   for(let i=0;i<count;i++){
+    const star=stars[i],near=star.depth>.93,medium=star.depth>.72
+    const depth=near?1:medium?.5:.18,scale=1+approach*depth*.12
+    const x=(star.x*width-width/2)*scale+width/2+Math.sin(t*.09+star.phase)*depth*4,y=(star.y*height-height/2)*scale+height/2+t*depth*.55
+    const radius=near?1.25:medium?.8:.35+star.depth*.35,alpha=(near?.75:medium?.43:.20)*(1+Math.sin(t*star.speed+star.phase)*.18)
+    ctx.fillStyle=`rgba(${i%5===0?'244,214,170':'201,219,242'},${alpha})`;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill()
+    if(near){const glow=ctx.createRadialGradient(x,y,0,x,y,7);glow.addColorStop(0,`rgba(205,222,245,${alpha*.24})`);glow.addColorStop(1,'rgba(205,222,245,0)');ctx.fillStyle=glow;ctx.fillRect(x-7,y-7,14,14)}
+    if(star.depth>.985){ctx.strokeStyle=`rgba(209,228,247,${alpha*.36})`;ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(x-4,y);ctx.lineTo(x+4,y);ctx.moveTo(x,y-4);ctx.lineTo(x,y+4);ctx.stroke()}
+   }
+   if(t<11.3)frame=requestAnimationFrame(draw)
+  }
+  frame=requestAnimationFrame(draw);return()=>{cancelAnimationFrame(frame);observer.disconnect()}
+ },[started])
+ return <canvas ref={canvas} className="arrival-stars" aria-hidden="true"/>
+}
 function Globe({ started, plane }: { started: number; plane: RefObject<HTMLDivElement> }) {
  const canvas = useRef<HTMLCanvasElement>(null)
  useEffect(() => {
@@ -163,7 +194,7 @@ export default function LettersArrival({ replay = 0 }: { replay?: number }) {
  },[replay])
  if(!active || !started)return null
  return createPortal(<div className="letters-arrival" data-stage={stage} role="dialog" aria-modal="true" onKeyDown={event => { if(event.key === 'Tab'){event.preventDefault();skip.current?.focus()} }} aria-label="来自世界各地的寄语，纸飞机飞回宝中">
-  <div className="arrival-stars" aria-hidden="true"/>{started>0&&<Globe started={started} plane={plane}/>}
+  <Starfield started={started}/>{started>0&&<Globe started={started} plane={plane}/>}
   <div className="arrival-copy"><span>致，正在出发的你</span><h2>走得再远，<br/>总有一些话想带回宝中。</h2><p>让一封封寄语，飞向最初的地方。</p></div>
   <div ref={plane} className="arrival-flight-plane"><div className="arrival-paper-pose"><PaperPlane/></div></div>
   <div className="arrival-home-caption" aria-hidden="true">宝鸡 · 宝鸡中学</div>

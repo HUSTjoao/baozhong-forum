@@ -415,15 +415,12 @@ export default function UserProfilePage() {
                         <span>{user.major}</span>
                       </div>
                     )}
-                    {user.role === 'alumni' && userUniversity && (
+                    {user.role === 'alumni' && user.universityId && (
                       <div className="flex items-center gap-2">
                         <GraduationCap className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                        <Link
-                          href={`/universities/${userUniversity.id}`}
-                          className="hover:text-primary-600 transition-colors duration-200"
-                        >
-                          {userUniversity.name}
-                        </Link>
+                        {userUniversity ? (
+                          <Link href={`/universities/${userUniversity.id}`} className="hover:text-primary-600 transition-colors duration-200">{userUniversity.name}</Link>
+                        ) : <span>{user.universityId}</span>}
                       </div>
                     )}
                     {user.graduationYear && (

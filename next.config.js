@@ -9,7 +9,11 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+// Development and production builds must not overwrite each other's assets.
+module.exports = (phase) => ({
+  ...nextConfig,
+  distDir: phase === require('next/constants').PHASE_DEVELOPMENT_SERVER ? '.next-dev' : '.next',
+})
 
 
 

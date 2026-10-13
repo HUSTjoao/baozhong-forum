@@ -1103,3 +1103,4 @@ html[data-major-transition='back']::view-transition-new(root){animation:major-ro
 .major-lens .lens-blade-engineering.is-expanded .engineering-photo-workshop{left:6%;background-position:center 38%}
 .major-lens .lens-blade-engineering.is-expanded .engineering-photo-code{right:4%;background-position:center 45%}
 @media(max-width:760px){.major-lens .lens-blade-engineering.is-expanded .engineering-photo{top:58%;height:42%;width:70%}.major-lens .lens-blade-engineering.is-expanded .engineering-photo-workshop{left:-8%}.major-lens .lens-blade-engineering.is-expanded .engineering-photo-code{right:-8%}}
+.lens-contribute-link{display:inline-flex;margin-top:20px;color:inherit;font:21px/1.6 'Profile Letter WenKai','Songti SC',serif;text-decoration:underline;text-underline-offset:6px;opacity:.8}

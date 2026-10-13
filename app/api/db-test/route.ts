@@ -1,16 +1,8 @@
-// 暂时移除实际数据库访问逻辑，避免影响现有站点运行。
-// 这里只保留一个占位接口，后续真正上云时再改为使用 Prisma 访问云数据库。
-
-export async function GET() {
-  return new Response(
-    JSON.stringify({
-      ok: true,
-      message: '数据库结构已同步到 Supabase，当前站点仍使用本地存储运行。',
-    }),
-    {
-      status: 200,
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    }
-  )
+import { NextResponse } from 'next/server'
+export const dynamic='force-dynamic'
+export const runtime='nodejs'
+export async function GET(){
+ try{const {prisma}=await import('@/lib/prisma');await prisma.$queryRaw`SELECT 1`;await prisma.$transaction([prisma.user.count(),prisma.university.count(),prisma.major.count(),prisma.question.count(),prisma.reply.count(),prisma.alumniMessage.count()]);return NextResponse.json({ok:true},{headers:{'Cache-Control':'no-store'}})}
+ catch{return NextResponse.json({ok:false,error:'数据库连接或表结构检查失败'},{status:503,headers:{'Cache-Control':'no-store'}})}
 }
 

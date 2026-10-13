@@ -153,6 +153,20 @@
 @media(max-width:760px){.forum-flow-backdrop{inset:104px 0 0}}
 .forum-hub{background:#ecebe5}
 
+/* A raised two-position switch, with one continuous sliding selection. */
+.forum-hub .hub-sort{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,1fr);gap:0;width:224px;padding:5px;border:1px solid #65767c28;border-radius:18px;background:linear-gradient(145deg,#e1e5e3c9,#f7f7f0b8);box-shadow:inset 0 2px 5px #435a6410,0 1px 0 #fff9;flex-shrink:0}
+.forum-hub .hub-sort::before{content:'';position:absolute;z-index:0;left:5px;top:5px;bottom:5px;width:calc((100% - 10px)/2);border-radius:13px;background:linear-gradient(145deg,#fffef9,#f0f4f2);border:1px solid #fff;box-shadow:0 3px 8px #263f4d20,inset 0 1px 0 #fff;transition:transform .42s cubic-bezier(.22,1,.36,1)}
+.forum-hub .hub-sort[data-sort='热议']::before{transform:translateX(100%)}
+.forum-hub .hub-sort button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:8px 12px;border:0;border-radius:13px;background:transparent;box-shadow:none;font:400 19px/1.4 'Community Serif','Songti SC',serif;letter-spacing:.04em;color:#6b787c;transition:color .25s}
+.forum-hub .hub-sort button::after{display:none}
+.forum-hub .hub-sort button[aria-pressed=true]{color:#873f3d;background:transparent;box-shadow:none}
+.forum-hub .hub-sort button:hover{color:#394e58}
+.forum-hub .hub-sort button:focus-visible{outline:2px solid #496f83;outline-offset:2px}
+.forum-hub .hub-sort button svg{stroke-width:1.6;transition:transform .3s}
+.forum-hub .hub-sort button[aria-pressed=true] svg{transform:translateY(-1px)}
+@media(max-width:760px){.forum-hub .hub-sort{width:194px;border-radius:16px}.forum-hub .hub-sort button{font-size:17px;min-height:40px;gap:7px}.forum-hub .hub-feed-heading{gap:12px}}
+@media(prefers-reduced-motion:reduce){.forum-hub .hub-sort::before,.forum-hub .hub-sort button,.forum-hub .hub-sort button svg{transition:none}}
+
 /* React Bits curved picker: unframed options turn through a shared focal point. */
 .forum-hub .hub-option-picker{padding-top:0;overflow:visible}
 .hub-option-stage{height:470px;position:relative;margin-top:12px}
@@ -161,5 +175,18 @@
 .forum-option-wheel .option-wheel__item small{font:15px/1 'Community Sans',sans-serif;opacity:.65;min-width:20px}
 .hub-option-marker{position:absolute;top:50%;left:9px;width:6px;height:6px;border-radius:50%;background:#a63835;box-shadow:0 0 0 5px #a6383510;transform:translateY(-50%);z-index:1;pointer-events:none}
 .hub-option-instruction{margin:0 0 15px 32px;color:#656f75;font:15px/1.6 'Community Sans',sans-serif}
+
+@media(min-width:761px){
+ html:has(.forum-hub){overflow:hidden}
+ .forum-hub{position:fixed;inset:var(--forum-top,88px) 0 0;min-height:0;padding-bottom:0;z-index:1}
+ .forum-hub>.community-shell{height:100%;display:flex;flex-direction:column;min-height:0}
+ .forum-hub .hub-header{flex:none;margin-bottom:14px}
+ .forum-hub .hub-layout{flex:1;min-height:0;align-items:stretch;padding-bottom:20px}
+ .forum-hub .hub-option-picker{position:relative;top:0;min-height:0;display:flex;flex-direction:column}
+ .forum-hub .hub-option-stage{height:auto;flex:1;min-height:160px;max-height:470px}
+ .forum-hub .hub-feed{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-width:thin;scrollbar-color:#70879566 transparent;padding:0 13px 30px 3px;scrollbar-gutter:stable}
+ .forum-hub .hub-feed:focus-visible{outline:0}
+ .forum-hub .hub-feed-heading{position:sticky;top:0;z-index:3;background:linear-gradient(180deg,#ecebe5f5,#ecebe5eb);backdrop-filter:blur(12px);border-radius:0 0 16px 16px;margin-bottom:8px}
+}
 .forum-option-wheel:focus-visible{outline:2px solid #a6383560;outline-offset:4px;border-radius:12px}
 @media(max-width:760px){.hub-option-stage{height:300px;margin-top:0}.forum-hub .hub-option-picker{padding-bottom:20px}.hub-option-instruction{margin-bottom:0}.forum-option-wheel .option-wheel__item{gap:24px}}

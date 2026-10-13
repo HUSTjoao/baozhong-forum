@@ -114,7 +114,7 @@ export default function AdminPage() {
     setUserMajors(getUserAddedMajors())
     setQuestions(getQuestions())
     setReports(getReports())
-    
+
     const allMessages: any[] = []
     allUsers.forEach((u) => {
       if (u.alumniMessages && u.alumniMessages.length > 0) {
@@ -183,7 +183,7 @@ export default function AdminPage() {
   const handleConfirmReject = () => {
     if (!rejectingItem) return
 
-    const ok = rejectingItem.type === 'university' 
+    const ok = rejectingItem.type === 'university'
       ? deleteUserUniversity(rejectingItem.id, rejectionReason)
       : deleteUserMajor(rejectingItem.id, rejectionReason)
 
@@ -287,6 +287,7 @@ export default function AdminPage() {
               <h1 className="text-xl sm:text-2xl font-semibold text-slate-900">
                 管理员控制台
               </h1>
+              <Link href="/admin/catalog" className="inline-flex mt-3 text-lg text-sky-800">大学与专业申请审核 ↗</Link>
               <p className="mt-1 text-sm text-slate-500">
                 对用户发言进行管理，并审核用户提交的大学和专业信息，保障论坛内容质量。
               </p>
@@ -354,7 +355,7 @@ export default function AdminPage() {
                 <button
                   key={tab.id}
                   type="button"
-                  onClick={() => setActiveTab(tab.id as AdminTab)}
+                  onClick={() => tab.id==='universities'||tab.id==='majors'?router.push('/admin/catalog'):setActiveTab(tab.id as AdminTab)}
                   className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
                     activeTab === tab.id
                       ? 'bg-indigo-600 text-white'
@@ -800,7 +801,7 @@ export default function AdminPage() {
                             </div>
                           )}
                         </div>
-                        
+
                         <div className="rounded-lg bg-white/80 p-3 border border-slate-100">
                           <div className="text-[11px] text-slate-400 mb-1">被举报内容：</div>
                           {r.targetTitle && <div className="text-sm font-bold mb-1">{r.targetTitle}</div>}

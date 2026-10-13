@@ -11,7 +11,7 @@ import UniversityDiscussion from '@/components/universities/UniversityDiscussion
 export const dynamic = 'force-dynamic'
 export default async function UniversityDetailPage({ params }: { params: { id: string } }) {
   const profile = await prisma.universityProfile.findUnique({ where: { id: params.id }, include: { university: true } })
-  if (!profile) notFound()
+  if (!profile || profile.university.isApproved !== true) notFound()
   const theme = campusTheme(profile.id, profile.accent)
   const university = profile.university
   const culture = campusCulture(profile.id, profile.motto)
@@ -27,7 +27,7 @@ export default async function UniversityDetailPage({ params }: { params: { id: s
         <div className="uni-school-facts"><span><MapPin size={16} />{university.province === university.city ? university.city : university.province + ' · ' + university.city}</span><div className="uni-campus-levels">{levels.map(level => <span key={level}>{level}</span>)}</div></div>
         {culture && <p className="uni-school-motto">{culture}</p>}
         <CampusIntroduction text={profile.introduction || '这所大学的校园资料正在整理，欢迎先在下面分享你的校园见闻。'} />
-        
+
       </div>
     </section>
     <UniversityDiscussion universityId={params.id} initialComments={comments} count={count} />

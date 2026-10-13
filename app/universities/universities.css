@@ -734,3 +734,4 @@ html[data-campus-travel=close] .uni-campus{--campus-lift:0px!important;--campus-
 .uni-map-explorer .uni-card-bottom{margin-top:6px;padding-top:10px}
 @media(min-width:761px) and (max-width:1099px){.uni-map-explorer .uni-campus h2{font-size:23px}.uni-map-explorer .uni-campus-en{font-size:19px}}
 @media(max-width:760px){.uni-map-explorer .uni-campus{min-height:200px;padding:20px 22px 16px}.uni-map-explorer .uni-campus h2{font-size:28px}.uni-map-explorer .uni-campus-en{font-size:21px}.uni-map-explorer .uni-card-bottom{margin-top:6px;padding-top:10px}}
+.uni-contribute-link{display:inline-flex;margin:24px 0;color:#497181;font:21px/1.6 'Community Hand','Songti SC',serif}

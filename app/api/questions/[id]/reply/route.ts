@@ -15,7 +15,7 @@ export async function POST(
 
   const { prisma } = await import('@/lib/prisma')
   const session = await getServerSession(authOptions)
-  
+
   if (!session?.user?.id) {
     return NextResponse.json({ error: '请先登录后再发表评论。' }, { status: 401 })
   }
@@ -25,13 +25,19 @@ export async function POST(
   const isAnonymous = !!body?.isAnonymous
   const parentReplyId = body?.parentReplyId?.toString() || null
 
-  if (!content) {
-    return NextResponse.json({ error: '回复内容不能为空' }, { status: 400 })
+  if (!content || content.length > 3000) {
+    return NextResponse.json({ error: '回复内容需为 1–3000 字' }, { status: 400 })
   }
 
   const questionId = params.id
 
   try {
+    if (!await prisma.question.findUnique({ where: { id: questionId }, select: { id: true } })) {
+      return NextResponse.json({ error: '讨论不存在' }, { status: 404 })
+    }
+    if (parentReplyId && !await prisma.reply.findFirst({ where: { id: parentReplyId, questionId }, select: { id: true } })) {
+      return NextResponse.json({ error: '要回复的评论不属于这条讨论' }, { status: 400 })
+    }
     // 1. 检查用户状态
     const dbUser = await prisma.user.findUnique({
       where: { id: session.user.id as string },

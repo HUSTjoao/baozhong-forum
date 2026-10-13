@@ -28,24 +28,12 @@ export async function GET(
             role: true,
           },
         },
-        // 核心修改：通过 filtering 确保第一层只显示顶级评论
+        // Read every reply level; the shared frontend builds the comment tree.
         replies: {
-          where: {
-            parentReplyId: null // 重点：只找直接回复帖子的，不找回复别人的
-          },
           orderBy: { date: 'asc' },
           include: {
             replier: {
               select: { id: true, nickname: true, avatarUrl: true }
-            },
-            // 嵌套查询子回复（楼中楼）
-            children: {
-              orderBy: { date: 'asc' },
-              include: {
-                replier: {
-                  select: { id: true, nickname: true, avatarUrl: true }
-                }
-              }
             },
             likesRel: true // 加载评论的点赞信息
           }

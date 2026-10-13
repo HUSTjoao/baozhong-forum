@@ -1,5 +1,7 @@
 # Homepage title font
 
+Current first-screen typography: `home-description-serif.woff` is a locally subsetted Source Han Serif SC ExtraLight for the homepage title, description, university labels and motto. Source: https://github.com/adobe-fonts/source-han-serif/tree/release/OTF/SimplifiedChinese . License: OFL-SourceHanSerif.txt. English retains its original Georgia eyebrow and local Cormorant Garamond italic motto. Regenerate title fragments with `python scripts/generate-college-strokes.py --font public/fonts/home-description-serif.woff`; its 1.35em SVG baseline is 1107.5 for ascent=1151/descent=-286.
+
 `baozhong-title.ttf` is the Noto Serif SC Regular subset served by Google Fonts
 for the homepage title `宝鸡中学高校论坛`, its Chinese description, and motto
 `从宝中出发，在这里相逢`.
@@ -70,3 +72,7 @@ Forum WenKai: LXGW WenKai Regular, locally subsetted for the forum masthead and 
 Forum Editorial: Noto Serif SC SemiBold (600), Google Fonts subset for the forum masthead and fixed topic labels. Served as WOFF2. License: OFL-NotoSerifSC.txt. Dynamic question headings use the system Songti/SimSun stack; body text uses system sans.
 
 Profile badge: Source Han Sans SC Regular (Adobe), local WOFF converted from the official OTF, retaining Latin, punctuation and CJK glyph coverage. Canvas card text and numerals use this font consistently. Source: https://github.com/adobe-fonts/source-han-sans/tree/release/OTF/SimplifiedChinese . License: OFL-SourceHanSans.txt.
+
+Campus badge revision: profile-source-serif.woff is Source Han Serif SC Regular, locally subsetted with GB2312 common Chinese characters and Latin/punctuation coverage; rare characters fall back to the system serif. All badge text now uses this serif family; the previous Source Han Sans remains available for activity-card body text. Source: https://github.com/adobe-fonts/source-han-serif . License: OFL-SourceHanSerif.txt.
+
+Profile expanded reading: profile-reading-wenkai.woff is LXGW WenKai Regular, from https://github.com/lxgw/LxgwWenKai/blob/main/fonts/TTF/LXGWWenKai-Regular.ttf . Subset covers GB2312 common Chinese, Latin, punctuation; uncommon characters fall back to locally hosted Source Han Serif. License: OFL-LXGWWenKai.txt. Used for expanded reading titles, paragraphs and author/date typography.

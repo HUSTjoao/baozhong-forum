@@ -17,7 +17,7 @@ export async function POST(
 
   // 动态导入 Prisma，避免在构建时初始化
   const { prisma } = await import('@/lib/prisma')
-  
+
   const session = await getServerSession(authOptions)
   if (!session?.user?.id) {
     return NextResponse.json(
@@ -34,10 +34,11 @@ export async function POST(
       where: { id: replyId },
       select: {
         replierId: true,
+        questionId: true,
       },
     })
 
-    if (!reply) {
+    if (!reply || reply.questionId !== questionId) {
       return NextResponse.json(
         { error: '回复不存在' },
         { status: 404 },
@@ -52,17 +53,19 @@ export async function POST(
       )
     }
 
-    await prisma.reply.delete({
-      where: { id: replyId },
-    })
-
-    // 重新统计回复数量
-    const repliesCount = await prisma.reply.count({
-      where: { questionId },
-    })
-    await prisma.question.update({
-      where: { id: questionId },
-      data: { repliesCount },
+    await prisma.$transaction(async tx => {
+      const replies = await tx.reply.findMany({ where: { questionId }, select: { id: true, parentReplyId: true } })
+      const descendants: string[] = [], seen = new Set<string>()
+      const visit = (id: string) => {
+        if (seen.has(id)) return
+        seen.add(id); descendants.push(id)
+        replies.filter(item => item.parentReplyId === id).forEach(item => visit(item.id))
+      }
+      visit(replyId)
+      await tx.replyLike.deleteMany({ where: { replyId: { in: descendants } } })
+      for (const id of descendants.reverse()) await tx.reply.delete({ where: { id } })
+      const repliesCount = await tx.reply.count({ where: { questionId } })
+      await tx.question.update({ where: { id: questionId }, data: { repliesCount } })
     })
 
     return NextResponse.json({ ok: true })

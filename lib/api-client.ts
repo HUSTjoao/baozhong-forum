@@ -102,8 +102,11 @@ export interface AlumniMessage {
 // Questions API
 export const questionsApi = {
   // 获取所有问题
-  async list(signal?: AbortSignal): Promise<Question[]> {
-    const res = await fetch('/api/questions/list', { signal })
+  async list(signal?: AbortSignal, filters?: { majorId?: string; universityId?: string }): Promise<Question[]> {
+    const search = new URLSearchParams()
+    if (filters?.majorId) search.set('majorId', filters.majorId)
+    if (filters?.universityId) search.set('universityId', filters.universityId)
+    const res = await fetch('/api/questions/list' + (search.size ? '?' + search.toString() : ''), { signal })
     if (!res.ok) {
       const error: ApiError = await res.json()
       throw new Error(error.error || '加载问题列表失败')

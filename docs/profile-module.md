@@ -40,3 +40,13 @@ https://about.fb.com/news/2011/09/tell-your-story-with-timeline/
 
 卡面中文、数字统一使用本地思源黑体（SIL OFL），覆盖常用及扩展中文与基本拉丁字符，并按固定基线对齐。左上角返回使用浏览器来源历史，没有历史时返回首页。动态最多同时露出四张卡片，减小景深缩放、加大间距以减少重叠。
 
+
+Dynamic cards use React Bits Border Glow (https://reactbits.dev/components/border-glow), the shared MIT + Commons Clause license, and uniform pale surfaces with pointer-following mesh borders. Titles use Source Han Serif; body and metadata use Source Han Sans. Card Swap remains the navigation interaction.
+
+设计要求：字体和字号必须在校园名片、动态卡片及展开阅读态分别检查，不能保留默认弹窗排版。用户偏好有辨识度、清晰的字形和足够可读的字号；标题、正文、作者和日期应共享明确的对齐线。展开阅读态沿用 Border Glow，宋体标题与正文、黑体元信息，移动端单独调整字号与滚动空间。
+
+持续设计偏好：用户明确拒绝截图中默认粗黑标题搭配普通系统黑体正文的弹窗样式。后续设计必须主动选择有辨识度、优美且可读的字体，不能只改 font-family 名称而未验证字形是否实际加载。标题、正文、署名分别检查字号、字重、行距和视觉对齐；避免默认粗体、细小辅助文字及千篇一律的排版。当前个人主页展开阅读标题与正文改用本地霞鹜文楷，标题 34–48px、正文 25px，手机标题 32px、正文 22px。每次调整必须检查实际展开态。
+
+名片操作栏、拖拽提示和动态分类导航同步使用同一完整常用字霞鹜文楷字库，避免只替换阅读弹窗。桌面操作 20px、提示 21px、分类 25px；手机分别 16px、19px、21px。保留操作功能和 Pill Nav 原生动画。
+
+用户随后澄清两处栏位需要同步的是颜色：操作栏和动态分类采用阅读卡片的蓝灰色系，浅冰蓝选中面与深色底形成对比，避免旧灰绿色操作栏、米白/金色分类按钮与页面脱节。

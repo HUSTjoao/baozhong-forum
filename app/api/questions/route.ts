@@ -33,7 +33,8 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   try {
     const universityId = new URL(req.url).searchParams.get('universityId')
-    const questions = await prisma.question.findMany({ where: universityId ? { universityId } : {}, orderBy: { date: 'desc' }, take: 50, select: { id: true, title: true, content: true, universityId: true, majorId: true, date: true, isAnonymous: true, askerName: true, likes: true, repliesCount: true } })
+    const majorId = new URL(req.url).searchParams.get('majorId')
+    const questions = await prisma.question.findMany({ where: { ...(universityId ? { universityId } : {}), ...(majorId ? { majorId } : {}) }, orderBy: { date: 'desc' }, take: 50, select: { id: true, title: true, content: true, universityId: true, majorId: true, date: true, isAnonymous: true, askerName: true, likes: true, repliesCount: true } })
     return NextResponse.json(questions.map(q => ({ ...q, askerName: q.isAnonymous ? '匿名同学' : q.askerName })))
   } catch { return NextResponse.json({ error: '加载讨论失败，请稍后重试' }, { status: 500 }) }
 }

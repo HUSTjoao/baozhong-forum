@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma'
 import UniversityExplorer from '@/components/universities/UniversityExplorer'
 export const dynamic = 'force-dynamic'
 export default async function UniversitiesPage() {
-  const profiles = await prisma.universityProfile.findMany({ include: { university: true }, orderBy: { createdAt: 'asc' } })
+  const profiles = await prisma.universityProfile.findMany({ where:{university:{isApproved:true}},include: { university: true }, orderBy: { createdAt: 'asc' } })
   const order = getAllUniversities().map(u => u.id).filter(id => id !== 'hust')
   order.splice(7, 0, 'hust')
   const positions = new Map(order.map((id, index) => [id, index]))

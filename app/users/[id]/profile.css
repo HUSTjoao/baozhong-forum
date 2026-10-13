@@ -396,9 +396,92 @@
 @media(max-width:600px){.profile-page .profile-return{font-size:16px}}
 .profile-page .profile-return .profile-return-label,.profile-page .profile-return .profile-return-icon{margin:0;color:inherit}
 
+/* Continue the upper theatre's blue-grey space through the activity area. */
+.profile-page{background:radial-gradient(ellipse at 10% 80%,#54718225,transparent 50%),linear-gradient(180deg,#1d3349 0%,#21394e 60%,#304c60 100%);color:#e7edf0}
+.profile-stage-header .profile-tabs.profile-pill-nav{background:linear-gradient(180deg,#263f53eb,#294759b8);border:1px solid #cfdee125;border-bottom:0;box-shadow:inset 0 1px 0 #f1f6ed16,0 -10px 35px -24px #071827;backdrop-filter:blur(14px)}
+.profile-stage-timeline{background:transparent;border:0;box-shadow:none;padding-top:32px}
+.profile-page .profile-feed-heading{margin-bottom:8px;padding:0 8px 16px;border-bottom:1px solid #c3d7df20}
+.profile-page .profile-feed-heading h2{font:400 25px/1.4 'Profile Card Serif','Songti SC',serif;color:#e3ebed}
+.profile-page .profile-feed-search{padding:7px 12px;border:1px solid #b9d4df35;border-radius:12px;background:#bcd4db0a;color:#c0d5df;gap:10px}
+.profile-page .profile-feed-search input{font-family:'Profile Card Sans',sans-serif;font-size:16px;width:160px;color:#eef3f4;border:0;padding:5px 0}
+.profile-page .profile-feed-search input::placeholder{color:#b3c9d4}
+.profile-page .profile-feed-search:focus-within{border-color:#d4e4db80;background:#c0d8df14}
+.profile-page .profile-pill-track{background:#122c3d80;box-shadow:inset 0 1px 0 #d3e6ee22,0 8px 24px -18px #0009}
+.profile-page .profile-deck-controls .profile-deck-position{color:#a6bdc9}
+.profile-page .profile-deck-position strong{color:#f0e5d5}
+.profile-page .profile-deck-controls>div{background:linear-gradient(135deg,#456172,#294557);border-color:#bcd4df35;box-shadow:inset 0 1px 0 #dce9e922,0 10px 25px -18px #051c2b}
+.profile-page .profile-deck-controls button{color:#d8e5ea;background:transparent;box-shadow:none}
+.profile-page .profile-deck-controls button:first-child,.profile-page .profile-deck-controls button:last-child{background:#e0edf008;box-shadow:none}
+.profile-page .profile-deck-controls button:hover:not(:disabled){background:#b4d5dc22;color:#fff}
+.profile-page .profile-load-more{font-size:18px;color:#d4e4e9;border-color:#c2dce244;background:#afcfda0d}
+.profile-page .profile-empty,.profile-page .profile-empty p{color:#b5cbd6}
+.profile-page .profile-empty h3{color:#eef3ef}
+@media(max-width:600px){.profile-page .profile-feed-heading h2{font-size:22px}.profile-page .profile-feed-search input{font-size:15px;width:110px}.profile-page .profile-feed-search{padding:5px 9px}}
+
+.community-dialog.profile-reading-dialog{width:min(980px,calc(100vw - 48px));padding:4px;background:transparent;border-radius:28px;overflow:visible;max-height:none;box-shadow:0 36px 100px #071c2d33}
+.profile-reading-dialog::backdrop{background:#10233482;backdrop-filter:blur(14px) saturate(.8)}
+.profile-reading-dialog .community-close{z-index:5;right:26px;top:26px;width:44px;height:44px;background:#f4f1e9;border-color:#9aaeb43d;color:#3d555e;box-shadow:inset 0 1px 0 #fff;transition:background .25s,transform .25s}
+.profile-reading-dialog .community-close:hover{rotate:none;transform:scale(1.06);background:#e7efef}
+.profile-reading-glow>.border-glow-inner{max-height:calc(100dvh - 72px);overflow:auto;border-radius:24px;scrollbar-width:thin;scrollbar-color:#a9b8b9 transparent}
+.profile-reading-dialog .profile-reading{padding:48px 62px 34px;color:#2a414b;font-family:'Profile Card Sans','Microsoft YaHei',sans-serif}
+.profile-reading-dialog .profile-reading-category{display:flex;align-items:center;gap:15px;font:17px/1.5 'Profile Card Sans',sans-serif;color:#94704f;padding-right:50px}
+.profile-reading-category>span{padding-left:15px;border-left:1px solid #94704f40;color:#6f8188}
+.profile-reading-dialog .profile-reading h2{font:400 clamp(30px,3.2vw,44px)/1.5 'Profile Card Serif','Songti SC',serif;color:#243d48;letter-spacing:.02em;margin:20px 0 22px;overflow-wrap:anywhere;text-wrap:pretty}
+.profile-reading-byline{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:26px;border-bottom:1px solid #b4c3c64d;font:17px/1.5 'Profile Card Sans',sans-serif;color:#62757e}
+.profile-reading-byline>span{display:inline-flex;align-items:center;gap:11px}
+.profile-reading-byline img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#dce8e8}
+.profile-reading-byline strong{font-weight:400;color:#3f5964}
+.profile-reading-dialog .profile-reading time{color:#62757e}
+.profile-reading-content{padding:30px 0 26px}
+.profile-reading-dialog .profile-reading-content p{font:400 23px/1.95 'Profile Card Serif','Songti SC',serif;letter-spacing:.025em;color:#3f565f;margin:0 0 22px;white-space:pre-wrap;overflow-wrap:anywhere}
+.profile-reading-dialog .profile-reading-content p:last-child{margin-bottom:0}
+.profile-reading-dialog .profile-reading>footer{padding:18px 0 0;border-top:1px solid #b4c3c64d;margin:0;font:16px/1.5 'Profile Card Sans',sans-serif;color:#6c7f86;display:flex;justify-content:space-between}
+.profile-reading>footer>span{display:inline-flex;align-items:center;gap:8px}
+.profile-reading-example{color:#899397}
+@media(max-width:600px){.community-dialog.profile-reading-dialog{width:calc(100vw - 24px)}.profile-reading-dialog .profile-reading{padding:30px 25px 25px}.profile-reading-dialog .community-close{width:36px;height:36px;right:17px;top:18px}.profile-reading-dialog .profile-reading-category{font-size:15px;gap:10px}.profile-reading-category>span{padding-left:10px}.profile-reading-dialog .profile-reading h2{font-size:29px;margin:21px 0}.profile-reading-byline{font-size:15px;padding-bottom:20px}.profile-reading-content{padding:24px 0}.profile-reading-dialog .profile-reading-content p{font-size:20px;line-height:1.9;letter-spacing:.015em}.profile-reading-glow>.border-glow-inner{max-height:calc(100dvh - 40px)}}
+
 .profile-stage-badge .student-badge-hint{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:16px auto 15px;padding:0 16px;font-family:'Badge Source Sans','Microsoft YaHei',sans-serif;font-size:17px;line-height:1.6;letter-spacing:.03em;color:#f0f5f7;text-shadow:0 2px 8px #12273780}
 .student-badge-hint strong{font-weight:500}
 .student-badge-hint>span{margin-left:8px;color:#c8dce7;font-size:15px}
 .student-badge-hint>svg{flex-shrink:0;color:#deedf3}
 @media(max-width:600px){.profile-stage-badge .student-badge-hint{width:100%;font-size:16px;gap:8px}.student-badge-hint>span{flex-basis:100%;margin-left:0;font-size:14px}}
+
+.profile-reading-dialog .profile-reading{color:#e7eff1}
+.profile-reading-dialog .profile-reading h2{color:#fff3e2}
+.profile-reading-dialog .profile-reading-category{color:#dfc8a7}
+.profile-reading-dialog .profile-reading-category>span,.profile-reading-dialog .profile-reading time{color:#b5cdd9}
+.profile-reading-dialog .profile-reading-byline{border-bottom-color:#bdd5df2b;color:#b5cdd9}
+.profile-reading-dialog .profile-reading-byline strong{color:#e1edf0}
+.profile-reading-dialog .profile-reading-byline img{background:#c6dbe326}
+.profile-reading-dialog .profile-reading-content p{color:#d8e7ed}
+.profile-reading-dialog .profile-reading>footer{border-top-color:#bdd5df2b;color:#bed4df}
+.profile-reading-dialog .profile-reading-example{color:#b1c6d1}
+.profile-reading-dialog .community-close{background:#405c6c;color:#e5f0f3;border-color:#bcd5df44}
+.profile-reading-dialog .community-close:hover{background:#567787}
+
+@font-face{font-family:'Profile Letter WenKai';src:url('/fonts/profile-reading-wenkai.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+.profile-reading-dialog .profile-reading h2{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-weight:400;font-synthesis:none;font-size:clamp(34px,3.5vw,48px);line-height:1.45;letter-spacing:.015em;margin:24px 0 25px}
+.profile-reading-dialog .profile-reading-content p{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-weight:400;font-synthesis:none;font-size:25px;line-height:1.95;letter-spacing:.025em;color:#e2ebec;margin-bottom:26px}
+.profile-reading-dialog .profile-reading-byline,.profile-reading-dialog .profile-reading>footer{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-size:18px}
+.profile-reading-dialog .profile-reading-category{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-size:19px}
+@media(max-width:600px){.profile-reading-dialog .profile-reading h2{font-size:32px;line-height:1.5}.profile-reading-dialog .profile-reading-content p{font-size:22px;line-height:1.85}.profile-reading-dialog .profile-reading-byline,.profile-reading-dialog .profile-reading>footer{font-size:17px}}
+
+.profile-stage-badge .student-badge-tools button,.profile-stage-badge .student-badge-tools button:last-child{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-size:20px;font-weight:400;font-synthesis:none;line-height:1.4;letter-spacing:.02em;padding:11px 18px;min-height:50px}
+.profile-stage-badge .student-badge-hint{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-size:21px;letter-spacing:.025em}
+.profile-stage-badge .student-badge-hint strong{font-weight:400}
+.profile-stage-badge .student-badge-hint>span{font-size:18px}
+.profile-page .profile-pill-nav .pill{font-family:'Profile Letter WenKai','Profile Card Serif',serif;font-size:25px;font-weight:400;font-synthesis:none;line-height:1.25;letter-spacing:.045em}
+.profile-page .profile-pill-nav .pill-count{font-family:'Profile Letter WenKai',serif;font-size:16px;font-variant-numeric:tabular-nums}
+.profile-stage-badge .student-badge-tools{background:linear-gradient(145deg,#355467,#243c50);border-color:#b9d5e23b;box-shadow:inset 0 1px 0 #d7e9f21c,0 12px 25px -16px #061625a8}
+.profile-stage-badge .student-badge-tools button,.profile-stage-badge .student-badge-tools button:last-child{color:#e2edf1}
+.profile-stage-badge .student-badge-tools button.badge-flip{background:#e4edf0;color:#294453}
+.profile-stage-badge .student-badge-tools button.badge-flip:hover:not(:disabled){background:#f4f8fa;color:#243d50}
+.profile-stage-header .profile-tabs.profile-pill-nav{background:linear-gradient(145deg,#294453e8,#21394be0);border-color:#bad5e33b}
+.profile-page .profile-pill-track{background:#1d3446;box-shadow:inset 0 1px 4px #06182845;border:1px solid #aac9db24}
+.profile-page .profile-pill-nav .pill{background:#35556a;color:#e6eff3}
+.profile-page .profile-pill-nav .pill[aria-selected=true],.profile-page .profile-pill-nav .pill:hover{color:#e6eff3}
+.profile-page .profile-pill-nav .hover-circle{background:#dfebef}
+.profile-page .profile-pill-nav .pill-label-hover{color:#294453}
+.profile-page .profile-pill-nav .pill-count{background:#afc7d328}
+@media(max-width:600px){.profile-stage-badge .student-badge-tools button,.profile-stage-badge .student-badge-tools button:last-child{font-size:16px;padding:10px 9px;min-height:44px;gap:6px;letter-spacing:0}.profile-stage-badge .student-badge-hint{font-size:19px}.profile-stage-badge .student-badge-hint>span{font-size:16px}.profile-page .profile-pill-nav .pill{font-size:21px;padding:0 11px;min-width:64px;letter-spacing:0}.profile-page .profile-pill-nav .pill-count{font-size:14px}}
 

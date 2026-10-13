@@ -10,8 +10,11 @@ const globalForPrisma = global as unknown as {
 
 // 2. 初始化连接池
 function createClient() {
+  if (process.env.DATABASE_PROVIDER === 'postgresql' && !process.env.DATABASE_URL) {
+    throw new Error('PostgreSQL 已启用，但 DATABASE_URL 尚未配置。')
+  }
   const adapter = process.env.DATABASE_PROVIDER === 'postgresql'
-    ? new PrismaPg({ connectionString: process.env.DATABASE_URL })
+    ? new PrismaPg({ connectionString: process.env.DATABASE_URL, connectionTimeoutMillis: 10000, max: 10 })
     : new PrismaBetterSqlite3({
         url: `file:${resolve('prisma/dev.db').replace(/\\/g, '/')}`,
       })

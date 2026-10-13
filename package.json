@@ -5,6 +5,9 @@
   "scripts": {
     "postinstall": "prisma generate",
     "db:generate": "prisma generate",
+    "db:check:production": "tsx scripts/check-production-database.ts",
+    "db:migrate:production": "prisma migrate deploy",
+    "db:seed:production": "tsx scripts/seed-production-catalog.ts",
     "db:push": "prisma db push",
     "db:seed": "tsx scripts/seed-university-profiles.ts",
     "db:seed:catalog": "tsx scripts/seed-campus-catalog.ts",

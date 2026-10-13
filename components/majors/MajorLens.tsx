@@ -236,7 +236,8 @@ export default function MajorLens() {
   const [query, setQuery] = useState('')
   const restoreScroll = useRef<number | null>(null)
   useLayoutEffect(() => {
-    setCatalog(getAllMajors())
+    const controller=new AbortController()
+    void fetch('/api/catalog/majors',{signal:controller.signal,cache:'no-store'}).then(response=>{if(!response.ok)throw Error('目录加载失败');return response.json()}).then(setCatalog).catch(()=>{/* Keep the built-in catalog when offline. */})
     const requested = new URLSearchParams(window.location.search).get('field')
     if (fields.some(field => field.id === requested)) {
       lastField.current = requested as Field
@@ -252,6 +253,7 @@ export default function MajorLens() {
         } catch { /* A missing saved position opens the requested field normally. */ }
       }
     }
+    return ()=>controller.abort()
   }, [])
   useLayoutEffect(() => {
     const nav = catalogPanel.current?.querySelector<HTMLElement>('.lens-field-nav')
@@ -342,7 +344,7 @@ export default function MajorLens() {
       <nav className="lens-field-nav" aria-label="切换学科"><button className="lens-return" type="button" onClick={close}><ArrowLeft size={18} /><span>返回</span></button><div className="lens-field-tabs">{fields.map(field => <button key={field.id} className={'lens-tab-' + field.id} type="button" aria-pressed={selected === field.id} onClick={() => open(field.id)}><span>{field.title}</span></button>)}</div><div className="lens-catalog-search" role="search"><Search className="lens-search-icon" size={20} /><input aria-label="搜索全部专业" placeholder="搜索全部专业 · 中文或英文" value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" className="lens-search-clear" aria-label="清空搜索" onClick={() => setQuery('')}><X size={14} /></button>}</div></nav>
       <div ref={catalogScroll} className="lens-expanded-body"><div className="lens-scroll-content"><PhotoScenery field={selected} scrollRoot={catalogScroll} count={visible.length} />
       <div className="lens-catalog-heading">
-        <div className="lens-catalog-title"><div className="lens-catalog-title-row"><h2>{active?.title}</h2><p className="lens-catalog-title-english" lang="en">{active?.english}</p></div><p className="lens-expanded-line">{active?.line}</p></div>
+        <div className="lens-catalog-title"><div className="lens-catalog-title-row"><h2>{active?.title}</h2><p className="lens-catalog-title-english" lang="en">{active?.english}</p></div><p className="lens-expanded-line">{active?.line}</p><Link href="/majors/add" className="lens-contribute-link">没有找到你的专业？补充专业 ↗</Link></div>
       </div>
       <div className="lens-catalog-list">{visible.map(major => <MajorCard key={major.id} major={major} field={fieldOf(major)} showField={!!searchTerm} />)}{!visible.length && <p className="lens-catalog-empty">全部专业中没有匹配结果，试试其他关键词。</p>}</div>
       </div></div>

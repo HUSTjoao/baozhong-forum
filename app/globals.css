@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Text entry uses the field's own surface and caret, never a browser outline. */
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']),textarea,select):is(:focus,:focus-visible){outline:none!important;outline-offset:0!important}
+textarea{resize:none!important}
+
+@font-face{font-family:'Home Poetic Display';src:url('/fonts/home-description-serif.woff') format('woff');font-style:normal;font-weight:200;font-display:swap}
+@font-face{font-family:'Home Poetic Text';src:url('/fonts/home-description-serif.woff') format('woff');font-style:normal;font-weight:200;font-display:swap}
+
 @font-face {
   font-family: 'Baozhong Title';
   src: url('/fonts/baozhong-title.ttf?v=8bd8e558') format('truetype');
@@ -129,7 +136,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .text-balance {
     text-wrap: balance;
   }
-  
+
   /* 用户主页专用样式 */
   .border-b-3 {
     border-bottom-width: 3px;
@@ -435,6 +442,11 @@ html[data-journey-active='true'] .site-header-glass.site-header-home .site-brand
 .journey-stage .university-hero-shade{background:radial-gradient(ellipse at 50% 46%,#10192338,transparent 65%),linear-gradient(180deg,#15202c40 0%,#17202c45 48%,#121827bb 100%)}
 .journey-stage .journey-title{text-shadow:0 3px 20px #10162480}
 .journey-stage .journey-description,.journey-stage .journey-eyebrow{text-shadow:0 2px 12px #101624b3}
+.journey-stage{--font-title:'Home Poetic Display','Songti SC',serif}
+.journey-stage .journey-title{font-family:var(--font-title);font-weight:200;color:#fff9ed;letter-spacing:.07em}
+.journey-stage .journey-description{font-family:'Home Poetic Text','Songti SC',serif;font-weight:200;font-size:22px;letter-spacing:.12em;line-height:2.1!important;color:#f6f0e7}
+.journey-stage .journey-caption-chinese{font-family:'Home Poetic Text','Songti SC',serif;font-weight:200;letter-spacing:.2em;color:#fbf3e8}
+@media(max-width:760px){.journey-stage .journey-description{font-size:16px;letter-spacing:.05em}.journey-stage .journey-caption-chinese{font-size:17px;letter-spacing:.09em}}
 @media(max-width:760px){.journey-campus-background{object-position:50% 50%;filter:brightness(.78) contrast(.92) saturate(.85) blur(var(--campus-blur,.5px))}.journey-campus-background[data-active=true]{--campus-blur:.5px}}
 @media(prefers-reduced-motion:reduce){.journey-campus-background{transition:none}}
 .journey-stage .journey-title { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); display: flex; width: max-content; margin: 0; text-indent: 0; white-space: nowrap; z-index: 3; }

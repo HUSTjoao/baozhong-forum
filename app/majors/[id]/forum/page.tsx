@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import MajorDiscussion from '@/components/majors/MajorDiscussion'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
-import { getMajorById, majorAliases, type Major, type MajorCategory } from '@/data/majors'
+import { majors as builtInMajors, majorAliases, type Major, type MajorCategory } from '@/data/majors'
 import { majorEnglishNames } from '@/data/major-english-names'
 import { getMajorApplications, getMajorExploration } from '@/data/major-exploration'
-import { getQuestions, type Question } from '@/data/questions'
+import { questionsApi, type Question } from '@/lib/api-client'
 
 import { AlertDialog } from '@/components/Dialog'
 import MajorCardArtwork from '@/components/majors/MajorCardArtwork'
@@ -38,14 +38,22 @@ export default function MajorForumPage({ params }: { params: { id: string } }) {
   const [returnField, setReturnField] = useState<MajorCategory>()
 
   useEffect(() => {
-    const found = getMajorById(params.id)
+    const controller = new AbortController()
+    setLoading(true)
+    void (async()=>{
+    let found = builtInMajors.find(item=>item.id===(majorAliases[params.id]||params.id))
+    if(!found){const response=await fetch('/api/catalog/majors',{signal:controller.signal,cache:'no-store'});if(!response.ok)throw Error('专业资料暂时无法加载');const catalog:Major[]=await response.json();found=catalog.find(item=>item.id===params.id)}
+    if(controller.signal.aborted)return
     setMajor(found)
     try {
       const previous = JSON.parse(sessionStorage.getItem('major-catalog-return') || 'null')
       setReturnField(previous?.majorId === found?.id && previous.field in fieldNames ? previous.field : found?.category)
     } catch { setReturnField(found?.category) }
-    setQuestions(found ? getQuestions().filter(question => question.majorId && (majorAliases[question.majorId] ?? question.majorId) === found.id) : [])
+    setQuestions([])
+    if (found) void questionsApi.list(controller.signal,{majorId:found.id}).then(setQuestions).catch(error=>{if(!controller.signal.aborted)setAlert({title:'讨论加载失败',message:error.message})})
     setCamera(0); setLoading(false)
+    })().catch(error=>{if(!controller.signal.aborted){setAlert({title:'资料加载失败',message:error.message});setLoading(false)}})
+    return () => controller.abort()
   }, [params.id])
 
   useEffect(() => {

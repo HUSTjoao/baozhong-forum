@@ -17,7 +17,7 @@ export async function POST(
 
   // 动态导入 Prisma，避免在构建时初始化
   const { prisma } = await import('@/lib/prisma')
-  
+
   const session = await getServerSession(authOptions)
   if (!session?.user?.id) {
     return NextResponse.json(
@@ -52,9 +52,11 @@ export async function POST(
       )
     }
 
-    // 外键采用级联删除或手动删除关联的回复、点赞
-    await prisma.question.delete({
-      where: { id: questionId },
+    await prisma.$transaction(async tx => {
+      await tx.replyLike.deleteMany({ where: { reply: { questionId } } })
+      await tx.reply.deleteMany({ where: { questionId } })
+      await tx.questionLike.deleteMany({ where: { questionId } })
+      await tx.question.delete({ where: { id: questionId } })
     })
 
     return NextResponse.json({ ok: true })

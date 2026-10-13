@@ -1,10 +1,11 @@
-"""Extract intact stroke contours from our licensed Noto Serif SC title subset.
+"""Extract intact contours from the licensed homepage title font.
 
-Run with Python and fontTools after replacing the title font. The two glyphs in
-this font each contain ten filled contours, corresponding to their ten strokes.
+Run with Python and fontTools after replacing the title font. Pass --font for
+the active font; the original Noto Serif subset remains the default.
 The browser uses the generated paths; fontTools is not a runtime dependency.
 """
 import json
+import argparse
 from pathlib import Path
 
 from fontTools.pens.recordingPen import RecordingPen
@@ -12,7 +13,10 @@ from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.ttLib import TTFont
 
 root = Path(__file__).resolve().parents[1]
-font = TTFont(root / "public/fonts/baozhong-title.ttf")
+parser = argparse.ArgumentParser()
+parser.add_argument('--font', default='public/fonts/baozhong-title.ttf')
+args = parser.parse_args()
+font = TTFont(root / args.font)
 glyph_set = font.getGlyphSet()
 cmap = font.getBestCmap()
 strokes = []
@@ -28,7 +32,7 @@ for letter, character in enumerate("高校"):
         if operation == "closePath":
             contours.append(contour)
             contour = []
-    assert len(contours) == 10, f"Expected ten stroke contours in {character}"
+    assert contours, f"No contours found in {character}"
     for index, commands in enumerate(contours):
         pen = SVGPathPen(glyph_set)
         points = []

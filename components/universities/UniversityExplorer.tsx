@@ -1,6 +1,7 @@
 'use client'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 import CampusPagination from './CampusPagination'
 import CampusMap from './CampusMap'
 import CampusCard, { type Campus } from './CampusCard'
@@ -111,6 +112,7 @@ export default function UniversityExplorer({ universities }: { universities: Cam
         <div className="uni-grid" ref={gridRef} tabIndex={0} aria-label="本页学校，向下滚动浏览">{visible.map((u, index) => <CampusCard key={u.id} campus={u} index={index} active={activeId === u.id} onActivate={() => setActiveId(u.id)} />)}</div>
         {filtered.length === 0 && <p className="uni-empty">暂时没有匹配的大学。试试其他名称或地区。</p>}
         {filtered.length > 0 && <CampusPagination page={page} pages={pages} onChange={turnPage} />}
+        <Link href="/universities/add" className="uni-contribute-link">没有找到你的学校？补充大学 ↗</Link>
         <p className="uni-editor-note">高校资料持续整理中。先认真认识一所，再遇见更多可能。</p>
       </section>
     </div>

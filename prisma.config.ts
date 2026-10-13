@@ -8,7 +8,7 @@ export default defineConfig({
   schema: isLocal ? "prisma/schema.local.prisma" : "prisma/schema.prisma",
 
   migrations: {
-    path: "prisma/migrations",
+    path: isLocal ? "prisma/migrations-sqlite" : "prisma/migrations-postgresql",
   },
 
   datasource: {

@@ -16,7 +16,7 @@ export function Surface({ children, className = '', style }: { children: ReactNo
   }} onPointerLeave={event => { event.currentTarget.style.setProperty('--rx', '0deg'); event.currentTarget.style.setProperty('--ry', '0deg') }}>{children}</div>
 }
 
-export function CommunityModal({ children, title, close, letterMotion = false, origin }: { children: ReactNode; title: string; close: () => void; letterMotion?: boolean; origin?: HTMLElement | null }) {
+export function CommunityModal({ children, title, close, letterMotion = false, origin, className = '' }: { children: ReactNode; title: string; close: () => void; letterMotion?: boolean; origin?: HTMLElement | null; className?: string }) {
   const ref = useRef<HTMLDialogElement>(null),motion=useRef<Animation|null>(null),closing=useRef(false),latestClose=useRef(close),latestOrigin=useRef(origin),releaseSource=useRef<(()=>void)|null>(null)
   latestClose.current=close;latestOrigin.current=origin
   function sourceTransform(dialog:HTMLDialogElement){
@@ -57,7 +57,7 @@ export function CommunityModal({ children, title, close, letterMotion = false, o
     if(paper)paper.style.visibility='hidden';if(floating)floating.style.animationPlayState='paused'
     const release=()=>{if(paper)paper.style.visibility=visibility;if(floating)floating.style.animationPlayState=state};releaseSource.current=release;return()=>{release();if(releaseSource.current===release)releaseSource.current=null}
   },[origin,letterMotion])
-  return <dialog ref={ref} className={`community-dialog${letterMotion?' letter-reading-dialog':''}`} aria-label={title} onCancel={event => { event.preventDefault(); dismiss() }} onClick={event => {
+  return <dialog ref={ref} className={`community-dialog${letterMotion?' letter-reading-dialog':''} ${className}`} aria-label={title} onCancel={event => { event.preventDefault(); dismiss() }} onClick={event => {
     if (event.target !== event.currentTarget) return
     const box = event.currentTarget.getBoundingClientRect()
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dismiss()

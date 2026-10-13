@@ -25,3 +25,43 @@
 .profile-activity-deck-list .profile-load-more{margin:0 auto;display:flex}
 @media(max-width:600px){.profile-deck-stage{height:565px}.profile-deck .profile-activity,.profile-deck .profile-activity:nth-child(even){padding:23px 22px}.profile-deck .profile-activity-meta{gap:6px}.profile-deck .profile-activity-meta>div{gap:6px;flex-direction:column;align-items:flex-start}.profile-deck .profile-activity-meta strong{font-size:14px}.profile-deck .profile-activity-meta time,.profile-deck .profile-activity-meta>div>span{font-size:12px}.profile-deck .profile-activity-body h3{font-size:24px;-webkit-line-clamp:3}.profile-deck .profile-activity-body>p{font-size:16px;-webkit-line-clamp:4}.profile-deck .profile-activity footer>div{gap:10px}.profile-deck .profile-activity footer{gap:9px;font-size:12px}.profile-deck .profile-activity footer>a,.profile-deck .profile-activity footer>button{font-size:13px}.profile-deck-controls{margin-top:5px}}
 @media(prefers-reduced-motion:reduce){.profile-deck-controls button{transition:none}}
+
+@font-face{font-family:'Profile Card Serif';src:url('/fonts/profile-source-serif.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'Profile Card Sans';src:url('/fonts/profile-source-sans.woff') format('woff');font-weight:400;font-display:swap}
+.profile-deck .card-swap-slot,.profile-deck .profile-swap-tile{overflow:visible}
+.profile-deck .profile-swap-tile{background:transparent}
+.profile-deck .card-swap-card-rim{display:none}
+.profile-activity-glow{height:100%;width:100%;box-sizing:border-box}
+.profile-deck-stage{overflow:clip}
+.profile-activity-glow>.border-glow-inner{height:100%;min-height:0;overflow:hidden;border-radius:inherit}
+.profile-page .profile-deck .profile-activity,.profile-page .profile-deck .profile-activity:nth-child(even){padding:30px 36px;background:transparent;border:0;margin:0;color:#27383d;font-family:'Profile Card Sans','Microsoft YaHei',sans-serif;box-shadow:none}
+.profile-page .profile-deck .profile-activity-meta{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:14px;padding:0 0 20px;border-bottom:1px solid #31454c1a}
+.profile-page .profile-deck .profile-mini-avatar{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border-radius:50%;background:#e6eceb;overflow:hidden}
+.profile-page .profile-deck .profile-mini-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-page .profile-deck .profile-activity-meta>div{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:flex-start;gap:3px;min-width:0}
+.profile-page .profile-deck .profile-activity-meta strong{font-family:'Profile Card Sans',sans-serif;font-size:18px;font-weight:500;color:#283d45}
+.profile-page .profile-deck .profile-activity-meta time{font-size:15px;color:#647277;white-space:nowrap}
+.profile-page .profile-deck .profile-activity-meta>div>span{font-size:14px;color:#6c7779}
+.profile-page .profile-deck .profile-activity-body{padding:22px 0 20px;min-height:0}
+.profile-page .profile-deck .profile-activity-topic{font:15px/1.4 'Profile Card Sans',sans-serif;color:#936a49;margin:0 0 12px}
+.profile-page .profile-deck .profile-activity-body h3{font:400 34px/1.5 'Profile Card Serif','Songti SC',serif;letter-spacing:.015em;color:#263b43;margin:0 0 15px;-webkit-line-clamp:2}
+.profile-page .profile-deck .profile-activity-body h3 button{text-align:left;font:inherit;color:inherit}
+.profile-page .profile-deck .profile-activity-body>p{font:400 21px/1.8 'Profile Card Sans','Microsoft YaHei',sans-serif;color:#59676c;letter-spacing:.01em;-webkit-line-clamp:3;margin:0}
+.profile-page .profile-deck .profile-activity footer{border-top:1px solid #31454c1a;padding:18px 0 0;min-height:46px;font:15px/1.4 'Profile Card Sans',sans-serif;color:#64747b;align-items:center}
+.profile-page .profile-deck .profile-activity footer>a,.profile-page .profile-deck .profile-activity footer>button{font:15px/1.4 'Profile Card Sans',sans-serif;color:#3b616f;display:inline-flex;align-items:center;gap:9px}
+.profile-page .profile-deck .profile-activity footer>div{gap:22px;align-items:center}
+.profile-page .profile-deck .profile-activity footer>div>span{display:inline-flex;align-items:center;gap:7px}
+@media(max-width:600px){.profile-page .profile-deck .profile-activity,.profile-page .profile-deck .profile-activity:nth-child(even){padding:24px 22px}.profile-page .profile-deck .profile-activity-meta{grid-template-columns:36px minmax(0,1fr);gap:10px;padding-bottom:14px}.profile-page .profile-deck .profile-mini-avatar{width:36px;height:36px}.profile-page .profile-deck .profile-activity-meta time{grid-column:2;font-size:14px}.profile-page .profile-deck .profile-activity-meta strong{font-size:17px}.profile-page .profile-deck .profile-activity-body{padding:17px 0}.profile-page .profile-deck .profile-activity-body h3{font-size:25px;-webkit-line-clamp:3}.profile-page .profile-deck .profile-activity-body>p{font-size:17px;-webkit-line-clamp:3}.profile-page .profile-deck .profile-activity footer{flex-wrap:wrap;gap:13px;font-size:14px}.profile-page .profile-deck .profile-activity footer>div{gap:14px}.profile-page .profile-deck .profile-activity footer>a,.profile-page .profile-deck .profile-activity footer>button{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.profile-activity-glow::before,.profile-activity-glow::after,.profile-activity-glow>.edge-light{transition:none}}
+
+.profile-page .profile-activity-glow{border-color:#c0d9e23b;box-shadow:inset 0 1px 0 #dae9e516,0 16px 40px -25px #061a2bb3}
+.profile-page .profile-deck .profile-activity{color:#e9f0f2}
+.profile-page .profile-deck .profile-activity-meta{border-bottom-color:#c3d8e226}
+.profile-page .profile-deck .profile-mini-avatar{background:#b5cdd126}
+.profile-page .profile-deck .profile-activity-meta strong{color:#e8f0f2}
+.profile-page .profile-deck .profile-activity-meta time,.profile-page .profile-deck .profile-activity-meta>div>span{color:#b9cdd6}
+.profile-page .profile-deck .profile-activity-topic{color:#ddc5a5}
+.profile-page .profile-deck .profile-activity-body h3{color:#fff4e4}
+.profile-page .profile-deck .profile-activity-body>p{color:#d0e0e7}
+.profile-page .profile-deck .profile-activity footer{border-top-color:#c3d8e226;color:#afcbd6}
+.profile-page .profile-deck .profile-activity footer>a,.profile-page .profile-deck .profile-activity footer>button{color:#e3d0b6}

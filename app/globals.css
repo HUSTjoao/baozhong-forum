@@ -2046,3 +2046,8 @@ html[data-countdown-active='true'] .site-header-glass.site-header-home .site-nav
 @media(max-height:650px) and (max-width:760px){.admission-letter .admission-directory{gap:5px}.admission-letter .admission-directory .admission-entry-link{bottom:3px}}
 @media(hover:none){.admission-letter .admission-directory .admission-entry:hover{translate:none}.admission-letter .admission-directory .admission-entry:hover .admission-directory-art{transform:none}}
 @media(prefers-reduced-motion:reduce){.admission-letter .admission-directory .admission-entry,.admission-letter .admission-directory .admission-directory-art,.admission-letter .admission-directory .admission-directory-number{transition:none}.admission-letter .admission-directory .admission-entry:hover{translate:none}.admission-letter .admission-directory .admission-entry:hover .admission-directory-art{transform:none}}
+
+/* The management shortcut belongs to the signed-in administrator's account controls. */
+.site-header-glass .site-admin-entry{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 13px;border:1px solid #59768640;border-radius:999px;background:#ffffff70;color:#365568;font:400 17px/1.5 var(--font-navigation);box-shadow:inset 0 1px 0 #ffffff70;transition:background .2s,border-color .2s}
+.site-header-glass .site-admin-entry:hover{background:#ffffffc2;border-color:#59768680}
+@media(max-width:760px){.site-header-glass .site-admin-entry{font-size:14px;padding:6px 9px;gap:5px}.site-header-glass .site-admin-entry svg{width:16px;height:16px}}

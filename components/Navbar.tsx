@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect, useState } from 'react'
+import { ShieldCheck } from 'lucide-react'
 
 const navItems = [
   { href: '/', label: '首页' },
@@ -67,6 +68,7 @@ export default function Navbar() {
           </nav>
           <div className="site-account">
             {status === 'loading' ? <span className="site-auth-loading" aria-label="正在检查登录状态">…</span> : session?.user ? <>
+              {session.user.role === 'admin' && <Link href="/admin" className="site-admin-entry"><ShieldCheck size={18} strokeWidth={1.5}/><span>管理后台</span></Link>}
               <Link href={`/users/${session.user.id}`} className="site-avatar" aria-label="我的个人主页">
                 {avatarUrl ? <img src={avatarUrl} alt="" width={32} height={32} /> : displayName.slice(0, 1)}
               </Link>

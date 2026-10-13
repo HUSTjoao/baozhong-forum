@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef, Suspense } from 'react'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn, getSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { LogIn, Lock, User, Eye, EyeOff, Shield } from 'lucide-react'
+import { LogIn, Lock, User, Eye, EyeOff } from 'lucide-react'
 // 用户数据已迁移到数据库，不再需要 localStorage
 import { getAllUniversities, type University } from '@/data/universities'
 import AuthCompanions from '@/components/auth/AuthCompanions'
@@ -12,7 +12,6 @@ import './login.css'
 function LoginPageInner() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const { data: session } = useSession()
 
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [callbackUrl, setCallbackUrl] = useState<string | null>(null)
@@ -38,8 +37,6 @@ function LoginPageInner() {
   const complain=(message:string)=>{setError(message);setReaction(v=>v+1)}
   const [isLoading, setIsLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement | null>(null)
-  const [showAdminEntry, setShowAdminEntry] = useState(false)
-  const [adminError, setAdminError] = useState('')
 
   useEffect(() => {
     let callback: string | null = null
@@ -63,17 +60,6 @@ function LoginPageInner() {
   useEffect(() => {
     setUniversities(getAllUniversities())
   }, [])
-
-  const handleAdminGo = (e: React.FormEvent) => {
-    e.preventDefault()
-    setAdminError('')
-
-    if (session?.user?.role === 'admin') {
-      router.push('/admin')
-    } else {
-      setAdminError('请先使用管理员账号在上方登录，然后再进入后台。')
-    }
-  }
 
   // 将头像图片压缩到 200KB 以内（优先缩放分辨率，其次降低 JPEG 质量）
   const compressImageToDataUrl = (file: File, maxBytes = 200 * 1024): Promise<string> => {
@@ -178,7 +164,8 @@ function LoginPageInner() {
       if (result?.error) {
         complain('账号或密码错误')
       } else {
-        const redirectUrl = callbackUrl || '/'
+        const loggedIn = await getSession()
+        const redirectUrl = loggedIn?.user?.role === 'admin' ? '/admin' : callbackUrl || '/'
         router.push(redirectUrl)
         router.refresh()
       }
@@ -298,55 +285,11 @@ function LoginPageInner() {
           </button>
         </div>
 
-        {/* 管理员入口开关 */}
-        <div className="auth-admin-switch mb-4 flex items-center justify-end">
-          <button
-            type="button"
-            onClick={() => {
-              setShowAdminEntry((prev) => !prev)
-              setAdminError('')
-            }}
-            aria-label="管理员入口" title="管理员入口"
-            className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-primary-600 transition-colors"
-          >
-            <Shield className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
        </div>
        <div className="auth-form-content">
         {error && (
           <div role="alert" className="auth-form-error mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
             {error}
-          </div>
-        )}
-
-        {/* 管理员入口说明区域 */}
-        {showAdminEntry && (
-          <div className="mb-5 rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-3 text-xs text-amber-800">
-            <div className="flex items-center gap-2 mb-2">
-              <Shield className="w-4 h-4" />
-              <span className="font-semibold">管理员快速入口</span>
-            </div>
-            <p className="mb-2 text-[11px] text-amber-700">
-              使用提前配置好的管理员账号在上方完成登录后，可以通过此入口进入后台进行审核和管理操作。
-            </p>
-            <form onSubmit={handleAdminGo} className="flex items-center gap-2">
-              <button
-                type="submit"
-                className="rounded-md bg-amber-500 px-3 py-1.5 text-xs font-semibold text-white hover:bg-amber-600 transition-colors"
-              >
-                进入后台
-              </button>
-              {session?.user?.role === 'admin' && (
-                <span className="text-[11px] text-emerald-700">当前已使用管理员账号登录</span>
-              )}
-            </form>
-            {adminError && (
-              <p className="mt-1 text-[11px] text-red-600">
-                {adminError}
-              </p>
-            )}
           </div>
         )}
 

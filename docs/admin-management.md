@@ -28,3 +28,18 @@ npx tsx scripts/set-admin.ts 注册账号 --apply
 ## 寄语点赞修复
 
 旧点赞接口只返回 `{liked}`，客户端却读取 `data.message.likes`，在 React 状态更新函数中访问 undefined，造成页面渲染错误。接口现于事务中更新点赞关联和数量，并返回带安全用户字段与 likesRel 的 message；未公开寄语不可点赞，禁言状态从数据库读取。客户端校验返回对象，异常仅显示错误提示。回归覆盖点赞/取消、计数落库、寄语点赞关联删除，以及浏览器正常切换状态与不完整返回时页面仍可用。未对夸克本身的进程崩溃作无证据的保证，上线后需复测。
+
+## 统一登录
+
+登录页和公共导航不再显示管理员入口。管理员通过同一个账号密码登录页认证成功后直接进入 /admin；角色仍由数据库决定，不靠账号名称硬编码。
+
+指定账号需要创建或重置密码时，受信任服务器终端使用 configure-admin.ts，密码从标准输入读取，bcrypt 加密保存。示例（密码隐藏输入，不作为命令参数或写入仓库）：
+
+```bash
+read -rsp '管理员密码: ' ADMIN_INPUT
+printf '\n'
+printf '%s' "$ADMIN_INPUT" | npx tsx scripts/configure-admin.ts 注册账号 --apply
+unset ADMIN_INPUT
+```
+
+此操作会更新指定账号密码并授予管理员权限；不影响其他用户或内容。

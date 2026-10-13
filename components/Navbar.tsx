@@ -64,7 +64,6 @@ export default function Navbar() {
               const active = item.href === '/' ? pathname === '/' : pathname?.startsWith(item.href)
               return <Link href={item.href} key={item.href} aria-current={active ? 'page' : undefined}>{item.label}</Link>
             })}
-            {session?.user?.role === 'admin' && <Link href="/admin">管理后台</Link>}
           </nav>
           <div className="site-account">
             {status === 'loading' ? <span className="site-auth-loading" aria-label="正在检查登录状态">…</span> : session?.user ? <>

@@ -327,6 +327,9 @@ export const alumniMessagesApi = {
       throw new Error(error.error || '点赞失败')
     }
     const data = await res.json()
+    if (!data.message || !Number.isFinite(data.message.likes) || !Array.isArray(data.message.likesRel)) {
+      throw new Error('点赞状态返回异常，请刷新后重试')
+    }
     return data.message
   },
 }

@@ -1,6 +1,5 @@
+import { requireAdmin } from '@/lib/admin-access'
 import { NextRequest, NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/authOptions'
 
 // 确保这个路由是动态的，不在构建时执行
 export const dynamic = 'force-dynamic'
@@ -18,13 +17,8 @@ export async function PATCH(
   // 动态导入 Prisma，避免在构建时初始化
   const { prisma } = await import('@/lib/prisma')
   
-  const session = await getServerSession(authOptions)
-  if (session?.user?.role !== 'admin') {
-    return NextResponse.json(
-      { error: '只有管理员可以处理举报' },
-      { status: 403 },
-    )
-  }
+  const access = await requireAdmin()
+  if (access.error) return access.error
 
   const body = await req.json().catch(() => null)
   if (!body) {
@@ -35,7 +29,7 @@ export async function PATCH(
   }
 
   const status = body.status as 'resolved' | 'ignored'
-  if (!status) {
+  if (!['resolved', 'ignored'].includes(status)) {
     return NextResponse.json(
       { error: '缺少状态参数' },
       { status: 400 },
@@ -43,10 +37,8 @@ export async function PATCH(
   }
 
   try {
-    await prisma.report.update({
-      where: { id: params.id },
-      data: { status },
-    })
+    const result = await prisma.report.updateMany({ where: { id: params.id, status: 'pending' }, data: { status } })
+    if (!result.count) return NextResponse.json({ error: '举报已处理或不存在，请刷新列表' }, { status: 409 })
 
     return NextResponse.json({ ok: true })
   } catch (error) {

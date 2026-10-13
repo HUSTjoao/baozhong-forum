@@ -32,7 +32,8 @@ export async function DELETE(
       return NextResponse.json({ error: '寄语不存在' }, { status: 404 })
     }
 
-    const isAdmin = session.user.role === 'admin'
+    const actor = await prisma.user.findUnique({ where: { id: session.user.id }, select: { role: true } })
+    const isAdmin = actor?.role === 'admin'
     if (!isAdmin && message.userId !== session.user.id) {
       return NextResponse.json({ error: '无权删除' }, { status: 403 })
     }

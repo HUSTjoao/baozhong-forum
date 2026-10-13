@@ -45,7 +45,8 @@ export async function POST(
       )
     }
 
-    const isAdmin = session.user.role === 'admin'
+    const actor = await prisma.user.findUnique({ where: { id: session.user.id }, select: { role: true } })
+    const isAdmin = actor?.role === 'admin'
     if (!isAdmin && reply.replierId !== session.user.id) {
       return NextResponse.json(
         { error: '只能删除自己发布的回复' },

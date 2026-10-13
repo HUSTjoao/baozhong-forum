@@ -44,7 +44,7 @@ export async function POST(
       select: { isMuted: true, nickname: true, avatarUrl: true },
     })
 
-    if (dbUser?.isMuted) {
+    if (!dbUser || dbUser.isMuted) {
       return NextResponse.json({ error: '你已被管理员禁言。' }, { status: 403 })
     }
 

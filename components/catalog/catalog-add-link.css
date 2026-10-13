@@ -1,0 +1,11 @@
+@font-face{font-family:'Catalog Action Serif';src:url('/fonts/profile-source-serif.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+.catalog-add-link{display:inline-flex;align-items:center;gap:10px;flex:none;min-height:44px;padding:6px 15px 6px 8px;border:1px solid currentColor;border-color:color-mix(in srgb,currentColor 22%,transparent);border-radius:999px;background:#ffffff52;color:inherit;font:400 19px/1.4 'Catalog Action Serif','Songti SC',serif;letter-spacing:.05em;white-space:nowrap;text-decoration:none;box-shadow:inset 0 1px 0 #ffffff85;transition:background .2s,box-shadow .2s}
+.catalog-add-mark{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#ffffff85}
+.catalog-add-arrow{margin-left:4px;transition:transform .2s}
+.catalog-add-link:hover{background:#ffffffb3;box-shadow:0 4px 14px #203c4710}
+.catalog-add-link:hover .catalog-add-arrow{transform:translate(2px,-2px)}
+.catalog-add-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.uni-select-filters>.catalog-add-link{margin-left:auto;color:#385e6d;align-self:center}
+.lens-catalog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.lens-catalog-heading>.catalog-add-link{margin-left:auto;margin-top:8px}
+@media(max-width:760px){.catalog-add-link{font-size:17px;gap:7px;padding-right:11px}.uni-select-filters>.catalog-add-link{margin-left:auto}.lens-catalog-heading{gap:12px}.lens-catalog-heading>.catalog-add-link{margin-top:0}.catalog-add-arrow{margin-left:0}}

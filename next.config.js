@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   // 跳过 API 路由的构建时静态生成
   experimental: {
+    ...(process.env.ECS_BUILD === '1' ? { cpus: 1 } : {}),
     serverActions: {
       bodySizeLimit: '2mb',
     },

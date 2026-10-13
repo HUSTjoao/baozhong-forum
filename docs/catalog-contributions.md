@@ -23,3 +23,5 @@
 开发路线：本地完善功能与视觉，同时尽早建立云端测试环境，验证同一接口在 PostgreSQL 下的注册、发帖、审核及持久化。云端测试可用不等于正式对外发布；管理员用户管理、禁言与其他旧后台链路仍需完成。
 
 ECS 准备脚本：`node scripts/prepare-ecs-test-database.cjs` 只显示计划；添加 `--apply` 才执行。在已备份旧库的前提下，新建 forum_db_v2（若非空则停止），只为该库和 forum_user 添加 127.0.0.1 密码认证，成功验证后备份并切换项目 .env。不修改旧库表和数据。`ecosystem.test.config.cjs` 使用独立 PM2 名称 baozhong-forum-test 和仅本机 3001 端口，不覆盖旧 3000 进程或 Nginx。测试服务器的 NEXTAUTH_URL 应与实际测试入口一致，在浏览器跨设备验收之前需配置入口及 HTTPS。
+
+用户回传 ECS 验证结果：forum_db_v2 初始迁移成功，149 所大学与 192 个专业导入成功，PostgreSQL 主要业务表检查 PASS；网站尚未构建/启动，也尚未完成跨设备读写验收。2GB ECS 构建采用 `ECS_BUILD=1 NODE_OPTIONS="--max-old-space-size=1024" npm run build`，仅在该构建模式限制 Next.js 为单 worker。后续查看实际构建结果，不以数据库检查替代应用验收。

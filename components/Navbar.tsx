@@ -3,9 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
-import { useEffect, useRef, useState } from 'react'
-import { Search, X } from 'lucide-react'
-import SiteSearch from './SiteSearch'
+import { useEffect, useState } from 'react'
 
 const navItems = [
   { href: '/', label: '首页' },
@@ -18,9 +16,6 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname()
   const { data: session, status } = useSession()
-  const [searchOpen, setSearchOpen] = useState(false)
-  const headerRef = useRef<HTMLElement>(null)
-  const searchRef = useRef<HTMLButtonElement>(null)
   const isHome = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [confirmLogout, setConfirmLogout] = useState(false)
@@ -52,40 +47,24 @@ export default function Navbar() {
     window.addEventListener('scroll', update, { passive: true })
     return () => window.removeEventListener('scroll', update)
   }, [pathname])
-  useEffect(() => {
-    const closeOutside = (event: PointerEvent) => {
-      if (!headerRef.current?.contains(event.target as Node)) { setSearchOpen(false) }
-    }
-    if (searchOpen) document.addEventListener('pointerdown', closeOutside)
-    return () => document.removeEventListener('pointerdown', closeOutside)
-  }, [searchOpen])
-  useEffect(() => { setSearchOpen(false) }, [pathname])
   if (pathname?.startsWith('/admin')) return null
 
   return (
     <>
       <a href="#main-content" className="site-skip-link">跳到主要内容</a>
-      <header ref={headerRef} className={`site-header site-header-glass ${isHome ? 'site-header-home' : 'site-header-interior'}`} data-scrolled={scrolled} onKeyDown={event => {
-        if (event.key === 'Escape') {
-          if (searchOpen) { setSearchOpen(false); searchRef.current?.focus() }
-        }
-      }}>
+      <header className={`site-header site-header-glass ${isHome ? 'site-header-home' : 'site-header-interior'}`} data-scrolled={scrolled}>
         <div className="site-header-inner">
-          <Link href="/" className="site-brand" onClick={() => setSearchOpen(false)}>
+          <Link href="/" className="site-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/baoji-school-emblem.png" alt="" width={48} height={48} />
             <span className="site-brand-copy"><strong>宝鸡中学高校论坛</strong></span>
           </Link>
-          <div className="site-search-toggle">
-            <button ref={searchRef} type="button" aria-label={searchOpen ? '关闭搜索' : '打开搜索'} aria-expanded={searchOpen} aria-controls="site-search" onClick={() => { setSearchOpen(!searchOpen) }}>{searchOpen ? <X size={23} /> : <Search size={23} />}<span>搜索</span></button>
-          </div>
-          {searchOpen && <div id="site-search"><SiteSearch onClose={() => setSearchOpen(false)} /></div>}
           <nav id="site-navigation" aria-label="主导航" className="site-nav">
             {navItems.map(item => {
               const active = item.href === '/' ? pathname === '/' : pathname?.startsWith(item.href)
-              return <Link href={item.href} key={item.href} aria-current={active ? 'page' : undefined} onClick={() => setSearchOpen(false)}>{item.label}</Link>
+              return <Link href={item.href} key={item.href} aria-current={active ? 'page' : undefined}>{item.label}</Link>
             })}
-            {session?.user?.role === 'admin' && <Link href="/admin" onClick={() => setSearchOpen(false)}>管理后台</Link>}
+            {session?.user?.role === 'admin' && <Link href="/admin">管理后台</Link>}
           </nav>
           <div className="site-account">
             {status === 'loading' ? <span className="site-auth-loading" aria-label="正在检查登录状态">…</span> : session?.user ? <>

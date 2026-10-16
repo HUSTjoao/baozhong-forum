@@ -10,6 +10,12 @@
 
 公网切换还需要：Nginx 转发到 127.0.0.1:3001、配置域名 HTTPS 与续期、更新 NEXTAUTH_URL、验证公网登录和跨设备数据持久化。数据库端口应仅允许实际需要的访问来源。公安备案号待审核完成后再填写。
 
+## 已签发证书后的服务器切换
+
+`node scripts/enable-public-site.cjs` 只显示计划；在已核实的 `/root/baozhong-forum-test` 执行并添加 `--apply` 才会修改。脚本限 Linux root，检查两个域名的证书和私钥匹配、当前数据库及服务，拒绝账号与密码相同的管理员。先生成并检查数据库备份，再备份与更新环境配置、Nginx 和续期重载钩子。后续失败会恢复配置并尝试恢复服务；数据库本身不做迁移或重置。
+
+切换后的 HTTPS 检查通过本机解析进行，不代表安全组 TCP 443 已开放或公网访问已验证。还需从外部网络检查登录、读写与持久化，验证 Certbot 续期及 PM2 开机启动。脚本已做本地语法和无修改模式检查，实际 Nginx 检查及切换验证在 ECS 执行时进行。
+
 参考：
 - https://github.com/advisories/GHSA-2xp9-vwfh-vxw4
 - https://github.com/advisories/GHSA-7rqj-j65f-68wh

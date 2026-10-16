@@ -2051,3 +2051,8 @@ html[data-countdown-active='true'] .site-header-glass.site-header-home .site-nav
 .site-header-glass .site-admin-entry{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 13px;border:1px solid #59768640;border-radius:999px;background:#ffffff70;color:#365568;font:400 17px/1.5 var(--font-navigation);box-shadow:inset 0 1px 0 #ffffff70;transition:background .2s,border-color .2s}
 .site-header-glass .site-admin-entry:hover{background:#ffffffc2;border-color:#59768680}
 @media(max-width:760px){.site-header-glass .site-admin-entry{font-size:14px;padding:6px 9px;gap:5px}.site-header-glass .site-admin-entry svg{width:16px;height:16px}}
+
+.community-footer-filing{max-width:1280px;margin:32px auto 0;padding-top:21px;border-top:1px solid #c3d5e31a;text-align:center;font:400 14px/1.8 var(--font-sans);letter-spacing:.025em}
+.community-footer-filing a{display:inline-block;color:#b7c8d4;text-decoration:none;text-underline-offset:4px}
+.community-footer-filing a:hover{color:#f0f5f7;text-decoration:underline}
+.community-footer-filing a:focus-visible{outline:2px solid #b7c8d4;outline-offset:5px;border-radius:2px}

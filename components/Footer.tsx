@@ -39,6 +39,9 @@ export default function Footer() {
           <p>湖北·武汉 华中科技大学</p>
         </div>
       </div>
+      <div className="community-footer-filing">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">陕ICP备2026029290号-1</a>
+      </div>
     </footer>
   )
 }

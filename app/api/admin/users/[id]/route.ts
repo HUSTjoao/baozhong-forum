@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/admin-access'
 import { prisma } from '@/lib/prisma'
 export const dynamic = 'force-dynamic'
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   try {
     const access = await requireAdmin()
     if (access.error) return access.error

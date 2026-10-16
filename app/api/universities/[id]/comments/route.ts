@@ -5,13 +5,15 @@ import { authOptions } from '@/lib/authOptions'
 import { prisma } from '@/lib/prisma'
 import { getCampusComments } from '@/lib/campus-comments'
 export const dynamic = 'force-dynamic'
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   if (!await prisma.universityProfile.findUnique({ where: { id: params.id }, select: { id: true } })) return NextResponse.json({ error: '学校不存在' }, { status: 404 })
   const cursor = new URL(req.url).searchParams.get('cursor') || undefined
   if (cursor && !await prisma.question.findFirst({ where: { id: cursor, universityId: params.id }, select: { id: true } })) return NextResponse.json({ error: '评论不存在' }, { status: 404 })
   return NextResponse.json(await getCampusComments(params.id, cursor))
 }
-export async function POST(req: Request, { params }: { params: { id: string } }) {
+export async function POST(req: Request, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   try {
     const session = await getServerSession(authOptions)
     if (!session?.user?.id) return NextResponse.json({ error: '登录后就可以发言了' }, { status: 401 })

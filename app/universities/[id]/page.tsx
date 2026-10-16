@@ -9,7 +9,8 @@ import { prisma } from '@/lib/prisma'
 import { getCampusComments } from '@/lib/campus-comments'
 import UniversityDiscussion from '@/components/universities/UniversityDiscussion'
 export const dynamic = 'force-dynamic'
-export default async function UniversityDetailPage({ params }: { params: { id: string } }) {
+export default async function UniversityDetailPage({ params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   const profile = await prisma.universityProfile.findUnique({ where: { id: params.id }, include: { university: true } })
   if (!profile || profile.university.isApproved !== true) notFound()
   const theme = campusTheme(profile.id, profile.accent)

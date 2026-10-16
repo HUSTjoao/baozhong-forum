@@ -8,8 +8,9 @@ export const runtime = 'nodejs'
 
 export async function POST(
   _req: NextRequest,
-  { params }: { params: { id: string; replyId: string } },
+  { params: routeParams }: { params: Promise<{ id: string; replyId: string }> },
 ) {
+  const params = await routeParams
   // 在构建时跳过执行
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })

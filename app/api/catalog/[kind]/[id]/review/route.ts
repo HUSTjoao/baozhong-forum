@@ -2,7 +2,8 @@ import { NextRequest,NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/admin-access'
 import { completeCatalog,kindOf } from '@/lib/catalog-server'
 export const dynamic='force-dynamic'
-export async function PATCH(request:NextRequest,{params}:{params:{kind:string;id:string}}){
+export async function PATCH(request:NextRequest,{ params: routeParams }:{params: Promise<{kind:string;id:string}>}) {
+  const params = await routeParams
  try {
   const access=await requireAdmin();if(access.error)return access.error
   const kind=kindOf(params.kind);if(!kind)return NextResponse.json({error:'类别不存在'},{status:404})

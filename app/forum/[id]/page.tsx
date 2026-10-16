@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import { ArrowLeft, ArrowUpRight, ChevronDown, MessageCircle, MoreHorizontal, PenLine, Send, Share2, ThumbsUp, X } from 'lucide-react'
 import { questionsApi, repliesApi, reportsApi, formatRelativeTime, type Question, type Reply } from '@/lib/api-client'
@@ -22,7 +22,8 @@ function AnonymousSwitch({ checked, change, disabled }: { checked: boolean; chan
  return <button type="button" className="qd-anonymous" role="switch" aria-label="匿名发表" aria-checked={checked} disabled={disabled} onClick={()=>change(!checked)}><span aria-hidden="true"><i/></span>匿名发表</button>
 }
 
-export default function QuestionDetailPage({ params }: { params: { id: string } }) {
+export default function QuestionDetailPage() {
+ const params = useParams<{ id: string }>()
  const { data: session } = useSession(), router = useRouter()
  const demo = process.env.NODE_ENV === 'development' && isExampleQuestion(params.id)
  const [question,setQuestion] = useState<Question|null>(null), [loading,setLoading] = useState(true), [error,setError] = useState('')

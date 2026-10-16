@@ -6,8 +6,9 @@ export const dynamic = 'force-dynamic'
 
 export async function DELETE(
   _req: NextRequest,
-  { params }: { params: { id: string } },
+  { params: routeParams }: { params: Promise<{ id: string }> },
 ) {
+  const params = await routeParams
   // 1. 拦截构建阶段，防止数据库连接失败导致构建中断
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ message: 'Bypass' }, { status: 200 });

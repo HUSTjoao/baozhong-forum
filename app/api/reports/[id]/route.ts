@@ -7,8 +7,9 @@ export const runtime = 'nodejs'
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } },
+  { params: routeParams }: { params: Promise<{ id: string }> },
 ) {
+  const params = await routeParams
   // 在构建时跳过执行
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ error: 'Service unavailable during build' }, { status: 503 })

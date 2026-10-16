@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 export const dynamic = 'force-dynamic'
-export async function POST(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function POST(_req: NextRequest, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
  try {
   const session = await getServerSession(authOptions)
   if (!session?.user?.id) return NextResponse.json({ error: '请先登录' }, { status: 401 })

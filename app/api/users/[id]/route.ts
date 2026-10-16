@@ -13,7 +13,8 @@ const userView = (user: { username: string | null; nickname: string | null; [key
   return { ...profile, name: user.nickname || username || '一位同学' }
 }
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   try {
     const { prisma } = await import('@/lib/prisma')
     const user = await prisma.user.findUnique({ where: { id: params.id }, select: publicFields })
@@ -46,7 +47,8 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
   }
 }
 
-export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(request: NextRequest, { params: routeParams }: { params: Promise<{ id: string }> }) {
+  const params = await routeParams
   const session = await getServerSession(authOptions)
   if (!session?.user?.id) return NextResponse.json({ error: '请先登录。' }, { status: 401 })
   if (session.user.id !== params.id) return NextResponse.json({ error: '只能修改自己的资料。' }, { status: 403 })

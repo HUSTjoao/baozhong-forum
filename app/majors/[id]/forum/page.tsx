@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import MajorDiscussion from '@/components/majors/MajorDiscussion'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { majors as builtInMajors, majorAliases, type Major, type MajorCategory } from '@/data/majors'
@@ -19,7 +20,8 @@ import './major-detail.css'
 const fieldNames: Record<MajorCategory, string> = { arts: '文科', science: '理科', engineering: '工科', medicine: '医科', other: '其他' }
 const fitLabels = ['你的好奇心', '你的学习方式', '你愿意投入的事']
 
-export default function MajorForumPage({ params }: { params: { id: string } }) {
+export default function MajorForumPage() {
+ const params = useParams<{ id: string }>()
   const navigateMajor = useMajorNavigation()
 
   const pageRef = useRef<HTMLDivElement>(null)

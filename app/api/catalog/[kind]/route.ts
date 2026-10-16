@@ -5,11 +5,13 @@ import { prisma } from '@/lib/prisma'
 import { approvedMajors,kindOf,submitCatalog } from '@/lib/catalog-server'
 export const dynamic='force-dynamic'
 const headers={'Cache-Control':'no-store'}
-export async function GET(_request:NextRequest,{params}:{params:{kind:string}}){
+export async function GET(_request:NextRequest,{ params: routeParams }:{params: Promise<{kind:string}>}) {
+  const params = await routeParams
  const kind=kindOf(params.kind);if(!kind)return NextResponse.json({error:'类别不存在'},{status:404})
  try{return NextResponse.json(kind==='majors'?await approvedMajors():await prisma.university.findMany({where:{isApproved:true},select:{id:true,name:true,province:true,city:true,level:true}}),{headers})}catch{return NextResponse.json({error:'目录暂时无法加载'},{status:500,headers})}
 }
-export async function POST(request:NextRequest,{params}:{params:{kind:string}}){
+export async function POST(request:NextRequest,{ params: routeParams }:{params: Promise<{kind:string}>}) {
+  const params = await routeParams
  const kind=kindOf(params.kind);if(!kind)return NextResponse.json({error:'类别不存在'},{status:404})
  const session=await getServerSession(authOptions)
  if(!session?.user?.id)return NextResponse.json({error:'请先登录后提交。'},{status:401})

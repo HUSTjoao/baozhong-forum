@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto'
 import { prisma } from '@/lib/prisma'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
+import { forumTopics, forumTopicOf } from '@/data/forum-topics'
 export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
@@ -21,9 +22,11 @@ export async function POST(req: Request) {
     if ((data.universityId != null && typeof data.universityId !== 'string') || (data.majorId != null && typeof data.majorId !== 'string') || (data.isAnonymous != null && typeof data.isAnonymous !== 'boolean')) return NextResponse.json({ error: '字段格式不正确' }, { status: 400 })
     const universityId = data.universityId || null
     const majorId = data.majorId || null
+    if (data.category != null && (typeof data.category !== 'string' || !forumTopics.slice(1).some(topic => topic.categories.includes(data.category.trim())))) return NextResponse.json({ error: '请选择有效的话题类型' }, { status: 400 })
+    const category = data.category?.trim() ? forumTopicOf(data.category.trim()) : null
     if (universityId && !await prisma.universityProfile.findUnique({ where: { id: universityId }, select: { id: true } })) return NextResponse.json({ error: '该大学尚未开放讨论' }, { status: 404 })
     if (majorId && !await prisma.major.findUnique({ where: { id: majorId }, select: { id: true } })) return NextResponse.json({ error: '专业不存在' }, { status: 404 })
-    const question = await prisma.question.create({ data: { id: randomUUID(), title, content, universityId, majorId, askerId: user.id, askerName: user.nickname || user.username || '同学', isAnonymous: data.isAnonymous === true, category: typeof data.category === 'string' ? data.category.slice(0, 40) : null }, select: { id: true, title: true, content: true, universityId: true, majorId: true, date: true, isAnonymous: true, likes: true, repliesCount: true } })
+    const question = await prisma.question.create({ data: { id: randomUUID(), title, content, universityId, majorId, askerId: user.id, askerName: user.nickname || user.username || '同学', isAnonymous: data.isAnonymous === true, category }, select: { id: true, title: true, content: true, category: true, universityId: true, majorId: true, date: true, isAnonymous: true, likes: true, repliesCount: true } })
     return NextResponse.json({ question }, { status: 201 })
   } catch (error) {
     console.error('Question create failed', error)
@@ -34,7 +37,7 @@ export async function GET(req: Request) {
   try {
     const universityId = new URL(req.url).searchParams.get('universityId')
     const majorId = new URL(req.url).searchParams.get('majorId')
-    const questions = await prisma.question.findMany({ where: { ...(universityId ? { universityId } : {}), ...(majorId ? { majorId } : {}) }, orderBy: { date: 'desc' }, take: 50, select: { id: true, title: true, content: true, universityId: true, majorId: true, date: true, isAnonymous: true, askerName: true, likes: true, repliesCount: true } })
+    const questions = await prisma.question.findMany({ where: { ...(universityId ? { universityId } : {}), ...(majorId ? { majorId } : {}) }, orderBy: { date: 'desc' }, take: 50, select: { id: true, title: true, content: true, category: true, universityId: true, majorId: true, date: true, isAnonymous: true, askerName: true, likes: true, repliesCount: true } })
     return NextResponse.json(questions.map(q => ({ ...q, askerName: q.isAnonymous ? '匿名同学' : q.askerName })))
   } catch { return NextResponse.json({ error: '加载讨论失败，请稍后重试' }, { status: 500 }) }
 }

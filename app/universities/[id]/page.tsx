@@ -1,3 +1,5 @@
+import UniversityEmblem from '@/components/universities/UniversityEmblem'
+import { universityLogo } from '@/lib/university-logo'
 import CampusIntroduction from '@/components/universities/CampusIntroduction'
 import { campusCulture } from '@/lib/campus-culture'
 import { campusTheme } from '@/lib/campus-themes'
@@ -21,7 +23,7 @@ export default async function UniversityDetailPage({ params: routeParams }: { pa
   return <article className={'uni-shell uni-detail uni-accent-' + theme.key} style={{ '--u-accent': theme.ink, '--campus-page-wash': theme.wash, '--campus-card-wash': theme.card } as CSSProperties}>
     <CampusReturnLink universityId={params.id} />
     <section className="uni-school-summary" aria-label="学校介绍">
-      <div className="uni-school-emblem">{university.logoUrl && <img src={university.logoUrl} alt={university.name + '校徽'} width={210} height={210} />}<div className="uni-emblem-links">{profile.website && <a className="uni-emblem-website" href={profile.website} target="_blank" rel="noreferrer">学校官网<ArrowUpRight size={14} /></a>}{profile.sourceUrl && <a className="uni-emblem-website" href={profile.sourceUrl} target="_blank" rel="noreferrer">介绍来源<ArrowUpRight size={14} /></a>}</div></div>
+      <div className="uni-school-emblem"><UniversityEmblem src={universityLogo(university.logoUrl, 'detail')} name={university.name} size={210} priority /><div className="uni-emblem-links">{profile.website && <a className="uni-emblem-website" href={profile.website} target="_blank" rel="noreferrer">学校官网<ArrowUpRight size={14} /></a>}{profile.sourceUrl && <a className="uni-emblem-website" href={profile.sourceUrl} target="_blank" rel="noreferrer">介绍来源<ArrowUpRight size={14} /></a>}</div></div>
       <div className="uni-school-information">
         <h1>{university.name}</h1>
         {profile.englishName && <p className="uni-school-english" lang="en">{profile.englishName}</p>}

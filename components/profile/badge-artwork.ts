@@ -1,3 +1,4 @@
+import schoolEmblem from '@/data/optimized-school-emblem.json'
 import { profileIdentity, type ProfileUser } from '@/lib/profile'
 export interface BadgeProps { user: ProfileUser; school: string; stats: { questions: number; replies: number; letters: number } }
 let fontsReady: Promise<unknown> | undefined
@@ -8,7 +9,7 @@ function prepareFonts() {
 }
 export async function createBadgeArtwork(props: BadgeProps) {
   const load = (url: string): Promise<HTMLImageElement | null> => new Promise(resolve => { if (!url) return resolve(null); const image = new Image(); image.crossOrigin = 'anonymous'; image.onload = () => resolve(image); image.onerror = () => resolve(null); image.src = url })
-  const [emblem, photo] = await Promise.all([load('/baoji-school-emblem.png'), load(props.user.avatarUrl || ''), prepareFonts()])
+  const [emblem, photo] = await Promise.all([load(schoolEmblem[384]), load(props.user.avatarUrl || ''), prepareFonts()])
   const ink = '#343a3a', wine = '#843e39', muted = '#747c79'
   function text(ctx: CanvasRenderingContext2D, value: string, x: number, y: number, max: number, size: number, color = ink, family = serif, weight = 400) {
     ctx.fillStyle = color

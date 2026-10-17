@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async headers() {
+    return [{ source: '/optimized-logos/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }]
+  },
   // 跳过 API 路由的构建时静态生成
   experimental: {
     ...(process.env.ECS_BUILD === '1' ? { cpus: 1 } : {}),

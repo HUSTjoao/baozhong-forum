@@ -5,6 +5,7 @@ import CatalogAddLink from '../catalog/CatalogAddLink'
 import { ArrowLeft, Search, X } from 'lucide-react'
 import { majors as initialMajors, getAllMajors, type Major } from '@/data/majors'
 
+import { majorDirections, majorDirectionOf } from '@/data/major-directions'
 import MajorCardArtwork from './MajorCardArtwork'
 import useMajorNavigation from './useMajorNavigation'
 import { majorEnglishNames } from '@/data/major-english-names'
@@ -203,6 +204,7 @@ function MajorCard({ major, field, showField = false }: { major: Major; field: F
     const lens = event.currentTarget.closest<HTMLElement>('.major-lens')
     try { sessionStorage.setItem('major-catalog-return', JSON.stringify({
       field: lens?.dataset.expanded || field,
+      direction: lens?.dataset.direction || 'all',
       query: lens?.querySelector<HTMLInputElement>('.lens-catalog-search input')?.value || '',
       scroll: lens?.querySelector('.lens-expanded-body')?.scrollTop || 0,
       majorId: major.id,
@@ -235,6 +237,7 @@ export default function MajorLens() {
   const [selected, setSelected] = useState<Field | null>(null)
   const [resuming, setResuming] = useState(false)
   const [query, setQuery] = useState('')
+  const [direction, setDirection] = useState('all')
   const restoreScroll = useRef<number | null>(null)
   useLayoutEffect(() => {
     const controller=new AbortController()
@@ -248,6 +251,7 @@ export default function MajorLens() {
         try {
           const saved = JSON.parse(sessionStorage.getItem('major-catalog-return') || 'null')
           if (saved?.field === requested) {
+            setDirection(typeof saved.direction === 'string' ? saved.direction : 'all')
             setQuery(typeof saved.query === 'string' ? saved.query : '')
             restoreScroll.current = Number.isFinite(saved.scroll) ? saved.scroll : 0
           }
@@ -302,7 +306,7 @@ export default function MajorLens() {
       motion.finished.then(() => { snapshot.remove(); if (outgoing.current === snapshot) outgoing.current = null }).catch(() => {})
     }
     setSlideDirection(direction)
-    lastField.current = field; root.current?.removeAttribute('data-entering'); setSelected(field); setQuery('')
+    lastField.current = field; root.current?.removeAttribute('data-entering'); setSelected(field); setQuery(''); setDirection('all')
   }
   function close() {
     if (closing || closeTimer.current) return
@@ -326,10 +330,14 @@ export default function MajorLens() {
   }, [selected])
   const active = fields.find(field => field.id === selected)
   const searchTerm = query.trim().toLowerCase()
+  const fieldMajors = catalog.filter(major => fieldOf(major) === selected)
+  const directions = selected ? [...majorDirections[selected], ...(fieldMajors.some(major => majorDirectionOf(major) === 'uncategorized') ? [{ id: 'uncategorized', name: '更多专业', prefixes: [] }] : [])] : []
+  const activeDirection = direction === 'all' || directions.some(item => item.id === direction) ? direction : 'all'
+  function chooseDirection(id: string) { setDirection(id); catalogScroll.current?.scrollTo({ top: 0, behavior: 'instant' }) }
   const visible = catalog.filter(major => searchTerm
     ? (major.name + ' ' + (majorEnglishNames[major.name] ?? '') + ' ' + major.description).toLowerCase().includes(searchTerm)
-    : fieldOf(major) === selected)
-  return <section ref={root} className="major-lens" data-resuming={resuming ? 'true' : undefined} data-expanded={selected || undefined} data-closing={closing ? 'true' : undefined} data-switching={slideDirection ? 'true' : undefined} aria-label="专业认知，选择你的学科方向">
+    : fieldOf(major) === selected && (activeDirection === 'all' || majorDirectionOf(major) === activeDirection))
+  return <section ref={root} className="major-lens" data-direction={activeDirection} data-resuming={resuming ? 'true' : undefined} data-expanded={selected || undefined} data-closing={closing ? 'true' : undefined} data-switching={slideDirection ? 'true' : undefined} aria-label="专业认知，选择你的学科方向">
     <div className="lens-blades" aria-hidden={selected ? true : undefined}>{fields.map((field, index) => <button key={field.id} type="button" className={'lens-blade lens-blade-' + field.id + (selected === field.id ? ' is-expanded' : '')} tabIndex={selected ? -1 : 0} onClick={() => open(field.id)} aria-label={'探索' + field.title + '专业'} style={{ '--blade-index': index } as React.CSSProperties}>
       <FieldArtwork field={field.id} />
       <div className={'lens-disciplines' + (field.id === 'engineering' ? ' engineering-disciplines' : '')}>{fieldDisciplines[field.id].map((name, disciplineIndex) => <span key={name} style={{ '--discipline-index': disciplineIndex } as React.CSSProperties}>{name}</span>)}</div>
@@ -347,6 +355,7 @@ export default function MajorLens() {
       <div className="lens-catalog-heading">
         <div className="lens-catalog-title"><div className="lens-catalog-title-row"><h2>{active?.title}</h2><p className="lens-catalog-title-english" lang="en">{active?.english}</p></div><p className="lens-expanded-line">{active?.line}</p></div><CatalogAddLink kind="majors" />
       </div>
+      {!searchTerm ? <nav className="lens-direction-nav" aria-label={active?.title + '专业方向'}><div className="lens-direction-caption"><span>找到感兴趣的方向</span><small>{visible.length} 个专业</small></div><div className="lens-direction-options"><button type="button" aria-pressed={activeDirection === 'all'} onClick={() => chooseDirection('all')}>全部<span>{fieldMajors.length}</span></button>{directions.map(item => { const count = fieldMajors.filter(major => majorDirectionOf(major) === item.id).length; return <button key={item.id} type="button" aria-pressed={activeDirection === item.id} disabled={!count} onClick={() => chooseDirection(item.id)}>{item.name}<span>{count}</span></button> })}</div></nav> : <p className="lens-search-summary" role="status">在全部板块中找到 {visible.length} 个专业</p>}
       <div className="lens-catalog-list">{visible.map(major => <MajorCard key={major.id} major={major} field={fieldOf(major)} showField={!!searchTerm} />)}{!visible.length && <p className="lens-catalog-empty">全部专业中没有匹配结果，试试其他关键词。</p>}</div>
       </div></div>
     </div>}

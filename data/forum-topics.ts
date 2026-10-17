@@ -7,4 +7,4 @@ export const forumTopics = [
  { name: '心情与成长', label: '心情与成长', categories: ['心理压力', '心理成长', '心情与成长'] },
  { name: '其他话题', label: '其他话题', categories: ['其他', '其他话题'] }
 ]
-export const forumTopicOf = (category?: string) => forumTopics.slice(1).find(topic => topic.categories.includes(category || ''))?.name || '其他话题'
+export const forumTopicOf = (category?: string | null) => forumTopics.slice(1).find(topic => topic.categories.includes(category || ''))?.name || '其他话题'

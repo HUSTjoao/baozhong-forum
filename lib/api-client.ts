@@ -13,7 +13,7 @@ export interface Question {
   date: string
   likes: number
   repliesCount: number
-  category?: string
+  category?: string | null
   universityId?: string
   majorId?: string
   askerId?: string

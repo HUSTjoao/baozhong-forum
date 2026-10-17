@@ -1,5 +1,7 @@
 'use client'
 
+import schoolEmblem from '@/data/optimized-school-emblem.json'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
@@ -57,7 +59,7 @@ export default function Navbar() {
         <div className="site-header-inner">
           <Link href="/" className="site-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/baoji-school-emblem.png" alt="" width={48} height={48} />
+            <img src={schoolEmblem[96]} srcSet={`${schoolEmblem[96]} 1x, ${schoolEmblem[192]} 2x`} alt="" width={48} height={48} loading="eager" fetchPriority="high" decoding="async" />
             <span className="site-brand-copy"><strong>宝鸡中学高校论坛</strong></span>
           </Link>
           <nav id="site-navigation" aria-label="主导航" className="site-nav">

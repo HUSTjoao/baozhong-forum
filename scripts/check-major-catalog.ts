@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { majors, majorAliases, getMajorById, mergeApprovedMajors, type MajorCategory } from '../data/majors'
 import { majorEnglishNames } from '../data/major-english-names'
+import { majorDirectionOf, majorDirections } from '../data/major-directions'
 
 const officialNames: Record<string, string> = JSON.parse(readFileSync('docs/major-catalog-2026.json', 'utf8'))
 const ids = new Set<string>()
@@ -13,6 +14,8 @@ for (const major of majors) {
   ids.add(major.id)
   names.add(major.name)
   assert(major.officialCode, `缺少本科专业代码：${major.name}`)
+  assert.notEqual(majorDirectionOf(major), 'uncategorized', `缺少二级目录：${major.name}`)
+  assert(majorDirections[major.category].some(direction => direction.id === majorDirectionOf(major)), `二级目录跨板块：${major.name}`)
   assert.equal(officialNames[major.officialCode], major.name, `代码与名称不一致：${major.name}`)
   const prefix = major.officialCode.slice(0, 2)
   const expected = ['09', '13'].includes(prefix) || major.officialCode.startsWith('0402')
@@ -49,3 +52,6 @@ assert.equal(merged.find(major => major.name === '计算机科学与技术')?.ca
 assert.equal(merged.filter(major => major.id === custom.id).length, 1)
 console.log(`专业数据检查通过：${majors.length} 个本科专业；${Object.keys(majorAliases).length} 个旧链接兼容。`)
 console.log(categories)
+const directionCases = { 软件工程: 'computing', 人工智能: 'electronics', 自动化: 'electronics', 金融学: 'economics', 心理学: 'psychology', 动画: 'design', 风景园林: 'construction', 园林: 'agriculture', 体育教育: 'sports' }
+for (const [name, direction] of Object.entries(directionCases)) assert.equal(majorDirectionOf(majors.find(major => major.name === name)!), direction, name)
+assert.equal(majorDirectionOf({ name: '尚未分类的新专业', category: 'engineering' }), 'uncategorized', '未识别的新专业不根据关键词猜测分类')

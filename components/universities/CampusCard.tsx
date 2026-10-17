@@ -6,6 +6,7 @@ import { campusTheme } from '@/lib/campus-themes'
 import { useCampusTransition } from './CampusTransition'
 import type { CSSProperties, PointerEvent } from 'react'
 
+import UniversityEmblem from './UniversityEmblem'
 import { campusCulture } from '@/lib/campus-culture'
 
 export type Campus = { id: string; name: string; englishName: string; motto: string; province: string; city: string; logoUrl: string | null; accent: string; level: string | null }
@@ -47,7 +48,7 @@ export default function CampusCard({ campus: u, index, active, onActivate }: { c
   const levels = ['985', '211', '双一流'].filter(level => u.level?.split(/[／/、,，·\s]+/).includes(level))
   return <Link className={'uni-campus uni-accent-' + theme.key} href={'/universities/' + u.id} data-campus-id={u.id} onClick={event => transition?.open(event, u.id)} aria-label={'了解' + u.name + '，查看学校介绍与讨论'} onMouseEnter={prepare} onFocus={prepare} onPointerMove={move} onPointerLeave={reset} data-map-active={active} style={{ '--campus-order': index, '--campus-entry-delay': ((index % 6) * .11) + 's', '--u-accent': theme.ink, '--campus-card-wash': theme.card } as CSSProperties}>
     <span className="uni-enter-campus"><EnterCampusIcon /></span>
-    <div className="uni-card-identity"><div className="uni-logo">{u.logoUrl ? <img src={u.logoUrl} alt={u.name + '校徽'} width={96} height={96} /> : <span>{u.name[0]}</span>}</div><div className="uni-card-names"><h2>{u.name}</h2>{u.englishName && <p className="uni-campus-en" lang="en">{u.englishName}</p>}{culture ? <p className="uni-motto">{culture}</p> : !u.englishName && <p className="uni-catalog-pending">校园资料整理中</p>}</div></div>
+    <div className="uni-card-identity"><div className="uni-logo"><UniversityEmblem src={u.logoUrl} name={u.name} size={96} priority={index < 3} /></div><div className="uni-card-names"><h2>{u.name}</h2>{u.englishName && <p className="uni-campus-en" lang="en">{u.englishName}</p>}{culture ? <p className="uni-motto">{culture}</p> : !u.englishName && <p className="uni-catalog-pending">校园资料整理中</p>}</div></div>
     <div className="uni-card-bottom"><div className="uni-campus-meta"><CampusLocationIcon /><div><span>校园坐标</span><strong>{u.province === u.city ? u.city : u.province + ' · ' + u.city}</strong></div></div>{levels.length > 0 && <div className="uni-campus-levels" aria-label="学校等级">{levels.map(level => <span key={level}>{level}</span>)}</div>}</div>
   </Link>
 }

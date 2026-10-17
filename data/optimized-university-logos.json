@@ -1,0 +1,614 @@
+{
+  "/logos/afmu.png": {
+    "192": "/optimized-logos/afmu-192-cfdd52c81bec.webp",
+    "420": "/optimized-logos/afmu-420-49991f3b5be5.webp"
+  },
+  "/logos/ahau.png": {
+    "192": "/optimized-logos/ahau-192-7376d92ed195.webp",
+    "420": "/optimized-logos/ahau-420-7874a1d4cb02.webp"
+  },
+  "/logos/ahnu.png": {
+    "192": "/optimized-logos/ahnu-192-d7ac8bf7582d.webp",
+    "420": "/optimized-logos/ahnu-420-ce60a8636f42.webp"
+  },
+  "/logos/bfsu.png": {
+    "192": "/optimized-logos/bfsu-192-bfbd85f7e045.webp",
+    "420": "/optimized-logos/bfsu-420-8a4e32c73435.webp"
+  },
+  "/logos/bit.png": {
+    "192": "/optimized-logos/bit-192-78f93f8c850b.webp",
+    "420": "/optimized-logos/bit-420-685a4a0e1fb6.webp"
+  },
+  "/logos/bjfu.png": {
+    "192": "/optimized-logos/bjfu-192-4f4812a491f5.webp",
+    "420": "/optimized-logos/bjfu-420-4b607be13130.webp"
+  },
+  "/logos/bjut.png": {
+    "192": "/optimized-logos/bjut-192-19619ae8d8be.webp",
+    "420": "/optimized-logos/bjut-420-968b2328331d.webp"
+  },
+  "/logos/bjwlxy.png": {
+    "192": "/optimized-logos/bjwlxy-192-827e98fe9dd5.webp",
+    "420": "/optimized-logos/bjwlxy-420-d322a39001d1.webp"
+  },
+  "/logos/bnu.png": {
+    "192": "/optimized-logos/bnu-192-50d0dc971166.webp",
+    "420": "/optimized-logos/bnu-420-e3485d5e8ca5.webp"
+  },
+  "/logos/bsu.png": {
+    "192": "/optimized-logos/bsu-192-b54483002fbe.webp",
+    "420": "/optimized-logos/bsu-420-ef6037321ad6.webp"
+  },
+  "/logos/buaa.png": {
+    "192": "/optimized-logos/buaa-192-97afb091b9cf.webp",
+    "420": "/optimized-logos/buaa-420-17854328726e.webp"
+  },
+  "/logos/bucm.png": {
+    "192": "/optimized-logos/bucm-192-70e981191e8f.webp",
+    "420": "/optimized-logos/bucm-420-f1be1a6bc6f4.webp"
+  },
+  "/logos/buct.png": {
+    "192": "/optimized-logos/buct-192-6af7997379a1.webp",
+    "420": "/optimized-logos/buct-420-f56f1aa3073e.webp"
+  },
+  "/logos/bupt.png": {
+    "192": "/optimized-logos/bupt-192-a1cd49c290e5.webp",
+    "420": "/optimized-logos/bupt-420-ca7541c99027.webp"
+  },
+  "/logos/caa.png": {
+    "192": "/optimized-logos/caa-192-d575bda83b27.webp",
+    "420": "/optimized-logos/caa-420-54c8114aee9a.webp"
+  },
+  "/logos/cau.png": {
+    "192": "/optimized-logos/cau-192-2bac5b015d7b.webp",
+    "420": "/optimized-logos/cau-420-952e048e4506.webp"
+  },
+  "/logos/ccmu.png": {
+    "192": "/optimized-logos/ccmu-192-839941bf42bb.webp",
+    "420": "/optimized-logos/ccmu-420-f4df9e55fb87.webp"
+  },
+  "/logos/ccnu.png": {
+    "192": "/optimized-logos/ccnu-192-fdd2150579d7.webp",
+    "420": "/optimized-logos/ccnu-420-70b12a093533.webp"
+  },
+  "/logos/ccom.png": {
+    "192": "/optimized-logos/ccom-192-169efd88ba23.webp",
+    "420": "/optimized-logos/ccom-420-e02ae7390662.webp"
+  },
+  "/logos/chd.png": {
+    "192": "/optimized-logos/chd-192-4c3c59991cf4.webp",
+    "420": "/optimized-logos/chd-420-4fc61fbf443a.webp"
+  },
+  "/logos/chu.png": {
+    "192": "/optimized-logos/chu-192-4c3c59991cf4.webp",
+    "420": "/optimized-logos/chu-420-4fc61fbf443a.webp"
+  },
+  "/logos/cnu.png": {
+    "192": "/optimized-logos/cnu-192-a83baedab60f.webp",
+    "420": "/optimized-logos/cnu-420-18d8a5196165.webp"
+  },
+  "/logos/cpu.png": {
+    "192": "/optimized-logos/cpu-192-f8d114a57845.webp",
+    "420": "/optimized-logos/cpu-420-05f1a7af1d3c.webp"
+  },
+  "/logos/cqu.png": {
+    "192": "/optimized-logos/cqu-192-20dc801b7046.webp",
+    "420": "/optimized-logos/cqu-420-b52548295803.webp"
+  },
+  "/logos/csu.png": {
+    "192": "/optimized-logos/csu-192-1cc14b96830f.webp",
+    "420": "/optimized-logos/csu-420-5226a66f6d49.webp"
+  },
+  "/logos/cuc.png": {
+    "192": "/optimized-logos/cuc-192-58fcab0864b0.webp",
+    "420": "/optimized-logos/cuc-420-c35075fe4ab0.webp"
+  },
+  "/logos/cufe.png": {
+    "192": "/optimized-logos/cufe-192-b21b4968c1e9.webp",
+    "420": "/optimized-logos/cufe-420-e49c3263e7ac.webp"
+  },
+  "/logos/cug.png": {
+    "192": "/optimized-logos/cug-192-44b445cde5bd.webp",
+    "420": "/optimized-logos/cug-420-f98b80942ecb.webp"
+  },
+  "/logos/cugb.png": {
+    "192": "/optimized-logos/cugb-192-3eae4e250861.webp",
+    "420": "/optimized-logos/cugb-420-421a1aab0075.webp"
+  },
+  "/logos/cumt.png": {
+    "192": "/optimized-logos/cumt-192-81a68438a194.webp",
+    "420": "/optimized-logos/cumt-420-85757351d5bd.webp"
+  },
+  "/logos/cup.png": {
+    "192": "/optimized-logos/cup-192-74a818ce2310.webp",
+    "420": "/optimized-logos/cup-420-6ebc669ee8ff.webp"
+  },
+  "/logos/cupw.png": {
+    "192": "/optimized-logos/cupw-192-9aa338b14843.webp",
+    "420": "/optimized-logos/cupw-420-e9b14e203612.webp"
+  },
+  "/logos/dhu.png": {
+    "192": "/optimized-logos/dhu-192-c6b3ed98d291.webp",
+    "420": "/optimized-logos/dhu-420-eb428457ab53.webp"
+  },
+  "/logos/dlmu.png": {
+    "192": "/optimized-logos/dlmu-192-83502c2e7d84.webp",
+    "420": "/optimized-logos/dlmu-420-7b73d7008017.webp"
+  },
+  "/logos/dlut.png": {
+    "192": "/optimized-logos/dlut-192-f63037c9d6ae.webp",
+    "420": "/optimized-logos/dlut-420-562f0d22999b.webp"
+  },
+  "/logos/ecnu.png": {
+    "192": "/optimized-logos/ecnu-192-0fb6486c7f64.webp",
+    "420": "/optimized-logos/ecnu-420-5208b0e3de01.webp"
+  },
+  "/logos/ecust.png": {
+    "192": "/optimized-logos/ecust-192-5f1be343e349.webp",
+    "420": "/optimized-logos/ecust-420-4f24ce7dbd41.webp"
+  },
+  "/logos/fudan.png": {
+    "192": "/optimized-logos/fudan-192-29a7a0ea44be.webp",
+    "420": "/optimized-logos/fudan-420-c4526475dbe5.webp"
+  },
+  "/logos/fzu.png": {
+    "192": "/optimized-logos/fzu-192-5d907db27f76.webp",
+    "420": "/optimized-logos/fzu-420-cc288dbee9a0.webp"
+  },
+  "/logos/gxnu-edu.png": {
+    "192": "/optimized-logos/gxnu-edu-192-c9b7e5995845.webp",
+    "420": "/optimized-logos/gxnu-edu-420-0488b44c34c8.webp"
+  },
+  "/logos/gxnu.png": {
+    "192": "/optimized-logos/gxnu-192-be38879e536e.webp",
+    "420": "/optimized-logos/gxnu-420-c546f830ba56.webp"
+  },
+  "/logos/gzmu.png": {
+    "192": "/optimized-logos/gzmu-192-6bb52e5b0c74.webp",
+    "420": "/optimized-logos/gzmu-420-80e480cb3fb8.webp"
+  },
+  "/logos/hainu.png": {
+    "192": "/optimized-logos/hainu-192-566fe29c0459.webp",
+    "420": "/optimized-logos/hainu-420-34c8689e1602.webp"
+  },
+  "/logos/haut.png": {
+    "192": "/optimized-logos/haut-192-70634501bb87.webp",
+    "420": "/optimized-logos/haut-420-bad009e1b8f0.webp"
+  },
+  "/logos/hdu.png": {
+    "192": "/optimized-logos/hdu-192-a63903a6392e.webp",
+    "420": "/optimized-logos/hdu-420-dd04ba5c9629.webp"
+  },
+  "/logos/hebau.png": {
+    "192": "/optimized-logos/hebau-192-ae133c8ef8e3.webp",
+    "420": "/optimized-logos/hebau-420-c24b9bd23cb1.webp"
+  },
+  "/logos/hebut.png": {
+    "192": "/optimized-logos/hebut-192-3385076f0c13.webp",
+    "420": "/optimized-logos/hebut-420-d9547ea0b3e6.webp"
+  },
+  "/logos/henu.png": {
+    "192": "/optimized-logos/henu-192-50f225807a88.webp",
+    "420": "/optimized-logos/henu-420-5a714f668f6c.webp"
+  },
+  "/logos/heu.png": {
+    "192": "/optimized-logos/heu-192-384615633c75.webp",
+    "420": "/optimized-logos/heu-420-8f3b16825ece.webp"
+  },
+  "/logos/hfut.png": {
+    "192": "/optimized-logos/hfut-192-048068515c22.webp",
+    "420": "/optimized-logos/hfut-420-9ae5b6650a0c.webp"
+  },
+  "/logos/hhu.png": {
+    "192": "/optimized-logos/hhu-192-591d9da6cc0b.webp",
+    "420": "/optimized-logos/hhu-420-3f1cdca2df25.webp"
+  },
+  "/logos/hit.png": {
+    "192": "/optimized-logos/hit-192-ff1ca171f00c.webp",
+    "420": "/optimized-logos/hit-420-dd47f35cbdf3.webp"
+  },
+  "/logos/hnu.png": {
+    "192": "/optimized-logos/hnu-192-bd6fd14e9b2b.webp",
+    "420": "/optimized-logos/hnu-420-8a8b5e88b4d9.webp"
+  },
+  "/logos/hnust.png": {
+    "192": "/optimized-logos/hnust-192-742f867f6b4b.webp",
+    "420": "/optimized-logos/hnust-420-1cb65c0c663c.webp"
+  },
+  "/logos/hust.png": {
+    "192": "/optimized-logos/hust-192-d40e1400baba.webp",
+    "420": "/optimized-logos/hust-420-74f8d49ad158.webp"
+  },
+  "/logos/hustc.png": {
+    "192": "/optimized-logos/hustc-192-8b521713df33.webp",
+    "420": "/optimized-logos/hustc-420-733d156dccdf.webp"
+  },
+  "/logos/jiangnan.png": {
+    "192": "/optimized-logos/jiangnan-192-6e3f8e272cb6.webp",
+    "420": "/optimized-logos/jiangnan-420-d5c9a5d5bd6c.webp"
+  },
+  "/logos/jlu.png": {
+    "192": "/optimized-logos/jlu-192-726e9d4021ce.webp",
+    "420": "/optimized-logos/jlu-420-7c191bb8b203.webp"
+  },
+  "/logos/jnu.png": {
+    "192": "/optimized-logos/jnu-192-5d9f2e3cd15a.webp",
+    "420": "/optimized-logos/jnu-420-2d7a353db79f.webp"
+  },
+  "/logos/lnu.png": {
+    "192": "/optimized-logos/lnu-192-9cecaf3b7fd0.webp",
+    "420": "/optimized-logos/lnu-420-bdce7db724a2.webp"
+  },
+  "/logos/lzu.png": {
+    "192": "/optimized-logos/lzu-192-88a3a77bee46.webp",
+    "420": "/optimized-logos/lzu-420-7f01a7beb255.webp"
+  },
+  "/logos/muc.png": {
+    "192": "/optimized-logos/muc-192-ca1da9b3b667.webp",
+    "420": "/optimized-logos/muc-420-6cb946e2c076.webp"
+  },
+  "/logos/nankai.png": {
+    "192": "/optimized-logos/nankai-192-65e7f32dae2a.webp",
+    "420": "/optimized-logos/nankai-420-cfc58476fcd0.webp"
+  },
+  "/logos/ncu.png": {
+    "192": "/optimized-logos/ncu-192-49bcffcf8b2a.webp",
+    "420": "/optimized-logos/ncu-420-16c292484db7.webp"
+  },
+  "/logos/neau.png": {
+    "192": "/optimized-logos/neau-192-3e82d784016a.webp",
+    "420": "/optimized-logos/neau-420-f0cb4aba6b11.webp"
+  },
+  "/logos/nefu.png": {
+    "192": "/optimized-logos/nefu-192-8ada9cc504ad.webp",
+    "420": "/optimized-logos/nefu-420-f011c594767a.webp"
+  },
+  "/logos/nenu.png": {
+    "192": "/optimized-logos/nenu-192-16ea11454fe8.webp",
+    "420": "/optimized-logos/nenu-420-783ed9a9ee3c.webp"
+  },
+  "/logos/neu.png": {
+    "192": "/optimized-logos/neu-192-72b2e0507d39.webp",
+    "420": "/optimized-logos/neu-420-34b8d80def5c.webp"
+  },
+  "/logos/njau.png": {
+    "192": "/optimized-logos/njau-192-720fc1bb2f42.webp",
+    "420": "/optimized-logos/njau-420-130775c3d6cd.webp"
+  },
+  "/logos/njfu.png": {
+    "192": "/optimized-logos/njfu-192-3c1518848efb.webp",
+    "420": "/optimized-logos/njfu-420-f89ddb85116c.webp"
+  },
+  "/logos/njnu.png": {
+    "192": "/optimized-logos/njnu-192-aca54a7fee43.webp",
+    "420": "/optimized-logos/njnu-420-4f51dd8eea4e.webp"
+  },
+  "/logos/nju.png": {
+    "192": "/optimized-logos/nju-192-986c6c43d089.webp",
+    "420": "/optimized-logos/nju-420-c693ce1bf0dd.webp"
+  },
+  "/logos/njust.png": {
+    "192": "/optimized-logos/njust-192-1ea5147f1e18.webp",
+    "420": "/optimized-logos/njust-420-a99b972de93e.webp"
+  },
+  "/logos/nuaa.png": {
+    "192": "/optimized-logos/nuaa-192-6152eb699720.webp",
+    "420": "/optimized-logos/nuaa-420-3ad56b021dc8.webp"
+  },
+  "/logos/nudt.png": {
+    "192": "/optimized-logos/nudt-192-11a3e3a86ca7.webp",
+    "420": "/optimized-logos/nudt-420-1163959f915f.webp"
+  },
+  "/logos/nwafu.png": {
+    "192": "/optimized-logos/nwafu-192-5fc755739f76.webp",
+    "420": "/optimized-logos/nwafu-420-e522d64d6b8f.webp"
+  },
+  "/logos/nwnu.png": {
+    "192": "/optimized-logos/nwnu-192-e1104a50a952.webp",
+    "420": "/optimized-logos/nwnu-420-7535a6239b6e.webp"
+  },
+  "/logos/nwpu.png": {
+    "192": "/optimized-logos/nwpu-192-cb38cd71b5bb.webp",
+    "420": "/optimized-logos/nwpu-420-d399cba6a70a.webp"
+  },
+  "/logos/nwsuaf.png": {
+    "192": "/optimized-logos/nwsuaf-192-ebe3a4553519.webp",
+    "420": "/optimized-logos/nwsuaf-420-2222c7f4f0fe.webp"
+  },
+  "/logos/nwu.png": {
+    "192": "/optimized-logos/nwu-192-45f1d3937959.webp",
+    "420": "/optimized-logos/nwu-420-c92d43ff0d28.webp"
+  },
+  "/logos/nxu.png": {
+    "192": "/optimized-logos/nxu-192-d6df8605cfca.webp",
+    "420": "/optimized-logos/nxu-420-e962858a5c9b.webp"
+  },
+  "/logos/nyu.png": {
+    "192": "/optimized-logos/nyu-192-3eceb585487f.webp",
+    "420": "/optimized-logos/nyu-420-93df204956ad.webp"
+  },
+  "/logos/ouc.png": {
+    "192": "/optimized-logos/ouc-192-08e27da9f5e2.webp",
+    "420": "/optimized-logos/ouc-420-7a4c9426feeb.webp"
+  },
+  "/logos/pku.png": {
+    "192": "/optimized-logos/pku-192-8420f6f4b48c.webp",
+    "420": "/optimized-logos/pku-420-c1fce815f939.webp"
+  },
+  "/logos/qhu.png": {
+    "192": "/optimized-logos/qhu-192-07fe49b50489.webp",
+    "420": "/optimized-logos/qhu-420-3bd7b13fecbf.webp"
+  },
+  "/logos/ruc.png": {
+    "192": "/optimized-logos/ruc-192-679cdf28705f.webp",
+    "420": "/optimized-logos/ruc-420-0a9434cbdefc.webp"
+  },
+  "/logos/scnu.png": {
+    "192": "/optimized-logos/scnu-192-3d8affad9b54.webp",
+    "420": "/optimized-logos/scnu-420-ec4d098a8633.webp"
+  },
+  "/logos/scu.png": {
+    "192": "/optimized-logos/scu-192-5a53f93c4e8e.webp",
+    "420": "/optimized-logos/scu-420-0cb13d6f18a1.webp"
+  },
+  "/logos/scut.png": {
+    "192": "/optimized-logos/scut-192-b7dd7e46fc1c.webp",
+    "420": "/optimized-logos/scut-420-2c86eeaefbb1.webp"
+  },
+  "/logos/sdu.png": {
+    "192": "/optimized-logos/sdu-192-a68c4753efff.webp",
+    "420": "/optimized-logos/sdu-420-e861effa4d11.webp"
+  },
+  "/logos/seu.png": {
+    "192": "/optimized-logos/seu-192-fbbb8c4d780d.webp",
+    "420": "/optimized-logos/seu-420-1ceefe6c6aed.webp"
+  },
+  "/logos/shisu.png": {
+    "192": "/optimized-logos/shisu-192-762b6e37c61a.webp",
+    "420": "/optimized-logos/shisu-420-96703132e429.webp"
+  },
+  "/logos/shmtu.png": {
+    "192": "/optimized-logos/shmtu-192-da100e422e52.webp",
+    "420": "/optimized-logos/shmtu-420-299a6d0740d6.webp"
+  },
+  "/logos/shtmu.png": {
+    "192": "/optimized-logos/shtmu-192-99027a7d29ad.webp",
+    "420": "/optimized-logos/shtmu-420-39f3d5c15ba2.webp"
+  },
+  "/logos/shu.png": {
+    "192": "/optimized-logos/shu-192-e07c56317b40.webp",
+    "420": "/optimized-logos/shu-420-05d566103289.webp"
+  },
+  "/logos/shupl.png": {
+    "192": "/optimized-logos/shupl-192-3ead2870bd66.webp",
+    "420": "/optimized-logos/shupl-420-ec70cf2598b1.webp"
+  },
+  "/logos/shutcm.png": {
+    "192": "/optimized-logos/shutcm-192-39dd396f1eaa.webp",
+    "420": "/optimized-logos/shutcm-420-46f5ff463590.webp"
+  },
+  "/logos/shzu.png": {
+    "192": "/optimized-logos/shzu-192-92857985bb09.webp",
+    "420": "/optimized-logos/shzu-420-0bd6fd1f7d63.webp"
+  },
+  "/logos/sjtu.png": {
+    "192": "/optimized-logos/sjtu-192-ce287ae66bac.webp",
+    "420": "/optimized-logos/sjtu-420-3d47270a5289.webp"
+  },
+  "/logos/snnu.png": {
+    "192": "/optimized-logos/snnu-192-b98732bca4a2.webp",
+    "420": "/optimized-logos/snnu-420-035953db6d1a.webp"
+  },
+  "/logos/stu.png": {
+    "192": "/optimized-logos/stu-192-469d9eab4171.webp",
+    "420": "/optimized-logos/stu-420-781e024e5578.webp"
+  },
+  "/logos/suda.png": {
+    "192": "/optimized-logos/suda-192-ee4ed78060bb.webp",
+    "420": "/optimized-logos/suda-420-767b8636e69d.webp"
+  },
+  "/logos/sufe.png": {
+    "192": "/optimized-logos/sufe-192-c5b3d4e62fe4.webp",
+    "420": "/optimized-logos/sufe-420-d8fc27e2b3d5.webp"
+  },
+  "/logos/sust.png": {
+    "192": "/optimized-logos/sust-192-06f3f3995ee7.webp",
+    "420": "/optimized-logos/sust-420-7c3002796dfc.webp"
+  },
+  "/logos/sustech.png": {
+    "192": "/optimized-logos/sustech-192-22501b13b4ab.webp",
+    "420": "/optimized-logos/sustech-420-eb4e1d02a584.webp"
+  },
+  "/logos/swjtu.png": {
+    "192": "/optimized-logos/swjtu-192-a7be092198bc.webp",
+    "420": "/optimized-logos/swjtu-420-33f4a13e5f5c.webp"
+  },
+  "/logos/swu.png": {
+    "192": "/optimized-logos/swu-192-be6105de657e.webp",
+    "420": "/optimized-logos/swu-420-80be87946c51.webp"
+  },
+  "/logos/swufe.png": {
+    "192": "/optimized-logos/swufe-192-1836348fb3f4.webp",
+    "420": "/optimized-logos/swufe-420-a1eee938c7a2.webp"
+  },
+  "/logos/swupl.png": {
+    "192": "/optimized-logos/swupl-192-94b08cb51da8.webp",
+    "420": "/optimized-logos/swupl-420-49b8ad071ba8.webp"
+  },
+  "/logos/sysu.png": {
+    "192": "/optimized-logos/sysu-192-03b1b63c3f5d.webp",
+    "420": "/optimized-logos/sysu-420-67305554724c.webp"
+  },
+  "/logos/szu.png": {
+    "192": "/optimized-logos/szu-192-046a0426125d.webp",
+    "420": "/optimized-logos/szu-420-0282c03ae4c6.webp"
+  },
+  "/logos/tjcu.png": {
+    "192": "/optimized-logos/tjcu-192-293424a3aeba.webp",
+    "420": "/optimized-logos/tjcu-420-4e19b8babed3.webp"
+  },
+  "/logos/tjnu.png": {
+    "192": "/optimized-logos/tjnu-192-a9c089836250.webp",
+    "420": "/optimized-logos/tjnu-420-852d3b5c5cc0.webp"
+  },
+  "/logos/tjpu.png": {
+    "192": "/optimized-logos/tjpu-192-47be27449992.webp",
+    "420": "/optimized-logos/tjpu-420-976d912ad557.webp"
+  },
+  "/logos/tju.png": {
+    "192": "/optimized-logos/tju-192-976add779e5c.webp",
+    "420": "/optimized-logos/tju-420-9d1860647119.webp"
+  },
+  "/logos/tmu.png": {
+    "192": "/optimized-logos/tmu-192-a5845a92ab44.webp",
+    "420": "/optimized-logos/tmu-420-3cfedca31c73.webp"
+  },
+  "/logos/tongji.png": {
+    "192": "/optimized-logos/tongji-192-12fceed62135.webp",
+    "420": "/optimized-logos/tongji-420-de1451901e0a.webp"
+  },
+  "/logos/tsinghua.png": {
+    "192": "/optimized-logos/tsinghua-192-f39792b946bc.webp",
+    "420": "/optimized-logos/tsinghua-420-ab88e0cac76a.webp"
+  },
+  "/logos/tyut.png": {
+    "192": "/optimized-logos/tyut-192-eddc592be2ed.webp",
+    "420": "/optimized-logos/tyut-420-1b0f94cad70b.webp"
+  },
+  "/logos/uestc.png": {
+    "192": "/optimized-logos/uestc-192-60f5f20f9322.webp",
+    "420": "/optimized-logos/uestc-420-405aeb2a9cd4.webp"
+  },
+  "/logos/uibe.png": {
+    "192": "/optimized-logos/uibe-192-564ba150a0ad.webp",
+    "420": "/optimized-logos/uibe-420-f0bd1a1666d4.webp"
+  },
+  "/logos/ustb.png": {
+    "192": "/optimized-logos/ustb-192-25625b897962.webp",
+    "420": "/optimized-logos/ustb-420-6a8f105a80df.webp"
+  },
+  "/logos/ustc.png": {
+    "192": "/optimized-logos/ustc-192-f6a0c5506377.webp",
+    "420": "/optimized-logos/ustc-420-6cb824f7a08c.webp"
+  },
+  "/logos/ut.png": {
+    "192": "/optimized-logos/ut-192-9d0382c90444.webp",
+    "420": "/optimized-logos/ut-420-b829cd431e59.webp"
+  },
+  "/logos/whu.png": {
+    "192": "/optimized-logos/whu-192-fa5039140a38.webp",
+    "420": "/optimized-logos/whu-420-96a627e4eff8.webp"
+  },
+  "/logos/whut.png": {
+    "192": "/optimized-logos/whut-192-5505c6acaa9b.webp",
+    "420": "/optimized-logos/whut-420-22128eeba287.webp"
+  },
+  "/logos/xatu.png": {
+    "192": "/optimized-logos/xatu-192-0ee277d9913c.webp",
+    "420": "/optimized-logos/xatu-420-d2193a1a9694.webp"
+  },
+  "/logos/xauat.png": {
+    "192": "/optimized-logos/xauat-192-b7c8445adef6.webp",
+    "420": "/optimized-logos/xauat-420-23eb2a725c6d.webp"
+  },
+  "/logos/xaut.png": {
+    "192": "/optimized-logos/xaut-192-14fed58d3c54.webp",
+    "420": "/optimized-logos/xaut-420-82006ab79002.webp"
+  },
+  "/logos/xianmc.png": {
+    "192": "/optimized-logos/xianmc-192-fd5f73fee168.webp",
+    "420": "/optimized-logos/xianmc-420-9f3bc0a21daf.webp"
+  },
+  "/logos/xidian.png": {
+    "192": "/optimized-logos/xidian-192-796057d71a9d.webp",
+    "420": "/optimized-logos/xidian-420-de2946257f30.webp"
+  },
+  "/logos/xisu.png": {
+    "192": "/optimized-logos/xisu-192-31eef4960675.webp",
+    "420": "/optimized-logos/xisu-420-3309a0b13d65.webp"
+  },
+  "/logos/xiyou.png": {
+    "192": "/optimized-logos/xiyou-192-8896f7bf77b5.webp",
+    "420": "/optimized-logos/xiyou-420-b9f65015c81d.webp"
+  },
+  "/logos/xjdx.png": {
+    "192": "/optimized-logos/xjdx-192-4a7d07efb9e5.webp",
+    "420": "/optimized-logos/xjdx-420-e43a8606221e.webp"
+  },
+  "/logos/xjtlu.jpg": {
+    "192": "/optimized-logos/xjtlu-192-aa3e97a38c01.webp",
+    "420": "/optimized-logos/xjtlu-420-92dedda1d8f0.webp"
+  },
+  "/logos/xju.png": {
+    "192": "/optimized-logos/xju-192-20e6566e4b3e.webp",
+    "420": "/optimized-logos/xju-420-518f51fd53d4.webp"
+  },
+  "/logos/xmu-medical.png": {
+    "192": "/optimized-logos/xmu-medical-192-715aa0b054ef.webp",
+    "420": "/optimized-logos/xmu-medical-420-5d896e35d2a6.webp"
+  },
+  "/logos/xmu.png": {
+    "192": "/optimized-logos/xmu-192-4cf8271a2b33.webp",
+    "420": "/optimized-logos/xmu-420-0236b50df52f.webp"
+  },
+  "/logos/xpu.png": {
+    "192": "/optimized-logos/xpu-192-1497f3e0ba42.webp",
+    "420": "/optimized-logos/xpu-420-233d309685b7.webp"
+  },
+  "/logos/xufe.jpg": {
+    "192": "/optimized-logos/xufe-192-85c4c0047bf3.webp",
+    "420": "/optimized-logos/xufe-420-e0fc8e120e0a.webp"
+  },
+  "/logos/xufe.png": {
+    "192": "/optimized-logos/xufe-192-8d2140e15376.webp",
+    "420": "/optimized-logos/xufe-420-537d8c581b29.webp"
+  },
+  "/logos/xust.png": {
+    "192": "/optimized-logos/xust-192-df397aedef76.webp",
+    "420": "/optimized-logos/xust-420-bcf78c28ea65.webp"
+  },
+  "/logos/xzu.png": {
+    "192": "/optimized-logos/xzu-192-0add85ab5e8c.webp",
+    "420": "/optimized-logos/xzu-420-5792e8cd5bd1.webp"
+  },
+  "/logos/yau.png": {
+    "192": "/optimized-logos/yau-192-35e0eaee32ba.webp",
+    "420": "/optimized-logos/yau-420-cbcf9e36bb11.webp"
+  },
+  "/logos/ybu.png": {
+    "192": "/optimized-logos/ybu-192-3c824cc0fa61.webp",
+    "420": "/optimized-logos/ybu-420-24861e6545bd.webp"
+  },
+  "/logos/ynnu.png": {
+    "192": "/optimized-logos/ynnu-192-ac33d636819c.webp",
+    "420": "/optimized-logos/ynnu-420-ee36bb10e085.webp"
+  },
+  "/logos/ynu.png": {
+    "192": "/optimized-logos/ynu-192-994d0af7a218.webp",
+    "420": "/optimized-logos/ynu-420-9154713b656b.webp"
+  },
+  "/logos/zjnu.png": {
+    "192": "/optimized-logos/zjnu-192-7138613a6d29.webp",
+    "420": "/optimized-logos/zjnu-420-36ccc0898e48.webp"
+  },
+  "/logos/zju.png": {
+    "192": "/optimized-logos/zju-192-0429252f53a1.webp",
+    "420": "/optimized-logos/zju-420-a16923c41f78.webp"
+  },
+  "/logos/zjut.png": {
+    "192": "/optimized-logos/zjut-192-ae7e9983601b.webp",
+    "420": "/optimized-logos/zjut-420-61a1aea4a86c.webp"
+  },
+  "/logos/zuei.png": {
+    "192": "/optimized-logos/zuei-192-6201a69f18a5.webp",
+    "420": "/optimized-logos/zuei-420-3da8fb0298b0.webp"
+  },
+  "/logos/zuel.png": {
+    "192": "/optimized-logos/zuel-192-6201a69f18a5.webp",
+    "420": "/optimized-logos/zuel-420-3da8fb0298b0.webp"
+  },
+  "/logos/zzu.png": {
+    "192": "/optimized-logos/zzu-192-1e5ba221b299.webp",
+    "420": "/optimized-logos/zzu-420-01e66826ee19.webp"
+  }
+}

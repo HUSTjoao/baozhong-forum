@@ -3,6 +3,9 @@
 import AnimationControl from './AnimationControl'
 import { useEffect, useRef, useState } from 'react'
 import useViewportReveal from './useViewportReveal'
+import optimizedPhotos from '@/data/optimized-campus-photos.json'
+
+const photos: Record<string, { src: string; thumbnail: string; srcSet: string }> = optimizedPhotos
 
 type Category = '全部' | '校园' | '日常' | '四季'
 type Frame = { id: number; title: string; category: Category; x: number; y: number; width: number; height: number; color: string; src: string | null }
@@ -30,8 +33,18 @@ export default function CampusFrames() {
   const [selected, setSelected] = useState<number | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [entered, setEntered] = useState(false)
+  const [photosRequested, setPhotosRequested] = useState(false)
   const visibleFrames = frames
   const photo = frames.find(frame => frame.id === selected)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setPhotosRequested(true); observer.disconnect() }
+    }, { rootMargin: '600px' })
+    observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const section = sectionRef.current
@@ -107,7 +120,7 @@ export default function CampusFrames() {
   }
 
   return (
-    <section ref={sectionRef} className="campus-frames" data-entered={entered} onFocusCapture={() => setEntered(true)} aria-labelledby="campus-frames-title">
+    <section ref={sectionRef} className="campus-frames" data-entered={entered} onFocusCapture={() => { setEntered(true); setPhotosRequested(true) }} aria-labelledby="campus-frames-title">
       <div ref={stageRef} className="campus-frames-stage" data-dragging={isDragging} onPointerDown={event => {
         if (event.button !== 0 || (event.target as HTMLElement).closest('.campus-frames-controls, .campus-photo-dialog, .section-animation-skip')) return
         suppressClick.current = false
@@ -140,13 +153,13 @@ export default function CampusFrames() {
           <div className="campus-star-cloud" aria-hidden="true" />
           <div className="campus-starfield" aria-hidden="true">{Array.from({ length: 240 }, (_, index) => <i key={index} style={{ left: `${(index * 431 + 173) % 3600 - 800}px`, top: `${(index * 317 + 97) % 2950 - 800}px`, width: index % 17 === 0 ? 3 : index % 5 === 0 ? 2 : 1, height: index % 17 === 0 ? 3 : index % 5 === 0 ? 2 : 1, opacity: .18 + index % 7 * .09, animationDelay: `${-index % 9}s`, animationDuration: `${5 + index % 7}s` }} />)}</div>
           {frames.map(frame => <button key={frame.id} type="button" className="campus-photo" data-placeholder={!frame.src} style={{ left: frame.x, top: frame.y, width: frame.width, height: frame.height, backgroundColor: frame.src ? frame.color : 'transparent' }} aria-label={`查看${frame.title}${frame.src ? '' : '，照片待补'}`} onClick={event => { if (!suppressClick.current || event.detail === 0) setSelected(frame.id) }}>
-            {frame.src ? <img src={frame.src} alt={frame.title} draggable={false} /> : <span className="campus-photo-placeholder"><span>{String(frame.id).padStart(2, '0')}</span><strong>{frame.title}</strong><small>校园照片待补</small></span>}
+            {frame.src ? photosRequested && <img src={photos[frame.src]?.thumbnail ?? frame.src} alt={frame.title} draggable={false} loading="lazy" decoding="async" fetchPriority="low" /> : <span className="campus-photo-placeholder"><span>{String(frame.id).padStart(2, '0')}</span><strong>{frame.title}</strong><small>校园照片待补</small></span>}
             <span className="campus-photo-caption">{frame.category} / {frame.title}<span>↗</span></span>
           </button>)}
         </div>
         <div className="campus-frames-instruction"><span lang="en">HOW TO EXPLORE</span><strong><span>移动鼠标，探索照片</span><span>左右拖动，探索校园</span></strong><small>点击照片 · 放大查看</small></div>
         <dialog ref={dialogRef} className="campus-photo-dialog" aria-label={photo?.title ?? '校园照片'} onClose={() => setSelected(null)} onCancel={() => setSelected(null)} onKeyDown={event => { if (event.key === 'ArrowLeft') { event.preventDefault(); changePhoto(-1) } if (event.key === 'ArrowRight') { event.preventDefault(); changePhoto(1) } }}>
-          {photo && <><button type="button" className="campus-photo-close" aria-label="关闭照片" onClick={() => setSelected(null)}>×</button><div className="campus-photo-large" style={{ backgroundColor: photo.src ? photo.color : 'transparent' }}>{photo.src ? <img src={photo.src} alt={photo.title} /> : <div className="campus-photo-placeholder"><span>{String(photo.id).padStart(2, '0')}</span><strong id="campus-photo-title">{photo.title}</strong><small>这张校园照片，等你来补上。</small></div>}</div><footer><span>{photo.category} / {photo.title}</span><div><button type="button" aria-label="上一张照片" onClick={() => changePhoto(-1)}>←</button><button type="button" aria-label="下一张照片" onClick={() => changePhoto(1)}>→</button></div></footer></>}
+          {photo && <><button type="button" className="campus-photo-close" aria-label="关闭照片" onClick={() => setSelected(null)}>×</button><div className="campus-photo-large" style={{ backgroundColor: photo.src ? photo.color : 'transparent' }}>{photo.src ? <img src={photos[photo.src]?.src ?? photo.src} srcSet={photos[photo.src]?.srcSet} sizes="90vw" alt={photo.title} decoding="async" /> : <div className="campus-photo-placeholder"><span>{String(photo.id).padStart(2, '0')}</span><strong id="campus-photo-title">{photo.title}</strong><small>这张校园照片，等你来补上。</small></div>}</div><footer><span>{photo.category} / {photo.title}</span><div><button type="button" aria-label="上一张照片" onClick={() => changePhoto(-1)}>←</button><button type="button" aria-label="下一张照片" onClick={() => changePhoto(1)}>→</button></div></footer></>}
         </dialog>
       </div>
     </section>

@@ -1,0 +1,38 @@
+{
+  "/home-campus-blossoms-clean.png": {
+    "src": "/optimized-campus/home-campus-blossoms-clean-1672-a6ee84762ee7.webp",
+    "thumbnail": "/optimized-campus/home-campus-blossoms-clean-800-e7f139523ec5.webp",
+    "srcSet": "/optimized-campus/home-campus-blossoms-clean-800-e7f139523ec5.webp 800w, /optimized-campus/home-campus-blossoms-clean-1280-e11e34fdfd47.webp 1280w, /optimized-campus/home-campus-blossoms-clean-1672-a6ee84762ee7.webp 1672w",
+    "placeholder": "data:image/webp;base64,UklGRl4BAABXRUJQVlA4IFIBAAAQBwCdASooABcAPwFyqVCrJyOiqqwBYCAJQBWttsJA0OCZJuZ2SHcbOrUlKWmRYZ0qjIW75C/EDHrgP4T5ERk5fAD7dJKlsy0M6LBgHCHXG3WmWn8fgc0Y1+b0yu8N4O58BnyYTMbE9ATduWdjqKdhlR4UKu4uJiol6u/xItA/bg3sEixuFPYIkbR5iIo+uJI6MjdiKUOYeTvG9o0KMLv/BQHhuMOJmamLNsxLphoWVp1jGB7X6ThTddJpiFMqJ2JvD5/c6bsnM+6ouU9BeNgX5SVzGobADIA2BjXFjo8DejsKcxMGZxDwNiEXO7aYlNsZjdT1D431wplccHR12mRv5RJVy3ixIXDaxVy5gXZU7gfh7WlWDdRMXUn1jtutVxEMUmZhTHkYMqAfIbnnjkGn7RyB6DVsBJvZq+2s1h94MhUpPgIxITMw+qrWAEHAFLAAAA=="
+  },
+  "/home-campus-bench.jpg": {
+    "src": "/optimized-campus/home-campus-bench-1620-fe0fefd4f19a.webp",
+    "thumbnail": "/optimized-campus/home-campus-bench-800-cefa6c0d28b3.webp",
+    "srcSet": "/optimized-campus/home-campus-bench-800-cefa6c0d28b3.webp 800w, /optimized-campus/home-campus-bench-1280-143c7cf3db57.webp 1280w, /optimized-campus/home-campus-bench-1620-fe0fefd4f19a.webp 1620w",
+    "placeholder": "data:image/webp;base64,UklGRl4BAABXRUJQVlA4IFIBAAAQCACdASooABsAPvlmrE6qpSQiNVgIAVAfCUAW325Y7utYDvtAh65ogSAjGux0wzjdYulw4p4XGKLljsJvF9eDzOaqhY0W/0uAAP7ZY9p6CaMi5KGiGMGBIWPgHQgcDGcW3pLx0YR7aLKWSuLj0UBuLXjhxpwCChPBGh1rAdDnk2L+DwgP+0ADT5otSYjRx+RgbzXlEk3PAFpXc424lmC8Ms47LUYR/ryLceuRrYDvwere0+J2pRtGB/koJsFbYtIxWE0pYE8Gmt7aoGArpDTklYQQVgvvBJJmTfRAAKBoHc7SHnw9avWGAAob6UGfiXO2+DRRTueb2T1fqAebD6AP8dvBueJ1V28z3kIWRucMLBJ9MTkREwFAhdM7IeWAEKPHemyhTTXJ4Fiy/FXWLFCU+fcY8ZPEnpla2wg/ZTlCxJxXSTIvaTZWSfB0r+zS8lqAAA=="
+  },
+  "/campus/sunlit-path.jpg": {
+    "src": "/optimized-campus/sunlit-path-1620-95aacce9f33f.webp",
+    "thumbnail": "/optimized-campus/sunlit-path-800-cd56d016f189.webp",
+    "srcSet": "/optimized-campus/sunlit-path-800-cd56d016f189.webp 800w, /optimized-campus/sunlit-path-1280-4691217f62cc.webp 1280w, /optimized-campus/sunlit-path-1620-95aacce9f33f.webp 1620w",
+    "placeholder": "data:image/webp;base64,UklGRigBAABXRUJQVlA4IBwBAACQBgCdASooABsAPwFssFIrJaSisBVYAWAgCUAZQAXgYV5FUa2VreN803KKxng6y9GLR6VqcLQOVfjhkrwYAP7upGCbnQ59nK4e4sZqlpomC12fdUfFo8SCvGijbpixT/LZ/gBAsIq7OvxX6Rk/oe6tssxdg99rXRZz/crZOYL5lqnI81ALhFdlHvJxHW/aK1h57XyH4+4qkgl3boAPEZbxMBgOgNWNgiYWMN4xTKPYi4selnYclq90vIE6Q3fxSD0oSpkvKveWu58d0Vf7c2IiGODZpvhzi3P4G79x2k+dxI6xRJEY4RvhH2GoXWEqswf5Lrb1RwT6ibexEeWYLg38F3l1GRi550UJYgfaHJxxKpneOWM6E7CVKNYAAA=="
+  },
+  "/campus/ginkgo-leaves.jpg": {
+    "src": "/optimized-campus/ginkgo-leaves-1536-16a75ed71487.webp",
+    "thumbnail": "/optimized-campus/ginkgo-leaves-800-52b863f9105d.webp",
+    "srcSet": "/optimized-campus/ginkgo-leaves-800-52b863f9105d.webp 800w, /optimized-campus/ginkgo-leaves-1280-a777f0da7ba1.webp 1280w, /optimized-campus/ginkgo-leaves-1536-16a75ed71487.webp 1536w",
+    "placeholder": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAQBwCdASooABsAPwFwrFGrJiQiqqoBYCAJbACdM7M/UHkfePy5IuvAL4JcvLg2IZi0etFkDc7JNWnthTFXPXjFAAD9A9rh2sjDdMyLm5QgIiASx5nWDCAoaQBNJHi6t7Mas3ebPq9ulS84aJFA5tZR73jKwWIeZ5chaGKhzm6jhGSeMtjpYoChs4AKVLWjO4MDmzDhOyqQMAfQs7mb1gD2vqqw4wAxaUeCR4Y4UbfhdYw6t6tXoiacYahNGaUHfv5PHlP5j0YIBQXlXdC1QQEeyy7GULYqIDyB/Zk+o/l9MCf0MhRVKw7RMKq9SzcAAAA="
+  },
+  "/campus/window-tree.jpg": {
+    "src": "/optimized-campus/window-tree-1179-ceae2c954b07.webp",
+    "thumbnail": "/optimized-campus/window-tree-800-8b590e05e4be.webp",
+    "srcSet": "/optimized-campus/window-tree-800-8b590e05e4be.webp 800w, /optimized-campus/window-tree-1179-ceae2c954b07.webp 1179w",
+    "placeholder": "data:image/webp;base64,UklGRsgBAABXRUJQVlA4ILwBAAAwCgCdASooACcAPwFuqlArJqOirjv5mWAgCWwAuyFxeq7tNgSv0gzNDTYii24fetGa9EK7vx1BBZDuOZUN7k6rll4ivuQWhDQ7ElmOzjUYjABA9jSyGkdSpIAA/YXwP9scj38mN1udFofrl8zWEWP9ydjRcfAfInMERRG7Bw5F5ZbuTG/ltFAEA0Mdg67gFSBaOiXKI3l9fBKcy/ve3gNYCepHXuUEm1LFqIxqZ6yNZ4mVBkRJZ3xUryW3n+YZrrGrcrFDoIwuuFHeqQT3vwzsyomiPLAZagkopvJTtUWrtFJsnRPiiOMDfOvK5L5ccX5F1oBoGMCSG8aZGeE920IyB4sPPOAB9TCygFLxgBP+Aq/vaKDpp0+W6V31qsZFB6AvEUPw1WeZ8EKXwMOwl0vcy5UkXdr82glp5P0KIlm42OEwSwUSdGDdY1SFt96P/AQ8OE98iNmjxq5WOY+Jhuy2OPfuvILe3rt/OUlGqcDSglp3is+eoak0yMJDJmBf6DDpW2276Zal+Z1c1V9lhmSyj73BMjg4QY86NJ90ShVH2YiyRI/fw3G8Y+Vl46pHJ7of47QOl6bmaDwiuAA="
+  },
+  "/campus/green-sky.jpg": {
+    "src": "/optimized-campus/green-sky-720-00069075534b.webp",
+    "thumbnail": "/optimized-campus/green-sky-720-00069075534b.webp",
+    "srcSet": "/optimized-campus/green-sky-720-00069075534b.webp 720w",
+    "placeholder": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACwBgCdASooABkAPu1ko06ppaMiNVv8ATAdiWgAnTM0RlL0AEWbR7qsK6S4M4tV5BPKVjY6APvPRordVUD7IAD5p9+XPFzpwfVNMLOOkltw5A1rY8yAnsLEzvRn0vN8riFAmnhbuRU8BKf0/tx4x0/BGzzM3ksVicHP+05NXZLeVErVVs8CGfDczo9tuK3wOSNRErm8C9JRiNCELVN1Tw9opmBGMId9QH4cA3qFSyM6QuusCYKBMg36ddV/hgdIZ8GC5gpVv/R4sD1bRivPyjWLnzajgNy04rc/fgRQvM0vAs/mDwElLR57N+xgnmSo8x/lq9+/4io9gBAA"
+  }
+}

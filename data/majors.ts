@@ -1,3 +1,5 @@
+import { additionalMajors } from './major-additions-20261017'
+
 export type MajorCategory = 'science' | 'engineering' | 'arts' | 'medicine' | 'other'
 
 export interface Major {
@@ -1972,6 +1974,15 @@ export const majors: Major[] = [
     "officialCode": "082003"
   },
   {
+    "id": "aircraft-airworthiness",
+    "name": "飞行器适航技术",
+    "category": "engineering",
+    "description": "飞行器适航技术研究民用航空器在设计、制造和使用过程中如何满足适航要求，关注航空安全、符合性验证与持续适航管理。学习内容通常涉及飞行器结构与系统、工程力学、可靠性分析、适航法规以及试验和审定技术，并结合案例与工程实践理解安全要求如何转化为可检查的证据。所学知识可用于航空制造、航空运营及维修等领域的适航验证、工程分析和技术管理；具体课程、实践安排与培养侧重点因学校而异。",
+    "hotScore": 0,
+    "strongUniversities": [],
+    "officialCode": "082007T"
+  },
+  {
     "id": "explosive-tech",
     "name": "弹药工程与爆炸技术",
     "category": "engineering",
@@ -2677,7 +2688,8 @@ export const majors: Major[] = [
     "hotScore": 60,
     "strongUniversities": [],
     "description": "运动训练主要研究竞技运动的技术训练、体能发展与竞赛组织。通常学习专项运动、训练学、运动生理、运动心理和竞赛理论等内容，并通过训练计划、技术分析与竞赛实践，根据项目特点、负荷和运动表现调整方案。所学知识可用于运动训练、体育队伍、赛事组织和竞技体育相关研究等领域；具体课程、实践安排和培养侧重点因学校而异。"
-  }
+  },
+  ...additionalMajors,
 ]
 
 export const majorAliases: Record<string, string> = {

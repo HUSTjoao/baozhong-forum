@@ -1,5 +1,20 @@
 // Display translations for the canonical undergraduate major catalog.
 const names = `
+数字经济|Digital Economy
+大数据管理与应用|Big Data Management and Application
+跨境电子商务|Cross-border E-commerce
+供应链管理|Supply Chain Management
+智能建造|Intelligent Construction
+智能感知工程|Intelligent Sensing Engineering
+智能车辆工程|Intelligent Vehicle Engineering
+新能源汽车工程|New Energy Vehicle Engineering
+智能电网信息工程|Smart Grid Information Engineering
+新能源材料与器件|New Energy Materials and Devices
+无人驾驶航空器系统工程|Unmanned Aircraft Systems Engineering
+低空技术与工程|Low-altitude Technology and Engineering
+智能医学工程|Intelligent Medical Engineering
+口腔医学技术|Dental Technology
+运动康复|Sports Rehabilitation
 计算机科学与技术|Computer Science and Technology
 软件工程|Software Engineering
 电子信息工程|Electronic Information Engineering
@@ -37,6 +52,7 @@ const names = `
 环境工程|Environmental Engineering
 能源与动力工程|Energy and Power Engineering
 航空航天工程|Aerospace Engineering
+飞行器适航技术|Aircraft Airworthiness Technology
 核工程与核技术|Nuclear Engineering and Technology
 光电信息科学与工程|Optoelectronic Information Science and Engineering
 车辆工程|Vehicle Engineering

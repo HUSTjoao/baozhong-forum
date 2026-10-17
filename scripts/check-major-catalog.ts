@@ -18,8 +18,9 @@ for (const major of majors) {
   assert(majorDirections[major.category].some(direction => direction.id === majorDirectionOf(major)), `二级目录跨板块：${major.name}`)
   assert.equal(officialNames[major.officialCode], major.name, `代码与名称不一致：${major.name}`)
   const prefix = major.officialCode.slice(0, 2)
-  const expected = ['09', '13'].includes(prefix) || major.officialCode.startsWith('0402')
-    ? 'other' : ({ '07': 'science', '08': 'engineering', '10': 'medicine' }[prefix] ?? 'arts')
+  const interdisciplinaryDisplayGroups: Record<string, MajorCategory> = { '140003TK': 'engineering', '140011TK': 'medicine' }
+  const expected = interdisciplinaryDisplayGroups[major.officialCode] ?? (['09', '13'].includes(prefix) || major.officialCode.startsWith('0402')
+    ? 'other' : ({ '07': 'science', '08': 'engineering', '10': 'medicine' }[prefix] ?? 'arts'))
   assert.equal(major.category, expected, `错误分类：${major.name}`)
   assert(majorEnglishNames[major.name]?.trim(), `缺少英文名：${major.name}`)
   assert(major.description.length >= 110, `介绍不足：${major.name}`)
@@ -52,6 +53,6 @@ assert.equal(merged.find(major => major.name === '计算机科学与技术')?.ca
 assert.equal(merged.filter(major => major.id === custom.id).length, 1)
 console.log(`专业数据检查通过：${majors.length} 个本科专业；${Object.keys(majorAliases).length} 个旧链接兼容。`)
 console.log(categories)
-const directionCases = { 软件工程: 'computing', 人工智能: 'electronics', 自动化: 'electronics', 金融学: 'economics', 心理学: 'psychology', 动画: 'design', 风景园林: 'construction', 园林: 'agriculture', 体育教育: 'sports' }
+const directionCases = { 飞行器适航技术: 'aerospace', 软件工程: 'computing', 人工智能: 'electronics', 自动化: 'electronics', 金融学: 'economics', 心理学: 'psychology', 动画: 'design', 风景园林: 'construction', 园林: 'agriculture', 体育教育: 'sports' }
 for (const [name, direction] of Object.entries(directionCases)) assert.equal(majorDirectionOf(majors.find(major => major.name === name)!), direction, name)
 assert.equal(majorDirectionOf({ name: '尚未分类的新专业', category: 'engineering' }), 'uncategorized', '未识别的新专业不根据关键词猜测分类')

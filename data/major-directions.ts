@@ -49,6 +49,9 @@ const catalogCodes = new Map(majors.map(major => [major.name, major.officialCode
 export function majorDirectionOf(major: Pick<Major, 'name' | 'category' | 'officialCode'>): string {
   const code = major.officialCode || catalogCodes.get(major.name)
   if (!code) return 'uncategorized'
+  // The 2026 catalog moves these to interdisciplinary studies; keep our browsing entrances.
+  if (code === '140003TK' && major.category === 'engineering') return 'aerospace'
+  if (code === '140011TK' && major.category === 'medicine') return 'nursing'
   if (major.category === 'other' && code === '130310') return 'design' // Animation belongs with visual design in this browsing layout.
   return majorDirections[major.category]?.find(direction => direction.prefixes.some(prefix => code.startsWith(prefix)))?.id || 'uncategorized'
 }

@@ -11,6 +11,48 @@ export interface MajorExploration {
 // Broad exploration prompts, not predictions about salary or admission requirements.
 // Individual introductions and application examples remain in the canonical catalog.
 const profiles: Record<string, MajorExploration> = {
+  aerialSystems: {
+    direction: '从飞行器、地面系统到运行场景，理解低空系统如何协同。导航、控制、通信与任务需求需要一起考虑，仿真和测试是验证方案的重要环节。',
+    paths: ['无人航空器系统集成', '导航控制与通信', '低空应用与系统验证'],
+    furtherStudy: '可探索航空宇航、控制、通信或低空技术相关领域，通过课程与项目了解偏向飞行器、信息系统还是行业应用。',
+    interests: ['对飞行原理和自主系统感兴趣', '喜欢结合软件、电子与机械理解完整系统', '愿意仔细分析运行条件、误差和安全边界'],
+    practice: '为校园巡检等假想场景画出系统框图，列出感知、通信、控制和任务需求，用公开资料或仿真比较方案。',
+  },
+  smartMobility: {
+    direction: '把车辆结构、电驱、感知和控制放进同一个系统。整车性能需要经过建模、仿真与试验分析，可靠性和软硬件协作贯穿研发过程。',
+    paths: ['车辆与动力系统开发', '智能控制与系统集成', '仿真测试与性能分析'],
+    furtherStudy: '可在车辆、机械、控制、电气或相关领域深入，结合具体专业了解整车、电驱和智能系统的不同侧重点。',
+    interests: ['对车辆如何运动和控制感兴趣', '愿意把力学、电学与程序设计联系起来', '喜欢通过测量、仿真和测试改进方案'],
+    practice: '比较两种车辆技术方案，画出能量与信息流，查阅公开参数并说明性能比较需要满足哪些相同条件。',
+  },
+  medicalEngineering: {
+    direction: '用工程和数据方法回应医学需求。医学背景、数据质量、隐私保护及可靠的技术验证，比单纯追求算法指标更值得同时关注。',
+    paths: ['医学数据与图像分析', '智能医疗技术研发', '健康信息系统与工程验证'],
+    furtherStudy: '可进一步探索生物医学工程、计算机、医学信息或相应交叉方向，结合学校方案理解医学基础与工程训练的比重。',
+    interests: ['对医学问题和技术实现都感兴趣', '愿意学习编程、统计并核对数据来源', '重视隐私、验证和跨学科沟通'],
+    practice: '选一篇面向公众的智慧医疗案例，整理它解决的问题、需要的数据和验证方式，使用模拟数据练习表达。',
+  },
+  dentalTechnology: {
+    direction: '把口腔基础、材料、工艺和美学转化为精细的修复设计。数字化工具与手工训练相互补充，尺寸、适配和加工质量都需要认真核对。',
+    paths: ['口腔修复工艺与设计', '数字化制作与质量分析', '口腔材料及设备技术支持'],
+    furtherStudy: '可围绕口腔修复工艺、材料或数字制造继续学习，具体升学与实践要求需结合学校培养方案了解。',
+    interests: ['对精细结构、材料和制作过程感兴趣', '愿意耐心训练形态观察和空间表达', '喜欢兼顾功能、精度和审美的设计'],
+    practice: '观察公开的数字化义齿制作流程，画出扫描、设计、制作与检验如何衔接，用纸模型练习空间表达。',
+  },
+  sportsRehabilitation: {
+    direction: '从运动表现与功能出发，理解评估、训练与恢复之间的联系。科学依据、个体差异和规范的实践指导共同支撑专业训练。',
+    paths: ['运动功能与训练支持', '运动健康服务', '运动科学与相关研究'],
+    furtherStudy: '可探索体育学、运动人体科学或相应运动健康领域，结合培养方案理解与医学类康复治疗专业的不同。',
+    interests: ['喜欢运动，也愿意学习人体科学', '能耐心观察动作、记录数据和理解个体差异', '愿意倾听反馈并重视规范训练'],
+    practice: '比较两个公开的运动科学科普案例，整理评估指标和证据依据，了解专业人员如何安排规范实践。',
+  },
+  airworthiness: {
+    direction: '连接航空工程与安全要求。从设计验证到投入使用后的持续适航，需要把结构、系统、可靠性和适航要求放在同一条证据链中理解。',
+    paths: ['适航符合性验证', '航空器持续适航', '可靠性与工程技术管理'],
+    furtherStudy: '可继续探索航空宇航工程、可靠性、安全工程或适航技术相关方向，结合具体学校的课程与项目了解初始适航和持续适航的侧重点。',
+    interests: ['想理解飞机如何通过设计、试验和运行管理保障安全', '愿意细读技术要求，核对数据、记录与验证依据', '喜欢把力学、系统知识和严谨的工程判断结合起来'],
+    practice: '选择一项公开介绍的航空器设计改进，整理它要解决的安全问题、采用的验证方法和需要留存的证据，尝试画出简单的验证流程。',
+  },
   computing: {
     direction: '从能运行的程序，走向可靠的系统。数字化应用不断变化，扎实的算法、系统基础和持续做项目的能力，比只熟悉某个工具更有延展性。',
     paths: ['软件与系统开发', '数据与智能应用', '安全与基础设施'],
@@ -193,6 +235,13 @@ const fallback: Record<MajorCategory, string> = { arts: 'humanities', science: '
 export function getMajorExploration(major: Major): MajorExploration {
   const code = major.officialCode ?? ''
   const prefix = code.slice(0, 4)
+  if (code === '082007T') return profiles.airworthiness
+  if (['082009T', '140003TK'].includes(code)) return profiles.aerialSystems
+  if (['080214T', '080216T'].includes(code)) return profiles.smartMobility
+  if (code === '140011TK') return profiles.medicalEngineering
+  if (code === '101006') return profiles.dentalTechnology
+  if (code === '040206T') return profiles.sportsRehabilitation
+  if (code === '080414T') return profiles.materials
   if (code.startsWith('0402')) return profiles.sport
   if (code.startsWith('09')) return profiles.agriculture
   if (code.startsWith('13')) return profiles.creative

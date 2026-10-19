@@ -30,6 +30,7 @@ model User {
   questionLikes      QuestionLike[]
   replyLikes         ReplyLike[]
   alumniMessageLikes AlumniMessageLike[]
+  campusPhotos       CampusPhoto[]
 }
 
 model University {
@@ -179,4 +180,23 @@ model Report {
   status        String   @default("pending")
   questionId    String
   date          DateTime @default(now())
+}
+
+model CampusPhoto {
+  id          String   @id
+  title       String
+  category    String
+  userId      String
+  status      String   @default("pending")
+  width       Int
+  height      Int
+  bytes       Int
+  reviewNote  String?
+  reviewerId  String?
+  reviewedAt  DateTime?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@index([status, createdAt, id])
+  @@index([userId, createdAt])
 }

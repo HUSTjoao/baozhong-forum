@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { campusTheme } from '@/lib/campus-themes'
 import { useCampusTransition } from './CampusTransition'
 import type { CSSProperties, PointerEvent } from 'react'
+import { useEffect, useRef } from 'react'
 
 import UniversityEmblem from './UniversityEmblem'
 import { campusCulture } from '@/lib/campus-culture'
@@ -21,6 +22,39 @@ function EnterCampusIcon() {
 }
 
 export default function CampusCard({ campus: u, index, active, onActivate }: { campus: Campus; index: number; active: boolean; onActivate: () => void }) {
+  const names = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const root = names.current
+    if (!root) return
+    let disposed = false
+    let frame = 0
+    const fit = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        if (disposed) return
+        root.querySelectorAll<HTMLElement>('[data-card-fit]').forEach(text => {
+          const slot = text.parentElement!
+          const maximum = parseFloat(getComputedStyle(slot).fontSize)
+          const fits = () => text.getBoundingClientRect().height <= slot.clientHeight + .5 && text.scrollWidth <= slot.clientWidth + .5
+          text.style.fontSize = `${maximum}px`
+          if (fits()) return
+          let low = Math.min(10, maximum), high = maximum
+          for (let step = 0; step < 8; step++) {
+            const size = (low + high) / 2
+            text.style.fontSize = `${size}px`
+            if (fits()) low = size; else high = size
+          }
+          text.style.fontSize = `${Math.floor(low * 10) / 10}px`
+        })
+      })
+    }
+    const observer = new ResizeObserver(fit)
+    observer.observe(root)
+    fit()
+    void document.fonts.ready.then(() => { if (!disposed) fit() })
+    document.fonts.addEventListener('loadingdone', fit)
+    return () => { disposed = true; cancelAnimationFrame(frame); observer.disconnect(); document.fonts.removeEventListener('loadingdone', fit) }
+  }, [u.name, u.englishName, u.motto, u.id])
   const theme = campusTheme(u.id, u.accent)
   const culture = campusCulture(u.id, u.motto)
   const transition = useCampusTransition()
@@ -48,7 +82,7 @@ export default function CampusCard({ campus: u, index, active, onActivate }: { c
   const levels = ['985', '211', '双一流'].filter(level => u.level?.split(/[／/、,，·\s]+/).includes(level))
   return <Link className={'uni-campus uni-accent-' + theme.key} href={'/universities/' + u.id} data-campus-id={u.id} onClick={event => transition?.open(event, u.id)} aria-label={'了解' + u.name + '，查看学校介绍与讨论'} onMouseEnter={prepare} onFocus={prepare} onPointerMove={move} onPointerLeave={reset} data-map-active={active} style={{ '--campus-order': index, '--campus-entry-delay': ((index % 6) * .11) + 's', '--u-accent': theme.ink, '--campus-card-wash': theme.card } as CSSProperties}>
     <span className="uni-enter-campus"><EnterCampusIcon /></span>
-    <div className="uni-card-identity"><div className="uni-logo"><UniversityEmblem src={u.logoUrl} name={u.name} size={96} priority={index < 3} /></div><div className="uni-card-names"><h2>{u.name}</h2>{u.englishName && <p className="uni-campus-en" lang="en">{u.englishName}</p>}{culture ? <p className="uni-motto">{culture}</p> : !u.englishName && <p className="uni-catalog-pending">校园资料整理中</p>}</div></div>
+    <div className="uni-card-identity"><div className="uni-logo"><UniversityEmblem src={u.logoUrl} name={u.name} size={96} priority={index < 3} /></div><div ref={names} className="uni-card-names"><h2 title={u.name}><span data-card-fit>{u.name}</span></h2><p className="uni-campus-en" lang="en" title={u.englishName}>{u.englishName && <span data-card-fit>{u.englishName}</span>}</p><p className={culture ? 'uni-motto' : 'uni-catalog-pending'} title={culture || undefined}><span data-card-fit>{culture || (!u.englishName ? '校园资料整理中' : '')}</span></p></div></div>
     <div className="uni-card-bottom"><div className="uni-campus-meta"><CampusLocationIcon /><div><span>校园坐标</span><strong>{u.province === u.city ? u.city : u.province + ' · ' + u.city}</strong></div></div>{levels.length > 0 && <div className="uni-campus-levels" aria-label="学校等级">{levels.map(level => <span key={level}>{level}</span>)}</div>}</div>
   </Link>
 }

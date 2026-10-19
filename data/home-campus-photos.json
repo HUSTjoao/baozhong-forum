@@ -1,0 +1,24 @@
+[
+  {
+    "id": "bz-6303",
+    "title": "走过这条林荫路",
+    "category": "校园",
+    "src": "/campus-collection/bz-6303-1920-d556e4b0a15c.webp",
+    "thumbnail": "/campus-collection/bz-6303-640-a5b11a03ac97.webp",
+    "srcSet": "/campus-collection/bz-6303-640-a5b11a03ac97.webp 640w, /campus-collection/bz-6303-1280-1ce39cbcb8cf.webp 1280w, /campus-collection/bz-6303-1920-d556e4b0a15c.webp 1920w",
+    "width": 1920,
+    "height": 1280,
+    "placeholder": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAABQBgCdASooABsAPwVqrVArpiQitVgMAXAgiWMAr4QP4LF4VsK2HVowTu8GhqumaRDG9g7DG2Ii79NgAAD+5ClGwZ/ujWPH6oB873Ih8w8yuCXq9mXhjNf1g8f4KJeScTdRHo2nC7dm90ScJbMO4+GAY9WlVrHapb0Msd12W1mDZUwub4h4oDHy4H6eV/2xDrONNDJxGCS2ISxzY67Nw4/qyREypG/Ih1/yyjHm2RYE95NiAyKfHD6M2eoIcGqKTl29aTC41ev2gwXSmgErpaY+/35V+aBEqm+UGn08Prq7OqXARjWaIt53LrpTuAAA"
+  },
+  {
+    "id": "bz-6814",
+    "title": "迎着光的校园",
+    "category": "校园",
+    "src": "/campus-collection/bz-6814-1920-24e209e0cb49.webp",
+    "thumbnail": "/campus-collection/bz-6814-640-9ff3ddcab93e.webp",
+    "srcSet": "/campus-collection/bz-6814-640-9ff3ddcab93e.webp 640w, /campus-collection/bz-6814-1280-ef923476d780.webp 1280w, /campus-collection/bz-6814-1920-24e209e0cb49.webp 1920w",
+    "width": 1920,
+    "height": 1079,
+    "placeholder": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAwBgCdASooABYAPxGCuFcsKCUjpWgBgCIJZQDImzCMHq9zNdVFYFHFWkCOn8k64AYSz0NI85A6yh1AAP70JU3wcv7Z03F9LOUDMCV1aV/ENkrH0sdpqfeQL+r+7rQN2hV/gfULbJpWWdlfRjzg3DLcnQ/fv7omr7PtuoKIakP0tnXPxDxmgHIjp+uD0tHJgr5CwkowbegU40/tRnVskWRfqkBWoXqHFSGN8RzCTdN9LSnXu4kWmbLNWsm56U0k8hLMq7x8zqiwhzomEAA="
+  }
+]

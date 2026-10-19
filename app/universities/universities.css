@@ -735,3 +735,20 @@ html[data-campus-travel=close] .uni-campus{--campus-lift:0px!important;--campus-
 @media(min-width:761px) and (max-width:1099px){.uni-map-explorer .uni-campus h2{font-size:23px}.uni-map-explorer .uni-campus-en{font-size:19px}}
 @media(max-width:760px){.uni-map-explorer .uni-campus{min-height:200px;padding:20px 22px 16px}.uni-map-explorer .uni-campus h2{font-size:28px}.uni-map-explorer .uni-campus-en{font-size:21px}.uni-map-explorer .uni-card-bottom{margin-top:6px;padding-top:10px}}
 .uni-contribute-link{display:inline-flex;margin:24px 0;color:#497181;font:21px/1.6 'Community Hand','Songti SC',serif}
+/* Stable card rows; long names fit their own slots instead of stretching a row. */
+.uni-map-explorer .uni-grid{grid-auto-rows:264px}
+.uni-map-explorer .uni-campus{box-sizing:border-box;width:100%;min-width:0;height:264px;min-height:264px;max-height:264px;padding:20px 17px 15px}
+.uni-map-explorer .uni-card-identity{width:100%;min-width:0;min-height:0;flex:1;flex-shrink:1;grid-template-columns:68px minmax(0,1fr);gap:12px;padding:5px 0 10px;align-items:center}
+.uni-map-explorer .uni-logo{width:68px;height:68px;margin:0;grid-row:auto;grid-column:auto}
+.uni-map-explorer .uni-card-names{display:grid;grid-template-rows:44px 50px 38px;gap:3px;width:100%;min-width:0;height:138px}
+.uni-map-explorer .uni-card-names h2,.uni-map-explorer .uni-card-names .uni-campus-en,.uni-map-explorer .uni-card-names .uni-motto,.uni-map-explorer .uni-card-names .uni-catalog-pending{display:flex;align-items:center;width:100%;min-width:0;height:100%;min-height:0;max-width:none;margin:0;overflow:hidden;grid-column:auto}
+.uni-map-explorer .uni-card-names h2{font-size:25px;line-height:1.3;letter-spacing:.01em}
+.uni-map-explorer .uni-card-names .uni-campus-en{font-size:20px;line-height:1.2}
+.uni-map-explorer .uni-card-names .uni-motto,.uni-map-explorer .uni-card-names .uni-catalog-pending{font-size:14px;line-height:1.45}
+.uni-card-names [data-card-fit]{display:block;width:100%;min-width:0;overflow-wrap:anywhere;white-space:normal}
+.uni-map-explorer .uni-card-bottom{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;width:100%;min-width:0;height:54px;min-height:54px;flex:0 0 54px;flex-wrap:nowrap;gap:8px;margin-top:6px;padding-top:10px}
+.uni-map-explorer .uni-campus-meta{flex:1;min-width:0;gap:6px}.uni-map-explorer .uni-campus-meta svg{width:22px;height:22px}.uni-map-explorer .uni-campus-meta strong{font-size:12px}.uni-map-explorer .uni-campus-levels{flex:none;gap:4px;flex-wrap:nowrap}.uni-map-explorer .uni-campus-levels span{font-size:11px;min-height:26px;padding:3px 5px;letter-spacing:0}
+@media(min-width:1000px) and (max-width:1349px){.uni-map-explorer .uni-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:761px) and (max-width:999px){.uni-map-explorer .uni-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.uni-map-explorer .uni-campus{padding-inline:20px}.uni-map-explorer .uni-card-identity{grid-template-columns:76px minmax(0,1fr);gap:14px}.uni-map-explorer .uni-logo{width:76px;height:76px}.uni-map-explorer .uni-card-names h2{font-size:28px}.uni-map-explorer .uni-card-names .uni-campus-en{font-size:21px}}
+@media(max-width:380px){.uni-map-explorer .uni-campus{padding-inline:16px}.uni-map-explorer .uni-card-identity{grid-template-columns:64px minmax(0,1fr);gap:10px}.uni-map-explorer .uni-logo{width:64px;height:64px}}

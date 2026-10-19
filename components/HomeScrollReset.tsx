@@ -10,7 +10,9 @@ export default function HomeScrollReset() {
     if (home) home.dataset.homeReturn = page.homeVisited ? 'true' : 'false'
     const previousRestoration = window.history.scrollRestoration
     window.history.scrollRestoration = 'manual'
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    const gallery = window.location.hash === '#campus-gallery' ? document.getElementById('campus-gallery') : null
+    if (gallery) gallery.scrollIntoView({ behavior: 'instant' })
+    else window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     return () => {
       // Only a real route departure counts; Strict Mode remounts remain first visits.
       if (window.location.pathname !== '/') page.homeVisited = true

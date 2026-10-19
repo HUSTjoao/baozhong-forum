@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import photos from '@/data/optimized-campus-photos.json'
+import photos from '@/data/home-campus-photos.json'
 
-const first = photos['/home-campus-blossoms-clean.png']
-const second = photos['/home-campus-bench.jpg']
+const [first, second] = photos
 const sizes = '(max-aspect-ratio: 16/9) 178vh, 100vw'
 
 export default function HomeCampusBackground() {

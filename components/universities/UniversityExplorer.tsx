@@ -1,6 +1,6 @@
 'use client'
 import { useLayoutEffect, useRef, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import CatalogAddLink from '../catalog/CatalogAddLink'
 import CampusPagination from './CampusPagination'
 import CampusMap from './CampusMap'
@@ -25,9 +25,13 @@ export default function UniversityExplorer({ universities }: { universities: Cam
     }, 3000)
     return () => { window.clearTimeout(timer); delete shell.dataset.entering }
   }, [])
-  const router = useRouter()
   const params = useSearchParams()
   const query = params.get('q') || ''
+  const [draftQuery, setDraftQuery] = useState(query)
+  const composing = useRef(false)
+  useLayoutEffect(() => {
+    if (!composing.current) setDraftQuery(query)
+  }, [query])
   const province = params.get('province') || '全部'
   const level = params.get('level') || '全部'
   const [activeId, setActiveId] = useState<string | null>(null)
@@ -86,7 +90,7 @@ export default function UniversityExplorer({ universities }: { universities: Cam
   }
   function browse(next: { query?: string; province?: string; level?: string; page?: number }, scroll = false) {
     const search = new URLSearchParams()
-    const q = next.query ?? query
+    const q = next.query ?? draftQuery
     const region = next.province ?? province
     const tier = next.level ?? level
     const targetPage = next.page ?? 1
@@ -97,7 +101,9 @@ export default function UniversityExplorer({ universities }: { universities: Cam
     if (pageTimer.current) clearTimeout(pageTimer.current)
     pendingScroll.current = scroll
     setActiveId(null)
-    router.replace('/universities' + (search.size ? '?' + search.toString() : ''), { scroll: false })
+    // Filtering uses the complete catalog already on the client. Avoid a route
+    // request per keystroke, which can return stale input while the user types.
+    window.history.replaceState(null, '', '/universities' + (search.size ? '?' + search.toString() : ''))
 
   }
   return <div ref={shellRef} className="uni-shell uni-map-explorer">
@@ -107,7 +113,7 @@ export default function UniversityExplorer({ universities }: { universities: Cam
         <CampusMap active={filtered.find(u => u.id === activeId) || null} campuses={visible} onSelect={setActiveId} />
       </aside>
       <section className="uni-explorer-right" aria-label="探索大学">
-        <div className="uni-tools"><label className="uni-search"><Search size={20} /><input aria-label="搜索大学或城市" value={query} onChange={e => browse({ query: e.target.value })} placeholder="搜索大学、城市或英文名称" /></label><span className="uni-total" aria-label={filtered.length + '所大学'}><b>{filtered.length.toString().padStart(2, '0')}</b><span>所大学</span></span></div>
+        <div className="uni-tools"><label className="uni-search"><Search size={20} /><input aria-label="搜索大学或城市" value={draftQuery} onCompositionStart={() => { composing.current = true }} onCompositionEnd={event => { composing.current = false; setDraftQuery(event.currentTarget.value); browse({ query: event.currentTarget.value }, true) }} onChange={event => { setDraftQuery(event.target.value); if (!composing.current && !(event.nativeEvent as InputEvent).isComposing) browse({ query: event.target.value }, true) }} placeholder="搜索大学、城市或英文名称" /></label><span className="uni-total" aria-label={filtered.length + '所大学'}><b>{filtered.length.toString().padStart(2, '0')}</b><span>所大学</span></span></div>
         <div className="uni-select-filters"><label className="uni-filter-select"><MapPin className="uni-filter-mark" size={18} strokeWidth={1.4} aria-hidden="true" /><span>地区</span><select aria-label="地区筛选" value={province} onChange={e => browse({ province: e.target.value }, true)}><option value="全部">全部地区</option>{Array.from(new Set(universities.map(u => u.province))).filter(Boolean).map(p => <option key={p} value={p}>{p}</option>)}</select><ChevronDown size={16} aria-hidden="true" /></label><label className="uni-filter-select"><GraduationCap className="uni-filter-mark" size={20} strokeWidth={1.4} aria-hidden="true" /><span>学校层次</span><select aria-label="学校层次筛选" value={level} onChange={e => browse({ level: e.target.value }, true)}>{['全部', '985', '211', '双一流', '其他'].map(t => <option key={t} value={t}>{t === '全部' ? '全部层次' : t}</option>)}</select><ChevronDown size={16} aria-hidden="true" /></label><CatalogAddLink kind="universities" /></div>
         <div className="uni-grid" ref={gridRef} tabIndex={0} aria-label="本页学校，向下滚动浏览">{visible.map((u, index) => <CampusCard key={u.id} campus={u} index={index} active={activeId === u.id} onActivate={() => setActiveId(u.id)} />)}</div>
         {filtered.length === 0 && <p className="uni-empty">暂时没有匹配的大学。试试其他名称或地区。</p>}

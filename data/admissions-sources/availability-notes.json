@@ -1,0 +1,15 @@
+{
+  "stu": {
+    "2024": {"text":"学校公布2026年首次增加陕西省招生，2024年不补填其他省份成绩。","source":"https://xyh.stu.edu.cn/alumni/front/account/detail.jsp?id=53160"},
+    "2025": {"text":"学校公布2026年首次增加陕西省招生，2025年不补填其他省份成绩。","source":"https://xyh.stu.edu.cn/alumni/front/account/detail.jsp?id=53160"}
+  },
+  "sustech": {
+    "2024": {"text":"已收录掌上高考2024年本科提前批C段参考记录，单独列在下方其他招生类型。综合评价还需结合校测及高中学业成绩，不与普通本科批统一门槛混合。","source":"https://www.gaokao.cn/school/2941/provinceline?province=陕西&year=2024"}
+  },
+  "cnu": {
+    "2026": {"text":"校方2026年京外录取表的陕西部分目前列出艺术类综合分。本栏不将美术、设计综合分填作普通历史类或物理类投档分。","source":"https://bkzs.cnu.edu.cn/gsgg/575f5ca247614acbb93590ade8fcca3a.htm"}
+  },
+  "ccom": {
+    "2025": {"text":"音乐类招生须结合校考成绩与文化课要求查看。本栏暂未取得陕西普通历史类、物理类统一投档记录，不将艺术类文化门槛填作录取最低分。","source":"https://zhaoban.ccom.edu.cn/upload/period/%E4%B8%AD%E5%A4%AE%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A22025%E5%B9%B4%E6%9C%AC%E7%A7%91%E7%94%9F%E7%AE%80%E7%AB%A0_1735899152370.pdf"}
+  }
+}

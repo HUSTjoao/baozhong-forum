@@ -1,0 +1,3522 @@
+[
+  {
+    "key": "province-ref-e2636d7b0dfbc98cee",
+    "url": "https://gaokaozy.cn/university/10224?cat=%E5%8E%86%E5%8F%B2%E7%B1%BB",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4f56655bab27473a8bdfbf2d87a481cbd25ee5e271319121f1348f8edba679db",
+    "rows": [
+      {
+        "name": "东北农业大学",
+        "subject": "science",
+        "score": 553,
+        "publishedRank": 32723
+      }
+    ]
+  },
+  {
+    "key": "province-ref-a208b6bacc2a5e4c4b",
+    "url": "https://gaokaozy.cn/university/10030?cat=%E5%8E%86%E5%8F%B2%E7%B1%BB",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京外国语大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e044772ec7f4f8cdfd55ca1e7f2293f050de779e9477acb44244718aae4d3e2e",
+    "rows": [
+      {
+        "name": "北京外国语大学",
+        "subject": "science",
+        "score": 594,
+        "publishedRank": 16051
+      }
+    ]
+  },
+  {
+    "key": "province-ref-15e5e1bb7905135f0c",
+    "url": "https://gaokaozy.cn/university/10681",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "云南师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "587344b1128c3e5aadbf43ddfdf29cc952be5474e0d6e09fb78809b1088edb2e",
+    "rows": [
+      {
+        "name": "云南师范大学",
+        "subject": "science",
+        "score": 491,
+        "publishedRank": 69981
+      }
+    ]
+  },
+  {
+    "key": "province-ref-37140dce2014349a21",
+    "url": "https://gaokaozy.cn/university/10681?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "云南师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "5677339eddaf4b4e91c875050e0373eb8a12771edc0ed792153d3f37575a8413",
+    "rows": [
+      {
+        "name": "云南师范大学",
+        "subject": "arts",
+        "score": 509,
+        "publishedRank": 12732
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d73d497a29cfefde4e",
+    "url": "https://gaokaozy.cn/university/10030",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京外国语大学公开分省明细：2026年院校投档线原表",
+    "sha256": "44ff2886d89d351cbb54dbe21dab708c0c653b717917eedeb6269746d859e66e",
+    "rows": [
+      {
+        "name": "北京外国语大学",
+        "subject": "science",
+        "score": 594,
+        "publishedRank": 16051
+      }
+    ]
+  },
+  {
+    "key": "province-ref-9bb2b92532325fac84",
+    "url": "https://gaokaozy.cn/university/10030?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京外国语大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e86bfd89dd99949719ca3feae1bf620a510427b87c1afa8cd53c270812e2c961",
+    "rows": [
+      {
+        "name": "北京外国语大学",
+        "subject": "arts",
+        "score": 612,
+        "publishedRank": 1087
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2619a9aeec8669e7db",
+    "url": "https://gaokaozy.cn/university/10511",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华中师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "573128b36a71dfd66a26e601b40c78da36fe89d846d08c04cd1515e5be3cdd63",
+    "rows": [
+      {
+        "name": "华中师范大学",
+        "subject": "science",
+        "score": 587,
+        "publishedRank": 18399
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f1a8f75d87aa0b6fac",
+    "url": "https://gaokaozy.cn/university/10511?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华中师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "50729da7da8746a69886b7bb60c757186f2b6ca39a1f7aaa92c600f1b7a185ca",
+    "rows": [
+      {
+        "name": "华中师范大学",
+        "subject": "arts",
+        "score": 599,
+        "publishedRank": 1726
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e1228c4c68a1ac530d",
+    "url": "https://gaokaozy.cn/university/10319",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "ed6904b451ddaa16356a39bef15ac34f5694137f95f68cae8dd058f0b2422af6",
+    "rows": [
+      {
+        "name": "南京师范大学",
+        "subject": "science",
+        "score": 575,
+        "publishedRank": 22962
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2a43671af8b9ee82bf",
+    "url": "https://gaokaozy.cn/university/10319?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e3db51124ed2a83dd8374cfcd61bc434852e6ea824de2fb10542cbb8cd2816f9",
+    "rows": [
+      {
+        "name": "南京师范大学",
+        "subject": "arts",
+        "score": 590,
+        "publishedRank": 2230
+      }
+    ]
+  },
+  {
+    "key": "province-ref-c74e430c99a04b1aa3",
+    "url": "https://gaokaozy.cn/university/10065",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "天津师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "098c9e3f69144e4179fe6b66f48a18b14ee4c87ff96dcf93f8b9997da038111b",
+    "rows": [
+      {
+        "name": "天津师范大学",
+        "subject": "science",
+        "score": 518,
+        "publishedRank": 52118
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ca781d3eea0fc0123d",
+    "url": "https://gaokaozy.cn/university/10065?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "天津师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "f1c48b6d6b898a2683dd7d00548be72be0998aabd9de4ddc0854268c02af33c4",
+    "rows": [
+      {
+        "name": "天津师范大学",
+        "subject": "arts",
+        "score": 562,
+        "publishedRank": 4669
+      }
+    ]
+  },
+  {
+    "key": "province-ref-99f5f97ae96a1c6783",
+    "url": "https://gaokaozy.cn/university/10345",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "浙江师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "5eccb98de96429c1a88dac92eb3c1d1da9e1ffd33597f9c27efae890b22db879",
+    "rows": [
+      {
+        "name": "浙江师范大学",
+        "subject": "science",
+        "score": 536,
+        "publishedRank": 41488
+      }
+    ]
+  },
+  {
+    "key": "province-ref-58a2676be9e9dd8434",
+    "url": "https://gaokaozy.cn/university/10345?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "浙江师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "2059a515ef25e0f2ca25823cc0d46174ee8f6f2cdc86768b3a628ad16f38e28a",
+    "rows": [
+      {
+        "name": "浙江师范大学",
+        "subject": "arts",
+        "score": 545,
+        "publishedRank": 6678
+      }
+    ]
+  },
+  {
+    "key": "province-ref-61f02efb385e38e8ae",
+    "url": "https://gaokaozy.cn/university/10736",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西北师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "128502bc6fa7d2bcccb3ac4897186b4a219d228e060024fbd5263d3d913d358a",
+    "rows": [
+      {
+        "name": "西北师范大学",
+        "subject": "science",
+        "score": 501,
+        "publishedRank": 63101
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ea693cf26b58623fb5",
+    "url": "https://gaokaozy.cn/university/10736?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西北师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "60761964a3078ff4382e8f3f870bf3a15c7efd11757349b3dfa7c37bfbfdc7b1",
+    "rows": [
+      {
+        "name": "西北师范大学",
+        "subject": "arts",
+        "score": 535,
+        "publishedRank": 8171
+      }
+    ]
+  },
+  {
+    "key": "province-ref-37ad7fca6f15248684",
+    "url": "https://gaokaozy.cn/university/10694",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西藏大学公开分省明细：2026年院校投档线原表",
+    "sha256": "60be8129ca0c9d84b70e695f5a10bdf092b31c337ba89add8e86ad12bf7d86a2",
+    "rows": [
+      {
+        "name": "西藏大学",
+        "subject": "science",
+        "score": 487,
+        "publishedRank": 72724
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d660c15ff23536768c",
+    "url": "https://gaokaozy.cn/university/10694?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西藏大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4028a9943140bf8a5ed40bc63e4025a769d0c47e8da802b80e6829c28a477fb6",
+    "rows": [
+      {
+        "name": "西藏大学",
+        "subject": "arts",
+        "score": 510,
+        "publishedRank": 12534
+      }
+    ]
+  },
+  {
+    "key": "province-ref-93c38b942a9e0f9e29",
+    "url": "https://gaokaozy.cn/university/10140",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "辽宁大学公开分省明细：2026年院校投档线原表",
+    "sha256": "c70654b9624ca0db8476f3a1a21bb6cfb09f6e703b98e8b6866354e3e43caada",
+    "rows": [
+      {
+        "name": "辽宁大学",
+        "subject": "science",
+        "score": 567,
+        "publishedRank": 26278
+      }
+    ]
+  },
+  {
+    "key": "province-ref-6a344870852b2c9bf3",
+    "url": "https://gaokaozy.cn/university/10140?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "辽宁大学公开分省明细：2026年院校投档线原表",
+    "sha256": "60de12463cced911c384009f22afc6516a458fcb588a961d06c9bdb1899b3c8b",
+    "rows": [
+      {
+        "name": "辽宁大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3088
+      }
+    ]
+  },
+  {
+    "key": "province-ref-b49bcc91d60821eef9",
+    "url": "https://gaokaozy.cn/university/10225",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北林业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "54ed3dce0449bbcba029c241097686020eef8f618dfb19c401f1346ba398205d",
+    "rows": [
+      {
+        "name": "东北林业大学",
+        "subject": "science",
+        "score": 533,
+        "publishedRank": 43158
+      }
+    ]
+  },
+  {
+    "key": "province-ref-4c4188cd0d43f86aec",
+    "url": "https://gaokaozy.cn/university/10225?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北林业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "aa9c7c432bbcc7766d723dd0f4e6b0cf7ef4bb60f57e33eac5847013575cb50f",
+    "rows": [
+      {
+        "name": "东北林业大学",
+        "subject": "arts",
+        "score": 572,
+        "publishedRank": 3621
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ff5158e66d0de0cb3d",
+    "url": "https://gaokaozy.cn/university/10271",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "上海外国语大学公开分省明细：2026年院校投档线原表",
+    "sha256": "adec0d67562e166aa76c8f04730ccbb8bdead946eb69b881a2756b5f5ddf4d0e",
+    "rows": [
+      {
+        "name": "上海外国语大学",
+        "subject": "science",
+        "score": 601,
+        "publishedRank": 13872
+      }
+    ]
+  },
+  {
+    "key": "province-ref-351a4b6c4f953e6c88",
+    "url": "https://gaokaozy.cn/university/11835",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "上海政法学院公开分省明细：2026年院校投档线原表",
+    "sha256": "f4da66893d8085f33af6919290cda00b44d63ad86009303ba8cf0b30d8da46c4",
+    "rows": [
+      {
+        "name": "上海政法学院",
+        "subject": "science",
+        "score": 536,
+        "publishedRank": 41488
+      }
+    ]
+  },
+  {
+    "key": "province-ref-8a445208026c89b6dc",
+    "url": "https://gaokaozy.cn/university/10254",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "上海海事大学公开分省明细：2026年院校投档线原表",
+    "sha256": "d938aff2befcabda28437e7173ab0a2e4ffa58c84b247d4a85fd209418edfff2",
+    "rows": [
+      {
+        "name": "上海海事大学",
+        "subject": "science",
+        "score": 557,
+        "publishedRank": 30831
+      }
+    ]
+  },
+  {
+    "key": "province-ref-fc455ecc42fd8bc492",
+    "url": "https://gaokaozy.cn/university/10254?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "上海海事大学公开分省明细：2026年院校投档线原表",
+    "sha256": "b75d71700cfe62334002511608fa22d0b46dddaac188452b4764af043fedde72",
+    "rows": [
+      {
+        "name": "上海海事大学",
+        "subject": "arts",
+        "score": 592,
+        "publishedRank": 2119
+      }
+    ]
+  },
+  {
+    "key": "province-ref-161e71f49eb0dfea4c",
+    "url": "https://gaokaozy.cn/university/10224",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "95568a9999283feaf104ff2083dfa01e986089871ae1e1bfd8c270bade38589f",
+    "rows": [
+      {
+        "name": "东北农业大学",
+        "subject": "science",
+        "score": 553,
+        "publishedRank": 32723
+      }
+    ]
+  },
+  {
+    "key": "province-ref-fb18d636c66edc71c1",
+    "url": "https://gaokaozy.cn/university/10224?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "534393000783aade744cb0b2543b8fcd1c1d5b802bccfceae6d18ebeca7d1996",
+    "rows": [
+      {
+        "name": "东北农业大学",
+        "subject": "arts",
+        "score": 568,
+        "publishedRank": 4012
+      }
+    ]
+  },
+  {
+    "key": "province-ref-a0f372c5ad3a9bff24",
+    "url": "https://gaokaozy.cn/university/10145",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北大学公开分省明细：2026年院校投档线原表",
+    "sha256": "059ea3f0bcb03a445b16110cea7c6e40f495a427aa4d2fc218a6b8d3ec2bc799",
+    "rows": [
+      {
+        "name": "东北大学",
+        "subject": "science",
+        "score": 600,
+        "publishedRank": 14174
+      }
+    ]
+  },
+  {
+    "key": "province-ref-27cd660aa1522167a3",
+    "url": "https://gaokaozy.cn/university/10200",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东北师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "fa797e2fb6052d68e8a8d8403d9609e9960074b9f3cc9ad75b697a89dee825f5",
+    "rows": [
+      {
+        "name": "东北师范大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "province-ref-12c4b992b2828721c6",
+    "url": "https://gaokaozy.cn/university/10286",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "东南大学公开分省明细：2026年院校投档线原表",
+    "sha256": "f8fabd31e4a9d579825ce5ce003548fcebede8b38d63589e85336b40a3e06ea4",
+    "rows": [
+      {
+        "name": "东南大学",
+        "subject": "science",
+        "score": 636,
+        "publishedRank": 5140
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d7d710ea54c6d6f16b",
+    "url": "https://gaokaozy.cn/university/10019",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "0f73d1b7d4066685522659b7d852753d887e35dff2444535de1ac7e9db3e0887",
+    "rows": [
+      {
+        "name": "中国农业大学",
+        "subject": "science",
+        "score": 604,
+        "publishedRank": 12911
+      }
+    ]
+  },
+  {
+    "key": "province-ref-6c5c14a78d0a14e659",
+    "url": "https://gaokaozy.cn/university/10290",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国矿业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "bcd61de78259786b808447b8b7e26cfaacfaa4eeb16f73ebfc90fc7a16045788",
+    "rows": [
+      {
+        "name": "中国矿业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      }
+    ]
+  },
+  {
+    "key": "province-ref-3d3af330d8667d95e3",
+    "url": "https://gaokaozy.cn/university/10290?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国矿业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "c005a855ec837ddf7b2c5e21b43842d9bcfabc299428d1cfe05a80866aae5efd",
+    "rows": [
+      {
+        "name": "中国矿业大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3088
+      }
+    ]
+  },
+  {
+    "key": "province-ref-986e7e0223e0fbd7a1",
+    "url": "https://gaokaozy.cn/university/10358",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国科学技术大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e0b8fe7dc866da7c0553c99cedf9b223309fbcb0f4b66c6bd5a46b0fef5ec418",
+    "rows": [
+      {
+        "name": "中国科学技术大学",
+        "subject": "science",
+        "score": 678,
+        "publishedRank": 492
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f77a2f240530d51676",
+    "url": "https://gaokaozy.cn/university/10355?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国美术学院公开分省明细：2026年院校投档线原表",
+    "sha256": "34e36bed26c4fff67ee3c94e2995ab8fac7d5c0fed6284df22c4afe2cff742ed",
+    "rows": [
+      {
+        "name": "中国美术学院",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 2420
+      }
+    ]
+  },
+  {
+    "key": "province-ref-df5adc2cf2273a05a1",
+    "url": "https://gaokaozy.cn/university/10316",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国药科大学公开分省明细：2026年院校投档线原表",
+    "sha256": "97650ee81ca3dfe382c59b20dc1d352bc4a87842f3a65c4997bb8f05cfdf15c6",
+    "rows": [
+      {
+        "name": "中国药科大学",
+        "subject": "science",
+        "score": 576,
+        "publishedRank": 22574
+      }
+    ]
+  },
+  {
+    "key": "province-ref-286c65ca6605711eb3",
+    "url": "https://gaokaozy.cn/university/10316?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中国药科大学公开分省明细：2026年院校投档线原表",
+    "sha256": "2f0e28f737952bc26b32062074cf6b18dc0f5274e6dd302caa6824215db8d69f",
+    "rows": [
+      {
+        "name": "中国药科大学",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 2420
+      }
+    ]
+  },
+  {
+    "key": "province-ref-25b69c86124009dc8c",
+    "url": "https://gaokaozy.cn/university/10052",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中央民族大学公开分省明细：2026年院校投档线原表",
+    "sha256": "958314736654966b7047b19512a1c5d293aaa94fdf7e1e133f945a8c81fd4136",
+    "rows": [
+      {
+        "name": "中央民族大学",
+        "subject": "science",
+        "score": 593,
+        "publishedRank": 16379
+      }
+    ]
+  },
+  {
+    "key": "province-ref-7418130abd12dd9a79",
+    "url": "https://gaokaozy.cn/university/10052?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中央民族大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e4f5821ee8b45e28aac1d4ad60825b528d463e855658028a5aada092ca0cef29",
+    "rows": [
+      {
+        "name": "中央民族大学",
+        "subject": "arts",
+        "score": 609,
+        "publishedRank": 1236
+      }
+    ]
+  },
+  {
+    "key": "province-ref-511947152850b3617d",
+    "url": "https://gaokaozy.cn/university/10034",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中央财经大学公开分省明细：2026年院校投档线原表",
+    "sha256": "45e06d0e8f2418f7a7f5355236da8a974a20d2a1c0e2cdd43e09879d464e14d9",
+    "rows": [
+      {
+        "name": "中央财经大学",
+        "subject": "science",
+        "score": 596,
+        "publishedRank": 15399
+      }
+    ]
+  },
+  {
+    "key": "province-ref-0c4bc536244812c2db",
+    "url": "https://gaokaozy.cn/university/10034?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "中央财经大学公开分省明细：2026年院校投档线原表",
+    "sha256": "84496933f8f7bdb5597fe9d8e98bc952d3e29e8e6286203fe98d755f17ca621f",
+    "rows": [
+      {
+        "name": "中央财经大学",
+        "subject": "arts",
+        "score": 595,
+        "publishedRank": 1942
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ec1361f03f39bb065a",
+    "url": "https://gaokaozy.cn/university/10673",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "云南大学公开分省明细：2026年院校投档线原表",
+    "sha256": "6cc8871055bd2c5bece15648679ba6ce09d1346df6e9e7b640d67c9882a33649",
+    "rows": [
+      {
+        "name": "云南大学",
+        "subject": "science",
+        "score": 548,
+        "publishedRank": 35176
+      }
+    ]
+  },
+  {
+    "key": "province-ref-88c3ca29c8c8d3a859",
+    "url": "https://gaokaozy.cn/university/10673?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "云南大学公开分省明细：2026年院校投档线原表",
+    "sha256": "20ff2aa4f248b257383f3874e249dd4ebb87fd5f27de8959113d79930a4fda4a",
+    "rows": [
+      {
+        "name": "云南大学",
+        "subject": "arts",
+        "score": 580,
+        "publishedRank": 2944
+      }
+    ]
+  },
+  {
+    "key": "province-ref-8335e8c92fe5352e4e",
+    "url": "https://gaokaozy.cn/university/10126",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "内蒙古大学公开分省明细：2026年院校投档线原表",
+    "sha256": "399bfbb3565562d6b5fa2b7213719d0c3bc44cf7e663f1fe9928021654605fc0",
+    "rows": [
+      {
+        "name": "内蒙古大学",
+        "subject": "science",
+        "score": 544,
+        "publishedRank": 37175
+      }
+    ]
+  },
+  {
+    "key": "province-ref-8cf24ac092e25ebafb",
+    "url": "https://gaokaozy.cn/university/10126?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "内蒙古大学公开分省明细：2026年院校投档线原表",
+    "sha256": "63be6705004540102f9dbb8e0d9ae82dd781ce90764539166f0a6815ea15ad43",
+    "rows": [
+      {
+        "name": "内蒙古大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 4114
+      }
+    ]
+  },
+  {
+    "key": "province-ref-fd564e815add3a6036",
+    "url": "https://gaokaozy.cn/university/10026",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京中医药大学公开分省明细：2026年院校投档线原表",
+    "sha256": "dbebec6b9aadf97c3530a83c5849318401672d90595499eb7e74691461f669d4",
+    "rows": [
+      {
+        "name": "北京中医药大学",
+        "subject": "science",
+        "score": 583,
+        "publishedRank": 19900
+      }
+    ]
+  },
+  {
+    "key": "province-ref-700dec6d1797488f5b",
+    "url": "https://gaokaozy.cn/university/10026?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京中医药大学公开分省明细：2026年院校投档线原表",
+    "sha256": "733db9e876e21226f1f92750cdce48791df64f80587a38d603578e556e9d5255",
+    "rows": [
+      {
+        "name": "北京中医药大学",
+        "subject": "arts",
+        "score": 594,
+        "publishedRank": 1993
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f0cbdf17a5fda242c7",
+    "url": "https://gaokaozy.cn/university/10010",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京化工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e8ce5948992af39eda409b1a648a09f1b68ec9056465860d2a8a4f7898c20406",
+    "rows": [
+      {
+        "name": "北京化工大学",
+        "subject": "science",
+        "score": 587,
+        "publishedRank": 18399
+      }
+    ]
+  },
+  {
+    "key": "province-ref-0e84db6c2e7c34dd33",
+    "url": "https://gaokaozy.cn/university/10010?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京化工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "10d052c8b2db9b27e78e48998904a9a3352a017f6b96e25abeb76483bfdccdbf",
+    "rows": [
+      {
+        "name": "北京化工大学",
+        "subject": "arts",
+        "score": 592,
+        "publishedRank": 2119
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f0753c1a8849d1af7d",
+    "url": "https://gaokaozy.cn/university/10005",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京工业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "abe3cfde565a4211ce40705b4ed64bd7a6183227cccabe9b27e2b42a5a5e847f",
+    "rows": [
+      {
+        "name": "北京工业大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "province-ref-7be2ed8a6c00721146",
+    "url": "https://gaokaozy.cn/university/10027",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "6c13048353933416aafb411198d709e0370adccb36dceef8ae81b60d4c6209fd",
+    "rows": [
+      {
+        "name": "北京师范大学",
+        "subject": "science",
+        "score": 626,
+        "publishedRank": 7117
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e8b749f72f3391ff2f",
+    "url": "https://gaokaozy.cn/university/10027?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "0dcba76f505c81dab0c3ccdf68293ed9054483e6a151ec81fd96fa2aeea872e1",
+    "rows": [
+      {
+        "name": "北京师范大学",
+        "subject": "arts",
+        "score": 645,
+        "publishedRank": 227
+      }
+    ]
+  },
+  {
+    "key": "province-ref-5fc65ccac0d8a0a380",
+    "url": "https://gaokaozy.cn/university/10007",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "183d549166a59202f3b05da829eabc1d636bfdfa0bb4e670709a6aec2a1725f5",
+    "rows": [
+      {
+        "name": "北京理工大学",
+        "subject": "science",
+        "score": 637,
+        "publishedRank": 4948
+      }
+    ]
+  },
+  {
+    "key": "province-ref-bbd24c74da1d40d47c",
+    "url": "https://gaokaozy.cn/university/10007?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "dff777d5740cecf81156d2c174d7126a6bce0bfb96799651e05cc736b026c561",
+    "rows": [
+      {
+        "name": "北京理工大学",
+        "subject": "arts",
+        "score": 632,
+        "publishedRank": 462
+      }
+    ]
+  },
+  {
+    "key": "province-ref-1e43d41754182a7d85",
+    "url": "https://gaokaozy.cn/university/10006",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京航空航天大学公开分省明细：2026年院校投档线原表",
+    "sha256": "cbab8c8539fd735491e4269adbb4041b00cc75223c7f00340661268525e74870",
+    "rows": [
+      {
+        "name": "北京航空航天大学",
+        "subject": "science",
+        "score": 646,
+        "publishedRank": 3458
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ce90b43cd18439d74d",
+    "url": "https://gaokaozy.cn/university/10006?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "北京航空航天大学公开分省明细：2026年院校投档线原表",
+    "sha256": "50abfc7f85218088840b7df63613b61dbfecad02d04be9de34fc457d1586f350",
+    "rows": [
+      {
+        "name": "北京航空航天大学",
+        "subject": "arts",
+        "score": 639,
+        "publishedRank": 323
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ba8deea781796d86aa",
+    "url": "https://gaokaozy.cn/university/10269",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华东师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "323efc767316279b5ae8d61a3555b9bea7c91bf5b380fb39eb2ebd83115b0c85",
+    "rows": [
+      {
+        "name": "华东师范大学",
+        "subject": "science",
+        "score": 629,
+        "publishedRank": 6500
+      }
+    ]
+  },
+  {
+    "key": "province-ref-a228beed239e9c8e46",
+    "url": "https://gaokaozy.cn/university/10269?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华东师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "42c129ec1cd214c2129006ae5ac920bd50ca46ed229e9405df10a3a17ffbff08",
+    "rows": [
+      {
+        "name": "华东师范大学",
+        "subject": "arts",
+        "score": 630,
+        "publishedRank": 511
+      }
+    ]
+  },
+  {
+    "key": "province-ref-78cf77055dc27d0796",
+    "url": "https://gaokaozy.cn/university/10504",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华中农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "88742b4b6b1f534a12115b6df388f7d475676f2dc5e6914b2a99ad51b7704229",
+    "rows": [
+      {
+        "name": "华中农业大学",
+        "subject": "science",
+        "score": 548,
+        "publishedRank": 35176
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d70a22a3a0cc2e95c0",
+    "url": "https://gaokaozy.cn/university/10504?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华中农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "ba920f8409b31031f69bcc0e94b32117253aadbb1162efe9169b1dbd51f29ed3",
+    "rows": [
+      {
+        "name": "华中农业大学",
+        "subject": "arts",
+        "score": 576,
+        "publishedRank": 3251
+      }
+    ]
+  },
+  {
+    "key": "province-ref-19f4411dd90b4807d9",
+    "url": "https://gaokaozy.cn/university/10574",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华南师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "411746952c188e65b23b18ff641ce533a04034669a7a6aea04728d10ff472631",
+    "rows": [
+      {
+        "name": "华南师范大学",
+        "subject": "science",
+        "score": 572,
+        "publishedRank": 24203
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f13912de80e6e710b9",
+    "url": "https://gaokaozy.cn/university/10574?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "华南师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4e1118d29e35c0e743261d123609a96a95c0ec9f5cb44a3782d0421bb125f7de",
+    "rows": [
+      {
+        "name": "华南师范大学",
+        "subject": "arts",
+        "score": 591,
+        "publishedRank": 2176
+      }
+    ]
+  },
+  {
+    "key": "province-ref-55f8efe08ff194f461",
+    "url": "https://gaokaozy.cn/university/10307",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "cef5fb3e29ccb8756daf017279b45d99fc24a668ef537e862bcee670ead42509",
+    "rows": [
+      {
+        "name": "南京农业大学",
+        "subject": "science",
+        "score": 552,
+        "publishedRank": 33240
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2e005001e71626f37a",
+    "url": "https://gaokaozy.cn/university/10307?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4a4bb1c7931d52b298f9999e98672de3033f61d24741d59ba80c77a8b3eb20a9",
+    "rows": [
+      {
+        "name": "南京农业大学",
+        "subject": "arts",
+        "score": 579,
+        "publishedRank": 3019
+      }
+    ]
+  },
+  {
+    "key": "province-ref-81c78d27418a204110",
+    "url": "https://gaokaozy.cn/university/10284",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4093ec825dd9dfb6b7d0d6bb6ca92b2100c24874010d155c968c8096ff49b9b0",
+    "rows": [
+      {
+        "name": "南京大学",
+        "subject": "science",
+        "score": 658,
+        "publishedRank": 1943
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d54167a4ca19898fde",
+    "url": "https://gaokaozy.cn/university/10284?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京大学公开分省明细：2026年院校投档线原表",
+    "sha256": "ddfaf75c7b8594eb5725878af82838df0f5fe434ff706ff851cd10567d5fa302",
+    "rows": [
+      {
+        "name": "南京大学",
+        "subject": "arts",
+        "score": 651,
+        "publishedRank": 158
+      }
+    ]
+  },
+  {
+    "key": "province-ref-33d5b71fcf919507a0",
+    "url": "https://gaokaozy.cn/university/10298",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京林业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "7ae05b92a1bf50952545dda13240ecd8b4a8f633c3153150a0acad8f2bc82912",
+    "rows": [
+      {
+        "name": "南京林业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      }
+    ]
+  },
+  {
+    "key": "province-ref-a1e2a01a4028e975a9",
+    "url": "https://gaokaozy.cn/university/10288",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "0bdf3ba7a61db11c0f5ac1f2f73c46d0a5cef173127ff9f27dc2e15b544983ad",
+    "rows": [
+      {
+        "name": "南京理工大学",
+        "subject": "science",
+        "score": 590,
+        "publishedRank": 17374
+      }
+    ]
+  },
+  {
+    "key": "province-ref-11ee6e6e4a6d31118c",
+    "url": "https://gaokaozy.cn/university/10288?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南京理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "b419a2f1da751b8f85965dbbc4ddb4f16534072d76bd4972ff2d1b9cd7245f5b",
+    "rows": [
+      {
+        "name": "南京理工大学",
+        "subject": "arts",
+        "score": 589,
+        "publishedRank": 2289
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f78904ed2807cf98d0",
+    "url": "https://gaokaozy.cn/university/10055",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南开大学公开分省明细：2026年院校投档线原表",
+    "sha256": "18a7d4bd4fa49ce61090a0d4b77b44fada4ec2580906994a55e6eb643886eed2",
+    "rows": [
+      {
+        "name": "南开大学",
+        "subject": "science",
+        "score": 638,
+        "publishedRank": 4783
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2cf63e6e2da9d701a2",
+    "url": "https://gaokaozy.cn/university/10055?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南开大学公开分省明细：2026年院校投档线原表",
+    "sha256": "7f586e202b6ba93a47cde0a3dc41d3b5d56abb0d80867855a8a9e5249a0a122a",
+    "rows": [
+      {
+        "name": "南开大学",
+        "subject": "arts",
+        "score": 641,
+        "publishedRank": 287
+      }
+    ]
+  },
+  {
+    "key": "province-ref-c25a79208b58c4b37a",
+    "url": "https://gaokaozy.cn/university/14325",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南方科技大学公开分省明细：2026年院校投档线原表",
+    "sha256": "b39a9abb95ac22fd10b8c10d54403bb721405e73341aa4d846961754bf40cbfe",
+    "rows": [
+      {
+        "name": "南方科技大学",
+        "subject": "science",
+        "score": 626,
+        "publishedRank": 7117
+      }
+    ]
+  },
+  {
+    "key": "province-ref-6e14c5ad4b6d194fb7",
+    "url": "https://gaokaozy.cn/university/10403",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南昌大学公开分省明细：2026年院校投档线原表",
+    "sha256": "40c92dd86a6cfaee46124ed1f534bbb17911b748692cce11ff285c710f14f107",
+    "rows": [
+      {
+        "name": "南昌大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 21010
+      }
+    ]
+  },
+  {
+    "key": "province-ref-0dda15373fcf662a4f",
+    "url": "https://gaokaozy.cn/university/10403?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "南昌大学公开分省明细：2026年院校投档线原表",
+    "sha256": "bb818fb4d32619508e847a401a7013759e5e70d36318c6a958b9bd94b813ef59",
+    "rows": [
+      {
+        "name": "南昌大学",
+        "subject": "arts",
+        "score": 574,
+        "publishedRank": 3439
+      }
+    ]
+  },
+  {
+    "key": "province-ref-3f03b591cc26dc627c",
+    "url": "https://gaokaozy.cn/university/10384",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "厦门大学公开分省明细：2026年院校投档线原表",
+    "sha256": "17f78073da51372331d85e06eda9fa20e6be623b2266d36091b52e71fc36df4a",
+    "rows": [
+      {
+        "name": "厦门大学",
+        "subject": "science",
+        "score": 613,
+        "publishedRank": 10260
+      }
+    ]
+  },
+  {
+    "key": "province-ref-0f5756d5b1678a35b7",
+    "url": "https://gaokaozy.cn/university/10384?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "厦门大学公开分省明细：2026年院校投档线原表",
+    "sha256": "590d7f4e186e93683f2253179724656a8e790d90046312d881bd7423abbe9632",
+    "rows": [
+      {
+        "name": "厦门大学",
+        "subject": "arts",
+        "score": 624,
+        "publishedRank": 680
+      }
+    ]
+  },
+  {
+    "key": "province-ref-afa2074acc43d1f30e",
+    "url": "https://gaokaozy.cn/university/10359",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "合肥工业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "aeea79aff36a28e0f49fea2212af98eb534f5a7d1d81907dc6342243d918f95a",
+    "rows": [
+      {
+        "name": "合肥工业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      }
+    ]
+  },
+  {
+    "key": "province-ref-c8e6c299a76f5b9b3f",
+    "url": "https://gaokaozy.cn/university/10217",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "哈尔滨工程大学公开分省明细：2026年院校投档线原表",
+    "sha256": "b9b77e436cd7d567f37107a17743aa51154fd3e122a5dc534767a636023a9f7b",
+    "rows": [
+      {
+        "name": "哈尔滨工程大学",
+        "subject": "science",
+        "score": 616,
+        "publishedRank": 9451
+      }
+    ]
+  },
+  {
+    "key": "province-ref-82f972daddb28dd501",
+    "url": "https://gaokaozy.cn/university/10217?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "哈尔滨工程大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4386a217b9dcee8b8c37a6c32de8f80c8a7c6ac731331a5fcb66c96f46cfc333",
+    "rows": [
+      {
+        "name": "哈尔滨工程大学",
+        "subject": "arts",
+        "score": 581,
+        "publishedRank": 2864
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d5ca4eeca30a2cf1e7",
+    "url": "https://gaokaozy.cn/university/10246",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "复旦大学公开分省明细：2026年院校投档线原表",
+    "sha256": "57c002d1770cceefd2b14a1f5beb78f04dd483b54792d00403b40c76ffc581aa",
+    "rows": [
+      {
+        "name": "复旦大学",
+        "subject": "science",
+        "score": 674,
+        "publishedRank": 683
+      }
+    ]
+  },
+  {
+    "key": "province-ref-4c33253f8e93efa7e5",
+    "url": "https://gaokaozy.cn/university/10246?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "复旦大学公开分省明细：2026年院校投档线原表",
+    "sha256": "1c09e67767667388527263a7500bbd96083fe37b46ba874669710b1a206319cc",
+    "rows": [
+      {
+        "name": "复旦大学",
+        "subject": "arts",
+        "score": 657,
+        "publishedRank": 97
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f39134fd96c1e1a6c6",
+    "url": "https://gaokaozy.cn/university/10151",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "大连海事大学公开分省明细：2026年院校投档线原表",
+    "sha256": "8e484088dff7134861eef22c2904195fee5d8e41b47c7358ca5bf618d08055ca",
+    "rows": [
+      {
+        "name": "大连海事大学",
+        "subject": "science",
+        "score": 566,
+        "publishedRank": 26711
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e3782de3b6478c4eb0",
+    "url": "https://gaokaozy.cn/university/10151?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "大连海事大学公开分省明细：2026年院校投档线原表",
+    "sha256": "4a53fbdc6c38fcc540bc0e112124c710f1b6f73e7b2457ba268f9cec70f695dc",
+    "rows": [
+      {
+        "name": "大连海事大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3088
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ab25866b1fe62c4086",
+    "url": "https://gaokaozy.cn/university/10141",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "大连理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "d3f0ab00d90343e101ae598c318ecbe630e5025943adbff8e2c44e7b67461ec9",
+    "rows": [
+      {
+        "name": "大连理工大学",
+        "subject": "science",
+        "score": 620,
+        "publishedRank": 8456
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d03c71d3483180d580",
+    "url": "https://gaokaozy.cn/university/10062",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "天津医科大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e53211dbbff2fe8e098b9010dee2c0641a6fdb686befc07a618e44c55576b7ff",
+    "rows": [
+      {
+        "name": "天津医科大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d80360e9ad77bf8e5f",
+    "url": "https://gaokaozy.cn/university/10056",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "天津大学公开分省明细：2026年院校投档线原表",
+    "sha256": "52bb63caa236a487ac9db1ef2aa37d6c93993dc15fb4d7ef09f14f8d7d9210ae",
+    "rows": [
+      {
+        "name": "天津大学",
+        "subject": "science",
+        "score": 619,
+        "publishedRank": 8690
+      }
+    ]
+  },
+  {
+    "key": "province-ref-29e322adb839e6c2fb",
+    "url": "https://gaokaozy.cn/university/10056?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "天津大学公开分省明细：2026年院校投档线原表",
+    "sha256": "675de514e63f64aed79099d1fc54706fba7764587b0f9f1bb9753332bc5b7fc4",
+    "rows": [
+      {
+        "name": "天津大学",
+        "subject": "arts",
+        "score": 628,
+        "publishedRank": 565
+      }
+    ]
+  },
+  {
+    "key": "province-ref-0227e9b8d40bec720c",
+    "url": "https://gaokaozy.cn/university/10357",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "安徽大学公开分省明细：2026年院校投档线原表",
+    "sha256": "967614e9d3e732bef2b802a00e75119737f6e3df0b6b2a85dcb64f537fdc137a",
+    "rows": [
+      {
+        "name": "安徽大学",
+        "subject": "science",
+        "score": 584,
+        "publishedRank": 19509
+      }
+    ]
+  },
+  {
+    "key": "province-ref-6eb125cbead31738df",
+    "url": "https://gaokaozy.cn/university/10357?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "安徽大学公开分省明细：2026年院校投档线原表",
+    "sha256": "fe9d201f3e9aa5b5308b0c8267dc49dd443d13c88322829e08d9ee77620672a2",
+    "rows": [
+      {
+        "name": "安徽大学",
+        "subject": "arts",
+        "score": 575,
+        "publishedRank": 3336
+      }
+    ]
+  },
+  {
+    "key": "province-ref-fd2af12be4b5715a69",
+    "url": "https://gaokaozy.cn/university/10593",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "广西大学公开分省明细：2026年院校投档线原表",
+    "sha256": "58c01e14d64e7267a5ca8c7f2b61f0a15c3cde8a2f6ce199fd28b4b7c1a7ec56",
+    "rows": [
+      {
+        "name": "广西大学",
+        "subject": "science",
+        "score": 537,
+        "publishedRank": 40925
+      }
+    ]
+  },
+  {
+    "key": "province-ref-ffecffdef7acc161ca",
+    "url": "https://gaokaozy.cn/university/10593?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "广西大学公开分省明细：2026年院校投档线原表",
+    "sha256": "a4a86e3a3569f9949b604c798084ee6cd8ae45d3e6c154ff3f3e3a2954a0cea8",
+    "rows": [
+      {
+        "name": "广西大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 4114
+      }
+    ]
+  },
+  {
+    "key": "province-ref-3cc1025c1f34a12518",
+    "url": "https://gaokaozy.cn/university/10602",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "广西师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "03e16e4cfd7680cc090030e8be33abc21e8173f0b3954ea8311bd6a97696ccb3",
+    "rows": [
+      {
+        "name": "广西师范大学",
+        "subject": "science",
+        "score": 481,
+        "publishedRank": 77070
+      }
+    ]
+  },
+  {
+    "key": "province-ref-43f6f96a88092315f1",
+    "url": "https://gaokaozy.cn/university/10602?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "广西师范大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e60f404c5b4bb295b8201c70710821746177cba3bb89a0b598eed92a645d016b",
+    "rows": [
+      {
+        "name": "广西师范大学",
+        "subject": "arts",
+        "score": 518,
+        "publishedRank": 11011
+      }
+    ]
+  },
+  {
+    "key": "province-ref-c207dce4bb19460ffa",
+    "url": "https://gaokaozy.cn/university/10184",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "延边大学公开分省明细：2026年院校投档线原表",
+    "sha256": "44b6ea1a2636012824f08ac72c3c53bb3eec78bc0c869aa400682f67f04a429c",
+    "rows": [
+      {
+        "name": "延边大学",
+        "subject": "science",
+        "score": 524,
+        "publishedRank": 48499
+      }
+    ]
+  },
+  {
+    "key": "province-ref-09e3c464e11ace5609",
+    "url": "https://gaokaozy.cn/university/10184?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "延边大学公开分省明细：2026年院校投档线原表",
+    "sha256": "d275fcb9cb7aa5cfb8ed1c9112475748ab5a8851107280c9b98a94dab56f4b51",
+    "rows": [
+      {
+        "name": "延边大学",
+        "subject": "arts",
+        "score": 559,
+        "publishedRank": 4982
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e090ffbf18ac04b977",
+    "url": "https://gaokaozy.cn/university/10760",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "新疆医科大学公开分省明细：2026年院校投档线原表",
+    "sha256": "1be6ad4db62ff8c3b08c785e58ff6308055b10c985131173ed9b332da3205450",
+    "rows": [
+      {
+        "name": "新疆医科大学",
+        "subject": "science",
+        "score": 484,
+        "publishedRank": 74943
+      }
+    ]
+  },
+  {
+    "key": "province-ref-a0cf539eff8bc6d676",
+    "url": "https://gaokaozy.cn/university/10755",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "新疆大学公开分省明细：2026年院校投档线原表",
+    "sha256": "8595764c4a8a9afc4d420fb651279fc0cdb78f4bd81bef5ae0a5fc38e8576c55",
+    "rows": [
+      {
+        "name": "新疆大学",
+        "subject": "science",
+        "score": 523,
+        "publishedRank": 49086
+      }
+    ]
+  },
+  {
+    "key": "province-ref-1530affbb5b0b15eda",
+    "url": "https://gaokaozy.cn/university/10755?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "新疆大学公开分省明细：2026年院校投档线原表",
+    "sha256": "970c0326f27e278ebbf2a8f555e8b8163a4b3f79efd56da215dcad916aa6e0db",
+    "rows": [
+      {
+        "name": "新疆大学",
+        "subject": "arts",
+        "score": 551,
+        "publishedRank": 5884
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2cba977f6bee746a64",
+    "url": "https://gaokaozy.cn/university/10336",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "杭州电子科技大学公开分省明细：2026年院校投档线原表",
+    "sha256": "d670f713534cef56b0e6d1ac18b353d02126b56f5b758c89791ff5c4af0c2f23",
+    "rows": [
+      {
+        "name": "杭州电子科技大学",
+        "subject": "science",
+        "score": 581,
+        "publishedRank": 20630
+      }
+    ]
+  },
+  {
+    "key": "province-ref-3d35b8b393d4b5a366",
+    "url": "https://gaokaozy.cn/university/10336?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "杭州电子科技大学公开分省明细：2026年院校投档线原表",
+    "sha256": "bb5b58e0ee3f32b71fd937f43f943af72203fb03ff203a7a1b4b0af308c187dc",
+    "rows": [
+      {
+        "name": "杭州电子科技大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 4114
+      }
+    ]
+  },
+  {
+    "key": "province-ref-7e4ea6321673c1147c",
+    "url": "https://gaokaozy.cn/university/10486",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "武汉大学公开分省明细：2026年院校投档线原表",
+    "sha256": "dc0222f6f67e1e3f64c793c3db3be7411d7b78a0d73c455614919fd57569de47",
+    "rows": [
+      {
+        "name": "武汉大学",
+        "subject": "science",
+        "score": 627,
+        "publishedRank": 6908
+      }
+    ]
+  },
+  {
+    "key": "province-ref-3123358efa2d707ea8",
+    "url": "https://gaokaozy.cn/university/10486?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "武汉大学公开分省明细：2026年院校投档线原表",
+    "sha256": "62152a6f943d8685813a4c1988e2cc254d7f6880f57a248fb6988e29c8786ec9",
+    "rows": [
+      {
+        "name": "武汉大学",
+        "subject": "arts",
+        "score": 647,
+        "publishedRank": 210
+      }
+    ]
+  },
+  {
+    "key": "province-ref-62ba8b8181ecda95d5",
+    "url": "https://gaokaozy.cn/university/10086",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "河北农业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "fd6bd47d67901112f794c33e6e9fe4bf9d721cbe208eba4c1bb8771097b52a24",
+    "rows": [
+      {
+        "name": "河北农业大学",
+        "subject": "science",
+        "score": 473,
+        "publishedRank": 82865
+      }
+    ]
+  },
+  {
+    "key": "province-ref-b0831e7ce94101979b",
+    "url": "https://gaokaozy.cn/university/10080",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "河北工业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "8fa79cadb58945deb92a3ffffb8e7408ca8aa85eccc384588184b174caac8b65",
+    "rows": [
+      {
+        "name": "河北工业大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 21010
+      }
+    ]
+  },
+  {
+    "key": "province-ref-365b9f75eb88a6ddc8",
+    "url": "https://gaokaozy.cn/university/10460",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "河南理工大学公开分省明细：2026年院校投档线原表",
+    "sha256": "b1f449152e2c4d3aa21d911c2229a1a740f1fecb995edaf38d00c16e0628ebd6",
+    "rows": [
+      {
+        "name": "河南理工大学",
+        "subject": "science",
+        "score": 499,
+        "publishedRank": 64406
+      }
+    ]
+  },
+  {
+    "key": "province-ref-1d88caa0dd7f9494a3",
+    "url": "https://gaokaozy.cn/university/10337",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "浙江工业大学公开分省明细：2026年院校投档线原表",
+    "sha256": "e24f05187ff33767ca306caf29d33d8bc351c81bfccea17b377040b04f5430f1",
+    "rows": [
+      {
+        "name": "浙江工业大学",
+        "subject": "science",
+        "score": 575,
+        "publishedRank": 22962
+      }
+    ]
+  },
+  {
+    "key": "province-ref-f0a1f298048849fa85",
+    "url": "https://gaokaozy.cn/university/10534",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "湖南科技大学公开分省明细：2026年院校投档线原表",
+    "sha256": "47a1d7df7b9384cf4aae40c50182cf067a2236c59d100e5fd24d99a069583901",
+    "rows": [
+      {
+        "name": "湖南科技大学",
+        "subject": "science",
+        "score": 468,
+        "publishedRank": 86596
+      }
+    ]
+  },
+  {
+    "key": "province-ref-01d27e23c1b3c8efce",
+    "url": "https://gaokaozy.cn/university/10534?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "湖南科技大学公开分省明细：2026年院校投档线原表",
+    "sha256": "79dc34f6de497bda53f0616e8246ecce431cac85b88c4ac0704ab96453fec08c",
+    "rows": [
+      {
+        "name": "湖南科技大学",
+        "subject": "arts",
+        "score": 537,
+        "publishedRank": 7872
+      }
+    ]
+  },
+  {
+    "key": "province-ref-57d610f14025b21bf3",
+    "url": "https://gaokaozy.cn/university/10759",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "石河子大学公开分省明细：2026年院校投档线原表",
+    "sha256": "a253a09df71b49a56a98fad3854db0c4b6955ac775ad46661809c052641ecb65",
+    "rows": [
+      {
+        "name": "石河子大学",
+        "subject": "science",
+        "score": 515,
+        "publishedRank": 53957
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e8929e4957086a1585",
+    "url": "https://gaokaozy.cn/university/10759?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "石河子大学公开分省明细：2026年院校投档线原表",
+    "sha256": "44807cba88e64e1542e2ee3184c8a91376a34acc43e6a57cf08da5d67774b9ce",
+    "rows": [
+      {
+        "name": "石河子大学",
+        "subject": "arts",
+        "score": 557,
+        "publishedRank": 5187
+      }
+    ]
+  },
+  {
+    "key": "province-ref-1da117b84f14f0ec19",
+    "url": "https://gaokaozy.cn/university/10386",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "福州大学公开分省明细：2026年院校投档线原表",
+    "sha256": "3cdca31d22f64df9687663f2df7c71ce5eee44484e3ffb5e7fbf915f71ffab47",
+    "rows": [
+      {
+        "name": "福州大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "province-ref-9eb0d533c4ee890a0c",
+    "url": "https://gaokaozy.cn/university/10386?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "福州大学公开分省明细：2026年院校投档线原表",
+    "sha256": "0b717d897b4d8a78583fe154086a58bca30a6d00db3ad0922c42b06ec8f1c28d",
+    "rows": [
+      {
+        "name": "福州大学",
+        "subject": "arts",
+        "score": 580,
+        "publishedRank": 2944
+      }
+    ]
+  },
+  {
+    "key": "province-ref-041ea735171f0e87b3",
+    "url": "https://gaokaozy.cn/university/10651",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西南财经大学公开分省明细：2026年院校投档线原表",
+    "sha256": "7f510efce822cfa452cc3a97145e3e5a0b1971816eaf7b1fe3e6dcd38184f39b",
+    "rows": [
+      {
+        "name": "西南财经大学",
+        "subject": "science",
+        "score": 581,
+        "publishedRank": 20630
+      }
+    ]
+  },
+  {
+    "key": "province-ref-da989c00b57c3d4ee9",
+    "url": "https://gaokaozy.cn/university/10651?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "西南财经大学公开分省明细：2026年院校投档线原表",
+    "sha256": "5d84e4e72fd488a9cfd002487f94d61b66b5a3ef8a355ec0e106cad391a5f964",
+    "rows": [
+      {
+        "name": "西南财经大学",
+        "subject": "arts",
+        "score": 597,
+        "publishedRank": 1831
+      }
+    ]
+  },
+  {
+    "key": "province-ref-50b20e24f17c55d610",
+    "url": "https://gaokaozy.cn/university/10657",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "贵州大学公开分省明细：2026年院校投档线原表",
+    "sha256": "73903c446ca3f802eaf21bf5d63568e7f7315bdd06947e2c148a3e4ce188eb17",
+    "rows": [
+      {
+        "name": "贵州大学",
+        "subject": "science",
+        "score": 547,
+        "publishedRank": 35671
+      }
+    ]
+  },
+  {
+    "key": "province-ref-d1cf64f2d0d3e0e1dd",
+    "url": "https://gaokaozy.cn/university/10657?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "贵州大学公开分省明细：2026年院校投档线原表",
+    "sha256": "47b6b1ed3b3a0ace6303e5109bad79a38c423c550101092e52e45effe09fbb62",
+    "rows": [
+      {
+        "name": "贵州大学",
+        "subject": "arts",
+        "score": 573,
+        "publishedRank": 3539
+      }
+    ]
+  },
+  {
+    "key": "province-ref-5fa825105ff5b74cd6",
+    "url": "https://gaokaozy.cn/university/10611",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "重庆大学公开分省明细：2026年院校投档线原表",
+    "sha256": "7197ec4838d7e426b76896bd6d08ee667fd9a23fd4f67642f4d88008817e64b5",
+    "rows": [
+      {
+        "name": "重庆大学",
+        "subject": "science",
+        "score": 607,
+        "publishedRank": 11968
+      }
+    ]
+  },
+  {
+    "key": "province-ref-5de4292ff8a5b01cee",
+    "url": "https://gaokaozy.cn/university/10611?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "重庆大学公开分省明细：2026年院校投档线原表",
+    "sha256": "ee8e4a3e7082e57f3ec6f0ef7ba9f671f7f39700ac101efa88d1a842cd630502",
+    "rows": [
+      {
+        "name": "重庆大学",
+        "subject": "arts",
+        "score": 607,
+        "publishedRank": 1331
+      }
+    ]
+  },
+  {
+    "key": "province-ref-2c3014423701151b42",
+    "url": "https://gaokaozy.cn/university/10743",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "青海大学公开分省明细：2026年院校投档线原表",
+    "sha256": "1c1ed9365d26a6066f8e06a9b13a3f225300c456c86cbab6b0490b4372228249",
+    "rows": [
+      {
+        "name": "青海大学",
+        "subject": "science",
+        "score": 517,
+        "publishedRank": 52717
+      }
+    ]
+  },
+  {
+    "key": "province-ref-cf3b0a98b0aa6fbdef",
+    "url": "https://gaokaozy.cn/university/10743?pline=art",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "青海大学公开分省明细：2026年院校投档线原表",
+    "sha256": "76bd2a16c0a034110e1b4dd1a6009e3aaf64d734eb586c49ead116a0c745f473",
+    "rows": [
+      {
+        "name": "青海大学",
+        "subject": "arts",
+        "score": 552,
+        "publishedRank": 5768
+      }
+    ]
+  },
+  {
+    "key": "province-ref-e0e3588cec03251cba",
+    "url": "https://gaokaozy.cn/university/10025",
+    "publisher": "估录通公开分省表（批次未标注）",
+    "year": 2026,
+    "title": "首都医科大学公开分省明细：2026年院校投档线原表",
+    "sha256": "96adca6e08fa49b3ea3f6355f3b39be0708000c2a33793813da885cbbbeae188",
+    "rows": [
+      {
+        "name": "首都医科大学",
+        "subject": "science",
+        "score": 614,
+        "publishedRank": 9978
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-ebdcc35ac89725fa43",
+    "url": "https://gaokaozy.cn/university/11835?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "上海政法学院陕西历年录取数据：2025年原表行",
+    "sha256": "ebd3607181a001b6797328840942c191e2fd92e6df9cd7f936f0eeaf51f98af8",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "上海政法学院",
+        "subject": "science",
+        "score": 536,
+        "publishedRank": 34510
+      },
+      {
+        "name": "上海政法学院",
+        "subject": "arts",
+        "score": 572,
+        "publishedRank": 4617
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-ebdcc35ac89725fa43",
+    "url": "https://gaokaozy.cn/university/11835?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "上海政法学院陕西历年录取数据：2026年原表行",
+    "sha256": "ebd3607181a001b6797328840942c191e2fd92e6df9cd7f936f0eeaf51f98af8",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "上海政法学院",
+        "subject": "science",
+        "score": 536,
+        "publishedRank": 41488
+      },
+      {
+        "name": "上海政法学院",
+        "subject": "arts",
+        "score": 572,
+        "publishedRank": 3621
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-20930c7f2f82511780",
+    "url": "https://gaokaozy.cn/university/10254?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "上海海事大学陕西历年录取数据：2025年原表行",
+    "sha256": "663d5d5b30dae68e40fee0dabd5e52c775c10882b83c1fced69314052249c886",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "上海海事大学",
+        "subject": "science",
+        "score": 557,
+        "publishedRank": 25187
+      },
+      {
+        "name": "上海海事大学",
+        "subject": "arts",
+        "score": 592,
+        "publishedRank": 2702
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-20930c7f2f82511780",
+    "url": "https://gaokaozy.cn/university/10254?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "上海海事大学陕西历年录取数据：2026年原表行",
+    "sha256": "663d5d5b30dae68e40fee0dabd5e52c775c10882b83c1fced69314052249c886",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "上海海事大学",
+        "subject": "science",
+        "score": 557,
+        "publishedRank": 30831
+      },
+      {
+        "name": "上海海事大学",
+        "subject": "arts",
+        "score": 592,
+        "publishedRank": 2119
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-81312a738ed60d0af0",
+    "url": "https://gaokaozy.cn/university/10145?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "东北大学陕西历年录取数据：2025年原表行",
+    "sha256": "b879a269605822fa7111e808b353c82c577e2ce42911abd490e9fba18105cb6d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "东北大学",
+        "subject": "science",
+        "score": 600,
+        "publishedRank": 11374
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-81312a738ed60d0af0",
+    "url": "https://gaokaozy.cn/university/10145?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "东北大学陕西历年录取数据：2026年原表行",
+    "sha256": "b879a269605822fa7111e808b353c82c577e2ce42911abd490e9fba18105cb6d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "东北大学",
+        "subject": "science",
+        "score": 600,
+        "publishedRank": 14174
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-48452225d6ccd1d952",
+    "url": "https://gaokaozy.cn/university/10286?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "东南大学陕西历年录取数据：2025年原表行",
+    "sha256": "25ef952159393876bbb44dda4d01a47a27d9366a46c5f63f787b15c7bddb95a6",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "东南大学",
+        "subject": "science",
+        "score": 636,
+        "publishedRank": 5368
+      },
+      {
+        "name": "东南大学",
+        "subject": "arts",
+        "score": 632,
+        "publishedRank": 660
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-48452225d6ccd1d952",
+    "url": "https://gaokaozy.cn/university/10286?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "东南大学陕西历年录取数据：2026年原表行",
+    "sha256": "25ef952159393876bbb44dda4d01a47a27d9366a46c5f63f787b15c7bddb95a6",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "东南大学",
+        "subject": "science",
+        "score": 636,
+        "publishedRank": 5140
+      },
+      {
+        "name": "东南大学",
+        "subject": "arts",
+        "score": 632,
+        "publishedRank": 462
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-1dfa0d9bfd2e5def8f",
+    "url": "https://gaokaozy.cn/university/10019?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "中国农业大学陕西历年录取数据：2025年原表行",
+    "sha256": "e1969911bdc8abbeefcf20951f9256c28038455a86abba18106c6b219818cca0",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国农业大学",
+        "subject": "science",
+        "score": 604,
+        "publishedRank": 10415
+      },
+      {
+        "name": "中国农业大学",
+        "subject": "arts",
+        "score": 612,
+        "publishedRank": 1441
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-1dfa0d9bfd2e5def8f",
+    "url": "https://gaokaozy.cn/university/10019?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "中国农业大学陕西历年录取数据：2026年原表行",
+    "sha256": "e1969911bdc8abbeefcf20951f9256c28038455a86abba18106c6b219818cca0",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国农业大学",
+        "subject": "science",
+        "score": 604,
+        "publishedRank": 12911
+      },
+      {
+        "name": "中国农业大学",
+        "subject": "arts",
+        "score": 612,
+        "publishedRank": 1087
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-9d4b71d1075f3e8308",
+    "url": "https://gaokaozy.cn/university/10290?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "中国矿业大学陕西历年录取数据：2025年原表行",
+    "sha256": "47b191142af1dcf47c3270464cc14f073b83ef3b9644384a3abcf2360e1062ae",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国矿业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 26369
+      },
+      {
+        "name": "中国矿业大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3966
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-9d4b71d1075f3e8308",
+    "url": "https://gaokaozy.cn/university/10290?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "中国矿业大学陕西历年录取数据：2026年原表行",
+    "sha256": "47b191142af1dcf47c3270464cc14f073b83ef3b9644384a3abcf2360e1062ae",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国矿业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      },
+      {
+        "name": "中国矿业大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3088
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-6af268c1b853ad0fc6",
+    "url": "https://gaokaozy.cn/university/10358?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "中国科学技术大学陕西历年录取数据：2025年原表行",
+    "sha256": "14d5ff0190b52af3e1e62c96b3eefb5aa35970e6c28638f33cdcc93428caf642",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国科学技术大学",
+        "subject": "science",
+        "score": 678,
+        "publishedRank": 583
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-6af268c1b853ad0fc6",
+    "url": "https://gaokaozy.cn/university/10358?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "中国科学技术大学陕西历年录取数据：2026年原表行",
+    "sha256": "14d5ff0190b52af3e1e62c96b3eefb5aa35970e6c28638f33cdcc93428caf642",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国科学技术大学",
+        "subject": "science",
+        "score": 678,
+        "publishedRank": 492
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-e8fd469f35ba4d81a1",
+    "url": "https://gaokaozy.cn/university/10355?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "中国美术学院陕西历年录取数据：2025年原表行",
+    "sha256": "1a8bd7105a5d28ce1547cfbb37c889e1943ad5faf4b29ac0326f40f63bc3cfcd",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国美术学院",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 3118
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-e8fd469f35ba4d81a1",
+    "url": "https://gaokaozy.cn/university/10355?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "中国美术学院陕西历年录取数据：2026年原表行",
+    "sha256": "1a8bd7105a5d28ce1547cfbb37c889e1943ad5faf4b29ac0326f40f63bc3cfcd",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国美术学院",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 2420
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-b66f211066b96acb84",
+    "url": "https://gaokaozy.cn/university/10316?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "中国药科大学陕西历年录取数据：2025年原表行",
+    "sha256": "c9cfcb2d39cf7a6cffdfb7f34a69bd41c75408300a85dcb28a3bc0bb2ee15e22",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国药科大学",
+        "subject": "science",
+        "score": 576,
+        "publishedRank": 18382
+      },
+      {
+        "name": "中国药科大学",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 3118
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-b66f211066b96acb84",
+    "url": "https://gaokaozy.cn/university/10316?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "中国药科大学陕西历年录取数据：2026年原表行",
+    "sha256": "c9cfcb2d39cf7a6cffdfb7f34a69bd41c75408300a85dcb28a3bc0bb2ee15e22",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "中国药科大学",
+        "subject": "science",
+        "score": 576,
+        "publishedRank": 22574
+      },
+      {
+        "name": "中国药科大学",
+        "subject": "arts",
+        "score": 587,
+        "publishedRank": 2420
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-b7376793fb0ba17e36",
+    "url": "https://gaokaozy.cn/university/10681?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "云南师范大学陕西历年录取数据：2025年原表行",
+    "sha256": "fc25417e8276897fe4afe8899721e6bf17584163e1298ac3b86194570b03c6c8",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "云南师范大学",
+        "subject": "science",
+        "score": 491,
+        "publishedRank": 61243
+      },
+      {
+        "name": "云南师范大学",
+        "subject": "arts",
+        "score": 509,
+        "publishedRank": 15119
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-b7376793fb0ba17e36",
+    "url": "https://gaokaozy.cn/university/10681?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "云南师范大学陕西历年录取数据：2026年原表行",
+    "sha256": "fc25417e8276897fe4afe8899721e6bf17584163e1298ac3b86194570b03c6c8",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "云南师范大学",
+        "subject": "science",
+        "score": 491,
+        "publishedRank": 69981
+      },
+      {
+        "name": "云南师范大学",
+        "subject": "arts",
+        "score": 509,
+        "publishedRank": 12732
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-f5a54fde5d2845380d",
+    "url": "https://gaokaozy.cn/university/10005?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "北京工业大学陕西历年录取数据：2025年原表行",
+    "sha256": "1f67750f7daabcbe98d66abcb813a84ccbb492390049bdbac2c5265f24c66b44",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "北京工业大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 18095
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-f5a54fde5d2845380d",
+    "url": "https://gaokaozy.cn/university/10005?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "北京工业大学陕西历年录取数据：2026年原表行",
+    "sha256": "1f67750f7daabcbe98d66abcb813a84ccbb492390049bdbac2c5265f24c66b44",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "北京工业大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-18b7ecd68b748e580b",
+    "url": "https://gaokaozy.cn/university/10298?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "南京林业大学陕西历年录取数据：2025年原表行",
+    "sha256": "a0ac857480cc4aa5ed681a8ef680dd2c4fbdf5e9608c87dd45d0c3f7f32f3cce",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南京林业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 26369
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-18b7ecd68b748e580b",
+    "url": "https://gaokaozy.cn/university/10298?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "南京林业大学陕西历年录取数据：2026年原表行",
+    "sha256": "a0ac857480cc4aa5ed681a8ef680dd2c4fbdf5e9608c87dd45d0c3f7f32f3cce",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南京林业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-20d91348a3bf446396",
+    "url": "https://gaokaozy.cn/university/14325?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "南方科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "8c4f5c60348cd7f0e8b79b8ff1441d54fa6b7ae7191ec13c091ee7891b3c9642",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南方科技大学",
+        "subject": "science",
+        "score": 626,
+        "publishedRank": 5884
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-20d91348a3bf446396",
+    "url": "https://gaokaozy.cn/university/14325?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "南方科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "8c4f5c60348cd7f0e8b79b8ff1441d54fa6b7ae7191ec13c091ee7891b3c9642",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南方科技大学",
+        "subject": "science",
+        "score": 626,
+        "publishedRank": 7117
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-a9d31762a47a4a8860",
+    "url": "https://gaokaozy.cn/university/10403?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "南昌大学陕西历年录取数据：2025年原表行",
+    "sha256": "0e86ea690aa006ba89e3f6b6ca9aafb58c6e01389ca0c473cafc8d0b01ecd0fd",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南昌大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 17129
+      },
+      {
+        "name": "南昌大学",
+        "subject": "arts",
+        "score": 574,
+        "publishedRank": 4392
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-a9d31762a47a4a8860",
+    "url": "https://gaokaozy.cn/university/10403?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "南昌大学陕西历年录取数据：2026年原表行",
+    "sha256": "0e86ea690aa006ba89e3f6b6ca9aafb58c6e01389ca0c473cafc8d0b01ecd0fd",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "南昌大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 21010
+      },
+      {
+        "name": "南昌大学",
+        "subject": "arts",
+        "score": 574,
+        "publishedRank": 3439
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-7d4afd95ee01db8bfa",
+    "url": "https://gaokaozy.cn/university/10359?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "合肥工业大学陕西历年录取数据：2025年原表行",
+    "sha256": "ee24d73459cc25366874e99475295fd3bfd145d39e3419147adc1cd7372f32e9",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "合肥工业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 26369
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-7d4afd95ee01db8bfa",
+    "url": "https://gaokaozy.cn/university/10359?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "合肥工业大学陕西历年录取数据：2026年原表行",
+    "sha256": "ee24d73459cc25366874e99475295fd3bfd145d39e3419147adc1cd7372f32e9",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "合肥工业大学",
+        "subject": "science",
+        "score": 554,
+        "publishedRank": 32221
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-cc144e7385e720279c",
+    "url": "https://gaokaozy.cn/university/10151?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "大连海事大学陕西历年录取数据：2025年原表行",
+    "sha256": "22fac5b780e9228a34667e64745c334fbf9f1771471434d9f8c511c9c1bd5482",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "大连海事大学",
+        "subject": "science",
+        "score": 566,
+        "publishedRank": 21787
+      },
+      {
+        "name": "大连海事大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3966
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-cc144e7385e720279c",
+    "url": "https://gaokaozy.cn/university/10151?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "大连海事大学陕西历年录取数据：2026年原表行",
+    "sha256": "22fac5b780e9228a34667e64745c334fbf9f1771471434d9f8c511c9c1bd5482",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "大连海事大学",
+        "subject": "science",
+        "score": 566,
+        "publishedRank": 26711
+      },
+      {
+        "name": "大连海事大学",
+        "subject": "arts",
+        "score": 578,
+        "publishedRank": 3088
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-c4de7e12018dcd4417",
+    "url": "https://gaokaozy.cn/university/10141?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "大连理工大学陕西历年录取数据：2025年原表行",
+    "sha256": "89cd1b05b47701cc5a76840867cc8d778352244a2075c25f070e2a627b6d324d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "大连理工大学",
+        "subject": "science",
+        "score": 620,
+        "publishedRank": 6979
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-c4de7e12018dcd4417",
+    "url": "https://gaokaozy.cn/university/10141?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "大连理工大学陕西历年录取数据：2026年原表行",
+    "sha256": "89cd1b05b47701cc5a76840867cc8d778352244a2075c25f070e2a627b6d324d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "大连理工大学",
+        "subject": "science",
+        "score": 620,
+        "publishedRank": 8456
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-e5ea59489821c35d4f",
+    "url": "https://gaokaozy.cn/university/10062?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "天津医科大学陕西历年录取数据：2025年原表行",
+    "sha256": "46e8f3cca4240a9f412171dff628431515aeaae2d4b4ff7584d7c805cbb2ec31",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津医科大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 18095
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-e5ea59489821c35d4f",
+    "url": "https://gaokaozy.cn/university/10062?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "天津医科大学陕西历年录取数据：2026年原表行",
+    "sha256": "46e8f3cca4240a9f412171dff628431515aeaae2d4b4ff7584d7c805cbb2ec31",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津医科大学",
+        "subject": "science",
+        "score": 577,
+        "publishedRank": 22175
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-cedfd56138b1223da2",
+    "url": "https://gaokaozy.cn/university/10065?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "天津师范大学陕西历年录取数据：2025年原表行",
+    "sha256": "e5e7a86fae495ce74d2a0b97244d664fc4cefc9ebc05484b09c6830cbd0c699c",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津师范大学",
+        "subject": "science",
+        "score": 518,
+        "publishedRank": 44059
+      },
+      {
+        "name": "天津师范大学",
+        "subject": "arts",
+        "score": 562,
+        "publishedRank": 5777
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-cedfd56138b1223da2",
+    "url": "https://gaokaozy.cn/university/10065?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "天津师范大学陕西历年录取数据：2026年原表行",
+    "sha256": "e5e7a86fae495ce74d2a0b97244d664fc4cefc9ebc05484b09c6830cbd0c699c",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津师范大学",
+        "subject": "science",
+        "score": 518,
+        "publishedRank": 52118
+      },
+      {
+        "name": "天津师范大学",
+        "subject": "arts",
+        "score": 562,
+        "publishedRank": 4669
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-63289fe927f5c85d16",
+    "url": "https://gaokaozy.cn/university/10070?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "天津财经大学陕西历年录取数据：2025年原表行",
+    "sha256": "e0e49d97442644b5196c12b96adbe15c179ce81647727a8a68357464a15837d9",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津财经大学",
+        "subject": "science",
+        "score": 522,
+        "publishedRank": 41804
+      },
+      {
+        "name": "天津财经大学",
+        "subject": "arts",
+        "score": 559,
+        "publishedRank": 6214
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-63289fe927f5c85d16",
+    "url": "https://gaokaozy.cn/university/10070?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "天津财经大学陕西历年录取数据：2026年原表行",
+    "sha256": "e0e49d97442644b5196c12b96adbe15c179ce81647727a8a68357464a15837d9",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "天津财经大学",
+        "subject": "science",
+        "score": 522,
+        "publishedRank": 49736
+      },
+      {
+        "name": "天津财经大学",
+        "subject": "arts",
+        "score": 559,
+        "publishedRank": 4982
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-ea713a67c578208723",
+    "url": "https://gaokaozy.cn/university/11646?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "宁波大学陕西历年录取数据：2025年原表行",
+    "sha256": "8549b8fdda17f6b424b406bd42a71b1604ed50c49e200706639208bafc3c1b26",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "宁波大学",
+        "subject": "science",
+        "score": 534,
+        "publishedRank": 35484
+      },
+      {
+        "name": "宁波大学",
+        "subject": "arts",
+        "score": 542,
+        "publishedRank": 8733
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-ea713a67c578208723",
+    "url": "https://gaokaozy.cn/university/11646?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "宁波大学陕西历年录取数据：2026年原表行",
+    "sha256": "8549b8fdda17f6b424b406bd42a71b1604ed50c49e200706639208bafc3c1b26",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "宁波大学",
+        "subject": "science",
+        "score": 534,
+        "publishedRank": 42563
+      },
+      {
+        "name": "宁波大学",
+        "subject": "arts",
+        "score": 542,
+        "publishedRank": 7128
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-c9928e0224429c2592",
+    "url": "https://gaokaozy.cn/university/10593?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "广西大学陕西历年录取数据：2025年原表行",
+    "sha256": "795ebe547989b089e0f95bc588f6fe91d480a0499cf7b6fa013a9b3e54e9cd07",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "广西大学",
+        "subject": "science",
+        "score": 537,
+        "publishedRank": 33976
+      },
+      {
+        "name": "广西大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 5184
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-c9928e0224429c2592",
+    "url": "https://gaokaozy.cn/university/10593?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "广西大学陕西历年录取数据：2026年原表行",
+    "sha256": "795ebe547989b089e0f95bc588f6fe91d480a0499cf7b6fa013a9b3e54e9cd07",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "广西大学",
+        "subject": "science",
+        "score": 537,
+        "publishedRank": 40925
+      },
+      {
+        "name": "广西大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 4114
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-26de4033ab6ea728cb",
+    "url": "https://gaokaozy.cn/university/10760?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "新疆医科大学陕西历年录取数据：2025年原表行",
+    "sha256": "817fffcd5a135c32e1de8afcb72bbc4783fd15a452d92e804e1e35ecc72b68fb",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "新疆医科大学",
+        "subject": "science",
+        "score": 484,
+        "publishedRank": 66080
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-26de4033ab6ea728cb",
+    "url": "https://gaokaozy.cn/university/10760?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "新疆医科大学陕西历年录取数据：2026年原表行",
+    "sha256": "817fffcd5a135c32e1de8afcb72bbc4783fd15a452d92e804e1e35ecc72b68fb",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "新疆医科大学",
+        "subject": "science",
+        "score": 484,
+        "publishedRank": 74943
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-f3ffcad584a3f60cb8",
+    "url": "https://gaokaozy.cn/university/10755?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "新疆大学陕西历年录取数据：2025年原表行",
+    "sha256": "7a12d25dd11d7eaab732b776244918988f3a03acee6a6ece8cbd82261928f20f",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "新疆大学",
+        "subject": "science",
+        "score": 523,
+        "publishedRank": 41276
+      },
+      {
+        "name": "新疆大学",
+        "subject": "arts",
+        "score": 551,
+        "publishedRank": 7350
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-f3ffcad584a3f60cb8",
+    "url": "https://gaokaozy.cn/university/10755?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "新疆大学陕西历年录取数据：2026年原表行",
+    "sha256": "7a12d25dd11d7eaab732b776244918988f3a03acee6a6ece8cbd82261928f20f",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "新疆大学",
+        "subject": "science",
+        "score": 523,
+        "publishedRank": 49086
+      },
+      {
+        "name": "新疆大学",
+        "subject": "arts",
+        "score": 551,
+        "publishedRank": 5884
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-f8b01a901aac48a27f",
+    "url": "https://gaokaozy.cn/university/10336?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "杭州电子科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "2a7b098b5524d2a316faee744d89e77a02c5c3190efe00f590f33ecc076e5646",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "杭州电子科技大学",
+        "subject": "science",
+        "score": 581,
+        "publishedRank": 16812
+      },
+      {
+        "name": "杭州电子科技大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 5184
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-f8b01a901aac48a27f",
+    "url": "https://gaokaozy.cn/university/10336?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "杭州电子科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "2a7b098b5524d2a316faee744d89e77a02c5c3190efe00f590f33ecc076e5646",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "杭州电子科技大学",
+        "subject": "science",
+        "score": 581,
+        "publishedRank": 20630
+      },
+      {
+        "name": "杭州电子科技大学",
+        "subject": "arts",
+        "score": 567,
+        "publishedRank": 4114
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-705767ba5e849539b3",
+    "url": "https://gaokaozy.cn/university/10086?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "河北农业大学陕西历年录取数据：2025年原表行",
+    "sha256": "5af94202401ee18f26e43e2402957ab52288fd328fa79b9d6060019611f4d0a7",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河北农业大学",
+        "subject": "science",
+        "score": 473,
+        "publishedRank": 73886
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-705767ba5e849539b3",
+    "url": "https://gaokaozy.cn/university/10086?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "河北农业大学陕西历年录取数据：2026年原表行",
+    "sha256": "5af94202401ee18f26e43e2402957ab52288fd328fa79b9d6060019611f4d0a7",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河北农业大学",
+        "subject": "science",
+        "score": 473,
+        "publishedRank": 82865
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-009bd79fef2d5e31df",
+    "url": "https://gaokaozy.cn/university/10080?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "河北工业大学陕西历年录取数据：2025年原表行",
+    "sha256": "8e9271498917863c120797f3a0c1b02d2e764c37284afa1f0e1c0a9bffa14543",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河北工业大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 17129
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-009bd79fef2d5e31df",
+    "url": "https://gaokaozy.cn/university/10080?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "河北工业大学陕西历年录取数据：2026年原表行",
+    "sha256": "8e9271498917863c120797f3a0c1b02d2e764c37284afa1f0e1c0a9bffa14543",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河北工业大学",
+        "subject": "science",
+        "score": 580,
+        "publishedRank": 21010
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-426cc3d013c5e9c0d5",
+    "url": "https://gaokaozy.cn/university/10460?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "河南理工大学陕西历年录取数据：2025年原表行",
+    "sha256": "6c58d91c133b9bd316edd74bf51b5430c3b7d1ae2964817071d8250de9860b41",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河南理工大学",
+        "subject": "science",
+        "score": 499,
+        "publishedRank": 55774
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-426cc3d013c5e9c0d5",
+    "url": "https://gaokaozy.cn/university/10460?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "河南理工大学陕西历年录取数据：2026年原表行",
+    "sha256": "6c58d91c133b9bd316edd74bf51b5430c3b7d1ae2964817071d8250de9860b41",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "河南理工大学",
+        "subject": "science",
+        "score": 499,
+        "publishedRank": 64406
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-a14391d8d3b66e7313",
+    "url": "https://gaokaozy.cn/university/10337?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "浙江工业大学陕西历年录取数据：2025年原表行",
+    "sha256": "8604a28fd9b94a66099ba2163cb4d4c5d08a81d6b4eb8c58bb70ed8f79bea05d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "浙江工业大学",
+        "subject": "science",
+        "score": 575,
+        "publishedRank": 18684
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-a14391d8d3b66e7313",
+    "url": "https://gaokaozy.cn/university/10337?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "浙江工业大学陕西历年录取数据：2026年原表行",
+    "sha256": "8604a28fd9b94a66099ba2163cb4d4c5d08a81d6b4eb8c58bb70ed8f79bea05d",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "浙江工业大学",
+        "subject": "science",
+        "score": 575,
+        "publishedRank": 22962
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-750dfcc539953d374f",
+    "url": "https://gaokaozy.cn/university/10534?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "湖南科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "233112810d84b3db1d95b878b04bab79d299ab054f3d90ee02143fff9daa2e46",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "湖南科技大学",
+        "subject": "science",
+        "score": 468,
+        "publishedRank": 77567
+      },
+      {
+        "name": "湖南科技大学",
+        "subject": "arts",
+        "score": 537,
+        "publishedRank": 9587
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-750dfcc539953d374f",
+    "url": "https://gaokaozy.cn/university/10534?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "湖南科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "233112810d84b3db1d95b878b04bab79d299ab054f3d90ee02143fff9daa2e46",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "湖南科技大学",
+        "subject": "science",
+        "score": 468,
+        "publishedRank": 86596
+      },
+      {
+        "name": "湖南科技大学",
+        "subject": "arts",
+        "score": 537,
+        "publishedRank": 7872
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-1050ab283395ad5c2f",
+    "url": "https://gaokaozy.cn/university/10736?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "西北师范大学陕西历年录取数据：2025年原表行",
+    "sha256": "0112ec75d54992ab8e253623447e89fc42a88474ad06b21ed263b91c5b4616b2",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西北师范大学",
+        "subject": "science",
+        "score": 501,
+        "publishedRank": 54497
+      },
+      {
+        "name": "西北师范大学",
+        "subject": "arts",
+        "score": 535,
+        "publishedRank": 9929
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-1050ab283395ad5c2f",
+    "url": "https://gaokaozy.cn/university/10736?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "西北师范大学陕西历年录取数据：2026年原表行",
+    "sha256": "0112ec75d54992ab8e253623447e89fc42a88474ad06b21ed263b91c5b4616b2",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西北师范大学",
+        "subject": "science",
+        "score": 501,
+        "publishedRank": 63101
+      },
+      {
+        "name": "西北师范大学",
+        "subject": "arts",
+        "score": 535,
+        "publishedRank": 8171
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-6ce988a12afcdff94e",
+    "url": "https://gaokaozy.cn/university/10652?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "西南政法大学陕西历年录取数据：2025年原表行",
+    "sha256": "6a96a8028ddffb0188ee773c0f37abef216a28e92c247070549dce1a5e2172eb",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西南政法大学",
+        "subject": "science",
+        "score": 543,
+        "publishedRank": 31136
+      },
+      {
+        "name": "西南政法大学",
+        "subject": "arts",
+        "score": 577,
+        "publishedRank": 4062
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-6ce988a12afcdff94e",
+    "url": "https://gaokaozy.cn/university/10652?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "西南政法大学陕西历年录取数据：2026年原表行",
+    "sha256": "6a96a8028ddffb0188ee773c0f37abef216a28e92c247070549dce1a5e2172eb",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西南政法大学",
+        "subject": "science",
+        "score": 543,
+        "publishedRank": 37682
+      },
+      {
+        "name": "西南政法大学",
+        "subject": "arts",
+        "score": 577,
+        "publishedRank": 3172
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-d80d182aeeea755245",
+    "url": "https://gaokaozy.cn/university/10703?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "西安建筑科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "8425b6304d8121dad1a783846095654fc91bd275c15efbf9188a9194b0dfa595",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西安建筑科技大学",
+        "subject": "science",
+        "score": 517,
+        "publishedRank": 44695
+      },
+      {
+        "name": "西安建筑科技大学",
+        "subject": "arts",
+        "score": 534,
+        "publishedRank": 10108
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-d80d182aeeea755245",
+    "url": "https://gaokaozy.cn/university/10703?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "西安建筑科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "8425b6304d8121dad1a783846095654fc91bd275c15efbf9188a9194b0dfa595",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西安建筑科技大学",
+        "subject": "science",
+        "score": 517,
+        "publishedRank": 52717
+      },
+      {
+        "name": "西安建筑科技大学",
+        "subject": "arts",
+        "score": 534,
+        "publishedRank": 8347
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-7fbec033413185cb6b",
+    "url": "https://gaokaozy.cn/university/10704?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "西安科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "ccfb638727f9ad09a1ae4ea8d76e272fefd861ca3248d30853276242ef8dbe91",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西安科技大学",
+        "subject": "science",
+        "score": 505,
+        "publishedRank": 51936
+      },
+      {
+        "name": "西安科技大学",
+        "subject": "arts",
+        "score": 514,
+        "publishedRank": 14056
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-7fbec033413185cb6b",
+    "url": "https://gaokaozy.cn/university/10704?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "西安科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "ccfb638727f9ad09a1ae4ea8d76e272fefd861ca3248d30853276242ef8dbe91",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西安科技大学",
+        "subject": "science",
+        "score": 505,
+        "publishedRank": 60422
+      },
+      {
+        "name": "西安科技大学",
+        "subject": "arts",
+        "score": 514,
+        "publishedRank": 11744
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-239edcddee4d39227d",
+    "url": "https://gaokaozy.cn/university/10694?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "西藏大学陕西历年录取数据：2025年原表行",
+    "sha256": "6501ef474a9170c973c46af5b4a4dfe30a1c2e10283bf9d5237303e21d78df17",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西藏大学",
+        "subject": "science",
+        "score": 487,
+        "publishedRank": 64042
+      },
+      {
+        "name": "西藏大学",
+        "subject": "arts",
+        "score": 510,
+        "publishedRank": 14911
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-239edcddee4d39227d",
+    "url": "https://gaokaozy.cn/university/10694?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "西藏大学陕西历年录取数据：2026年原表行",
+    "sha256": "6501ef474a9170c973c46af5b4a4dfe30a1c2e10283bf9d5237303e21d78df17",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "西藏大学",
+        "subject": "science",
+        "score": 487,
+        "publishedRank": 72724
+      },
+      {
+        "name": "西藏大学",
+        "subject": "arts",
+        "score": 510,
+        "publishedRank": 12534
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-0c4f2c9d86a989e04d",
+    "url": "https://gaokaozy.cn/university/10708?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "陕西科技大学陕西历年录取数据：2025年原表行",
+    "sha256": "43b349fcf2b3539f48b4c556a502c89f8f00e8733a9c3eb43a0ef911024874cf",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "陕西科技大学",
+        "subject": "science",
+        "score": 530,
+        "publishedRank": 37511
+      },
+      {
+        "name": "陕西科技大学",
+        "subject": "arts",
+        "score": 519,
+        "publishedRank": 13008
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-0c4f2c9d86a989e04d",
+    "url": "https://gaokaozy.cn/university/10708?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "陕西科技大学陕西历年录取数据：2026年原表行",
+    "sha256": "43b349fcf2b3539f48b4c556a502c89f8f00e8733a9c3eb43a0ef911024874cf",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "陕西科技大学",
+        "subject": "science",
+        "score": 530,
+        "publishedRank": 44971
+      },
+      {
+        "name": "陕西科技大学",
+        "subject": "arts",
+        "score": 519,
+        "publishedRank": 10838
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-e3eff4bb2d37acb032",
+    "url": "https://gaokaozy.cn/university/10743?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "青海大学陕西历年录取数据：2025年原表行",
+    "sha256": "e62fe15df8a1cb79519c352e7b64a82f0f6fdb364215dc0c7a483abe5bc4766b",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "青海大学",
+        "subject": "science",
+        "score": 517,
+        "publishedRank": 44695
+      },
+      {
+        "name": "青海大学",
+        "subject": "arts",
+        "score": 552,
+        "publishedRank": 7205
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-e3eff4bb2d37acb032",
+    "url": "https://gaokaozy.cn/university/10743?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "青海大学陕西历年录取数据：2026年原表行",
+    "sha256": "e62fe15df8a1cb79519c352e7b64a82f0f6fdb364215dc0c7a483abe5bc4766b",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "青海大学",
+        "subject": "science",
+        "score": 517,
+        "publishedRank": 52717
+      },
+      {
+        "name": "青海大学",
+        "subject": "arts",
+        "score": 552,
+        "publishedRank": 5768
+      }
+    ]
+  },
+  {
+    "key": "year-history-2025-e807e0da6946540c3b",
+    "url": "https://gaokaozy.cn/university/10025?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2025,
+    "title": "首都医科大学陕西历年录取数据：2025年原表行",
+    "sha256": "c723915368c815c19e0771743c3ca1feae44fbbf6dfb5a766724b7fdfcebaaca",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "首都医科大学",
+        "subject": "science",
+        "score": 614,
+        "publishedRank": 8172
+      }
+    ]
+  },
+  {
+    "key": "year-history-2026-e807e0da6946540c3b",
+    "url": "https://gaokaozy.cn/university/10025?province=%E9%99%95%E8%A5%BF",
+    "publisher": "估录通公开历年分数表（未细分专业组）",
+    "year": 2026,
+    "title": "首都医科大学陕西历年录取数据：2026年原表行",
+    "sha256": "c723915368c815c19e0771743c3ca1feae44fbbf6dfb5a766724b7fdfcebaaca",
+    "provincePreference": "陕西",
+    "rows": [
+      {
+        "name": "首都医科大学",
+        "subject": "science",
+        "score": 614,
+        "publishedRank": 9978
+      }
+    ]
+  }
+]

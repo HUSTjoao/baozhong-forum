@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   async headers() {
-    return ['/optimized-logos/:path*', '/optimized-campus/:path*', '/campus-collection/:path*'].map(source => ({ source, headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }))
+    return ['/optimized-logos/:path*', '/optimized-campus/:path*', '/campus-collection/:path*', '/fonts/site/:path*'].map(source => ({ source, headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }))
   },
   // 跳过 API 路由的构建时静态生成
   experimental: {

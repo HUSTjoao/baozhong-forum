@@ -10,6 +10,8 @@ import { ArrowUpRight, MapPin } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 import { getCampusComments } from '@/lib/campus-comments'
 import UniversityDiscussion from '@/components/universities/UniversityDiscussion'
+import ShaanxiAdmissions from '@/components/universities/ShaanxiAdmissions'
+import { getShaanxiAdmissions } from '@/lib/shaanxi-admissions'
 export const dynamic = 'force-dynamic'
 export default async function UniversityDetailPage({ params: routeParams }: { params: Promise<{ id: string }> }) {
   const params = await routeParams
@@ -18,6 +20,7 @@ export default async function UniversityDetailPage({ params: routeParams }: { pa
   const theme = campusTheme(profile.id, profile.accent)
   const university = profile.university
   const culture = campusCulture(profile.id, profile.motto)
+  const admissions = getShaanxiAdmissions(params.id)
   const { comments, count } = await getCampusComments(params.id)
   const levels = ['985', '211', '双一流'].filter(level => university.level?.split(/[／/、,，·\s]+/).includes(level))
   return <article className={'uni-shell uni-detail uni-accent-' + theme.key} style={{ '--u-accent': theme.ink, '--campus-page-wash': theme.wash, '--campus-card-wash': theme.card } as CSSProperties}>
@@ -33,6 +36,7 @@ export default async function UniversityDetailPage({ params: routeParams }: { pa
 
       </div>
     </section>
+    {admissions && <ShaanxiAdmissions data={admissions} />}
     <UniversityDiscussion universityId={params.id} initialComments={comments} count={count} />
   </article>
 }

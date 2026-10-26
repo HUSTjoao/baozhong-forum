@@ -1,4 +1,4 @@
-.major-corridor{--cv-paper:#fcf8f1;--cv-ink:#322d2a;--cv-muted:#746c64;--cv-line:#ad947b40;--cv-accent:#895f45;position:relative;margin:40px auto 0;padding:48px 0 60px;max-width:1100px;scroll-margin-top:140px}
+.major-corridor{--cv-paper:#fcf8f1;--cv-ink:#322d2a;--cv-muted:#746c64;--cv-line:#ad947b40;--cv-accent:#895f45;position:relative;margin:16px auto 0;padding:24px 0 60px;max-width:1100px;scroll-margin-top:140px}
 .md-field-science .major-corridor{--cv-paper:#dce8f1;--cv-ink:#213b50;--cv-muted:#536b7d;--cv-line:#6a8aa840;--cv-accent:#2c627b}
 .md-field-engineering .major-corridor{--cv-paper:#dce6e5;--cv-ink:#203836;--cv-muted:#506b68;--cv-line:#678a8040;--cv-accent:#30695a}
 .md-field-medicine .major-corridor{--cv-paper:#fbfffc;--cv-ink:#24443d;--cv-muted:#5d7870;--cv-line:#7c9f9140;--cv-accent:#3c7965}

@@ -1,0 +1,587 @@
+{
+  "host": "gaokaozy.cn",
+  "decision": "excluded",
+  "reason": "大量学校2025和2026最低分完全相同；北大、华科、陕师大公开历年行与已知官方成绩对照不一致。不能确定年份和招生类型，整源隔离，不计入任何覆盖数。",
+  "cases": [
+    {
+      "id": "pku",
+      "source": "https://gaokaozy.cn/university/10001?province=%E9%99%95%E8%A5%BF",
+      "sha256": "e67839c7b24bbea2a778df44838afb5827c788cd0fd741a9f6fa65629c22a49e",
+      "publicRows": [
+        [
+          "2026",
+          "陕西",
+          "物理类",
+          "--",
+          "690",
+          "155",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "物理类",
+          "--",
+          "690",
+          "193",
+          "--"
+        ],
+        [
+          "2026",
+          "陕西",
+          "历史类",
+          "--",
+          "667",
+          "36",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "历史类",
+          "--",
+          "667",
+          "40",
+          "--"
+        ]
+      ],
+      "officialRecords": {
+        "2026": {
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm",
+          "records": [
+            {
+              "subject": "arts",
+              "label": "一批",
+              "score": 669,
+              "code": "0",
+              "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+            },
+            {
+              "subject": "science",
+              "label": "一批",
+              "score": 696,
+              "code": "1",
+              "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+            }
+          ]
+        },
+        "2025": {
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm",
+          "records": [
+            {
+              "subject": "arts",
+              "label": "一批",
+              "score": 668,
+              "code": "0",
+              "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+            },
+            {
+              "subject": "science",
+              "label": "一批",
+              "score": 694,
+              "code": "1",
+              "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hust",
+      "source": "https://gaokaozy.cn/university/10487?province=%E9%99%95%E8%A5%BF",
+      "sha256": "deda8ce6d09b2fdb917fbd8ed2fda3e9cd175dc6ce173a15fbdfb33376579c08",
+      "publicRows": [
+        [
+          "2026",
+          "陕西",
+          "物理类",
+          "--",
+          "631",
+          "6090",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "物理类",
+          "--",
+          "631",
+          "5048",
+          "--"
+        ],
+        [
+          "2026",
+          "陕西",
+          "历史类",
+          "--",
+          "631",
+          "489",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "历史类",
+          "--",
+          "631",
+          "689",
+          "--"
+        ]
+      ],
+      "officialRecords": {
+        "2025": {
+          "source": "https://zsb.hust.edu.cn/info/1008/2971.htm",
+          "records": [
+            {
+              "code": "science",
+              "label": "理工组",
+              "subject": "science",
+              "requirement": "物理 + 化学",
+              "highest": 684,
+              "score": 655
+            },
+            {
+              "code": "medical",
+              "label": "医科组",
+              "subject": "science",
+              "requirement": "物理 + 化学",
+              "highest": 678,
+              "score": 648
+            },
+            {
+              "code": "arts",
+              "label": "文科组",
+              "subject": "arts",
+              "requirement": "仅历史",
+              "highest": 640,
+              "score": 631
+            }
+          ]
+        },
+        "2026": {
+          "source": "https://zsb.hust.edu.cn/info/1008/3111.htm",
+          "records": [
+            {
+              "code": "science-01",
+              "label": "理工01组",
+              "subject": "science",
+              "highest": 676,
+              "score": 666
+            },
+            {
+              "code": "science-02",
+              "label": "理工02组",
+              "subject": "science",
+              "highest": 678,
+              "score": 656
+            },
+            {
+              "code": "medical-01",
+              "label": "医科01组",
+              "subject": "science",
+              "highest": 671,
+              "score": 662
+            },
+            {
+              "code": "medical-02",
+              "label": "医科02组",
+              "subject": "science",
+              "highest": 661,
+              "score": 650
+            },
+            {
+              "code": "arts",
+              "label": "文科组",
+              "subject": "arts",
+              "highest": 632,
+              "score": 622
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "snnu",
+      "source": "https://gaokaozy.cn/university/10718?province=%E9%99%95%E8%A5%BF",
+      "sha256": "a0fdc21b5a3639e48ce569a6ab1a20452c36174f54753ba78a072251770d1518",
+      "publicRows": [
+        [
+          "2026",
+          "陕西",
+          "物理类",
+          "--",
+          "587",
+          "18399",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "物理类",
+          "--",
+          "587",
+          "14902",
+          "--"
+        ],
+        [
+          "2026",
+          "陕西",
+          "历史类",
+          "--",
+          "596",
+          "1891",
+          "--"
+        ],
+        [
+          "2025",
+          "陕西",
+          "历史类",
+          "--",
+          "596",
+          "2401",
+          "--"
+        ]
+      ],
+      "officialRecords": {
+        "2025": {
+          "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+          "records": [
+            {
+              "code": "science-0",
+              "label": "公费师范生 · 专业汇总",
+              "subject": "science",
+              "score": 598,
+              "highest": 652,
+              "category": "公费师范生",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 10,
+              "additional": true
+            },
+            {
+              "code": "science-1",
+              "label": "普通类 · 专业汇总",
+              "subject": "science",
+              "score": 573,
+              "highest": 623,
+              "category": "普通类",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 11
+            },
+            {
+              "code": "science-2",
+              "label": "优师专项 · 专业汇总",
+              "subject": "science",
+              "score": 584,
+              "highest": 620,
+              "category": "优师专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 6,
+              "additional": true
+            },
+            {
+              "code": "science-3",
+              "label": "国家专项 · 专业汇总",
+              "subject": "science",
+              "score": 536,
+              "highest": 627,
+              "category": "国家专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 9,
+              "additional": true
+            },
+            {
+              "code": "science-4",
+              "label": "高校专项 · 专业汇总",
+              "subject": "science",
+              "score": 582,
+              "highest": 620,
+              "category": "高校专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 5,
+              "additional": true
+            },
+            {
+              "code": "science-5",
+              "label": "定向西藏 · 专业汇总",
+              "subject": "science",
+              "score": 551,
+              "highest": 593,
+              "category": "定向西藏",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 2,
+              "additional": true
+            },
+            {
+              "code": "science-6",
+              "label": "民族班 · 专业汇总",
+              "subject": "science",
+              "score": 579,
+              "highest": 581,
+              "category": "民族班",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 2,
+              "additional": true
+            },
+            {
+              "code": "science-7",
+              "label": "中外合作办学 · 专业汇总",
+              "subject": "science",
+              "score": 561,
+              "highest": 582,
+              "category": "中外合作办学",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 1,
+              "additional": true
+            },
+            {
+              "code": "science-8",
+              "label": "编导 · 专业汇总",
+              "subject": "science",
+              "score": 565,
+              "highest": 577,
+              "category": "编导",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 1,
+              "additional": true
+            },
+            {
+              "code": "arts-0",
+              "label": "公费师范生 · 专业汇总",
+              "subject": "arts",
+              "score": 603,
+              "highest": 640,
+              "category": "公费师范生",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 5,
+              "additional": true
+            },
+            {
+              "code": "arts-1",
+              "label": "普通类 · 专业汇总",
+              "subject": "arts",
+              "score": 596,
+              "highest": 632,
+              "category": "普通类",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 9
+            },
+            {
+              "code": "arts-2",
+              "label": "优师专项 · 专业汇总",
+              "subject": "arts",
+              "score": 600,
+              "highest": 611,
+              "category": "优师专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 4,
+              "additional": true
+            },
+            {
+              "code": "arts-3",
+              "label": "国家专项 · 专业汇总",
+              "subject": "arts",
+              "score": 592,
+              "highest": 622,
+              "category": "国家专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 6,
+              "additional": true
+            },
+            {
+              "code": "arts-4",
+              "label": "高校专项 · 专业汇总",
+              "subject": "arts",
+              "score": 603,
+              "highest": 609,
+              "category": "高校专项",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 3,
+              "additional": true
+            },
+            {
+              "code": "arts-5",
+              "label": "定向西藏 · 专业汇总",
+              "subject": "arts",
+              "score": 537,
+              "highest": 580,
+              "category": "定向西藏",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 2,
+              "additional": true
+            },
+            {
+              "code": "arts-6",
+              "label": "民族班 · 专业汇总",
+              "subject": "arts",
+              "score": 579,
+              "highest": 586,
+              "category": "民族班",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 2,
+              "additional": true
+            },
+            {
+              "code": "arts-7",
+              "label": "编导 · 专业汇总",
+              "subject": "arts",
+              "score": 573,
+              "highest": 595,
+              "category": "编导",
+              "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+              "derived": true,
+              "majorCount": 1,
+              "additional": true
+            }
+          ]
+        },
+        "2026": {
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf",
+          "records": [
+            {
+              "subject": "arts",
+              "label": "国家公费师范生",
+              "score": 598,
+              "category": "国家公费师范生",
+              "additional": true,
+              "code": "0",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "arts",
+              "label": "国家优师专项",
+              "score": 596,
+              "category": "国家优师专项",
+              "additional": true,
+              "code": "1",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "arts",
+              "label": "国家专项",
+              "score": 587,
+              "category": "国家专项",
+              "additional": true,
+              "code": "2",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "arts",
+              "label": "高校专项",
+              "score": 608,
+              "category": "高校专项",
+              "additional": true,
+              "code": "3",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "arts",
+              "label": "普通类",
+              "score": 579,
+              "category": "普通类",
+              "additional": false,
+              "code": "4",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "arts",
+              "label": "民族班",
+              "score": 570,
+              "category": "民族班",
+              "additional": true,
+              "code": "5",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "国家公费师范生",
+              "score": 610,
+              "category": "国家公费师范生",
+              "additional": true,
+              "code": "6",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "国家优师专项",
+              "score": 593,
+              "category": "国家优师专项",
+              "additional": true,
+              "code": "7",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "国家专项",
+              "score": 556,
+              "category": "国家专项",
+              "additional": true,
+              "code": "8",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "高校专项",
+              "score": 596,
+              "category": "高校专项",
+              "additional": true,
+              "code": "9",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "普通类",
+              "score": 575,
+              "category": "普通类",
+              "additional": false,
+              "code": "10",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "民族班",
+              "score": 592,
+              "category": "民族班",
+              "additional": true,
+              "code": "11",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "电子信息技术（中外合作办学）",
+              "score": 559,
+              "category": "电子信息技术（中外合作办学）",
+              "additional": true,
+              "code": "12",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            },
+            {
+              "subject": "science",
+              "label": "物理学（中外合作办学）",
+              "score": 549,
+              "category": "物理学（中外合作办学）",
+              "additional": true,
+              "code": "13",
+              "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

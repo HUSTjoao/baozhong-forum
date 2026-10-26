@@ -1,0 +1,72 @@
+.uni-admissions{--ua-ink:#246f70;--ua-tint:#e7f3ef;--ua-border:#c6ddd6;margin:18px 0 30px;padding:22px 24px 15px;border:1px solid #d9e1e5;border-radius:18px;background:#f9faf8;color:#283d4a;font-family:'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',Arial,sans-serif;font-size:14px;line-height:1.6;scroll-margin-top:115px;font-synthesis:none}
+.uni-admissions.ua-arts{--ua-ink:#a4533e;--ua-tint:#faece5;--ua-border:#e9cdbf}
+.uni-admissions *{box-sizing:border-box}
+.ua-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px}
+.ua-eyebrow{display:flex;align-items:center;gap:5px;margin:0 0 5px;color:#647883;font-size:12px;font-weight:500}
+.ua-eyebrow>span{border-left:1px solid #c4cfd5;padding-left:9px;margin-left:4px;font-family:Arial,sans-serif;letter-spacing:.04em}
+.ua-heading h2{margin:0;font:600 26px/1.35 'Microsoft YaHei','PingFang SC',sans-serif;color:#243e4c;letter-spacing:.02em}
+.ua-school{font-size:12px;color:#8b6545;background:#f3eadb;border:1px solid #e8d9bd;padding:5px 11px;border-radius:6px;white-space:nowrap}
+.ua-years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:15px}
+.ua-years button{border:1px solid #dce3e7;border-radius:10px;padding:10px 14px;background:#fff;color:#697984;text-align:left;font:inherit;cursor:pointer;transition:border-color .18s,background .18s}
+.ua-years button[aria-pressed=true]{border-color:var(--ua-ink);background:var(--ua-tint);box-shadow:inset 0 3px var(--ua-ink)}
+.ua-year-top,.ua-year-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ua-year-top>strong{font:600 24px/1.3 Arial,sans-serif;color:#314b5a}
+.ua-year-top>span{font-size:11px;color:#6d7e8a}
+.ua-years button[aria-pressed=true] .ua-year-top>strong{color:var(--ua-ink)}
+.ua-year-bottom{margin-top:5px;font-size:12px}
+.ua-year-bottom>strong{font:600 20px/1.4 Arial,sans-serif;color:#405867}
+.ua-year-bottom small{font:400 11px 'Microsoft YaHei',sans-serif;margin-left:4px;color:#84919b}
+.ua-sheet{overflow:hidden;border:1px solid #dce4e8;border-radius:12px;background:#fff}
+.ua-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid #e4e9ec;background:#f3f6f7}
+.ua-subjects{display:flex;gap:5px}
+.ua-subjects button{padding:5px 15px;border:1px solid transparent;border-radius:6px;color:#667c88;background:transparent;font:500 13px/1.6 'Microsoft YaHei','PingFang SC',sans-serif;cursor:pointer}
+.ua-subjects button[aria-pressed=true]{background:var(--ua-ink);color:white}
+.ua-batch{font-size:11px;color:#71617b;border:1px solid #e0d7e6;background:#f5f0f8;padding:3px 8px;border-radius:4px}
+.ua-batch-submission{color:#896b31;border-color:#e9dbba;background:#fbf5e6}
+.ua-highlights{display:grid;grid-template-columns:1fr 1.5fr;gap:12px;padding:15px 18px;border-bottom:1px solid #e4e9ec}
+.ua-highlights>div{border-right:1px solid #e4e9ec;padding-left:14px}
+.ua-highlights>div:first-child{padding-left:0}
+.ua-highlights>div:last-child{border-right:0}
+.ua-highlights>div>span{font-size:12px;color:#72838e}
+.ua-highlights p{display:flex;align-items:baseline;gap:6px;margin:1px 0 0}
+.ua-highlights strong{font:600 32px/1.25 Arial,sans-serif;font-variant-numeric:tabular-nums;color:#354f60}
+.ua-highlights .ua-highlight-main strong{color:var(--ua-ink)}
+.ua-highlights small{font-size:11px;color:#85939c}
+.ua-rank-highlight strong{font-size:30px;white-space:nowrap}.ua-rank-highlight em{font-style:normal;font-size:10px;color:#907849;background:#f5eedb;border-radius:3px;padding:2px 5px;margin-left:7px}.ua-rank-range{font:500 14px/1.6 Arial,sans-serif;white-space:nowrap;color:#567c8b}.ua-rank-range small{font:400 10px sans-serif;margin-left:4px;color:#8a99a1}.ua-sources{display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex:none}
+.ua-table{border-collapse:collapse;width:100%;text-align:left;font-size:13px;font-variant-numeric:tabular-nums}
+.ua-table th,.ua-table td{padding:11px 16px;border-bottom:1px solid #e8edef;font-weight:400}
+.ua-table thead th{background:#f7f8fa;color:#71838d;font-size:11px;font-weight:500;white-space:nowrap}
+.ua-table tbody tr:last-child th,.ua-table tbody tr:last-child td{border-bottom:0}
+.ua-table tbody tr:nth-child(even){background:#fafcfc}
+.ua-table tbody tr:hover{background:#f2f7f6}
+.ua-table th>small{display:block;font-size:10px;color:#8998a1;margin-top:4px}
+.ua-table td>small{font-size:10px;margin-left:4px;color:#8a99a1}
+.ua-group{display:inline-block;padding:3px 8px;border-radius:4px;background:#e8f2ef;color:#366e62;font-weight:500;white-space:nowrap}
+.ua-group-medical{background:#eaeef9;color:#586c9b}
+.ua-group-arts{background:#faece5;color:#a4533e}
+.ua-table .ua-score{color:var(--ua-ink);font:600 20px Arial,sans-serif}
+.ua-table .ua-score small{font-weight:400}
+.ua-muted{color:#97a2a9;font-size:11px}
+.ua-additional{border-top:1px solid #e3e9eb}
+.ua-additional summary{display:flex;justify-content:space-between;align-items:center;list-style:none;padding:10px 16px;font-size:12px;color:#687c89;cursor:pointer;background:#f8fafb}
+.ua-additional summary::-webkit-details-marker{display:none}
+.ua-additional summary small{font-size:10px;color:#82949d;background:#e9eff2;border-radius:4px;padding:2px 5px;margin-left:7px}
+.ua-additional[open] summary svg{transform:rotate(180deg)}
+.ua-additional>p{padding:8px 16px;margin:0;color:#8b7752;background:#fbf8f0;font-size:11px}
+.ua-note{display:flex;gap:9px;align-items:baseline;border-top:1px solid #e5e9eb;padding:9px 16px;background:#f8f6f0;color:#857553;font-size:11px}
+.ua-note>span{font-weight:600;white-space:nowrap}
+.ua-note p{margin:0;line-height:1.7}
+.ua-footer{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-top:10px;font-size:10px;color:#84909a}
+.ua-footer p{margin:0;line-height:1.7}
+.ua-footer a{display:flex;align-items:center;gap:4px;flex:none;color:#647f91;text-decoration:none;font-size:11px}
+.uni-admissions button:focus-visible,.uni-admissions a:focus-visible,.uni-admissions summary:focus-visible{outline:2px solid var(--ua-ink);outline-offset:3px}
+.ua-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.ua-table th,.ua-table td{padding-inline:10px}.ua-footer{display:block}.ua-footer a{margin-top:5px;width:max-content}.ua-school{display:none}}
+@media(max-width:600px){.uni-admissions{padding:16px 12px 12px;border-radius:13px;margin:15px 0 25px}.ua-heading{margin-bottom:12px}.ua-heading h2{font-size:23px}.ua-years{gap:6px;margin-bottom:10px}.ua-years button{padding:9px 8px}.ua-year-top{display:block}.ua-year-top>strong{font-size:21px}.ua-year-top>span{display:block;font-size:10px}.ua-year-bottom{display:block;font-size:10px;margin-top:3px}.ua-year-bottom>strong{display:block;font-size:19px}.ua-toolbar{padding:9px 10px;gap:7px}.ua-subjects button{padding:4px 13px}.ua-batch{font-size:10px}.ua-highlights{gap:6px;padding:12px 10px}.ua-highlights>div{padding-left:8px}.ua-highlights>div>span{font-size:10px}.ua-highlights strong{font-size:27px}.ua-rank-highlight strong{font-size:23px}.ua-rank-highlight em{display:inline-block;font-size:9px;margin-left:4px;padding:1px 3px}.ua-rank-range{font-size:12px}.ua-table td:has(.ua-rank-range){grid-column:1/-1}.ua-sources{gap:12px}.ua-highlights small{font-size:10px}.ua-table thead{display:none}.ua-table,.ua-table tbody,.ua-table tr{display:block}.ua-table tr{display:grid;grid-template-columns:1fr 1fr;padding:10px 11px;gap:7px 12px;border-bottom:1px solid #e5ebee}.ua-table tr:last-child{border-bottom:0}.ua-table tbody th{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left}.ua-table th,.ua-table td{border:0!important;padding:0}.ua-table th>small{margin:0}.ua-table td{display:flex;align-items:baseline;justify-content:space-between;gap:4px;font-size:12px}.ua-table td::before{content:attr(data-label);font:400 10px 'Microsoft YaHei','PingFang SC',sans-serif;color:#8b99a2;margin-right:auto}.ua-table .ua-score{font-size:18px}.ua-table td>small{margin-left:0}.ua-group{font-size:12px}.ua-note{padding:8px 10px;font-size:10px;gap:7px}.ua-additional summary{padding:9px 11px}.ua-additional>p{padding:7px 11px}.ua-footer{font-size:10px}.ua-muted{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.uni-admissions *{transition:none!important}}
+.ua-rank-kind{display:block;font:400 9px/1.4 'Microsoft YaHei',sans-serif;color:#8a99a1;margin-top:2px}
+.ua-table tbody th{max-width:320px}.ua-table .ua-group{white-space:normal;overflow-wrap:anywhere}
+.ua-empty{padding:24px 18px;color:#70838d;font-size:12px}.ua-empty>strong{font-size:15px;font-weight:500;color:#4a6573}.ua-empty p{margin:7px 0 10px}.ua-empty a{display:inline-flex;gap:4px;align-items:center;color:var(--ua-ink);text-decoration:none}
+@media(max-width:600px){.ua-table tbody th{max-width:none}.ua-rank-highlight strong{font-size:clamp(15px,4.8vw,21px)}.ua-highlight-main>span{font-size:10px}.ua-rank-kind{display:inline;margin-left:5px}.ua-empty{padding:18px 12px}.ua-empty>strong{font-size:13px}}
+
+.ua-reference-label { margin: 0 0 14px; padding: 9px 12px; color: #805c31; background: #fbf3e7; border-radius: 6px; font-size: 12px; line-height: 1.7; }

@@ -1,0 +1,13 @@
+{
+  "source": "https://www.6617.com/p_1313533553.html",
+  "note": "人工逐格核对原始图片，只修复 OCR 漏字和错序。原图中中山大学 664 / 3681 自身矛盾，保留原值并由位次校验拒绝，不擅自改成 644。",
+  "rows": [
+    {"imagePage":0,"imageRow":29,"name":"北京邮电大学","subject":"science","group":"102组","score":644,"publishedRank":3767},
+    {"imagePage":1,"imageRow":194,"name":"上海交通大学","subject":"science","group":"101组","score":696,"publishedRank":81},
+    {"imagePage":2,"imageRow":7,"name":"华东师范大学","subject":"science","group":"108组","score":644,"publishedRank":3745},
+    {"imagePage":4,"imageRow":18,"name":"西北工业大学","subject":"science","group":"101组","score":644,"publishedRank":3657},
+    {"imagePage":5,"imageRow":160,"name":"宁夏大学","subject":"science","group":"156组","score":578,"publishedRank":21678},
+    {"imagePage":7,"imageRow":1,"name":"中国人民大学","subject":"arts","group":"201组","score":644,"publishedRank":232},
+    {"imagePage":7,"imageRow":40,"name":"天津财经大学","subject":"arts","group":"115组","score":548,"publishedRank":6138}
+  ]
+}

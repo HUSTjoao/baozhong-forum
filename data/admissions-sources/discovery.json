@@ -1,0 +1,2883 @@
+[
+  {
+    "id": "afmu",
+    "name": "空军军医大学",
+    "website": "https://www.fmmu.edu.cn/",
+    "pages": [
+      "https://www.fmmu.edu.cn/",
+      "https://www.fmmu.edu.cn/zhaosheng",
+      "https://www.fmmu.edu.cn/zszp/bkszs.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.fmmu.edu.cn/new_cxjgsocre.jsp?urltype=tree.TreeTempUrl&wbtreeid=1111",
+        "title": "往年录取分数线查询"
+      },
+      {
+        "url": "https://www.fmmu.edu.cn/new_cxjgsocre.jsp?urltype=tree.TreeTempUrl&wbtreeid=1111",
+        "title": "往年录取分数查询"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138487.htm",
+        "title": "2018-2020年学校本科招生各省录取分数线"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138467.htm",
+        "title": "2017-2019年本科学员各省录取分数线"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138316.htm",
+        "title": "2016-2018年本科学员各省录取分数线"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138245.htm",
+        "title": "2013-2017年生长军官学员各省录取分数线"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138221.htm",
+        "title": "2011-2015年各省录取分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ahau",
+    "name": "安徽大学",
+    "website": "https://www.ahu.edu.cn/",
+    "pages": [
+      "https://www.ahu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "http://zsb.ahu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "ahnu",
+    "name": "安徽师范大学",
+    "website": "https://www.ahnu.edu.cn/",
+    "pages": [
+      "https://www.ahnu.edu.cn/",
+      "http://zsxx.ahnu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsjy2.ahnu.edu.cn/recruit/viewLngk/indexNew.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsjy2.ahnu.edu.cn/recruit/viewLngk/indexNew.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": [
+      {
+        "url": "http://zsjy.ahnu.edu.cn/",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "bfsu",
+    "name": "北京外国语大学",
+    "website": "https://www.bfsu.edu.cn/",
+    "pages": [
+      "https://www.bfsu.edu.cn/",
+      "https://joinus.bfsu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "bit",
+    "name": "北京理工大学",
+    "website": "https://www.bit.edu.cn/",
+    "pages": [
+      "https://www.bit.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "http://admission.bit.edu.cn/",
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "http://admission.bit.edu.cn",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "bjfu",
+    "name": "北京林业大学",
+    "website": "https://www.bjfu.edu.cn/",
+    "pages": [
+      "https://www.bjfu.edu.cn/",
+      "https://zsb.bjfu.edu.cn/",
+      "http://zsb.bjfu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.bjfu.edu.cn/zsw/lnfs.html",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zsb.bjfu.edu.cn/zsw/lnfs.html",
+        "title": "录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "bjut",
+    "name": "北京工业大学",
+    "website": "https://www.bjut.edu.cn/",
+    "pages": [
+      "https://www.bjut.edu.cn/",
+      "http://admissions.bjut.edu.cn/",
+      "http://news.bjut.edu.cn/info/1004/13863.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://admissions.bjut.edu.cn/zsxx/lnlqfs.htm",
+        "title": "历年录取分数"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+        "title": "2025年北京工业大学京外省份普通类录取分数统计"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/dfiles/2025/2025-yscj.png",
+        "title": "2025年北京工业大学艺术类专业录取分数统计"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/dfiles/2025/25bjfs.jpg",
+        "title": "2025年北京工业大学北京地区普通类录取分数统计"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/2024jingneibenke.jpg",
+        "title": "2024年北京工业大学北京地区普通类录取分数统计"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/2024jingwai.png",
+        "title": "2024年北京工业大学京外省份普通类录取分数统计"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "bjwlxy",
+    "name": "宝鸡文理学院",
+    "website": "https://www.bjwlxy.edu.cn/",
+    "pages": [
+      "https://www.bjwlxy.edu.cn/",
+      "http://ein.bjwlxy.cn",
+      "http://icae.bjwlxy.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://ein.bjwlxy.cn/lnlq.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/lnlq.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1374.htm",
+        "title": "2025年省外普通类分省分专业录取情况统计"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1373.htm",
+        "title": "2025年艺术体育类分省分专业录取情况统计"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1361.htm",
+        "title": "2026年定向宝鸡市各县（区）就业公费师范生招生计划及2025年录取情况"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1360.htm",
+        "title": "2026年优师专项在陕招生计划及2025年录取情况"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1359.htm",
+        "title": "2026年陕西省分专业招生计划及2025年录取情况"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "bnu",
+    "name": "北京师范大学",
+    "website": "https://www.bnu.edu.cn/",
+    "pages": [
+      "https://www.bnu.edu.cn/",
+      "https://www.bnu.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "http://admission.bnu.edu.cn/",
+        "error": "HTTP Error 502: Bad Gateway"
+      }
+    ]
+  },
+  {
+    "id": "bsu",
+    "name": "北京体育大学",
+    "website": "https://www.bsu.edu.cn/",
+    "pages": [
+      "https://www.bsu.edu.cn/",
+      "http://zs.bsu.edu.cn",
+      "https://www.bsu.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "buaa",
+    "name": "北京航空航天大学",
+    "website": "https://www.buaa.edu.cn/",
+    "pages": [
+      "https://www.buaa.edu.cn/",
+      "https://www.buaa.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "bucm",
+    "name": "北京中医药大学",
+    "website": "https://www.bucm.edu.cn/",
+    "pages": [
+      "https://www.bucm.edu.cn/",
+      "https://www.bucm.edu.cn/zsjy1/index.htm",
+      "https://www.bucm.edu.cn/tzgg/976cb2e88b0c4a0a8486d203347d726a.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "buct",
+    "name": "北京化工大学",
+    "website": "https://www.buct.edu.cn/",
+    "pages": [
+      "https://www.buct.edu.cn/",
+      "http://goto.buct.edu.cn/",
+      "https://www.buct.edu.cn/zsjy_11437/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "bupt",
+    "name": "北京邮电大学",
+    "website": "https://www.bupt.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.bupt.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "caa",
+    "name": "中国美术学院",
+    "website": "https://www.caa.edu.cn/",
+    "pages": [
+      "https://www.caa.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "cau",
+    "name": "中国农业大学",
+    "website": "https://www.cau.edu.cn/",
+    "pages": [
+      "https://www.cau.edu.cn/",
+      "http://jwzs.cau.edu.cn/index.html",
+      "https://www.cau.edu.cn/zsjy/zs/index.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zb.cau.edu.cn/static/front/cau/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ccmu",
+    "name": "首都医科大学",
+    "website": "https://www.ccmu.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.ccmu.edu.cn/",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "ccnu",
+    "name": "华中农业大学",
+    "website": "https://www.hzau.edu.cn/",
+    "pages": [
+      "https://www.hzau.edu.cn/",
+      "https://zs.hzau.edu.cn",
+      "https://www.hzau.edu.cn/zsjy/bkszs.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://v.360eol.com/web/admission/spline.do?appPrefix=hzau",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ccom",
+    "name": "中央音乐学院",
+    "website": "https://www.ccom.edu.cn/",
+    "pages": [
+      "https://www.ccom.edu.cn/",
+      "https://zhaoban.ccom.edu.cn/",
+      "http://zhaoban.ccom.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "chd",
+    "name": "长安大学",
+    "website": "https://www.chd.edu.cn/",
+    "pages": [
+      "https://www.chd.edu.cn/",
+      "https://zsb.chd.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cnu",
+    "name": "首都师范大学",
+    "website": "https://www.cnu.edu.cn/",
+    "pages": [
+      "https://www.cnu.edu.cn/",
+      "https://www.cnu.edu.cn/zsjy/zsgz/index.htm",
+      "https://www.cnu.edu.cn/zsjy/index.htm?mao=b01"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "cpu",
+    "name": "中国药科大学",
+    "website": "https://www.cpu.edu.cn/",
+    "pages": [
+      "https://www.cpu.edu.cn/",
+      "http://zb.cpu.edu.cn/",
+      "http://zjc.cpu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zb.cpu.edu.cn/fs/list.htm",
+        "title": "历年录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cqu",
+    "name": "重庆大学",
+    "website": "https://www.cqu.edu.cn/",
+    "pages": [
+      "https://www.cqu.edu.cn/",
+      "http://zhaosheng.cqu.edu.cn/",
+      "https://www.cqu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.cqu.edu.cn/pub/desktopend/queryadmitline",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "csu",
+    "name": "中南大学",
+    "website": "https://www.csu.edu.cn/",
+    "pages": [
+      "https://www.csu.edu.cn/",
+      "http://zhaosheng.csu.edu.cn",
+      "https://www.csu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.csu.edu.cn/lnfs/bkptl.htm",
+        "title": "历年分数 助力填报志愿、评估录取概率 点击查询"
+      },
+      {
+        "url": "http://zhaosheng.csu.edu.cn/lnfs/bkptl.htm",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cuc",
+    "name": "中国传媒大学",
+    "website": "https://www.cuc.edu.cn/",
+    "pages": [
+      "https://www.cuc.edu.cn/",
+      "https://zhaosheng.cuc.edu.cn/",
+      "https://www.cuc.edu.cn/zsjy/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html",
+        "title": "录取分数"
+      },
+      {
+        "url": "https://zhaosheng.cuc.edu.cn/lqfs_5857/list.htm",
+        "title": "录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cufe",
+    "name": "中央财经大学",
+    "website": "https://www.cufe.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.cufe.edu.cn/",
+        "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "cug",
+    "name": "中国地质大学（武汉）",
+    "website": "https://www.cug.edu.cn/",
+    "pages": [
+      "https://www.cug.edu.cn/",
+      "https://zhaosheng.cug.edu.cn",
+      "https://www.cug.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhaosheng.cug.edu.cn",
+        "title": "录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cugb",
+    "name": "中国地质大学（北京）",
+    "website": "https://www.cugb.edu.cn/",
+    "pages": [
+      "https://www.cugb.edu.cn/",
+      "https://zhsh.cugb.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhsh.cugb.edu.cn/static/front/cugb/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cumt",
+    "name": "中国矿业大学",
+    "website": "https://www.cumt.edu.cn/",
+    "pages": [
+      "https://www.cumt.edu.cn/",
+      "http://zs.cumt.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zs.cumt.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "cup",
+    "name": "中国石油大学（北京）",
+    "website": "https://www.cup.edu.cn/",
+    "pages": [
+      "https://www.cup.edu.cn/",
+      "https://www.cup.edu.cn/dbewm/8cd0dc4a2eec46129adf843b29b6571f.htm",
+      "http://bkzs.cup.edu.cn/f"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "cupw",
+    "name": "中国石油大学（华东）",
+    "website": "https://www.upc.edu.cn/",
+    "pages": [
+      "https://www.upc.edu.cn/",
+      "https://zhaosheng.upc.edu.cn"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "dhu",
+    "name": "东华大学",
+    "website": "https://www.dhu.edu.cn/",
+    "pages": [
+      "https://www.dhu.edu.cn/",
+      "http://zs.dhu.edu.cn",
+      "http://mba.dhu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zs.dhu.edu.cn/9564/list.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/yslzyfscx/list.htm",
+        "title": "艺术类专业分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/gxzxjhlnfscx/list.htm",
+        "title": "高校专项计划招生历年分数查..."
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/gjpkzxjhzslnfscx/list.htm",
+        "title": "国家贫困专项计划招生历年分..."
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/ssmzykzslnfscx/list.htm",
+        "title": "少数民族预科招生历年分数查..."
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/gatlhzslnfscx/list.htm",
+        "title": "港澳台联合招生历年分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/bkypgslqfscx/list.htm",
+        "title": "本科一批各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2025ngslqfscx/list.htm",
+        "title": "2025年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2024ngslqfscx/list.htm",
+        "title": "2024年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2023ngslqfscx/list.htm",
+        "title": "2023年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2022ngslqfscx/list.htm",
+        "title": "2022年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2021ngslqfscx/list.htm",
+        "title": "2021年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2020ngslqfscx_20718/list.htm",
+        "title": "2020年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2019ngslqfscx_20717/list.htm",
+        "title": "2019年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2018ngslqfscx_20716/list.htm",
+        "title": "2018年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2017ngslqfscx_20715/list.htm",
+        "title": "2017年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/2016ngslqfscx_20714/list.htm",
+        "title": "2016年各省录取分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/ndgzblnfscx/list.htm",
+        "title": "内地高中班历年分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/9564/list.htm",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "dlmu",
+    "name": "大连海事大学",
+    "website": "https://www.dlmu.edu.cn/",
+    "pages": [
+      "https://www.dlmu.edu.cn/",
+      "https://bkzs.dlmu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://sjcx.dlmu.edu.cn/static/front/dlmu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://sjcx.dlmu.edu.cn/static/front/dlmu/basic/html_web/lnfs.html",
+        "title": "历年分数 The Fraction"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "dlut",
+    "name": "大连理工大学",
+    "website": "https://www.dlut.edu.cn/",
+    "pages": [
+      "https://www.dlut.edu.cn/",
+      "https://www.dlut.edu.cn/ksyfk/bkszs.htm",
+      "https://mp.weixin.qq.com/s/8cLXI_MdGf3sf-F7B1z-4g"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "ecnu",
+    "name": "华东师范大学",
+    "website": "https://www.ecnu.edu.cn/",
+    "pages": [
+      "https://www.ecnu.edu.cn/",
+      "https://zsb.ecnu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.ecnu.edu.cn/_redirect?siteId=799&columnId=37612&articleId=444126",
+        "title": "历年分数查询"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ecust",
+    "name": "华东理工大学",
+    "website": "https://www.ecust.edu.cn/",
+    "pages": [
+      "https://www.ecust.edu.cn/",
+      "https://www.ecust.edu.cn/2023/0626/c757a174434/page.htm",
+      "http://zsb.ecust.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": " https://bkzsdata.ecust.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://zsb.ecust.edu.cn/2022/0410/c2323a143238/page.htm",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "fudan",
+    "name": "复旦大学",
+    "website": "https://www.fudan.edu.cn/",
+    "pages": [
+      "https://www.fudan.edu.cn/",
+      "https://ao.fudan.edu.cn"
+    ],
+    "candidates": [
+      {
+        "url": "https://ao.fudan.edu.cn/36333/list.htm",
+        "title": "录取分数"
+      },
+      {
+        "url": "https://ao.fudan.edu.cn/36333/list.htm",
+        "title": "录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "fzu",
+    "name": "福州大学",
+    "website": "https://www.fzu.edu.cn/",
+    "pages": [
+      "https://www.fzu.edu.cn/",
+      "https://www.fzu.edu.cn/system/resource/link.jsp?bmmc=zsks&type=w"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "gxnu",
+    "name": "广西大学",
+    "website": "https://www.gxu.edu.cn/",
+    "pages": [
+      "https://www.gxu.edu.cn/",
+      "http://zs.gxu.edu.cn/",
+      "https://www.gxu.edu.cn/zsjy1.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zs.gxu.edu.cn/child/xinxichaxun.jsp?urltype=tree.TreeTempUrl&wbtreeid=1232",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zs.gxu.edu.cn/child/xinxichaxun.jsp?urltype=tree.TreeTempUrl&wbtreeid=1232",
+        "title": "录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "gxnu-edu",
+    "name": "广西师范大学",
+    "website": "https://www.gxnu.edu.cn/",
+    "pages": [
+      "https://www.gxnu.edu.cn/",
+      "https://www.gxnu.edu.cn/1385/list.htm",
+      "https://www.gxnu.edu.cn/1357/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "gzmu",
+    "name": "贵州大学",
+    "website": "https://www.gzu.edu.cn/",
+    "pages": [
+      "https://www.gzu.edu.cn/",
+      "https://rso.gzu.edu.cn/",
+      "https://www.gzu.edu.cn/70/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm",
+        "title": "2025年分省分批次分专业录取最低分"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hainu",
+    "name": "海南大学",
+    "website": "https://www.hainanu.edu.cn/",
+    "pages": [
+      "https://www.hainanu.edu.cn/",
+      "https://bkzs.hainanu.edu.cn/",
+      "https://www.hainanu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html",
+        "title": "历年分数Historical Admission Scores"
+      },
+      {
+        "url": "https://bkzs.hainanu.edu.cn/info/1003/6877.htm",
+        "title": "162026.07 海南大学2026年艺术类专业招生录取情况（录取结束）"
+      },
+      {
+        "url": "https://bkzs.hainanu.edu.cn/info/1003/6867.htm",
+        "title": "162026.07 海南大学2026年体育类专业招生录取情况（录取结束）"
+      },
+      {
+        "url": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "haut",
+    "name": "河南理工大学",
+    "website": "https://www.hpu.edu.cn/",
+    "pages": [
+      "https://www.hpu.edu.cn/",
+      "http://www6.hpu.edu.cn/web5",
+      "https://www.hpu.edu.cn/zsjy/MBAzs.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://www6.hpu.edu.cn/zsxxw/lnfs.htm",
+        "title": "往年录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hdu",
+    "name": "杭州电子科技大学",
+    "website": "https://www.hdu.edu.cn/",
+    "pages": [
+      "https://www.hdu.edu.cn/",
+      "http://zhaosheng.hdu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.hdu.edu.cn/list.php?cid=28",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://zhaosheng.hdu.edu.cn/list.php?cid=28",
+        "title": "普招历年录取参考"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hebau",
+    "name": "河北农业大学",
+    "website": "https://www.hebau.edu.cn/",
+    "pages": [
+      "https://www.hebau.edu.cn/",
+      "https://zhaosheng.hebau.edu.cn/",
+      "https://www.hebau.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3177.htm",
+        "title": "2026-07-28 河北农业大学2026年普通高校招生录取情况通报（六... 河北农业大学面向山西、安徽、湖北、四川招生的普通类本科有关批录取工作于7月28日结束。本次共录取230人，其中山西120人，安徽80人，湖..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3176.htm",
+        "title": "2026-07-24 河北农业大学2026年普通高校招生录取情况通报（五... 河北农业大学面向黑龙江、江西、河南、海南、重庆、陕西招生的普通类本科有关批录取工作于7月24日结束。本次共录取386人，其中黑龙江70..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3175.htm",
+        "title": "2026-07-23 河北农业大学2026年普通高校招生录取情况通报（四... 河北农业大学面向河北省内招生的普通类本科批、地方专项计划、少数民族预科班录取工作于7月23日结束。本次我校共录取7235人，其中普通类..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3174.htm",
+        "title": "2026-07-21 河北农业大学2026年普通高校招生录取情况通报（三... 河北农业大学面向北京、山东、甘肃、湖南、辽宁招生的普通类本科有关批录取工作于7月21日结束。本次共录取230人，其中北京普通类本科批..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3173.htm",
+        "title": "2026-07-17 河北农业大学2026年普通高校招生录取情况通报（二... 河北农业大学面向天津、吉林招生的普通类本科有关批录取工作于7月17日结束。本次共录取68人，其中天津普通类本科批A阶段考生28人，吉林..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3172.htm",
+        "title": "2026-07-15 河北农业大学2026年普通高校招生录取情况通报（一... 河北农业大学面向河北省内招生的普通类本科提前批B段国家专项计划、艺术类本科提前批B段、对口本科批录取工作于7月15日结束。本次我校共..."
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hebut",
+    "name": "河北工业大学",
+    "website": "https://www.hebut.edu.cn/",
+    "pages": [
+      "https://www.hebut.edu.cn/",
+      "https://zs.hebut.edu.cn",
+      "https://www.hebut.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.hebut.edu.cn/baokao/fenshu.html",
+        "title": "历年录取成绩"
+      },
+      {
+        "url": "https://zs.hebut.edu.cn/baokao/fenshu.html",
+        "title": "历年录取成绩"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "henu",
+    "name": "河南大学",
+    "website": "https://www.henu.edu.cn/",
+    "pages": [
+      "https://www.henu.edu.cn/",
+      "https://zs.henu.edu.cn/",
+      "https://www.henu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9293.htm",
+        "title": "河南大学2025年普通类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9283.htm",
+        "title": "河南大学2025年体育类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9303.htm",
+        "title": "河南大学2025年艺术类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1923.htm",
+        "title": "河南省分专业录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1909.htm",
+        "title": "河北省分专业录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1910.htm",
+        "title": "安徽省分专业录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1901.htm",
+        "title": "广东省分专业录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9293.htm",
+        "title": "25.07.11 2河南大学2025年普通类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9283.htm",
+        "title": "25.07.11 3河南大学2025年体育类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9303.htm",
+        "title": "25.07.12 4河南大学2025年艺术类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1923.htm",
+        "title": "25.06.12 5河南省分专业录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/1909.htm",
+        "title": "25.06.12 6河北省分专业录取情况"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "heu",
+    "name": "哈尔滨工程大学",
+    "website": "https://www.hrbeu.edu.cn/",
+    "pages": [
+      "https://www.hrbeu.edu.cn/",
+      "https://zsb.hrbeu.edu.cn",
+      "https://www.hrbeu.edu.cn/zsjy1.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.hrbeu.edu.cn/static/front/hrbeu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsb.hrbeu.edu.cn/static/front/hrbeu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hfut",
+    "name": "合肥工业大学",
+    "website": "https://www.hfut.edu.cn/",
+    "pages": [
+      "https://www.hfut.edu.cn/",
+      "http://bkzs.hfut.edu.cn/",
+      "https://iec.hfut.edu.cn/main.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "hhu",
+    "name": "河海大学",
+    "website": "https://www.hhu.edu.cn/",
+    "pages": [
+      "https://www.hhu.edu.cn/",
+      "http://zsw.hhu.edu.cn",
+      "https://www.hhu.edu.cn/zsjy/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsw.hhu.edu.cn/lishifenshu.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hit",
+    "name": "哈尔滨工业大学",
+    "website": "https://www.hit.edu.cn/",
+    "pages": [
+      "https://www.hit.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://zsb.hit.edu.cn/",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+      },
+      {
+        "url": "http://zsb.hit.edu.cn/",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "hnu",
+    "name": "湖南大学",
+    "website": "https://www.hnu.edu.cn/",
+    "pages": [
+      "https://www.hnu.edu.cn/",
+      "http://admi.hnu.edu.cn/",
+      "https://www.hnu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://admi2.hnu.edu.cn/lnlqqk",
+        "title": "历年录取情况查询"
+      },
+      {
+        "url": "https://admi2.hnu.edu.cn/lnlqqk",
+        "title": "历年录取情况查询"
+      },
+      {
+        "url": "http://admi.hnu.edu.cn/zsxxw/zsjh_2025nfs_.htm",
+        "title": "11 2026-06 2026年招生计划（2025年各专业录取分数线）"
+      },
+      {
+        "url": "http://admi.hnu.edu.cn/zsxxw/zsjh_2025nfs_.htm",
+        "title": "11 2026-06 2026年招生计划（2025年各专业录取分数线）"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hnust",
+    "name": "湖南科技大学",
+    "website": "https://www.hnust.edu.cn/",
+    "pages": [
+      "https://www.hnust.edu.cn/",
+      "https://zs.hnust.edu.cn/",
+      "http://zs.hnust.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zs.hnust.edu.cn/zsxx/zsgg/bad24b139ea2479d914e2935d22caf14.htm",
+        "title": "2026年湖南科技大学分省分科类投档分数线"
+      },
+      {
+        "url": "https://zs.hnust.edu.cn/zxzs/gfdxsfszs/fee217312df541b298e781a81b12cc42.htm",
+        "title": "湖南科技大学2026年省内公费定向师范生投档分数线"
+      },
+      {
+        "url": "http://zs.hnust.edu.cn/zsxx/zsgg/bad24b139ea2479d914e2935d22caf14.htm",
+        "title": "2026年湖南科技大学分省分科类投档分数线"
+      },
+      {
+        "url": "http://zs.hnust.edu.cn/zxzs/gfdxsfszs/fee217312df541b298e781a81b12cc42.htm",
+        "title": "湖南科技大学2026年省内公费定向师范生投档分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hust",
+    "name": "华中科技大学",
+    "website": "https://www.hust.edu.cn/",
+    "pages": [
+      "https://www.hust.edu.cn/",
+      "http://zsb.hust.edu.cn/",
+      "https://www.hust.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/info/1217/2981.htm",
+        "title": "2025-09-26 ​华中科技大学2025年本科招生录取情况统计"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/info/1217/2580.htm",
+        "title": "2024-07-15 ​华中科技大学2024年本科招生录取情况统计"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/fsfzyfsx.htm",
+        "title": "各省专业分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "hustc",
+    "name": "华中师范大学",
+    "website": "https://www.ccnu.edu.cn/",
+    "pages": [
+      "https://www.ccnu.edu.cn/",
+      "https://www.ccnu.edu.cn/zsjy/bkszs.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "imu",
+    "name": "内蒙古大学",
+    "website": "https://www.imu.edu.cn/",
+    "pages": [
+      "https://www.imu.edu.cn/",
+      "https://zhaosheng.imu.edu.cn/",
+      "http://zhaosheng.imu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhaoshengxxw.imu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengxxw.imu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "jiangnan",
+    "name": "江南大学",
+    "website": "https://www.jiangnan.edu.cn/",
+    "pages": [
+      "https://www.jiangnan.edu.cn/",
+      "http://admission.jiangnan.edu.cn/",
+      "https://sce.jiangnan.edu.cn/fxljy/zsxx.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://admission1.jiangnan.edu.cn/pc/historyScore/nonArt",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "jlu",
+    "name": "吉林大学",
+    "website": "https://www.jlu.edu.cn/",
+    "pages": [
+      "https://www.jlu.edu.cn/",
+      "http://zsb.jlu.edu.cn/",
+      "https://www.jlu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "jnu",
+    "name": "暨南大学",
+    "website": "https://www.jnu.edu.cn/",
+    "pages": [
+      "https://www.jnu.edu.cn/",
+      "https://zsb.jnu.edu.cn",
+      "https://www.jnu.edu.cn/2025/0603/c2621a837482/page.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.jnu.edu.cn/2016/1206/c3468a93231/page.psp",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsb.jnu.edu.cn/2016/1206/c3470a93231/page.htm",
+        "title": "2026-03-06 暨南大学历年录取分数情况查询"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "lnu",
+    "name": "辽宁大学",
+    "website": "https://www.lnu.edu.cn/",
+    "pages": [
+      "https://www.lnu.edu.cn/",
+      "http://zs.lnu.edu.cn"
+    ],
+    "candidates": [
+      {
+        "url": "http://zs.lnu.edu.cn/cxzx/lnlqqk1.htm",
+        "title": "历年录取情况"
+      },
+      {
+        "url": "http://zs.lnu.edu.cn/cxzx/lnlqqk1.htm",
+        "title": "历年录取"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "lzu",
+    "name": "兰州大学",
+    "website": "https://www.lzu.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.lzu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "muc",
+    "name": "中央民族大学",
+    "website": "https://www.muc.edu.cn/",
+    "pages": [
+      "https://www.muc.edu.cn/",
+      "https://www.muc.edu.cn/zsjy/zs/bykzs.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "nankai",
+    "name": "南开大学",
+    "website": "https://www.nankai.edu.cn/",
+    "pages": [
+      "https://www.nankai.edu.cn/",
+      "https://zsb.nankai.edu.cn/",
+      "https://www.nankai.edu.cn/239/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://lqcx.nankai.edu.cn",
+        "title": "录取分数及计划"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ncu",
+    "name": "南昌大学",
+    "website": "https://www.ncu.edu.cn/",
+    "pages": [
+      "https://www.ncu.edu.cn/",
+      "https://www.ncu.edu.cn/zsjy/bkszs.htm",
+      "https://www.ncu.edu.cn/zsjy/gjjyzs.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "neau",
+    "name": "东北农业大学",
+    "website": "https://www.neau.edu.cn/",
+    "pages": [
+      "https://www.neau.edu.cn/",
+      "https://zsb.neau.edu.cn/static/front/neau/basic/html_cms/",
+      "https://www.neau.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "nefu",
+    "name": "东北林业大学",
+    "website": "https://www.nefu.edu.cn/",
+    "pages": [
+      "https://www.nefu.edu.cn/",
+      "http://zhaosheng.nefu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaoshengcx.nefu.edu.cn/static/front/nefu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "nenu",
+    "name": "东北师范大学",
+    "website": "https://www.nenu.edu.cn/",
+    "pages": [
+      "https://www.nenu.edu.cn/",
+      "http://zsb.nenu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://gkcx.nenu.edu.cn/history_score",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "neu",
+    "name": "东北大学",
+    "website": "https://www.neu.edu.cn/",
+    "pages": [
+      "https://www.neu.edu.cn/",
+      "http://zs.neu.edu.cn/",
+      "http://neunews.neu.edu.cn/info/1721/980511.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zs.neu.edu.cn/11196/list.htm",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zs.neu.edu.cn/2026/0715/c11330a457917/page.htm",
+        "title": "东北大学2026年各省份各批次各科类录取最低分公示"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "njau",
+    "name": "南京农业大学",
+    "website": "https://www.njau.edu.cn/",
+    "pages": [
+      "https://www.njau.edu.cn/",
+      "http://zsxx.njau.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://njauzsb.njau.edu.cn/zsw/lnfs.html",
+        "title": "历年录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "njfu",
+    "name": "南京林业大学",
+    "website": "https://www.njfu.edu.cn/",
+    "pages": [
+      "https://www.njfu.edu.cn/",
+      "https://zsb.njfu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://lqcx.njfu.edu.cn/page/data.html",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://lqcx.njfu.edu.cn/page/data.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "njnu",
+    "name": "南京师范大学",
+    "website": "https://www.nnu.edu.cn/",
+    "pages": [
+      "https://www.nnu.edu.cn/",
+      "http://bkzs.njnu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://bkzs.njnu.edu.cn/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/2175.htm",
+        "title": "2025-12-15南京师范大学2025年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1855.htm",
+        "title": "2024-12-18南京师范大学2024年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1515.htm",
+        "title": "2023-10-31南京师范大学2023年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1436.htm",
+        "title": "2023-02-22南京师范大学2022年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1228.htm",
+        "title": "2021-12-09南京师范大学2021年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1226.htm",
+        "title": "2020-12-02南京师范大学2020年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1224.htm",
+        "title": "2019-11-18南京师范大学2019年录取分数线"
+      }
+    ],
+    "errors": [
+      {
+        "url": "https://www.nnu.edu.cn/info/1162/162848.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nju",
+    "name": "南京大学",
+    "website": "https://www.nju.edu.cn/",
+    "pages": [
+      "https://www.nju.edu.cn/",
+      "https://www.nju.edu.cn/zsjy/zs.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "njust",
+    "name": "南京理工大学",
+    "website": "https://www.njust.edu.cn/",
+    "pages": [
+      "https://www.njust.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "nuaa",
+    "name": "南京航空航天大学",
+    "website": "https://www.nuaa.edu.cn/",
+    "pages": [
+      "https://www.nuaa.edu.cn/",
+      "http://zs.nuaa.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.nuaa.edu.cn/lnlqfs/list.htm",
+        "title": "LU QU FEN SHU 录取分数"
+      }
+    ],
+    "errors": [
+      {
+        "url": "http://news.nuaa.edu.cn/2025/0227/c737a368464/page.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nudt",
+    "name": "国防科技大学",
+    "website": "https://www.nudt.edu.cn/",
+    "pages": [
+      "https://www.nudt.edu.cn/",
+      "https://www.nudt.edu.cn/zsjy/bkszsw/index.htm",
+      "https://www.nudt.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "nwafu",
+    "name": "西北农林科技大学",
+    "website": "https://www.nwsuaf.edu.cn/",
+    "pages": [
+      "https://www.nwsuaf.edu.cn/",
+      "http://zhshw.nwsuaf.edu.cn/",
+      "https://www.nwsuaf.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://hjhfmx.nwafu.edu.cn/auth/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhshw.nwsuaf.edu.cn/zszn/02a4268053f74ea99610399d9870c565.htm",
+        "title": "关于公布2026年强基计划招生校考入围分数线的通知"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "nwnu",
+    "name": "西北师范大学",
+    "website": "https://www.nwnu.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.nwnu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nwpu",
+    "name": "西北工业大学",
+    "website": "https://www.nwpu.edu.cn/",
+    "pages": [
+      "https://www.nwpu.edu.cn/",
+      "http://www.nwpunec.net/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "http://zsb.nwpu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nwsuaf",
+    "name": "西北政法大学",
+    "website": "https://www.nwupl.edu.cn/",
+    "pages": [
+      "https://www.nwupl.edu.cn/",
+      "http://bkzn.nwupl.edu.cn/",
+      "http://zjc.nwupl.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "nwu",
+    "name": "西北大学",
+    "website": "https://www.nwu.edu.cn/",
+    "pages": [
+      "https://www.nwu.edu.cn/",
+      "https://zsb.nwu.edu.cn/index.htm",
+      "https://yjs.nwu.edu.cn/zsgz/sszs/zsjz.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhinengdayi.com/page/detail/FCHTWR/2464/6548",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://yjs.nwu.edu.cn/zsgz/sszs/lnfsfsx.htm",
+        "title": "历年复试分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "nxu",
+    "name": "宁夏大学",
+    "website": "https://www.nxu.edu.cn/",
+    "pages": [
+      "https://www.nxu.edu.cn/",
+      "http://zs.nxu.edu.cn/",
+      "https://www.nxu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zscx.nxu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zscx.nxu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "nyu",
+    "name": "宁波大学",
+    "website": "https://www.nbu.edu.cn/",
+    "pages": [
+      "https://www.nbu.edu.cn/",
+      "http://zsb.nbu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "ouc",
+    "name": "中国海洋大学",
+    "website": "https://www.ouc.edu.cn/",
+    "pages": [
+      "https://www.ouc.edu.cn/",
+      "http://bkzs.ouc.edu.cn"
+    ],
+    "candidates": [
+      {
+        "url": "https://lqcx.ouc.edu.cn/static/front/ouc/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "pku",
+    "name": "北京大学",
+    "website": "https://www.pku.edu.cn/",
+    "pages": [
+      "https://www.pku.edu.cn/",
+      "https://www.pku.edu.cn/recruit.html"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "qhu",
+    "name": "青海大学",
+    "website": "https://www.qhu.edu.cn/",
+    "pages": [
+      "https://www.qhu.edu.cn/",
+      "https://www.qhu.edu.cn/zsjy/zs/index.htm",
+      "https://www.qhu.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "ruc",
+    "name": "中国人民大学",
+    "website": "https://www.ruc.edu.cn/",
+    "pages": [
+      "https://www.ruc.edu.cn/",
+      "https://rdzs.ruc.edu.cn/",
+      "https://pgs.ruc.edu.cn/sszs.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "scnu",
+    "name": "华南师范大学",
+    "website": "https://www.scnu.edu.cn/",
+    "pages": [
+      "https://www.scnu.edu.cn/",
+      "https://zsb.scnu.edu.cn/",
+      "https://www.scnu.edu.cn/a/20150907/7.html"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsb.scnu.edu.cn/zhiyuancankao/",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.scnu.edu.cn/a/20260528/735.html",
+        "title": "华南师范大学2026年运动训练专业第二志愿拟录取情况公布"
+      },
+      {
+        "url": "http://zsb.scnu.edu.cn/a/20260522/733.html",
+        "title": "华南师范大学2026年运动训练专业第一志愿拟录取情况公布"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "scu",
+    "name": "四川大学",
+    "website": "https://www.scu.edu.cn/",
+    "pages": [
+      "https://www.scu.edu.cn/",
+      "https://www.scu.edu.cn/zsjy/zsjygk.htm"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "http://zs.scu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "scut",
+    "name": "华南理工大学",
+    "website": "https://www.scut.edu.cn/",
+    "pages": [],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.scut.edu.cn/",
+        "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "sdu",
+    "name": "山东大学",
+    "website": "https://www.sdu.edu.cn/",
+    "pages": [
+      "https://www.sdu.edu.cn/",
+      "https://www.istudy.sdu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.bkzs.sdu.edu.cn/",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "seu",
+    "name": "东南大学",
+    "website": "https://www.seu.edu.cn/",
+    "pages": [
+      "https://www.seu.edu.cn/",
+      "https://www.seu.edu.cn/47291/list.htm",
+      "https://www.seu.edu.cn/28441/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "shisu",
+    "name": "上海外国语大学",
+    "website": "https://www.shisu.edu.cn/",
+    "pages": [
+      "https://www.shisu.edu.cn/",
+      "https://www.shisu.edu.cn/admissions/index.html"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "shmtu",
+    "name": "上海海事大学",
+    "website": "https://www.shmtu.edu.cn/",
+    "pages": [
+      "https://www.shmtu.edu.cn/",
+      "https://admission.shmtu.edu.cn/",
+      "https://www.shmtu.edu.cn/12269/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://admission.shmtu.edu.cn/zsfs/list.htm",
+        "title": "招生分数"
+      },
+      {
+        "url": "https://admission.shmtu.edu.cn/zsfs/list.htm",
+        "title": "历年录取分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "shu",
+    "name": "上海大学",
+    "website": "https://www.shu.edu.cn/",
+    "pages": [
+      "https://www.shu.edu.cn/",
+      "https://bkzsw.shu.edu.cn/",
+      "https://www.shu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://bks.shu.edu.cn/pub/scores.aspx",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+        "title": "上海大学2026年艺术类本科专业录取分数线(校考)"
+      },
+      {
+        "url": "https://bkzsw.shu.edu.cn/info/1798/38940.htm",
+        "title": "上海大学2026年各省市最低录取分数线"
+      },
+      {
+        "url": "http://bks.shu.edu.cn/pub/scores.aspx",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+        "title": ">上海大学2026年艺术类本科专业录取分数线(校考)"
+      },
+      {
+        "url": "https://bkzsw.shu.edu.cn/info/1798/38940.htm",
+        "title": ">上海大学2026年各省市最低录取分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "shupl",
+    "name": "上海政法学院",
+    "website": "https://www.shupl.edu.cn/",
+    "pages": [
+      "https://www.shupl.edu.cn/",
+      "https://zs.shupl.edu.cn/",
+      "https://www.shupl.edu.cn/1245/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "shutcm",
+    "name": "上海中医药大学",
+    "website": "https://www.shutcm.edu.cn/",
+    "pages": [
+      "https://www.shutcm.edu.cn/",
+      "https://www.shutcm.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://ygzs.shutcm.edu.cn/",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "shzu",
+    "name": "石河子大学",
+    "website": "https://www.shzu.edu.cn/",
+    "pages": [
+      "https://www.shzu.edu.cn/",
+      "http://zsb.shzu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsbxcx.shzu.edu.cn/InThePastThreeYearsAdmissionInfo",
+        "title": "2025年以前历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "sjtu",
+    "name": "上海交通大学",
+    "website": "https://www.sjtu.edu.cn/",
+    "pages": [
+      "https://www.sjtu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "snnu",
+    "name": "陕西师范大学",
+    "website": "https://www.snnu.edu.cn/",
+    "pages": [
+      "https://www.snnu.edu.cn/",
+      "http://zsb.snnu.edu.cn/zsxx/zsjh/qtlzs/gatzs.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsb.snnu.edu.cn/zsxx/wnlqqk1/lnlqqk/a2020.htm",
+        "title": "历年录取情况"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "stu",
+    "name": "汕头大学",
+    "website": "https://www.stu.edu.cn/",
+    "pages": [
+      "https://www.stu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "suda",
+    "name": "苏州大学",
+    "website": "https://www.suda.edu.cn/",
+    "pages": [
+      "https://www.suda.edu.cn/",
+      "https://www.suda.edu.cn/enroll_job/?id=1#bk",
+      "https://www.suda.edu.cn/enroll_job/dlxy.jsp"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "sufe",
+    "name": "上海财经大学",
+    "website": "https://www.sufe.edu.cn/",
+    "pages": [
+      "https://www.sufe.edu.cn/",
+      "https://zs.sufe.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "sust",
+    "name": "陕西科技大学",
+    "website": "https://www.sust.edu.cn/",
+    "pages": [
+      "https://www.sust.edu.cn/",
+      "http://bkzs.sust.edu.cn"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsxx.sust.edu.cn/static/front/sust/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsxx.sust.edu.cn/static/front/sust/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "sustech",
+    "name": "南方科技大学",
+    "website": "https://www.sustech.edu.cn/",
+    "pages": [
+      "https://www.sustech.edu.cn/",
+      "https://zs.sustech.edu.cn/",
+      "https://www.sustech.edu.cn/zh/admissions.html"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "swjtu",
+    "name": "西南交通大学",
+    "website": "https://www.swjtu.edu.cn/",
+    "pages": [
+      "https://www.swjtu.edu.cn/",
+      "https://zhaosheng.swjtu.edu.cn/",
+      "https://www.swjtu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "swu",
+    "name": "西南大学",
+    "website": "https://www.swu.edu.cn/",
+    "pages": [
+      "https://www.swu.edu.cn/",
+      "https://www.swu.edu.cn/info/1139/28634.htm",
+      "http://bkzsw.swu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://bkzswu.swu.edu.cn/static/front/admission#/data-export/open-score-page2",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "swufe",
+    "name": "西南财经大学",
+    "website": "https://www.swufe.edu.cn/",
+    "pages": [
+      "https://www.swufe.edu.cn/",
+      "https://zb.swufe.edu.cn/",
+      "https://www.swufe.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsdata.swufe.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "swupl",
+    "name": "西南政法大学",
+    "website": "https://www.swupl.edu.cn/",
+    "pages": [
+      "https://www.swupl.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.swupl.edu.cn/zsjy/index.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "sysu",
+    "name": "中山大学",
+    "website": "https://www.sysu.edu.cn/",
+    "pages": [
+      "https://www.sysu.edu.cn/",
+      "http://admission.sysu.edu.cn",
+      "https://www.sysu.edu.cn/zs1.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://admission.sysu.edu.cn/zsw/lnfs.html",
+        "title": "历年录取分数"
+      },
+      {
+        "url": "http://admission.sysu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "szu",
+    "name": "深圳大学",
+    "website": "https://www.szu.edu.cn/",
+    "pages": [
+      "https://www.szu.edu.cn/",
+      "https://www.szu.edu.cn/zsyjy1/bkszs.htm",
+      "http://zs.szu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tjcu",
+    "name": "天津财经大学",
+    "website": "https://www.tjufe.edu.cn/",
+    "pages": [
+      "https://www.tjufe.edu.cn/",
+      "https://www.tjufe.edu.cn/info/1023/24061.htm",
+      "http://zhaosheng.tjufe.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.tjufe.edu.cn/cxgn/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.tjufe.edu.cn/info/1023/1889.htm",
+        "title": "2026年本科招生录取最低分公示（7月29日更新）"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tjnu",
+    "name": "天津师范大学",
+    "website": "https://www.tjnu.edu.cn/",
+    "pages": [
+      "https://www.tjnu.edu.cn/",
+      "https://zsb.tjnu.edu.cn/",
+      "https://www.tjnu.edu.cn/info/1064/10408.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://zscx.tjnu.edu.cn/static/front/tjnu/basic/html_web/lnfs_list.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tjpu",
+    "name": "天津工业大学",
+    "website": "https://www.tiangong.edu.cn/",
+    "pages": [
+      "https://www.tiangong.edu.cn/",
+      "https://www.tiangong.edu.cn/zsjy/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.tiangong.edu.cn/",
+        "title": "简要介绍天津工业大学关于本科生招生计划、录取方式、历年录取分数等内容"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tju",
+    "name": "天津大学",
+    "website": "https://www.tju.edu.cn/",
+    "pages": [
+      "https://www.tju.edu.cn/",
+      "https://www.tju.edu.cn/zsjy.htm#zsjy02",
+      "https://www.tju.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "tmu",
+    "name": "天津医科大学",
+    "website": "https://www.tmu.edu.cn/",
+    "pages": [
+      "https://www.tmu.edu.cn/",
+      "https://www.tmu.edu.cn/2022/0514/c139a59202/page.htm",
+      "https://www.tmu.edu.cn/zsjy/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "tongji",
+    "name": "同济大学",
+    "website": "https://www.tongji.edu.cn/",
+    "pages": [
+      "https://www.tongji.edu.cn/",
+      "https://bkzs.tongji.edu.cn",
+      "https://www.tongji.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://bkzs.tongji.edu.cn/luqu/admission",
+        "title": "历年录取"
+      },
+      {
+        "url": "https://bkzs.tongji.edu.cn/luqu/admission",
+        "title": "历年录取"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tsinghua",
+    "name": "清华大学",
+    "website": "https://www.tsinghua.edu.cn/",
+    "pages": [
+      "https://www.tsinghua.edu.cn/",
+      "https://www.join-tsinghua.edu.cn/",
+      "http://join-tsinghua.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.join-tsinghua.edu.cn/xxgk/lnlqfsx.htm",
+        "title": "历年录取分数线"
+      },
+      {
+        "url": "http://join-tsinghua.edu.cn/xxgk/lnlqfsx.htm",
+        "title": "历年录取分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "tyut",
+    "name": "太原理工大学",
+    "website": "https://www.tyut.edu.cn/",
+    "pages": [
+      "https://www.tyut.edu.cn/",
+      "http://zs.tyut.edu.cn/",
+      "https://www.tyut.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhaolu.zjzw.cn/release-page/overyears?key=23a0a115af2262c7b0398b88",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "uestc",
+    "name": "电子科技大学",
+    "website": "https://www.uestc.edu.cn/",
+    "pages": [
+      "https://www.uestc.edu.cn/",
+      "https://zs.uestc.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.uestc.edu.cn/category/56.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://chaxun.uestc.edu.cn/public/zsdata/lqxx/#/lnfs",
+        "title": "历年录取分数线"
+      },
+      {
+        "url": "https://zs.uestc.edu.cn/view/2205.html",
+        "title": "电子科技大学2026年强基计划入围考核分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "uibe",
+    "name": "对外经济贸易大学",
+    "website": "https://www.uibe.edu.cn/",
+    "pages": [
+      "https://www.uibe.edu.cn/",
+      "https://aeo.uibe.edu.cn/front/channel.jspa?channelId=841",
+      "https://www.uibe.edu.cn/zsjy/index.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://aeo.uibe.edu.cn/lqcx/static/front/uibe/basic/html_web/lnfs.html",
+        "title": "历年录取"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ustb",
+    "name": "北京科技大学",
+    "website": "https://www.ustb.edu.cn/",
+    "pages": [
+      "https://www.ustb.edu.cn/",
+      "https://zhaosheng.ustb.edu.cn/",
+      "http://zhaosheng.ustb.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ustc",
+    "name": "中国科学技术大学",
+    "website": "https://www.ustc.edu.cn/",
+    "pages": [
+      "https://www.ustc.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "ut",
+    "name": "西藏大学",
+    "website": "https://www.utibet.edu.cn/",
+    "pages": [
+      "https://www.utibet.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "whu",
+    "name": "武汉大学",
+    "website": "https://www.whu.edu.cn/",
+    "pages": [
+      "https://www.whu.edu.cn/",
+      "http://aoff.whu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsdata.whu.edu.cn/public/wzgl/#/fscx",
+        "title": "录取分数查询"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "whut",
+    "name": "武汉理工大学",
+    "website": "https://www.whut.edu.cn/",
+    "pages": [
+      "https://www.whut.edu.cn/",
+      "https://zs.whut.edu.cn",
+      "https://www.whut.edu.cn/zhaoshengjiuye/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zs.whut.edu.cn/bkcx/bklqqk/",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zs.whut.edu.cn/bkcx/bklqqk/",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xatu",
+    "name": "西安工业大学",
+    "website": "https://www.xatu.edu.cn/",
+    "pages": [
+      "https://www.xatu.edu.cn/",
+      "https://zsb.xatu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": ".cls-1 { fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4px;} 历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xauat",
+    "name": "西安建筑科技大学",
+    "website": "https://www.xauat.edu.cn/",
+    "pages": [
+      "https://www.xauat.edu.cn/",
+      "https://www.xauat.edu.cn/zsjy/bkszs.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "xaut",
+    "name": "西安理工大学",
+    "website": "https://www.xaut.edu.cn/",
+    "pages": [
+      "https://www.xaut.edu.cn/",
+      "http://zhaosheng.xaut.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.xaut.edu.cn/xinxichaxun/fenshengfenzhuanyefenshuchaxun/",
+        "title": "各专业录取分数查询"
+      },
+      {
+        "url": "https://zsgl.xaut.edu.cn/admin/#/lqjgcx",
+        "title": "高考录取情况查询"
+      },
+      {
+        "url": "http://zhaosheng.xaut.edu.cn/xinxichaxun/liniangeshengfenshuxianchaxun/",
+        "title": "历年各省分数线查询"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xianmc",
+    "name": "西安医学院",
+    "website": "https://www.xiyi.edu.cn/",
+    "pages": [
+      "https://www.xiyi.edu.cn/",
+      "http://zs.xiyi.edu.cn/",
+      "http://jxjyxy.xiyi.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://luqu.xiyi.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://luqu.xiyi.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xidian",
+    "name": "西安电子科技大学",
+    "website": "https://www.xidian.edu.cn/",
+    "pages": [
+      "https://www.xidian.edu.cn/",
+      "https://www.xidian.edu.cn/zsjy.htm#A",
+      "https://www.xidian.edu.cn/zsjy.htm#D"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "xisu",
+    "name": "西安外国语大学",
+    "website": "https://www.xisu.edu.cn/",
+    "pages": [
+      "https://www.xisu.edu.cn/",
+      "http://zhaosheng.xisu.edu.cn/",
+      "https://xwgjxy.xisu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.xisu.edu.cn/bkzs/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.xisu.edu.cn/bkzs/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xisu.edu.cn/zscx/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xiyou",
+    "name": "西安邮电大学",
+    "website": "https://www.xiyou.edu.cn/",
+    "pages": [
+      "https://www.xiyou.edu.cn/",
+      "http://zhaosheng.xupt.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xjdx",
+    "name": "新疆大学",
+    "website": "https://www.xju.edu.cn/",
+    "pages": [
+      "https://www.xju.edu.cn/",
+      "https://welcome.xju.edu.cn/web"
+    ],
+    "candidates": [],
+    "errors": [
+      {
+        "url": "https://www.xju.edu.cn/<span style='color:red;font-size:9pt'>转换链接错误</span>",
+        "error": "URL can't contain control characters. \"/<span style='color:red;font-size:9pt'>转换链接错误</span>\" (found at least ' ')"
+      }
+    ]
+  },
+  {
+    "id": "xjtlu",
+    "name": "西交利物浦大学",
+    "website": "https://www.xjtlu.edu.cn/",
+    "pages": [
+      "https://www.xjtlu.edu.cn/",
+      "https://www.xjtlu.edu.cn/zh/admissions/ug",
+      "https://www.xjtlu.edu.cn/zh/admissions"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "xju",
+    "name": "西安交通大学",
+    "website": "https://www.xjtu.edu.cn/",
+    "pages": [
+      "https://www.xjtu.edu.cn/",
+      "https://www.xjtu.edu.cn/index/zsw.htm",
+      "http://news.xjtu.edu.cn/info/1033/235655.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "xmu",
+    "name": "厦门大学",
+    "website": "https://www.xmu.edu.cn/",
+    "pages": [
+      "https://www.xmu.edu.cn/",
+      "http://zsb.xmu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsdata.xmu.edu.cn/public/zsdata/lqxx/#/lnfs",
+        "title": "历年录取数据"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/sss/wnlq.htm",
+        "title": "历年录取数据"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/tgaqs/wnlq.htm",
+        "title": "历年录取数据"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/info/1061/35722.htm",
+        "title": "厦门大学2026年博士研究生（附属医院在职医务人员计划）复试基本分数线"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/info/1077/36102.htm",
+        "title": "关于我校2026年面向港澳台地区硕士研究生招生考试复试基本分数线的公告"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xmu-medical",
+    "name": "新疆医科大学",
+    "website": "https://www.xjmu.edu.cn/",
+    "pages": [
+      "https://www.xjmu.edu.cn/",
+      "https://www.xjmu.edu.cn/zsjy/bkszs.htm",
+      "https://www.xjmu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "xpu",
+    "name": "西安工程大学",
+    "website": "https://www.xpu.edu.cn/",
+    "pages": [
+      "https://www.xpu.edu.cn/",
+      "http://zsb.xpu.edu.cn/",
+      "https://www.xpu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsb.xpu.edu.cn/data.htm?mode=history",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xufe",
+    "name": "西安财经大学",
+    "website": "https://www.xaufe.edu.cn/",
+    "pages": [
+      "https://www.xaufe.edu.cn/",
+      "http://zhaosheng.xaufe.edu.cn",
+      "http://zhaosheng.xaufe.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1651.htm",
+        "title": "[12-26]2023年中外合作办学专业录取分数区间"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1650.htm",
+        "title": "[12-26]2023年艺术类本科专业录取分数区间"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1649.htm",
+        "title": "[12-26]2023年高考“3+3”模式省份录取分数区间..."
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1651.htm",
+        "title": "[12-26]2023年中外合作办学专业录取分数区间"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1650.htm",
+        "title": "[12-26]2023年艺术类本科专业录取分数区间"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1649.htm",
+        "title": "[12-26]2023年高考“3+3”模式省份录取分数区间..."
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "xust",
+    "name": "西安科技大学",
+    "website": "https://www.xust.edu.cn/",
+    "pages": [
+      "https://www.xust.edu.cn/",
+      "https://zs.xust.edu.cn/",
+      "http://zs.xust.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "yau",
+    "name": "延安大学",
+    "website": "https://www.yau.edu.cn/",
+    "pages": [
+      "https://www.yau.edu.cn/",
+      "http://zsw.yau.edu.cn",
+      "http://www.xacxxy.com/"
+    ],
+    "candidates": [
+      {
+        "url": "https://zsdata.yau.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://zsw.yau.edu.cn/lnlq.htm",
+        "title": "历年录取"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ybu",
+    "name": "延边大学",
+    "website": "https://www.ybu.edu.cn/",
+    "pages": [
+      "https://www.ybu.edu.cn/",
+      "https://zsjy.ybu.edu.cn/",
+      "https://www.ybu.edu.cn/zsjy_1.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://gklqcx.ybu.edu.cn/recruit",
+        "title": "历年分数线"
+      },
+      {
+        "url": "https://gklqcx.ybu.edu.cn/recruit",
+        "title": "历年分数线"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ynnu",
+    "name": "云南师范大学",
+    "website": "https://www.ynnu.edu.cn/",
+    "pages": [
+      "https://www.ynnu.edu.cn/",
+      "https://zsc.ynnu.edu.cn/"
+    ],
+    "candidates": [
+      {
+        "url": "https://jh.ynnu.edu.cn/score.aspx",
+        "title": "历年分数查询"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "ynu",
+    "name": "云南大学",
+    "website": "https://www.ynu.edu.cn/",
+    "pages": [
+      "https://www.ynu.edu.cn/",
+      "http://zsb.ynu.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "zjnu",
+    "name": "浙江师范大学",
+    "website": "https://www.zjnu.edu.cn/",
+    "pages": [
+      "https://www.zjnu.edu.cn/",
+      "https://zs.zjnu.edu.cn",
+      "https://www.zjnu.edu.cn/3987/list.htm"
+    ],
+    "candidates": [
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      },
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      },
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      },
+      {
+        "url": "https://zs.zjnu.edu.cn/2026/0713/c6828a579030/page.htm",
+        "title": "07.132026 浙江师范大学2026年“三位一体”综合评价招生录取结果查询的公告 我校2026年“三位一体”综合评价招生录取工作已经结束，考生可进入浙江师范大学本科招生网https://zs.zjnu.edu.cn/中的“录取查询”栏目查询录取情况。"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "zju",
+    "name": "浙江大学",
+    "website": "https://www.zju.edu.cn/",
+    "pages": [
+      "https://www.zju.edu.cn/"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "zjut",
+    "name": "浙江工业大学",
+    "website": "https://www.zjut.edu.cn/",
+    "pages": [
+      "https://www.zjut.edu.cn/",
+      "https://www.zjut.edu.cn/4494/list.htm",
+      "https://www.zjut.edu.cn/4473/list.htm"
+    ],
+    "candidates": [],
+    "errors": []
+  },
+  {
+    "id": "zuel",
+    "name": "中南财经政法大学",
+    "website": "https://www.zuel.edu.cn/",
+    "pages": [
+      "https://www.zuel.edu.cn/",
+      "https://www.zuel.edu.cn/recruit_jobs/",
+      "http://www.zuel.edu.cn/recruit_jobs/"
+    ],
+    "candidates": [
+      {
+        "url": "https://bkzs.zuel.edu.cn/",
+        "title": "本科生录取情况"
+      },
+      {
+        "url": "https://yjsy.zuel.edu.cn/",
+        "title": "研究生录取情况"
+      },
+      {
+        "url": "https://bkzs.zuel.edu.cn/",
+        "title": "本科生录取情况"
+      },
+      {
+        "url": "https://yjsy.zuel.edu.cn/",
+        "title": "研究生录取情况"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "id": "zzu",
+    "name": "郑州大学",
+    "website": "https://www.zzu.edu.cn/",
+    "pages": [
+      "https://www.zzu.edu.cn/",
+      "http://ao.zzu.edu.cn/",
+      "https://www.zzu.edu.cn/zsjy.htm"
+    ],
+    "candidates": [
+      {
+        "url": "http://ao.zzu.edu.cn/xxgk/lnlq_.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ao.zzu.edu.cn/xxgk/lnlq_.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ao.zzu.edu.cn/lnlq_.htm",
+        "title": "历年录取 [2020-12-11]"
+      }
+    ],
+    "errors": []
+  }
+]

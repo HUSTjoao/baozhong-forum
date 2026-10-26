@@ -16,6 +16,7 @@ import MajorFitArtwork from '@/components/majors/MajorFitArtwork'
 import useMajorNavigation from '@/components/majors/useMajorNavigation'
 import '../../majors.css'
 import './major-detail.css'
+import '../../../site-fonts.css'
 
 const fieldNames: Record<MajorCategory, string> = { arts: '文科', science: '理科', engineering: '工科', medicine: '医科', other: '其他' }
 const fitLabels = ['你的好奇心', '你的学习方式', '你愿意投入的事']
@@ -86,10 +87,12 @@ export default function MajorForumPage() {
       const bottom = Math.max(...panels.map((panel, index) => {
         const focused = panel.classList.contains('is-focused')
         const scale = camera < 0 ? .67 : focused ? 1 : .67
-        const top = index === 2 && !focused ? fitTop : focused ? 75 : 42
-        return top + panel.scrollHeight * scale
+        const top = index === 2 && !focused ? fitTop : focused ? 75 : index === 0 ? 18 : 42
+        return top + panel.offsetHeight * scale
       }))
-      stage.style.setProperty('--scene-content-height', `${Math.ceil(Math.max(900, bottom + 120))}px`)
+      const controls = stage.querySelector<HTMLElement>('.md-camera-controls')
+      const controlsHeight = controls && getComputedStyle(controls).position !== 'absolute' ? controls.offsetHeight : 0
+      stage.style.setProperty('--scene-content-height', `${Math.ceil(controlsHeight + bottom + 24)}px`)
     }
     const observer = new ResizeObserver(update)
     panels.forEach(panel => observer.observe(panel))

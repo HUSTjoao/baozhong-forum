@@ -69,3 +69,12 @@ next-env.d.ts
 # Python research caches
 __pycache__/
 *.py[cod]
+
+/data/admissions-sources/research-cache/
+
+# Local OCR research dependencies
+/.research-deps/
+
+# Local document conversions and unrelated presentation artifacts
+/.markitdown-cache/
+/artifacts/

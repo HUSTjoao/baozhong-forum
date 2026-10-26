@@ -32,7 +32,6 @@ export default function QuestionDetailPage() {
  const [commenting,setCommenting] = useState<Reply|null>(null),[comment,setComment] = useState(''),[commentAnonymous,setCommentAnonymous] = useState(false)
  const [opened,setOpened] = useState<Set<string>>(new Set()),[expanded,setExpanded] = useState<Set<string>>(new Set())
  const [deleting,setDeleting] = useState<Target|null>(null),[reporting,setReporting] = useState<Target|null>(null),[reason,setReason] = useState('')
- const [related,setRelated] = useState<Question[]>([])
  const input=useRef<HTMLTextAreaElement>(null),answerArea=useRef<HTMLElement>(null)
  const userId=session?.user?.id, admin=session?.user?.role==='admin'
  const viewerId=userId||(demo?'preview':undefined)
@@ -43,9 +42,9 @@ export default function QuestionDetailPage() {
   return true
  }
  useEffect(()=>{
-  let cancelled=false;setLoading(true);setError('');setQuestion(null);setComposer(false);setDraft('');setOpened(new Set());setExpanded(new Set());setRelated([]);setCommenting(null)
-  if(demo){const example=exampleQuestions.find(q=>q.id===params.id);if(example){setQuestion({...example,replies:example.exampleReplies.map((content,index)=>({id:`${example.id}-answer-${index}`,questionId:example.id,content,date:example.date,likes:index===0?12:4,isAnonymous:false,replierName:`示例同学 ${index+1}`,children:[]}))});setRelated(exampleQuestions.filter(q=>q.id!==params.id&&q.category===example.category).slice(0,4))}else setError('示例讨论不存在');setLoading(false);return}
-  void questionsApi.get(params.id).then(q=>{if(!cancelled){setQuestion(q);void questionsApi.list(undefined,q.majorId?{majorId:q.majorId}:q.universityId?{universityId:q.universityId}:undefined).then(items=>{if(!cancelled)setRelated(items.filter(item=>item.id!==q.id).slice(0,4))}).catch(()=>{})}}).catch(e=>{if(!cancelled)setError(e.message||'无法加载讨论')}).finally(()=>{if(!cancelled)setLoading(false)})
+  let cancelled=false;setLoading(true);setError('');setQuestion(null);setComposer(false);setDraft('');setOpened(new Set());setExpanded(new Set());setCommenting(null)
+  if(demo){const example=exampleQuestions.find(q=>q.id===params.id);if(example){setQuestion({...example,replies:example.exampleReplies.map((content,index)=>({id:`${example.id}-answer-${index}`,questionId:example.id,content,date:example.date,likes:index===0?12:4,isAnonymous:false,replierName:`示例同学 ${index+1}`,children:[]}))})}else setError('示例讨论不存在');setLoading(false);return}
+  void questionsApi.get(params.id).then(q=>{if(!cancelled)setQuestion(q)}).catch(e=>{if(!cancelled)setError(e.message||'无法加载讨论')}).finally(()=>{if(!cancelled)setLoading(false)})
   return()=>{cancelled=true}
  },[params.id])
  useEffect(()=>{if(composer)input.current?.focus({preventScroll:true})},[composer])
@@ -88,7 +87,7 @@ export default function QuestionDetailPage() {
     {composer&&<form className="qd-composer" onSubmit={e=>{e.preventDefault();if(!canUse()||!draft.trim())return;void run('answer',async()=>{await publish(draft.trim(),anonymous);setDraft('');setComposer(false);setNotice(demo?'示例回答已加入，仅本次预览可见。':'回答已发表。')})}}><header><h2>写下你的回答</h2><button type="button" aria-label="收起回答编辑器" onClick={()=>setComposer(false)}><X size={21}/></button></header><textarea ref={input} aria-label="回答内容" placeholder="分享你的经历、判断，或一个具体的建议…" value={draft} onChange={e=>setDraft(e.target.value)} required rows={5} maxLength={3000}/><div><AnonymousSwitch checked={anonymous} change={setAnonymous}/><span className="qd-count">{draft.length} / 3000</span><button className="qd-answer-entry" disabled={!!pending||!draft.trim()} type="submit">{pending==='answer'?'发表中…':'发表回答'}<Send size={18}/></button></div>{!userId&&!demo&&<Link className="qd-login" href={`/auth/login?callbackUrl=${encodeURIComponent('/forum/'+params.id)}`}>登录后发表回答<ArrowUpRight size={17}/></Link>}</form>}
     <div className="qd-answer-heading"><h2>回答<span>{answers.length}</span></h2><div><button aria-pressed={sort==='popular'} onClick={()=>setSort('popular')}>推荐</button><button aria-pressed={sort==='new'} onClick={()=>setSort('new')}>最新</button></div></div>
     <div className="qd-answers">{answers.length?answers.map(reply=>replyItem(reply)):<div className="qd-empty"><MessageCircle size={30}/><h3>还没有回答</h3><p>你的经历，可能正好是另一位同学需要的答案。</p><button onClick={answer}>写第一个回答<ArrowUpRight size={18}/></button></div>}</div>
-   </section>{related.length>0&&<aside className="qd-related"><h2>继续看看</h2>{related.map(item=><Link key={item.id} href={`/forum/${item.id}`}><strong>{item.title}</strong><span>{item.repliesCount} 条回应<ArrowUpRight size={17}/></span></Link>)}</aside>}</div>
+   </section></div>
    </>}
   </div>
   <div className="qd-notice" role="status" aria-live="polite">{notice&&<span>{notice}</span>}</div>

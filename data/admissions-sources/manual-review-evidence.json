@@ -1,0 +1,58 @@
+{
+  "henu2025": {
+    "page": "https://zs.henu.edu.cn/info/1035/9293.htm",
+    "image": "https://zs.henu.edu.cn/__local/E/48/D9/4EB0F0E84B6271339D7E5FA0512_8CDAEB42_2FA0.png",
+    "snapshot": "reviewed-images/henu-2025-shaanxi.png",
+    "ordinaryHistoryMajors": 11,
+    "ordinaryPhysicsMajors": 13,
+    "cooperativeHistoryMajors": 2,
+    "cooperativePhysicsMajors": 1
+  },
+  "jnu2025": {
+    "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp",
+    "summaryColumns": [
+      "category",
+      "subject",
+      "admitted",
+      "highest",
+      "lowest"
+    ],
+    "summaryRows": [
+      [
+        "普通类",
+        "物理类",
+        44,
+        619,
+        580
+      ],
+      [
+        "普通类",
+        "历史类",
+        18,
+        608,
+        596
+      ],
+      [
+        "戏文单列",
+        "历史类",
+        2,
+        584,
+        577
+      ],
+      [
+        "国家专项",
+        "物理类",
+        9,
+        609,
+        530
+      ],
+      [
+        "国家专项",
+        "历史类",
+        14,
+        602,
+        572
+      ]
+    ]
+  }
+}

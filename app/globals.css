@@ -1346,9 +1346,14 @@ html[data-campus-active='true'] .site-header-glass.site-header-home .site-nav > 
 .community-footer-contact a:last-child { font-family: 'Songti SC', 'SimSun', serif; font-size: 12px; line-height: 1.8; margin-top: 4px; }
 .community-footer-bottom { border-top: 1px solid #b4c2d221; padding-top: 25px; margin-top: 4px; color: #8d9eb2; }
 .community-footer-bottom button { font-family: 'Admission WenKai', 'KaiTi', serif; font-size: 12px; color: #bac9d4; }
-.community-footer-colophon { grid-column: 1 / -1; text-align: center; font-family: 'Admission WenKai', 'KaiTi', serif; border-top: 1px solid #b4c2d221; padding-top: 16px; }
-.community-footer-colophon p { margin: 0; font-family: 'Admission WenKai', 'KaiTi', serif; font-weight: 400; font-size: 18px; line-height: 1.9; letter-spacing: .06em; color: #aab7c5; }
-.community-footer-colophon p + p { margin-top: 5px; color: #9cacc0; }
+.community-footer-credits { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 36px; margin-top: 10px; font: 400 12px/1.9 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+.community-footer-credits p { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 6px 14px; margin: 0; }
+.community-footer-credits p > span { color: #8e9dac; font-size: 11px; letter-spacing: .08em; }
+.community-footer-credits strong { color: #c5cdd3; font-weight: 400; white-space: nowrap; }
+.community-footer-credits small { margin-right: 6px; color: #94a6b7; font-size: 10px; letter-spacing: .03em; }
+.community-footer-colophon { grid-column: 1 / -1; text-align: center; font-family: 'Admission WenKai', 'KaiTi', serif; padding-top: 0; }
+.community-footer-colophon p { margin: 0; font-family: 'Admission WenKai', 'KaiTi', serif; font-weight: 400; font-size: 18px; line-height: 1.9; letter-spacing: .06em; color: #8e9eae; }
+.community-footer-colophon p + p { margin-top: 3px; color: #8092a4; }
 @media (max-width: 1000px) { .community-footer-inner { gap: 24px 32px; } .community-footer-contact a { overflow-wrap: anywhere; } }
 @media (max-width: 760px) {
  .community-footer { padding: 32px 24px 18px; }
@@ -2015,7 +2020,7 @@ html[data-countdown-active='true'] .site-header-glass.site-header-home .site-nav
  .future-study-meta .study-subject-icon { width: 28px; height: 28px; }
 }
 
-@media (max-width: 760px) { .community-footer-colophon p { font-size: 16px; letter-spacing: .04em; } }
+@media (max-width: 760px) { .community-footer-colophon p { font-size: 16px; letter-spacing: .04em; } .community-footer-credits { flex-direction: column; align-items: flex-end; gap: 7px; margin-top: 0; } .community-footer-credits p { justify-content: flex-end; } }
 
 /* Compact directory filters keep the school list in focus. */
 .uni-select-filters{display:flex;gap:12px;flex:none;margin:16px 0 8px;flex-wrap:wrap}
@@ -2052,7 +2057,7 @@ html[data-countdown-active='true'] .site-header-glass.site-header-home .site-nav
 .site-header-glass .site-admin-entry:hover{background:#ffffffc2;border-color:#59768680}
 @media(max-width:760px){.site-header-glass .site-admin-entry{font-size:14px;padding:6px 9px;gap:5px}.site-header-glass .site-admin-entry svg{width:16px;height:16px}}
 
-.community-footer-filing{max-width:1280px;margin:32px auto 0;padding-top:21px;border-top:1px solid #c3d5e31a;text-align:center;font:400 14px/1.8 var(--font-sans);letter-spacing:.025em}
-.community-footer-filing a{display:inline-block;color:#b7c8d4;text-decoration:none;text-underline-offset:4px}
+.community-footer-filing{max-width:1120px;margin:16px auto 0;text-align:center;font:400 11px/1.8 'Microsoft YaHei','PingFang SC',Arial,sans-serif;letter-spacing:.04em}
+.community-footer-filing a{display:inline-block;color:#8295a8;text-decoration:none;text-underline-offset:4px}
 .community-footer-filing a:hover{color:#f0f5f7;text-decoration:underline}
 .community-footer-filing a:focus-visible{outline:2px solid #b7c8d4;outline-offset:5px;border-radius:2px}

@@ -1,0 +1,2248 @@
+[
+  {
+    "id": "hust",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.hust.edu.cn/info/1008/2971.htm",
+      "sourceName": "华中科技大学本科招生信息网",
+      "published": "2025-09-26",
+      "distribution": {
+        "science": {
+          "source": "https://www.sneac.com/info/1019/18391.htm",
+          "scores": {
+            "648": {
+              "count": 92,
+              "cumulative": 2829
+            },
+            "655": {
+              "count": 94,
+              "cumulative": 2144
+            }
+          }
+        },
+        "arts": {
+          "source": "https://www.sneac.com/info/1019/18393.htm",
+          "scores": {
+            "631": {
+              "count": 29,
+              "cumulative": 689
+            }
+          }
+        }
+      },
+      "records": [
+        {
+          "code": "science",
+          "label": "理工组",
+          "subject": "science",
+          "requirement": "物理 + 化学",
+          "highest": 684,
+          "score": 655
+        },
+        {
+          "code": "medical",
+          "label": "医科组",
+          "subject": "science",
+          "requirement": "物理 + 化学",
+          "highest": 678,
+          "score": 648
+        },
+        {
+          "code": "arts",
+          "label": "文科组",
+          "subject": "arts",
+          "requirement": "仅历史",
+          "highest": 640,
+          "score": 631
+        }
+      ]
+    }
+  },
+  {
+    "id": "hust",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.hust.edu.cn/info/1008/3111.htm",
+      "sourceName": "华中科技大学本科招生信息网",
+      "published": "2026-09-30",
+      "distribution": {
+        "science": {
+          "source": "https://www.sneea.cn/info/1027/17658.htm",
+          "scores": {
+            "650": {
+              "count": 121,
+              "cumulative": 2889
+            },
+            "656": {
+              "count": 109,
+              "cumulative": 2153
+            },
+            "662": {
+              "count": 112,
+              "cumulative": 1565
+            },
+            "666": {
+              "count": 86,
+              "cumulative": 1207
+            }
+          }
+        },
+        "arts": {
+          "source": "https://www.sneea.cn/info/1027/17654.htm",
+          "scores": {
+            "622": {
+              "count": 37,
+              "cumulative": 744
+            }
+          }
+        }
+      },
+      "records": [
+        {
+          "code": "science-01",
+          "label": "理工01组",
+          "subject": "science",
+          "highest": 676,
+          "score": 666
+        },
+        {
+          "code": "science-02",
+          "label": "理工02组",
+          "subject": "science",
+          "highest": 678,
+          "score": 656
+        },
+        {
+          "code": "medical-01",
+          "label": "医科01组",
+          "subject": "science",
+          "highest": 671,
+          "score": 662
+        },
+        {
+          "code": "medical-02",
+          "label": "医科02组",
+          "subject": "science",
+          "highest": 661,
+          "score": 650
+        },
+        {
+          "code": "arts",
+          "label": "文科组",
+          "subject": "arts",
+          "highest": 632,
+          "score": 622
+        }
+      ]
+    }
+  },
+  {
+    "id": "fudan",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://ao.fudan.edu.cn/b7/a6/c36333a767910/page.htm",
+      "sourceName": "学校本科招生网",
+      "records": [
+        {
+          "code": "arts",
+          "label": "普通批 · 历史类",
+          "subject": "arts",
+          "score": 664
+        },
+        {
+          "code": "science",
+          "label": "普通批 · 物理类",
+          "subject": "science",
+          "score": 690
+        },
+        {
+          "code": "medical",
+          "label": "医学院 · 物理类",
+          "subject": "science",
+          "score": 687,
+          "additional": true
+        }
+      ],
+      "note": "普通批主记录为复旦大学；医学院单独列出，不合并统计。"
+    }
+  },
+  {
+    "id": "shu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bkzsw.shu.edu.cn/info/7653/38000.htm",
+      "sourceName": "学校本科招生网",
+      "records": [
+        {
+          "code": "arts",
+          "label": "普通类 · 历史",
+          "subject": "arts",
+          "requirement": "不限 / 历史",
+          "score": 612
+        },
+        {
+          "code": "science-chem",
+          "label": "普通类 · 物理化学",
+          "subject": "science",
+          "requirement": "物理 + 化学",
+          "score": 616
+        },
+        {
+          "code": "science-physics",
+          "label": "普通类 · 物理",
+          "subject": "science",
+          "requirement": "物理",
+          "score": 610
+        },
+        {
+          "code": "cooperation-arts",
+          "label": "中外合作 · 历史",
+          "subject": "arts",
+          "score": 596,
+          "additional": true
+        },
+        {
+          "code": "cooperation-science",
+          "label": "中外合作 · 物理",
+          "subject": "science",
+          "score": 602,
+          "additional": true
+        },
+        {
+          "code": "national",
+          "label": "国家专项 · 物理化学",
+          "subject": "science",
+          "score": 602,
+          "additional": true
+        },
+        {
+          "code": "preparatory",
+          "label": "民族预科 · 历史",
+          "subject": "arts",
+          "score": 557,
+          "additional": true
+        }
+      ],
+      "note": "校方普通类录取分数统计；不作为正式投档线。"
+    }
+  },
+  {
+    "id": "shu",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bkzsw.shu.edu.cn/info/1798/38940.htm",
+      "sourceName": "学校本科招生网",
+      "records": [
+        {
+          "code": "arts",
+          "label": "普通类 · 历史",
+          "subject": "arts",
+          "requirement": "不限 / 历史",
+          "score": 603
+        },
+        {
+          "code": "science",
+          "label": "普通类 · 物理化学",
+          "subject": "science",
+          "requirement": "物理 + 化学",
+          "score": 622
+        },
+        {
+          "code": "cooperation-arts",
+          "label": "中外合作 · 历史",
+          "subject": "arts",
+          "score": 580,
+          "additional": true
+        },
+        {
+          "code": "cooperation-science",
+          "label": "中外合作 · 物理",
+          "subject": "science",
+          "score": 602,
+          "additional": true
+        },
+        {
+          "code": "national",
+          "label": "国家专项 · 物理化学",
+          "subject": "science",
+          "score": 610,
+          "additional": true
+        },
+        {
+          "code": "preparatory",
+          "label": "民族预科 · 历史",
+          "subject": "arts",
+          "score": 567,
+          "additional": true
+        }
+      ],
+      "note": "校方普通类录取分数统计；不作为正式投档线。"
+    }
+  },
+  {
+    "id": "pku",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm",
+      "sourceName": "北京大学官方招生信息",
+      "note": "校方各年分数线表，批次名称沿用原表“一批”；不含医学部。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "一批",
+          "score": 669,
+          "code": "0",
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+        },
+        {
+          "subject": "science",
+          "label": "一批",
+          "score": 696,
+          "code": "1",
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pku",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm",
+      "sourceName": "北京大学官方招生信息",
+      "note": "校方各年分数线表，批次名称沿用原表“一批”；不含医学部。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "一批",
+          "score": 668,
+          "code": "0",
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+        },
+        {
+          "subject": "science",
+          "label": "一批",
+          "score": 694,
+          "code": "1",
+          "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tjpu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.tiangong.edu.cn/2025/1229/c196a111716/page.htm",
+      "sourceName": "天津工业大学官方招生信息",
+      "note": "按官网陕西本科批分专业表汇总，最低位次沿用最低分专业原表；不是院校正式投档线。",
+      "records": [
+        {
+          "subject": "science",
+          "label": "普通类 · 专业汇总",
+          "score": 526,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 32,
+          "highest": 599,
+          "publishedRank": 39698,
+          "code": "0",
+          "source": "https://zsb.tiangong.edu.cn/2025/1229/c196a111716/page.htm"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业汇总",
+          "score": 565,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 4,
+          "highest": 577,
+          "publishedRank": 5424,
+          "code": "1",
+          "source": "https://zsb.tiangong.edu.cn/2025/1229/c196a111716/page.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gzmu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm",
+      "sourceName": "贵州大学官方招生信息",
+      "note": "按官网2025年陕西分专业最低分汇总；原表未公布最高分，不以专业最低分的最大值代替最高分。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "高校专项 · 专业汇总",
+          "score": 564,
+          "category": "高校专项",
+          "derived": true,
+          "majorCount": 1,
+          "additional": true,
+          "code": "0",
+          "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "高校专项 · 专业汇总",
+          "score": 553,
+          "category": "高校专项",
+          "derived": true,
+          "majorCount": 1,
+          "additional": true,
+          "code": "1",
+          "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业汇总",
+          "score": 572,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 7,
+          "code": "2",
+          "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业汇总",
+          "score": 544,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 28,
+          "code": "3",
+          "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "中外合作办学 · 专业汇总",
+          "score": 501,
+          "category": "中外合作办学",
+          "derived": true,
+          "majorCount": 5,
+          "additional": true,
+          "code": "4",
+          "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "szu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zs.szu.edu.cn/info/1153/2969.htm",
+      "sourceName": "深圳大学官方招生信息",
+      "note": "校方说明：录取分数按第一次投档情况统计；位次沿用原表最低排位。",
+      "records": [
+        {
+          "subject": "science",
+          "label": "普通类",
+          "score": 605,
+          "publishedRank": 9952,
+          "highest": 627,
+          "code": "0",
+          "source": "https://zs.szu.edu.cn/info/1153/2969.htm"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类",
+          "score": 599,
+          "publishedRank": 2135,
+          "highest": 618,
+          "code": "1",
+          "source": "https://zs.szu.edu.cn/info/1153/2969.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "zzu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://ao.zzu.edu.cn/xxgk/lnlq_/sx1/a2025.htm",
+      "sourceName": "郑州大学官方招生信息",
+      "note": "按校方陕西本科批专业记录汇总，艺术类表格单独排除；不是院校正式投档线。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业汇总",
+          "score": 579,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 9,
+          "highest": 619,
+          "publishedRank": 3869,
+          "code": "0",
+          "source": "https://ao.zzu.edu.cn/xxgk/lnlq_/sx1/a2025.htm"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业汇总",
+          "score": 556,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 30,
+          "highest": 616,
+          "publishedRank": 25577,
+          "code": "1",
+          "source": "https://ao.zzu.edu.cn/xxgk/lnlq_/sx1/a2025.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "uibe",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848",
+      "sourceName": "对外经济贸易大学官方招生信息",
+      "note": "校方公开录取统计；普通类与专项类型分开展示。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "国家专项",
+          "score": 606,
+          "category": "国家专项",
+          "additional": true,
+          "highest": 620,
+          "code": "0",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项",
+          "score": 584,
+          "category": "国家专项",
+          "additional": true,
+          "highest": 604,
+          "code": "1",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        },
+        {
+          "subject": "arts",
+          "label": "高校专项",
+          "score": 583,
+          "category": "高校专项",
+          "additional": true,
+          "highest": 586,
+          "code": "2",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "高校专项",
+          "score": 579,
+          "category": "高校专项",
+          "additional": true,
+          "highest": 580,
+          "code": "3",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类",
+          "score": 633,
+          "category": "普通类",
+          "additional": false,
+          "highest": 645,
+          "code": "4",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "普通类",
+          "score": 613,
+          "category": "普通类",
+          "additional": false,
+          "highest": 629,
+          "code": "5",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+        }
+      ]
+    }
+  },
+  {
+    "id": "uibe",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848",
+      "sourceName": "对外经济贸易大学官方招生信息",
+      "note": "校方公开录取统计；普通类与专项类型分开展示。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "国家专项",
+          "score": 593,
+          "category": "国家专项",
+          "additional": true,
+          "highest": 606,
+          "code": "0",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项",
+          "score": 588,
+          "category": "国家专项",
+          "additional": true,
+          "highest": 605,
+          "code": "1",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "arts",
+          "label": "高校专项",
+          "score": 591,
+          "category": "高校专项",
+          "additional": true,
+          "highest": 607,
+          "code": "2",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "高校专项",
+          "score": 601,
+          "category": "高校专项",
+          "additional": true,
+          "highest": 610,
+          "code": "3",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类",
+          "score": 628,
+          "category": "普通类",
+          "additional": false,
+          "highest": 636,
+          "code": "4",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "普通类",
+          "score": 620,
+          "category": "普通类",
+          "additional": false,
+          "highest": 634,
+          "code": "5",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "arts",
+          "label": "保险学 · 中外合作办学",
+          "score": 603,
+          "additional": true,
+          "highest": 607,
+          "code": "6",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        },
+        {
+          "subject": "science",
+          "label": "精算学 · 中外合作办学",
+          "score": 606,
+          "additional": true,
+          "highest": 616,
+          "code": "7",
+          "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ecust",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf",
+      "sourceName": "华东理工大学官方招生信息",
+      "note": "按官方陕西分专业表汇总；国家专项、高校专项单列，艺术类分数不混入普通类。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "本科普通批 · 专业汇总",
+          "score": 577,
+          "category": "本科普通批",
+          "derived": true,
+          "majorCount": 4,
+          "highest": 601,
+          "requirement": "历史+不限",
+          "code": "0",
+          "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "本科普通批 · 专业汇总",
+          "score": 616,
+          "category": "本科普通批",
+          "derived": true,
+          "majorCount": 16,
+          "highest": 628,
+          "requirement": "物理+化学",
+          "code": "1",
+          "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "高校专项计划 · 专业汇总",
+          "score": 601,
+          "category": "高校专项计划",
+          "derived": true,
+          "majorCount": 2,
+          "highest": 605,
+          "requirement": "物理+化学",
+          "additional": true,
+          "code": "2",
+          "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项计划 · 专业汇总",
+          "score": 595,
+          "category": "国家专项计划",
+          "derived": true,
+          "majorCount": 9,
+          "highest": 616,
+          "requirement": "物理+化学",
+          "additional": true,
+          "code": "3",
+          "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项计划 · 专业汇总",
+          "score": 601,
+          "category": "国家专项计划",
+          "derived": true,
+          "majorCount": 1,
+          "highest": 602,
+          "requirement": "物理+不限",
+          "additional": true,
+          "code": "4",
+          "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "snnu",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf",
+      "sourceName": "陕西师范大学官方招生信息",
+      "note": "校方2026年普通类录取汇总；国家公费师范生、优师专项等有报考条件，单独展示。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "国家公费师范生",
+          "score": 598,
+          "category": "国家公费师范生",
+          "additional": true,
+          "code": "0",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "国家优师专项",
+          "score": 596,
+          "category": "国家优师专项",
+          "additional": true,
+          "code": "1",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "国家专项",
+          "score": 587,
+          "category": "国家专项",
+          "additional": true,
+          "code": "2",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "高校专项",
+          "score": 608,
+          "category": "高校专项",
+          "additional": true,
+          "code": "3",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "普通类",
+          "score": 579,
+          "category": "普通类",
+          "additional": false,
+          "code": "4",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "民族班",
+          "score": 570,
+          "category": "民族班",
+          "additional": true,
+          "code": "5",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家公费师范生",
+          "score": 610,
+          "category": "国家公费师范生",
+          "additional": true,
+          "code": "6",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家优师专项",
+          "score": 593,
+          "category": "国家优师专项",
+          "additional": true,
+          "code": "7",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项",
+          "score": 556,
+          "category": "国家专项",
+          "additional": true,
+          "code": "8",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "高校专项",
+          "score": 596,
+          "category": "高校专项",
+          "additional": true,
+          "code": "9",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "普通类",
+          "score": 575,
+          "category": "普通类",
+          "additional": false,
+          "code": "10",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "民族班",
+          "score": 592,
+          "category": "民族班",
+          "additional": true,
+          "code": "11",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "电子信息技术（中外合作办学）",
+          "score": 559,
+          "category": "电子信息技术（中外合作办学）",
+          "additional": true,
+          "code": "12",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "物理学（中外合作办学）",
+          "score": 549,
+          "category": "物理学（中外合作办学）",
+          "additional": true,
+          "code": "13",
+          "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hnu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf",
+      "sourceName": "湖南大学官方招生信息",
+      "note": "取2026年报考指南中的2025年实际专业最低分列；2026计划数未作录取人数。只汇总有分数的专业，“/”未作零分。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业组1：首选历史，再选不限",
+          "score": 624,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 4,
+          "publishedRank": 929,
+          "code": "0",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业组2：首选物理，再选不限",
+          "score": 619,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 2,
+          "publishedRank": 7169,
+          "code": "1",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业组3：首选物理，再选化学",
+          "score": 621,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 7,
+          "publishedRank": 6789,
+          "code": "2",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业组4：首选物理，再选化学",
+          "score": 622,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 6,
+          "publishedRank": 6598,
+          "code": "3",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业组:5：首选物理，再选化学",
+          "score": 621,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 7,
+          "publishedRank": 6789,
+          "code": "4",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "提前批 · 提前批：首选历史，再选思想政治",
+          "score": 623,
+          "category": "提前批",
+          "derived": true,
+          "majorCount": 1,
+          "publishedRank": 966,
+          "additional": true,
+          "code": "5",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "国家专项 · 建筑学",
+          "score": 584,
+          "additional": true,
+          "publishedRank": 15853,
+          "code": "6",
+          "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "bnu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf",
+      "sourceName": "北京师范大学官方招生信息",
+      "note": "校方2026报考指南明确列出的2025年校区调档线与位次。普通类为北京校区；珠海校区优师计划另列。优师历史605分的校方位次1767与普通一分一段区间不一致，保留原表并提示向招办核实。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "北京校区 · 普通类",
+          "score": 652,
+          "publishedRank": 188,
+          "code": "0",
+          "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "北京校区 · 普通类",
+          "score": 635,
+          "publishedRank": 4293,
+          "code": "1",
+          "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf"
+        },
+        {
+          "subject": "arts",
+          "label": "珠海校区 · 优师计划",
+          "score": 605,
+          "additional": true,
+          "publishedRank": 1767,
+          "code": "2",
+          "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf"
+        },
+        {
+          "subject": "science",
+          "label": "珠海校区 · 优师计划",
+          "score": 598,
+          "additional": true,
+          "publishedRank": 11646,
+          "code": "3",
+          "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "dhu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zs.dhu.edu.cn/_t3031/2026/0228/c25199a371804/page.htm",
+      "sourceName": "东华大学官方招生信息",
+      "note": "沿用校方2025陕西表中的“科类总计”，不把专业行重复计入。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 科类总计",
+          "score": 593,
+          "requirement": "历史 + 不限",
+          "highest": 611,
+          "code": "0",
+          "source": "https://zs.dhu.edu.cn/_t3031/2026/0228/c25199a371804/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 科类总计",
+          "score": 598,
+          "requirement": "物理 + 化学",
+          "highest": 614,
+          "code": "1",
+          "source": "https://zs.dhu.edu.cn/_t3031/2026/0228/c25199a371804/page.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gxnu-edu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm",
+      "sourceName": "广西师范大学官方招生信息",
+      "note": "按官网普通类专业表汇总；艺体类排除，中高计划及职教师资培养类型单列。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业汇总",
+          "score": 518,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 6,
+          "highest": 552,
+          "publishedRank": 13217,
+          "code": "0",
+          "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业汇总",
+          "score": 470,
+          "category": "普通类",
+          "derived": true,
+          "majorCount": 20,
+          "highest": 509,
+          "publishedRank": 76071,
+          "code": "1",
+          "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "中高计划 · 专业汇总",
+          "score": 483,
+          "category": "中高计划",
+          "derived": true,
+          "majorCount": 1,
+          "highest": 483,
+          "publishedRank": 66776,
+          "additional": true,
+          "code": "2",
+          "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm"
+        },
+        {
+          "subject": "science",
+          "label": "按职教师资培养 · 专业汇总",
+          "score": 489,
+          "category": "按职教师资培养",
+          "derived": true,
+          "majorCount": 1,
+          "highest": 490,
+          "publishedRank": 62615,
+          "additional": true,
+          "code": "3",
+          "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "henu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zs.henu.edu.cn/info/1035/9293.htm",
+      "sourceName": "河南大学官方招生信息",
+      "note": "按校方2025年普通类录取公告中的陕西省图片表核对并汇总，中澳合作专业单列；不是院校正式投档线。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 专业汇总",
+          "score": 562,
+          "derived": true,
+          "majorCount": 11,
+          "highest": 588,
+          "code": "0",
+          "source": "https://zs.henu.edu.cn/info/1035/9293.htm"
+        },
+        {
+          "subject": "science",
+          "label": "普通类 · 专业汇总",
+          "score": 516,
+          "derived": true,
+          "majorCount": 13,
+          "highest": 581,
+          "code": "1",
+          "source": "https://zs.henu.edu.cn/info/1035/9293.htm"
+        },
+        {
+          "subject": "arts",
+          "label": "中外合作办学 · 专业汇总",
+          "score": 534,
+          "derived": true,
+          "majorCount": 2,
+          "additional": true,
+          "highest": 556,
+          "code": "2",
+          "source": "https://zs.henu.edu.cn/info/1035/9293.htm"
+        },
+        {
+          "subject": "science",
+          "label": "中外合作办学 · 计算机科学与技术",
+          "score": 543,
+          "additional": true,
+          "highest": 560,
+          "code": "3",
+          "source": "https://zs.henu.edu.cn/info/1035/9293.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "jnu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp",
+      "sourceName": "暨南大学官方招生信息",
+      "note": "沿用校方表格的本科批汇总行；普通类、戏文单列和国家专项分别展示。",
+      "records": [
+        {
+          "subject": "science",
+          "label": "本科批 · 普通类",
+          "score": 580,
+          "highest": 619,
+          "code": "0",
+          "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+        },
+        {
+          "subject": "arts",
+          "label": "本科批 · 普通类",
+          "score": 596,
+          "highest": 608,
+          "code": "1",
+          "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+        },
+        {
+          "subject": "arts",
+          "label": "戏剧影视文学 · 单列",
+          "score": 577,
+          "additional": true,
+          "highest": 584,
+          "code": "2",
+          "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+        },
+        {
+          "subject": "science",
+          "label": "本科批 · 国家专项",
+          "score": 530,
+          "additional": true,
+          "highest": 609,
+          "code": "3",
+          "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+        },
+        {
+          "subject": "arts",
+          "label": "本科批 · 国家专项",
+          "score": 572,
+          "additional": true,
+          "highest": 602,
+          "code": "4",
+          "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+        }
+      ]
+    }
+  },
+  {
+    "id": "caa",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zb.caa.edu.cn/info/1012/1010.htm",
+      "sourceName": "中国美术学院官方招生信息",
+      "note": "校方2025年普通类专业最低投档分数表；只收录艺术学理论类，不与艺术类统考综合分混用。历史科类经同年公开分组信息交叉核对；未抄录第三方有差异的位次，按官方同分区间参考。",
+      "records": [
+        {
+          "subject": "arts",
+          "label": "普通类 · 艺术学理论类",
+          "score": 587,
+          "code": "0",
+          "source": "https://zb.caa.edu.cn/info/1012/1010.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "neau",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.neau.edu.cn/zsw/lnfs.html",
+      "sourceName": "东北农业大学本科招生信息网",
+      "records": [
+        {
+          "code": "official-science-0",
+          "label": "物理+化学组",
+          "subject": "science",
+          "category": "普通类",
+          "score": 545,
+          "highest": 578,
+          "publishedRank": 30254,
+          "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+        },
+        {
+          "code": "official-science-1",
+          "label": "物理不限选科组",
+          "subject": "science",
+          "category": "普通类",
+          "score": 547,
+          "highest": 554,
+          "publishedRank": 29370,
+          "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+        },
+        {
+          "code": "official-arts-2",
+          "label": "历史不限选科组",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 568,
+          "highest": 571,
+          "publishedRank": 5076,
+          "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+        }
+      ],
+      "note": "校方公开专业组录取统计；对应省排名保留官网口径，不能当作省考试院精确投档位次。"
+    }
+  },
+  {
+    "id": "neau",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsb.neau.edu.cn/zsw/lnfs.html",
+      "sourceName": "东北农业大学本科招生信息网",
+      "records": [
+        {
+          "code": "official-science-0",
+          "label": "物理+化学组",
+          "subject": "science",
+          "category": "普通类",
+          "score": 546,
+          "highest": 600,
+          "publishedRank": 36152,
+          "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+        },
+        {
+          "code": "official-arts-1",
+          "label": "历史不限选科组",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 550,
+          "highest": 563,
+          "publishedRank": 5999,
+          "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+        }
+      ],
+      "note": "校方公开专业组录取统计；对应省排名保留官网口径，不能当作省考试院精确投档位次。"
+    }
+  },
+  {
+    "id": "bsu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx",
+      "sourceName": "北京体育大学本科招生网",
+      "records": [
+        {
+          "code": "major-0",
+          "label": "普通类 · 新闻学",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 581,
+          "highest": 581,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-1",
+          "label": "普通类 · 马克思主义理论",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "思想政治,历史(2门科目考生均须选考方可报考)",
+          "score": 590,
+          "highest": 590,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-2",
+          "label": "普通类 · 汉语国际教育",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 580,
+          "highest": 580,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-3",
+          "label": "普通类 · 体育经济与管理",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 579,
+          "highest": 582,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-4",
+          "label": "普通类 · 公共事业管理",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 578,
+          "highest": 578,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-5",
+          "label": "普通类 · 英语",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 578,
+          "highest": 578,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-6",
+          "label": "普通类 · 新闻学",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 583,
+          "highest": 583,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-7",
+          "label": "普通类 · 运动人体科学",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理(1门科目考生必须选考方可报考)",
+          "score": 584,
+          "highest": 584,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-8",
+          "label": "普通类 · 康复物理治疗",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理,化学(2门科目考生均须选考方可报考)",
+          "score": 568,
+          "highest": 568,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-9",
+          "label": "普通类 · 数据科学与大数据技术",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理,化学(2门科目考生均须选考方可报考)",
+          "score": 582,
+          "highest": 582,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-10",
+          "label": "普通类 · 运动康复",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理(1门科目考生必须选考方可报考)",
+          "score": 575,
+          "highest": 575,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        },
+        {
+          "code": "major-11",
+          "label": "普通类 · 体育经济与管理",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 568,
+          "highest": 568,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+        }
+      ],
+      "note": "校方普通类分专业录取成绩；逐专业保留，页面最低分按已公布专业比较，不冒充完整专业组投档线。"
+    }
+  },
+  {
+    "id": "bsu",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx",
+      "sourceName": "北京体育大学本科招生网",
+      "records": [
+        {
+          "code": "major-0",
+          "label": "普通类 · 新闻学",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 576,
+          "highest": 576,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-1",
+          "label": "普通类 · 马克思主义理论",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "思想政治,历史(2门科目考生均须选考方可报考)",
+          "score": 572,
+          "highest": 572,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-2",
+          "label": "普通类 · 汉语国际教育",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 567,
+          "highest": 567,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-3",
+          "label": "普通类 · 体育经济与管理",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 562,
+          "highest": 564,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-4",
+          "label": "普通类 · 公共事业管理",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 556,
+          "highest": 556,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-5",
+          "label": "普通类 · 英语",
+          "subject": "arts",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 570,
+          "highest": 570,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-6",
+          "label": "普通类 · 运动人体科学",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理(1门科目考生必须选考方可报考)",
+          "score": 584,
+          "highest": 584,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-7",
+          "label": "普通类 · 康复物理治疗",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理,化学(2门科目考生均须选考方可报考)",
+          "score": 582,
+          "highest": 582,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-8",
+          "label": "普通类 · 数据科学与大数据技术",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理,化学(2门科目考生均须选考方可报考)",
+          "score": 587,
+          "highest": 587,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-9",
+          "label": "普通类 · 运动康复",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "物理(1门科目考生必须选考方可报考)",
+          "score": 591,
+          "highest": 591,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-10",
+          "label": "普通类 · 体育经济与管理",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 586,
+          "highest": 586,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        },
+        {
+          "code": "major-11",
+          "label": "普通类 · 公共事业管理",
+          "subject": "science",
+          "category": "普通类",
+          "requirement": "不提科目要求",
+          "score": 567,
+          "highest": 567,
+          "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+        }
+      ],
+      "note": "校方普通类分专业录取成绩；逐专业保留，页面最低分按已公布专业比较，不冒充完整专业组投档线。"
+    }
+  },
+  {
+    "id": "hustc",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+      "sourceName": "华中师范大学本科招生网",
+      "records": [
+        {
+          "code": "special-0",
+          "label": "提前批优师计划",
+          "subject": "arts",
+          "category": "提前批优师计划",
+          "score": 601,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 2060
+        },
+        {
+          "code": "special-1",
+          "label": "提前批公费师范 · 不含征集",
+          "subject": "arts",
+          "category": "提前批公费师范",
+          "score": 614,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 1355
+        },
+        {
+          "code": "special-2",
+          "label": "提前批公费师范 · 不含征集",
+          "subject": "science",
+          "category": "提前批公费师范",
+          "score": 597,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 12142
+        },
+        {
+          "code": "special-3",
+          "label": "高校专项",
+          "subject": "science",
+          "category": "高校专项",
+          "score": 503,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 53232
+        },
+        {
+          "code": "special-4",
+          "label": "高校专项",
+          "subject": "arts",
+          "category": "高校专项",
+          "score": 558,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 6357
+        },
+        {
+          "code": "special-5",
+          "label": "国家专项",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 565,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 22118
+        },
+        {
+          "code": "special-6",
+          "label": "国家专项",
+          "subject": "arts",
+          "category": "国家专项",
+          "score": 580,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 3768
+        }
+      ],
+      "note": "校方陕西分省录取表；公费师范、优师、国家专项、高校专项分别保留，均不算普通本科批统一门槛。来源需选择陕西和相应年份。"
+    }
+  },
+  {
+    "id": "hustc",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+      "sourceName": "华中师范大学本科招生网",
+      "records": [
+        {
+          "code": "special-0",
+          "label": "提前批公费师范",
+          "subject": "science",
+          "category": "提前批公费师范",
+          "score": 606,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 12311
+        },
+        {
+          "code": "special-1",
+          "label": "提前批优师计划",
+          "subject": "science",
+          "category": "提前批优师计划",
+          "score": 608,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 11659
+        },
+        {
+          "code": "special-2",
+          "label": "提前批公费师范 · 不含征集补投",
+          "subject": "arts",
+          "category": "提前批公费师范",
+          "score": 611,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 1146
+        },
+        {
+          "code": "special-3",
+          "label": "提前批优师计划",
+          "subject": "arts",
+          "category": "提前批优师计划",
+          "score": 607,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index",
+          "publishedRank": 1331
+        },
+        {
+          "code": "special-4",
+          "label": "国家专项 第261组",
+          "subject": "arts",
+          "category": "国家专项 第261组",
+          "score": 571,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-5",
+          "label": "国家专项 第263组",
+          "subject": "arts",
+          "category": "国家专项 第263组",
+          "score": 585,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-6",
+          "label": "高校专项 第671组",
+          "subject": "arts",
+          "category": "高校专项 第671组",
+          "score": 563,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-7",
+          "label": "国家专项 第266组",
+          "subject": "science",
+          "category": "国家专项 第266组",
+          "score": 546,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-8",
+          "label": "国家专项 第267组",
+          "subject": "science",
+          "category": "国家专项 第267组",
+          "score": 597,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-9",
+          "label": "国家专项 第269组",
+          "subject": "science",
+          "category": "国家专项 第269组",
+          "score": 576,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        },
+        {
+          "code": "special-10",
+          "label": "高校专项 第676组",
+          "subject": "science",
+          "category": "高校专项 第676组",
+          "score": 560,
+          "additional": true,
+          "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+        }
+      ],
+      "note": "校方陕西分省录取表；公费师范、优师、国家专项、高校专项分别保留，均不算普通本科批统一门槛。来源需选择陕西和相应年份。"
+    }
+  },
+  {
+    "id": "lnu",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zs.lnu.edu.cn/info/14381/71600.htm",
+      "sourceName": "辽宁大学本科招生网",
+      "records": [
+        {
+          "code": "major-0",
+          "label": "普通类 · 制药工程",
+          "subject": "science",
+          "category": "普通类",
+          "score": 592,
+          "highest": 597,
+          "publishedRank": 13439,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-1",
+          "label": "普通类 · 汉语国际教育",
+          "subject": "science",
+          "category": "普通类",
+          "score": 552,
+          "highest": 560,
+          "publishedRank": 27204,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-2",
+          "label": "普通类 · 电子信息科学与技术",
+          "subject": "science",
+          "category": "普通类",
+          "score": 598,
+          "highest": 598,
+          "publishedRank": 11885,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-3",
+          "label": "普通类 · 通信工程",
+          "subject": "science",
+          "category": "普通类",
+          "score": 597,
+          "highest": 597,
+          "publishedRank": 12142,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-4",
+          "label": "普通类 · 国际政治",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 576,
+          "highest": 582,
+          "publishedRank": 4184,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-5",
+          "label": "普通类 · 国际经济与贸易",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 575,
+          "highest": 575,
+          "publishedRank": 4298,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-6",
+          "label": "普通类 · 朝鲜语",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 572,
+          "highest": 574,
+          "publishedRank": 4617,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-7",
+          "label": "普通类 · 经济学类",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 577,
+          "highest": 582,
+          "publishedRank": 4062,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-8",
+          "label": "普通类 · 考古学",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 576,
+          "highest": 583,
+          "publishedRank": 4184,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf"
+        },
+        {
+          "code": "major-9",
+          "label": "国家专项计划 · 化学类",
+          "subject": "science",
+          "category": "国家专项计划",
+          "score": 559,
+          "highest": 562,
+          "publishedRank": 24395,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf",
+          "additional": true
+        },
+        {
+          "code": "major-10",
+          "label": "国家专项计划 · 数学与应用数学",
+          "subject": "science",
+          "category": "国家专项计划",
+          "score": 557,
+          "highest": 565,
+          "publishedRank": 25187,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf",
+          "additional": true
+        },
+        {
+          "code": "major-11",
+          "label": "国家专项计划 · 汉语言文学",
+          "subject": "arts",
+          "category": "国家专项计划",
+          "score": 585,
+          "highest": 588,
+          "publishedRank": 3310,
+          "source": "https://zs.lnu.edu.cn/__local/C/8E/E5/634FEBF1D639EAC31A36F20652E_AF03930E_F831.pdf",
+          "additional": true
+        }
+      ],
+      "note": "校方陕西分专业录取PDF；普通类和国家专项分别列出。各专业最低分不等于完整专业组投档线。"
+    }
+  },
+  {
+    "id": "muc",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm",
+      "sourceName": "中央民族大学本科招生网",
+      "records": [
+        {
+          "code": "summary-0",
+          "label": "普通本科",
+          "subject": "arts",
+          "category": "普通本科",
+          "score": 609,
+          "highest": 627,
+          "publishedRank": 1616,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+        },
+        {
+          "code": "summary-1",
+          "label": "普通本科",
+          "subject": "science",
+          "category": "普通本科",
+          "score": 598,
+          "highest": 619,
+          "publishedRank": 11885,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+        },
+        {
+          "code": "summary-2",
+          "label": "国家专项",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 578,
+          "highest": 593,
+          "publishedRank": 17763,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm",
+          "additional": true
+        }
+      ],
+      "note": "校方分省录取概况；普通本科与国家专项分开保留，来源需选择陕西和相应年份。"
+    }
+  },
+  {
+    "id": "muc",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm",
+      "sourceName": "中央民族大学本科招生网",
+      "records": [
+        {
+          "code": "summary-0",
+          "label": "普通本科",
+          "subject": "arts",
+          "category": "普通本科",
+          "score": 604,
+          "highest": 627,
+          "publishedRank": 1447,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+        },
+        {
+          "code": "summary-1",
+          "label": "普通本科",
+          "subject": "science",
+          "category": "普通本科",
+          "score": 608,
+          "highest": 626,
+          "publishedRank": 11659,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+        },
+        {
+          "code": "summary-2",
+          "label": "国家专项",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 584,
+          "highest": 595,
+          "publishedRank": 19509,
+          "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm",
+          "additional": true
+        }
+      ],
+      "note": "校方分省录取概况；普通本科与国家专项分开保留，来源需选择陕西和相应年份。"
+    }
+  },
+  {
+    "id": "cufe",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html",
+      "sourceName": "中央财经大学本科招生网",
+      "records": [
+        {
+          "code": "summary-0",
+          "label": "统招",
+          "subject": "arts",
+          "category": "统招",
+          "score": 635,
+          "highest": 649,
+          "publishedRank": 560,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html"
+        },
+        {
+          "code": "summary-1",
+          "label": "国家专项",
+          "subject": "arts",
+          "category": "国家专项",
+          "score": 608,
+          "highest": 633,
+          "publishedRank": 1680,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html",
+          "additional": true
+        },
+        {
+          "code": "summary-2",
+          "label": "高校专项",
+          "subject": "arts",
+          "category": "高校专项",
+          "score": 541,
+          "highest": 541,
+          "publishedRank": 8894,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html",
+          "additional": true
+        },
+        {
+          "code": "summary-3",
+          "label": "统招",
+          "subject": "science",
+          "category": "统招",
+          "score": 618,
+          "highest": 644,
+          "publishedRank": 7364,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html"
+        },
+        {
+          "code": "summary-4",
+          "label": "国家专项",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 595,
+          "highest": 614,
+          "publishedRank": 12658,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html",
+          "additional": true
+        },
+        {
+          "code": "summary-5",
+          "label": "高校专项",
+          "subject": "science",
+          "category": "高校专项",
+          "score": 559,
+          "highest": 559,
+          "publishedRank": 24395,
+          "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html",
+          "additional": true
+        }
+      ],
+      "note": "校方分省录取统计，统招、国家专项、高校专项分别列出。"
+    }
+  },
+  {
+    "id": "tju",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs",
+      "sourceName": "天津大学本科招生网",
+      "records": [
+        {
+          "code": "summary-0",
+          "label": "普通类 · 北洋园校区",
+          "subject": "science",
+          "category": "普通类",
+          "score": 638,
+          "highest": 666,
+          "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs"
+        },
+        {
+          "code": "summary-1",
+          "label": "普通类 · 北洋园校区",
+          "subject": "arts",
+          "category": "普通类",
+          "score": 628,
+          "highest": 637,
+          "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs"
+        },
+        {
+          "code": "summary-2",
+          "label": "国家专项 · 北洋园校区",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 599,
+          "highest": 620,
+          "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs",
+          "additional": true
+        },
+        {
+          "code": "summary-3",
+          "label": "高校专项 · 北洋园校区",
+          "subject": "science",
+          "category": "高校专项",
+          "score": 586,
+          "highest": 610,
+          "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs",
+          "additional": true
+        },
+        {
+          "code": "summary-4",
+          "label": "高校专项 · 北洋园校区",
+          "subject": "arts",
+          "category": "高校专项",
+          "score": 619,
+          "highest": 619,
+          "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs",
+          "additional": true
+        }
+      ],
+      "note": "校方陕西分省录取汇总；普通类、国家专项、高校专项分列，未提供精确最低位次。"
+    }
+  },
+  {
+    "id": "xjtlu",
+    "year": 2026,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://www.xjtlu.edu.cn/zh/admissions/domestic/ug/2023luqushuju",
+      "sourceName": "西交利物浦大学官网",
+      "records": [
+        {
+          "code": "cooperative-0",
+          "label": "合作办学 · 工商管理类",
+          "subject": "arts",
+          "category": "合作办学",
+          "requirement": "历史+不限",
+          "score": 519,
+          "highest": 597,
+          "additional": true,
+          "source": "https://www.xjtlu.edu.cn/zh/admissions/domestic/ug/2023luqushuju"
+        },
+        {
+          "code": "cooperative-1",
+          "label": "合作办学 · 金融学类",
+          "subject": "science",
+          "category": "合作办学",
+          "requirement": "物理+不限",
+          "score": 519,
+          "highest": 593,
+          "additional": true,
+          "source": "https://www.xjtlu.edu.cn/zh/admissions/domestic/ug/2023luqushuju"
+        },
+        {
+          "code": "cooperative-2",
+          "label": "合作办学 · 电子信息类",
+          "subject": "science",
+          "category": "合作办学",
+          "requirement": "物理+化学",
+          "score": 518,
+          "highest": 590,
+          "additional": true,
+          "source": "https://www.xjtlu.edu.cn/zh/admissions/domestic/ug/2023luqushuju"
+        }
+      ],
+      "note": "校方2026年分省录取数据中的陕西表；院校为合作办学，大类招生条件与费用应单独核对。"
+    }
+  },
+  {
+    "id": "bjut",
+    "year": 2025,
+    "dataset": {
+      "kind": "admission",
+      "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+      "sourceName": "北京工业大学本科招生网",
+      "records": [
+        {
+          "code": "major-0",
+          "label": "普通类 · 计算机科学与技术",
+          "subject": "science",
+          "category": "普通类",
+          "score": 615,
+          "highest": 619,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf"
+        },
+        {
+          "code": "major-1",
+          "label": "普通类 · 电子信息工程",
+          "subject": "science",
+          "category": "普通类",
+          "score": 614,
+          "highest": 617,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf"
+        },
+        {
+          "code": "major-2",
+          "label": "普通类 · 机械类",
+          "subject": "science",
+          "category": "普通类",
+          "score": 613,
+          "highest": 614,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf"
+        },
+        {
+          "code": "major-3",
+          "label": "普通类 · 土木类",
+          "subject": "science",
+          "category": "普通类",
+          "score": 606,
+          "highest": 612,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf"
+        },
+        {
+          "code": "major-4",
+          "label": "国家专项 · 材料类(实验班)",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 561,
+          "highest": 581,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+          "additional": true
+        },
+        {
+          "code": "major-5",
+          "label": "国家专项 · 土木类",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 549,
+          "highest": 560,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+          "additional": true
+        },
+        {
+          "code": "major-6",
+          "label": "国家专项 · 建筑学",
+          "subject": "science",
+          "category": "国家专项",
+          "score": 548,
+          "highest": 557,
+          "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+          "additional": true
+        }
+      ],
+      "note": "校方2025年京外分专业录取PDF第4页陕西部分；普通类与国家专项分列，不推算未公布位次。"
+    }
+  }
+]

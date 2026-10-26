@@ -1,0 +1,4310 @@
+[
+  {
+    "id": "shutcm",
+    "name": "上海中医药大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2024": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://ygzs.shutcm.edu.cn/",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "sjtu",
+    "name": "上海交通大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/125/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "shisu",
+    "name": "上海外国语大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/136/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "shu",
+    "name": "上海大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://bkzsw.shu.edu.cn/info/1798/38940.htm"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "https://bkzsw.shu.edu.cn/info/7653/38000.htm"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://bks.shu.edu.cn/pub/scores.aspx",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+        "title": "上海大学2026年艺术类本科专业录取分数线(校考)"
+      },
+      {
+        "url": "https://bkzsw.shu.edu.cn/info/1798/38940.htm",
+        "title": "上海大学2026年各省市最低录取分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "shupl",
+    "name": "上海政法学院",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/1011/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "shmtu",
+    "name": "上海海事大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/313/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://admission.shmtu.edu.cn/zsfs/list.htm",
+        "title": "招生分数"
+      },
+      {
+        "url": "https://admission.shmtu.edu.cn/zsfs/list.htm",
+        "title": "历年录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "sufe",
+    "name": "上海财经大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/130/provinceline"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/130/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "neau",
+    "name": "东北农业大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://zsb.neau.edu.cn/zsw/lnfs.html"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "neu",
+    "name": "东北大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/134/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zs.neu.edu.cn/11196/list.htm",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zs.neu.edu.cn/2026/0715/c11330a457917/page.htm",
+        "title": "东北大学2026年各省份各批次各科类录取最低分公示"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nenu",
+    "name": "东北师范大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/142/provinceline"
+      },
+      "2024": {
+        "records": 7,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://gkcx.nenu.edu.cn/history_score",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nefu",
+    "name": "东北林业大学",
+    "years": {
+      "2026": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/419/provinceline"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/419/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaoshengcx.nefu.edu.cn/static/front/nefu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "dhu",
+    "name": "东华大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://zs.dhu.edu.cn/_t3031/2026/0228/c25199a371804/page.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zs.dhu.edu.cn/9564/list.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/yslzyfscx/list.htm",
+        "title": "艺术类专业分数查询"
+      },
+      {
+        "url": "http://zs.dhu.edu.cn/gxzxjhlnfscx/list.htm",
+        "title": "高校专项计划招生历年分数查..."
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "seu",
+    "name": "东南大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/109/provinceline"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "csu",
+    "name": "中南大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/123/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.csu.edu.cn/lnfs/bkptl.htm",
+        "title": "历年分数 助力填报志愿、评估录取概率 点击查询"
+      },
+      {
+        "url": "http://zhaosheng.csu.edu.cn/lnfs/bkptl.htm",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "zuel",
+    "name": "中南财经政法大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/414/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://bkzs.zuel.edu.cn/",
+        "title": "本科生录取情况"
+      },
+      {
+        "url": "https://yjsy.zuel.edu.cn/",
+        "title": "研究生录取情况"
+      },
+      {
+        "url": "https://bkzs.zuel.edu.cn/",
+        "title": "本科生录取情况"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ruc",
+    "name": "中国人民大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/46/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "cuc",
+    "name": "中国传媒大学",
+    "years": {
+      "2026": {
+        "records": 10,
+        "kind": "admission",
+        "source": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "admission",
+        "source": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zszx.cuc.edu.cn/static/front/cuc/basic/html_web/lnfs.html",
+        "title": "录取分数"
+      },
+      {
+        "url": "https://zhaosheng.cuc.edu.cn/lqfs_5857/list.htm",
+        "title": "录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "cau",
+    "name": "中国农业大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "http://zb.cau.edu.cn/static/front/cau/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zb.cau.edu.cn/static/front/cau/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "cugb",
+    "name": "中国地质大学（北京）",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "admission",
+        "source": "https://zhsh.cugb.edu.cn/static/front/cugb/basic/html_web/lnfs.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://zhsh.cugb.edu.cn/static/front/cugb/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhsh.cugb.edu.cn/static/front/cugb/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "cug",
+    "name": "中国地质大学（武汉）",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/121/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhaosheng.cug.edu.cn",
+        "title": "录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ouc",
+    "name": "中国海洋大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://lqcx.ouc.edu.cn/static/front/ouc/basic/html_web/lnfs.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "https://lqcx.ouc.edu.cn/static/front/ouc/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://lqcx.ouc.edu.cn/static/front/ouc/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "cup",
+    "name": "中国石油大学（北京）",
+    "years": {
+      "2026": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/832/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "cupw",
+    "name": "中国石油大学（华东）",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/120/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "cumt",
+    "name": "中国矿业大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/110/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zs.cumt.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ustc",
+    "name": "中国科学技术大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/66/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "caa",
+    "name": "中国美术学院",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 1,
+        "kind": "admission",
+        "source": "https://zb.caa.edu.cn/info/1012/1010.htm"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-WS.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "cpu",
+    "name": "中国药科大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/117/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zb.cpu.edu.cn/fs/list.htm",
+        "title": "历年录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "muc",
+    "name": "中央民族大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://zb.muc.edu.cn/content/zs/7fd7b6c2-f0de-11ee-a4af-00163e36a0b0.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "cufe",
+    "name": "中央财经大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://zs.cufe.edu.cn/static/front/cufe/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.cufe.edu.cn/",
+        "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "ccom",
+    "name": "中央音乐学院",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2024": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "sysu",
+    "name": "中山大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/104/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://admission.sysu.edu.cn/zsw/lnfs.html",
+        "title": "历年录取分数"
+      },
+      {
+        "url": "http://admission.sysu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ynu",
+    "name": "云南大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/35/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "ynnu",
+    "name": "云南师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/344/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://jh.ynnu.edu.cn/score.aspx",
+        "title": "历年分数查询"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "lzu",
+    "name": "兰州大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/97/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.lzu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "imu",
+    "name": "内蒙古大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_182736731.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhaoshengxxw.imu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengxxw.imu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "bucm",
+    "name": "北京中医药大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/49/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "bsu",
+    "name": "北京体育大学",
+    "years": {
+      "2026": {
+        "records": 12,
+        "kind": "admission",
+        "source": "https://bm.bsu.edu.cn/lscj/index_1_2026_61.aspx"
+      },
+      "2025": {
+        "records": 12,
+        "kind": "admission",
+        "source": "https://bm.bsu.edu.cn/lscj/index_1_2025_61.aspx"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "buct",
+    "name": "北京化工大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/556/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "bfsu",
+    "name": "北京外国语大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/39/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "pku",
+    "name": "北京大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://bkzs.pku.edu.cn/xxgk/lqfsx/ec81e3e90be24c7eb9edaf508da002c9.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "bjut",
+    "name": "北京工业大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "https://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://admissions.bjut.edu.cn/zsxx/lnlqfs.htm",
+        "title": "历年录取分数"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/dfiles/2025/2025nianbeijinggongyedaxuejingwaishengfenputongleiluqufenshutongji.pdf",
+        "title": "2025年北京工业大学京外省份普通类录取分数统计"
+      },
+      {
+        "url": "http://admissions.bjut.edu.cn/dfiles/2025/2025-yscj.png",
+        "title": "2025年北京工业大学艺术类专业录取分数统计"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "bnu",
+    "name": "北京师范大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "admission",
+        "source": "https://admission.bnu.edu.cn/docs//2026-06/71bca0bd12f54767aca6b0ef0a6ee21b.pdf"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "http://admission.bnu.edu.cn/",
+        "error": "HTTP Error 502: Bad Gateway"
+      }
+    ]
+  },
+  {
+    "id": "bjfu",
+    "name": "北京林业大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/43/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.bjfu.edu.cn/zsw/lnfs.html",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zsb.bjfu.edu.cn/zsw/lnfs.html",
+        "title": "录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "bit",
+    "name": "北京理工大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "http://admission.bit.edu.cn/",
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "http://admission.bit.edu.cn",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "ustb",
+    "name": "北京科技大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/144/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zhaoshengyunzhi.ustb.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "buaa",
+    "name": "北京航空航天大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/47/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "bupt",
+    "name": "北京邮电大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/48/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.bupt.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "ecnu",
+    "name": "华东师范大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/131/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.ecnu.edu.cn/_redirect?siteId=799&columnId=37612&articleId=444126",
+        "title": "历年分数查询"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ecust",
+    "name": "华东理工大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://xxgk.ecust.edu.cn/_upload/article/files/52/3a/544d26b249bd93540a7499b496fe/a732c9ab-5f2a-4317-a800-a19159eb119e.pdf"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://bkzsdata.ecust.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": " https://bkzsdata.ecust.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://zsb.ecust.edu.cn/2022/0410/c2323a143238/page.htm",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ccnu",
+    "name": "华中农业大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/417/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://v.360eol.com/web/admission/spline.do?appPrefix=hzau",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hustc",
+    "name": "华中师范大学",
+    "years": {
+      "2026": {
+        "records": 11,
+        "kind": "admission",
+        "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "http://zsxt.ccnu.edu.cn/apply/index.php?g=apply&m=index&a=index"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "hust",
+    "name": "华中科技大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://zsb.hust.edu.cn/info/1008/3111.htm"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://zsb.hust.edu.cn/info/1008/2971.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.hust.edu.cn/bkzn/lqqk.htm",
+        "title": "录取情况"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "scnu",
+    "name": "华南师范大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/98/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsb.scnu.edu.cn/zhiyuancankao/",
+        "title": "录取情况"
+      },
+      {
+        "url": "http://zsb.scnu.edu.cn/a/20260528/735.html",
+        "title": "华南师范大学2026年运动训练专业第二志愿拟录取情况公布"
+      },
+      {
+        "url": "http://zsb.scnu.edu.cn/a/20260522/733.html",
+        "title": "华南师范大学2026年运动训练专业第一志愿拟录取情况公布"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "scut",
+    "name": "华南理工大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/105/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.scut.edu.cn/",
+        "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "njau",
+    "name": "南京农业大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/113/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://njauzsb.njau.edu.cn/zsw/lnfs.html",
+        "title": "历年录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nju",
+    "name": "南京大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.hfplg.com/lnfs/15h7019780.html"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "njnu",
+    "name": "南京师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.dakao100.com/article_13565879721.html"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://bkzs.njnu.edu.cn/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/2175.htm",
+        "title": "2025-12-15南京师范大学2025年录取分数线"
+      },
+      {
+        "url": "http://bkzs.njnu.edu.cn/info/1044/1855.htm",
+        "title": "2024-12-18南京师范大学2024年录取分数线"
+      }
+    ],
+    "unresolved": [
+      {
+        "url": "https://www.nnu.edu.cn/info/1162/162848.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "njfu",
+    "name": "南京林业大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/169/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://lqcx.njfu.edu.cn/page/data.html",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://lqcx.njfu.edu.cn/page/data.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "njust",
+    "name": "南京理工大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/112/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "nuaa",
+    "name": "南京航空航天大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/77/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.nuaa.edu.cn/lnlqfs/list.htm",
+        "title": "LU QU FEN SHU 录取分数"
+      }
+    ],
+    "unresolved": [
+      {
+        "url": "http://news.nuaa.edu.cn/2025/0227/c737a368464/page.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nankai",
+    "name": "南开大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://lqcx.nankai.edu.cn",
+        "title": "录取分数及计划"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "sustech",
+    "name": "南方科技大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://m.gk100.com/read_647693472.htm"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/2941/provinceline"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "ncu",
+    "name": "南昌大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/108/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xmu",
+    "name": "厦门大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 13,
+        "kind": "admission",
+        "source": "https://zsdata.xmu.edu.cn/public/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsdata.xmu.edu.cn/public/zsdata/lqxx/#/lnfs",
+        "title": "历年录取数据"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/sss/wnlq.htm",
+        "title": "历年录取数据"
+      },
+      {
+        "url": "http://zsb.xmu.edu.cn/tgaqs/wnlq.htm",
+        "title": "历年录取数据"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hfut",
+    "name": "合肥工业大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_630865370.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "jlu",
+    "name": "吉林大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 11,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/122/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "tongji",
+    "name": "同济大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/73/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://bkzs.tongji.edu.cn/luqu/admission",
+        "title": "历年录取"
+      },
+      {
+        "url": "https://bkzs.tongji.edu.cn/luqu/admission",
+        "title": "历年录取"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hit",
+    "name": "哈尔滨工业大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/34/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://zsb.hit.edu.cn/",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+      },
+      {
+        "url": "http://zsb.hit.edu.cn/",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "heu",
+    "name": "哈尔滨工程大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/124/provinceline"
+      },
+      "2024": {
+        "records": 8,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.hrbeu.edu.cn/static/front/hrbeu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsb.hrbeu.edu.cn/static/front/hrbeu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "scu",
+    "name": "四川大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/99/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "http://zs.scu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nudt",
+    "name": "国防科技大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "fudan",
+    "name": "复旦大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://ao.fudan.edu.cn/b7/a6/c36333a767910/page.htm"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://ao.fudan.edu.cn/36333/list.htm",
+        "title": "录取分数"
+      },
+      {
+        "url": "https://ao.fudan.edu.cn/36333/list.htm",
+        "title": "录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "dlmu",
+    "name": "大连海事大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/33/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://sjcx.dlmu.edu.cn/static/front/dlmu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://sjcx.dlmu.edu.cn/static/front/dlmu/basic/html_web/lnfs.html",
+        "title": "历年分数 The Fraction"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "dlut",
+    "name": "大连理工大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "tmu",
+    "name": "天津医科大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/78/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "tju",
+    "name": "天津大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://zsdata.tju.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "tjpu",
+    "name": "天津工业大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://zsb.tiangong.edu.cn/2025/1229/c196a111716/page.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.tiangong.edu.cn/",
+        "title": "简要介绍天津工业大学关于本科生招生计划、录取方式、历年录取分数等内容"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "tjnu",
+    "name": "天津师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/79/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zscx.tjnu.edu.cn/static/front/tjnu/basic/html_web/lnfs_list.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "tjcu",
+    "name": "天津财经大学",
+    "years": {
+      "2026": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/84/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.tjufe.edu.cn/cxgn/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.tjufe.edu.cn/info/1023/1889.htm",
+        "title": "2026年本科招生录取最低分公示（7月29日更新）"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "tyut",
+    "name": "太原理工大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/139/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhaolu.zjzw.cn/release-page/overyears?key=23a0a115af2262c7b0398b88",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nxu",
+    "name": "宁夏大学",
+    "years": {
+      "2026": {
+        "records": 36,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 12,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_766291847.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zscx.nxu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zscx.nxu.edu.cn/zsw/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nyu",
+    "name": "宁波大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "ahau",
+    "name": "安徽大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/67/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "http://zsb.ahu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "ahnu",
+    "name": "安徽师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2024": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsjy2.ahnu.edu.cn/recruit/viewLngk/indexNew.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsjy2.ahnu.edu.cn/recruit/viewLngk/indexNew.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": [
+      {
+        "url": "http://zsjy.ahnu.edu.cn/",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "bjwlxy",
+    "name": "宝鸡文理学院",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/369/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://ein.bjwlxy.cn/lnlq.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/lnlq.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ein.bjwlxy.cn/info/1004/1374.htm",
+        "title": "2025年省外普通类分省分专业录取情况统计"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "uibe",
+    "name": "对外经济贸易大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "admission",
+        "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109416&parentId=848"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://aeo.uibe.edu.cn/front/showContent.jspa?channelId=848&contentId=109079&parentId=848"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://aeo.uibe.edu.cn/lqcx/static/front/uibe/basic/html_web/lnfs.html",
+        "title": "历年录取"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "sdu",
+    "name": "山东大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/126/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.bkzs.sdu.edu.cn/",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+      }
+    ]
+  },
+  {
+    "id": "gxnu",
+    "name": "广西大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/96/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zs.gxu.edu.cn/child/xinxichaxun.jsp?urltype=tree.TreeTempUrl&wbtreeid=1232",
+        "title": "录取分数"
+      },
+      {
+        "url": "http://zs.gxu.edu.cn/child/xinxichaxun.jsp?urltype=tree.TreeTempUrl&wbtreeid=1232",
+        "title": "录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "gxnu-edu",
+    "name": "广西师范大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "admission",
+        "source": "https://bkzs.gxnu.edu.cn/2026/0402/c1649a339409/page.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "yau",
+    "name": "延安大学",
+    "years": {
+      "2026": {
+        "records": 16,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 11,
+        "kind": "admission",
+        "source": "https://zsdata.yau.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsdata.yau.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://zsw.yau.edu.cn/lnlq.htm",
+        "title": "历年录取"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ybu",
+    "name": "延边大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/129/provinceline"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://m.gk100.com/read_191992383.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://gklqcx.ybu.edu.cn/recruit",
+        "title": "历年分数线"
+      },
+      {
+        "url": "https://gklqcx.ybu.edu.cn/recruit",
+        "title": "历年分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xmu-medical",
+    "name": "新疆医科大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/234/provinceline"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "xjdx",
+    "name": "新疆大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/74/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.xju.edu.cn/<span style='color:red;font-size:9pt'>转换链接错误</span>",
+        "error": "URL can't contain control characters. \"/<span style='color:red;font-size:9pt'>转换链接错误</span>\" (found at least ' ')"
+      }
+    ]
+  },
+  {
+    "id": "jnu",
+    "name": "暨南大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://zsb.jnu.edu.cn/_s145/2026/0331/c3454a852780/page.psp"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.jnu.edu.cn/2016/1206/c3468a93231/page.psp",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsb.jnu.edu.cn/2016/1206/c3470a93231/page.htm",
+        "title": "2026-03-06 暨南大学历年录取分数情况查询"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hdu",
+    "name": "杭州电子科技大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/159/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.hdu.edu.cn/list.php?cid=28",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://zhaosheng.hdu.edu.cn/list.php?cid=28",
+        "title": "普招历年录取参考"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "whu",
+    "name": "武汉大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/42/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsdata.whu.edu.cn/public/wzgl/#/fscx",
+        "title": "录取分数查询"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "whut",
+    "name": "武汉理工大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/128/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.whut.edu.cn/bkcx/bklqqk/",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zs.whut.edu.cn/bkcx/bklqqk/",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "stu",
+    "name": "汕头大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2024": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "jiangnan",
+    "name": "江南大学",
+    "years": {
+      "2026": {
+        "records": 12,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/86/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://admission1.jiangnan.edu.cn/pc/historyScore/nonArt",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hebau",
+    "name": "河北农业大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.dakao100.com/article_47940837954.html"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3177.htm",
+        "title": "2026-07-28 河北农业大学2026年普通高校招生录取情况通报（六... 河北农业大学面向山西、安徽、湖北、四川招生的普通类本科有关批录取工作于7月28日结束。本次共录取230人，其中山西120人，安徽80人，湖..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3176.htm",
+        "title": "2026-07-24 河北农业大学2026年普通高校招生录取情况通报（五... 河北农业大学面向黑龙江、江西、河南、海南、重庆、陕西招生的普通类本科有关批录取工作于7月24日结束。本次共录取386人，其中黑龙江70..."
+      },
+      {
+        "url": "https://zhaosheng.hebau.edu.cn/info/1013/3175.htm",
+        "title": "2026-07-23 河北农业大学2026年普通高校招生录取情况通报（四... 河北农业大学面向河北省内招生的普通类本科批、地方专项计划、少数民族预科班录取工作于7月23日结束。本次我校共录取7235人，其中普通类..."
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hebut",
+    "name": "河北工业大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/41/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.hebut.edu.cn/baokao/fenshu.html",
+        "title": "历年录取成绩"
+      },
+      {
+        "url": "https://zs.hebut.edu.cn/baokao/fenshu.html",
+        "title": "历年录取成绩"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "henu",
+    "name": "河南大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "admission",
+        "source": "https://zs.henu.edu.cn/info/1035/9293.htm"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9293.htm",
+        "title": "河南大学2025年普通类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9283.htm",
+        "title": "河南大学2025年体育类录取情况"
+      },
+      {
+        "url": "https://zs.henu.edu.cn/info/1035/9303.htm",
+        "title": "河南大学2025年艺术类录取情况"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "haut",
+    "name": "河南理工大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/463/provinceline"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/463/provinceline"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://www6.hpu.edu.cn/zsxxw/lnfs.htm",
+        "title": "往年录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hhu",
+    "name": "河海大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/116/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsw.hhu.edu.cn/lishifenshu.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "zju",
+    "name": "浙江大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/114/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "zjut",
+    "name": "浙江工业大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/242/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "zjnu",
+    "name": "浙江师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      },
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      },
+      {
+        "url": "https://lqcx.zjnu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "往年录取分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hainu",
+    "name": "海南大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsfw.hainanu.edu.cn/static/front/hainanu/basic/html_web/lnfs.html",
+        "title": "历年分数Historical Admission Scores"
+      },
+      {
+        "url": "https://bkzs.hainanu.edu.cn/info/1003/6877.htm",
+        "title": "162026.07 海南大学2026年艺术类专业招生录取情况（录取结束）"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "szu",
+    "name": "深圳大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://zs.szu.edu.cn/info/1153/2969.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.szu.edu.cn/info/1153/2985.htm",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "tsinghua",
+    "name": "清华大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://www.join-tsinghua.edu.cn/xxgk/lnlqfsx.htm",
+        "title": "历年录取分数线"
+      },
+      {
+        "url": "http://join-tsinghua.edu.cn/xxgk/lnlqfsx.htm",
+        "title": "历年录取分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hnu",
+    "name": "湖南大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "https://admi.hnu.edu.cn/__local/7/F8/6A/B11AD7679D100A76DF59FC47C6B_A0896263_73ADD.pdf"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://admi2.hnu.edu.cn/lnlqqk",
+        "title": "历年录取情况查询"
+      },
+      {
+        "url": "https://admi2.hnu.edu.cn/lnlqqk",
+        "title": "历年录取情况查询"
+      },
+      {
+        "url": "http://admi.hnu.edu.cn/zsxxw/zsjh_2025nfs_.htm",
+        "title": "11 2026-06 2026年招生计划（2025年各专业录取分数线）"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "hnust",
+    "name": "湖南科技大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/388/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zs.hnust.edu.cn/zsxx/lnfs/index.htm",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "uestc",
+    "name": "电子科技大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://chaxun.uestc.edu.cn/public/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zs.uestc.edu.cn/category/56.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://chaxun.uestc.edu.cn/public/zsdata/lqxx/#/lnfs",
+        "title": "历年录取分数线"
+      },
+      {
+        "url": "https://zs.uestc.edu.cn/view/2205.html",
+        "title": "电子科技大学2026年强基计划入围考核分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "shzu",
+    "name": "石河子大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/199/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsbxcx.shzu.edu.cn/InThePastThreeYearsAdmissionInfo",
+        "title": "2025年以前历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "fzu",
+    "name": "福州大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/103/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "afmu",
+    "name": "空军军医大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gk100.com/daxue/luqu_2009.htm"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://www.fmmu.edu.cn/new_cxjgsocre.jsp?urltype=tree.TreeTempUrl&wbtreeid=1111",
+        "title": "往年录取分数线查询"
+      },
+      {
+        "url": "https://www.fmmu.edu.cn/new_cxjgsocre.jsp?urltype=tree.TreeTempUrl&wbtreeid=1111",
+        "title": "往年录取分数查询"
+      },
+      {
+        "url": "http://www.fmmu.edu.cn/zhaosheng2/info/20792/138487.htm",
+        "title": "2018-2020年学校本科招生各省录取分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "suda",
+    "name": "苏州大学",
+    "years": {
+      "2026": {
+        "records": 4,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/118/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "xjtlu",
+    "name": "西交利物浦大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "admission",
+        "source": "https://www.xjtlu.edu.cn/zh/admissions/domestic/ug/2023luqushuju"
+      },
+      "2025": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_274708406.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "nwafu",
+    "name": "西北农林科技大学",
+    "years": {
+      "2026": {
+        "records": 19,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "admission",
+        "source": "https://hjhfmx.nwafu.edu.cn/auth/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://hjhfmx.nwafu.edu.cn/auth/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhshw.nwsuaf.edu.cn/zszn/02a4268053f74ea99610399d9870c565.htm",
+        "title": "关于公布2026年强基计划招生校考入围分数线的通知"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nwu",
+    "name": "西北大学",
+    "years": {
+      "2026": {
+        "records": 13,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 11,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/37/provinceline"
+      },
+      "2024": {
+        "records": 12,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhinengdayi.com/page/detail/FCHTWR/2464/6548",
+        "title": "历年分数查询"
+      },
+      {
+        "url": "https://yjs.nwu.edu.cn/zsgz/sszs/lnfsfsx.htm",
+        "title": "历年复试分数线"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "nwpu",
+    "name": "西北工业大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "http://zsb.nwpu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nwnu",
+    "name": "西北师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/495/provinceline"
+      },
+      "2024": {
+        "records": 3,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.nwnu.edu.cn/",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "nwsuaf",
+    "name": "西北政法大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/376/provinceline"
+      },
+      "2024": {
+        "records": 8,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "swjtu",
+    "name": "西南交通大学",
+    "years": {
+      "2026": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gk100.com/read_19084380.htm"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "swu",
+    "name": "西南大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 11,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/934/provinceline"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://bkzswu.swu.edu.cn/static/front/admission#/data-export/open-score-page2",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "swupl",
+    "name": "西南政法大学",
+    "years": {
+      "2026": {
+        "records": 3,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/180/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.swupl.edu.cn/zsjy/index.htm",
+        "error": "HTTP Error 412: Precondition Failed"
+      }
+    ]
+  },
+  {
+    "id": "swufe",
+    "name": "西南财经大学",
+    "years": {
+      "2026": {
+        "records": 1,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "admission",
+        "source": "https://zsdata.swufe.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsdata.swufe.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xju",
+    "name": "西安交通大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/330/provinceline"
+      },
+      "2024": {
+        "records": 8,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "xianmc",
+    "name": "西安医学院",
+    "years": {
+      "2026": {
+        "records": 11,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "http://luqu.xiyi.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://luqu.xiyi.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://luqu.xiyi.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xisu",
+    "name": "西安外国语大学",
+    "years": {
+      "2026": {
+        "records": 13,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 12,
+        "kind": "admission",
+        "source": "https://zsdata.xisu.edu.cn/zscx/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 8,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.xisu.edu.cn/bkzs/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.xisu.edu.cn/bkzs/lnfs.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xisu.edu.cn/zscx/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xatu",
+    "name": "西安工业大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 7,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xatu.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": ".cls-1 { fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4px;} 历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xpu",
+    "name": "西安工程大学",
+    "years": {
+      "2026": {
+        "records": 12,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/358/provinceline"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsb.xpu.edu.cn/data.htm?mode=history",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xauat",
+    "name": "西安建筑科技大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/351/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "xaut",
+    "name": "西安理工大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/349/provinceline"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.xaut.edu.cn/xinxichaxun/fenshengfenzhuanyefenshuchaxun/",
+        "title": "各专业录取分数查询"
+      },
+      {
+        "url": "https://zsgl.xaut.edu.cn/admin/#/lqjgcx",
+        "title": "高考录取情况查询"
+      },
+      {
+        "url": "http://zhaosheng.xaut.edu.cn/xinxichaxun/liniangeshengfenshuxianchaxun/",
+        "title": "历年各省分数线查询"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xidian",
+    "name": "西安电子科技大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "admission",
+        "source": "https://zsxc.xidian.edu.cn/auth/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "xust",
+    "name": "西安科技大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "admission",
+        "source": "https://zsdata.xust.edu.cn/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.xust.edu.cn/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xufe",
+    "name": "西安财经大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "admission",
+        "source": "http://zhaosheng.xaufe.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 8,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1651.htm",
+        "title": "[12-26]2023年中外合作办学专业录取分数区间"
+      },
+      {
+        "url": "http://zhaosheng.xaufe.edu.cn/info/1018/1650.htm",
+        "title": "[12-26]2023年艺术类本科专业录取分数区间"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "xiyou",
+    "name": "西安邮电大学",
+    "years": {
+      "2026": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 9,
+        "kind": "admission",
+        "source": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 5,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "ut",
+    "name": "西藏大学",
+    "years": {
+      "2026": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/364/provinceline"
+      },
+      "2025": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/364/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/2024EBZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "gzmu",
+    "name": "贵州大学",
+    "years": {
+      "2026": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 5,
+        "kind": "admission",
+        "source": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm"
+      },
+      "2024": {
+        "records": 7,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://rso.gzu.edu.cn/2026/0705/c23580a276661/page.htm",
+        "title": "2025年分省分批次分专业录取最低分"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "lnu",
+    "name": "辽宁大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 12,
+        "kind": "admission",
+        "source": "https://zs.lnu.edu.cn/info/14381/71600.htm"
+      },
+      "2024": {
+        "records": 4,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zs.lnu.edu.cn/cxzx/lnlqqk1.htm",
+        "title": "历年录取情况"
+      },
+      {
+        "url": "http://zs.lnu.edu.cn/cxzx/lnlqqk1.htm",
+        "title": "历年录取"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "zzu",
+    "name": "郑州大学",
+    "years": {
+      "2026": {
+        "records": 10,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/62/provinceline"
+      },
+      "2025": {
+        "records": 2,
+        "kind": "admission",
+        "source": "https://ao.zzu.edu.cn/xxgk/lnlq_/sx1/a2025.htm"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://ao.zzu.edu.cn/xxgk/lnlq_.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ao.zzu.edu.cn/xxgk/lnlq_.htm",
+        "title": "历年录取"
+      },
+      {
+        "url": "http://ao.zzu.edu.cn/lnlq_.htm",
+        "title": "历年录取 [2020-12-11]"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "cqu",
+    "name": "重庆大学",
+    "years": {
+      "2026": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 7,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/119/provinceline"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zhaosheng.cqu.edu.cn/pub/desktopend/queryadmitline",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "chd",
+    "name": "长安大学",
+    "years": {
+      "2026": {
+        "records": 9,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "admission",
+        "source": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 7,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      },
+      {
+        "url": "https://zsdata.chd.edu.cn/zsdata/lqxx/#/lnfs",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "snnu",
+    "name": "陕西师范大学",
+    "years": {
+      "2026": {
+        "records": 14,
+        "kind": "admission",
+        "source": "https://zsb.snnu.edu.cn/__local/D/77/EC/3BC9816EE6C19D71501E9A049A2_6DB30892_1377E.pdf"
+      },
+      "2025": {
+        "records": 17,
+        "kind": "admission",
+        "source": "https://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsb.snnu.edu.cn/zsxx/wnlqqk1/lnlqqk/a2020.htm",
+        "title": "历年录取情况"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "sust",
+    "name": "陕西科技大学",
+    "years": {
+      "2026": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 8,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/357/provinceline"
+      },
+      "2024": {
+        "records": 6,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [
+      {
+        "url": "http://zsxx.sust.edu.cn/static/front/sust/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      },
+      {
+        "url": "http://zsxx.sust.edu.cn/static/front/sust/basic/html_web/lnfs.html",
+        "title": "历年分数"
+      }
+    ],
+    "unresolved": []
+  },
+  {
+    "id": "qhu",
+    "name": "青海大学",
+    "years": {
+      "2026": {
+        "records": 5,
+        "kind": "reference",
+        "source": "https://www.6617.com/p_1313533553.html"
+      },
+      "2025": {
+        "records": 6,
+        "kind": "reference",
+        "source": "https://www.gaokao.cn/school/367/provinceline"
+      },
+      "2024": {
+        "records": 2,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  },
+  {
+    "id": "ccmu",
+    "name": "首都医科大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 2,
+        "kind": "reference",
+        "source": "https://www.dakao100.com/article_42573442753.html"
+      },
+      "2024": {
+        "records": 1,
+        "kind": "submission",
+        "source": "https://www.sneac.com/htm/2024/1BZS-LG.html"
+      }
+    },
+    "officialQueries": [],
+    "unresolved": [
+      {
+        "url": "https://www.ccmu.edu.cn/",
+        "error": "The read operation timed out"
+      }
+    ]
+  },
+  {
+    "id": "cnu",
+    "name": "首都师范大学",
+    "years": {
+      "2026": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2025": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      },
+      "2024": {
+        "records": 0,
+        "kind": null,
+        "source": null
+      }
+    },
+    "officialQueries": [],
+    "unresolved": []
+  }
+]

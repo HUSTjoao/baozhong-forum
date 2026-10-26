@@ -1,0 +1,42 @@
+[
+  {
+    "id": "suda",
+    "year": 2025,
+    "source": "https://www.gk100.com/read_5498291.htm",
+    "row": {
+      "name": "苏州大学",
+      "subject": "arts",
+      "score": 615,
+      "publishedRank": 1321
+    },
+    "reason": "分数与官方同年同科类位次区间不一致"
+  },
+  {
+    "id": "hebau",
+    "year": 2025,
+    "source": "https://www.gk100.com/read_19084380.htm",
+    "row": {
+      "name": "河北农业大学",
+      "subject": "science",
+      "group": "104组",
+      "score": 499,
+      "publishedRank": 55111
+    },
+    "reason": "分数与官方同年同科类位次区间不一致"
+  },
+  {
+    "id": "sysu",
+    "year": 2026,
+    "source": "https://www.6617.com/p_1313533553.html",
+    "row": {
+      "name": "中山大学",
+      "subject": "science",
+      "group": "101组",
+      "score": 664,
+      "publishedRank": 3681,
+      "imagePage": 3,
+      "imageRow": 15
+    },
+    "reason": "分数与官方同年同科类位次区间不一致"
+  }
+]

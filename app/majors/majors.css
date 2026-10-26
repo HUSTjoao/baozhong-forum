@@ -1106,6 +1106,7 @@ html[data-major-transition='back']::view-transition-new(root){animation:major-ro
 .lens-expanded .major-bento-card .major-bento-overview,
 .lens-expanded .major-bento-card .major-search-field{font-family:'Major WenKai','KaiTi','Microsoft YaHei',serif;font-synthesis:none}
 .lens-expanded .major-bento-card h3{font-weight:500}
+.lens-expanded .major-bento-card .major-bento-title-link h3{font-family:'Site WenKai','Major WenKai','KaiTi',serif;font-synthesis:none}
 .lens-expanded .major-bento-card .major-bento-overview{font-weight:400}
 
 /* Keep the engineering photo geometry stable during aperture transitions. */

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ncu",
+    "year": 2026,
+    "page": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+    "endpoint": "https://zjc.ncu.edu.cn/f/ajax_lnfs",
+    "query": {
+      "ssmc": "陕西",
+      "zsnf": "2026"
+    },
+    "rows": [],
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "ncu",
+    "year": 2025,
+    "page": "https://zjc.ncu.edu.cn/zs/zsw/lnfs.html",
+    "endpoint": "https://zjc.ncu.edu.cn/f/ajax_lnfs",
+    "query": {
+      "ssmc": "陕西",
+      "zsnf": "2025"
+    },
+    "rows": [],
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "uibe",
+    "year": 2025,
+    "page": "https://aeo.uibe.edu.cn/lqcx/static/front/uibe/basic/html_web/lnfs.html",
+    "endpoint": "https://aeo.uibe.edu.cn/lqcx/f/ajax_lnfs",
+    "query": {
+      "ssmc": "陕西",
+      "zsnf": "2025"
+    },
+    "rows": [],
+    "error": "HTTP Error 403: "
+  },
+  {
+    "id": "uibe",
+    "year": 2026,
+    "page": "https://aeo.uibe.edu.cn/lqcx/static/front/uibe/basic/html_web/lnfs.html",
+    "endpoint": "https://aeo.uibe.edu.cn/lqcx/f/ajax_lnfs",
+    "query": {
+      "ssmc": "陕西",
+      "zsnf": "2026"
+    },
+    "rows": [],
+    "error": "HTTP Error 403: "
+  }
+]

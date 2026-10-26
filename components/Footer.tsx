@@ -34,6 +34,10 @@ export default function Footer() {
           <p>QQ · 1750453328</p>
           <Link href="/forum">前往问答论坛交流与反馈 ↗</Link>
         </div>
+        <div className="community-footer-credits" aria-label="鸣谢与图片署名">
+          <p><span>特别鸣谢</span><strong>宝中万能墙</strong></p>
+          <p><span>建站图片提供</span><strong><small>2022级</small>赵焱博</strong><strong><small>2022级</small>田一萱</strong></p>
+        </div>
         <div className="community-footer-colophon">
           <p>网站制作于丙午马年夏末秋序之际</p>
           <p>湖北·武汉 华中科技大学</p>
